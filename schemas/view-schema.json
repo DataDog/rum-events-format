@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/DataDog/rum-events-format/schemas/view-schema.json",
+  "type": "object",
+  "description": "Schema of all properties of a View event",
+  "allOf": [
+    {
+      "$ref": "file:schemas/_common-schema.json"
+    },
+    {
+      "required": [
+        "view",
+        "_dd"
+      ],
+      "properties": {
+        "view": {
+          "type": "object",
+          "description": "View properties",
+          "required": [
+            "id",
+            "url",
+            "loading_time",
+            "loading_type",
+            "time_spent",
+            "action",
+            "error",
+            "resource"
+          ],
+          "properties": {
+            "loading_time": {
+              "type": "integer",
+              "description": "Duration in ns to the view is considered loaded"
+            },
+            "loading_type": {
+              "type": "string",
+              "description": "Type of the loading of the view"
+            },
+            "time_spent": {
+              "type": "integer",
+              "description": "Time spent on the view in ns"
+            },
+            "first_contentful_paint": {
+              "type": "integer",
+              "description": "Duration in ns to the first rendering"
+            },
+            "dom_complete": {
+              "type": "integer",
+              "description": "Duration in ns to the complete parsing and loading of the document and its sub resources"
+            },
+            "dom_content_loaded": {
+              "type": "integer",
+              "description": "Duration in ns to the complete parsing and loading of the document without its sub resources"
+            },
+            "dom_interactive": {
+              "type": "integer",
+              "description": "Duration in ns to the end of the parsing of the document"
+            },
+            "load_event": {
+              "type": "integer",
+              "description": "Duration in ns to the end of the load event handler execution",
+              "default": 0,
+              "examples": [
+                2154370000
+              ]
+            },
+            "action": {
+              "type": "object",
+              "description": "Properties of the actions of the view",
+              "required": [
+                "count"
+              ],
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Number of actions that occurred on the view"
+                }
+              }
+            },
+            "error": {
+              "type": "object",
+              "description": "Properties of the errors of the view",
+              "required": [
+                "count"
+              ],
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Number of errors that occurred on the view"
+                }
+              }
+            },
+            "long_task": {
+              "type": "object",
+              "description": "Properties of the long tasks of the view",
+              "required": [
+                "count"
+              ],
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Number of long tasks that occurred on the view"
+                }
+              }
+            },
+            "resource": {
+              "type": "object",
+              "description": "Properties of the resources of the view",
+              "required": [
+                "count"
+              ],
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Number of resources that occurred on the view"
+                }
+              }
+            }
+          }
+        },
+        "_dd": {
+          "type": "object",
+          "description": "Internal properties",
+          "required": [
+            "document_version"
+          ],
+          "properties": {
+            "document_version": {
+              "type": "integer",
+              "description": "Version of the update of the view event"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

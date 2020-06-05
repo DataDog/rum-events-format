@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/DataDog/rum-events-format/schemas/_common-schema.json",
+  "type": "object",
+  "description": "Schema of common properties of RUM events",
+  "required": [
+    "type",
+    "date",
+    "application",
+    "session",
+    "view",
+    "_dd"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "RUM event type"
+    },
+    "date": {
+      "type": "integer",
+      "description": "Start of the event in ms from epoch"
+    },
+    "application": {
+      "type": "object",
+      "description": "Application properties",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "UUID of the application"
+        }
+      }
+    },
+    "session": {
+      "type": "object",
+      "description": "Session properties",
+      "required": [
+        "id",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "UUID of the session"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of the session"
+        }
+      }
+    },
+    "view": {
+      "type": "object",
+      "description": "View properties",
+      "required": [
+        "id",
+        "url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "UUID of the view"
+        },
+        "referrer": {
+          "type": "string",
+          "description": "URL that linked to the initial view of the page"
+        },
+        "url": {
+          "type": "string",
+          "description": "URL of the view"
+        }
+      }
+    },
+    "_dd": {
+      "type": "object",
+      "description": "Internal properties",
+      "required": [
+        "format_version"
+      ],
+      "properties": {
+        "format_version": {
+          "type": "integer",
+          "description": "Version of the RUM event format"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/DataDog/rum-events-format/schemas/action-schema.json",
+  "type": "object",
+  "description": "Schema of all properties of an Action event",
+  "allOf": [
+    {
+      "$ref": "file:schemas/_common-schema.json"
+    },
+    {
+      "required": [
+        "action"
+      ],
+      "properties": {
+        "action": {
+          "type": "object",
+          "description": "Action properties",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Type of the action"
+            },
+            "id": {
+              "type": "string",
+              "description": "UUID of the action"
+            },
+            "loading_time": {
+              "type": "integer",
+              "description": "Duration in ns to the action is considered loaded"
+            },
+            "target": {
+              "type": "object",
+              "description": "Action target properties",
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Target name"
+                }
+              }
+            },
+            "error": {
+              "type": "object",
+              "description": "Properties of the errors of the action",
+              "required": [
+                "count"
+              ],
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Number of errors that occurred on the action"
+                }
+              }
+            },
+            "long_task": {
+              "type": "object",
+              "description": "Properties of the long tasks of the action",
+              "required": [
+                "count"
+              ],
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Number of long tasks that occurred on the action"
+                }
+              }
+            },
+            "resource": {
+              "type": "object",
+              "description": "Properties of the resources of the action",
+              "required": [
+                "count"
+              ],
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Number of resources that occurred on the action"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
