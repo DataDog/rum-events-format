@@ -30,7 +30,8 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "UUID of the application"
+          "description": "UUID of the application",
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
         }
       }
     },
@@ -44,7 +45,8 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "UUID of the session"
+          "description": "UUID of the session",
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
         },
         "type": {
           "type": "string",
@@ -63,7 +65,8 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "UUID of the view"
+          "description": "UUID of the view",
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
         },
         "referrer": {
           "type": "string",

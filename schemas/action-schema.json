@@ -26,7 +26,8 @@
             },
             "id": {
               "type": "string",
-              "description": "UUID of the action"
+              "description": "UUID of the action",
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
             },
             "loading_time": {
               "type": "integer",
