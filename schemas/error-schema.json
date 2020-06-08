@@ -45,7 +45,7 @@
                 "method": {
                   "type": "string",
                   "description": "HTTP method of the resource",
-                  "enum": ["POST", "GET", "HEAD", "PUT", "DELETE"]
+                  "enum": ["POST", "GET", "HEAD", "PUT", "DELETE", "PATCH"]
                 },
                 "status_code": {
                   "type": "integer",
