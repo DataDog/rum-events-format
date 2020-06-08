@@ -19,7 +19,8 @@
     },
     "date": {
       "type": "integer",
-      "description": "Start of the event in ms from epoch"
+      "description": "Start of the event in ms from epoch",
+      "minimum": 0
     },
     "application": {
       "type": "object",

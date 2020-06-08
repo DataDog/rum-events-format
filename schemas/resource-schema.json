@@ -37,15 +37,18 @@
             },
             "status_code": {
               "type": "integer",
-              "description": "HTTP status code of the resource"
+              "description": "HTTP status code of the resource",
+              "minimum": 0
             },
             "duration": {
               "type": "integer",
-              "description": "Duration of the resource"
+              "description": "Duration of the resource",
+              "minimum": 0
             },
             "size": {
               "type": "integer",
-              "description": "Size in octet of the resource response body"
+              "description": "Size in octet of the resource response body",
+              "minimum": 0
             },
             "redirect": {
               "type": "object",
@@ -57,11 +60,13 @@
               "properties": {
                 "duration": {
                   "type": "integer",
-                  "description": "Duration in ns of the resource redirect phase"
+                  "description": "Duration in ns of the resource redirect phase",
+                  "minimum": 0
                 },
                 "start": {
                   "type": "integer",
-                  "description": "Duration in ns between start of the request and start of the redirect phase"
+                  "description": "Duration in ns between start of the request and start of the redirect phase",
+                  "minimum": 0
                 }
               }
             },
@@ -75,11 +80,13 @@
               "properties": {
                 "duration": {
                   "type": "integer",
-                  "description": "Duration in ns of the resource dns phase"
+                  "description": "Duration in ns of the resource dns phase",
+                  "minimum": 0
                 },
                 "start": {
                   "type": "integer",
-                  "description": "Duration in ns between start of the request and start of the dns phase"
+                  "description": "Duration in ns between start of the request and start of the dns phase",
+                  "minimum": 0
                 }
               }
             },
@@ -93,11 +100,13 @@
               "properties": {
                 "duration": {
                   "type": "integer",
-                  "description": "Duration in ns of the resource connect phase"
+                  "description": "Duration in ns of the resource connect phase",
+                  "minimum": 0
                 },
                 "start": {
                   "type": "integer",
-                  "description": "Duration in ns between start of the request and start of the connect phase"
+                  "description": "Duration in ns between start of the request and start of the connect phase",
+                  "minimum": 0
                 }
               }
             },
@@ -111,11 +120,13 @@
               "properties": {
                 "duration": {
                   "type": "integer",
-                  "description": "Duration in ns of the resource ssl phase"
+                  "description": "Duration in ns of the resource ssl phase",
+                  "minimum": 0
                 },
                 "start": {
                   "type": "integer",
-                  "description": "Duration in ns between start of the request and start of the ssl phase"
+                  "description": "Duration in ns between start of the request and start of the ssl phase",
+                  "minimum": 0
                 }
               }
             },
@@ -129,11 +140,13 @@
               "properties": {
                 "duration": {
                   "type": "integer",
-                  "description": "Duration in ns of the resource first byte phase"
+                  "description": "Duration in ns of the resource first byte phase",
+                  "minimum": 0
                 },
                 "start": {
                   "type": "integer",
-                  "description": "Duration in ns between start of the request and start of the first byte phase"
+                  "description": "Duration in ns between start of the request and start of the first byte phase",
+                  "minimum": 0
                 }
               }
             },
@@ -147,11 +160,13 @@
               "properties": {
                 "duration": {
                   "type": "integer",
-                  "description": "Duration in ns of the resource download phase"
+                  "description": "Duration in ns of the resource download phase",
+                  "minimum": 0
                 },
                 "start": {
                   "type": "integer",
-                  "description": "Duration in ns between start of the request and start of the download phase"
+                  "description": "Duration in ns between start of the request and start of the download phase",
+                  "minimum": 0
                 }
               }
             }

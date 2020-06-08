@@ -27,7 +27,8 @@
           "properties": {
             "loading_time": {
               "type": "integer",
-              "description": "Duration in ns to the view is considered loaded"
+              "description": "Duration in ns to the view is considered loaded",
+              "minimum": 0
             },
             "loading_type": {
               "type": "string",
@@ -36,31 +37,33 @@
             },
             "time_spent": {
               "type": "integer",
-              "description": "Time spent on the view in ns"
+              "description": "Time spent on the view in ns",
+              "minimum": 0
             },
             "first_contentful_paint": {
               "type": "integer",
-              "description": "Duration in ns to the first rendering"
+              "description": "Duration in ns to the first rendering",
+              "minimum": 0
             },
             "dom_complete": {
               "type": "integer",
-              "description": "Duration in ns to the complete parsing and loading of the document and its sub resources"
+              "description": "Duration in ns to the complete parsing and loading of the document and its sub resources",
+              "minimum": 0
             },
             "dom_content_loaded": {
               "type": "integer",
-              "description": "Duration in ns to the complete parsing and loading of the document without its sub resources"
+              "description": "Duration in ns to the complete parsing and loading of the document without its sub resources",
+              "minimum": 0
             },
             "dom_interactive": {
               "type": "integer",
-              "description": "Duration in ns to the end of the parsing of the document"
+              "description": "Duration in ns to the end of the parsing of the document",
+              "minimum": 0
             },
             "load_event": {
               "type": "integer",
               "description": "Duration in ns to the end of the load event handler execution",
-              "default": 0,
-              "examples": [
-                2154370000
-              ]
+              "minimum": 0
             },
             "action": {
               "type": "object",
@@ -71,7 +74,8 @@
               "properties": {
                 "count": {
                   "type": "integer",
-                  "description": "Number of actions that occurred on the view"
+                  "description": "Number of actions that occurred on the view",
+                  "minimum": 0
                 }
               }
             },
@@ -84,7 +88,8 @@
               "properties": {
                 "count": {
                   "type": "integer",
-                  "description": "Number of errors that occurred on the view"
+                  "description": "Number of errors that occurred on the view",
+                  "minimum": 0
                 }
               }
             },
@@ -97,7 +102,8 @@
               "properties": {
                 "count": {
                   "type": "integer",
-                  "description": "Number of long tasks that occurred on the view"
+                  "description": "Number of long tasks that occurred on the view",
+                  "minimum": 0
                 }
               }
             },
@@ -110,7 +116,8 @@
               "properties": {
                 "count": {
                   "type": "integer",
-                  "description": "Number of resources that occurred on the view"
+                  "description": "Number of resources that occurred on the view",
+                  "minimum": 0
                 }
               }
             }
@@ -125,7 +132,8 @@
           "properties": {
             "document_version": {
               "type": "integer",
-              "description": "Version of the update of the view event"
+              "description": "Version of the update of the view event",
+              "minimum": 0
             }
           }
         }

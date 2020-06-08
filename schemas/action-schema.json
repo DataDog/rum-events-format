@@ -31,7 +31,8 @@
             },
             "loading_time": {
               "type": "integer",
-              "description": "Duration in ns to the action is considered loaded"
+              "description": "Duration in ns to the action is considered loaded",
+              "minimum": 0
             },
             "target": {
               "type": "object",
@@ -55,7 +56,8 @@
               "properties": {
                 "count": {
                   "type": "integer",
-                  "description": "Number of errors that occurred on the action"
+                  "description": "Number of errors that occurred on the action",
+                  "minimum": 0
                 }
               }
             },
@@ -68,7 +70,8 @@
               "properties": {
                 "count": {
                   "type": "integer",
-                  "description": "Number of long tasks that occurred on the action"
+                  "description": "Number of long tasks that occurred on the action",
+                  "minimum": 0
                 }
               }
             },
@@ -81,7 +84,8 @@
               "properties": {
                 "count": {
                   "type": "integer",
-                  "description": "Number of resources that occurred on the action"
+                  "description": "Number of resources that occurred on the action",
+                  "minimum": 0
                 }
               }
             }
