@@ -26,7 +26,8 @@
             },
             "source": {
               "type": "string",
-              "description": "Source of the error"
+              "description": "Source of the error",
+              "enum": ["network", "source", "console", "logger", "agent"]
             },
             "stack": {
               "type": "string",
@@ -43,7 +44,8 @@
               "properties": {
                 "method": {
                   "type": "string",
-                  "description": "HTTP method of the resource"
+                  "description": "HTTP method of the resource",
+                  "enum": ["POST", "GET", "HEAD", "PUT", "DELETE"]
                 },
                 "status_code": {
                   "type": "integer",

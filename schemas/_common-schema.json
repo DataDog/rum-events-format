@@ -14,7 +14,8 @@
   "properties": {
     "type": {
       "type": "string",
-      "description": "RUM event type"
+      "description": "RUM event type",
+      "enum": ["action", "error", "long_task", "resource", "view"]
     },
     "date": {
       "type": "integer",
@@ -47,7 +48,8 @@
         },
         "type": {
           "type": "string",
-          "description": "Type of the session"
+          "description": "Type of the session",
+          "enum": ["user", "synthetics"]
         }
       }
     },
@@ -81,7 +83,7 @@
       ],
       "properties": {
         "format_version": {
-          "type": "integer",
+          "const": 2,
           "description": "Version of the RUM event format"
         }
       }

@@ -33,7 +33,8 @@
             },
             "loading_type": {
               "type": "string",
-              "description": "Type of the loading of the view"
+              "description": "Type of the loading of the view",
+              "enum": ["initial_load", "route_change"]
             },
             "time_spent": {
               "type": "integer",

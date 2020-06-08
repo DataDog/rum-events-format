@@ -23,11 +23,13 @@
           "properties": {
             "type": {
               "type": "string",
-              "description": "Resource type"
+              "description": "Resource type",
+              "enum": ["document", "xhr", "beacon", "fetch", "css", "js", "image", "font", "media", "other"]
             },
             "method": {
               "type": "string",
-              "description": "HTTP method of the resource"
+              "description": "HTTP method of the resource",
+              "enum": ["POST", "GET", "HEAD", "PUT", "DELETE"]
             },
             "url": {
               "type": "string",

@@ -21,7 +21,8 @@
           "properties": {
             "type": {
               "type": "string",
-              "description": "Type of the action"
+              "description": "Type of the action",
+              "enum": ["custom", "click", "tap", "scroll", "swipe"]
             },
             "id": {
               "type": "string",
