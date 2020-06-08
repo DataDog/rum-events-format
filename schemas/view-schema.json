@@ -19,8 +19,6 @@
           "required": [
             "id",
             "url",
-            "loading_time",
-            "loading_type",
             "time_spent",
             "action",
             "error",
