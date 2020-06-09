@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://github.com/DataDog/rum-events-format/schemas/resource-schema.json",
+  "$id": "resource-schema.json",
   "type": "object",
   "description": "Schema of all properties of a Resource event",
   "allOf": [
     {
-      "$ref": "file:schemas/_common-schema.json"
+      "$ref": "_common-schema.json"
     },
     {
       "required": [

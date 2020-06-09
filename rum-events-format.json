@@ -1,23 +1,23 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://github.com/DataDog/rum-events-format/rum-events-format.json",
+  "$id": "rum-events-format.json",
   "type": "object",
   "description": "Schema of all properties of a RUM event",
   "anyOf": [
     {
-      "$ref": "file:schemas/action-schema.json"
+      "$ref": "schemas/action-schema.json"
     },
     {
-      "$ref": "file:schemas/error-schema.json"
+      "$ref": "schemas/error-schema.json"
     },
     {
-      "$ref": "file:schemas/long_task-schema.json"
+      "$ref": "schemas/long_task-schema.json"
     },
     {
-      "$ref": "file:schemas/resource-schema.json"
+      "$ref": "schemas/resource-schema.json"
     },
     {
-      "$ref": "file:schemas/view-schema.json"
+      "$ref": "schemas/view-schema.json"
     }
   ]
 }

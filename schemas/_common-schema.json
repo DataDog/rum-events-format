@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://github.com/DataDog/rum-events-format/schemas/_common-schema.json",
+  "$id": "_common-schema.json",
   "type": "object",
   "description": "Schema of common properties of RUM events",
   "required": [

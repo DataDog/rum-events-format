@@ -4,7 +4,7 @@ line='----------------------------------------'
 
 for sample in samples/*.json; do
   printf "Validating %s %s " "$sample" "${line:${#sample}}"
-  result=$(jsonschema -i "$sample" rum-events-format.json 2>&1)
+  result=$(python validate.py "$sample" rum-events-format.json 2>&1)
   status=$?
   if [ $status -ne 0 ]
   then
