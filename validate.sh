@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 
-set -ex
+line='----------------------------------------'
 
-jsonschema -i samples/action.json rum-events-format.json
-jsonschema -i samples/error.json rum-events-format.json
-jsonschema -i samples/long_task.json rum-events-format.json
-jsonschema -i samples/resource.json rum-events-format.json
-jsonschema -i samples/view.json rum-events-format.json
+for sample in samples/*.json; do
+  printf "Validating %s %s " "$sample" "${line:${#sample}}"
+  result=$(jsonschema -i "$sample" rum-events-format.json 2>&1)
+  status=$?
+  if [ $status -ne 0 ]
+  then
+    echo "❌"
+    echo "$result"
+    exit $status
+  else
+    echo "✅"
+  fi
+done
