@@ -1,0 +1,29 @@
+{
+  "type": "error",
+  "date": 1591284175342,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+  },
+  "error": {
+    "message": "XHR error POST https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum",
+    "source": "network",
+    "stack": "Failed to load",
+    "resource": {
+      "method": "POST",
+      "status_code": 0,
+      "url": "https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum"
+    }
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}

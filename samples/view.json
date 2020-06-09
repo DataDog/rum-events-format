@@ -1,0 +1,40 @@
+{
+  "type": "view",
+  "date": 1591283924940,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view",
+    "loading_time": 4115295000,
+    "loading_type": "initial_load",
+    "time_spent": 245512755000,
+    "first_contentful_paint": 420725000,
+    "dom_complete": 2144660000,
+    "dom_content_loaded": 951715000,
+    "dom_interactive": 906695000,
+    "load_event": 2154370000,
+    "action": {
+      "count": 0
+    },
+    "error": {
+      "count": 2
+    },
+    "long_task": {
+      "count": 5
+    },
+    "resource": {
+      "count": 9
+    }
+  },
+  "_dd": {
+    "document_version": 9,
+    "format_version": 2
+  }
+}

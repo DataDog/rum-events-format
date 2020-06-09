@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum-events-format.json",
+  "type": "object",
+  "description": "Schema of all properties of a RUM event",
+  "oneOf": [
+    {
+      "$ref": "schemas/action-schema.json"
+    },
+    {
+      "$ref": "schemas/error-schema.json"
+    },
+    {
+      "$ref": "schemas/long_task-schema.json"
+    },
+    {
+      "$ref": "schemas/resource-schema.json"
+    },
+    {
+      "$ref": "schemas/view-schema.json"
+    }
+  ]
+}

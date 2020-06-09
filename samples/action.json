@@ -1,0 +1,36 @@
+{
+  "type": "action",
+  "date": 1591284428705,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+  },
+  "action": {
+    "type": "click",
+    "id": "47af0abb-3de1-4170-a491-4473716df979",
+    "loading_time": 566250000,
+    "target": {
+      "name": "Options"
+    },
+    "error": {
+      "count": 0
+    },
+    "long_task": {
+      "count": 0
+    },
+    "resource": {
+      "count": 1
+    }
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}
