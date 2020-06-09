@@ -3,7 +3,7 @@
   "$id": "rum-events-format.json",
   "type": "object",
   "description": "Schema of all properties of a RUM event",
-  "anyOf": [
+  "oneOf": [
     {
       "$ref": "schemas/action-schema.json"
     },
