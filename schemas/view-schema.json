@@ -9,10 +9,16 @@
     },
     {
       "required": [
+        "type",
         "view",
         "_dd"
       ],
       "properties": {
+        "type": {
+          "type": "string",
+          "description": "RUM event type",
+          "const": "view"
+        },
         "view": {
           "type": "object",
           "description": "View properties",
