@@ -31,8 +31,10 @@
   "connectivity": {
     "status": "connected",
     "interfaces": [ "wifi", "cellular", "other"],
-    "cellular_technology": "HSDPA",
-    "cellular_carrier": "AT&T"
+    "cellular": {
+      "technology": "HSDPA",
+      "carrier_name": "AT&T"
+    }
   },
   "action": {
     "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
