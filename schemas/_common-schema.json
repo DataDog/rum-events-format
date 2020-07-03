@@ -109,16 +109,22 @@
           "description": "The list of available network interfaces",
           "items": {
             "type": "string",
-            "enum": ["wifi", "cellular", "internet", "loopback", "other"]
+            "enum": ["wifi", "cellular", "ethernet", "loopback", "other"]
           }
         },
-        "cellular_technology": {
-          "type": "string",
-          "description": "The type of a radio technology used for cellular connection"
-        },
-        "cellular_carrier": {
-          "type": "string",
-          "description": "The name of the SIM carrier"
+        "cellular": {
+          "type": "object",
+          "description": "Cellular connectivity properties",
+          "properties": {
+            "technology": {
+              "type": "string",
+              "description": "The type of a radio technology used for cellular connection"
+            },
+            "carrier_name": {
+              "type": "string",
+              "description": "The name of the SIM carrier"
+            }
+          }
         }
       }
     },
