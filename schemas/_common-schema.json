@@ -109,7 +109,7 @@
           "description": "The list of available network interfaces",
           "items": {
             "type": "string",
-            "enum": ["wifi", "cellular", "ethernet", "loopback", "other"]
+            "enum": ["bluetooth", "cellular", "ethernet", "wifi", "wimax", "mixed", "other", "unknown", "none"]
           }
         },
         "cellular": {
