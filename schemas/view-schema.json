@@ -39,7 +39,7 @@
             "loading_type": {
               "type": "string",
               "description": "Type of the loading of the view",
-              "enum": ["initial_load", "route_change"]
+              "enum": ["initial_load", "route_change", "activity_display", "activity_redisplay", "fragment_display", "fragment_redisplay"]
             },
             "time_spent": {
               "type": "integer",
@@ -95,6 +95,20 @@
                 "count": {
                   "type": "integer",
                   "description": "Number of errors that occurred on the view",
+                  "minimum": 0
+                }
+              }
+            },
+            "crash": {
+              "type": "object",
+              "description": "Properties of the crashes of the view",
+              "required": [
+                "count"
+              ],
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Number of crashes that occurred on the view",
                   "minimum": 0
                 }
               }

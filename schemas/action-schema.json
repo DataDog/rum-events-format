@@ -28,7 +28,7 @@
             "type": {
               "type": "string",
               "description": "Type of the action",
-              "enum": ["custom", "click", "tap", "scroll", "swipe", "back"]
+              "enum": ["custom", "click", "tap", "scroll", "swipe", "application_start", "back"]
             },
             "id": {
               "type": "string",
@@ -63,6 +63,20 @@
                 "count": {
                   "type": "integer",
                   "description": "Number of errors that occurred on the action",
+                  "minimum": 0
+                }
+              }
+            },
+            "crash": {
+              "type": "object",
+              "description": "Properties of the crashes of the action",
+              "required": [
+                "count"
+              ],
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "description": "Number of crashes that occurred on the action",
                   "minimum": 0
                 }
               }
