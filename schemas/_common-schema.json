@@ -136,6 +136,7 @@
       ],
       "properties": {
         "format_version": {
+          "type": "integer",
           "const": 2,
           "description": "Version of the RUM event format"
         }
