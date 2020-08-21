@@ -39,7 +39,7 @@
             "loading_type": {
               "type": "string",
               "description": "Type of the loading of the view",
-              "enum": ["initial_load", "route_change", "activity_display", "activity_redisplay", "fragment_display", "fragment_redisplay"]
+              "enum": ["initial_load", "route_change", "activity_display", "activity_redisplay", "fragment_display", "fragment_redisplay", "view_controller_display", "view_controller_redisplay"]
             },
             "time_spent": {
               "type": "integer",
