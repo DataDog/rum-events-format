@@ -27,6 +27,11 @@
             "duration"
           ],
           "properties": {
+            "id": {
+              "type": "string",
+              "description": "UUID of the resource",
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
+            },
             "type": {
               "type": "string",
               "description": "Resource type",
@@ -196,11 +201,6 @@
           "type": "object",
           "description": "Internal properties",
           "properties": {
-            "resource_id": {
-              "type": "string",
-              "description": "UUID of the resource",
-              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
-            },
             "span_id": {
               "type": "string",
               "description": "span identifier in decimal format",
