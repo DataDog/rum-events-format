@@ -14,6 +14,7 @@
     "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
   },
   "resource": {
+    "id": "b83a5d82-cdd1-468d-9bc9-3aa9e54d957a",
     "type": "xhr",
     "method": "POST",
     "url": "https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum",
@@ -33,7 +34,9 @@
     "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
   },
   "_dd": {
-    "format_version": 2
+    "format_version": 2,
+    "span_id": "12345",
+    "trace_id": "7890"
   }
 }
 
