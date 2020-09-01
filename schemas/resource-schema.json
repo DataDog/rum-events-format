@@ -191,6 +191,27 @@
               "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
             }
           }
+        },
+        "_dd": {
+          "type": "object",
+          "description": "Internal properties",
+          "properties": {
+            "resource_id": {
+              "type": "string",
+              "description": "UUID of the resource",
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
+            },
+            "span_id": {
+              "type": "string",
+              "description": "span identifier in decimal format",
+              "pattern": "^[0-9]+$"
+            },
+            "trace_id": {
+              "type": "string",
+              "description": "trace identifier in decimal format",
+              "pattern": "^[0-9]+$"
+            }
+          }
         }
       }
     }

@@ -33,7 +33,10 @@
     "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
   },
   "_dd": {
-    "format_version": 2
+    "format_version": 2,
+    "resource_id": "b83a5d82-cdd1-468d-9bc9-3aa9e54d957a",
+    "span_id": "12345",
+    "trace_id": "7890"
   }
 }
 
