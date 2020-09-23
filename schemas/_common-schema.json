@@ -30,6 +30,10 @@
         }
       }
     },
+		"service": {
+			"type": "string",
+			"description": "The service name for this application"
+		},
     "session": {
       "type": "object",
       "description": "Session properties",
