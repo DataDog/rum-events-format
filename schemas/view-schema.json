@@ -51,6 +51,21 @@
               "description": "Duration in ns to the first rendering",
               "minimum": 0
             },
+            "largest_contentful_paint": {
+              "type": "integer",
+              "description": "Duration in ns to the largest contentful paint",
+              "minimum": 0
+            },
+            "first_input_delay": {
+              "type": "integer",
+              "description": "Duration in ns of the first input event delay",
+              "minimum": 0
+            },
+            "cumulative_layout_shift": {
+              "type": "number",
+              "description": "Total layout shift score that occured on the view",
+              "minimum": 0
+            },
             "dom_complete": {
               "type": "integer",
               "description": "Duration in ns to the complete parsing and loading of the document and its sub resources",
