@@ -40,11 +40,6 @@
               "description": "Duration in ns to the action is considered loaded",
               "minimum": 0
             },
-            "cumulative_layout_shift": {
-              "type": "number",
-              "description": "Total layout shift score that occured on the action",
-              "minimum": 0
-            },
             "target": {
               "type": "object",
               "description": "Action target properties",
