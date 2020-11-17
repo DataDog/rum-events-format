@@ -65,6 +65,25 @@
                 "url": {
                   "type": "string",
                   "description": "URL of the resource"
+                },
+                "provider": {
+                  "type": "object",
+                  "description": "The provider for this resource",
+                  "properties": {
+                    "domain": {
+                      "type": "string",
+                      "description": "The domain name of the provider"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "The user friendly name of the provider"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "The type of provider",
+                      "enum": ["ad", "advertising", "analytics", "cdn", "content", "customer-success", "first party", "hosting", "marketing", "other", "social", "tag-manager", "utility", "video"]
+                    }
+                  }
                 }
               }
             }
