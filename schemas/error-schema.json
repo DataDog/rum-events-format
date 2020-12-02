@@ -30,7 +30,7 @@
             "message": {
               "type": "string",
               "description": "Error message",
-              "readOnly": true
+              "readOnly": false
             },
             "source": {
               "type": "string",
@@ -41,7 +41,7 @@
             "stack": {
               "type": "string",
               "description": "Stacktrace of the error",
-              "readOnly": true
+              "readOnly": false
             },
             "is_crash": {
               "type": "boolean",
@@ -72,7 +72,7 @@
                 "url": {
                   "type": "string",
                   "description": "URL of the resource",
-                  "readOnly": true
+                  "readOnly": false
                 },
                 "provider": {
                   "type": "object",

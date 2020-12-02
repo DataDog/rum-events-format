@@ -49,7 +49,7 @@
             "url": {
               "type": "string",
               "description": "URL of the resource",
-              "readOnly": true
+              "readOnly": false
             },
             "status_code": {
               "type": "integer",

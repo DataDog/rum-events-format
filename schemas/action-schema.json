@@ -54,7 +54,7 @@
                 "name": {
                   "type": "string",
                   "description": "Target name",
-                  "readOnly": true
+                  "readOnly": false
                 }
               },
               "readOnly": true

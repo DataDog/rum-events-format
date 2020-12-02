@@ -78,12 +78,12 @@
         "referrer": {
           "type": "string",
           "description": "URL that linked to the initial view of the page",
-          "readOnly": true
+          "readOnly": false
         },
         "url": {
           "type": "string",
           "description": "URL of the view",
-          "readOnly": true
+          "readOnly": false
         }
       },
       "readOnly": true
