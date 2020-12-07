@@ -98,6 +98,10 @@
               "minimum": 0,
               "readOnly": true
             },
+            "is_active": {
+              "type": "boolean",
+              "description": "Whether the View corresponding to this event is considered active"
+            },
             "action": {
               "type": "object",
               "description": "Properties of the actions of the view",
