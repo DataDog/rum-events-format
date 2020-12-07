@@ -100,7 +100,8 @@
             },
             "is_active": {
               "type": "boolean",
-              "description": "Whether the View corresponding to this event is considered active"
+              "description": "Whether the View corresponding to this event is considered active",
+              "readOnly": true
             },
             "action": {
               "type": "object",
