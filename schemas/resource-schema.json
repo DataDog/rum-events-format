@@ -224,7 +224,7 @@
                 "type": {
                   "type": "string",
                   "description": "The type of provider",
-                  "enum": ["ad", "advertising", "analytics", "cdn", "content", "customer-success", "first party", "hosting", "marketing", "other", "social", "tag-manager", "utility", "video"],
+                  "enum": ["ad", "advertising", "analytics", "cdn", "content", "customer-success", "first party", "hosting", "marketing", "other", "social", "tag-manager", "unknown", "utility", "video"],
                   "readOnly": true
                 }
               },
