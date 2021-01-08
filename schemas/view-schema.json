@@ -105,6 +105,16 @@
               "minimum": 0,
               "readOnly": true
             },
+            "custom_timings": {
+              "type": "object",
+              "description": "User custom timings of the view",
+              "additionalProperties": {
+                "type": "integer",
+                "minimum": 0,
+                "readOnly": true
+              },
+              "readOnly": true
+            },
             "is_active": {
               "type": "boolean",
               "description": "Whether the View corresponding to this event is considered active",

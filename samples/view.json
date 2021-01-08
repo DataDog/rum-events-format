@@ -20,6 +20,9 @@
     "dom_content_loaded": 951715000,
     "dom_interactive": 906695000,
     "load_event": 2154370000,
+    "custom_timings": {
+      "user-timing": 2154570000
+    },
     "action": {
       "count": 0
     },
