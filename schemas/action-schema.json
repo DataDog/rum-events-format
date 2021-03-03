@@ -56,6 +56,27 @@
                   "type": "string",
                   "description": "Target name",
                   "readOnly": false
+                },
+                "classname": {
+                  "type": "string",
+                  "description": "Target class name",
+                  "readOnly": false
+                },
+                "parent": {
+                  "type": "object",
+                  "description": "Parent element of the target",
+                  "properties": {
+                    "classname": {
+                      "type": "string",
+                      "description": "Class name of the parent element",
+                      "readOnly": false
+                    }
+                  }
+                },
+                "resource_id": {
+                  "type": "string",
+                  "description": "identifier for the target resource",
+                  "readOnly": true
                 }
               },
               "readOnly": true
