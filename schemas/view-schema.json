@@ -199,6 +199,39 @@
                 }
               },
               "readOnly": true
+            },
+            "focused_times": {
+              "type": "array",
+              "description": "List of the time the user had the document focused for browser",
+              "items": {
+                "type": "object",
+                "description": "Properties of the focused times of the view",
+                "required": [
+                  "duration",
+                  "start"
+                ],
+                "properties": {
+                  "start": {
+                    "type": "integer",
+                    "description": "Timestamp when the user gain focus of the document",
+                    "minimum": 0,
+                    "readOnly": true
+                  },
+                  "duration": {
+                    "type": "integer",
+                    "description": "duration in ns when the user gain focus of the document",
+                    "minimum": 0,
+                    "readOnly": true
+                  },
+                  "currently_focused": {
+                    "type": "boolean",
+                    "description": "Flag to indicate if the user still has the focus",
+                    "readOnly": true
+                  }
+                },
+                "readOnly": true
+              },
+              "readOnly": true
             }
           },
           "readOnly": true

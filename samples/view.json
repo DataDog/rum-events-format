@@ -34,7 +34,11 @@
     },
     "resource": {
       "count": 9
-    }
+    },
+    "focused_times": [
+      {"start": 1345678, "duration": 67},
+      {"start": 1645678, "duration": 67, "currently_focused": true}
+    ]
   },
   "_dd": {
     "document_version": 9,
