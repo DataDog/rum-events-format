@@ -19,6 +19,9 @@
     },
     {
       "$ref": "schemas/view-schema.json"
+    },
+    {
+      "$ref": "schemas/focus-schema.json"
     }
   ]
 }

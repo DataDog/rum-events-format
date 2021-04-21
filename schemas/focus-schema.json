@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "focus-schema.json",
+  "title": "RumFocusEvent",
+  "type": "object",
+  "description": "Schema of all properties of a Focus event",
+  "allOf": [
+    {
+      "$ref": "_common-schema.json"
+    },
+    {
+      "required": ["type", "focus", "_dd"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "RUM event type",
+          "const": "focus",
+          "readOnly": true
+        },
+        "focus": {
+          "type": "object",
+          "description": "Focus property",
+          "required": ["duration"],
+          "properties": {
+            "duration": {
+              "type": "integer",
+              "description": "duration in ns when the user gain focus of the document",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "is_active": {
+              "type": "boolean",
+              "description": "Flag to indicate if the user still has the focus",
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        },
+        "_dd": {
+          "type": "object",
+          "description": "Internal properties",
+          "required": ["document_version"],
+          "properties": {
+            "document_version": {
+              "type": "integer",
+              "description": "Version of the update of the focus event",
+              "minimum": 0,
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        }
+      }
+    }
+  ]
+}
