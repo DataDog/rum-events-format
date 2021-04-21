@@ -99,6 +99,21 @@
       },
       "readOnly": true
     },
+    "focus": {
+      "type": "object",
+      "description": "Focius properties",
+      "required": [
+        "has_focus"
+      ],
+      "properties": {
+        "has_focus": {
+          "type": "boolean",
+          "description": "Is the user focusing the document",
+          "readOnly": false
+        }
+      },
+      "readOnly": true
+    },
     "usr": {
       "type": "object",
       "description": "User properties",
