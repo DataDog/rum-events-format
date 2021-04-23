@@ -194,7 +194,14 @@
                 }
               },
               "readOnly": true
-            },
+            }
+          },
+          "readOnly": true
+        },
+        "focus": {
+          "type": "object",
+          "description": "Focus properties",
+          "properties": {
             "focused_times": {
               "type": "array",
               "description": "List of the time the user had the document focused for browser",
