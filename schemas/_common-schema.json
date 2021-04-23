@@ -4,13 +4,7 @@
   "title": "CommonProperties",
   "type": "object",
   "description": "Schema of common properties of RUM events",
-  "required": [
-    "date",
-    "application",
-    "session",
-    "view",
-    "_dd"
-  ],
+  "required": ["date", "application", "session", "view", "_dd"],
   "properties": {
     "date": {
       "type": "integer",
@@ -21,9 +15,7 @@
     "application": {
       "type": "object",
       "description": "Application properties",
-      "required": [
-        "id"
-      ],
+      "required": ["id"],
       "properties": {
         "id": {
           "type": "string",
@@ -42,10 +34,7 @@
     "session": {
       "type": "object",
       "description": "Session properties",
-      "required": [
-        "id",
-        "type"
-      ],
+      "required": ["id", "type"],
       "properties": {
         "id": {
           "type": "string",
@@ -70,10 +59,7 @@
     "view": {
       "type": "object",
       "description": "View properties",
-      "required": [
-        "id",
-        "url"
-      ],
+      "required": ["id", "url"],
       "properties": {
         "id": {
           "type": "string",
@@ -102,13 +88,11 @@
     "focus": {
       "type": "object",
       "description": "Focus properties",
-      "required": [
-        "has_focus"
-      ],
+      "required": ["start_focused"],
       "properties": {
-        "has_focus": {
+        "start_focused": {
           "type": "boolean",
-          "description": "Is the user focusing the document",
+          "description": "Is the user focusing the document at the start of the event",
           "readOnly": false
         }
       },
@@ -139,10 +123,7 @@
     "connectivity": {
       "type": "object",
       "description": "Device connectivity properties",
-      "required": [
-        "status",
-        "interfaces"
-      ],
+      "required": ["status", "interfaces"],
       "properties": {
         "status": {
           "type": "string",
@@ -155,7 +136,17 @@
           "description": "The list of available network interfaces",
           "items": {
             "type": "string",
-            "enum": ["bluetooth", "cellular", "ethernet", "wifi", "wimax", "mixed", "other", "unknown", "none"]
+            "enum": [
+              "bluetooth",
+              "cellular",
+              "ethernet",
+              "wifi",
+              "wimax",
+              "mixed",
+              "other",
+              "unknown",
+              "none"
+            ]
           },
           "readOnly": true
         },
@@ -181,9 +172,7 @@
     "_dd": {
       "type": "object",
       "description": "Internal properties",
-      "required": [
-        "format_version"
-      ],
+      "required": ["format_version"],
       "properties": {
         "format_version": {
           "type": "integer",
