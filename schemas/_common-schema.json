@@ -101,7 +101,7 @@
     },
     "focus": {
       "type": "object",
-      "description": "Focius properties",
+      "description": "Focus properties",
       "required": [
         "has_focus"
       ],
