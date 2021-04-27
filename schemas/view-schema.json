@@ -9,11 +9,7 @@
       "$ref": "_common-schema.json"
     },
     {
-      "required": [
-        "type",
-        "view",
-        "_dd"
-      ],
+      "required": ["type", "view", "_dd"],
       "properties": {
         "type": {
           "type": "string",
@@ -42,7 +38,16 @@
             "loading_type": {
               "type": "string",
               "description": "Type of the loading of the view",
-              "enum": ["initial_load", "route_change", "activity_display", "activity_redisplay", "fragment_display", "fragment_redisplay", "view_controller_display", "view_controller_redisplay"],
+              "enum": [
+                "initial_load",
+                "route_change",
+                "activity_display",
+                "activity_redisplay",
+                "fragment_display",
+                "fragment_redisplay",
+                "view_controller_display",
+                "view_controller_redisplay"
+              ],
               "readOnly": true
             },
             "time_spent": {
@@ -123,9 +128,7 @@
             "action": {
               "type": "object",
               "description": "Properties of the actions of the view",
-              "required": [
-                "count"
-              ],
+              "required": ["count"],
               "properties": {
                 "count": {
                   "type": "integer",
@@ -139,9 +142,7 @@
             "error": {
               "type": "object",
               "description": "Properties of the errors of the view",
-              "required": [
-                "count"
-              ],
+              "required": ["count"],
               "properties": {
                 "count": {
                   "type": "integer",
@@ -155,9 +156,7 @@
             "crash": {
               "type": "object",
               "description": "Properties of the crashes of the view",
-              "required": [
-                "count"
-              ],
+              "required": ["count"],
               "properties": {
                 "count": {
                   "type": "integer",
@@ -171,9 +170,7 @@
             "long_task": {
               "type": "object",
               "description": "Properties of the long tasks of the view",
-              "required": [
-                "count"
-              ],
+              "required": ["count"],
               "properties": {
                 "count": {
                   "type": "integer",
@@ -187,9 +184,7 @@
             "resource": {
               "type": "object",
               "description": "Properties of the resources of the view",
-              "required": [
-                "count"
-              ],
+              "required": ["count"],
               "properties": {
                 "count": {
                   "type": "integer",
@@ -203,12 +198,47 @@
           },
           "readOnly": true
         },
+        "focus": {
+          "type": "object",
+          "description": "Focus properties",
+          "properties": {
+            "focused_times": {
+              "type": "array",
+              "description": "List of the time the user had the document focused for browser",
+              "items": {
+                "type": "object",
+                "description": "Properties of the focused times of the view",
+                "required": ["duration", "start"],
+                "properties": {
+                  "start": {
+                    "type": "integer",
+                    "description": "Timestamp when the user gain focus of the document",
+                    "minimum": 0,
+                    "readOnly": true
+                  },
+                  "duration": {
+                    "type": "integer",
+                    "description": "duration in ns when the user gain focus of the document",
+                    "minimum": 0,
+                    "readOnly": true
+                  },
+                  "currently_focused": {
+                    "type": "boolean",
+                    "description": "Flag to indicate if the user still has the focus",
+                    "readOnly": true
+                  }
+                },
+                "readOnly": true
+              },
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        },
         "_dd": {
           "type": "object",
           "description": "Internal properties",
-          "required": [
-            "document_version"
-          ],
+          "required": ["document_version"],
           "properties": {
             "document_version": {
               "type": "integer",
