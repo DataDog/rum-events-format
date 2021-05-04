@@ -81,19 +81,11 @@
           "type": "string",
           "description": "User defined name of the view",
           "readOnly": false
-        }
-      },
-      "readOnly": true
-    },
-    "focus": {
-      "type": "object",
-      "description": "Focus properties",
-      "required": ["start_focused"],
-      "properties": {
-        "start_focused": {
+        },
+        "in_foreground": {
           "type": "boolean",
-          "description": "Is the user focusing the document at the start of the event",
-          "readOnly": false
+          "description": "Is the event starting in the foreground (focus in browser)",
+          "readOnly": true
         }
       },
       "readOnly": true

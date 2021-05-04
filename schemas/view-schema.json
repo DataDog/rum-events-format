@@ -194,37 +194,25 @@
                 }
               },
               "readOnly": true
-            }
-          },
-          "readOnly": true
-        },
-        "focus": {
-          "type": "object",
-          "description": "Focus properties",
-          "properties": {
-            "focused_times": {
+            },
+            "in_foreground_times": {
               "type": "array",
-              "description": "List of the time the user had the document focused for browser",
+              "description": "List of the period the user had the view in foreground (focused in the browser)",
               "items": {
                 "type": "object",
-                "description": "Properties of the focused times of the view",
+                "description": "Properties of the foreground period of the view",
                 "required": ["duration", "start"],
                 "properties": {
                   "start": {
                     "type": "integer",
-                    "description": "Timestamp when the user gain focus of the document",
+                    "description": "Relative time in ns when in foreground from the view start",
                     "minimum": 0,
                     "readOnly": true
                   },
                   "duration": {
                     "type": "integer",
-                    "description": "duration in ns when the user gain focus of the document",
+                    "description": "Duration in ns when in foreground",
                     "minimum": 0,
-                    "readOnly": true
-                  },
-                  "currently_focused": {
-                    "type": "boolean",
-                    "description": "Flag to indicate if the user still has the focus",
                     "readOnly": true
                   }
                 },

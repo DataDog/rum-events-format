@@ -8,13 +8,6 @@
     "id": "cacbf45c-3a05-48ce-b066-d76349460599",
     "type": "user"
   },
-  "focus": {
-    "start_focused": true,
-    "focused_times": [
-      {"start": 1345678, "duration": 67},
-      {"start": 1645678, "duration": 67, "currently_focused": true}
-    ]
-  },
   "view": {
     "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
     "referrer": "",
@@ -41,7 +34,12 @@
     },
     "resource": {
       "count": 9
-    }
+    },
+    "in_foreground": true,
+    "in_foreground_times": [
+      {"start": 1345678, "duration": 67},
+      {"start": 1645678, "duration": 67}
+    ]
   },
   "_dd": {
     "document_version": 9,

@@ -11,10 +11,8 @@
   "view": {
     "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
     "referrer": "",
-    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
-  },
-  "focus": {
-    "start_focused": true
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view",
+    "in_foreground": true
   },
   "error": {
     "message": "XHR error POST https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum",
