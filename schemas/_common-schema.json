@@ -81,11 +81,6 @@
           "type": "string",
           "description": "User defined name of the view",
           "readOnly": false
-        },
-        "in_foreground": {
-          "type": "boolean",
-          "description": "Is the event starting in the foreground (focus in browser)",
-          "readOnly": true
         }
       },
       "readOnly": true
