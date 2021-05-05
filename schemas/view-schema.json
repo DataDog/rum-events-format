@@ -195,9 +195,9 @@
               },
               "readOnly": true
             },
-            "in_foreground_times": {
+            "in_foreground_periods": {
               "type": "array",
-              "description": "List of the period the user had the view in foreground (focused in the browser)",
+              "description": "List of the periods of time the user had the view in foreground (focused in the browser)",
               "items": {
                 "type": "object",
                 "description": "Properties of the foreground period of the view",
@@ -205,13 +205,13 @@
                 "properties": {
                   "start": {
                     "type": "integer",
-                    "description": "Relative time in ns when in foreground from the view start",
+                    "description": "Duration in ns between start of the view and start of foreground",
                     "minimum": 0,
                     "readOnly": true
                   },
                   "duration": {
                     "type": "integer",
-                    "description": "Duration in ns when in foreground",
+                    "description": "Duration in ns when the event is in foreground",
                     "minimum": 0,
                     "readOnly": true
                   }

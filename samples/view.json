@@ -35,8 +35,7 @@
     "resource": {
       "count": 9
     },
-    "in_foreground": true,
-    "in_foreground_times": [
+    "in_foreground_periods": [
       {"start": 1345678, "duration": 67},
       {"start": 1645678, "duration": 67}
     ]
