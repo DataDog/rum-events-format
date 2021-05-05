@@ -182,6 +182,10 @@
         }
       },
       "readOnly": true
+    },
+    "context": {
+      "type": "object",
+      "description": "User provided context"
     }
   }
 }
