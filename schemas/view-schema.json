@@ -205,13 +205,13 @@
                 "properties": {
                   "start": {
                     "type": "integer",
-                    "description": "Duration in ns between start of the view and start of foreground",
+                    "description": "Duration in ns between start of the view and start of foreground period",
                     "minimum": 0,
                     "readOnly": true
                   },
                   "duration": {
                     "type": "integer",
-                    "description": "Duration in ns when the event is in foreground",
+                    "description": "Duration in ns of the view foreground period",
                     "minimum": 0,
                     "readOnly": true
                   }
