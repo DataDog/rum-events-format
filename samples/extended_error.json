@@ -26,7 +26,8 @@
   "usr": {
     "id": "4815162342",
     "name": "John Doe",
-    "email": "john@doe.com"
+    "email": "john@doe.com",
+    "org_id": 123
   },
   "connectivity": {
     "status": "connected",
