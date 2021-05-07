@@ -124,6 +124,19 @@
             }
           },
           "readOnly": true
+        },
+        "view": {
+          "type": "object",
+          "description": "View properties",
+          "required": [],
+          "properties": {
+            "in_foreground": {
+              "type": "boolean",
+              "description": "Is the error starting in the foreground (focus in browser)",
+              "readOnly": true
+            }
+          },
+          "readOnly": true
         }
       }
     }
