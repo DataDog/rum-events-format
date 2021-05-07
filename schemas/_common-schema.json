@@ -101,6 +101,7 @@
     "usr": {
       "type": "object",
       "description": "User properties",
+      "additionalProperties": true,
       "properties": {
         "id": {
           "type": "string",
@@ -182,6 +183,11 @@
         }
       },
       "readOnly": true
+    },
+    "context": {
+      "type": "object",
+      "description": "User provided context",
+      "additionalProperties": true
     }
   }
 }
