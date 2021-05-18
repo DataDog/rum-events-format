@@ -28,6 +28,12 @@
             "source"
           ],
           "properties": {
+            "id": {
+              "type": "string",
+              "description": "UUID of the error",
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "readOnly": true
+            },
             "message": {
               "type": "string",
               "description": "Error message",
