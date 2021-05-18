@@ -15,6 +15,7 @@
     "in_foreground": true
   },
   "error": {
+    "id": "c9ecb486-2200-4b5d-9d53-040030c3765c",
     "message": "XHR error POST https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum",
     "source": "network",
     "stack": "Failed to load",
