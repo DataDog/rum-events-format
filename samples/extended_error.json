@@ -14,6 +14,7 @@
     "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
   },
   "error": {
+    "id": "b83a5d82-cdd1-468d-9bc9-3aa9e54d957a",
     "message": "XHR error POST https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum",
     "source": "network",
     "stack": "Failed to load",
