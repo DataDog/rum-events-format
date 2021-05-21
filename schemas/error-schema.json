@@ -24,6 +24,7 @@
           "type": "object",
           "description": "Error properties",
           "required": [
+            "id",
             "message",
             "source"
           ],
