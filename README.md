@@ -7,7 +7,6 @@ JSON schema of RUM events send by SDKs
 The format must stay backward compatible in order to be able to validate old events, so:
 
 - New fields must not be set as required
-- Fields removed from events must be kept in the format and be marked as optional
 - Fields definition must not be updated, new fields must be created instead
 
 Breaking changes to the format must be reflected by a major version update in `_dd.format_version` property.
