@@ -24,8 +24,7 @@
           "type": "object",
           "description": "Action properties",
           "required": [
-            "type",
-            "id"
+            "type"
           ],
           "properties": {
             "type": {
