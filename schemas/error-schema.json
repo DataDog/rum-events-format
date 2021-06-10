@@ -60,10 +60,9 @@
               "description": "The type of the error",
               "readOnly": true
             },
-            "handling": {
-              "type": "string",
+            "is_handled": {
+              "type": "boolean",
               "description": "Whether the error has been handled manually in the source code or not",
-              "enum": ["caught", "uncaught"],
               "readOnly": true
             },
             "resource": {

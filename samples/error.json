@@ -19,7 +19,7 @@
     "message": "XHR error POST https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum",
     "source": "network",
     "stack": "Failed to load",
-    "handling": "uncaught",
+    "is_handled": false,
     "resource": {
       "method": "POST",
       "status_code": 0,
