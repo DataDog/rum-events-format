@@ -20,6 +20,7 @@
     "source": "network",
     "stack": "Failed to load",
     "handling": "unhandled",
+    "handling_stack": "Failed to load",
     "resource": {
       "method": "POST",
       "status_code": 0,

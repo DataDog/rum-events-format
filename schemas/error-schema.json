@@ -66,6 +66,11 @@
               "enum": ["handled", "unhandled"],
               "readOnly": true
             },
+            "handling_stack": {
+              "type": "string",
+              "description": "Handling call stack",
+              "readOnly": true
+            },
             "resource": {
               "type": "object",
               "description": "Resource properties of the error",
