@@ -68,7 +68,7 @@
             },
             "handling_stack": {
               "type": "string",
-              "description": "Stacktrace of all instrumentation calls",
+              "description": "Handling call stack",
               "readOnly": true
             },
             "resource": {
