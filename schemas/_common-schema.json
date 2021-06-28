@@ -171,6 +171,7 @@
         "session": {
           "type": "object",
           "description": "Session-related internal properties",
+          "required": ["plan"],
           "properties": {
             "plan": {
               "type": "number",
