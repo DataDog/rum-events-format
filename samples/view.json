@@ -42,7 +42,10 @@
   },
   "_dd": {
     "document_version": 9,
-    "format_version": 2
+    "format_version": 2,
+    "session": {
+      "plan": 1
+    }
   },
   "context": {
     "foo": "bar"

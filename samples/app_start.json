@@ -24,6 +24,9 @@
     }
   },
   "_dd": {
-    "format_version": 2
+    "format_version": 2,
+    "session": {
+      "plan": 2
+    }
   }
 }
