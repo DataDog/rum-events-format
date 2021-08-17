@@ -47,6 +47,10 @@
       "plan": 1
     }
   },
+  "synthetics": {
+    "test_id": "foo",
+    "result_id": "bar"
+  },
   "context": {
     "foo": "bar"
   }
