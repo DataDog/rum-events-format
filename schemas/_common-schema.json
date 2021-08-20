@@ -171,9 +171,9 @@
           "type": "string",
           "description": "The identifier of the current Synthetics test results",
           "readOnly": true
-        },
-        "readOnly": true
-      }
+        }
+      },
+      "readOnly": true
     },
     "_dd": {
       "type": "object",
