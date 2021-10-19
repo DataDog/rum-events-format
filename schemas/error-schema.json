@@ -74,6 +74,7 @@
             "source_type": {
               "type": "string",
               "description": "Source type of the error (the language or platform impacting the error stacktrace format)",
+              "enum": ["android", "browser", "ios", "react-native"],
               "readOnly": true
             },
             "resource": {
