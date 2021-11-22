@@ -202,6 +202,11 @@
               "enum": [1, 2]
             }
           }
+        },
+        "browser_sdk_version": {
+          "type": "string",
+          "description": "Browser SDK version",
+          "readOnly": true
         }
       },
       "readOnly": true
