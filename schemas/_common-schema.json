@@ -171,6 +171,11 @@
           "type": "string",
           "description": "The identifier of the current Synthetics test results",
           "readOnly": true
+        },
+        "injected": {
+          "type": "boolean",
+          "description": "Whether the event comes from a SDK instance injected by Synthetics",
+          "readOnly": true
         }
       },
       "readOnly": true
