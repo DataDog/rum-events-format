@@ -180,6 +180,19 @@
       },
       "readOnly": true
     },
+    "ci_visibility": {
+      "type": "object",
+      "description": "CI Visibility properties",
+      "required": ["test_execution_id"],
+      "properties": {
+        "test_execution_id": {
+          "type": "string",
+          "description": "The identifier of the current CI Visibility test execution",
+          "readOnly": true
+        }
+      },
+      "readOnly": true
+    },
     "_dd": {
       "type": "object",
       "description": "Internal properties",
