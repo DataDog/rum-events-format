@@ -180,7 +180,7 @@
       },
       "readOnly": true
     },
-    "ci_visibility": {
+    "ci_test": {
       "type": "object",
       "description": "CI Visibility properties",
       "required": ["test_execution_id"],
