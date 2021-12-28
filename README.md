@@ -26,3 +26,13 @@ Prerequisite:
 Run a validation:
 
     ./validate.sh
+
+### Lint JSON files
+
+Prerequisite:
+
+    npm install -g jsonlint
+
+Lint:
+
+    ./lint.sh
