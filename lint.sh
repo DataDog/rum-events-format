@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+shopt -s globstar
 
 line='----------------------------------------'
 
-for file in `ls *.json && ls */*.json`; do
+for file in **/*.json; do
   printf "Linting %s %s " "$file" "${line:${#file}}"
   result=$(jsonlint "$file" 2>&1)
   status=$?
