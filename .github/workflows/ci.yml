@@ -1,0 +1,30 @@
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: install jsonlint
+        run: npm install -g jsonlint
+
+      - name: lint json files
+        run: ./lint.sh
+
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install jsonschema
+        run: pip install jsonschema
+
+      - name: validate schemas
+        run: ./validate.sh
