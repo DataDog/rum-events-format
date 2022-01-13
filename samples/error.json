@@ -8,6 +8,7 @@
     "id": "cacbf45c-3a05-48ce-b066-d76349460599",
     "type": "user"
   },
+  "source": "browser",
   "view": {
     "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
     "referrer": "",
