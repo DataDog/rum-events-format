@@ -7,6 +7,9 @@
   "oneOf": [
     {
       "$ref": "telemetry/error-schema.json"
+    },
+    {
+      "$ref": "telemetry/debug-schema.json"
     }
   ]
 }
