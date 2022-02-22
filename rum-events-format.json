@@ -7,6 +7,9 @@
   "oneOf": [
     {
       "$ref": "schemas/rum-events-schema.json"
+    },
+    {
+      "$ref": "schemas/telemetry-events-schema.json"
     }
   ]
 }
