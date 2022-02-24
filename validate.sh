@@ -2,7 +2,7 @@
 
 line='----------------------------------------'
 
-for sample in samples/*.json; do
+for sample in samples/*/*.json; do
   printf "Validating %s %s " "$sample" "${line:${#sample}}"
   result=$(python validate.py "$sample" rum-events-format.json 2>&1)
   status=$?
