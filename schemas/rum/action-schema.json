@@ -60,6 +60,15 @@
               },
               "readOnly": true
             },
+            "frustration_type": {
+              "type": "array",
+              "description": "Action frustration types",
+              "readOnly": true,
+              "items": {
+                "type": "string",
+                "enum": ["rage", "dead", "error"]
+              }
+            },
             "error": {
               "type": "object",
               "description": "Properties of the errors of the action",
