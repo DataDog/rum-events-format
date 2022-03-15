@@ -9,6 +9,9 @@
       "$ref": "_common-schema.json"
     },
     {
+      "$ref": "_action-child-schema.json"
+    },
+    {
       "required": [
         "type",
         "long_task"
@@ -42,22 +45,6 @@
             "is_frozen_frame": {
               "type": "boolean",
               "description": "Whether this long task is considered a frozen frame",
-              "readOnly": true
-            }
-          },
-          "readOnly": true
-        },
-        "action": {
-          "type": "object",
-          "description": "Action properties",
-          "required": [
-            "id"
-          ],
-          "properties": {
-            "id": {
-              "type": "string",
-              "description": "UUID of the action",
-              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
               "readOnly": true
             }
           },
