@@ -29,7 +29,8 @@
     },
     "resource": {
       "count": 1
-    }
+    },
+    "frustration_type": ["rage"]
   },
   "_dd": {
     "format_version": 2,
