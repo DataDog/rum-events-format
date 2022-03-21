@@ -1,16 +1,12 @@
 {
   "_dd": {
-    "event_type": "internal_telemetry"
+    "format_version": 2
   },
+  "type": "telemetry",
   "date": 1591284175342,
   "service": "sample-sdk",
+  "source": "browser",
   "version": "1.2.3",
-  "status": "error",
-  "message": "XHR error POST https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum",
-  "error": {
-    "stack": "Failed to load",
-    "kind": "TypeError"
-  },
   "application": {
     "id": "ac8218cf-498b-4d33-bd44-151095959547"
   },
@@ -22,5 +18,13 @@
   },
   "action": {
     "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
+  },
+  "telemetry": {
+    "status": "error",
+    "message": "XHR error POST https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum",
+    "error": {
+      "stack": "Failed to load",
+      "kind": "TypeError"
+    }
   }
 }
