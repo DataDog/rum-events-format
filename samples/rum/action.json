@@ -30,7 +30,9 @@
     "resource": {
       "count": 1
     },
-    "frustration_type": ["rage"]
+    "frustration": {
+      "type": ["rage"]
+    }
   },
   "_dd": {
     "format_version": 2,
