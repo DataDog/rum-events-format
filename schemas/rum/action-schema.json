@@ -60,14 +60,24 @@
               },
               "readOnly": true
             },
-            "frustration_type": {
-              "type": "array",
-              "description": "Action frustration types",
-              "readOnly": true,
-              "items": {
-                "type": "string",
-                "enum": ["rage", "dead", "error"]
-              }
+            "frustration": {
+              "type": "object",
+              "description": "Action frustration properties",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "type": "array",
+                  "description": "Action frustration types",
+                  "readOnly": true,
+                  "items": {
+                    "type": "string",
+                    "enum": ["rage", "dead", "error"]
+                  }
+                }
+              },
+              "readOnly": true
             },
             "error": {
               "type": "object",
