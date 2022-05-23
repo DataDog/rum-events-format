@@ -73,7 +73,7 @@
                   "readOnly": true,
                   "items": {
                     "type": "string",
-                    "enum": ["rage", "dead", "error"]
+                    "enum": ["rage_click", "dead_click", "error_click"]
                   }
                 }
               },
