@@ -57,5 +57,16 @@
   },
   "context": {
     "foo": "bar"
+  },
+  "device": {
+    "type": "tablet",
+    "name": "iPad",
+    "model": "iPad",
+    "brand": "Apple"
+  },
+  "os": {
+    "name": "iOS",
+    "version": "15.1.1",
+    "version_major": "15"
   }
 }
