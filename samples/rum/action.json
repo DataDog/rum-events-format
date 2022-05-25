@@ -19,7 +19,14 @@
     "id": "47af0abb-3de1-4170-a491-4473716df979",
     "loading_time": 566250000,
     "target": {
-      "name": "Options"
+      "name": "Options",
+      "selector": "#options",
+      "width": 10,
+      "height": 10
+    },
+    "position": {
+      "x": 5,
+      "y": 5
     },
     "error": {
       "count": 0

@@ -56,6 +56,21 @@
                   "type": "string",
                   "description": "Target name",
                   "readOnly": false
+                },
+                "selector": {
+                  "type": "string",
+                  "description": "CSS selector path of the target element",
+                  "readOnly": true
+                },
+                "width": {
+                  "type": "integer",
+                  "description": "Width of the target element (in pixels)",
+                  "readOnly": true
+                },
+                "height": {
+                  "type": "integer",
+                  "description": "Height of the target element (in pixels)",
+                  "readOnly": true
                 }
               },
               "readOnly": true
@@ -75,6 +90,24 @@
                     "type": "string",
                     "enum": ["rage_click", "dead_click", "error_click"]
                   }
+                }
+              },
+              "readOnly": true
+            },
+            "position": {
+              "type": "object",
+              "description": "Action position properties",
+              "required": ["x", "y"],
+              "properties": {
+                "x": {
+                  "type": "integer",
+                  "description": "X coordinate of the action (in pixels)",
+                  "readOnly": true
+                },
+                "y": {
+                  "type": "integer",
+                  "description": "Y coordinate of the action (in pixels)",
+                  "readOnly": true
                 }
               },
               "readOnly": true
