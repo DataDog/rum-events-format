@@ -101,12 +101,12 @@
               "properties": {
                 "x": {
                   "type": "integer",
-                  "description": "X coordinate of the action (in pixels)",
+                  "description": "X coordinate relative to the target element of the action (in pixels)",
                   "readOnly": true
                 },
                 "y": {
                   "type": "integer",
-                  "description": "Y coordinate of the action (in pixels)",
+                  "description": "Y coordinate relative to the target element of the action (in pixels)",
                   "readOnly": true
                 }
               },
