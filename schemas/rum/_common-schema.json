@@ -168,6 +168,30 @@
         }
       }
     },
+    "display": {
+      "type": "object",
+      "description": "Display properties",
+      "properties": {
+        "viewport": {
+          "type": "object",
+          "description": "Layout viewport properties",
+          "required": ["width", "height"],
+          "properties": {
+            "width": {
+              "type": "number",
+              "description": "Width of the layout viewport (in pixels)",
+              "readOnly": true
+            },
+            "height": {
+              "type": "number",
+              "description": "Height of the layout viewport (in pixels)",
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        }
+      }
+    },
     "synthetics": {
       "type": "object",
       "description": "Synthetics properties",
