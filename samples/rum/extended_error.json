@@ -39,6 +39,12 @@
       "carrier_name": "AT&T"
     }
   },
+  "display": {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
   "action": {
     "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
   },
