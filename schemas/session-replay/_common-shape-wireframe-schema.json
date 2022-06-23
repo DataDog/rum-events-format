@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "_common-shape-wireframe-schema.json",
+  "title": "CommonShapeWireframe",
+  "type": "object",
+  "description": "Schema of common properties for ShapeWireframe events type and all its sub - types.",
+  "allOf": [
+    {
+      "$ref": "_common-wireframe-schema.json"
+    },
+    {
+      "required": [
+        "opacity",
+        "cornerRadius"
+      ],
+      "properties": {
+        "opacity": {
+          "type": "number",
+          "description": "The opacity of this wireframe. Takes values from 0 to 1.",
+          "default": 1,
+          "readOnly": true
+        },
+        "cornerRadius": {
+          "type": "number",
+          "description": "The corner radius of this wireframe.",
+          "default": 0,
+          "readOnly": true
+        },
+        "shapeStyle": {
+          "required": [
+            "fillColor"
+          ],
+          "type": "object",
+          "description": "The style of this wireframe.",
+          "properties": {
+            "fillColor": {
+              "type": "string",
+              "description": "The filling color for this wireframe.",
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        },
+        "stroke": {
+          "type": "object",
+          "description": "The stroke properties of this wireframe.",
+          "required": [
+            "color",
+            "width"
+          ],
+          "properties": {
+            "color": {
+              "type": "string",
+              "description": "The stroke color as a String hexadecimal.",
+              "readOnly": true
+            },
+            "width": {
+              "type": "integer",
+              "description": "The width of the stroke.",
+              "readOnly": true,
+              "default": 0
+            }
+          },
+          "readOnly": true
+        }
+      }
+    }
+  ]
+}

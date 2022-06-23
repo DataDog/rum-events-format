@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay-events-schema.json",
+  "title": "SessionReplayEvent",
+  "type": "object",
+  "description": "Schema of all properties of a Session Replay event",
+  "oneOf": [
+    {
+      "$ref": "session-replay/shape-wireframe-schema.json"
+    },
+    {
+      "$ref": "session-replay/text-wireframe-schema.json"
+    }
+  ]
+}
