@@ -10,7 +10,9 @@
     },
     {
       "required": [
-        "text"
+        "text",
+        "type",
+        "textStyle"
       ],
       "properties": {
         "type": {
@@ -26,11 +28,12 @@
         },
         "textStyle": {
           "type": "object",
-          "description": "The style of this text field.",
+          "description": "The style of this text.",
           "required": [
+            "color",
             "family",
-            "font",
-            "color"
+            "size",
+            "type"
           ],
           "properties": {
             "family": {
@@ -38,14 +41,26 @@
               "description": "The font family.",
               "readOnly": true
             },
-            "font": {
+            "size": {
               "type": "integer",
-              "description": "The font size.",
+              "description": "The font size in pixels.",
+              "readOnly": true
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "serif",
+                "sans-serif",
+                "script",
+                "monospaced",
+                "dynamic"
+              ],
+              "description": "The font type.",
               "readOnly": true
             },
             "color": {
               "type": "string",
-              "description": "The font color as a string hexadecimal.",
+              "description": "The font color as a string hexadecimal. Follows the #RRGGBBAA color format.",
               "readOnly": true
             }
           },
@@ -54,74 +69,54 @@
         "textPosition": {
           "type": "object",
           "description": "The position of the text in the wireframe.",
-          "required": [
-            "alignment",
-            "padding"
-          ],
           "properties": {
             "padding": {
               "type": "object",
-              "required": [
-                "top",
-                "bottom",
-                "left",
-                "right"
-              ],
               "properties": {
                 "top": {
                   "type": "integer",
-                  "description": "The top padding.",
-                  "readOnly": true,
-                  "default": 0
+                  "description": "The top padding in pixels. The default value should be 0.",
+                  "readOnly": true
                 },
                 "bottom": {
                   "type": "integer",
-                  "description": "The bottom padding.",
-                  "readOnly": true,
-                  "default": 0
+                  "description": "The bottom padding in pixels. The default value should be 0.",
+                  "readOnly": true
                 },
                 "left": {
                   "type": "integer",
-                  "description": "The left padding.",
-                  "readOnly": true,
-                  "default": 0
+                  "description": "The left padding in pixels. The default value should be 0.",
+                  "readOnly": true
                 },
                 "right": {
                   "type": "integer",
-                  "description": "The right padding.",
-                  "readOnly": true,
-                  "default": 0
+                  "description": "The right padding in pixels. The default value should be 0.",
+                  "readOnly": true
                 }
               }
             },
             "alignment": {
               "type": "object",
-              "required": [
-                "horizontal",
-                "vertical"
-              ],
               "properties": {
                 "horizontal": {
                   "type": "string",
-                  "description": "The horizontal text alignment.",
+                  "description": "The horizontal text alignment. The default value should be `left`.",
                   "enum": [
                     "left",
                     "right",
                     "center"
                   ],
-                  "readOnly": true,
-                  "default": "left"
+                  "readOnly": true
                 },
                 "vertical": {
                   "type": "string",
-                  "description": "The vertical text alignment.",
+                  "description": "The vertical text alignment. The default value should be `top`.",
                   "enum": [
                     "top",
                     "bottom",
                     "center"
                   ],
-                  "readOnly": true,
-                  "default": "top"
+                  "readOnly": true
                 }
               }
             }

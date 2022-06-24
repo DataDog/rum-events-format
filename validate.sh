@@ -4,12 +4,12 @@ line='----------------------------------------'
 
 declare -a sample_schema_folders=(
   "rum-schema"
-  "session-replay-schema"
+  "session-replay-mobile-schema"
   )
 
 declare -a event_formats_for_samples=(
   "rum-events-format.json"
-  "session-replay-events-format.json"
+  "session-replay-mobile-events-format.json"
   )
 
 index = 0

@@ -16,8 +16,9 @@
     "type": "text",
     "text": "Sample Text",
     "textStyle": {
-        "family": "Arial",
-        "font": 10,
+        "family": "roboto",
+        "size": 10,
+        "type": "sans-serif",
         "color": "#000000FF"
     },
     "textPosition": {

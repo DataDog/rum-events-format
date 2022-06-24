@@ -9,41 +9,32 @@
       "$ref": "_common-wireframe-schema.json"
     },
     {
-      "required": [
-        "opacity",
-        "cornerRadius"
-      ],
       "properties": {
-        "opacity": {
-          "type": "number",
-          "description": "The opacity of this wireframe. Takes values from 0 to 1.",
-          "default": 1,
-          "readOnly": true
-        },
-        "cornerRadius": {
-          "type": "number",
-          "description": "The corner radius of this wireframe.",
-          "default": 0,
-          "readOnly": true
-        },
         "shapeStyle": {
-          "required": [
-            "fillColor"
-          ],
           "type": "object",
           "description": "The style of this wireframe.",
           "properties": {
-            "fillColor": {
+            "backgroundColor": {
               "type": "string",
-              "description": "The filling color for this wireframe.",
+              "description": "The background color for this wireframe as a String hexadecimal. Follows the #RRGGBBAA color format, default value should be #FFFFFF00.",
               "readOnly": true
             }
           },
+          "opacity": {
+            "type": "number",
+            "description": "The opacity of this wireframe. Takes values from 0 to 1, default value should be 1.",
+            "readOnly": true
+          },
+          "cornerRadius": {
+            "type": "number",
+            "description": "The corner(border) radius of this wireframe in pixels. The default value should be 0.",
+            "readOnly": true
+          },
           "readOnly": true
         },
-        "stroke": {
+        "border": {
           "type": "object",
-          "description": "The stroke properties of this wireframe.",
+          "description": "The border properties of this wireframe. The default value will be null (no-border).",
           "required": [
             "color",
             "width"
@@ -51,14 +42,13 @@
           "properties": {
             "color": {
               "type": "string",
-              "description": "The stroke color as a String hexadecimal.",
+              "description": "The border color as a String hexadecimal. Follows the #RRGGBBAA color format.",
               "readOnly": true
             },
             "width": {
               "type": "integer",
-              "description": "The width of the stroke.",
-              "readOnly": true,
-              "default": 0
+              "description": "The width of the border in pixels.",
+              "readOnly": true
             }
           },
           "readOnly": true

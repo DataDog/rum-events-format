@@ -9,8 +9,7 @@
     "x",
     "y",
     "width",
-    "height",
-    "type"
+    "height"
   ],
   "properties": {
     "id": {
@@ -20,22 +19,22 @@
     },
     "x": {
       "type": "integer",
-      "description": "The position on X axis of the UI element in absolute coordinates.",
+      "description": "The position in pixels on X axis of the UI element in absolute coordinates. The anchor point will always be the top-left corner of the wireframe.",
       "readOnly": true
     },
     "y": {
       "type": "integer",
-      "description": "The position on Y axis of the UI element in absolute coordinates.",
+      "description": "The position in pixels on Y axis of the UI element in absolute coordinates. The anchor point will always be the top-left corner of the wireframe.",
       "readOnly": true
     },
     "width": {
       "type": "integer",
-      "description": "The width in pixels of the UI element normalised based on the device DPI.",
+      "description": "The width in pixels of the UI element normalised based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2 the width of all UI elements will be divided to 2 to get a normalised width.",
       "readOnly": true
     },
     "height": {
       "type": "integer",
-      "description": "The height in pixels of the UI element normalised based on the device DPI.",
+      "description": "The height in pixels of the UI element normalised based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2 the height of all UI elements will be divided to 2 to get a normalised height.",
       "readOnly": true
     }
   }
