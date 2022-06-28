@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "_common-shape-wireframe-schema.json",
+  "title": "CommonShapeWireframe",
+  "type": "object",
+  "description": "Schema of common properties for ShapeWireframe events type and all its sub - types.",
+  "allOf": [
+    {
+      "$ref": "_common-wireframe-schema.json"
+    },
+    {
+      "properties": {
+        "shapeStyle": {
+          "type": "object",
+          "description": "The style of this wireframe.",
+          "properties": {
+            "backgroundColor": {
+              "type": "string",
+              "description": "The background color for this wireframe as a String hexadecimal. Follows the #RRGGBBAA color format, default value should be #FFFFFF00.",
+              "readOnly": true
+            }
+          },
+          "opacity": {
+            "type": "number",
+            "description": "The opacity of this wireframe. Takes values from 0 to 1, default value should be 1.",
+            "readOnly": true
+          },
+          "cornerRadius": {
+            "type": "number",
+            "description": "The corner(border) radius of this wireframe in pixels. The default value should be 0.",
+            "readOnly": true
+          },
+          "readOnly": true
+        },
+        "border": {
+          "type": "object",
+          "description": "The border properties of this wireframe. The default value will be null (no-border).",
+          "required": [
+            "color",
+            "width"
+          ],
+          "properties": {
+            "color": {
+              "type": "string",
+              "description": "The border color as a String hexadecimal. Follows the #RRGGBBAA color format.",
+              "readOnly": true
+            },
+            "width": {
+              "type": "integer",
+              "description": "The width of the border in pixels.",
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        }
+      }
+    }
+  ]
+}

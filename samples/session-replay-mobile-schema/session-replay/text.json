@@ -1,0 +1,36 @@
+{
+    "id": 2,
+    "x": 10,
+    "y": 10,
+    "width": 20,
+    "height": 30,
+    "opacity": 1.0,
+    "cornerRadius": 0.0,
+    "shapeStyle": {
+        "fillColor": "#FFFFFFFF"
+    },
+    "stroke": {
+        "color": "#00000000",
+        "width": 2
+    },
+    "type": "text",
+    "text": "Sample Text",
+    "textStyle": {
+        "family": "roboto",
+        "size": 10,
+        "type": "sans-serif",
+        "color": "#000000FF"
+    },
+    "textPosition": {
+        "padding": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+        },
+        "alignment": {
+            "horizontal": "left",
+            "vertical": "top"
+        }
+    }
+}
