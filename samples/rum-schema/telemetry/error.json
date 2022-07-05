@@ -19,6 +19,7 @@
   "action": {
     "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
   },
+  "experimental_features": ["foo"],
   "telemetry": {
     "status": "error",
     "message": "XHR error POST https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum",
