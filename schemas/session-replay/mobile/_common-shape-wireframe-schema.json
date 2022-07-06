@@ -16,7 +16,8 @@
           "properties": {
             "backgroundColor": {
               "type": "string",
-              "description": "The background color for this wireframe as a String hexadecimal. Follows the #RRGGBBAA color format, default value should be #FFFFFF00.",
+              "pattern": "(?i)^#[a-f0-9]{6}([a-f0-9]{2})?$",
+              "description": "The background color for this wireframe as a String hexadecimal. Follows the #RRGGBBAA color format with the alpha value as optional. The default value should be #FFFFFF00.",
               "readOnly": true
             }
           },
@@ -42,7 +43,8 @@
           "properties": {
             "color": {
               "type": "string",
-              "description": "The border color as a String hexadecimal. Follows the #RRGGBBAA color format.",
+              "pattern": "(?i)^#[a-f0-9]{6}([a-f0-9]{2})?$",
+              "description": "The border color as a String hexadecimal. Follows the #RRGGBBAA color format with the alpha value as optional.",
               "readOnly": true
             },
             "width": {
