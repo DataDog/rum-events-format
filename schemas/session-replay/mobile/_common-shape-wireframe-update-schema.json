@@ -1,12 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "_common-shape-wireframe-schema.json",
-  "title": "CommonShapeWireframe",
+  "$id": "_common-shape-wireframe-update-schema.json",
+  "title": "CommonShapeWireframeUpdate",
   "type": "object",
-  "description": "Schema of common properties for ShapeWireframe events type and all its sub - types.",
+  "description": "Schema of common properties for ShapeWireframeUpdate events type and all its sub - types.",
   "allOf": [
     {
-      "$ref": "_common-wireframe-schema.json"
+      "$ref": "_common-wireframe-update-schema.json"
     },
     {
       "properties": {
