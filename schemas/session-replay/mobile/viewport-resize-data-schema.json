@@ -9,7 +9,7 @@
             "properties": {
                 "source": {
                     "type": "integer",
-                    "const": "3",
+                    "const": 3,
                     "description": "The source of this type of incremental data.",
                     "readOnly": true
                 },
