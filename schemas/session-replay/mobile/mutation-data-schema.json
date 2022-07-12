@@ -9,7 +9,7 @@
             "properties": {
                 "source": {
                     "type": "integer",
-                    "const": "1",
+                    "const": 1,
                     "description": "The source of this type of incremental data.",
                     "readOnly": true
                 },
@@ -17,7 +17,6 @@
                     "type": "array",
                     "readOnly": true,
                     "items": {
-                        "type": "object",
                         "required": [
                             "wireframe"
                         ],

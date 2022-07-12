@@ -30,7 +30,8 @@
                             "description": "The right padding in pixels. The default value should be 0.",
                             "readOnly": true
                         }
-                    }
+                    },
+                    "readOnly": true
                 },
                 "alignment": {
                     "type": "object",
@@ -55,9 +56,9 @@
                             ],
                             "readOnly": true
                         }
-                    }
-                },
-                "readOnly": true
+                    },
+                    "readOnly": true
+                }
             }
         }
     ]
