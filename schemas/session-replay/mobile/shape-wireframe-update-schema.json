@@ -7,6 +7,19 @@
     "allOf": [
         {
             "$ref": "_common-shape-wireframe-update-schema.json"
+        },
+        {
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "The type of the wireframe.",
+                    "const": "shape",
+                    "readOnly": true
+                }
+            }
         }
     ]
 }

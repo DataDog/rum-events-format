@@ -6,9 +6,6 @@
   "description": "Schema of all properties of a mobile Session Replay event",
   "oneOf": [
     {
-      "$ref": "session-replay/mobile/wireframe-schema.json"
-    },
-    {
       "$ref": "session-replay/segment-schema.json"
     },
     {
