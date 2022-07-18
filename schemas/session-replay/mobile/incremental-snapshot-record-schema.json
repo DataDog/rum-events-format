@@ -21,10 +21,7 @@
                     "readOnly": true
                 },
                 "data": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "incremental-data-schema.json"
-                    },
+                    "$ref": "incremental-data-schema.json",
                     "description": "The IncrementalData contained by this Record.",
                     "readOnly": true
                 }

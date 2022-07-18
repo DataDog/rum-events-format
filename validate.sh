@@ -4,7 +4,7 @@ line='----------------------------------------'
 
 declare -a sample_schema_folders=(
   "rum-schema"
-  "session-replay-mobile-schema"
+  "session-replay-schema"
   )
 
 declare -a event_formats_for_samples=(
