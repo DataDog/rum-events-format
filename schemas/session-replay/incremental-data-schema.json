@@ -1,0 +1,7 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "incremental-data-schema.json",
+    "title": "IncrementalData",
+    "description": "Schema of a Session Replay IncrementalData type.",
+    "tsType": "BrowserIncrementalData | MobileIncrementalData"
+}

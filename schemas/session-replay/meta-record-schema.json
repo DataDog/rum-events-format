@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "metadata-record-schema.json",
-    "title": "MetadataRecord",
+    "$id": "meta-record-schema.json",
+    "title": "MetaRecord",
     "type": "object",
     "description": "Schema of a Record which contains the screen properties.",
     "allOf": [
@@ -23,7 +23,6 @@
                 "data": {
                     "type": "object",
                     "description": "The data contained by this record.",
-                    "readOnly": true,
                     "required": [
                         "width",
                         "height"
@@ -31,13 +30,15 @@
                     "properties": {
                         "width": {
                             "type": "integer",
-                            "description": "The width of the screen in pixels normalised based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2 the normalized width will be the current width divided by 2.",
-                            "readOnly": true
+                            "description": "The width of the screen in pixels normalised based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2 the normalized width will be the current width divided by 2."
                         },
                         "height": {
                             "type": "integer",
-                            "description": "The height of the screen in pixels normalised based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2 the normalized height will be the current height divided by 2.",
-                            "readOnly": true
+                            "description": "The height of the screen in pixels normalised based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2 the normalized height will be the current height divided by 2."
+                        },
+                        "href": {
+                            "type": "string",
+                            "description": "Browser-specific. URL of the view described by this record."
                         }
                     }
                 }
