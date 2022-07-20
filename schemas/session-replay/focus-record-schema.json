@@ -22,7 +22,6 @@
                 },
                 "data": {
                     "type": "object",
-                    "readOnly": true,
                     "required": [
                         "has_focus"
                     ],

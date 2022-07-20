@@ -10,8 +10,7 @@
     "properties": {
         "timestamp": {
             "type": "integer",
-            "description": "Defines the UTC time in milliseconds when this Record was performed.",
-            "readOnly": true
+            "description": "Defines the UTC time in milliseconds when this Record was performed."
         }
-    }
+    }        
 }
