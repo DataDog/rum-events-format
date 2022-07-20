@@ -12,22 +12,22 @@
                     "properties": {
                         "top": {
                             "type": "integer",
-                            "description": "The top padding in pixels. The default value should be 0.",
+                            "description": "The top padding in pixels. The default value is 0.",
                             "readOnly": true
                         },
                         "bottom": {
                             "type": "integer",
-                            "description": "The bottom padding in pixels. The default value should be 0.",
+                            "description": "The bottom padding in pixels. The default value is 0.",
                             "readOnly": true
                         },
                         "left": {
                             "type": "integer",
-                            "description": "The left padding in pixels. The default value should be 0.",
+                            "description": "The left padding in pixels. The default value is 0.",
                             "readOnly": true
                         },
                         "right": {
                             "type": "integer",
-                            "description": "The right padding in pixels. The default value should be 0.",
+                            "description": "The right padding in pixels. The default value is 0.",
                             "readOnly": true
                         }
                     },
@@ -38,7 +38,7 @@
                     "properties": {
                         "horizontal": {
                             "type": "string",
-                            "description": "The horizontal text alignment. The default value should be `left`.",
+                            "description": "The horizontal text alignment. The default value is `left`.",
                             "enum": [
                                 "left",
                                 "right",
@@ -48,7 +48,7 @@
                         },
                         "vertical": {
                             "type": "string",
-                            "description": "The vertical text alignment. The default value should be `top`.",
+                            "description": "The vertical text alignment. The default value is `top`.",
                             "enum": [
                                 "top",
                                 "bottom",

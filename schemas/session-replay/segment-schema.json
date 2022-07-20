@@ -102,7 +102,7 @@
                 },
                 "creation_reason": {
                     "type": "string",
-                    "description": "The reason this Segment was created. For now for mobile we only have one possible value for this and will always be the default value.",
+                    "description": "The reason this Segment was created. For mobile there is only one possible value for this, which is always the default value.",
                     "enum": [
                         "init",
                         "segment_duration_limit",
@@ -116,7 +116,7 @@
                 },
                 "index_in_view": {
                     "type": "integer",
-                    "description": "The index of this Segment in the segments list that was recorded for this view ID. It starts from 0.",
+                    "description": "The index of this Segment in the segments list that was recorded for this view ID. Starts from 0.",
                     "readOnly": true
                 },
                 "records": {
