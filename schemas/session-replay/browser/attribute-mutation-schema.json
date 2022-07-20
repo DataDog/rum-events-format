@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "attribute-mutation-schema.json",
+    "title": "AttributeMutation",
+    "type": "object",
+    "description": "Schema of an AttributeMutation.",
+    "required": [
+        "id",
+        "attributes"
+    ],
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Id of the mutated node."
+        },
+        "attributes": {
+            "type": "object",
+            "description": "Attributes for this AttributeMutation",
+            "additionalProperties": {
+                "type": ["string", "null"]
+            }
+        }
+    }
+}
