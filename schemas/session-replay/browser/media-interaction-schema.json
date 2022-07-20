@@ -1,25 +1,22 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "media-interaction-schema.json",
-    "title": "MediaInteraction",
-    "type": "object",
-    "description": "Browser-specific. Schema of a MediaInteraction.",
-    "required": [
-        "id",
-        "type"
-    ],
-    "properties": {
-        "id": {
-            "type": "integer",
-            "description": "Id for the target node for this MediaInteraction."
-        },
-        "type": {
-            "type": "integer",
-            "title": "MediaInteractionType",
-            "enum": [0, 1],
-            "tsEnumNames": ["Play", "Pause"],
-            "description": "The type of MediaInteraction.",
-            "readOnly": true
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "media-interaction-schema.json",
+  "title": "MediaInteraction",
+  "type": "object",
+  "description": "Browser-specific. Schema of a MediaInteraction.",
+  "required": ["id", "type"],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Id for the target node for this MediaInteraction."
+    },
+    "type": {
+      "type": "integer",
+      "title": "MediaInteractionType",
+      "enum": [0, 1],
+      "tsEnumNames": ["Play", "Pause"],
+      "description": "The type of MediaInteraction.",
+      "readOnly": true
     }
+  }
 }

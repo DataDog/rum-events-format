@@ -1,7 +1,7 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "full-snapshot-record-schema.json",
-    "title": "FullSnapshotRecord",
-    "description": "Schema of a Record type which contains the full snapshot of a screen.",
-    "tsType": "BrowserFullSnapshotRecord | MobileFullSnapshotRecord"
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "full-snapshot-record-schema.json",
+  "title": "FullSnapshotRecord",
+  "description": "Schema of a Record type which contains the full snapshot of a screen.",
+  "tsType": "BrowserFullSnapshotRecord | MobileFullSnapshotRecord"
 }

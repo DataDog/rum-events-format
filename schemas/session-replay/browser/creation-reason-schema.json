@@ -1,16 +1,16 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "creation-reason-schema.json",
-    "title": "CreationReason",
-    "type": "string",
-    "description": "Schema of a CreationReason type.",
-    "enum": [
-        "init",
-        "segment_duration_limit",
-        "segment_bytes_limit",
-        "view_change",
-        "before_unload",
-        "visibility_hidden"
-    ],
-    "default": "init"
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "creation-reason-schema.json",
+  "title": "CreationReason",
+  "type": "string",
+  "description": "Schema of a CreationReason type.",
+  "enum": [
+    "init",
+    "segment_duration_limit",
+    "segment_bytes_limit",
+    "view_change",
+    "before_unload",
+    "visibility_hidden"
+  ],
+  "default": "init"
 }

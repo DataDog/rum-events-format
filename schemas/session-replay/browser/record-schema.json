@@ -1,34 +1,34 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "browser-record-schema.json",
-    "title": "BrowserRecord",
-    "type": "object",
-    "description": "Browser-specific. Schema of a Session Replay Record.",
-    "allOf": [
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "browser-record-schema.json",
+  "title": "BrowserRecord",
+  "type": "object",
+  "description": "Browser-specific. Schema of a Session Replay Record.",
+  "allOf": [
+    {
+      "$ref": "../_common-record-schema.json"
+    },
+    {
+      "oneOf": [
         {
-            "$ref": "../_common-record-schema.json"
+          "$ref": "full-snapshot-record-schema.json"
         },
         {
-            "oneOf": [
-                {
-                    "$ref": "full-snapshot-record-schema.json"
-                },
-                {
-                    "$ref": "incremental-snapshot-record-schema.json"
-                },
-                {
-                    "$ref": "../meta-record-schema.json"
-                },
-                {
-                    "$ref": "../focus-record-schema.json"
-                },
-                {
-                    "$ref": "../view-end-record-schema.json"
-                },
-                {
-                    "$ref": "../visual-viewport-record-schema.json"
-                }
-            ]
+          "$ref": "incremental-snapshot-record-schema.json"
+        },
+        {
+          "$ref": "../meta-record-schema.json"
+        },
+        {
+          "$ref": "../focus-record-schema.json"
+        },
+        {
+          "$ref": "../view-end-record-schema.json"
+        },
+        {
+          "$ref": "../visual-viewport-record-schema.json"
         }
-    ]
+      ]
+    }
+  ]
 }

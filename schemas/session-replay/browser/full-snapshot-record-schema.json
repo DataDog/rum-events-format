@@ -1,29 +1,26 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "browser-full-snapshot-record-schema.json",
-    "title": "BrowserFullSnapshotRecord",
-    "type": "object",
-    "description": "Browser-specific. Schema of a Record type which contains the full snapshot of a screen.",
-    "allOf": [
-        {
-            "$ref": "../_common-record-schema.json"
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "browser-full-snapshot-record-schema.json",
+  "title": "BrowserFullSnapshotRecord",
+  "type": "object",
+  "description": "Browser-specific. Schema of a Record type which contains the full snapshot of a screen.",
+  "allOf": [
+    {
+      "$ref": "../_common-record-schema.json"
+    },
+    {
+      "required": ["type", "data"],
+      "properties": {
+        "type": {
+          "type": "integer",
+          "description": "The type of this Record.",
+          "const": 2,
+          "readOnly": true
         },
-        {
-            "required": [
-                "type",
-                "data"
-            ],
-            "properties": {
-                "type": {
-                    "type": "integer",
-                    "description": "The type of this Record.",
-                    "const": 2,
-                    "readOnly": true
-                },
-                "data": {
-                    "$ref": "node-schema.json"
-                }
-            }
+        "data": {
+          "$ref": "node-schema.json"
         }
-    ]
+      }
+    }
+  ]
 }

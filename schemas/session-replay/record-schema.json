@@ -1,7 +1,7 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "record-schema.json",
-    "title": "Record",
-    "description": "Schema of a Session Replay Record.",
-    "tsType": "BrowserRecord | MobileRecord"
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "record-schema.json",
+  "title": "Record",
+  "description": "Schema of a Session Replay Record.",
+  "tsType": "BrowserRecord | MobileRecord"
 }
