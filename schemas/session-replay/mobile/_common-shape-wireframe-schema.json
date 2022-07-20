@@ -11,16 +11,10 @@
     {
       "properties": {
         "shapeStyle": {
-          "type": "object",
-          "description": "The style of this wireframe.",
-          "$ref": "shape-style-schema.json",
-          "readOnly": true
+          "$ref": "shape-style-schema.json"
         },
         "border": {
-          "type": "object",
-          "description": "The border properties of this wireframe. The default value will be null (no-border).",
-          "$ref": "shape-border-schema.json",
-          "readOnly": true
+          "$ref": "shape-border-schema.json"
         }
       }
     }
