@@ -23,16 +23,10 @@
           "readOnly": false
         },
         "textStyle": {
-          "type": "object",
-          "description": "The style of this text.",
-          "$ref": "text-style-schema.json",
-          "readOnly": true
+          "$ref": "text-style-schema.json"
         },
         "textPosition": {
-          "type": "object",
-          "description": "The position of the text in the wireframe.",
-          "$ref": "text-position-schema.json",
-          "readOnly": true
+          "$ref": "text-position-schema.json"
         }
       }
     }
