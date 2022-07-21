@@ -3,7 +3,7 @@
   "$id": "session-replay-schema.json",
   "title": "SessionReplay",
   "type": "object",
-  "description": "Schema of all properties of browser Session Replay",
+  "description": "Schema of all properties of Session Replay",
   "allOf": [
     {
       "$ref": "session-replay/segment-schema.json"

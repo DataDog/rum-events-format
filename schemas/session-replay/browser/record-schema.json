@@ -4,31 +4,24 @@
   "title": "BrowserRecord",
   "type": "object",
   "description": "Browser-specific. Schema of a Session Replay Record.",
-  "allOf": [
+  "oneOf": [
     {
-      "$ref": "../_common-record-schema.json"
+      "$ref": "full-snapshot-record-schema.json"
     },
     {
-      "oneOf": [
-        {
-          "$ref": "full-snapshot-record-schema.json"
-        },
-        {
-          "$ref": "incremental-snapshot-record-schema.json"
-        },
-        {
-          "$ref": "../meta-record-schema.json"
-        },
-        {
-          "$ref": "../focus-record-schema.json"
-        },
-        {
-          "$ref": "../view-end-record-schema.json"
-        },
-        {
-          "$ref": "../visual-viewport-record-schema.json"
-        }
-      ]
+      "$ref": "incremental-snapshot-record-schema.json"
+    },
+    {
+      "$ref": "../common/meta-record-schema.json"
+    },
+    {
+      "$ref": "../common/focus-record-schema.json"
+    },
+    {
+      "$ref": "../common/view-end-record-schema.json"
+    },
+    {
+      "$ref": "../common/visual-viewport-record-schema.json"
     }
   ]
 }

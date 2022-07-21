@@ -6,10 +6,10 @@
   "description": "Browser-specific. Schema of a Session Replay Segment metadata.",
   "allOf": [
     {
-      "$ref": "../segment-context-schema.json"
+      "$ref": "../common/segment-context-schema.json"
     },
     {
-      "$ref": "../_common-segment-metadata-schema.json"
+      "$ref": "../common/_common-segment-metadata-schema.json"
     },
     {
       "required": ["source", "creation_reason"],

@@ -27,7 +27,7 @@
       "$ref": "stylesheet-rule-data-schema.json"
     },
     {
-      "$ref": "../viewport-resize-data-schema.json"
+      "$ref": "../common/viewport-resize-data-schema.json"
     }
   ]
 }
