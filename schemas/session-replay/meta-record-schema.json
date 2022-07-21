@@ -9,7 +9,7 @@
       "$ref": "_common-record-schema.json"
     },
     {
-      "required": ["type", "source", "data"],
+      "required": ["type", "data"],
       "properties": {
         "type": {
           "type": "integer",
