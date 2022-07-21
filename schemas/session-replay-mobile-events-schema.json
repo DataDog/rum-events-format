@@ -7,9 +7,6 @@
   "oneOf": [
     {
       "$ref": "session-replay/mobile/segment-schema.json"
-    },
-    {
-      "$ref": "session-replay/mobile/record-schema.json"
     }
   ]
 }
