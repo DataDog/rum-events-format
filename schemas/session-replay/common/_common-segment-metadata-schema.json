@@ -20,7 +20,7 @@
     },
     "index_in_view": {
       "type": "integer",
-      "description": "The index of this Segment in the segments list that was recorded for this view ID. It starts from 0."
+      "description": "The index of this Segment in the segments list that was recorded for this view ID. Starts from 0."
     },
     "has_full_snapshot": {
       "type": "boolean",

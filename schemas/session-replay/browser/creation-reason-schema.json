@@ -3,7 +3,7 @@
   "$id": "creation-reason-schema.json",
   "title": "CreationReason",
   "type": "string",
-  "description": "Schema of a CreationReason type.",
+  "description": "The reason this Segment was created. For mobile there is only one possible value for this, which is always the default value.",
   "enum": [
     "init",
     "segment_duration_limit",

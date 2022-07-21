@@ -8,11 +8,11 @@
   "properties": {
     "width": {
       "type": "integer",
-      "description": "The new width of the screen in pixels normalised based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2 the width will be divided by 2 to get a normalised width."
+      "description": "The new width of the screen in pixels, normalized based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2, the width is divided by 2 to get a normalized width."
     },
     "height": {
       "type": "integer",
-      "description": "The new height of the screen in pixels normalised based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2 the height will be divided by 2 to get a normalised height."
+      "description": "The new height of the screen in pixels, normalized based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2, the height is divided by 2 to get a normalized height."
     }
   }
 }
