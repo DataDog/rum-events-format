@@ -23,7 +23,7 @@
                         "properties": {
                             "previousId": {
                                 "type": "integer",
-                                "description": "The previous wireframe id next/after which this new wireframe should be drawn/attached to.",
+                                "description": "The previous wireframe id next or after which this new wireframe is drawn or attached to, respectively.",
                                 "readOnly": true
                             },
                             "wireframe": {

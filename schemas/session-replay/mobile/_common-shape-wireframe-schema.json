@@ -18,7 +18,7 @@
         },
         "border": {
           "type": "object",
-          "description": "The border properties of this wireframe. The default value will be null (no-border).",
+          "description": "The border properties of this wireframe. The default value is null (no-border).",
           "$ref": "shape-border-schema.json",
           "readOnly": true
         }
