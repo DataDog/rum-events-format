@@ -22,6 +22,9 @@
     },
     {
       "$ref": "../common/visual-viewport-record-schema.json"
+    },
+    {
+      "$ref": "frustration-record-schema.json"
     }
   ]
 }
