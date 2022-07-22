@@ -19,6 +19,9 @@
         },
         "data": {
           "$ref": "incremental-data-schema.json"
+        },
+        "id": {
+          "type": "integer"
         }
       }
     }
