@@ -8,19 +8,7 @@
   "properties": {
     "type": {
       "type": "integer",
-      "title": "MouseInteractionType",
       "enum": [0, 1, 2, 3, 4, 5, 6, 7, 9],
-      "tsEnumNames": [
-        "MouseUp",
-        "MouseDown",
-        "Click",
-        "ContextMenu",
-        "DblClick",
-        "Focus",
-        "Blur",
-        "TouchStart",
-        "TouchEnd"
-      ],
       "description": "The type of MouseInteraction.",
       "readOnly": true
     },

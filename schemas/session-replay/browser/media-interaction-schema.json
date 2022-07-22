@@ -12,9 +12,7 @@
     },
     "type": {
       "type": "integer",
-      "title": "MediaInteractionType",
       "enum": [0, 1],
-      "tsEnumNames": ["Play", "Pause"],
       "description": "The type of MediaInteraction.",
       "readOnly": true
     }
