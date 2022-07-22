@@ -3,5 +3,12 @@
   "$id": "record-schema.json",
   "title": "Record",
   "description": "Schema of a Session Replay Record.",
-  "tsType": "BrowserRecord | MobileRecord"
+  "oneOf": [
+    {
+      "$ref": "browser/record-schema.json"
+    },
+    {
+      "$ref": "mobile/record-schema.json"
+    }
+  ]
 }

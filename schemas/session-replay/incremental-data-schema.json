@@ -3,5 +3,12 @@
   "$id": "incremental-data-schema.json",
   "title": "IncrementalData",
   "description": "Schema of a Session Replay IncrementalData type.",
-  "tsType": "BrowserIncrementalData | MobileIncrementalData"
+  "oneOf": [
+    {
+      "$ref": "browser/incremental-data-schema.json"
+    },
+    {
+      "$ref": "mobile/incremental-data-schema.json"
+    }
+  ]
 }

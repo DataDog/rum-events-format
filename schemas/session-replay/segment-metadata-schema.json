@@ -3,5 +3,12 @@
   "$id": "segment-metadata-schema.json",
   "title": "SegmentMetadata",
   "description": "Schema of a Session Replay SegmentMetadata.",
-  "tsType": "BrowserSegmentMetadata | MobileSegmentMetadata"
+  "oneOf": [
+    {
+      "$ref": "browser/segment-metadata-schema.json"
+    },
+    {
+      "$ref": "mobile/segment-metadata-schema.json"
+    }
+  ]
 }

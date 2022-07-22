@@ -3,5 +3,12 @@
   "$id": "full-snapshot-record-schema.json",
   "title": "FullSnapshotRecord",
   "description": "Schema of a Record type which contains the full snapshot of a screen.",
-  "tsType": "BrowserFullSnapshotRecord | MobileFullSnapshotRecord"
+  "oneOf": [
+    {
+      "$ref": "browser/full-snapshot-record-schema.json"
+    },
+    {
+      "$ref": "mobile/full-snapshot-record-schema.json"
+    }
+  ]
 }
