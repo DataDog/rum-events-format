@@ -4,9 +4,7 @@
   "title": "CommonWireframeUpdate",
   "type": "object",
   "description": "Schema of common properties for WireframeUpdate events type.",
-  "required": [
-    "id"
-  ],
+  "required": ["id"],
   "properties": {
     "id": {
       "type": "integer",

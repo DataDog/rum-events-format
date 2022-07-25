@@ -9,9 +9,7 @@
       "$ref": "_common-shape-wireframe-schema.json"
     },
     {
-      "required": [
-        "type"
-      ],
+      "required": ["type"],
       "properties": {
         "type": {
           "type": "string",
