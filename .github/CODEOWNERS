@@ -3,5 +3,7 @@
 # Session Replay
 /samples/session-replay-schema/ @DataDog/rum-session-replay
 /schemas/session-replay/ @DataDog/rum-session-replay
-/schemas/session-replay-mobile-events-schema.json @DataDog/rum-session-replay
-/session-replay-mobile-events-format.json @DataDog/rum-session-replay
+/schemas/session-replay-browser-schema.json @DataDog/rum-session-replay
+/schemas/session-replay-mobile-schema.json @DataDog/rum-session-replay
+/session-replay-browser-format.json @DataDog/rum-session-replay
+/session-replay-mobile-format.json @DataDog/rum-session-replay
