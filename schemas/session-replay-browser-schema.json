@@ -1,12 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "session-replay-browser-schema.json",
-  "title": "BrowserSessionReplay",
-  "type": "object",
-  "description": "Schema of all properties of browser Session Replay",
-  "oneOf": [
-    {
-      "$ref": "session-replay/browser/segment-schema.json"
-    }
-  ]
+  "$ref": "session-replay/browser/segment-schema.json"
 }
