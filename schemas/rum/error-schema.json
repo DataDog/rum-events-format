@@ -131,6 +131,11 @@
                 }
               },
               "readOnly": true
+            },
+            "bundle_version": {
+              "type": "string",
+              "description": "Version of the javascript bundle used in the case of Over The Air updates",
+              "readOnly": true
             }
           },
           "readOnly": true
