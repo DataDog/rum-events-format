@@ -18,7 +18,7 @@
     "records": [
         {
             "timestamp": 1657629228218,
-            "type": 2,
+            "type": 10,
             "data": {
                 "wireframes": [
                     {
@@ -57,7 +57,7 @@
         },
         {
             "timestamp": 1657629228273,
-            "type": 3,
+            "type": 11,
             "data": {
                 "source": 0,
                 "adds": [
