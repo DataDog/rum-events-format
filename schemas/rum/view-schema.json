@@ -20,14 +20,7 @@
         "view": {
           "type": "object",
           "description": "View properties",
-          "required": [
-            "id",
-            "url",
-            "time_spent",
-            "action",
-            "error",
-            "resource"
-          ],
+          "required": ["id", "url", "time_spent", "action", "error", "resource"],
           "properties": {
             "loading_time": {
               "type": "integer",

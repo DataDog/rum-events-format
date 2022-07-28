@@ -1,51 +1,51 @@
 {
-    "timestamp": 1657620232337,
-    "type": 11,
-    "data": {
-        "source": 0,
-        "adds": [
-            {
-                "previousId": 10,
-                "wireframe": {
-                    "id": 11,
-                    "x": 10,
-                    "y": 10,
-                    "width": 20,
-                    "height": 30,
-                    "type": "text",
-                    "text": "Test",
-                    "textStyle": {
-                        "family": "Arial",
-                        "size": 20,
-                        "type": "sans-serif",
-                        "color": "#FF000000"
-                    }
-                }
-            }
-        ],
-        "removes": [
-            {
-                "id": 9
-            }
-        ],
-        "updates": [
-            {
-                "id": 3,
-                "text": "New text",
-                "type": "text",
-                "textStyle": {
-                    "family": "Arial",
-                    "size": 20,
-                    "type": "sans-serif",
-                    "color": "#FF0000"
-                }
-            },
-            {
-                "id": 4,
-                "type": "shape",
-                "x": 0,
-                "y": 10
-            }
-        ]
-    }
+  "timestamp": 1657620232337,
+  "type": 11,
+  "data": {
+    "source": 0,
+    "adds": [
+      {
+        "previousId": 10,
+        "wireframe": {
+          "id": 11,
+          "x": 10,
+          "y": 10,
+          "width": 20,
+          "height": 30,
+          "type": "text",
+          "text": "Test",
+          "textStyle": {
+            "family": "Arial",
+            "size": 20,
+            "type": "sans-serif",
+            "color": "#FF000000"
+          }
+        }
+      }
+    ],
+    "removes": [
+      {
+        "id": 9
+      }
+    ],
+    "updates": [
+      {
+        "id": 3,
+        "text": "New text",
+        "type": "text",
+        "textStyle": {
+          "family": "Arial",
+          "size": 20,
+          "type": "sans-serif",
+          "color": "#FF0000"
+        }
+      },
+      {
+        "id": 4,
+        "type": "shape",
+        "x": 0,
+        "y": 10
+      }
+    ]
+  }
 }

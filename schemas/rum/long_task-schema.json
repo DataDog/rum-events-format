@@ -12,10 +12,7 @@
       "$ref": "_action-child-schema.json"
     },
     {
-      "required": [
-        "type",
-        "long_task"
-      ],
+      "required": ["type", "long_task"],
       "properties": {
         "type": {
           "type": "string",
@@ -26,9 +23,7 @@
         "long_task": {
           "type": "object",
           "description": "Long Task properties",
-          "required": [
-            "duration"
-          ],
+          "required": ["duration"],
           "properties": {
             "id": {
               "type": "string",
