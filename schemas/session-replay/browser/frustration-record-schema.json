@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "frustration-record-schema.json",
+  "$id": "session-replay/browser/frustration-record-schema.json",
   "title": "FrustrationRecord",
   "type": "object",
   "description": "Schema of a Record which signifies a collection of frustration signals.",

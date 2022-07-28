@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "shape-border-schema.json",
+  "$id": "session-replay/mobile/shape-border-schema.json",
   "title": "ShapeBorder",
   "type": "object",
   "description": "The border properties of this wireframe. The default value is null (no-border).",

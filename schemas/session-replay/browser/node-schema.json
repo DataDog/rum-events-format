@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "node-schema.json",
+  "$id": "session-replay/browser/node-schema.json",
   "title": "BrowserNode",
   "type": "object",
   "description": "Schema of a Node type.",

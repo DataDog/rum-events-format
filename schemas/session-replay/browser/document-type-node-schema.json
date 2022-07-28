@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "document-type-node-schema.json",
+  "$id": "session-replay/browser/document-type-node-schema.json",
   "title": "DocumentTypeNode",
   "type": "object",
   "description": "Schema of a Document Type Node.",

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "mouse-interaction-schema.json",
+  "$id": "session-replay/browser/mouse-interaction-schema.json",
   "title": "MouseInteraction",
   "type": "object",
   "description": "Browser-specific. Schema of a MouseInteraction.",
