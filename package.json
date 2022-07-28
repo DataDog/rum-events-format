@@ -1,0 +1,66 @@
+{
+  "name": "rum-events-format",
+  "version": "1.0.0",
+  "description": "JSON schema of Datadog RUM events",
+  "repository": "https://github.com/DataDog/rum-events-format.git",
+  "private": true,
+  "license": "Apache-2.0 (See ./LICENSE)",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./rum": {
+      "types": {
+        "default": "./dist/rum.d.ts"
+      }
+    },
+    "./telemetry": {
+      "types": {
+        "default": "./dist/telemetry.d.ts"
+      }
+    },
+    "./session-replay": {
+      "types": {
+        "default": "./dist/sessionReplay.d.ts"
+      }
+    },
+    "./session-replay-browser": {
+      "types": {
+        "default": "./dist/browserSessionReplay.d.ts"
+      }
+    },
+    "./session-replay-mobile": {
+      "types": {
+        "default": "./dist/mobileSessionReplay.d.ts"
+      }
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "rum": [
+        "./dist/rum.d.ts"
+      ],
+      "telemetry": [
+        "./dist/telemetry.d.ts"
+      ],
+      "session-replay": [
+        "./dist/sessionReplay.d.ts"
+      ],
+      "session-replay-browser": [
+        "./dist/browserSessionReplay.d.ts"
+      ],
+      "session-replay-mobile": [
+        "./dist/mobileSessionReplay.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "generate": "scripts/cli build_json2type && yarn generate:ts",
+    "generate:ts": "node scripts/generate.js",
+    "lint": "prettier -c samples schemas *format.json"
+  },
+  "devDependencies": {
+    "json-schema-to-typescript": "bcaudan/json-schema-to-typescript#bcaudan/add-readonly-support",
+    "prettier": "2.7.1"
+  }
+}

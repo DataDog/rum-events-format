@@ -31,8 +31,8 @@ Run a validation:
 
 Prerequisite:
 
-    npm install -g jsonlint
+    yarn install
 
 Lint:
 
-    ./lint.sh
+    yarn lint
