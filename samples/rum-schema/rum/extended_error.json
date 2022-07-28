@@ -33,7 +33,7 @@
   },
   "connectivity": {
     "status": "connected",
-    "interfaces": [ "wifi", "cellular", "other"],
+    "interfaces": ["wifi", "cellular", "other"],
     "cellular": {
       "technology": "HSDPA",
       "carrier_name": "AT&T"

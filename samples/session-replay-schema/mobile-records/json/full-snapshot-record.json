@@ -1,23 +1,23 @@
 {
-    "timestamp": 1657618587157,
-    "type": 10,
-    "data": {
-        "wireframes": [
-            {
-                "id": 1,
-                "x": 10,
-                "y": 10,
-                "width": 20,
-                "height": 30,
-                "type": "text",
-                "text": "Test",
-                "textStyle": {
-                    "family": "Arial",
-                    "size": 20,
-                    "type": "sans-serif",
-                    "color": "#FF000000"
-                }
-            }
-        ]
-    }
+  "timestamp": 1657618587157,
+  "type": 10,
+  "data": {
+    "wireframes": [
+      {
+        "id": 1,
+        "x": 10,
+        "y": 10,
+        "width": 20,
+        "height": 30,
+        "type": "text",
+        "text": "Test",
+        "textStyle": {
+          "family": "Arial",
+          "size": 20,
+          "type": "sans-serif",
+          "color": "#FF000000"
+        }
+      }
+    ]
+  }
 }

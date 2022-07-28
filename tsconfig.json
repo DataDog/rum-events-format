@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es5",
+    "types": [],
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "module": "es6",
+    "outDir": "dist",
+    "declaration": true
+  },
+  "include": ["./ts/*.ts"],
+  "exclude": []
+}
