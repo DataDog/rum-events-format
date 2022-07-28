@@ -29,43 +29,23 @@ It is also possible to specify the exact commit hash to use, e.g:
 
 # Tools
 
+## Prerequisite: install dependencies
+
+    yarn
+
 ## Validate samples
 
-Prerequisite:
-
-    pip install jsonschema
-
-Run a validation:
-
-    ./validate.sh
+    yarn validate
 
 ## Build JS sources + TS definitions
-
-Prerequisite:
-
-    yarn install
-
-Build:
 
     yarn build
 
 ## Generate TS definitions out of the schemas
 
-Prerequisite:
-
-    yarn install
-
-Generate:
-
     yarn generate
 
 ## Prettify TS & JSON files
-
-Prerequisite:
-
-    yarn install
-
-Format:
 
     yarn format -w
 

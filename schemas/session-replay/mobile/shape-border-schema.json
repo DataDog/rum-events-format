@@ -10,7 +10,7 @@
       "properties": {
         "color": {
           "type": "string",
-          "pattern": "(?i)^#[a-f0-9]{6}([a-f0-9]{2})?$",
+          "pattern": "^#[A-Fa-f0-9]{6}([A-Fa-f0-9]{2})?$",
           "description": "The border color as a String hexadecimal. Follows the #RRGGBBAA color format with the alpha value as optional.",
           "readOnly": true
         },

@@ -12,6 +12,7 @@
           "type": "array",
           "readOnly": true,
           "items": {
+            "type": "object",
             "required": ["wireframe"],
             "properties": {
               "previousId": {
