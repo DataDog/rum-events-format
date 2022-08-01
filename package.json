@@ -40,7 +40,7 @@
     "build:ts": "yarn generate && rm -rf ./dist && tsc",
     "build:deps": "scripts/cli build_json2type",
     "generate": "node scripts/generate.js",
-    "lint": "prettier -c samples schemas ts *format.json"
+    "format": "prettier -c samples schemas ts *format.json"
   },
   "devDependencies": {
     "json-schema-to-typescript": "bcaudan/json-schema-to-typescript#bcaudan/add-readonly-support",

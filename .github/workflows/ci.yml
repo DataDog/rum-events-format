@@ -3,7 +3,7 @@ name: ci
 on: [push, pull_request]
 
 jobs:
-  lint:
+  prettier:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,8 +13,8 @@ jobs:
       - name: yarn install
         run: yarn install
 
-      - name: lint all files
-        run: yarn lint
+      - name: format all files
+        run: yarn format
 
   validate:
     runs-on: ubuntu-latest

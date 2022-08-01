@@ -22,7 +22,7 @@ https://jsonschema.net/
 Prerequisite:
 
     pip install jsonschema
-    
+
 Run a validation:
 
     ./validate.sh
