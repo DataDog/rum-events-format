@@ -88,7 +88,7 @@
                   "readOnly": true,
                   "items": {
                     "type": "string",
-                    "enum": ["rage_click", "dead_click", "error_click"]
+                    "enum": ["rage_click", "dead_click", "error_click", "rage_tap", "error_tap"]
                   }
                 }
               },
