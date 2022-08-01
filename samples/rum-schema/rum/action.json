@@ -39,14 +39,16 @@
     "session": {
       "plan": 1
     },
-    "target": {
-      "selector": "#options",
-      "width": 10,
-      "height": 10
-    },
-    "position": {
-      "x": 5,
-      "y": 5
+    "action": {
+      "target": {
+        "selector": "#options",
+        "width": 10,
+        "height": 10
+      },
+      "position": {
+        "x": 5,
+        "y": 5
+      }
     }
   }
 }

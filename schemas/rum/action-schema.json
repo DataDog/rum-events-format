@@ -163,47 +163,53 @@
           "type": "object",
           "description": "Internal properties",
           "properties": {
-            "position": {
+            "action": {
               "type": "object",
-              "description": "Action position properties",
-              "required": ["x", "y"],
+              "description": "Action properties",
               "properties": {
-                "x": {
-                  "type": "integer",
-                  "description": "X coordinate relative to the target element of the action (in pixels)",
+                "position": {
+                  "type": "object",
+                  "description": "Action position properties",
+                  "required": ["x", "y"],
+                  "properties": {
+                    "x": {
+                      "type": "integer",
+                      "description": "X coordinate relative to the target element of the action (in pixels)",
+                      "readOnly": true
+                    },
+                    "y": {
+                      "type": "integer",
+                      "description": "Y coordinate relative to the target element of the action (in pixels)",
+                      "readOnly": true
+                    }
+                  },
                   "readOnly": true
                 },
-                "y": {
-                  "type": "integer",
-                  "description": "Y coordinate relative to the target element of the action (in pixels)",
-                  "readOnly": true
+                "target": {
+                  "type": "object",
+                  "description": "Target properties",
+                  "properties": {
+                    "selector": {
+                      "type": "string",
+                      "description": "CSS selector path of the target element",
+                      "readOnly": true
+                    },
+                    "width": {
+                      "type": "integer",
+                      "description": "Width of the target element (in pixels)",
+                      "readOnly": true
+                    },
+                    "height": {
+                      "type": "integer",
+                      "description": "Height of the target element (in pixels)",
+                      "readOnly": true
+                    }
+                  }
                 }
               },
               "readOnly": true
-            },
-            "target": {
-              "type": "object",
-              "description": "Target properties",
-              "properties": {
-                "selector": {
-                  "type": "string",
-                  "description": "CSS selector path of the target element",
-                  "readOnly": true
-                },
-                "width": {
-                  "type": "integer",
-                  "description": "Width of the target element (in pixels)",
-                  "readOnly": true
-                },
-                "height": {
-                  "type": "integer",
-                  "description": "Height of the target element (in pixels)",
-                  "readOnly": true
-                }
-              }
             }
-          },
-          "readOnly": true
+          }
         }
       }
     }
