@@ -44,11 +44,11 @@
   },
   "_dd": {
     "format_version": 2,
-  "display": {
-    "viewport": {
-      "width": 1920,
-      "height": 1080
+    "display": {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      }
     }
-  }
   }
 }
