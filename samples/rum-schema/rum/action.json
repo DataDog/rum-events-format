@@ -19,14 +19,7 @@
     "id": "47af0abb-3de1-4170-a491-4473716df979",
     "loading_time": 566250000,
     "target": {
-      "name": "Options",
-      "selector": "#options",
-      "width": 10,
-      "height": 10
-    },
-    "position": {
-      "x": 5,
-      "y": 5
+      "name": "Options"
     },
     "error": {
       "count": 0
@@ -45,6 +38,15 @@
     "format_version": 2,
     "session": {
       "plan": 1
+    },
+    "target": {
+      "selector": "#options",
+      "width": 10,
+      "height": 10
+    },
+    "position": {
+      "x": 5,
+      "y": 5
     }
   }
 }
