@@ -8,35 +8,16 @@
   "files": [
     "dist"
   ],
+  "type": "module",
   "exports": {
-    "./rum": {
-      "types": {
-        "default": "./dist/rum.d.ts"
-      }
-    },
-    "./telemetry": {
-      "types": {
-        "default": "./dist/telemetry.d.ts"
-      }
-    },
-    "./session-replay": {
-      "types": {
-        "default": "./dist/sessionReplay.d.ts"
-      }
-    },
-    "./session-replay-browser": {
-      "types": {
-        "default": "./dist/browserSessionReplay.d.ts"
-      }
-    },
-    "./session-replay-mobile": {
-      "types": {
-        "default": "./dist/mobileSessionReplay.d.ts"
-      }
-    }
+    "./rum": "./dist/rum.js",
+    "./telemetry": "./dist/telemetry.js",
+    "./session-replay": "./dist/sessionReplay.js",
+    "./session-replay-browser": "./dist/browserSessionReplay.js",
+    "./session-replay-mobile": "./dist/mobileSessionReplay.js"
   },
   "typesVersions": {
-    "*": {
+    ">=4.5": {
       "rum": [
         "./dist/rum.d.ts"
       ],
@@ -55,12 +36,22 @@
     }
   },
   "scripts": {
-    "generate": "scripts/cli build_json2type && yarn generate:ts",
-    "generate:ts": "node scripts/generate.js",
-    "lint": "prettier -c samples schemas *format.json"
+    "build": "yarn build:deps && yarn build:ts",
+    "build:ts": "yarn generate && rm -rf ./dist && tsc",
+    "build:deps": "scripts/cli build_json2type",
+    "generate": "node scripts/generate.js",
+    "lint": "prettier -c samples schemas ts *format.json"
   },
   "devDependencies": {
     "json-schema-to-typescript": "bcaudan/json-schema-to-typescript#bcaudan/add-readonly-support",
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "typescript": ">=4.5"
+  },
+  "engines": {
+    "node": ">=12.7.0"
+  },
+  "volta": {
+    "node": "16.3.0",
+    "yarn": "1.22.18"
   }
 }

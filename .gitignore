@@ -1,1 +1,3 @@
 node_modules
+# Generate defintions out of schemas by running `yarn generate`
+ts/generated
