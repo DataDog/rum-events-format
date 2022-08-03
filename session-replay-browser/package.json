@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "main": "../dist/cjs/browserSessionReplay.js",
+  "module": "../dist/esm/browserSessionReplay.js",
+  "types": "../dist/cjs/browserSessionReplay.d.ts"
+}

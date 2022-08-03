@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "main": "../dist/cjs/mobileSessionReplay.js",
+  "module": "../dist/esm/mobileSessionReplay.js",
+  "types": "../dist/cjs/mobileSessionReplay.d.ts"
+}

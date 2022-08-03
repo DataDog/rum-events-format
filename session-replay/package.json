@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "main": "../dist/cjs/sessionReplay.js",
+  "module": "../dist/esm/sessionReplay.js",
+  "types": "../dist/cjs/sessionReplay.d.ts"
+}

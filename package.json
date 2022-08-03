@@ -6,38 +6,22 @@
   "private": true,
   "license": "Apache-2.0 (See ./LICENSE)",
   "files": [
-    "dist"
+    "dist",
+    "rum",
+    "telemetry",
+    "session-replay",
+    "session-replay-browser",
+    "session-replay-mobile"
   ],
   "type": "module",
-  "exports": {
-    "./rum": "./dist/rum.js",
-    "./telemetry": "./dist/telemetry.js",
-    "./session-replay": "./dist/sessionReplay.js",
-    "./session-replay-browser": "./dist/browserSessionReplay.js",
-    "./session-replay-mobile": "./dist/mobileSessionReplay.js"
-  },
-  "typesVersions": {
-    ">=4.5": {
-      "rum": [
-        "./dist/rum.d.ts"
-      ],
-      "telemetry": [
-        "./dist/telemetry.d.ts"
-      ],
-      "session-replay": [
-        "./dist/sessionReplay.d.ts"
-      ],
-      "session-replay-browser": [
-        "./dist/browserSessionReplay.d.ts"
-      ],
-      "session-replay-mobile": [
-        "./dist/mobileSessionReplay.d.ts"
-      ]
-    }
-  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/cjs/index.d.ts",
   "scripts": {
     "build": "yarn build:deps && yarn build:ts",
-    "build:ts": "yarn generate && rm -rf ./dist && tsc",
+    "build:ts": "yarn generate && rm -rf ./dist && yarn build:cjs && yarn build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
     "build:deps": "scripts/cli build_json2type",
     "generate": "node scripts/generate.js",
     "format": "prettier -c ."
