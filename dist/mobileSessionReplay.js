@@ -1,4 +1,4 @@
-export * from './generated/mobileSessionReplay';
+export * from './generated/mobileSessionReplay.js';
 export var RecordType = {
     FullSnapshot: 10,
     IncrementalSnapshot: 11,

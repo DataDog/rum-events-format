@@ -1,6 +1,6 @@
-import type * as SessionReplay from './generated/browserSessionReplay'
+import type * as SessionReplay from './generated/browserSessionReplay.js'
 
-export * from './generated/browserSessionReplay'
+export * from './generated/browserSessionReplay.js'
 
 export const RecordType: {
   FullSnapshot: SessionReplay.BrowserFullSnapshotRecord['type']

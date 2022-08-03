@@ -1,1 +1,1 @@
-export * from './generated/rum';
+export * from './generated/rum.js';

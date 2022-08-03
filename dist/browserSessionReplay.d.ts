@@ -1,5 +1,5 @@
-import type * as SessionReplay from './generated/browserSessionReplay';
-export * from './generated/browserSessionReplay';
+import type * as SessionReplay from './generated/browserSessionReplay.js';
+export * from './generated/browserSessionReplay.js';
 export declare const RecordType: {
     FullSnapshot: SessionReplay.BrowserFullSnapshotRecord['type'];
     IncrementalSnapshot: SessionReplay.BrowserIncrementalSnapshotRecord['type'];

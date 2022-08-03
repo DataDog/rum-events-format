@@ -1,6 +1,6 @@
-export * from './generated/sessionReplay';
-export { NodeType, IncrementalSource, MouseInteractionType, MediaInteractionType } from './browserSessionReplay';
-export { WireframeType } from './mobileSessionReplay';
+export * from './generated/sessionReplay.js';
+export { NodeType, IncrementalSource, MouseInteractionType, MediaInteractionType } from './browserSessionReplay.js';
+export { WireframeType } from './mobileSessionReplay.js';
 export var RecordType = {
     BrowserFullSnapshot: 2,
     BrowserIncrementalSnapshot: 3,

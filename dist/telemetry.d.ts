@@ -1,1 +1,1 @@
-export * from './generated/telemetry';
+export * from './generated/telemetry.js';

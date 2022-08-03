@@ -1,6 +1,6 @@
-import type * as SessionReplay from './generated/mobileSessionReplay'
+import type * as SessionReplay from './generated/mobileSessionReplay.js'
 
-export * from './generated/mobileSessionReplay'
+export * from './generated/mobileSessionReplay.js'
 
 export const RecordType: {
   FullSnapshot: SessionReplay.MobileFullSnapshotRecord['type']

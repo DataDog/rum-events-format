@@ -1,4 +1,4 @@
-export * from './generated/browserSessionReplay';
+export * from './generated/browserSessionReplay.js';
 export var RecordType = {
     FullSnapshot: 2,
     IncrementalSnapshot: 3,
