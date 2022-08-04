@@ -12,10 +12,7 @@
       "$ref": "_action-child-schema.json"
     },
     {
-      "required": [
-        "type",
-        "resource"
-      ],
+      "required": ["type", "resource"],
       "properties": {
         "type": {
           "type": "string",
@@ -26,11 +23,7 @@
         "resource": {
           "type": "object",
           "description": "Resource properties",
-          "required": [
-            "type",
-            "url",
-            "duration"
-          ],
+          "required": ["type", "url", "duration"],
           "properties": {
             "id": {
               "type": "string",
@@ -76,10 +69,7 @@
             "redirect": {
               "type": "object",
               "description": "Redirect phase properties",
-              "required": [
-                "duration",
-                "start"
-              ],
+              "required": ["duration", "start"],
               "properties": {
                 "duration": {
                   "type": "integer",
@@ -99,10 +89,7 @@
             "dns": {
               "type": "object",
               "description": "DNS phase properties",
-              "required": [
-                "duration",
-                "start"
-              ],
+              "required": ["duration", "start"],
               "properties": {
                 "duration": {
                   "type": "integer",
@@ -122,10 +109,7 @@
             "connect": {
               "type": "object",
               "description": "Connect phase properties",
-              "required": [
-                "duration",
-                "start"
-              ],
+              "required": ["duration", "start"],
               "properties": {
                 "duration": {
                   "type": "integer",
@@ -145,10 +129,7 @@
             "ssl": {
               "type": "object",
               "description": "SSL phase properties",
-              "required": [
-                "duration",
-                "start"
-              ],
+              "required": ["duration", "start"],
               "properties": {
                 "duration": {
                   "type": "integer",
@@ -168,10 +149,7 @@
             "first_byte": {
               "type": "object",
               "description": "First Byte phase properties",
-              "required": [
-                "duration",
-                "start"
-              ],
+              "required": ["duration", "start"],
               "properties": {
                 "duration": {
                   "type": "integer",
@@ -191,10 +169,7 @@
             "download": {
               "type": "object",
               "description": "Download phase properties",
-              "required": [
-                "duration",
-                "start"
-              ],
+              "required": ["duration", "start"],
               "properties": {
                 "duration": {
                   "type": "integer",
@@ -228,7 +203,22 @@
                 "type": {
                   "type": "string",
                   "description": "The type of provider",
-                  "enum": ["ad", "advertising", "analytics", "cdn", "content", "customer-success", "first party", "hosting", "marketing", "other", "social", "tag-manager", "utility", "video"],
+                  "enum": [
+                    "ad",
+                    "advertising",
+                    "analytics",
+                    "cdn",
+                    "content",
+                    "customer-success",
+                    "first party",
+                    "hosting",
+                    "marketing",
+                    "other",
+                    "social",
+                    "tag-manager",
+                    "utility",
+                    "video"
+                  ],
                   "readOnly": true
                 }
               },

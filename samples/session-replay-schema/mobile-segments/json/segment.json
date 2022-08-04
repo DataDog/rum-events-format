@@ -1,110 +1,110 @@
 {
-    "application": {
-        "id": "c8b3b434-0a55-413f-a391-8e3b7e7131a8"
-    },
-    "session": {
-        "id": "c09e525c-5971-49c4-8b51-531ba99765cf"
-    },
-    "view": {
-        "id": "b27c7927-bf1e-4168-8d56-d5f191741ba4"
-    },
-    "source": "android",
-    "start": 1657629228285,
-    "end": 1657629238285,
-    "has_full_snapshot_record": true,
-    "records_count": 2,
-    "creation_reason": "init",
-    "index_in_view": 1,
-    "records": [
-        {
-            "timestamp": 1657629228218,
-            "type": 10,
-            "data": {
-                "wireframes": [
-                    {
-                        "id": 1,
-                        "x": 10,
-                        "y": 10,
-                        "width": 20,
-                        "height": 30,
-                        "type": "shape"
-                    },
-                    {
-                        "id": 2,
-                        "x": 10,
-                        "y": 10,
-                        "width": 20,
-                        "height": 30,
-                        "type": "text",
-                        "text": "Test",
-                        "textStyle": {
-                            "family": "Arial",
-                            "size": 20,
-                            "type": "sans-serif",
-                            "color": "#FF000000"
-                        }
-                    },
-                    {
-                        "id": 3,
-                        "x": 40,
-                        "y": 50,
-                        "width": 20,
-                        "height": 30,
-                        "type": "shape"
-                    }
-                ]
+  "application": {
+    "id": "c8b3b434-0a55-413f-a391-8e3b7e7131a8"
+  },
+  "session": {
+    "id": "c09e525c-5971-49c4-8b51-531ba99765cf"
+  },
+  "view": {
+    "id": "b27c7927-bf1e-4168-8d56-d5f191741ba4"
+  },
+  "source": "android",
+  "start": 1657629228285,
+  "end": 1657629238285,
+  "has_full_snapshot_record": true,
+  "records_count": 2,
+  "creation_reason": "init",
+  "index_in_view": 1,
+  "records": [
+    {
+      "timestamp": 1657629228218,
+      "type": 10,
+      "data": {
+        "wireframes": [
+          {
+            "id": 1,
+            "x": 10,
+            "y": 10,
+            "width": 20,
+            "height": 30,
+            "type": "shape"
+          },
+          {
+            "id": 2,
+            "x": 10,
+            "y": 10,
+            "width": 20,
+            "height": 30,
+            "type": "text",
+            "text": "Test",
+            "textStyle": {
+              "family": "Arial",
+              "size": 20,
+              "type": "sans-serif",
+              "color": "#FF000000"
             }
-        },
-        {
-            "timestamp": 1657629228273,
-            "type": 11,
-            "data": {
-                "source": 0,
-                "adds": [
-                    {
-                        "previousId": 2,
-                        "wireframe": {
-                            "id": 12,
-                            "x": 10,
-                            "y": 10,
-                            "width": 20,
-                            "height": 30,
-                            "type": "text",
-                            "text": "Test",
-                            "textStyle": {
-                                "family": "Arial",
-                                "size": 20,
-                                "type": "sans-serif",
-                                "color": "#FF000000"
-                            }
-                        }
-                    }
-                ],
-                "removes": [
-                    {
-                        "id": 3
-                    }
-                ],
-                "updates": [
-                    {
-                        "id": 2,
-                        "text": "New text",
-                        "type": "text",
-                        "textStyle": {
-                            "family": "Arial",
-                            "size": 20,
-                            "type": "sans-serif",
-                            "color": "#FF0000"
-                        }
-                    },
-                    {
-                        "id": 1,
-                        "type": "shape",
-                        "x": 0,
-                        "y": 10
-                    }
-                ]
+          },
+          {
+            "id": 3,
+            "x": 40,
+            "y": 50,
+            "width": 20,
+            "height": 30,
+            "type": "shape"
+          }
+        ]
+      }
+    },
+    {
+      "timestamp": 1657629228273,
+      "type": 11,
+      "data": {
+        "source": 0,
+        "adds": [
+          {
+            "previousId": 2,
+            "wireframe": {
+              "id": 12,
+              "x": 10,
+              "y": 10,
+              "width": 20,
+              "height": 30,
+              "type": "text",
+              "text": "Test",
+              "textStyle": {
+                "family": "Arial",
+                "size": 20,
+                "type": "sans-serif",
+                "color": "#FF000000"
+              }
             }
-        }
-    ]
+          }
+        ],
+        "removes": [
+          {
+            "id": 3
+          }
+        ],
+        "updates": [
+          {
+            "id": 2,
+            "text": "New text",
+            "type": "text",
+            "textStyle": {
+              "family": "Arial",
+              "size": 20,
+              "type": "sans-serif",
+              "color": "#FF0000"
+            }
+          },
+          {
+            "id": 1,
+            "type": "shape",
+            "x": 0,
+            "y": 10
+          }
+        ]
+      }
+    }
+  ]
 }

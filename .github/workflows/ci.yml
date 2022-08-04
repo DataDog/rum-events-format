@@ -1,22 +1,41 @@
 name: ci
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
 
 jobs:
-  lint:
+  check-is-built:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+      - name: yarn install
+        run: yarn install
 
-      - name: install jsonlint
-        run: npm install -g jsonlint
+      - name: yarn build
+        run: yarn build
 
-      - name: lint json files
-        run: ./lint.sh
+      - name: git status is clean
+        shell: bash
+        run: |
+          [ -z "$(git status --porcelain)" ]
+
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: yarn install
+        run: yarn install
+
+      - name: format all files
+        run: yarn format
 
   validate:
     runs-on: ubuntu-latest
