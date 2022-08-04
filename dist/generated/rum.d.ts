@@ -46,7 +46,7 @@ export declare type RumActionEvent = CommonProperties & {
             /**
              * Action frustration types
              */
-            readonly type: ('rage_click' | 'dead_click' | 'error_click')[];
+            readonly type: ('rage_click' | 'dead_click' | 'error_click' | 'rage_tap' | 'error_tap')[];
             [k: string]: unknown;
         };
         /**

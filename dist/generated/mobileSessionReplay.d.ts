@@ -174,7 +174,7 @@ export declare type MobileMutationData = {
     /**
      * The source of this type of incremental data.
      */
-    readonly source?: 0;
+    readonly source: 0;
 } & MobileMutationPayload;
 /**
  * Mobile-specific. Schema of a MutationPayload.
