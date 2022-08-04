@@ -256,7 +256,8 @@
             "rule_psr": {
               "type": "number",
               "description": "sample rate in integer format",
-              "pattern": "^[1-9]$|^[1-9][0-9]$|^(100)$",
+              "minimum": 0,
+            "exclusiveMaximum": 100,
               "readOnly": true
             }
           },
