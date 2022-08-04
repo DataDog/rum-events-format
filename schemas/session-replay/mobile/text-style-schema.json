@@ -6,11 +6,7 @@
   "description": "Schema of all properties of a TextStyle.",
   "allOf": [
     {
-      "required": [
-        "color",
-        "family",
-        "size"
-      ],
+      "required": ["color", "family", "size"],
       "properties": {
         "family": {
           "type": "string",

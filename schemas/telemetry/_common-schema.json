@@ -93,7 +93,7 @@
         }
       }
     },
-    "experimental_features":  {
+    "experimental_features": {
       "type": "array",
       "description": "Enabled experimental features",
       "items": {

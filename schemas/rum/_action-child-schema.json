@@ -8,9 +8,7 @@
     "action": {
       "type": "object",
       "description": "Action properties",
-      "required": [
-        "id"
-      ],
+      "required": ["id"],
       "properties": {
         "id": {
           "description": "UUID of the action",
@@ -34,4 +32,3 @@
     }
   }
 }
-

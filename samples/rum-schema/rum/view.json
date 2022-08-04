@@ -40,8 +40,8 @@
       "count": 9
     },
     "in_foreground_periods": [
-      {"start": 1345678, "duration": 67},
-      {"start": 1645678, "duration": 67}
+      { "start": 1345678, "duration": 67 },
+      { "start": 1645678, "duration": 67 }
     ]
   },
   "_dd": {
