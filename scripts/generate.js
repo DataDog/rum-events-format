@@ -70,6 +70,7 @@ async function getJsonSchemaToTypescript() {
 
     execSync(
       `
+        set -eu
         cd ./node_modules/json-schema-to-typescript
         rm -rf dist
         # due to installation on node_modules, some of these steps can fail
