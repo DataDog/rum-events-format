@@ -4,9 +4,9 @@
     "target": "es5",
     "types": [],
     "esModuleInterop": true,
-    "moduleResolution": "nodenext",
-    "module": "es6",
-    "outDir": "dist",
+    "moduleResolution": "Node",
+    "module": "CommonJS",
+    "outDir": "lib",
     "declaration": true
   },
   "include": ["./ts/*.ts"],
