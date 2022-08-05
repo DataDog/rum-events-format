@@ -6,16 +6,23 @@
   "private": true,
   "license": "Apache-2.0 (See ./LICENSE)",
   "files": [
-    "lib"
+    "lib",
+    "rum",
+    "session-replay",
+    "session-replay-browser",
+    "session-replay-mobile",
+    "telemetry"
   ],
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "type": "module",
+  "main": "lib/cjs/index.js",
+  "types": "lib/cjs/index.d.ts",
+  "module": "lib/esm/index.js",
   "scripts": {
-    "build": "yarn generate && rm -rf ./lib && tsc",
-    "generate": "node scripts/generate.js",
+    "build": "yarn generate && rm -rf ./lib && yarn build:cjs && yarn build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "generate": "node scripts/generate.mjs",
     "format": "prettier -c .",
-    "validate": "node scripts/validate.js"
+    "validate": "node scripts/validate.mjs"
   },
   "devDependencies": {
     "ajv": "8.11.0",

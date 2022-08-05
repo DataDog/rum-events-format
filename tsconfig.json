@@ -5,7 +5,6 @@
     "types": [],
     "esModuleInterop": true,
     "moduleResolution": "Node",
-    "module": "CommonJS",
     "outDir": "lib",
     "declaration": true
   },

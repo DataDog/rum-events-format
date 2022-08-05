@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import { execSync } from 'child_process'
 import prettier from 'prettier'
-import { printLog, logAndExit } from './utils.js'
+import { printLog, logAndExit } from './utils.mjs'
 
 const SCHEMAS_PATH = 'schemas'
 const PRETTIER_CONFIG = '.prettierrc.yml'
@@ -72,7 +72,7 @@ async function getJsonSchemaToTypescript() {
       `
         set -eu
         cd ./node_modules/json-schema-to-typescript
-        rm -rf dist
+        rm -rf lib
         # due to installation on node_modules, some of these steps can fail
         # built version still behaves correctly though
         set +e

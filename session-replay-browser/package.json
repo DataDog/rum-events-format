@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "main": "../lib/cjs/session-replay-browser.js",
+  "module": "../lib/esm/session-replay-browser.js",
+  "types": "../lib/esm/session-replay-browser.d.ts"
+}
