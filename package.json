@@ -36,9 +36,7 @@
     }
   },
   "scripts": {
-    "build": "yarn build:deps && yarn build:ts",
-    "build:ts": "yarn generate && rm -rf ./dist && tsc",
-    "build:deps": "scripts/cli build_json2type",
+    "build": "yarn generate && rm -rf ./dist && tsc",
     "generate": "node scripts/generate.js",
     "format": "prettier -c ."
   },

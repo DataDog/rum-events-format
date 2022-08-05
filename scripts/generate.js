@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import { compileFromFile } from 'json-schema-to-typescript'
+import { execSync } from 'child_process'
 import prettier from 'prettier'
 import { printLog, logAndExit } from './utils.js'
 
@@ -25,6 +25,8 @@ const DEFINITIONS = [
 
 const GENERATED_PATH = path.join('ts', 'generated')
 
+main().catch(logAndExit)
+
 async function main() {
   fs.rmSync(GENERATED_PATH, { recursive: true, force: true })
   fs.mkdirSync(GENERATED_PATH)
@@ -36,6 +38,7 @@ async function main() {
 }
 
 async function generateTypesFromSchema(typesPath, schema, { options = {} } = {}) {
+  const { compileFromFile } = await getJsonSchemaToTypescript()
   const schemaPath = path.join(SCHEMAS_PATH, schema)
   const prettierConfig = await prettier.resolveConfig(PRETTIER_CONFIG)
   printLog(`Compiling ${schemaPath}...`)
@@ -50,4 +53,37 @@ async function generateTypesFromSchema(typesPath, schema, { options = {} } = {})
   printLog('Generation done.')
 }
 
-main().catch(logAndExit)
+async function getJsonSchemaToTypescript() {
+  if (!getJsonSchemaToTypescript.cache) {
+    getJsonSchemaToTypescript.cache = import('json-schema-to-typescript').catch((error) => {
+      if (error.code !== 'ERR_MODULE_NOT_FOUND') {
+        throw error
+      }
+      buildJsonSchemaToTypescript()
+      return import('json-schema-to-typescript')
+    })
+  }
+  return getJsonSchemaToTypescript.cache
+
+  function buildJsonSchemaToTypescript() {
+    printLog('json-schema-to-typescript not built. Building...')
+
+    execSync(
+      `
+        set -eu
+        cd ./node_modules/json-schema-to-typescript
+        rm -rf dist
+        # due to installation on node_modules, some of these steps can fail
+        # built version still behaves correctly though
+        set +e
+        npm i
+        npm run clean
+        npm run build:server
+        set -e
+      `,
+      {
+        stdio: 'inherit',
+      }
+    )
+  }
+}
