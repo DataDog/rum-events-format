@@ -247,7 +247,7 @@
               "type": "number",
               "description": "sample rate in integer format",
               "minimum": 0,
-            "exclusiveMaximum": 100,
+              "exclusiveMaximum": 100,
               "readOnly": true
             }
           },
