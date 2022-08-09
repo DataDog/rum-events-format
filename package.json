@@ -6,39 +6,13 @@
   "private": true,
   "license": "Apache-2.0 (See ./LICENSE)",
   "files": [
-    "dist"
+    "lib"
   ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "type": "module",
-  "exports": {
-    "./rum": "./dist/rum.js",
-    "./telemetry": "./dist/telemetry.js",
-    "./session-replay": "./dist/sessionReplay.js",
-    "./session-replay-browser": "./dist/browserSessionReplay.js",
-    "./session-replay-mobile": "./dist/mobileSessionReplay.js"
-  },
-  "typesVersions": {
-    ">=4.5": {
-      "rum": [
-        "./dist/rum.d.ts"
-      ],
-      "telemetry": [
-        "./dist/telemetry.d.ts"
-      ],
-      "session-replay": [
-        "./dist/sessionReplay.d.ts"
-      ],
-      "session-replay-browser": [
-        "./dist/browserSessionReplay.d.ts"
-      ],
-      "session-replay-mobile": [
-        "./dist/mobileSessionReplay.d.ts"
-      ]
-    }
-  },
   "scripts": {
-    "build": "yarn build:deps && yarn build:ts",
-    "build:ts": "yarn generate && rm -rf ./dist && tsc",
-    "build:deps": "scripts/cli build_json2type",
+    "build": "yarn generate && rm -rf ./lib && tsc",
     "generate": "node scripts/generate.js",
     "format": "prettier -c ."
   },

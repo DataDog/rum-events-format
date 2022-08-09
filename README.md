@@ -29,10 +29,6 @@ It is also possible to specify the exact commit hash to use, e.g:
 
 # Tools
 
-## Generate schema from sample
-
-https://jsonschema.net/
-
 ## Validate samples
 
 Prerequisite:
@@ -43,7 +39,7 @@ Run a validation:
 
     ./validate.sh
 
-### Build JS sources + TS definitions
+## Build JS sources + TS definitions
 
 Prerequisite:
 
@@ -53,17 +49,17 @@ Build:
 
     yarn build
 
-### Generate TS definitions out of the schemas
+## Generate TS definitions out of the schemas
 
 Prerequisite:
 
-    yarn build:deps
+    yarn install
 
 Generate:
 
     yarn generate
 
-### Prettify TS & JSON files
+## Prettify TS & JSON files
 
 Prerequisite:
 
@@ -72,3 +68,9 @@ Prerequisite:
 Format:
 
     yarn format -w
+
+## External tools
+
+### Generate schema from sample
+
+https://jsonschema.net/

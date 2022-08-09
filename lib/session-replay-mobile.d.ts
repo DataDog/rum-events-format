@@ -1,5 +1,5 @@
-import type * as SessionReplay from './generated/mobileSessionReplay.js';
-export * from './generated/mobileSessionReplay.js';
+import type * as SessionReplay from './generated/mobileSessionReplay';
+export * from './generated/mobileSessionReplay';
 export declare const RecordType: {
     FullSnapshot: SessionReplay.MobileFullSnapshotRecord['type'];
     IncrementalSnapshot: SessionReplay.MobileIncrementalSnapshotRecord['type'];

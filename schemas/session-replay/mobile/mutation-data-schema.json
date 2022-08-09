@@ -6,6 +6,7 @@
   "description": "Mobile-specific. Schema of a MutationData.",
   "allOf": [
     {
+      "required": ["source"],
       "properties": {
         "source": {
           "type": "integer",
