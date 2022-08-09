@@ -247,7 +247,7 @@
               "type": "number",
               "description": "tracing sample rate in decimal format",
               "minimum": 0,
-              "exclusiveMaximum": 1,
+              "maximum": 1,
               "readOnly": true
             }
           },
