@@ -242,6 +242,13 @@
               "description": "trace identifier in decimal format",
               "pattern": "^[0-9]+$",
               "readOnly": true
+            },
+            "rule_psr": {
+              "type": "number",
+              "description": "tracing sample rate in decimal format",
+              "minimum": 0,
+              "maximum": 1,
+              "readOnly": true
             }
           },
           "readOnly": true
