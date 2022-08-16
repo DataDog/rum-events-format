@@ -33,6 +33,25 @@
       "default": "./lib/cjs/session-replay-mobile.js"
     }
   },
+  "typesVersions": {
+    ">=4.5": {
+      "rum": [
+        "./lib/esm/rum.d.ts"
+      ],
+      "telemetry": [
+        "./lib/esm/telemetry.d.ts"
+      ],
+      "session-replay": [
+        "./lib/esm/session-replay.d.ts"
+      ],
+      "session-replay-browser": [
+        "./lib/esm/session-replay-browser.d.ts"
+      ],
+      "session-replay-mobile": [
+        "./lib/esm/session-replay-mobile.d.ts"
+      ]
+    }
+  },
   "type": "module",
   "scripts": {
     "build": "yarn generate && rm -rf ./lib && yarn build:cjs && yarn build:esm",
