@@ -12,7 +12,9 @@
   "types": "lib/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "yarn generate && rm -rf ./lib && tsc",
+    "build": "yarn generate && rm -rf ./lib && yarn build:cjs && yarn build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
     "generate": "node scripts/generate.js",
     "format": "prettier -c ."
   },
