@@ -8,8 +8,31 @@
   "files": [
     "lib"
   ],
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/cjs/index.js",
+  "types": "lib/cjs/index.d.ts",
+  "module": "lib/esm/index.js",
+  "exports": {
+    "./rum": {
+      "import": "./lib/esm/rum.js",
+      "default": "./lib/cjs/rum.js"
+    },
+    "./telemetry": {
+      "import": "./lib/esm/telemetry.js",
+      "default": "./lib/cjs/telemetry.js"
+    },
+    "./session-replay": {
+      "import": "./lib/esm/session-replay.js",
+      "default": "./lib/cjs/session-replay.js"
+    },
+    "./session-replay-browser": {
+      "import": "./lib/esm/session-replay-browser.js",
+      "default": "./lib/cjs/session-replay-browser.js"
+    },
+    "./session-replay-mobile": {
+      "import": "./lib/esm/session-replay-mobile.js",
+      "default": "./lib/cjs/session-replay-mobile.js"
+    }
+  },
   "type": "module",
   "scripts": {
     "build": "yarn generate && rm -rf ./lib && yarn build:cjs && yarn build:esm",
