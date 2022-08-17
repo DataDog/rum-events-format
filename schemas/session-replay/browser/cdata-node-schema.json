@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "cdata-node-schema.json",
+  "$id": "session-replay/browser/cdata-node-schema.json",
   "title": "CDataNode",
   "type": "object",
   "description": "Schema of a CData Node.",

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "stylesheet-rule-data-schema.json",
+  "$id": "session-replay/browser/stylesheet-rule-data-schema.json",
   "title": "StyleSheetRuleData",
   "type": "object",
   "description": "Browser-specific. Schema of a StyleSheetRuleData.",

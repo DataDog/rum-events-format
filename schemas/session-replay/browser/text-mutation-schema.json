@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "text-mutation-schema.json",
+  "$id": "session-replay/browser/text-mutation-schema.json",
   "title": "TextMutation",
   "type": "object",
   "description": "Schema of a TextMutation.",

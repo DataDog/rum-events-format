@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "mouse-position-schema.json",
+  "$id": "session-replay/browser/mouse-position-schema.json",
   "title": "MousePosition",
   "type": "object",
   "description": "Browser-specific. Schema of a MousePosition.",

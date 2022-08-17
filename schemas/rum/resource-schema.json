@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "resource-schema.json",
+  "$id": "rum/resource-schema.json",
   "title": "RumResourceEvent",
   "type": "object",
   "description": "Schema of all properties of a Resource event",

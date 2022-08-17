@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "debug-schema.json",
+  "$id": "telemetry/debug-schema.json",
   "title": "TelemetryDebugEvent",
   "type": "object",
   "description": "Schema of all properties of a telemetry debug event",

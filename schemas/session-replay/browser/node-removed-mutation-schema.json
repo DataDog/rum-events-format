@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "node-removed-mutation-schema.json",
+  "$id": "session-replay/browser/node-removed-mutation-schema.json",
   "title": "RemovedNodeMutation",
   "type": "object",
   "description": "Schema of a RemovedNodeMutation.",

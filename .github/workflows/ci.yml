@@ -41,9 +41,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: install jsonschema
-        run: pip install jsonschema
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: yarn install
+        run: yarn install
 
       - name: validate schemas
-        run: ./validate.sh
+        run: yarn validate

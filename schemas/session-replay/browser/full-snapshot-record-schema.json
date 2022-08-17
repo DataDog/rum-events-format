@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "browser-full-snapshot-record-schema.json",
+  "$id": "session-replay/browser/full-snapshot-record-schema.json",
   "title": "BrowserFullSnapshotRecord",
   "type": "object",
   "description": "Browser-specific. Schema of a Record type which contains the full snapshot of a screen.",
