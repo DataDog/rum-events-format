@@ -680,7 +680,7 @@ export interface CommonProperties {
     /**
      * The source of this event
      */
-    readonly source?: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native';
+    readonly source?: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku';
     /**
      * View properties
      */
