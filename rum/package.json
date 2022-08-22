@@ -1,0 +1,6 @@
+{
+    "private": true,
+    "main": "../lib/cjs/rum.js",
+    "module": "../lib/esm/rum.js",
+    "types": "../lib/esm/rum.d.ts"
+}
