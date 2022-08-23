@@ -16,7 +16,6 @@
   "main": "lib/cjs/index.js",
   "types": "lib/cjs/index.d.ts",
   "module": "lib/esm/index.js",
-  "type": "module",
   "scripts": {
     "build": "yarn generate && rm -rf ./lib && yarn build:cjs && yarn build:esm",
     "build:cjs": "tsc -p tsconfig.cjs.json",
