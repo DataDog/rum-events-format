@@ -76,7 +76,7 @@ async function getJsonSchemaToTypescript() {
       `
         set -eu
         cd ./node_modules/json-schema-to-typescript
-        rm -rf lib
+        rm -rf dist
         # due to installation on node_modules, some of these steps can fail
         # built version still behaves correctly though
         set +e
