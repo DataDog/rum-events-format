@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "main": "../cjs/src/telemetry.js",
+  "module": "../esm/src/telemetry.js",
+  "types": "../esm/src/telemetry.d.ts"
+}

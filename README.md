@@ -17,15 +17,15 @@ After editing any schema, you must re-generate the JS + TS definitions ([see bel
 
 Consuming projects are encouraged to use a _yarn github_ reference as dependency, e.g:
 
-    yarn add rum-events-format@DataDog/rum-events-format
+    yarn add rum-events-format@DataDog/rum-events-format#workspace=rum-events-format
 
 Updating to the latest change is possible with _yarn up_, e.g:
 
-    yarn up rum-events-format@DataDog/rum-events-format
+    yarn up rum-events-format@DataDog/rum-events-format#workspace=rum-events-format
 
 It is also possible to specify the exact commit hash to use, e.g:
 
-    yarn up rum-events-format@DataDog/rum-events-format#commit-hash
+    yarn up "rum-events-format@DataDog/rum-events-format#workspace=rum-events-format&commit=COMMIT-HASH"
 
 # Tools
 

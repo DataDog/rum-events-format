@@ -5,10 +5,9 @@
     "types": [],
     "esModuleInterop": true,
     "moduleResolution": "Node",
-    "module": "CommonJS",
     "outDir": "lib",
     "declaration": true
   },
-  "include": ["./ts/*.ts"],
+  "include": ["./lib/src/*.ts"],
   "exclude": []
 }
