@@ -1,6 +1,6 @@
 {
   "private": true,
-  "main": "../cjs/rum.js",
-  "module": "../esm/rum.js",
-  "types": "../esm/rum.d.ts"
+  "main": "../cjs/src/rum.js",
+  "module": "../esm/src/rum.js",
+  "types": "../esm/src/rum.d.ts"
 }

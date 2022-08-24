@@ -1,6 +1,6 @@
 {
   "private": true,
-  "main": "../cjs/session-replay.js",
-  "module": "../esm/session-replay.js",
-  "types": "../esm/session-replay.d.ts"
+  "main": "../cjs/src/session-replay.js",
+  "module": "../esm/src/session-replay.js",
+  "types": "../esm/src/session-replay.d.ts"
 }

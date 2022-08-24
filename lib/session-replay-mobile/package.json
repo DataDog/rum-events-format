@@ -1,6 +1,6 @@
 {
   "private": true,
-  "main": "../cjs/session-replay-mobile.js",
-  "module": "../esm/session-replay-mobile.js",
-  "types": "../esm/session-replay-mobile.d.ts"
+  "main": "../cjs/src/session-replay-mobile.js",
+  "module": "../esm/src/session-replay-mobile.js",
+  "types": "../esm/src/session-replay-mobile.d.ts"
 }
