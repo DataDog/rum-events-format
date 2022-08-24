@@ -1,0 +1,11 @@
+
+{
+  "name": "rum-events-format",
+  "version": "1.0.0",
+  "description": "JSON schema of Datadog RUM events",
+  "repository": "https://github.com/DataDog/rum-events-format.git",
+  "private" :true,
+  "main": "cjs/index.js",
+  "types": "cjs/index.d.ts",
+  "module": "esm/index.js"
+}
