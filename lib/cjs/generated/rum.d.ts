@@ -478,7 +478,7 @@ export declare type RumViewEvent = CommonProperties & {
          */
         readonly first_input_time?: number;
         /**
-         * Total layout shift score that occured on the view
+         * Total layout shift score that occurred on the view
          */
         readonly cumulative_layout_shift?: number;
         /**

@@ -75,7 +75,7 @@
             },
             "cumulative_layout_shift": {
               "type": "number",
-              "description": "Total layout shift score that occured on the view",
+              "description": "Total layout shift score that occurred on the view",
               "minimum": 0,
               "readOnly": true
             },
