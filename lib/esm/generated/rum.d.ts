@@ -498,6 +498,10 @@ export declare type RumViewEvent = CommonProperties & {
          */
         readonly load_event?: number;
         /**
+         * Duration in ns to the response start of the document request
+         */
+        readonly time_to_first_byte?: number;
+        /**
          * User custom timings of the view. As timing name is used as facet path, it must contain only letters, digits, or the characters - _ . @ $
          */
         readonly custom_timings?: {
