@@ -75,7 +75,7 @@
             },
             "cumulative_layout_shift": {
               "type": "number",
-              "description": "Total layout shift score that occured on the view",
+              "description": "Total layout shift score that occurred on the view",
               "minimum": 0,
               "readOnly": true
             },
@@ -100,6 +100,12 @@
             "load_event": {
               "type": "integer",
               "description": "Duration in ns to the end of the load event handler execution",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "first_byte": {
+              "type": "integer",
+              "description": "Duration in ns to the response start of the document request",
               "minimum": 0,
               "readOnly": true
             },
