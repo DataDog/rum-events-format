@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/_vital-info-schema.json",
+  "title": "RumVitalInfo",
+  "type": "object",
+  "description": "Schema of properties for a vital",
+  "required": ["view_min", "view_max", "view_average"],
+  "properties": {
+    "view_min": {
+      "type": "number",
+      "description": "The minimum value seen for this vital in the view.",
+      "readOnly": true
+    },
+    "view_max": {
+      "type": "number",
+      "description": "The maximum value seen for this vital in the view.",
+      "readOnly": true
+    },
+    "view_average": {
+      "type": "number",
+      "description": "The minimum value seen for this vital in the view.",
+      "readOnly": true
+    },
+    "vital_max": {
+      "type": "number",
+      "description": "The maximum value we could see for this vital.",
+      "readOnly": true
+    }
+  }
+}
