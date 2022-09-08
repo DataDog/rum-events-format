@@ -6,6 +6,7 @@
   "description": "Schema of a TouchData.",
   "allOf": [
     {
+      "required": ["source"],
       "properties": {
         "source": {
           "type": "integer",

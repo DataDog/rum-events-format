@@ -508,7 +508,7 @@ export declare type TouchData = {
     /**
      * The source of this type of incremental data.
      */
-    readonly source?: 2;
+    readonly source: 2;
     /**
      * Contains the positions of the finger on the screen during the touchDown/touchUp event lifecycle.
      */
