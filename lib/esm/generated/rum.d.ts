@@ -176,6 +176,142 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
          */
         stack?: string;
         /**
+         * Causes of the error
+         */
+        causes?: {
+            /**
+             * Error message
+             */
+            message: string;
+            /**
+             * The type of the error
+             */
+            readonly type?: string;
+            /**
+             * Stacktrace of the error
+             */
+            stack?: string;
+            origin?: RumErrorEvent1;
+            [k: string]: unknown;
+        }[];
+        /**
+         * Whether this error crashed the host application
+         */
+        readonly is_crash?: boolean;
+        /**
+         * The type of the error
+         */
+        readonly type?: string;
+        /**
+         * Whether the error has been handled manually in the source code or not
+         */
+        readonly handling?: 'handled' | 'unhandled';
+        /**
+         * Handling call stack
+         */
+        readonly handling_stack?: string;
+        /**
+         * Source type of the error (the language or platform impacting the error stacktrace format)
+         */
+        readonly source_type?: 'android' | 'browser' | 'ios' | 'react-native' | 'flutter';
+        /**
+         * Resource properties of the error
+         */
+        readonly resource?: {
+            /**
+             * HTTP method of the resource
+             */
+            readonly method: 'POST' | 'GET' | 'HEAD' | 'PUT' | 'DELETE' | 'PATCH';
+            /**
+             * HTTP Status code of the resource
+             */
+            readonly status_code: number;
+            /**
+             * URL of the resource
+             */
+            url: string;
+            /**
+             * The provider for this resource
+             */
+            readonly provider?: {
+                /**
+                 * The domain name of the provider
+                 */
+                readonly domain?: string;
+                /**
+                 * The user friendly name of the provider
+                 */
+                readonly name?: string;
+                /**
+                 * The type of provider
+                 */
+                readonly type?: 'ad' | 'advertising' | 'analytics' | 'cdn' | 'content' | 'customer-success' | 'first party' | 'hosting' | 'marketing' | 'other' | 'social' | 'tag-manager' | 'utility' | 'video';
+                [k: string]: unknown;
+            };
+            [k: string]: unknown;
+        };
+        [k: string]: unknown;
+    };
+    /**
+     * View properties
+     */
+    readonly view?: {
+        /**
+         * Is the error starting in the foreground (focus in browser)
+         */
+        readonly in_foreground?: boolean;
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
+/**
+ * Schema of all properties of an Error event
+ */
+export declare type RumErrorEvent1 = CommonProperties & ActionChildProperties & {
+    /**
+     * RUM event type
+     */
+    readonly type: 'error';
+    /**
+     * Error properties
+     */
+    readonly error: {
+        /**
+         * UUID of the error
+         */
+        readonly id?: string;
+        /**
+         * Error message
+         */
+        message: string;
+        /**
+         * Source of the error
+         */
+        readonly source: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
+        /**
+         * Stacktrace of the error
+         */
+        stack?: string;
+        /**
+         * Causes of the error
+         */
+        causes?: {
+            /**
+             * Error message
+             */
+            message: string;
+            /**
+             * The type of the error
+             */
+            readonly type?: string;
+            /**
+             * Stacktrace of the error
+             */
+            stack?: string;
+            origin?: RumErrorEvent1;
+            [k: string]: unknown;
+        }[];
+        /**
          * Whether this error crashed the host application
          */
         readonly is_crash?: boolean;
