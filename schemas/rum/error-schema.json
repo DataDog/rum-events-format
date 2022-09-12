@@ -50,6 +50,7 @@
             "causes": {
               "type": "array",
               "description": "Causes of the error",
+              "maxItems": 10,
               "readOnly": false,
               "items": {
                 "type": "object",
