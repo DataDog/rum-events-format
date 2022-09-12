@@ -2,6 +2,17 @@ import type * as SessionReplay from '../generated/browserSessionReplay'
 
 export * from '../generated/browserSessionReplay'
 
+/**
+ * For backward compatibility reasons, `undefined` should be accepted as a possible value for Browser segments, too.
+ **/
+export const BrowserSource: {
+  [key: string]: SessionReplay.BrowserSegmentMetadata['source']
+} = {
+  Browser: 'browser',
+}
+
+export type BrowserSource = typeof BrowserSource[keyof typeof BrowserSource]
+
 export const RecordType: {
   FullSnapshot: SessionReplay.BrowserFullSnapshotRecord['type']
   IncrementalSnapshot: SessionReplay.BrowserIncrementalSnapshotRecord['type']

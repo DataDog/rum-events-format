@@ -2,6 +2,17 @@ import type * as SessionReplay from '../generated/mobileSessionReplay'
 
 export * from '../generated/mobileSessionReplay'
 
+export const MobileSource: {
+  [key: string]: SessionReplay.MobileSegmentMetadata['source']
+} = {
+  Android: 'android',
+  Ios: 'ios',
+  Flutter: 'flutter',
+  ReactNative: 'react-native',
+}
+
+export type MobileSource = typeof MobileSource[keyof typeof MobileSource]
+
 export const RecordType: {
   FullSnapshot: SessionReplay.MobileFullSnapshotRecord['type']
   IncrementalSnapshot: SessionReplay.MobileIncrementalSnapshotRecord['type']
