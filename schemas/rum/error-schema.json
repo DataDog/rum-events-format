@@ -72,8 +72,7 @@
                     "readOnly": false
                   },
                   "origin": {
-                    "type": "object",
-                    "$ref": "rum/error-schema.json"
+                    "$ref": "error-schema.json"
                   }
                 }
               }
