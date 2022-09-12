@@ -32,19 +32,7 @@
         "message": "502 Bad Gateway",
         "type": "Connection Error",
         "stack": "foo@http://path/to/file.js:1:1",
-        "origin": {
-          "id": "23e8cbce-327e-11ed-a261-0242ac120002",
-          "message": "fetch error POST https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum",
-          "source": "network",
-          "stack": "Failed to load",
-          "handling": "unhandled",
-          "handling_stack": "Failed to load",
-          "resource": {
-            "method": "POST",
-            "status_code": 0,
-            "url": "https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum"
-          }
-        }
+        "source": "network"
       },
       {
         "message": "504 Gateway Timeout"

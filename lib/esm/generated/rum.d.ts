@@ -194,7 +194,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             }
         ] | [
@@ -211,7 +214,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -227,7 +233,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             }
         ] | [
@@ -244,7 +253,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -260,7 +272,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -276,7 +291,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             }
         ] | [
@@ -293,7 +311,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -309,7 +330,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -325,7 +349,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -341,7 +368,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             }
         ] | [
@@ -358,7 +388,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -374,7 +407,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -390,7 +426,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -406,7 +445,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -422,7 +464,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             }
         ] | [
@@ -439,7 +484,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -455,7 +503,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -471,7 +522,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -487,7 +541,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -503,7 +560,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -519,7 +579,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             }
         ] | [
@@ -536,7 +599,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -552,7 +618,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -568,7 +637,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -584,7 +656,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -600,7 +675,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -616,7 +694,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -632,7 +713,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             }
         ] | [
@@ -649,7 +733,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -665,7 +752,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -681,7 +771,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -697,7 +790,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -713,7 +809,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -729,7 +828,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -745,7 +847,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -761,7 +866,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             }
         ] | [
@@ -778,7 +886,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -794,7 +905,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -810,7 +924,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -826,7 +943,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -842,7 +962,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -858,7 +981,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -874,7 +1000,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -890,7 +1019,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -906,7 +1038,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             }
         ] | [
@@ -923,7 +1058,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -939,7 +1077,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -955,7 +1096,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -971,7 +1115,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -987,7 +1134,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -1003,7 +1153,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -1019,7 +1172,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -1035,7 +1191,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -1051,7 +1210,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             },
             {
@@ -1067,7 +1229,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
                  * Stacktrace of the error
                  */
                 stack?: string;
-                origin?: RumErrorEvent;
+                /**
+                 * Source of the error
+                 */
+                readonly source?: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
                 [k: string]: unknown;
             }
         ];

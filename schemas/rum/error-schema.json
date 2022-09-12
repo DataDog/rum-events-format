@@ -72,8 +72,11 @@
                     "description": "Stacktrace of the error",
                     "readOnly": false
                   },
-                  "origin": {
-                    "$ref": "error-schema.json"
+                  "source": {
+                    "type": "string",
+                    "description": "Source of the error",
+                    "enum": ["network", "source", "console", "logger", "agent", "webview", "custom", "report"],
+                    "readOnly": true
                   }
                 }
               }
