@@ -177,23 +177,900 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
         stack?: string;
         /**
          * Causes of the error
+         *
+         * @maxItems 10
          */
-        causes?: {
-            /**
-             * Error message
-             */
-            message: string;
-            /**
-             * The type of the error
-             */
-            readonly type?: string;
-            /**
-             * Stacktrace of the error
-             */
-            stack?: string;
-            origin?: RumErrorEvent;
-            [k: string]: unknown;
-        }[];
+        causes?: [] | [
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            }
+        ] | [
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            }
+        ] | [
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            }
+        ] | [
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            }
+        ] | [
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            }
+        ] | [
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            }
+        ] | [
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            }
+        ] | [
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            }
+        ] | [
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            }
+        ] | [
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            },
+            {
+                /**
+                 * Error message
+                 */
+                message: string;
+                /**
+                 * The type of the error
+                 */
+                readonly type?: string;
+                /**
+                 * Stacktrace of the error
+                 */
+                stack?: string;
+                origin?: RumErrorEvent;
+                [k: string]: unknown;
+            }
+        ];
         /**
          * Whether this error crashed the host application
          */
