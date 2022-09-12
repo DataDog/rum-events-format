@@ -73,7 +73,7 @@
                   },
                   "origin": {
                     "type": "object",
-                    "$ref": "error-schema.json"
+                    "$ref": "rum/error-schema.json"
                   }
                 }
               }
