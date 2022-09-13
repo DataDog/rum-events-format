@@ -291,8 +291,8 @@
           "properties": {
             "plan": {
               "type": "number",
-              "description": "Session plan: 1 is the 'lite' plan, 2 is the 'replay' plan",
-              "enum": [1, 2]
+              "description": "Session plan: 1 is the 'lite' plan, 2 is the 'premium' plan, 3 is the 'pro' plan, 4 is the 'replay' plan",
+              "enum": [1, 2, 3, 4]
             }
           }
         },
