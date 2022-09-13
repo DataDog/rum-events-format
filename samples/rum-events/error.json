@@ -35,7 +35,8 @@
         "source": "network"
       },
       {
-        "message": "504 Gateway Timeout"
+        "message": "504 Gateway Timeout",
+        "source": "network"
       }
     ]
   },

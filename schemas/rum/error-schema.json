@@ -55,7 +55,7 @@
               "items": {
                 "type": "object",
                 "description": "Properties for one of the error causes",
-                "required": ["message"],
+                "required": ["message", "source"],
                 "properties": {
                   "message": {
                     "type": "string",
