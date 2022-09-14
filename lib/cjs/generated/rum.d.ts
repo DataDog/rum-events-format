@@ -624,23 +624,17 @@ export declare type RumViewEvent = CommonProperties & {
          */
         readonly refresh_rate_min?: number;
         /**
-         * The value for vitals that are relevant for this view.
+         * Time taken for Flutter 'build' methods.
          */
-        vitals?: {
-            /**
-             * Time taken for Flutter 'build' methods.
-             */
-            flutter_build_time?: RumVitalInfo;
-            /**
-             * Time taken for Flutter to rasterize the view.
-             */
-            flutter_raster_time?: RumVitalInfo;
-            /**
-             * The JavaScript refresh rate for React Native
-             */
-            js_refresh_rate?: RumVitalInfo;
-            [k: string]: unknown;
-        };
+        flutter_build_time?: RumPerfInfo;
+        /**
+         * Time taken for Flutter to rasterize the view.
+         */
+        flutter_raster_time?: RumPerfInfo;
+        /**
+         * The JavaScript refresh rate for React Native
+         */
+        js_refresh_rate?: RumPerfInfo;
         [k: string]: unknown;
     };
     /**
@@ -912,24 +906,24 @@ export interface ActionChildProperties {
     [k: string]: unknown;
 }
 /**
- * Schema of properties for a vital
+ * Schema of properties for a technical performance metic
  */
-export interface RumVitalInfo {
+export interface RumPerfInfo {
     /**
-     * The minimum value seen for this vital during the view's lifetime.
+     * The minimum value seen for this metic during the view's lifetime.
      */
     readonly view_min: number;
     /**
-     * The maximum value seen for this vital during the view's lifetime.
+     * The maximum value seen for this metic during the view's lifetime.
      */
     readonly view_max: number;
     /**
-     * The minimum value seen for this vital during the view's lifetime.
+     * The minimum value seen for this metic during the view's lifetime.
      */
     readonly view_average: number;
     /**
-     * The maximum value we could see for this vital during this session.
+     * The maximum value we could see for this metic during this session.
      */
-    readonly vital_max?: number;
+    readonly metric_max?: number;
     [k: string]: unknown;
 }

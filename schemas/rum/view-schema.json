@@ -282,23 +282,17 @@
               "description": "Minimum refresh rate during the view’s lifetime (in frames per second)",
               "readOnly": true
             },
-            "vitals": {
-              "type": "object",
-              "description": "The value for vitals that are relevant for this view.",
-              "properties": {
-                "flutter_build_time": {
-                  "description": "Time taken for Flutter 'build' methods.",
-                  "allOf": [{ "$ref": "_vital-info-schema.json" }]
-                },
-                "flutter_raster_time": {
-                  "description": "Time taken for Flutter to rasterize the view.",
-                  "allOf": [{ "$ref": "_vital-info-schema.json" }]
-                },
-                "js_refresh_rate": {
-                  "description": "The JavaScript refresh rate for React Native",
-                  "allOf": [{ "$ref": "_vital-info-schema.json" }]
-                }
-              }
+            "flutter_build_time": {
+              "description": "Time taken for Flutter 'build' methods.",
+              "allOf": [{ "$ref": "_perf-info-schema.json" }]
+            },
+            "flutter_raster_time": {
+              "description": "Time taken for Flutter to rasterize the view.",
+              "allOf": [{ "$ref": "_perf-info-schema.json" }]
+            },
+            "js_refresh_rate": {
+              "description": "The JavaScript refresh rate for React Native",
+              "allOf": [{ "$ref": "_perf-info-schema.json" }]
             }
           },
           "readOnly": true
