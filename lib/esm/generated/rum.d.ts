@@ -623,6 +623,24 @@ export declare type RumViewEvent = CommonProperties & {
          * Minimum refresh rate during the view’s lifetime (in frames per second)
          */
         readonly refresh_rate_min?: number;
+        /**
+         * The value for vitals that are relevant for this view.
+         */
+        vitals?: {
+            /**
+             * Time taken for Flutter 'build' methods.
+             */
+            flutter_build_time?: RumVitalInfo;
+            /**
+             * Time taken for Flutter to rasterize the view.
+             */
+            flutter_raster_time?: RumVitalInfo;
+            /**
+             * The JavaScript refresh rate for React Native
+             */
+            js_refresh_rate?: RumVitalInfo;
+            [k: string]: unknown;
+        };
         [k: string]: unknown;
     };
     /**
@@ -891,5 +909,27 @@ export interface ActionChildProperties {
         readonly id: string | string[];
         [k: string]: unknown;
     };
+    [k: string]: unknown;
+}
+/**
+ * Schema of properties for a vital
+ */
+export interface RumVitalInfo {
+    /**
+     * The minimum value seen for this vital during the view's lifetime.
+     */
+    readonly view_min: number;
+    /**
+     * The maximum value seen for this vital during the view's lifetime.
+     */
+    readonly view_max: number;
+    /**
+     * The minimum value seen for this vital during the view's lifetime.
+     */
+    readonly view_average: number;
+    /**
+     * The maximum value we could see for this vital during this session.
+     */
+    readonly vital_max?: number;
     [k: string]: unknown;
 }

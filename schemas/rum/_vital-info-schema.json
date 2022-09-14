@@ -8,22 +8,22 @@
   "properties": {
     "view_min": {
       "type": "number",
-      "description": "The minimum value seen for this vital in the view.",
+      "description": "The minimum value seen for this vital during the view's lifetime.",
       "readOnly": true
     },
     "view_max": {
       "type": "number",
-      "description": "The maximum value seen for this vital in the view.",
+      "description": "The maximum value seen for this vital during the view's lifetime.",
       "readOnly": true
     },
     "view_average": {
       "type": "number",
-      "description": "The minimum value seen for this vital in the view.",
+      "description": "The minimum value seen for this vital during the view's lifetime.",
       "readOnly": true
     },
     "vital_max": {
       "type": "number",
-      "description": "The maximum value we could see for this vital.",
+      "description": "The maximum value we could see for this vital during this session.",
       "readOnly": true
     }
   }
