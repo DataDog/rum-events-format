@@ -3,7 +3,13 @@ import type { RecordType as MobileRecordType } from './session-replay-mobile'
 
 export * from '../generated/sessionReplay'
 
-export { BrowserSource, NodeType, IncrementalSource, MouseInteractionType, MediaInteractionType } from './session-replay-browser'
+export {
+  BrowserSource,
+  NodeType,
+  IncrementalSource,
+  MouseInteractionType,
+  MediaInteractionType,
+} from './session-replay-browser'
 export { MobileSource, WireframeType } from './session-replay-mobile'
 
 export const RecordType: {
