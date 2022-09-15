@@ -1,1 +1,3 @@
-lib
+lib/cjs
+lib/esm
+lib/generated

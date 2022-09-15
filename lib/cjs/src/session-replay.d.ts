@@ -1,8 +1,8 @@
 import type { RecordType as BrowserRecordType } from './session-replay-browser';
 import type { RecordType as MobileRecordType } from './session-replay-mobile';
 export * from '../generated/sessionReplay';
-export { NodeType, IncrementalSource, MouseInteractionType, MediaInteractionType } from './session-replay-browser';
-export { WireframeType } from './session-replay-mobile';
+export { BrowserSource, NodeType, IncrementalSource, MouseInteractionType, MediaInteractionType, } from './session-replay-browser';
+export { MobileSource, WireframeType } from './session-replay-mobile';
 export declare const RecordType: {
     BrowserFullSnapshot: typeof BrowserRecordType.FullSnapshot;
     BrowserIncrementalSnapshot: typeof BrowserRecordType.IncrementalSnapshot;
