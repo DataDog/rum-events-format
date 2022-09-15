@@ -5,11 +5,9 @@ export * from '../generated/browserSessionReplay'
 /**
  * For backward compatibility reasons, `undefined` should be accepted as a possible value for Browser segments, too.
  **/
-export const BrowserSource: {
-  [key: string]: SessionReplay.BrowserSegmentMetadata['source']
-} = {
+export const BrowserSource = {
   Browser: 'browser',
-}
+} as const
 
 export type BrowserSource = typeof BrowserSource[keyof typeof BrowserSource]
 

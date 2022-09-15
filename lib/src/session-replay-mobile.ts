@@ -2,14 +2,12 @@ import type * as SessionReplay from '../generated/mobileSessionReplay'
 
 export * from '../generated/mobileSessionReplay'
 
-export const MobileSource: {
-  [key: string]: SessionReplay.MobileSegmentMetadata['source']
-} = {
+export const MobileSource = {
   Android: 'android',
   Ios: 'ios',
   Flutter: 'flutter',
   ReactNative: 'react-native',
-}
+} as const
 
 export type MobileSource = typeof MobileSource[keyof typeof MobileSource]
 
