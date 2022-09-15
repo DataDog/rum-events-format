@@ -284,15 +284,15 @@
             },
             "flutter_build_time": {
               "description": "Time taken for Flutter 'build' methods.",
-              "allOf": [{ "$ref": "_perf-info-schema.json" }]
+              "allOf": [{ "$ref": "_perf-metric-schema.json" }]
             },
             "flutter_raster_time": {
               "description": "Time taken for Flutter to rasterize the view.",
-              "allOf": [{ "$ref": "_perf-info-schema.json" }]
+              "allOf": [{ "$ref": "_perf-metric-schema.json" }]
             },
             "js_refresh_rate": {
               "description": "The JavaScript refresh rate for React Native",
-              "allOf": [{ "$ref": "_perf-info-schema.json" }]
+              "allOf": [{ "$ref": "_perf-metric-schema.json" }]
             }
           },
           "readOnly": true

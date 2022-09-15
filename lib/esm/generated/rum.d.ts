@@ -626,15 +626,15 @@ export declare type RumViewEvent = CommonProperties & {
         /**
          * Time taken for Flutter 'build' methods.
          */
-        flutter_build_time?: RumPerfInfo;
+        flutter_build_time?: RumPerfMetric;
         /**
          * Time taken for Flutter to rasterize the view.
          */
-        flutter_raster_time?: RumPerfInfo;
+        flutter_raster_time?: RumPerfMetric;
         /**
          * The JavaScript refresh rate for React Native
          */
-        js_refresh_rate?: RumPerfInfo;
+        js_refresh_rate?: RumPerfMetric;
         [k: string]: unknown;
     };
     /**
@@ -908,21 +908,21 @@ export interface ActionChildProperties {
 /**
  * Schema of properties for a technical performance metic
  */
-export interface RumPerfInfo {
+export interface RumPerfMetric {
     /**
-     * The minimum value seen for this metic during the view's lifetime.
+     * The minimum value seen for this metric during the view's lifetime.
      */
-    readonly view_min: number;
+    readonly min: number;
     /**
-     * The maximum value seen for this metic during the view's lifetime.
+     * The maximum value seen for this metric during the view's lifetime.
      */
-    readonly view_max: number;
+    readonly max: number;
     /**
-     * The minimum value seen for this metic during the view's lifetime.
+     * The average value for this metric during the view's lifetime.
      */
-    readonly view_average: number;
+    readonly average: number;
     /**
-     * The maximum value we could see for this metic during this session.
+     * The maximum value possible value we could see for this metric, if such a max is relevant and can vary from session to session.
      */
     readonly metric_max?: number;
     [k: string]: unknown;
