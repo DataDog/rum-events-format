@@ -23,5 +23,7 @@ export declare const WireframeType: {
 export declare type WireframeType = typeof WireframeType[keyof typeof WireframeType];
 export declare const IncrementalSource: {
     Mutation: SessionReplay.MobileMutationData['source'];
+    Touch: SessionReplay.TouchData['source'];
+    ViewportResize: SessionReplay.ViewportResizeData['source'];
 };
 export declare type IncrementalSource = typeof IncrementalSource[keyof typeof IncrementalSource];

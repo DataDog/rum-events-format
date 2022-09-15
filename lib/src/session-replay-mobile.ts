@@ -41,8 +41,12 @@ export type WireframeType = typeof WireframeType[keyof typeof WireframeType]
 
 export const IncrementalSource: {
   Mutation: SessionReplay.MobileMutationData['source']
+  Touch: SessionReplay.TouchData['source']
+  ViewportResize: SessionReplay.ViewportResizeData['source']
 } = {
   Mutation: 0,
+  Touch: 2,
+  ViewportResize: 4,
 } as const
 
 export type IncrementalSource = typeof IncrementalSource[keyof typeof IncrementalSource]
