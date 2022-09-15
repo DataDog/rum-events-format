@@ -1,7 +1,10 @@
 import type * as SessionReplay from '../generated/mobileSessionReplay';
 export * from '../generated/mobileSessionReplay';
 export declare const MobileSource: {
-    [key: string]: SessionReplay.MobileSegmentMetadata['source'];
+    readonly Android: "android";
+    readonly Ios: "ios";
+    readonly Flutter: "flutter";
+    readonly ReactNative: "react-native";
 };
 export declare type MobileSource = typeof MobileSource[keyof typeof MobileSource];
 export declare const RecordType: {
