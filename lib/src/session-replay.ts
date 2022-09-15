@@ -1,16 +1,22 @@
-import type { RecordType as BrowserRecordType } from './session-replay-browser'
-import type { RecordType as MobileRecordType } from './session-replay-mobile'
+import type {
+  IncrementalSource as BrowserIncrementalSource,
+  RecordType as BrowserRecordType,
+} from './session-replay-browser'
+import type {
+  IncrementalSource as MobileIncrementalSource,
+  RecordType as MobileRecordType,
+} from './session-replay-mobile'
 
 export * from '../generated/sessionReplay'
 
 export {
   BrowserSource,
   NodeType,
-  IncrementalSource,
+  IncrementalSource as BrowserIncrementalSource,
   MouseInteractionType,
   MediaInteractionType,
 } from './session-replay-browser'
-export { MobileSource, WireframeType } from './session-replay-mobile'
+export { IncrementalSource as MobileIncrementalSource, MobileSource, WireframeType } from './session-replay-mobile'
 
 export const RecordType: {
   BrowserFullSnapshot: typeof BrowserRecordType.FullSnapshot
@@ -35,3 +41,5 @@ export const RecordType: {
 } as const
 
 export type RecordType = typeof RecordType[keyof typeof RecordType]
+
+export type IncrementalSource = BrowserIncrementalSource | MobileIncrementalSource
