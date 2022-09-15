@@ -1,5 +1,9 @@
 import type * as SessionReplay from '../generated/mobileSessionReplay';
 export * from '../generated/mobileSessionReplay';
+export declare const MobileSource: {
+    [key: string]: SessionReplay.MobileSegmentMetadata['source'];
+};
+export declare type MobileSource = typeof MobileSource[keyof typeof MobileSource];
 export declare const RecordType: {
     FullSnapshot: SessionReplay.MobileFullSnapshotRecord['type'];
     IncrementalSnapshot: SessionReplay.MobileIncrementalSnapshotRecord['type'];
