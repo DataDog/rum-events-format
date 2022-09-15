@@ -47,6 +47,39 @@
               "description": "Stacktrace of the error",
               "readOnly": false
             },
+            "causes": {
+              "type": "array",
+              "description": "Causes of the error",
+              "readOnly": false,
+              "items": {
+                "type": "object",
+                "description": "Properties for one of the error causes",
+                "required": ["message", "source"],
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "description": "Error message",
+                    "readOnly": false
+                  },
+                  "type": {
+                    "type": "string",
+                    "description": "The type of the error",
+                    "readOnly": true
+                  },
+                  "stack": {
+                    "type": "string",
+                    "description": "Stacktrace of the error",
+                    "readOnly": false
+                  },
+                  "source": {
+                    "type": "string",
+                    "description": "Source of the error",
+                    "enum": ["network", "source", "console", "logger", "agent", "webview", "custom", "report"],
+                    "readOnly": true
+                  }
+                }
+              }
+            },
             "is_crash": {
               "type": "boolean",
               "description": "Whether this error crashed the host application",

@@ -26,7 +26,19 @@
       "method": "POST",
       "status_code": 0,
       "url": "https://app.datadoghq.com/api/v1/logs-analytics/aggregate?type=rum"
-    }
+    },
+    "causes": [
+      {
+        "message": "502 Bad Gateway",
+        "type": "Connection Error",
+        "stack": "foo@http://path/to/file.js:1:1",
+        "source": "network"
+      },
+      {
+        "message": "504 Gateway Timeout",
+        "source": "network"
+      }
+    ]
   },
   "action": {
     "id": ["ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c", "be3a5d82-cdd1-468d-9bc9-3aa9e54d953c"]

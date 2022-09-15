@@ -176,6 +176,28 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
          */
         stack?: string;
         /**
+         * Causes of the error
+         */
+        causes?: {
+            /**
+             * Error message
+             */
+            message: string;
+            /**
+             * The type of the error
+             */
+            readonly type?: string;
+            /**
+             * Stacktrace of the error
+             */
+            stack?: string;
+            /**
+             * Source of the error
+             */
+            readonly source: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
+            [k: string]: unknown;
+        }[];
+        /**
          * Whether this error crashed the host application
          */
         readonly is_crash?: boolean;
