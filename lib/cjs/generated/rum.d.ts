@@ -906,7 +906,7 @@ export interface ActionChildProperties {
     [k: string]: unknown;
 }
 /**
- * Schema of properties for a technical performance metic
+ * Schema of properties for a technical performance metric
  */
 export interface RumPerfMetric {
     /**
@@ -922,7 +922,7 @@ export interface RumPerfMetric {
      */
     readonly average: number;
     /**
-     * The maximum value possible value we could see for this metric, if such a max is relevant and can vary from session to session.
+     * The maximum possible value we could see for this metric, if such a max is relevant and can vary from session to session.
      */
     readonly metric_max?: number;
     [k: string]: unknown;

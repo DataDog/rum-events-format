@@ -3,7 +3,7 @@
   "$id": "rum/_perf-metric-schema.json",
   "title": "RumPerfMetric",
   "type": "object",
-  "description": "Schema of properties for a technical performance metic",
+  "description": "Schema of properties for a technical performance metric",
   "required": ["min", "max", "average"],
   "properties": {
     "min": {
@@ -23,7 +23,7 @@
     },
     "metric_max": {
       "type": "number",
-      "description": "The maximum value possible value we could see for this metric, if such a max is relevant and can vary from session to session.",
+      "description": "The maximum possible value we could see for this metric, if such a max is relevant and can vary from session to session.",
       "readOnly": true
     }
   }
