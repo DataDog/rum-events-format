@@ -216,7 +216,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
         /**
          * Source type of the error (the language or platform impacting the error stacktrace format)
          */
-        readonly source_type?: 'android' | 'browser' | 'ios' | 'react-native' | 'flutter';
+        readonly source_type?: 'android' | 'browser' | 'ios' | 'react-native' | 'flutter' | 'roku';
         /**
          * Resource properties of the error
          */
