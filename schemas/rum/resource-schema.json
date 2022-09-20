@@ -249,6 +249,11 @@
               "minimum": 0,
               "maximum": 1,
               "readOnly": true
+            },
+            "discarded": {
+              "type": "boolean",
+              "description": "Whether the resource should be discarded or indexed",
+              "readOnly": true
             }
           },
           "readOnly": true
