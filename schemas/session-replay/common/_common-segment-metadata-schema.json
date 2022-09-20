@@ -4,7 +4,7 @@
   "title": "CommonSegmentMetadataSchema",
   "type": "object",
   "description": "Schema of common properties for a Segment Metadata type.",
-  "required": ["start", "end", "records_count", "index_in_view"],
+  "required": ["start", "end", "records_count"],
   "properties": {
     "start": {
       "type": "integer",
