@@ -44,6 +44,18 @@
             }
           },
           "readOnly": true
+        },
+        "_dd": {
+          "type": "object",
+          "description": "Internal properties",
+          "properties": {
+            "discarded": {
+              "type": "boolean",
+              "description": "Whether the long task should be discarded or indexed",
+              "readOnly": true
+            }
+          },
+          "readOnly": true
         }
       }
     }
