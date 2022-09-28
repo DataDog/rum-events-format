@@ -10,17 +10,17 @@
       "$ref": "serialized-node-with-id-schema.json"
     },
     "parentId": {
-      "type": "integer",
+      "type": ["string", "number"],
       "description": "Id for the parent node for this AddedNodeMutation."
     },
     "nextId": {
       "anyOf": [
         {
-          "type": "integer",
+          "type": ["string", "number"],
           "description": "Id for the next sibling node for this AddedNodeMutation."
         },
         {
-          "type": ["string", "number"],
+          "type": "null",
           "description": "Sent when there is no next sibling anymore."
         }
       ]
