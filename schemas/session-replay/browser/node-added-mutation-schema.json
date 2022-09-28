@@ -20,7 +20,7 @@
           "description": "Id for the next sibling node for this AddedNodeMutation."
         },
         {
-          "type": "null",
+          "type": ["string", "number"],
           "description": "Sent when there is no next sibling anymore."
         }
       ]
@@ -28,7 +28,7 @@
     "previousId": {
       "anyOf": [
         {
-          "type": "integer",
+          "type": ["string", "number"],
           "description": "Id for the previous sibling node for this AddedNodeMutation."
         },
         {

@@ -7,11 +7,11 @@
   "required": ["id", "parentId"],
   "properties": {
     "id": {
-      "type": "integer",
+      "type": ["string", "number"],
       "description": "Id of the mutated node."
     },
     "parentId": {
-      "type": "integer",
+      "type": ["string", "number"],
       "description": "Id for the parent node for this RemovedNodeMutation"
     }
   }

@@ -7,7 +7,7 @@
   "required": ["id", "value"],
   "properties": {
     "id": {
-      "type": "integer",
+      "type": ["string", "number"],
       "description": "Id of the mutated node."
     },
     "value": {
