@@ -729,8 +729,8 @@ export interface AddedNodeMutation {
     /**
      * Id for the parent node for this AddedNodeMutation.
      */
-    parentId: number;
-    nextId: number | (string | number);
+    parentId: string | number;
+    nextId: (string | number) | null;
     previousId?: (string | number) | null;
 }
 /**
