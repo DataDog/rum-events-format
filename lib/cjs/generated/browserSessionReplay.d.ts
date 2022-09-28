@@ -42,7 +42,7 @@ export declare type BrowserFullSnapshotRecord = CommonRecordSchema & {
  * Serialized node contained by this Record.
  */
 export declare type SerializedNodeWithId = {
-    id: string;
+    id: string | number;
 } & SerializedNode;
 /**
  * Serialized node contained by this Record.
@@ -426,8 +426,8 @@ export interface AddedNodeMutation {
      * Id for the parent node for this AddedNodeMutation.
      */
     parentId: number;
-    nextId: number | null;
-    previousId?: number | null;
+    nextId: number | (string | number);
+    previousId?: (string | number) | null;
 }
 /**
  * Schema of a RemovedNodeMutation.
@@ -436,11 +436,11 @@ export interface RemovedNodeMutation {
     /**
      * Id of the mutated node.
      */
-    id: number;
+    id: string | number;
     /**
      * Id for the parent node for this RemovedNodeMutation
      */
-    parentId: number;
+    parentId: string | number;
 }
 /**
  * Schema of an AttributeMutation.
@@ -449,7 +449,7 @@ export interface AttributeMutation {
     /**
      * Id of the mutated node.
      */
-    id: number;
+    id: string | number;
     /**
      * Attributes for this AttributeMutation
      */
@@ -464,7 +464,7 @@ export interface TextMutation {
     /**
      * Id of the mutated node.
      */
-    id: number;
+    id: string | number;
     /**
      * Value for this TextMutation
      */
