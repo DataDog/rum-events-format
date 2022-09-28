@@ -50,7 +50,7 @@ export declare type BrowserFullSnapshotRecord = CommonRecordSchema & {
  * Serialized node contained by this Record.
  */
 export declare type SerializedNodeWithId = {
-    id: number;
+    id: string;
 } & SerializedNode;
 /**
  * Serialized node contained by this Record.

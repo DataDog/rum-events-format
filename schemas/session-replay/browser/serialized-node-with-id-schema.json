@@ -10,7 +10,7 @@
       "required": ["id"],
       "properties": {
         "id": {
-          "type": "integer"
+          "type": "string"
         }
       }
     },
