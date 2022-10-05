@@ -4,15 +4,19 @@
 /**
  * Schema of all properties of a telemetry event
  */
-export declare type TelemetryEvent = TelemetryErrorEvent | TelemetryDebugEvent;
+export declare type TelemetryEvent = TelemetryErrorEvent | TelemetryDebugEvent | TelemetryConfigurationEvent;
 /**
  * Schema of all properties of a telemetry error event
  */
 export declare type TelemetryErrorEvent = CommonTelemetryProperties & {
     /**
-     * The telemetry information
+     * The telemetry log information
      */
     telemetry: {
+        /**
+         * Telemetry type
+         */
+        type?: 'log';
         /**
          * Level/severity of the log
          */
@@ -44,9 +48,13 @@ export declare type TelemetryErrorEvent = CommonTelemetryProperties & {
  */
 export declare type TelemetryDebugEvent = CommonTelemetryProperties & {
     /**
-     * The telemetry information
+     * The telemetry log information
      */
     telemetry: {
+        /**
+         * Telemetry type
+         */
+        type?: 'log';
         /**
          * Level/severity of the log
          */
@@ -55,6 +63,108 @@ export declare type TelemetryDebugEvent = CommonTelemetryProperties & {
          * Body of the log
          */
         message: string;
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
+/**
+ * Schema of all properties of a telemetry configuration event
+ */
+export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
+    /**
+     * The telemetry configuration information
+     */
+    telemetry: {
+        /**
+         * Telemetry type
+         */
+        type: 'configuration';
+        /**
+         * Configuration properties
+         */
+        configuration: {
+            /**
+             * The percentage of sessions tracked
+             */
+            session_sample_rate: number;
+            /**
+             * The percentage of telemetry events sent
+             */
+            telemetry_sample_rate: number;
+            /**
+             * The percentage of requests traced
+             */
+            trace_sample_rate: number;
+            /**
+             * The percentage of sessions with Browser RUM & Session Replay pricing tracked
+             */
+            premium_sample_rate?: number;
+            /**
+             * Is a proxy configured
+             */
+            use_proxy: boolean;
+            /**
+             * Is beforeSend callback function used
+             */
+            use_before_send?: boolean;
+            /**
+             * Does initialization fails silently if the SDK is already initialized
+             */
+            silent_multiple_init?: boolean;
+            /**
+             * Is session across subdomains for the same site tracked
+             */
+            track_session_across_subdomains?: boolean;
+            /**
+             * Is a secure cross-site session cookie used
+             */
+            use_cross_site_session_cookie?: boolean;
+            /**
+             * Is a secure session cookie used
+             */
+            use_secure_session_cookie?: boolean;
+            /**
+             * Attribute to be used to name actions
+             */
+            action_name_attribute?: string;
+            /**
+             * Is the allowed tracing origins list used
+             */
+            use_allowed_tracing_origins?: boolean;
+            /**
+             * Session replay default privacy level
+             */
+            default_privacy_level?: 'mask-user-input' | 'mask' | 'allow';
+            /**
+             * Is the request origins list used to ignore when computing the page activity
+             */
+            use_excluded_activity_urls?: boolean;
+            /**
+             * Are user frustrations tracked
+             */
+            track_frustrations?: boolean;
+            /**
+             * Is the RUM views creation handled manually
+             */
+            track_views_manually?: boolean;
+            /**
+             * Are user actions tracked
+             */
+            track_interactions?: boolean;
+            /**
+             * Are console.* tracked
+             */
+            forward_console_logs?: boolean;
+            /**
+             * Are console.error logs, uncaught exceptions and network errors tracked
+             */
+            forward_errors_to_logs?: boolean;
+            /**
+             * Are reports from the Reporting API tracked
+             */
+            forward_reports?: boolean;
+            [k: string]: unknown;
+        };
         [k: string]: unknown;
     };
     [k: string]: unknown;
