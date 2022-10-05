@@ -10,6 +10,9 @@
     },
     {
       "$ref": "telemetry/debug-schema.json"
+    },
+    {
+      "$ref": "telemetry/configuration-schema.json"
     }
   ]
 }

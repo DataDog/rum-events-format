@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "telemetry/configuration-schema.json",
+  "title": "TelemetryConfigurationEvent",
+  "type": "object",
+  "description": "Schema of all properties of a telemetry configuration event",
+  "allOf": [
+    {
+      "$ref": "_common-schema.json"
+    },
+    {
+      "required": ["telemetry"],
+      "properties": {
+        "telemetry": {
+          "type": "object",
+          "description": "The telemetry configuration information",
+          "required": ["type", "configuration"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Telemetry type",
+              "const": "configuration"
+            },
+            "configuration": {
+              "type": "object",
+              "description": "Configuration properties",
+              "required": ["session_sample_rate", "telemetry_sample_rate", "trace_sample_rate", "use_proxy"],
+              "properties": {
+                "session_sample_rate": {
+                  "type": "integer",
+                  "description": "The percentage of sessions tracked",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "telemetry_sample_rate": {
+                  "type": "integer",
+                  "description": "The percentage of telemetry events sent",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "trace_sample_rate": {
+                  "type": "integer",
+                  "description": "The percentage of requests traced",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "premium_sample_rate": {
+                  "type": "integer",
+                  "description": "The percentage of sessions with Browser RUM & Session Replay pricing tracked",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "use_proxy": {
+                  "type": "boolean",
+                  "description": "Is a proxy configured"
+                },
+                "use_before_send": {
+                  "type": "boolean",
+                  "description": "Is beforeSend callback function used"
+                },
+                "silent_multiple_init": {
+                  "type": "boolean",
+                  "description": "Does initialization fails silently if the SDK is already initialized"
+                },
+                "track_session_across_subdomains": {
+                  "type": "boolean",
+                  "description": "Is session across subdomains for the same site tracked"
+                },
+                "use_cross_site_session_cookie": {
+                  "type": "boolean",
+                  "description": "Is a secure cross-site session cookie used"
+                },
+                "use_secure_session_cookie": {
+                  "type": "boolean",
+                  "description": "Is a secure session cookie used"
+                },
+                "action_name_attribute": {
+                  "type": "string",
+                  "description": "Attribute to be used to name actions"
+                },
+                "use_allowed_tracing_origins": {
+                  "type": "boolean",
+                  "description": "Is the allowed tracing origins list used"
+                },
+                "default_privacy_level": {
+                  "type": "string",
+                  "description": "Session replay default privacy level",
+                  "enum": ["mask-user-input", "mask", "allow"]
+                },
+                "use_excluded_activity_urls": {
+                  "type": "boolean",
+                  "description": "Is the request origins list used to ignore when computing the page activity"
+                },
+                "track_frustrations": {
+                  "type": "boolean",
+                  "description": "Are user frustrations tracked"
+                },
+                "track_views_manually": {
+                  "type": "boolean",
+                  "description": "Is the RUM views creation handled manually"
+                },
+                "track_interactions": {
+                  "type": "boolean",
+                  "description": "Are user actions tracked"
+                },
+                "forward_console_logs": {
+                  "type": "boolean",
+                  "description": "Are console.* tracked"
+                },
+                "forward_errors_to_logs": {
+                  "type": "boolean",
+                  "description": "Are console.error logs, uncaught exceptions and network errors tracked"
+                },
+                "forward_reports": {
+                  "type": "boolean",
+                  "description": "Are reports from the Reporting API tracked"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

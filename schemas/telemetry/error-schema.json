@@ -13,9 +13,14 @@
       "properties": {
         "telemetry": {
           "type": "object",
-          "description": "The telemetry information",
+          "description": "The telemetry log information",
           "required": ["status", "message"],
           "properties": {
+            "type": {
+              "type": "string",
+              "description": "Telemetry type",
+              "const": "log"
+            },
             "status": {
               "type": "string",
               "description": "Level/severity of the log",
