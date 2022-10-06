@@ -27,6 +27,8 @@
       "telemetry_sample_rate": 100,
       "trace_sample_rate": 100,
       "session_replay_sample_rate": 100,
+      "premium_sample_rate": 100,
+      "replay_sample_rate": 100,
       "use_proxy": true,
       "use_before_send": true,
       "silent_multiple_init": false,
