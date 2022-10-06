@@ -86,15 +86,15 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
             /**
              * The percentage of sessions tracked
              */
-            session_sample_rate: number;
+            session_sample_rate?: number;
             /**
              * The percentage of telemetry events sent
              */
-            telemetry_sample_rate: number;
+            telemetry_sample_rate?: number;
             /**
              * The percentage of requests traced
              */
-            trace_sample_rate: number;
+            trace_sample_rate?: number;
             /**
              * The percentage of sessions with Browser RUM & Session Replay pricing tracked (deprecated in favor of session_replay_sample_rate)
              */
@@ -110,7 +110,7 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
             /**
              * Whether a proxy configured is used
              */
-            use_proxy: boolean;
+            use_proxy?: boolean;
             /**
              * Whether beforeSend callback function is used
              */

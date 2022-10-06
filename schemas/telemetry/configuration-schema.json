@@ -24,7 +24,6 @@
             "configuration": {
               "type": "object",
               "description": "Configuration properties",
-              "required": ["session_sample_rate", "telemetry_sample_rate", "trace_sample_rate", "use_proxy"],
               "properties": {
                 "session_sample_rate": {
                   "type": "integer",
