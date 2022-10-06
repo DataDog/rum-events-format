@@ -115,17 +115,41 @@
                   "type": "boolean",
                   "description": "Whether user actions are tracked"
                 },
-                "forward_console_logs": {
-                  "type": "boolean",
-                  "description": "Whether console.* are tracked"
-                },
                 "forward_errors_to_logs": {
                   "type": "boolean",
                   "description": "Whether console.error logs, uncaught exceptions and network errors are tracked"
                 },
+                "forward_console_logs": {
+                  "anyOf": [
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": ["log", "debug", "info", "warn", "error"]
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "const": "all"
+                    }
+                  ],
+                  "description": "The console.* tracked"
+                },
                 "forward_reports": {
-                  "type": "boolean",
-                  "description": "Whether reports from the Reporting API are tracked"
+                  "anyOf": [
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": ["intervention", "deprecation", "csp_violation"]
+                      }
+                    },
+                    {
+                      "type": "string",
+                      "const": "all"
+                    }
+                  ],
+                  "description": "The reports from the Reporting API tracked"
                 },
                 "use_local_encryption": {
                   "type": "boolean",

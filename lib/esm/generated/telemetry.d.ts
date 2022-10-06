@@ -160,17 +160,17 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             track_interactions?: boolean;
             /**
-             * Whether console.* are tracked
-             */
-            forward_console_logs?: boolean;
-            /**
              * Whether console.error logs, uncaught exceptions and network errors are tracked
              */
             forward_errors_to_logs?: boolean;
             /**
-             * Whether reports from the Reporting API are tracked
+             * The console.* tracked
              */
-            forward_reports?: boolean;
+            forward_console_logs?: ('log' | 'debug' | 'info' | 'warn' | 'error')[] | 'all';
+            /**
+             * The reports from the Reporting API tracked
+             */
+            forward_reports?: ('intervention' | 'deprecation' | 'csp_violation')[] | 'all';
             /**
              * Whether local encryption is used
              */
