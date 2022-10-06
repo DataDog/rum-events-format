@@ -95,8 +95,7 @@
                 },
                 "default_privacy_level": {
                   "type": "string",
-                  "description": "Session replay default privacy level",
-                  "enum": ["mask-user-input", "mask", "allow"]
+                  "description": "Session replay default privacy level"
                 },
                 "use_excluded_activity_urls": {
                   "type": "boolean",
@@ -123,8 +122,7 @@
                     {
                       "type": "array",
                       "items": {
-                        "type": "string",
-                        "enum": ["log", "debug", "info", "warn", "error"]
+                        "type": "string"
                       }
                     },
                     {
@@ -139,8 +137,7 @@
                     {
                       "type": "array",
                       "items": {
-                        "type": "string",
-                        "enum": ["intervention", "deprecation", "csp_violation"]
+                        "type": "string"
                       }
                     },
                     {

@@ -142,7 +142,7 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
             /**
              * Session replay default privacy level
              */
-            default_privacy_level?: 'mask-user-input' | 'mask' | 'allow';
+            default_privacy_level?: string;
             /**
              * Whether the request origins list to ignore when computing the page activity is used
              */
@@ -166,11 +166,11 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
             /**
              * The console.* tracked
              */
-            forward_console_logs?: ('log' | 'debug' | 'info' | 'warn' | 'error')[] | 'all';
+            forward_console_logs?: string[] | 'all';
             /**
              * The reports from the Reporting API tracked
              */
-            forward_reports?: ('intervention' | 'deprecation' | 'csp_violation')[] | 'all';
+            forward_reports?: string[] | 'all';
             /**
              * Whether local encryption is used
              */
