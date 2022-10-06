@@ -42,7 +42,11 @@
       "track_interactions": true,
       "forward_console_logs": false,
       "forward_errors_to_logs": false,
-      "forward_reports": false
+      "forward_reports": false,
+      "view_tracking_strategy": "ActivityViewTrackingStrategy",
+      "track_background_events": true,
+      "mobile_vitals_update_period": 10,
+      "track_native_crashes": true
     }
   }
 }

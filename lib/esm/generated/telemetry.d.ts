@@ -98,29 +98,29 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
             /**
              * The percentage of sessions with Browser RUM & Session Replay pricing tracked
              */
-            premium_sample_rate?: number;
+            session_replay_sample_rate?: number;
             /**
-             * Is a proxy configured
+             * Whether a proxy configured is used
              */
             use_proxy: boolean;
             /**
-             * Is beforeSend callback function used
+             * Whether beforeSend callback function is used
              */
             use_before_send?: boolean;
             /**
-             * Does initialization fails silently if the SDK is already initialized
+             * Whether initialization fails silently if the SDK is already initialized
              */
             silent_multiple_init?: boolean;
             /**
-             * Is session across subdomains for the same site tracked
+             * Whether sessions across subdomains for the same site are tracked
              */
             track_session_across_subdomains?: boolean;
             /**
-             * Is a secure cross-site session cookie used
+             * Whether a secure cross-site session cookie is used
              */
             use_cross_site_session_cookie?: boolean;
             /**
-             * Is a secure session cookie used
+             * Whether a secure session cookie is used
              */
             use_secure_session_cookie?: boolean;
             /**
@@ -128,7 +128,7 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             action_name_attribute?: string;
             /**
-             * Is the allowed tracing origins list used
+             * Whether the allowed tracing origins list is used
              */
             use_allowed_tracing_origins?: boolean;
             /**
@@ -136,33 +136,53 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             default_privacy_level?: 'mask-user-input' | 'mask' | 'allow';
             /**
-             * Is the request origins list used to ignore when computing the page activity
+             * Whether the request origins list to ignore when computing the page activity is used
              */
             use_excluded_activity_urls?: boolean;
             /**
-             * Are user frustrations tracked
+             * Whether user frustrations are tracked
              */
             track_frustrations?: boolean;
             /**
-             * Is the RUM views creation handled manually
+             * Whether the RUM views creation is handled manually
              */
             track_views_manually?: boolean;
             /**
-             * Are user actions tracked
+             * Whether user actions are tracked
              */
             track_interactions?: boolean;
             /**
-             * Are console.* tracked
+             * Whether console.* are tracked
              */
             forward_console_logs?: boolean;
             /**
-             * Are console.error logs, uncaught exceptions and network errors tracked
+             * Whether console.error logs, uncaught exceptions and network errors are tracked
              */
             forward_errors_to_logs?: boolean;
             /**
-             * Are reports from the Reporting API tracked
+             * Whether reports from the Reporting API are tracked
              */
             forward_reports?: boolean;
+            /**
+             * Whether local encryption is used
+             */
+            use_local_encryption?: boolean;
+            /**
+             * View tracking strategy
+             */
+            view_tracking_strategy?: 'ActivityViewTrackingStrategy' | 'FragmentViewTrackingStrategy' | 'MixedViewTrackingStrategy' | 'NavigationViewTrackingStrategy';
+            /**
+             * Whether RUM events are tracked when the application is in Background
+             */
+            track_background_events?: boolean;
+            /**
+             * The period between each Mobile Vital sample (in milliseconds)
+             */
+            mobile_vitals_update_period?: number;
+            /**
+             * Whether native crashes are tracked
+             */
+            track_native_crashes?: boolean;
             [k: string]: unknown;
         };
         [k: string]: unknown;

@@ -52,27 +52,27 @@
                 },
                 "use_proxy": {
                   "type": "boolean",
-                  "description": "Is a proxy configured"
+                  "description": "Whether a proxy configured is used"
                 },
                 "use_before_send": {
                   "type": "boolean",
-                  "description": "Is beforeSend callback function used"
+                  "description": "Whether beforeSend callback function is used"
                 },
                 "silent_multiple_init": {
                   "type": "boolean",
-                  "description": "Does initialization fails silently if the SDK is already initialized"
+                  "description": "Whether initialization fails silently if the SDK is already initialized"
                 },
                 "track_session_across_subdomains": {
                   "type": "boolean",
-                  "description": "Is session across subdomains for the same site tracked"
+                  "description": "Whether sessions across subdomains for the same site are tracked"
                 },
                 "use_cross_site_session_cookie": {
                   "type": "boolean",
-                  "description": "Is a secure cross-site session cookie used"
+                  "description": "Whether a secure cross-site session cookie is used"
                 },
                 "use_secure_session_cookie": {
                   "type": "boolean",
-                  "description": "Is a secure session cookie used"
+                  "description": "Whether a secure session cookie is used"
                 },
                 "action_name_attribute": {
                   "type": "string",
@@ -80,7 +80,7 @@
                 },
                 "use_allowed_tracing_origins": {
                   "type": "boolean",
-                  "description": "Is the allowed tracing origins list used"
+                  "description": "Whether the allowed tracing origins list is used"
                 },
                 "default_privacy_level": {
                   "type": "string",
@@ -89,31 +89,57 @@
                 },
                 "use_excluded_activity_urls": {
                   "type": "boolean",
-                  "description": "Is the request origins list used to ignore when computing the page activity"
+                  "description": "Whether the request origins list to ignore when computing the page activity is used"
                 },
                 "track_frustrations": {
                   "type": "boolean",
-                  "description": "Are user frustrations tracked"
+                  "description": "Whether user frustrations are tracked"
                 },
                 "track_views_manually": {
                   "type": "boolean",
-                  "description": "Is the RUM views creation handled manually"
+                  "description": "Whether the RUM views creation is handled manually"
                 },
                 "track_interactions": {
                   "type": "boolean",
-                  "description": "Are user actions tracked"
+                  "description": "Whether user actions are tracked"
                 },
                 "forward_console_logs": {
                   "type": "boolean",
-                  "description": "Are console.* tracked"
+                  "description": "Whether console.* are tracked"
                 },
                 "forward_errors_to_logs": {
                   "type": "boolean",
-                  "description": "Are console.error logs, uncaught exceptions and network errors tracked"
+                  "description": "Whether console.error logs, uncaught exceptions and network errors are tracked"
                 },
                 "forward_reports": {
                   "type": "boolean",
-                  "description": "Are reports from the Reporting API tracked"
+                  "description": "Whether reports from the Reporting API are tracked"
+                },
+                "use_local_encryption": {
+                  "type": "boolean",
+                  "description": "Whether local encryption is used"
+                },
+                "view_tracking_strategy": {
+                  "type": "string",
+                  "description": "View tracking strategy",
+                  "enum": [
+                    "ActivityViewTrackingStrategy",
+                    "FragmentViewTrackingStrategy",
+                    "MixedViewTrackingStrategy",
+                    "NavigationViewTrackingStrategy"
+                  ]
+                },
+                "track_background_events": {
+                  "type": "boolean",
+                  "description": "Whether RUM events are tracked when the application is in Background"
+                },
+                "mobile_vitals_update_period": {
+                  "type": "integer",
+                  "description": "The period between each Mobile Vital sample (in milliseconds)"
+                },
+                "track_native_crashes": {
+                  "type": "boolean",
+                  "description": "Whether native crashes are tracked"
                 }
               }
             }
