@@ -1,0 +1,54 @@
+{
+  "_dd": {
+    "format_version": 2
+  },
+  "type": "telemetry",
+  "date": 1591284175342,
+  "service": "sample-sdk",
+  "source": "browser",
+  "version": "1.2.3",
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599"
+  },
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6"
+  },
+  "action": {
+    "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
+  },
+  "experimental_features": ["foo"],
+  "telemetry": {
+    "type": "configuration",
+    "configuration": {
+      "session_sample_rate": 100,
+      "telemetry_sample_rate": 100,
+      "trace_sample_rate": 100,
+      "session_replay_sample_rate": 100,
+      "premium_sample_rate": 100,
+      "replay_sample_rate": 100,
+      "use_proxy": true,
+      "use_before_send": true,
+      "silent_multiple_init": false,
+      "track_session_across_subdomains": true,
+      "use_cross_site_session_cookie": false,
+      "use_secure_session_cookie": true,
+      "action_name_attribute": "foo",
+      "use_allowed_tracing_origins": false,
+      "default_privacy_level": "mask",
+      "use_excluded_activity_urls": false,
+      "track_frustrations": true,
+      "track_views_manually": true,
+      "track_interactions": true,
+      "forward_console_logs": ["log", "debug"],
+      "forward_errors_to_logs": false,
+      "forward_reports": "all",
+      "view_tracking_strategy": "ActivityViewTrackingStrategy",
+      "track_background_events": true,
+      "mobile_vitals_update_period": 10,
+      "track_native_crashes": true
+    }
+  }
+}
