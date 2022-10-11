@@ -25,6 +25,7 @@
     "configuration": {
       "session_sample_rate": 100,
       "telemetry_sample_rate": 100,
+      "telemetry_configuration_sample_rate": 5,
       "trace_sample_rate": 100,
       "session_replay_sample_rate": 100,
       "premium_sample_rate": 100,

@@ -37,6 +37,12 @@
                   "minimum": 0,
                   "maximum": 100
                 },
+                "telemetry_configuration_sample_rate": {
+                  "type": "integer",
+                  "description": "The percentage of telemetry configuration events sent after being sampled by telemetry_sample_rate",
+                  "minimum": 0,
+                  "maximum": 100
+                },
                 "trace_sample_rate": {
                   "type": "integer",
                   "description": "The percentage of requests traced",
