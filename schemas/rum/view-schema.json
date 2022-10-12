@@ -283,14 +283,17 @@
               "readOnly": true
             },
             "flutter_build_time": {
+              "type": "object",
               "description": "Time taken for Flutter 'build' methods.",
               "allOf": [{ "$ref": "_perf-metric-schema.json" }]
             },
             "flutter_raster_time": {
+              "type": "object",
               "description": "Time taken for Flutter to rasterize the view.",
               "allOf": [{ "$ref": "_perf-metric-schema.json" }]
             },
             "js_refresh_rate": {
+              "type": "object",
               "description": "The JavaScript refresh rate for React Native",
               "allOf": [{ "$ref": "_perf-metric-schema.json" }]
             }
