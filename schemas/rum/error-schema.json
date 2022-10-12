@@ -50,7 +50,6 @@
             "causes": {
               "type": "array",
               "description": "Causes of the error",
-              "readOnly": false,
               "items": {
                 "type": "object",
                 "description": "Properties for one of the error causes",
@@ -59,7 +58,7 @@
                   "message": {
                     "type": "string",
                     "description": "Error message",
-                    "readOnly": false
+                    "readOnly": true
                   },
                   "type": {
                     "type": "string",
@@ -69,7 +68,7 @@
                   "stack": {
                     "type": "string",
                     "description": "Stacktrace of the error",
-                    "readOnly": false
+                    "readOnly": true
                   },
                   "source": {
                     "type": "string",
