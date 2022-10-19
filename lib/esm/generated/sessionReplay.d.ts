@@ -690,6 +690,7 @@ export interface ElementNode {
     attributes: Attributes;
     childNodes: SerializedNodeWithId[];
     isSVG?: true;
+    isShadowHost?: true;
 }
 /**
  * Schema of an Attributes type.
