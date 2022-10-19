@@ -385,7 +385,13 @@ export interface ElementNode {
     tagName: string;
     attributes: Attributes;
     childNodes: SerializedNodeWithId[];
+    /**
+     * Is this node a SVG instead of a HTML
+     */
     isSVG?: true;
+    /**
+     * Is this node a host of a shadow root
+     */
     isShadowHost?: true;
 }
 /**
