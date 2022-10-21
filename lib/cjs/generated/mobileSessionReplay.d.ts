@@ -59,28 +59,6 @@ export declare type CommonShapeWireframe = CommonWireframe & {
     border?: ShapeBorder;
 };
 /**
- * Schema of clipping information for a Wireframe.
- */
-export declare type WireframeClip = WireframeClip1 & WireframeClip2;
-export declare type WireframeClip2 = {
-    /**
-     * The amount of space in pixels that needs to be clipped (masked) at the top of the wireframe.
-     */
-    readonly top?: number;
-    /**
-     * The amount of space in pixels that needs to be clipped (masked) at the bottom of the wireframe.
-     */
-    readonly bottom?: number;
-    /**
-     * The amount of space in pixels that needs to be clipped (masked) at the left of the wireframe.
-     */
-    readonly left?: number;
-    /**
-     * The amount of space in pixels that needs to be clipped (masked) at the right of the wireframe.
-     */
-    readonly right?: number;
-} | null;
-/**
  * The style of this wireframe.
  */
 export declare type ShapeStyle = {
@@ -460,7 +438,10 @@ export interface CommonWireframe {
     readonly height: number;
     clip?: WireframeClip;
 }
-export interface WireframeClip1 {
+/**
+ * Schema of clipping information for a Wireframe.
+ */
+export interface WireframeClip {
     /**
      * The amount of space in pixels that needs to be clipped (masked) at the top of the wireframe.
      */
@@ -502,7 +483,7 @@ export interface CommonWireframeUpdate {
      * The height in pixels of the UI element, normalized based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2, the height of all UI elements is divided by 2 to get a normalized height.
      */
     readonly height?: number;
-    clip?: WireframeClip2;
+    clip?: WireframeClip;
 }
 /**
  * Schema of a ViewportResizeDimension.
