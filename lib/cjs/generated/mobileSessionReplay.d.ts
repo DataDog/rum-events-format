@@ -436,28 +436,16 @@ export interface CommonWireframe {
      * The height in pixels of the UI element, normalized based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2, the height of all UI elements is divided by 2 to get a normalized height.
      */
     readonly height: number;
-    clip?: WireframeClip;
+    clip?: null | WireframeClip;
 }
 /**
  * Schema of clipping information for a Wireframe.
  */
 export interface WireframeClip {
-    /**
-     * The amount of space in pixels that needs to be clipped (masked) at the top of the wireframe.
-     */
-    readonly top?: number;
-    /**
-     * The amount of space in pixels that needs to be clipped (masked) at the bottom of the wireframe.
-     */
-    readonly bottom?: number;
-    /**
-     * The amount of space in pixels that needs to be clipped (masked) at the left of the wireframe.
-     */
-    readonly left?: number;
-    /**
-     * The amount of space in pixels that needs to be clipped (masked) at the right of the wireframe.
-     */
-    readonly right?: number;
+    top?: null | number;
+    bottom?: null | number;
+    left?: null | number;
+    right?: null | number;
 }
 /**
  * Schema of common properties for WireframeUpdate events type.
@@ -483,7 +471,7 @@ export interface CommonWireframeUpdate {
      * The height in pixels of the UI element, normalized based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2, the height of all UI elements is divided by 2 to get a normalized height.
      */
     readonly height?: number;
-    clip?: WireframeClip;
+    clip?: null | WireframeClip;
 }
 /**
  * Schema of a ViewportResizeDimension.
