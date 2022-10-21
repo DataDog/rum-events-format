@@ -4,7 +4,9 @@
   "title": "CommonWireframeUpdate",
   "type": "object",
   "description": "Schema of common properties for WireframeUpdate events type.",
-  "required": ["id"],
+  "required": [
+    "id"
+  ],
   "properties": {
     "id": {
       "type": "integer",
@@ -32,7 +34,14 @@
       "readOnly": true
     },
     "clip": {
-      "$ref": "wireframe-clip-schema.json"
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "wireframe-clip-schema.json"
+        }
+      ]
     }
   }
 }
