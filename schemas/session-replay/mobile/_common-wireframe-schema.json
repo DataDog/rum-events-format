@@ -4,13 +4,7 @@
   "title": "CommonWireframe",
   "type": "object",
   "description": "Schema of common properties for Wireframe events type.",
-  "required": [
-    "id",
-    "x",
-    "y",
-    "width",
-    "height"
-  ],
+  "required": ["id", "x", "y", "width", "height"],
   "properties": {
     "id": {
       "type": "integer",
