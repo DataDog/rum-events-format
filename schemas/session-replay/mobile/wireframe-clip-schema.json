@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "session-replay/mobile/wireframe-clip-schema.json",
   "title": "WireframeClip",
-  "type": "object",
+  "type": ["object", "null"],
   "description": "Schema of clipping information for a Wireframe.",
   "properties": {
     "top": {
