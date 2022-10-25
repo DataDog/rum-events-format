@@ -60,6 +60,12 @@
               "minimum": 0,
               "readOnly": true
             },
+            "resolveDuration": {
+              "type": "integer",
+              "description": "Duration until the callback of the resource is resolved",
+              "minimum": 0,
+              "readOnly": true
+            },
             "size": {
               "type": "integer",
               "description": "Size in octet of the resource response body",
