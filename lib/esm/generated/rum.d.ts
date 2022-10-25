@@ -342,6 +342,10 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
          */
         readonly duration: number;
         /**
+         * Duration until the callback of the resource is resolved
+         */
+        readonly resolveDuration?: number;
+        /**
          * Size in octet of the resource response body
          */
         readonly size?: number;
