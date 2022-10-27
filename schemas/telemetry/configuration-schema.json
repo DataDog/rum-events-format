@@ -24,6 +24,7 @@
             "configuration": {
               "type": "object",
               "description": "Configuration properties",
+              "additionalProperties": true,
               "properties": {
                 "session_sample_rate": {
                   "type": "integer",
@@ -178,6 +179,48 @@
                 "track_native_crashes": {
                   "type": "boolean",
                   "description": "Whether native crashes are tracked"
+                },
+                "track_actions": {
+                  "type": "boolean",
+                  "description": "Whether action tracking is performed automatically"
+                },
+                "track_errors": {
+                  "type": "boolean",
+                  "description": "Whether error monitoring & crash reporting is enabled for the source platform"
+                },
+                "track_native_views": {
+                  "type": "boolean",
+                  "description": "Whether native views are tracked (for cross platform SDKs)"
+                },
+                "track_native_errors": {
+                  "type": "boolean",
+                  "description": "Whether native error monitoring & crash reporting is enabled (for cross platform SDKs)"
+                },
+                "use_attach_to_existing": {
+                  "type": "boolean",
+                  "description": "Whether the cross-platform SDK was initialized on top of a pre-existing native SDK instance"
+                },
+                "use_first_party_hosts": {
+                  "type": "boolean",
+                  "description": "Whether the client has provided a list of first party hosts"
+                },
+                "initialization_type": {
+                  "type": "string",
+                  "description": "The type of initialization the SDK used, in case multiple are supported"
+                },
+                "track_flutter_performance": {
+                  "type": "boolean",
+                  "description": "Whether Flutter build and raster time tracking is enabled"
+                },
+                "batch_size": {
+                  "type": "string",
+                  "description": "The size of batches sent by the SDK",
+                  "enum": ["small", "medium", "large"]
+                },
+                "batch_upload_frequency": {
+                  "type": "string",
+                  "description": "The upload frequency of batches",
+                  "enum": ["frequent", "average", "rare"]
                 }
               }
             }

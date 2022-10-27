@@ -195,6 +195,46 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * Whether native crashes are tracked
              */
             track_native_crashes?: boolean;
+            /**
+             * Whether action tracking is performed automatically
+             */
+            track_actions?: boolean;
+            /**
+             * Whether error monitoring & crash reporting is enabled for the source platform
+             */
+            track_errors?: boolean;
+            /**
+             * Whether native views are tracked (for cross platform SDKs)
+             */
+            track_native_views?: boolean;
+            /**
+             * Whether native error monitoring & crash reporting is enabled (for cross platform SDKs)
+             */
+            track_native_errors?: boolean;
+            /**
+             * Whether the cross-platform SDK was initialized on top of a pre-existing native SDK instance
+             */
+            use_attach_to_existing?: boolean;
+            /**
+             * Whether the client has provided a list of first party hosts
+             */
+            use_first_party_hosts?: boolean;
+            /**
+             * The type of initialization the SDK used, in case multiple are supported
+             */
+            initialization_type?: string;
+            /**
+             * Whether Flutter build and raster time tracking is enabled
+             */
+            track_flutter_performance?: boolean;
+            /**
+             * The size of batches sent by the SDK
+             */
+            batch_size?: 'small' | 'medium' | 'large';
+            /**
+             * The upload frequency of batches
+             */
+            batch_upload_frequency?: 'frequent' | 'average' | 'rare';
             [k: string]: unknown;
         };
         [k: string]: unknown;
