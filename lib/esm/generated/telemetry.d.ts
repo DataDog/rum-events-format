@@ -192,10 +192,6 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             mobile_vitals_update_period?: number;
             /**
-             * Whether native crashes are tracked
-             */
-            track_native_crashes?: boolean;
-            /**
              * Whether action tracking is performed automatically
              */
             track_actions?: boolean;
@@ -204,6 +200,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             track_errors?: boolean;
             /**
+             * Whether automatic collection of network requests is enabled
+             */
+            track_network_requests?: boolean;
+            /**
              * Whether native views are tracked (for cross platform SDKs)
              */
             track_native_views?: boolean;
@@ -211,6 +211,14 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * Whether native error monitoring & crash reporting is enabled (for cross platform SDKs)
              */
             track_native_errors?: boolean;
+            /**
+             * Whether long task tracking is performed automatically
+             */
+            track_native_long_tasks?: boolean;
+            /**
+             * Whether long task tracking is performed automatically for cross platform SDKs
+             */
+            track_cross_platform_long_tasks?: boolean;
             /**
              * Whether the cross-platform SDK was initialized on top of a pre-existing native SDK instance
              */
@@ -228,13 +236,13 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             track_flutter_performance?: boolean;
             /**
-             * The size of batches sent by the SDK
+             * The window duration for batches sent by the SDK (in milliseconds)
              */
-            batch_size?: 'small' | 'medium' | 'large';
+            batch_size?: number;
             /**
-             * The upload frequency of batches
+             * The upload frequency of batches (in milliseconds)
              */
-            batch_upload_frequency?: 'frequent' | 'average' | 'rare';
+            batch_upload_frequency?: number;
             [k: string]: unknown;
         };
         [k: string]: unknown;
