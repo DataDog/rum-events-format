@@ -185,11 +185,11 @@
                 },
                 "track_network_requests": {
                   "type": "boolean",
-                  "description": "Whether tracing features are enabled"
+                  "description": "Whether automatic collection of network requests is enabled"
                 },
                 "use_tracing": {
                   "type": "boolean",
-                  "description": "Whether the cross-platform SDK was initialized on top of a pre-existing native SDK instance"
+                  "description": "Whether tracing features are enabled"
                 },
                 "track_native_views": {
                   "type": "boolean",

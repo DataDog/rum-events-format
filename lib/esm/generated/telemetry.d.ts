@@ -200,11 +200,11 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             track_errors?: boolean;
             /**
-             * Whether tracing features are enabled
+             * Whether automatic collection of network requests is enabled
              */
             track_network_requests?: boolean;
             /**
-             * Whether the cross-platform SDK was initialized on top of a pre-existing native SDK instance
+             * Whether tracing features are enabled
              */
             use_tracing?: boolean;
             /**
