@@ -192,10 +192,6 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             mobile_vitals_update_period?: number;
             /**
-             * Whether action tracking is performed automatically
-             */
-            track_actions?: boolean;
-            /**
              * Whether error monitoring & crash reporting is enabled for the source platform
              */
             track_errors?: boolean;

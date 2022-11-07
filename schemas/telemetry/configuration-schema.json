@@ -175,10 +175,6 @@
                   "type": "integer",
                   "description": "The period between each Mobile Vital sample (in milliseconds)"
                 },
-                "track_actions": {
-                  "type": "boolean",
-                  "description": "Whether action tracking is performed automatically"
-                },
                 "track_errors": {
                   "type": "boolean",
                   "description": "Whether error monitoring & crash reporting is enabled for the source platform"
