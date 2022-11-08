@@ -83,6 +83,14 @@
                   "type": "boolean",
                   "description": "Whether sessions across subdomains for the same site are tracked"
                 },
+                "track_resources": {
+                  "type": "boolean",
+                  "description": "Whether resources are tracked"
+                },
+                "track_long_task": {
+                  "type": "boolean",
+                  "description": "Whether long tasks are tracked"
+                },
                 "use_cross_site_session_cookie": {
                   "type": "boolean",
                   "description": "Whether a secure cross-site session cookie is used"

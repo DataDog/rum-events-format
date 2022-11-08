@@ -128,6 +128,14 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             track_session_across_subdomains?: boolean;
             /**
+             * Whether resources are tracked
+             */
+            track_resources?: boolean;
+            /**
+             * Whether long tasks are tracked
+             */
+            track_long_task?: boolean;
+            /**
              * Whether a secure cross-site session cookie is used
              */
             use_cross_site_session_cookie?: boolean;
