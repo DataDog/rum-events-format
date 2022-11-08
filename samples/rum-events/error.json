@@ -43,6 +43,10 @@
   "action": {
     "id": ["ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c", "be3a5d82-cdd1-468d-9bc9-3aa9e54d953c"]
   },
+  "feature_flags": {
+    "feature_one": true,
+    "feature_two": "foo"
+  },
   "_dd": {
     "format_version": 2,
     "session": {
