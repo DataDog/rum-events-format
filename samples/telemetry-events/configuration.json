@@ -34,6 +34,8 @@
       "use_before_send": true,
       "silent_multiple_init": false,
       "track_session_across_subdomains": true,
+      "track_resources": true,
+      "track_long_task": true,
       "use_cross_site_session_cookie": false,
       "use_secure_session_cookie": true,
       "action_name_attribute": "foo",
