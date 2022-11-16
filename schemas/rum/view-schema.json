@@ -300,7 +300,7 @@
         "feature_flags": {
           "type": "object",
           "description": "Feature flags properties",
-          "additionalProperties": { "type": ["boolean", "string"] },
+          "additionalProperties": true,
           "readOnly": true
         },
         "_dd": {

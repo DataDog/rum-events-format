@@ -269,7 +269,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
      * Feature flags properties
      */
     readonly feature_flags?: {
-        [k: string]: boolean | string;
+        [k: string]: unknown;
     };
     [k: string]: unknown;
 };
@@ -683,7 +683,7 @@ export declare type RumViewEvent = CommonProperties & {
      * Feature flags properties
      */
     readonly feature_flags?: {
-        [k: string]: boolean | string;
+        [k: string]: unknown;
     };
     /**
      * Internal properties

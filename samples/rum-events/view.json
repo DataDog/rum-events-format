@@ -71,6 +71,8 @@
   },
   "feature_flags": {
     "feature_one": true,
-    "feature_two": "foo"
+    "feature_two": "foo",
+    "feature_three": 2,
+    "feature_four": { "foo": "bar" }
   }
 }
