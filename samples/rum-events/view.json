@@ -68,5 +68,11 @@
     "name": "iOS",
     "version": "15.1.1",
     "version_major": "15"
+  },
+  "feature_flags": {
+    "feature_one": true,
+    "feature_two": "foo",
+    "feature_three": 2,
+    "feature_four": { "foo": "bar" }
   }
 }

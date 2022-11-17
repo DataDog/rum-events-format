@@ -265,6 +265,12 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
         readonly in_foreground?: boolean;
         [k: string]: unknown;
     };
+    /**
+     * Feature flags properties
+     */
+    readonly feature_flags?: {
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 };
 /**
@@ -671,6 +677,12 @@ export declare type RumViewEvent = CommonProperties & {
          * The JavaScript refresh rate for React Native
          */
         js_refresh_rate?: RumPerfMetric;
+        [k: string]: unknown;
+    };
+    /**
+     * Feature flags properties
+     */
+    readonly feature_flags?: {
         [k: string]: unknown;
     };
     /**
