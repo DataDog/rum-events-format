@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay/common/pointer-event-type-schema.json",
+  "title": "PointerEventType",
+  "description": "Schema of a PointerEventType",
+  "type": "integer",
+  "enum": [0, 1, 2],
+  "readOnly": true
+}

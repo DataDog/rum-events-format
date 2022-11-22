@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay/common/pointer-interaction-schema.json",
+  "title": "PointerInteraction",
+  "type": "object",
+  "description": "Schema of a PointerInteraction.",
+  "required": ["pointerEventType", "pointerType", "pointerId", "x", "y"],
+  "properties": {
+    "pointerEventType": {
+      "$ref": "pointer-event-type-schema.json"
+    },
+    "pointerType": {
+      "$ref": "pointer-type-schema.json"
+    },
+    "pointerId": {
+      "type": "integer",
+      "description": "Id of the pointer of this PointerInteraction."
+    },
+    "x": {
+      "type": "number",
+      "description": "X-axis coordinate for this PointerInteraction."
+    },
+    "y": {
+      "type": "number",
+      "description": "Y-axis coordinate for this PointerInteraction."
+    }
+  }
+}
