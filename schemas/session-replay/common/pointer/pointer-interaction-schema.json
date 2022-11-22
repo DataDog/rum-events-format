@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "session-replay/common/pointer-interaction-schema.json",
+  "$id": "session-replay/common/pointer/pointer-interaction-schema.json",
   "title": "PointerInteraction",
   "type": "object",
   "description": "Schema of a PointerInteraction.",

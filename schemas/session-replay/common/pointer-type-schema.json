@@ -1,9 +1,0 @@
-{
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "session-replay/common/pointer-type-schema.json",
-  "title": "PointerType",
-  "description": "Schema of an PointerType",
-  "type": "string",
-  "enum": ["mouse", "touch", "pen"],
-  "readOnly": true
-}
