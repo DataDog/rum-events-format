@@ -70,7 +70,7 @@ export declare type BrowserIncrementalSnapshotRecord = CommonRecordSchema & {
 /**
  * Browser-specific. Schema of a Session Replay IncrementalData type.
  */
-export declare type BrowserIncrementalData = BrowserMutationData | MousemoveData | MouseInteractionData | ScrollData | InputData | MediaInteractionData | StyleSheetRuleData | ViewportResizeData;
+export declare type BrowserIncrementalData = BrowserMutationData | MousemoveData | MouseInteractionData | ScrollData | InputData | MediaInteractionData | StyleSheetRuleData | ViewportResizeData | PointerInteractionData;
 /**
  * Browser-specific. Schema of a MutationData.
  */
@@ -173,6 +173,47 @@ export declare type ViewportResizeData = {
      */
     readonly source: 4;
 } & ViewportResizeDimension;
+/**
+ * Schema of a PointerInteractionData.
+ */
+export declare type PointerInteractionData = {
+    /**
+     * The source of this type of incremental data.
+     */
+    readonly source: 9;
+} & PointerInteraction;
+/**
+ * Schema of a PointerEventType
+ */
+export declare type PointerEventType = PointerDown | PointerUp | PointerMove;
+/**
+ * Schema of a PointerDown
+ */
+export declare type PointerDown = 0;
+/**
+ * Schema of a PointerUp
+ */
+export declare type PointerUp = 1;
+/**
+ * Schema of a PointerMove
+ */
+export declare type PointerMove = 2;
+/**
+ * Schema of an PointerType
+ */
+export declare type PointerType = PointerTypeMouse | PointerTypeTouch | PointerTypePen;
+/**
+ * Schema of a PointerTypeMouse.
+ */
+export declare type PointerTypeMouse = 'mouse';
+/**
+ * Schema of a PointerTypeTouch.
+ */
+export declare type PointerTypeTouch = 'touch';
+/**
+ * Schema of a PointerTypePen.
+ */
+export declare type PointerTypePen = 'pen';
 /**
  * Schema of a Record which contains the screen properties.
  */
@@ -428,7 +469,7 @@ export declare type MobileIncrementalSnapshotRecord = CommonRecordSchema & {
 /**
  * Mobile-specific. Schema of a Session Replay IncrementalData type.
  */
-export declare type MobileIncrementalData = MobileMutationData | TouchData | ViewportResizeData;
+export declare type MobileIncrementalData = MobileMutationData | TouchData | ViewportResizeData | PointerInteractionData;
 /**
  * Mobile-specific. Schema of a MutationData.
  */
@@ -917,6 +958,25 @@ export interface ViewportResizeDimension {
      * The new height of the screen in pixels, normalized based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2, the height is divided by 2 to get a normalized height.
      */
     height: number;
+}
+/**
+ * Schema of a PointerInteraction.
+ */
+export interface PointerInteraction {
+    readonly pointerEventType: PointerEventType;
+    readonly pointerType: PointerType;
+    /**
+     * Id of the pointer of this PointerInteraction.
+     */
+    pointerId: number;
+    /**
+     * X-axis coordinate for this PointerInteraction.
+     */
+    x: number;
+    /**
+     * Y-axis coordinate for this PointerInteraction.
+     */
+    y: number;
 }
 /**
  * Schema of common properties for Wireframe events type.
