@@ -1,16 +1,22 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "session-replay/common/pointer/pointer-interaction-schema.json",
+  "$id": "session-replay/common/pointer-interaction-schema.json",
   "title": "PointerInteraction",
   "type": "object",
   "description": "Schema of a PointerInteraction.",
   "required": ["pointerEventType", "pointerType", "pointerId", "x", "y"],
   "properties": {
     "pointerEventType": {
-      "$ref": "pointer-event-type-schema.json"
+      "type": "string",
+      "description": "Schema of an PointerEventType",
+      "enum": ["down", "up", "move"],
+      "readOnly": true
     },
     "pointerType": {
-      "$ref": "pointer-type-schema.json"
+      "type": "string",
+      "description": "Schema of an PointerType",
+      "enum": ["mouse", "touch", "pen"],
+      "readOnly": true
     },
     "pointerId": {
       "type": "integer",

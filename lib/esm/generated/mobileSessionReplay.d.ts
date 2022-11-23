@@ -288,38 +288,6 @@ export declare type PointerInteractionData = {
     readonly source: 9;
 } & PointerInteraction;
 /**
- * Schema of a PointerEventType
- */
-export declare type PointerEventType = PointerDown | PointerUp | PointerMove;
-/**
- * Schema of a PointerDown
- */
-export declare type PointerDown = 0;
-/**
- * Schema of a PointerUp
- */
-export declare type PointerUp = 1;
-/**
- * Schema of a PointerMove
- */
-export declare type PointerMove = 2;
-/**
- * Schema of an PointerType
- */
-export declare type PointerType = PointerTypeMouse | PointerTypeTouch | PointerTypePen;
-/**
- * Schema of a PointerTypeMouse.
- */
-export declare type PointerTypeMouse = 'mouse';
-/**
- * Schema of a PointerTypeTouch.
- */
-export declare type PointerTypeTouch = 'touch';
-/**
- * Schema of a PointerTypePen.
- */
-export declare type PointerTypePen = 'pen';
-/**
  * Schema of a Record which contains the screen properties.
  */
 export declare type MetaRecord = CommonRecordSchema & {
@@ -543,8 +511,14 @@ export interface ViewportResizeDimension {
  * Schema of a PointerInteraction.
  */
 export interface PointerInteraction {
-    readonly pointerEventType: PointerEventType;
-    readonly pointerType: PointerType;
+    /**
+     * Schema of an PointerEventType
+     */
+    readonly pointerEventType: 'down' | 'up' | 'move';
+    /**
+     * Schema of an PointerType
+     */
+    readonly pointerType: 'mouse' | 'touch' | 'pen';
     /**
      * Id of the pointer of this PointerInteraction.
      */

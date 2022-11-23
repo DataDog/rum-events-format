@@ -17,7 +17,7 @@
       }
     },
     {
-      "$ref": "./pointer/pointer-interaction-schema.json"
+      "$ref": "pointer-interaction-schema.json"
     }
   ]
 }
