@@ -17,14 +17,14 @@ export declare const RecordType: {
 export declare type RecordType = typeof RecordType[keyof typeof RecordType];
 export declare type IncrementalSource = BrowserIncrementalSource | MobileIncrementalSource;
 export declare const PointerEventType: {
-    PointerDown: string;
-    PointerUp: string;
-    PointerMove: string;
+    readonly PointerDown: "down";
+    readonly PointerUp: "up";
+    readonly PointerMove: "move";
 };
 export declare type PointerEventType = typeof PointerEventType[keyof typeof PointerEventType];
 export declare const PointerType: {
-    Mouse: string;
-    Touch: string;
-    Pen: string;
+    readonly Mouse: "mouse";
+    readonly Touch: "touch";
+    readonly Pen: "pen";
 };
 export declare type PointerType = typeof PointerType[keyof typeof PointerType];

@@ -44,11 +44,7 @@ export type RecordType = typeof RecordType[keyof typeof RecordType]
 
 export type IncrementalSource = BrowserIncrementalSource | MobileIncrementalSource
 
-export const PointerEventType: {
-  PointerDown: string
-  PointerUp: string
-  PointerMove: string
-} = {
+export const PointerEventType = {
   PointerDown: 'down',
   PointerUp: 'up',
   PointerMove: 'move',
@@ -56,11 +52,7 @@ export const PointerEventType: {
 
 export type PointerEventType = typeof PointerEventType[keyof typeof PointerEventType]
 
-export const PointerType: {
-  Mouse: string
-  Touch: string
-  Pen: string
-} = {
+export const PointerType = {
   Mouse: 'mouse',
   Touch: 'touch',
   Pen: 'pen',
