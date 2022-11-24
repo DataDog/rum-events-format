@@ -43,10 +43,12 @@ export const IncrementalSource: {
   Mutation: SessionReplay.MobileMutationData['source']
   Touch: SessionReplay.TouchData['source']
   ViewportResize: SessionReplay.ViewportResizeData['source']
+  PointerInteraction: SessionReplay.PointerInteractionData['source']
 } = {
   Mutation: 0,
   Touch: 2,
   ViewportResize: 4,
+  PointerInteraction: 9,
 } as const
 
 export type IncrementalSource = typeof IncrementalSource[keyof typeof IncrementalSource]
