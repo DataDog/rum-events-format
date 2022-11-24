@@ -43,3 +43,27 @@ export const RecordType: {
 export type RecordType = typeof RecordType[keyof typeof RecordType]
 
 export type IncrementalSource = BrowserIncrementalSource | MobileIncrementalSource
+
+export const PointerEventType: {
+  PointerDown: string
+  PointerUp: string
+  PointerMove: string
+} = {
+  PointerDown: 'down',
+  PointerUp: 'up',
+  PointerMove: 'move',
+} as const
+
+export type PointerEventType = typeof PointerEventType[keyof typeof PointerEventType]
+
+export const PointerType: {
+  Mouse: string
+  Touch: string
+  Pen: string
+} = {
+  Mouse: 'mouse',
+  Touch: 'touch',
+  Pen: 'pen',
+} as const
+
+export type PointerType = typeof PointerType[keyof typeof PointerType]

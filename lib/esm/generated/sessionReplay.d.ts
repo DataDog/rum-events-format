@@ -70,7 +70,7 @@ export declare type BrowserIncrementalSnapshotRecord = CommonRecordSchema & {
 /**
  * Browser-specific. Schema of a Session Replay IncrementalData type.
  */
-export declare type BrowserIncrementalData = BrowserMutationData | MousemoveData | MouseInteractionData | ScrollData | InputData | MediaInteractionData | StyleSheetRuleData | ViewportResizeData;
+export declare type BrowserIncrementalData = BrowserMutationData | MousemoveData | MouseInteractionData | ScrollData | InputData | MediaInteractionData | StyleSheetRuleData | ViewportResizeData | PointerInteractionData;
 /**
  * Browser-specific. Schema of a MutationData.
  */
@@ -173,6 +173,15 @@ export declare type ViewportResizeData = {
      */
     readonly source: 4;
 } & ViewportResizeDimension;
+/**
+ * Schema of a PointerInteractionData.
+ */
+export declare type PointerInteractionData = {
+    /**
+     * The source of this type of incremental data.
+     */
+    readonly source: 9;
+} & PointerInteraction;
 /**
  * Schema of a Record which contains the screen properties.
  */
@@ -428,7 +437,7 @@ export declare type MobileIncrementalSnapshotRecord = CommonRecordSchema & {
 /**
  * Mobile-specific. Schema of a Session Replay IncrementalData type.
  */
-export declare type MobileIncrementalData = MobileMutationData | TouchData | ViewportResizeData;
+export declare type MobileIncrementalData = MobileMutationData | TouchData | ViewportResizeData | PointerInteractionData;
 /**
  * Mobile-specific. Schema of a MutationData.
  */
@@ -917,6 +926,31 @@ export interface ViewportResizeDimension {
      * The new height of the screen in pixels, normalized based on the device pixels per inch density (DPI). Example: if a device has a DPI = 2, the height is divided by 2 to get a normalized height.
      */
     height: number;
+}
+/**
+ * Schema of a PointerInteraction.
+ */
+export interface PointerInteraction {
+    /**
+     * Schema of an PointerEventType
+     */
+    readonly pointerEventType: 'down' | 'up' | 'move';
+    /**
+     * Schema of an PointerType
+     */
+    readonly pointerType: 'mouse' | 'touch' | 'pen';
+    /**
+     * Id of the pointer of this PointerInteraction.
+     */
+    pointerId: number;
+    /**
+     * X-axis coordinate for this PointerInteraction.
+     */
+    x: number;
+    /**
+     * Y-axis coordinate for this PointerInteraction.
+     */
+    y: number;
 }
 /**
  * Schema of common properties for Wireframe events type.
