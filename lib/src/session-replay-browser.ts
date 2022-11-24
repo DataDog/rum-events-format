@@ -57,6 +57,7 @@ export const IncrementalSource: {
   TouchMove: Exclude<SessionReplay.MousemoveData['source'], 1>
   MediaInteraction: SessionReplay.MediaInteractionData['source']
   StyleSheetRule: SessionReplay.StyleSheetRuleData['source']
+  PointerInteraction: SessionReplay.PointerInteractionData['source']
 } = {
   Mutation: 0,
   MouseMove: 1,
@@ -67,7 +68,7 @@ export const IncrementalSource: {
   TouchMove: 6,
   MediaInteraction: 7,
   StyleSheetRule: 8,
-  // CanvasMutation : 9,
+  PointerInteraction: 9,
   // Font : 10,
 } as const
 

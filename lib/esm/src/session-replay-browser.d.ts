@@ -35,6 +35,7 @@ export declare const IncrementalSource: {
     TouchMove: Exclude<SessionReplay.MousemoveData['source'], 1>;
     MediaInteraction: SessionReplay.MediaInteractionData['source'];
     StyleSheetRule: SessionReplay.StyleSheetRuleData['source'];
+    PointerInteraction: SessionReplay.PointerInteractionData['source'];
 };
 export declare type IncrementalSource = typeof IncrementalSource[keyof typeof IncrementalSource];
 export declare const MouseInteractionType: {
