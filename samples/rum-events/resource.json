@@ -29,7 +29,8 @@
     "first_byte": {
       "duration": 157090000,
       "start": 88945000
-    }
+    },
+    "cache_status": "fetched"
   },
   "action": {
     "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"

@@ -186,6 +186,12 @@
               },
               "readOnly": true
             },
+            "cache_status": {
+              "type": "string",
+              "description": "Is the resource loaded from cache or fetched",
+              "enum": ["cached", "fetched"],
+              "readOnly": true
+            },
             "provider": {
               "type": "object",
               "description": "The provider for this resource",

@@ -436,6 +436,10 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
             [k: string]: unknown;
         };
         /**
+         * Is the resource loaded from cache or fetched
+         */
+        readonly cache_status?: 'cached' | 'fetched';
+        /**
          * The provider for this resource
          */
         readonly provider?: {
