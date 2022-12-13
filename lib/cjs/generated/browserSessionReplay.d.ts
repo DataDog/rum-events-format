@@ -398,10 +398,6 @@ export interface ElementNode {
      * Is this node a SVG instead of a HTML
      */
     isSVG?: true;
-    /**
-     * Is this node a host of a shadow root
-     */
-    isShadowHost?: true;
 }
 /**
  * Schema of an Attributes type.
