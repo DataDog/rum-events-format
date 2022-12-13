@@ -47,7 +47,7 @@ export declare type SerializedNodeWithId = {
 /**
  * Serialized node contained by this Record.
  */
-export declare type SerializedNode = DocumentNode | DocumentTypeNode | ElementNode | TextNode | CDataNode;
+export declare type SerializedNode = DocumentNode | DocumentFragmentNode | DocumentTypeNode | ElementNode | TextNode | CDataNode;
 /**
  * Browser-specific. Schema of a Record type which contains mutations of a screen.
  */
@@ -357,6 +357,20 @@ export interface DocumentNode {
      * The type of this Node.
      */
     readonly type: 0;
+    childNodes: SerializedNodeWithId[];
+}
+/**
+ * Schema of a Document FragmentNode.
+ */
+export interface DocumentFragmentNode {
+    /**
+     * The type of this Node.
+     */
+    readonly type: 11;
+    /**
+     * Is this node a shadow root or not
+     */
+    readonly isShadowRoot: boolean;
     childNodes: SerializedNodeWithId[];
 }
 /**

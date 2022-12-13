@@ -23,6 +23,7 @@ export declare const NodeType: {
     Element: SessionReplay.ElementNode['type'];
     Text: SessionReplay.TextNode['type'];
     CDATA: SessionReplay.CDataNode['type'];
+    DocumentFragment: SessionReplay.DocumentFragmentNode['type'];
 };
 export declare type NodeType = typeof NodeType[keyof typeof NodeType];
 export declare const IncrementalSource: {
