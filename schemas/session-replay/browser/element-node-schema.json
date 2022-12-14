@@ -28,10 +28,6 @@
     "isSVG": {
       "const": true,
       "description": "Is this node a SVG instead of a HTML"
-    },
-    "isShadowHost": {
-      "const": true,
-      "description": "Is this node a host of a shadow root"
     }
   }
 }
