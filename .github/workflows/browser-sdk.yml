@@ -1,0 +1,31 @@
+name: browser-sdk
+
+on:
+  push:
+
+jobs:
+  browser-sdk-test:
+    strategy:
+      matrix:
+        test_type: [unit, e2e]
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: 'DataDog/browser-sdk'
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Update rum-events-format
+        run: |
+          cd rum-events-format
+          git checkout ${{ github.sha }}
+
+      - name: Run ${{matrix.test_type}} tests
+        run: yarn test:${{matrix.test_type}}
