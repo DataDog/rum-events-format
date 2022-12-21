@@ -4,9 +4,9 @@
   "title": "StyleSheet",
   "type": "object",
   "description": "Browser-specific. Schema of a StyleSheet",
-  "required": ["rules"],
+  "required": ["cssRules"],
   "properties": {
-    "rules": {
+    "cssRules": {
       "type": "array",
       "description": "CSS rules applied (rule.cssText)",
       "items": {

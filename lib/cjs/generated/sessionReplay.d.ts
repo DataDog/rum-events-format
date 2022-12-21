@@ -674,7 +674,7 @@ export interface StyleSheet {
     /**
      * CSS rules applied (rule.cssText)
      */
-    rules: string[];
+    cssRules: string[];
     /**
      * MediaList of the stylesheet
      */
