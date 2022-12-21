@@ -12,6 +12,14 @@
       "const": 11,
       "readOnly": true
     },
+    "adoptedStyleSheets": {
+      "type": "array",
+      "description": "Stylesheet added dynamically",
+      "items": {
+        "$ref": "stylesheet-schema.json"
+      },
+      "readOnly": true
+    },
     "isShadowRoot": {
       "type": "boolean",
       "description": "Is this node a shadow root or not",
