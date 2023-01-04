@@ -45,6 +45,7 @@
       "track_frustrations": true,
       "track_views_manually": true,
       "track_interactions": true,
+      "track_user_interactions": true,
       "forward_console_logs": ["log", "debug"],
       "forward_errors_to_logs": false,
       "forward_reports": "all",
