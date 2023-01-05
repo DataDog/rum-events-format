@@ -468,7 +468,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
          */
         readonly trace_id?: string;
         /**
-         * tracing sample rate in decimal format
+         * trace sample rate in decimal format
          */
         readonly rule_psr?: number;
         /**

@@ -144,6 +144,11 @@
                 },
                 "track_interactions": {
                   "type": "boolean",
+                  "description": "Whether user actions are tracked (deprecated in favor of track_user_interactions)",
+                  "readOnly": false
+                },
+                "track_user_interactions": {
+                  "type": "boolean",
                   "description": "Whether user actions are tracked",
                   "readOnly": false
                 },
