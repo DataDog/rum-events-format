@@ -41,7 +41,7 @@ export declare type MobileFullSnapshotRecord = CommonRecordSchema & {
 /**
  * Schema of a Wireframe type.
  */
-export declare type Wireframe = ShapeWireframe | TextWireframe;
+export declare type Wireframe = ShapeWireframe | TextWireframe | ImageWireframe;
 /**
  * Schema of all properties of a ShapeWireframe.
  */
@@ -154,6 +154,23 @@ export declare type TextPosition = {
     };
 };
 /**
+ * Schema of all properties of a ImageWireframe.
+ */
+export declare type ImageWireframe = CommonShapeWireframe & {
+    /**
+     * The type of the wireframe.
+     */
+    readonly type: 'image';
+    /**
+     * base64 representation of the image. Can have a null value
+     */
+    base64: string | null;
+    /**
+     * Extension of the image file
+     */
+    imageFileExtension: string;
+};
+/**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
  */
 export declare type MobileIncrementalSnapshotRecord = CommonRecordSchema & {
@@ -207,7 +224,7 @@ export declare type MobileMutationPayload = {
 /**
  * Schema of a WireframeUpdateMutation type.
  */
-export declare type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate;
+export declare type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate;
 /**
  * Schema of all properties of a TextWireframeUpdate.
  */
@@ -238,6 +255,23 @@ export declare type ShapeWireframeUpdate = CommonShapeWireframeUpdate & {
      * The type of the wireframe.
      */
     readonly type: 'shape';
+};
+/**
+ * Schema of all properties of a ImageWireframeUpdate.
+ */
+export declare type ImageWireframeUpdate = CommonShapeWireframeUpdate & {
+    /**
+     * The type of the wireframe.
+     */
+    readonly type: 'image';
+    /**
+     * base64 representation of the image. Can have a null value
+     */
+    base64?: string | null;
+    /**
+     * Extension of the image file
+     */
+    imageFileExtension?: string;
 };
 /**
  * Schema of a TouchData.
