@@ -21,6 +21,17 @@
             "color": "#FF000000"
           }
         }
+      },
+      {
+        "previousId": 11,
+        "wireframe": {
+          "id": 14,
+          "x": 10,
+          "y": 10,
+          "width": 20,
+          "height": 30,
+          "type": "image"
+        }
       }
     ],
     "removes": [
@@ -45,6 +56,12 @@
         "type": "shape",
         "x": 0,
         "y": 10
+      },
+      {
+        "id": 12,
+        "type": "image",
+        "base64": "base64Mock",
+        "mimeType": "image/jpeg"
       }
     ]
   }
