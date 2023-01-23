@@ -9,7 +9,7 @@
       "$ref": "_common-shape-wireframe-schema.json"
     },
     {
-      "required": ["type", "base64", "imageFileExtension"],
+      "required": ["type"],
       "properties": {
         "type": {
           "type": "string",
@@ -18,13 +18,13 @@
           "readOnly": true
         },
         "base64": {
-          "type": ["string", "null"],
-          "description": "base64 representation of the image. Can have a null value",
+          "type": "string",
+          "description": "base64 representation of the image. Not required as the ImageWireframe can be initialised without any base64",
           "readOnly": false
         },
-        "imageFileExtension": {
+        "mimeType": {
           "type": "string",
-          "description": "Extension of the image file",
+          "description": "MIME type of the image file",
           "readOnly": false
         }
       }

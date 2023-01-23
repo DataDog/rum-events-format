@@ -17,6 +17,24 @@
           "type": "sans-serif",
           "color": "#FF000000"
         }
+      },
+      {
+        "id": 2,
+        "x": 10,
+        "y": 10,
+        "width": 20,
+        "height": 30,
+        "type": "image",
+        "base64": "base64Mock",
+        "mimeType": "image/jpeg"
+      },
+      {
+        "id": 3,
+        "x": 10,
+        "y": 10,
+        "width": 20,
+        "height": 30,
+        "type": "image"
       }
     ]
   }

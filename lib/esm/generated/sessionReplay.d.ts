@@ -433,13 +433,13 @@ export declare type ImageWireframe = CommonShapeWireframe & {
      */
     readonly type: 'image';
     /**
-     * base64 representation of the image. Can have a null value
+     * base64 representation of the image. Not required as the ImageWireframe can be initialised without any base64
      */
-    base64: string | null;
+    base64?: string;
     /**
-     * Extension of the image file
+     * MIME type of the image file
      */
-    imageFileExtension: string;
+    mimeType?: string;
 };
 /**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
@@ -536,13 +536,13 @@ export declare type ImageWireframeUpdate = CommonShapeWireframeUpdate & {
      */
     readonly type: 'image';
     /**
-     * base64 representation of the image. Can have a null value
+     * base64 representation of the image. Not required as the ImageWireframe can be initialised without any base64
      */
-    base64?: string | null;
+    base64?: string;
     /**
-     * Extension of the image file
+     * MIME type of the image file
      */
-    imageFileExtension?: string;
+    mimeType?: string;
 };
 /**
  * Schema of a TouchData.
