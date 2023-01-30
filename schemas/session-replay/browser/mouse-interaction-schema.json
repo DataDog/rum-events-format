@@ -4,25 +4,44 @@
   "title": "MouseInteraction",
   "type": "object",
   "description": "Browser-specific. Schema of a MouseInteraction.",
-  "required": ["type", "id", "x", "y"],
-  "properties": {
-    "type": {
-      "type": "integer",
-      "enum": [0, 1, 2, 3, 4, 5, 6, 7, 9],
-      "description": "The type of MouseInteraction.",
-      "readOnly": true
+  "oneOf": [
+    {
+      "required": ["type", "id", "x", "y"],
+      "properties": {
+        "type": {
+          "type": "integer",
+          "enum": [0, 1, 2, 3, 4, 7, 9],
+          "description": "The type of MouseInteraction.",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Id for the target node for this MouseInteraction."
+        },
+        "x": {
+          "type": "number",
+          "description": "X-axis coordinate for this MouseInteraction."
+        },
+        "y": {
+          "type": "number",
+          "description": "Y-axis coordinate for this MouseInteraction."
+        }
+      }
     },
-    "id": {
-      "type": "integer",
-      "description": "Id for the target node for this MouseInteraction."
-    },
-    "x": {
-      "type": "number",
-      "description": "X-axis coordinate for this MouseInteraction."
-    },
-    "y": {
-      "type": "number",
-      "description": "Y-axis coordinate for this MouseInteraction."
+    {
+      "required": ["type", "id"],
+      "properties": {
+        "type": {
+          "type": "integer",
+          "enum": [5, 6],
+          "description": "The type of MouseInteraction.",
+          "readOnly": true
+        },
+        "id": {
+          "type": "integer",
+          "description": "Id for the target node for this MouseInteraction."
+        }
+      }
     }
-  }
+  ]
 }
