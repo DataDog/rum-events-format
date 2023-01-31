@@ -107,7 +107,7 @@ export declare type MouseInteractionData = {
  */
 export declare type MouseInteraction = {
     /**
-     * The type of MouseInteraction.
+     * The type of MouseInteraction: 0=mouseup, 1=mousedown, 2=click, 3=contextmenu, 4=dblclick, 7=touchstart, 9=touchend
      */
     readonly type: 0 | 1 | 2 | 3 | 4 | 7 | 9;
     /**
@@ -124,7 +124,7 @@ export declare type MouseInteraction = {
     y: number;
 } | {
     /**
-     * The type of MouseInteraction.
+     * The type of MouseInteraction: 5=focus, 6=blur
      */
     readonly type: 5 | 6;
     /**
