@@ -26,6 +26,11 @@
           "type": "string",
           "description": "MIME type of the image file",
           "readOnly": false
+        },
+        "isEmpty": {
+          "type": "boolean",
+          "description": "Flag describing an image wireframe that should render an empty state placeholder",
+          "readOnly": false
         }
       }
     }

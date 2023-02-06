@@ -470,6 +470,10 @@ export declare type ImageWireframe = CommonShapeWireframe & {
      * MIME type of the image file
      */
     mimeType?: string;
+    /**
+     * Flag describing an image wireframe that should render an empty state placeholder
+     */
+    isEmpty?: boolean;
 };
 /**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
@@ -573,6 +577,10 @@ export declare type ImageWireframeUpdate = CommonShapeWireframeUpdate & {
      * MIME type of the image file
      */
     mimeType?: string;
+    /**
+     * Flag describing an image wireframe that should render an empty state placeholder
+     */
+    isEmpty?: boolean;
 };
 /**
  * Schema of a TouchData.
