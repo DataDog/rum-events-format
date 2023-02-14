@@ -31,7 +31,7 @@ export declare type BrowserSegmentMetadata = SegmentContext & CommonSegmentMetad
 /**
  * The reason this Segment was created. For mobile there is only one possible value for this, which is always the default value.
  */
-export declare type CreationReason = 'init' | 'segment_duration_limit' | 'segment_bytes_limit' | 'view_change' | 'before_unload' | 'visibility_hidden';
+export declare type CreationReason = 'init' | 'segment_duration_limit' | 'segment_bytes_limit' | 'view_change' | 'before_unload' | 'visibility_hidden' | 'page_frozen';
 /**
  * Browser-specific. Schema of a Session Replay Record.
  */
