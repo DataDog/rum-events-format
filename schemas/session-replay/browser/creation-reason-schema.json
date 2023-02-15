@@ -10,7 +10,8 @@
     "segment_bytes_limit",
     "view_change",
     "before_unload",
-    "visibility_hidden"
+    "visibility_hidden",
+    "page_frozen"
   ],
   "default": "init"
 }
