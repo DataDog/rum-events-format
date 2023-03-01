@@ -266,6 +266,21 @@
                 "batch_upload_frequency": {
                   "type": "integer",
                   "description": "The upload frequency of batches (in milliseconds)"
+                },
+                "react_version": {
+                  "type": "string",
+                  "description": "The version of React used in a ReactNative application",
+                  "readOnly": false
+                },
+                "react_native_version": {
+                  "type": "string",
+                  "description": "The version of ReactNative used in a ReactNative application",
+                  "readOnly": false
+                },
+                "dart_version": {
+                  "type": "string",
+                  "description": "The version of Dart used in a Flutter application",
+                  "readOnly": false
                 }
               }
             }
