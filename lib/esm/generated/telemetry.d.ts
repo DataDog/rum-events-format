@@ -259,6 +259,18 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * The upload frequency of batches (in milliseconds)
              */
             batch_upload_frequency?: number;
+            /**
+             * The version of React used in a ReactNative application
+             */
+            react_version?: string;
+            /**
+             * The version of ReactNative used in a ReactNative application
+             */
+            react_native_version?: string;
+            /**
+             * The version of Dart used in a Flutter application
+             */
+            dart_version?: string;
             [k: string]: unknown;
         };
         [k: string]: unknown;
