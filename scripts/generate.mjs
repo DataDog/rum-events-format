@@ -80,9 +80,9 @@ async function getJsonSchemaToTypescript() {
         # due to installation on node_modules, some of these steps can fail
         # built version still behaves correctly though
         set +e
-        npm i
-        npm run clean
-        npm run build:server
+        yarn
+        yarn run clean
+        yarn run build:server
         set -e
       `,
       {
