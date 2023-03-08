@@ -739,6 +739,10 @@ export interface CommonProperties {
          * Whether this session has a replay
          */
         readonly has_replay?: boolean;
+        /**
+         * Whether this session is currently active. Set to false to manually stop a session
+         */
+        readonly is_active?: boolean;
         [k: string]: unknown;
     };
     /**
