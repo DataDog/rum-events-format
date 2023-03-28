@@ -693,6 +693,20 @@ export declare type RumViewEvent = CommonProperties & {
          * Version of the update of the view event
          */
         readonly document_version: number;
+        /**
+         * List of the page states during the view
+         */
+        readonly page_states?: {
+            /**
+             * Page state name
+             */
+            readonly state: 'active' | 'passive' | 'hidden' | 'frozen' | 'terminated';
+            /**
+             * Duration in ns to the start of the page state
+             */
+            readonly start: number;
+            [k: string]: unknown;
+        }[];
         [k: string]: unknown;
     };
     [k: string]: unknown;
