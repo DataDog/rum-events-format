@@ -297,6 +297,20 @@
           },
           "readOnly": true
         },
+        "session": {
+          "type": "object",
+          "description": "Session properties",
+          "required": [],
+          "properties": {
+            "start_reason": {
+              "type": "string",
+              "description": "The precondition that led to the creation of the session",
+              "enum": ["app_start", "inactivity_timeout", "max_duration", "stop_api", "background_event"],
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        },
         "feature_flags": {
           "type": "object",
           "description": "Feature flags properties",
