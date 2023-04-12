@@ -7,7 +7,7 @@ jobs:
   browser-sdk-test:
     strategy:
       matrix:
-        test_type: [unit, e2e]
+        test_type: [unit] # e2e should be added back, see RUMF-1551
 
     runs-on: ubuntu-latest
     steps:
