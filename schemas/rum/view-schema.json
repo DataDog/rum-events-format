@@ -302,10 +302,10 @@
           "description": "Session properties",
           "required": [],
           "properties": {
-            "start_reason": {
+            "start_precondition": {
               "type": "string",
               "description": "The precondition that led to the creation of the session",
-              "enum": ["app_start", "inactivity_timeout", "max_duration", "stop_api", "background_event"],
+              "enum": ["app_launch", "inactivity_timeout", "max_duration", "explicit_stop", "background_event"],
               "readOnly": true
             },
             "is_active": {
