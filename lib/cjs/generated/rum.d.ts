@@ -202,6 +202,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
          */
         readonly is_crash?: boolean;
         /**
+         * Fingerprint used for Error Tracking custom grouping
+         */
+        fingerprint?: string;
+        /**
          * The type of the error
          */
         readonly type?: string;
