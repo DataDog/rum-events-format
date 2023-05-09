@@ -702,7 +702,7 @@ export declare type RumViewEvent = CommonProperties & {
              */
             readonly state: 'active' | 'passive' | 'hidden' | 'frozen' | 'terminated';
             /**
-             * Duration in ns to the start of the page state
+             * Duration in ns between start of the view and start of the page state
              */
             readonly start: number;
             [k: string]: unknown;

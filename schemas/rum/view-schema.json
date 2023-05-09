@@ -329,7 +329,7 @@
                   },
                   "start": {
                     "type": "integer",
-                    "description": "Duration in ns to the start of the page state",
+                    "description": "Duration in ns between start of the view and start of the page state",
                     "minimum": 0,
                     "readOnly": true
                   }
