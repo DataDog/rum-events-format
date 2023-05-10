@@ -336,6 +336,34 @@
             }
           },
           "readOnly": true
+        },
+        "display": {
+          "type": "object",
+          "description": "Display properties",
+          "properties": {
+            "viewport": {
+              "type": "object",
+              "description": "Scroll properties",
+              "properties": {
+                "max_depth": {
+                  "type": "number",
+                  "description": "Maximum scrolled distance on this view (in pixels)",
+                  "readOnly": true
+                },
+                "max_scroll_height": {
+                  "type": "number",
+                  "description": "Maximum scrollable distance on this view (in pixels)",
+                  "readOnly": true
+                },
+                "max_depth_timestamp": {
+                  "type": "number",
+                  "description": "Timestamp of the scroll event that reached the maximum scroll depth for this view",
+                  "readOnly": true
+                }
+              },
+              "readOnly": true
+            }
+          }
         }
       }
     }
