@@ -333,6 +333,30 @@
               "description": "Version of the update of the view event",
               "minimum": 0,
               "readOnly": true
+            },
+            "page_states": {
+              "type": "array",
+              "description": "List of the page states during the view",
+              "items": {
+                "type": "object",
+                "description": "Properties of the page state",
+                "required": ["state", "start"],
+                "properties": {
+                  "state": {
+                    "enum": ["active", "passive", "hidden", "frozen", "terminated"],
+                    "description": "Page state name",
+                    "readOnly": true
+                  },
+                  "start": {
+                    "type": "integer",
+                    "description": "Duration in ns between start of the view and start of the page state",
+                    "minimum": 0,
+                    "readOnly": true
+                  }
+                },
+                "readOnly": true
+              },
+              "readOnly": true
             }
           },
           "readOnly": true
