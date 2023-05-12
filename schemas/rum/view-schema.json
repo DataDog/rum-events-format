@@ -355,7 +355,7 @@
                   "description": "Maximum scrollable distance on this view (in pixels)",
                   "readOnly": true
                 },
-                "max_depth_timestamp": {
+                "max_depth_time": {
                   "type": "number",
                   "description": "Timestamp of the scroll event that reached the maximum scroll depth for this view",
                   "readOnly": true
