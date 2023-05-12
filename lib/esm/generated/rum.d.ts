@@ -350,7 +350,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
         /**
          * Duration of the resource
          */
-        readonly duration: number;
+        readonly duration?: number;
         /**
          * Size in octet of the resource response body
          */
