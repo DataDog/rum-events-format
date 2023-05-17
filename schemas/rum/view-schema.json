@@ -365,7 +365,7 @@
           "type": "object",
           "description": "Display properties",
           "properties": {
-            "viewport": {
+            "scroll": {
               "type": "object",
               "description": "Scroll properties",
               "properties": {
