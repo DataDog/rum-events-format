@@ -383,6 +383,11 @@
                   "type": "number",
                   "description": "Timestamp of the scroll event that reached the maximum scroll depth for this view",
                   "readOnly": true
+                },
+                "max_scroll_top": {
+                  "type": "number",
+                  "description": "Maximum amount of pixels scrolled",
+                  "readOnly": true
                 }
               },
               "readOnly": true
