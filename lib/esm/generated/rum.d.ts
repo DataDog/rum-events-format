@@ -704,6 +704,16 @@ export declare type RumViewEvent = CommonProperties & {
         [k: string]: unknown;
     };
     /**
+     * Session Replay properties
+     */
+    replay?: {
+        /**
+         * Default Session Replay privacy level established for this view
+         */
+        readonly privacyLevel?: 'mask' | 'mask-user-input' | 'allow';
+        [k: string]: unknown;
+    };
+    /**
      * Internal properties
      */
     readonly _dd: {
