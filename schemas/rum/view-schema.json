@@ -323,6 +323,19 @@
           "additionalProperties": true,
           "readOnly": true
         },
+        "replay": {
+          "type": "object",
+          "description": "Session Replay properties",
+          "required": [],
+          "properties": {
+            "privacyLevel": {
+              "type": "string",
+              "description": "Default Session Replay privacy level established for this view",
+              "enum": ["mask", "mask-user-input", "allow"],
+              "readOnly": true
+            }
+          }
+        },
         "_dd": {
           "type": "object",
           "description": "Internal properties",
