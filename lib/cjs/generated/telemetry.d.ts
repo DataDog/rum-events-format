@@ -150,7 +150,7 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
             /**
              * Whether it is allowed to use LocalStorage when cookies are not available
              */
-            allowFallbackToLocalStorage?: boolean;
+            allow_fallback_to_local_storage?: boolean;
             /**
              * Attribute to be used to name actions
              */
