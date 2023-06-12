@@ -50,9 +50,6 @@
     "feature_four": { "foo": "bar" }
   },
   "_dd": {
-    "format_version": 2,
-    "session": {
-      "plan": 1
-    }
+    "format_version": 2
   }
 }

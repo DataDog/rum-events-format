@@ -954,9 +954,9 @@ export interface CommonProperties {
          */
         session?: {
             /**
-             * Session plan: 1 is the plan without replay, 2 is the plan with replay
+             * Session plan: 1 is the plan without replay, 2 is the plan with replay (deprecated)
              */
-            plan: 1 | 2;
+            plan?: 1 | 2;
             [k: string]: unknown;
         };
         /**
