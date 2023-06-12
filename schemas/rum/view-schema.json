@@ -313,6 +313,11 @@
               "description": "Whether this session is currently active. Set to false to manually stop a session",
               "default": true,
               "readOnly": true
+            },
+            "sampled_for_replay": {
+              "type": "boolean",
+              "description": "Whether this session has been sampled for replay",
+              "readOnly": true
             }
           },
           "readOnly": true

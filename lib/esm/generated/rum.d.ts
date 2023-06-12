@@ -695,6 +695,10 @@ export declare type RumViewEvent = CommonProperties & {
          * Whether this session is currently active. Set to false to manually stop a session
          */
         readonly is_active?: boolean;
+        /**
+         * Whether this session has been sampled for replay
+         */
+        readonly sampled_for_replay?: boolean;
         [k: string]: unknown;
     };
     /**
