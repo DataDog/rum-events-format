@@ -364,31 +364,30 @@
         "display": {
           "type": "object",
           "description": "Display properties",
-          "readOnly": true,
           "properties": {
             "scroll": {
               "type": "object",
               "description": "Scroll properties",
-              "required": ["max_depth", "max_scroll_height", "max_depth_time", "max_scroll_top"],
+              
               "properties": {
                 "max_depth": {
                   "type": "number",
                   "description": "Maximum scrolled distance on this view (in pixels)",
                   "readOnly": true
                 },
-                "max_scroll_height": {
+                "max_depth_scroll_height": {
                   "type": "number",
-                  "description": "Maximum scrollable distance on this view (in pixels)",
+                  "description": "Page scroll height when the maximum scrolled distance was reached for this view (in pixels)",
+                  "readOnly": true
+                },
+                "max_depth_scroll_top": {
+                  "type": "number",
+                  "description": "Page scroll top when the maximum scrolled distance was reached for this view (in pixels)",
                   "readOnly": true
                 },
                 "max_depth_time": {
                   "type": "number",
-                  "description": "Duration between the view start and the scroll event that reached the maximum scroll depth for this view",
-                  "readOnly": true
-                },
-                "max_scroll_top": {
-                  "type": "number",
-                  "description": "Maximum amount of pixels scrolled",
+                  "description": "Timestamp of the scroll event that reached the maximum scroll depth for this view",
                   "readOnly": true
                 }
               },
