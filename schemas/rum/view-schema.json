@@ -362,6 +362,30 @@
                 "readOnly": true
               },
               "readOnly": true
+            },
+            "replay_stats": {
+              "type": "object",
+              "description": "Debug metadata for Replay Sessions",
+              "properties": {
+                "records_count": {
+                  "type": "integer",
+                  "description": "The number of records produced during this view lifetime",
+                  "default": 0,
+                  "minimum": 0
+                },
+                "segments_count": {
+                  "type": "integer",
+                  "description": "The number of segments sent during this view lifetime",
+                  "minimum": 0,
+                  "default": 0
+                },
+                "segments_total_raw_size": {
+                  "type": "integer",
+                  "description": "The total size in bytes of the segments sent during this view lifetime",
+                  "minimum": 0,
+                  "default": 0
+                }
+              }
             }
           },
           "readOnly": true
