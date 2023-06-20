@@ -6,7 +6,8 @@
   },
   "session": {
     "id": "cacbf45c-3a05-48ce-b066-d76349460599",
-    "type": "user"
+    "type": "user",
+    "sampled_for_replay": false
   },
   "source": "browser",
   "view": {
@@ -47,9 +48,6 @@
   "_dd": {
     "document_version": 9,
     "format_version": 2,
-    "session": {
-      "plan": 1
-    },
     "page_states": [
       {
         "state": "active",
