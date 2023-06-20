@@ -331,6 +331,7 @@
         "privacy": {
           "type": "object",
           "description": "Privacy properties",
+          "required": ["replay_level"],
           "properties": {
             "replay_level": {
               "type": "string",
