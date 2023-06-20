@@ -342,7 +342,7 @@ export declare type MobileFullSnapshotRecord = CommonRecordSchema & {
 /**
  * Schema of a Wireframe type.
  */
-export declare type Wireframe = ShapeWireframe | TextWireframe | ImageWireframe;
+export declare type Wireframe = ShapeWireframe | TextWireframe | ImageWireframe | PlaceholderWireframe;
 /**
  * Schema of all properties of a ShapeWireframe.
  */
@@ -476,6 +476,19 @@ export declare type ImageWireframe = CommonShapeWireframe & {
     isEmpty?: boolean;
 };
 /**
+ * Schema of all properties of a PlaceholderWireframe.
+ */
+export declare type PlaceholderWireframe = CommonWireframe & {
+    /**
+     * The type of the wireframe.
+     */
+    readonly type: 'placeholder';
+    /**
+     * Label of the placeholder
+     */
+    label?: string;
+};
+/**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
  */
 export declare type MobileIncrementalSnapshotRecord = CommonRecordSchema & {
@@ -529,7 +542,7 @@ export declare type MobileMutationPayload = {
 /**
  * Schema of a WireframeUpdateMutation type.
  */
-export declare type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate;
+export declare type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate | PlaceholderWireframeUpdate;
 /**
  * Schema of all properties of a TextWireframeUpdate.
  */
@@ -581,6 +594,19 @@ export declare type ImageWireframeUpdate = CommonShapeWireframeUpdate & {
      * Flag describing an image wireframe that should render an empty state placeholder
      */
     isEmpty?: boolean;
+};
+/**
+ * Schema of all properties of a PlaceholderWireframe.
+ */
+export declare type PlaceholderWireframeUpdate = CommonWireframeUpdate & {
+    /**
+     * The type of the wireframe.
+     */
+    readonly type: 'placeholder';
+    /**
+     * Label of the placeholder
+     */
+    label?: string;
 };
 /**
  * Schema of a TouchData.
