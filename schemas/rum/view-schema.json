@@ -328,6 +328,19 @@
           "additionalProperties": true,
           "readOnly": true
         },
+        "privacy": {
+          "type": "object",
+          "description": "Privacy properties",
+          "properties": {
+            "replay_level": {
+              "type": "string",
+              "description": "The replay privacy level",
+              "enum": ["allow", "mask", "mask-user-input"],
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        },
         "_dd": {
           "type": "object",
           "description": "Internal properties",

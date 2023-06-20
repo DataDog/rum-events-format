@@ -78,5 +78,8 @@
     "feature_two": "foo",
     "feature_three": 2,
     "feature_four": { "foo": "bar" }
+  },
+  "privacy": {
+    "replay_level": "mask"
   }
 }
