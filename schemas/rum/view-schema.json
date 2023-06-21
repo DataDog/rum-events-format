@@ -397,7 +397,7 @@
             "scroll": {
               "type": "object",
               "description": "Scroll properties",
-
+              "required": ["max_depth", "max_depth_scroll_height", "max_depth_scroll_top", "max_depth_time"],
               "properties": {
                 "max_depth": {
                   "type": "number",
