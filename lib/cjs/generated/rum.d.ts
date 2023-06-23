@@ -938,6 +938,10 @@ export interface CommonProperties {
          */
         readonly version: string;
         /**
+         * Operating system build number, e.g. 15D21
+         */
+        readonly build?: string;
+        /**
          * Major operating system version, e.g. 8
          */
         readonly version_major: string;
