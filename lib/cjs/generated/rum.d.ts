@@ -759,6 +759,34 @@ export declare type RumViewEvent = CommonProperties & {
         };
         [k: string]: unknown;
     };
+    /**
+     * Display properties
+     */
+    readonly display?: {
+        /**
+         * Scroll properties
+         */
+        readonly scroll?: {
+            /**
+             * Distance between the top and the lowest point reached on this view (in pixels)
+             */
+            readonly max_depth: number;
+            /**
+             * Page scroll height (total height) when the maximum scroll depth was reached for this view (in pixels)
+             */
+            readonly max_depth_scroll_height: number;
+            /**
+             * Page scroll top (scrolled distance) when the maximum scroll depth was reached for this view (in pixels)
+             */
+            readonly max_depth_scroll_top: number;
+            /**
+             * Duration between the view start and the scroll event that reached the maximum scroll depth for this view (in nanoseconds)
+             */
+            readonly max_depth_time: number;
+            [k: string]: unknown;
+        };
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 };
 /**
