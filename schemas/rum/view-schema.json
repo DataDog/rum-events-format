@@ -393,6 +393,7 @@
         "display": {
           "type": "object",
           "description": "Display properties",
+          "readOnly": true,
           "properties": {
             "scroll": {
               "type": "object",

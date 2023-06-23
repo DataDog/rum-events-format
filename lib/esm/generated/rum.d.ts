@@ -752,7 +752,7 @@ export declare type RumViewEvent = CommonProperties & {
     /**
      * Display properties
      */
-    display?: {
+    readonly display?: {
         /**
          * Scroll properties
          */
