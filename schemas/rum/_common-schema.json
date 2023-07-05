@@ -300,6 +300,27 @@
             }
           }
         },
+        "configuration": {
+          "type": "object",
+          "description": "Subset of the configuration options used to initialize the SDK",
+          "readOnly": true,
+          "properties": {
+            "session_sample_rate": {
+              "type": "integer",
+              "description": "The percentage of sessions tracked",
+              "minimum": 0,
+              "maximum": 100,
+              "readOnly": true
+            },
+            "session_replay_sample_rate": {
+              "type": "integer",
+              "description": "The percentage of sessions with Browser RUM & Session Replay pricing tracked",
+              "minimum": 0,
+              "maximum": 100,
+              "readOnly": true
+            }
+          }
+        },
         "browser_sdk_version": {
           "type": "string",
           "description": "Browser SDK version",
