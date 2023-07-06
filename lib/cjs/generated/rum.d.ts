@@ -1028,7 +1028,7 @@ export interface CommonProperties {
              */
             readonly session_sample_rate: number;
             /**
-             * The percentage of sessions with Browser RUM & Session Replay pricing tracked
+             * The percentage of sessions with RUM & Session Replay pricing tracked
              */
             readonly session_replay_sample_rate: number;
             [k: string]: unknown;
