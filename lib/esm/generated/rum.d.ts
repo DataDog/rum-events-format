@@ -1020,17 +1020,17 @@ export interface CommonProperties {
             [k: string]: unknown;
         };
         /**
-         * Subset of the configuration options used to initialize the SDK
+         * Subset of the SDK configuration options in use during its execution
          */
         readonly configuration?: {
             /**
              * The percentage of sessions tracked
              */
-            readonly session_sample_rate?: number;
+            readonly session_sample_rate: number;
             /**
              * The percentage of sessions with Browser RUM & Session Replay pricing tracked
              */
-            readonly session_replay_sample_rate?: number;
+            readonly session_replay_sample_rate: number;
             [k: string]: unknown;
         };
         /**

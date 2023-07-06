@@ -302,8 +302,9 @@
         },
         "configuration": {
           "type": "object",
-          "description": "Subset of the configuration options used to initialize the SDK",
+          "description": "Subset of the SDK configuration options in use during its execution",
           "readOnly": true,
+          "required": ["session_sample_rate", "session_replay_sample_rate"],
           "properties": {
             "session_sample_rate": {
               "type": "integer",
