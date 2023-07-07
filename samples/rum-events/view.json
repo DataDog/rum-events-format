@@ -53,7 +53,11 @@
         "state": "active",
         "start": 1345678
       }
-    ]
+    ],
+    "configuration": {
+      "session_sample_rate": 12.45,
+      "session_replay_sample_rate": 100
+    }
   },
   "synthetics": {
     "test_id": "foo",
