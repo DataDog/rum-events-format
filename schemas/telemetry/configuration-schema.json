@@ -108,6 +108,10 @@
                   "type": "boolean",
                   "description": "Whether a secure session cookie is used"
                 },
+                "allow_fallback_to_local_storage": {
+                  "type": "boolean",
+                  "description": "Whether it is allowed to use LocalStorage when cookies are not available"
+                },
                 "action_name_attribute": {
                   "type": "string",
                   "description": "Attribute to be used to name actions"
