@@ -112,6 +112,10 @@
                   "type": "boolean",
                   "description": "Whether it is allowed to use LocalStorage when cookies are not available"
                 },
+                "allow_untrusted_events": {
+                  "type": "boolean",
+                  "description": "Whether untrusted events are allowed"
+                },
                 "action_name_attribute": {
                   "type": "string",
                   "description": "Attribute to be used to name actions"
