@@ -116,7 +116,7 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             start_session_replay_recording_manually?: boolean;
             /**
-             * Whether a proxy configured is used
+             * Whether a proxy is used
              */
             use_proxy?: boolean;
             /**
@@ -179,6 +179,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * Whether the request origins list to ignore when computing the page activity is used
              */
             use_excluded_activity_urls?: boolean;
+            /**
+             * Whether the Worker is loaded from an external URL
+             */
+            use_worker_url?: boolean;
             /**
              * Whether user frustrations are tracked
              */
