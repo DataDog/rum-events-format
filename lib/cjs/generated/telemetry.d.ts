@@ -152,6 +152,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             allow_fallback_to_local_storage?: boolean;
             /**
+             * Whether untrusted events are allowed
+             */
+            allow_untrusted_events?: boolean;
+            /**
              * Attribute to be used to name actions
              */
             action_name_attribute?: string;
