@@ -75,7 +75,7 @@
                 },
                 "use_proxy": {
                   "type": "boolean",
-                  "description": "Whether a proxy configured is used",
+                  "description": "Whether a proxy is used",
                   "readOnly": false
                 },
                 "use_before_send": {
@@ -140,6 +140,10 @@
                 "use_excluded_activity_urls": {
                   "type": "boolean",
                   "description": "Whether the request origins list to ignore when computing the page activity is used"
+                },
+                "use_worker_url": {
+                  "type": "boolean",
+                  "description": "Whether the Worker is loaded from an external URL"
                 },
                 "track_frustrations": {
                   "type": "boolean",
