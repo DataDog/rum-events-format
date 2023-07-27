@@ -73,6 +73,12 @@
               "minimum": 0,
               "readOnly": true
             },
+            "interaction_to_next_paint": {
+              "type": "integer",
+              "description": "Longest duration in ns between an interaction and the next paint",
+              "minimum": 0,
+              "readOnly": true
+            },
             "cumulative_layout_shift": {
               "type": "number",
               "description": "Total layout shift score that occurred on the view",
