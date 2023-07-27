@@ -524,7 +524,7 @@ export declare type RumViewEvent = CommonProperties & {
          */
         readonly first_input_time?: number;
         /**
-         * Duration in ns of the longest interaction to the next paint
+         * Longest duration in ns between an interaction and the next paint
          */
         readonly interaction_to_next_paint?: number;
         /**

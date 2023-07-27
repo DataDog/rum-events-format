@@ -75,7 +75,7 @@
             },
             "interaction_to_next_paint": {
               "type": "integer",
-              "description": "Duration in ns of the longest interaction to the next paint",
+              "description": "Longest duration in ns between an interaction and the next paint",
               "minimum": 0,
               "readOnly": true
             },
