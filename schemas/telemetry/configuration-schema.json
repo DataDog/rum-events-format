@@ -112,6 +112,10 @@
                   "type": "boolean",
                   "description": "Whether it is allowed to use LocalStorage when cookies are not available"
                 },
+                "store_contexts_across_pages": {
+                  "type": "boolean",
+                  "description": "Whether contexts are stored in local storage"
+                },
                 "allow_untrusted_events": {
                   "type": "boolean",
                   "description": "Whether untrusted events are allowed"
