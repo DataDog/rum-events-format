@@ -227,7 +227,7 @@
             "graphql": {
               "type": "object",
               "description": "GraphQL requests parameters",
-              "required": ["operationType", "query"],
+              "required": ["operationType"],
               "properties": {
                 "operationType": {
                   "type": "string",
@@ -235,15 +235,20 @@
                   "enum": ["query", "mutation", "subscription"],
                   "readOnly": true
                 },
-                "query": {
-                  "type": "string",
-                  "description": "Content of the GraphQL operation",
-                  "readOnly": false
-                },
                 "operationName": {
                   "type": "string",
                   "description": "Name of the GraphQL operation",
                   "readOnly": true
+                },
+                "payload": {
+                  "type": "string",
+                  "description": "Content of the GraphQL operation",
+                  "readOnly": false
+                },
+                "variables": {
+                  "type": "string",
+                  "description": "String representation of the operation variables",
+                  "readOnly": false
                 }
               },
               "readOnly": true

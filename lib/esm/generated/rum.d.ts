@@ -466,13 +466,17 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
              */
             readonly operationType: 'query' | 'mutation' | 'subscription';
             /**
-             * Content of the GraphQL operation
-             */
-            query: string;
-            /**
              * Name of the GraphQL operation
              */
             readonly operationName?: string;
+            /**
+             * Content of the GraphQL operation
+             */
+            payload?: string;
+            /**
+             * String representation of the operation variables
+             */
+            variables?: string;
             [k: string]: unknown;
         };
         [k: string]: unknown;
