@@ -457,6 +457,24 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
             readonly type?: 'ad' | 'advertising' | 'analytics' | 'cdn' | 'content' | 'customer-success' | 'first party' | 'hosting' | 'marketing' | 'other' | 'social' | 'tag-manager' | 'utility' | 'video';
             [k: string]: unknown;
         };
+        /**
+         * GraphQL requests parameters
+         */
+        readonly graphql?: {
+            /**
+             * Type of the GraphQL operation
+             */
+            readonly operationType: 'query' | 'mutation' | 'subscription';
+            /**
+             * Content of the GraphQL operation
+             */
+            query: string;
+            /**
+             * Name of the GraphQL operation
+             */
+            readonly operationName?: string;
+            [k: string]: unknown;
+        };
         [k: string]: unknown;
     };
     /**
