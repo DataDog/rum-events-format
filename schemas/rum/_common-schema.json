@@ -36,9 +36,9 @@
       "description": "The version for this application",
       "readOnly": true
     },
-    "build_number": {
+    "build_version": {
       "type": "string",
-      "description": "The build number for this application",
+      "description": "The build version for this application",
       "readOnly": true
     },
     "session": {
