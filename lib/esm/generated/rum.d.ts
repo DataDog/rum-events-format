@@ -836,6 +836,10 @@ export interface CommonProperties {
      */
     readonly version?: string;
     /**
+     * The build version for this application
+     */
+    readonly build_version?: string;
+    /**
      * Session properties
      */
     readonly session: {
