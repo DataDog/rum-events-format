@@ -24,7 +24,7 @@
         },
         "resourceIdentifier": {
           "type": "string",
-          "description": "Unique identifier of the image file",
+          "description": "Unique identifier of the image resource",
           "readOnly": false
         },
         "mimeType": {
