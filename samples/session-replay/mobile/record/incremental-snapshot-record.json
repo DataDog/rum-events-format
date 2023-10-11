@@ -61,6 +61,7 @@
         "id": 12,
         "type": "image",
         "base64": "base64Mock",
+        "resourceIdentifier": "resourceIdentifierMock",
         "mimeType": "image/jpeg"
       },
       {

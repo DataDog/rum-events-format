@@ -22,6 +22,11 @@
           "description": "base64 representation of the image. Not required as the ImageWireframe can be initialised without any base64",
           "readOnly": false
         },
+        "resourceIdentifier": {
+          "type": "string",
+          "description": "Unique identifier of the image file",
+          "readOnly": false
+        },
         "mimeType": {
           "type": "string",
           "description": "MIME type of the image file",

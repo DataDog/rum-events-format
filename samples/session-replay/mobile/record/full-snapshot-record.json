@@ -26,6 +26,7 @@
         "height": 30,
         "type": "image",
         "base64": "base64Mock",
+        "resourceIdentifier": "resourceIdentifierMock",
         "mimeType": "image/jpeg"
       },
       {
