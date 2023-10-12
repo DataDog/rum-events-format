@@ -22,7 +22,7 @@
           "description": "base64 representation of the image. Not required as the ImageWireframe can be initialised without any base64",
           "readOnly": false
         },
-        "resourceIdentifier": {
+        "resourceId": {
           "type": "string",
           "description": "Unique identifier of the image resource",
           "readOnly": false

@@ -469,7 +469,7 @@ export declare type ImageWireframe = CommonShapeWireframe & {
     /**
      * Unique identifier of the image resource
      */
-    resourceIdentifier?: string;
+    resourceId?: string;
     /**
      * MIME type of the image file
      */
@@ -593,7 +593,7 @@ export declare type ImageWireframeUpdate = CommonShapeWireframeUpdate & {
     /**
      * Unique identifier of the image resource
      */
-    resourceIdentifier?: string;
+    resourceId?: string;
     /**
      * MIME type of the image file
      */
