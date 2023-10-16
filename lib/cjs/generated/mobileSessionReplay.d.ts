@@ -41,7 +41,7 @@ export declare type MobileFullSnapshotRecord = CommonRecordSchema & {
 /**
  * Schema of a Wireframe type.
  */
-export declare type Wireframe = ShapeWireframe | TextWireframe | ImageWireframe | PlaceholderWireframe;
+export declare type Wireframe = ShapeWireframe | TextWireframe | ImageWireframe | PlaceholderWireframe | WebviewWireframe;
 /**
  * Schema of all properties of a ShapeWireframe.
  */
@@ -192,6 +192,19 @@ export declare type PlaceholderWireframe = CommonWireframe & {
     label?: string;
 };
 /**
+ * Schema of all properties of a WebviewWireframe.
+ */
+export declare type WebviewWireframe = CommonShapeWireframe & {
+    /**
+     * The type of the wireframe.
+     */
+    readonly type: 'webview';
+    /**
+     * Defines the unique ID of the replayed webview environment that will be nested in this container.
+     */
+    readonly nestedEnvId: number;
+};
+/**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
  */
 export declare type MobileIncrementalSnapshotRecord = CommonRecordSchema & {
@@ -245,7 +258,7 @@ export declare type MobileMutationPayload = {
 /**
  * Schema of a WireframeUpdateMutation type.
  */
-export declare type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate | PlaceholderWireframeUpdate;
+export declare type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate | PlaceholderWireframeUpdate | WebviewWireframeUpdate;
 /**
  * Schema of all properties of a TextWireframeUpdate.
  */
@@ -316,6 +329,19 @@ export declare type PlaceholderWireframeUpdate = CommonWireframeUpdate & {
     label?: string;
 };
 /**
+ * Schema of all properties of a WebviewWireframeUpdate.
+ */
+export declare type WebviewWireframeUpdate = CommonShapeWireframeUpdate & {
+    /**
+     * The type of the wireframe.
+     */
+    readonly type: 'webview';
+    /**
+     * Defines the unique ID of the replayed webview environment that will be nested in this container.
+     */
+    readonly nestedEnvId: number;
+};
+/**
  * Schema of a TouchData.
  */
 export declare type TouchData = {
@@ -366,7 +392,7 @@ export declare type PointerInteractionData = {
 /**
  * Schema of a Record which contains the screen properties.
  */
-export declare type MetaRecord = CommonRecordSchema & {
+export declare type MetaRecord = WebviewSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -390,9 +416,18 @@ export declare type MetaRecord = CommonRecordSchema & {
     };
 };
 /**
+ * Schema of common properties for a Record event type that is supported by webviews.
+ */
+export declare type WebviewSupportedCommonRecordSchema = CommonRecordSchema & {
+    /**
+     * Defines the unique ID of the nested replay environment that generated this record.
+     */
+    readonly nestedEnvId?: number;
+};
+/**
  * Schema of a Record type which contains focus information.
  */
-export declare type FocusRecord = CommonRecordSchema & {
+export declare type FocusRecord = WebviewSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -407,7 +442,7 @@ export declare type FocusRecord = CommonRecordSchema & {
 /**
  * Schema of a Record which signifies that view lifecycle ended.
  */
-export declare type ViewEndRecord = CommonRecordSchema & {
+export declare type ViewEndRecord = WebviewSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -416,7 +451,7 @@ export declare type ViewEndRecord = CommonRecordSchema & {
 /**
  * Schema of a Record which signifies that the viewport properties have changed.
  */
-export declare type VisualViewportRecord = CommonRecordSchema & {
+export declare type VisualViewportRecord = WebviewSupportedCommonRecordSchema & {
     data: {
         height: number;
         offsetLeft: number;

@@ -6,7 +6,7 @@
   "description": "Schema of a Record which signifies a collection of frustration signals.",
   "allOf": [
     {
-      "$ref": "../common/_common-record-schema.json"
+      "$ref": "../common/_webview-supported-common-record-schema.json"
     },
     {
       "required": ["type", "data"],
