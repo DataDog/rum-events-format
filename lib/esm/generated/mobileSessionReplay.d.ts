@@ -166,6 +166,10 @@ export declare type ImageWireframe = CommonShapeWireframe & {
      */
     base64?: string;
     /**
+     * Unique identifier of the image resource
+     */
+    resourceId?: string;
+    /**
      * MIME type of the image file
      */
     mimeType?: string;
@@ -285,6 +289,10 @@ export declare type ImageWireframeUpdate = CommonShapeWireframeUpdate & {
      * base64 representation of the image. Not required as the ImageWireframe can be initialised without any base64
      */
     base64?: string;
+    /**
+     * Unique identifier of the image resource
+     */
+    resourceId?: string;
     /**
      * MIME type of the image file
      */
