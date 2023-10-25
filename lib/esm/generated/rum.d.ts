@@ -799,6 +799,16 @@ export declare type RumViewEvent = CommonProperties & {
             segments_total_raw_size?: number;
             [k: string]: unknown;
         };
+        /**
+         * Subset of the SDK configuration options in use during its execution
+         */
+        readonly configuration?: {
+            /**
+             * Whether session replay recording configured to start manually
+             */
+            readonly start_session_replay_recording_manually?: boolean;
+            [k: string]: unknown;
+        };
         [k: string]: unknown;
     };
     /**
