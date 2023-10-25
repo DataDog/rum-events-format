@@ -425,6 +425,18 @@
                   "default": 0
                 }
               }
+            },
+            "configuration": {
+              "type": "object",
+              "description": "Subset of the SDK configuration options in use during its execution",
+              "readOnly": true,
+              "properties": {
+                "start_session_replay_recording_manually": {
+                  "type": "boolean",
+                  "description": "Whether session replay recording configured to start manually",
+                  "readOnly": true
+                }
+              }
             }
           },
           "readOnly": true

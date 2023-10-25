@@ -64,7 +64,8 @@
     ],
     "configuration": {
       "session_sample_rate": 12.45,
-      "session_replay_sample_rate": 100
+      "session_replay_sample_rate": 100,
+      "start_session_replay_recording_manually": true
     }
   },
   "synthetics": {
