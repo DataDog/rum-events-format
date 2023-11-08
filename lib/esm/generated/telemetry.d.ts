@@ -280,6 +280,14 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             batch_upload_frequency?: number;
             /**
+             * Maximum number of batches processed sequencially without a delay
+             */
+            batch_processing_level?: number;
+            /**
+             * Whether UIApplication background tasks are enabled
+             */
+            background_tasks_enabled?: boolean;
+            /**
              * The version of React used in a ReactNative application
              */
             react_version?: string;

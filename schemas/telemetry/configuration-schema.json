@@ -288,6 +288,14 @@
                   "type": "integer",
                   "description": "The upload frequency of batches (in milliseconds)"
                 },
+                "batch_processing_level": {
+                  "type": "integer",
+                  "description": "Maximum number of batches processed sequencially without a delay"
+                },
+                "background_tasks_enabled": {
+                  "type": "boolean",
+                  "description": "Whether UIApplication background tasks are enabled"
+                },
                 "react_version": {
                   "type": "string",
                   "description": "The version of React used in a ReactNative application",
