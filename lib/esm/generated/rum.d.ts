@@ -730,10 +730,6 @@ export declare type RumViewEvent = CommonProperties & {
      */
     readonly session?: {
         /**
-         * The precondition that led to the creation of the session
-         */
-        readonly start_precondition?: 'app_launch' | 'inactivity_timeout' | 'max_duration' | 'explicit_stop' | 'background_event';
-        /**
          * Whether this session is currently active. Set to false to manually stop a session
          */
         readonly is_active?: boolean;
@@ -1073,6 +1069,10 @@ export interface CommonProperties {
              * Session plan: 1 is the plan without replay, 2 is the plan with replay (deprecated)
              */
             plan?: 1 | 2;
+            /**
+             * The precondition that led to the creation of the session
+             */
+            readonly session_precondition?: 'user_app_launch' | 'inactivity_timeout' | 'max_duration' | 'background_launch' | 'prewarm' | 'from_non_interactive_session' | 'explicit_stop';
             [k: string]: unknown;
         };
         /**
