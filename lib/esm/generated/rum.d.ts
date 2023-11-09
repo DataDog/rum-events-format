@@ -730,10 +730,6 @@ export declare type RumViewEvent = CommonProperties & {
      */
     readonly session?: {
         /**
-         * The precondition that led to the creation of the session
-         */
-        readonly start_precondition?: 'app_launch' | 'inactivity_timeout' | 'max_duration' | 'explicit_stop' | 'background_event';
-        /**
          * Whether this session is currently active. Set to false to manually stop a session
          */
         readonly is_active?: boolean;
