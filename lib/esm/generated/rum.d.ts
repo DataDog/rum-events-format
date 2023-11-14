@@ -8,7 +8,7 @@ export declare type RumEvent = RumActionEvent | RumErrorEvent | RumLongTaskEvent
 /**
  * Schema of all properties of an Action event
  */
-export declare type RumActionEvent = CommonProperties & {
+export declare type RumActionEvent = CommonProperties & ParentViewSchema & {
     /**
      * RUM event type
      */
@@ -150,7 +150,7 @@ export declare type RumActionEvent = CommonProperties & {
 /**
  * Schema of all properties of an Error event
  */
-export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
+export declare type RumErrorEvent = CommonProperties & ActionChildProperties & ParentViewSchema & {
     /**
      * RUM event type
      */
@@ -280,7 +280,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & {
 /**
  * Schema of all properties of a Long Task event
  */
-export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties & {
+export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties & ParentViewSchema & {
     /**
      * RUM event type
      */
@@ -318,7 +318,7 @@ export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties 
 /**
  * Schema of all properties of a Resource event
  */
-export declare type RumResourceEvent = CommonProperties & ActionChildProperties & {
+export declare type RumResourceEvent = CommonProperties & ActionChildProperties & ParentViewSchema & {
     /**
      * RUM event type
      */
@@ -508,7 +508,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
 /**
  * Schema of all properties of a View event
  */
-export declare type RumViewEvent = CommonProperties & {
+export declare type RumViewEvent = CommonProperties & ParentViewSchema & {
     /**
      * RUM event type
      */
@@ -1099,6 +1099,26 @@ export interface CommonProperties {
      * User provided context
      */
     context?: {
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+}
+/**
+ * Parent view schema for views that are nested (webviews in mobile)
+ */
+export interface ParentViewSchema {
+    /**
+     * Parent view properties (view wrapping the current view)
+     */
+    readonly parent_view?: {
+        /**
+         * ID of the parent view
+         */
+        readonly id: string;
+        /**
+         * Source of the parent view
+         */
+        readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku';
         [k: string]: unknown;
     };
     [k: string]: unknown;
