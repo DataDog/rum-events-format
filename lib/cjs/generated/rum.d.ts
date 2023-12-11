@@ -8,7 +8,7 @@ export declare type RumEvent = RumActionEvent | RumErrorEvent | RumLongTaskEvent
 /**
  * Schema of all properties of an Action event
  */
-export declare type RumActionEvent = CommonProperties & ParentViewSchema & {
+export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -150,7 +150,7 @@ export declare type RumActionEvent = CommonProperties & ParentViewSchema & {
 /**
  * Schema of all properties of an Error event
  */
-export declare type RumErrorEvent = CommonProperties & ActionChildProperties & ParentViewSchema & {
+export declare type RumErrorEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -280,7 +280,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & P
 /**
  * Schema of all properties of a Long Task event
  */
-export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties & ParentViewSchema & {
+export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -318,7 +318,7 @@ export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties 
 /**
  * Schema of all properties of a Resource event
  */
-export declare type RumResourceEvent = CommonProperties & ActionChildProperties & ParentViewSchema & {
+export declare type RumResourceEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -508,7 +508,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
 /**
  * Schema of all properties of a View event
  */
-export declare type RumViewEvent = CommonProperties & ParentViewSchema & {
+export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -1108,17 +1108,23 @@ export interface CommonProperties {
     [k: string]: unknown;
 }
 /**
- * Parent view schema for views that are nested (webviews in mobile)
+ * View Container schema for views that are nested (webviews in mobile)
  */
-export interface ParentViewSchema {
+export interface ViewContainerSchema {
     /**
-     * Parent view properties (view wrapping the current view)
+     * View Container properties (view wrapping the current view)
      */
-    readonly parent_view?: {
+    readonly container?: {
         /**
-         * ID of the parent view
+         * Attributes of the view's container
          */
-        readonly id: string;
+        readonly view: {
+            /**
+             * ID of the parent view
+             */
+            readonly id: string;
+            [k: string]: unknown;
+        };
         /**
          * Source of the parent view
          */
