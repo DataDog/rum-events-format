@@ -10,9 +10,9 @@
     },
     {
       "properties": {
-        "nestedEnvId": {
-          "type": "integer",
-          "description": "Defines the unique ID of the nested replay environment that generated this record.",
+        "slotId": {
+          "type": "string",
+          "description": "Defines the unique ID of the slot that generated this record.",
           "readOnly": true
         }
       }
