@@ -12,7 +12,7 @@
       "properties": {
         "slotId": {
           "type": "string",
-          "description": "Defines the unique ID of the slot that generated this record.",
+          "description": "Unique ID of the slot that generated this record.",
           "readOnly": true
         }
       }

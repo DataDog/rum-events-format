@@ -19,7 +19,7 @@
         },
         "slotId": {
           "type": "string",
-          "description": "Defines the unique ID of the slot that will be mounted in this container.",
+          "description": "Unique Id of the slot containing this webview.",
           "readOnly": true
         }
       }

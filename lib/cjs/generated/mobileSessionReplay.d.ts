@@ -200,7 +200,7 @@ export declare type WebviewWireframe = CommonShapeWireframe & {
      */
     readonly type: 'webview';
     /**
-     * Defines the unique ID of the slot that will be mounted in this container.
+     * Unique Id of the slot containing this webview.
      */
     readonly slotId: string;
 };
@@ -337,7 +337,7 @@ export declare type WebviewWireframeUpdate = CommonShapeWireframeUpdate & {
      */
     readonly type: 'webview';
     /**
-     * Defines the unique ID of the slot that will be mounted in this container.
+     * Unique Id of the slot containing this webview.
      */
     readonly slotId: string;
 };
@@ -420,7 +420,7 @@ export declare type MetaRecord = SlotSupportedCommonRecordSchema & {
  */
 export declare type SlotSupportedCommonRecordSchema = CommonRecordSchema & {
     /**
-     * Defines the unique ID of the slot that generated this record.
+     * Unique ID of the slot that generated this record.
      */
     readonly slotId?: string;
 };

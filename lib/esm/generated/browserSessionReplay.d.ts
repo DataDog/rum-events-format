@@ -43,7 +43,7 @@ export declare type BrowserFullSnapshotRecord = SlotSupportedCommonRecordSchema 
  */
 export declare type SlotSupportedCommonRecordSchema = CommonRecordSchema & {
     /**
-     * Defines the unique ID of the slot that generated this record.
+     * Unique ID of the slot that generated this record.
      */
     readonly slotId?: string;
 };
