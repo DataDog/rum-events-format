@@ -200,9 +200,9 @@ export declare type WebviewWireframe = CommonShapeWireframe & {
      */
     readonly type: 'webview';
     /**
-     * Defines the unique ID of the replayed webview environment that will be nested in this container.
+     * Unique Id of the slot containing this webview.
      */
-    readonly nestedEnvId: number;
+    readonly slotId: string;
 };
 /**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
@@ -337,9 +337,9 @@ export declare type WebviewWireframeUpdate = CommonShapeWireframeUpdate & {
      */
     readonly type: 'webview';
     /**
-     * Defines the unique ID of the replayed webview environment that will be nested in this container.
+     * Unique Id of the slot containing this webview.
      */
-    readonly nestedEnvId: number;
+    readonly slotId: string;
 };
 /**
  * Schema of a TouchData.
@@ -392,7 +392,7 @@ export declare type PointerInteractionData = {
 /**
  * Schema of a Record which contains the screen properties.
  */
-export declare type MetaRecord = WebviewSupportedCommonRecordSchema & {
+export declare type MetaRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -416,18 +416,18 @@ export declare type MetaRecord = WebviewSupportedCommonRecordSchema & {
     };
 };
 /**
- * Schema of common properties for a Record event type that is supported by webviews.
+ * Schema of common properties for a Record event type that is supported by slots.
  */
-export declare type WebviewSupportedCommonRecordSchema = CommonRecordSchema & {
+export declare type SlotSupportedCommonRecordSchema = CommonRecordSchema & {
     /**
-     * Defines the unique ID of the nested replay environment that generated this record.
+     * Unique ID of the slot that generated this record.
      */
-    readonly nestedEnvId?: number;
+    readonly slotId?: string;
 };
 /**
  * Schema of a Record type which contains focus information.
  */
-export declare type FocusRecord = WebviewSupportedCommonRecordSchema & {
+export declare type FocusRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -442,7 +442,7 @@ export declare type FocusRecord = WebviewSupportedCommonRecordSchema & {
 /**
  * Schema of a Record which signifies that view lifecycle ended.
  */
-export declare type ViewEndRecord = WebviewSupportedCommonRecordSchema & {
+export declare type ViewEndRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -451,7 +451,7 @@ export declare type ViewEndRecord = WebviewSupportedCommonRecordSchema & {
 /**
  * Schema of a Record which signifies that the viewport properties have changed.
  */
-export declare type VisualViewportRecord = WebviewSupportedCommonRecordSchema & {
+export declare type VisualViewportRecord = SlotSupportedCommonRecordSchema & {
     data: {
         height: number;
         offsetLeft: number;
