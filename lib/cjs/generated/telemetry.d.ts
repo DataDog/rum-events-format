@@ -140,9 +140,13 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             track_long_task?: boolean;
             /**
-             * Whether a secure cross-site session cookie is used
+             * Whether a secure cross-site session cookie is used (deprecated)
              */
             use_cross_site_session_cookie?: boolean;
+            /**
+             * Whether a partitioned secure cross-site session cookie is used
+             */
+            use_partitioned_cross_site_session_cookie?: boolean;
             /**
              * Whether a secure session cookie is used
              */

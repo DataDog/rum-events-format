@@ -102,7 +102,11 @@
                 },
                 "use_cross_site_session_cookie": {
                   "type": "boolean",
-                  "description": "Whether a secure cross-site session cookie is used"
+                  "description": "Whether a secure cross-site session cookie is used (deprecated)"
+                },
+                "use_partitioned_cross_site_session_cookie": {
+                  "type": "boolean",
+                  "description": "Whether a partitioned secure cross-site session cookie is used"
                 },
                 "use_secure_session_cookie": {
                   "type": "boolean",
