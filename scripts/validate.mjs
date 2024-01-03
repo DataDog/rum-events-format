@@ -5,11 +5,41 @@ import { readdirSync, readFileSync } from 'fs'
 const SAMPLES_DIRECTORY = './samples'
 const SCHEMAS_DIRECTORY = './schemas'
 
+validateSchemasObjectsPropertiesCase()
 validateSchemasIds()
 validateSamples()
 
 if (process.exitCode !== 0 && process.exitCode !== undefined) {
   console.log('❌ Some validation errors were found')
+}
+
+function validateSchemasObjectsPropertiesCase() {
+  forEachFile(SCHEMAS_DIRECTORY, (schemaPath) => {
+    const schema = readJson(schemaPath)
+
+    // RUM and telemetry schemas object properties should be snake_case, other schemas objects should
+    // be camelCase
+    const shouldBeSnakeCase =
+      schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/rum/`) || schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/telemetry/`)
+
+    // Some exceptions to the rule above. Ideally they should be fixed in the future.
+    const caseExceptions =
+      schemaPath === `${SCHEMAS_DIRECTORY}/session-replay/common/_common-segment-metadata-schema.json`
+        ? ['records_count', 'index_in_view', 'has_full_snapshot']
+        : schemaPath === `${SCHEMAS_DIRECTORY}/session-replay/common/focus-record-schema.json`
+        ? ['has_focus']
+        : schemaPath === `${SCHEMAS_DIRECTORY}/rum/resource-schema.json`
+        ? ['operationType', 'operationName']
+        : []
+
+    forEachObjectProperty(schema, (key) => {
+      const isCorrectCase = shouldBeSnakeCase ? isSnakeCase(key) : isCamelCase(key)
+      if (!isCorrectCase && !caseExceptions.includes(key)) {
+        console.log(`❌ Schema ${schemaPath} property ${key} is not ${shouldBeSnakeCase ? 'snake_case' : 'camelCase'}`)
+        process.exitCode = 1
+      }
+    })
+  })
 }
 
 function validateSchemasIds() {
@@ -22,7 +52,7 @@ function validateSchemasIds() {
     // Here, we make sure that both requirements are respected.
     const schemaId = computeSchemaIdFromSchemaPath(schemaPath)
     if (schema.$id !== schemaId) {
-      console.log(`⚠️ Schema ${schemaPath} $id should be ${schemaId}`)
+      console.log(`❌ Schema ${schemaPath} $id should be ${schemaId}`)
       process.exitCode = 1
     }
   })
@@ -69,4 +99,35 @@ function forEachFile(directoryPath, callback) {
 
 function readJson(filePath) {
   return JSON.parse(readFileSync(filePath, 'utf8'))
+}
+
+/**
+ * Iterates over each properties of objects specified in the provided JSON schema.
+ */
+function forEachObjectProperty(schema, callback) {
+  if (Array.isArray(schema)) {
+    // traverse arrays
+    for (const value of schema) {
+      forEachObjectProperty(value, callback)
+    }
+  } else if (typeof schema === 'object' && schema !== null) {
+    // traverse objects
+    for (const value of Object.values(schema)) {
+      forEachObjectProperty(value, callback)
+    }
+
+    if (schema.type === 'object' && schema.properties) {
+      for (const [key, value] of Object.entries(schema.properties)) {
+        callback(key, value)
+      }
+    }
+  }
+}
+
+function isSnakeCase(str) {
+  return /^[a-z0-9_]+$/.test(str)
+}
+
+function isCamelCase(str) {
+  return /^[a-z0-9][A-Za-z0-9]*$/.test(str)
 }
