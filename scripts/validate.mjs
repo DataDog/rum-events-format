@@ -14,6 +14,16 @@ if (process.exitCode !== 0 && process.exitCode !== undefined) {
 }
 
 function validateSchemasObjectsPropertiesCase() {
+  // Some properties don't follow the convention. Ideally they should be fixed in the future.
+  const CASING_EXCEPTIONS = new Map([
+    [
+      `${SCHEMAS_DIRECTORY}/session-replay/common/_common-segment-metadata-schema.json`,
+      ['records_count', 'index_in_view', 'has_full_snapshot'],
+    ],
+    [`${SCHEMAS_DIRECTORY}/session-replay/common/focus-record-schema.json`, ['has_focus']],
+    [`${SCHEMAS_DIRECTORY}/rum/resource-schema.json`, ['operationType', 'operationName']],
+  ])
+
   forEachFile(SCHEMAS_DIRECTORY, (schemaPath) => {
     const schema = readJson(schemaPath)
 
@@ -22,15 +32,7 @@ function validateSchemasObjectsPropertiesCase() {
     const shouldBeSnakeCase =
       schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/rum/`) || schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/telemetry/`)
 
-    // Some exceptions to the rule above. Ideally they should be fixed in the future.
-    const caseExceptions =
-      schemaPath === `${SCHEMAS_DIRECTORY}/session-replay/common/_common-segment-metadata-schema.json`
-        ? ['records_count', 'index_in_view', 'has_full_snapshot']
-        : schemaPath === `${SCHEMAS_DIRECTORY}/session-replay/common/focus-record-schema.json`
-        ? ['has_focus']
-        : schemaPath === `${SCHEMAS_DIRECTORY}/rum/resource-schema.json`
-        ? ['operationType', 'operationName']
-        : []
+    const caseExceptions = CASING_EXCEPTIONS.get(schemaPath) || []
 
     forEachObjectProperty(schema, (key) => {
       const isCorrectCase = shouldBeSnakeCase ? isSnakeCase(key) : isCamelCase(key)
