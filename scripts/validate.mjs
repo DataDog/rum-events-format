@@ -24,6 +24,8 @@ function validateSchemasObjectsPropertiesCase() {
     [`${SCHEMAS_DIRECTORY}/rum/resource-schema.json`, ['operationType', 'operationName']],
   ])
 
+  let displayConvention = false
+
   forEachFile(SCHEMAS_DIRECTORY, (schemaPath) => {
     const schema = readJson(schemaPath)
 
@@ -38,10 +40,17 @@ function validateSchemasObjectsPropertiesCase() {
       const isCorrectCase = shouldBeSnakeCase ? isSnakeCase(key) : isCamelCase(key)
       if (!isCorrectCase && !caseExceptions.includes(key)) {
         console.log(`❌ Schema ${schemaPath} property ${key} is not ${shouldBeSnakeCase ? 'snake_case' : 'camelCase'}`)
+        displayConvention = true
         process.exitCode = 1
       }
     })
   })
+
+  if (displayConvention) {
+    console.log(
+      'ℹ️  RUM and telemetry schemas object properties should be snake_case, other schemas objects should be camelCase'
+    )
+  }
 }
 
 function validateSchemasIds() {
