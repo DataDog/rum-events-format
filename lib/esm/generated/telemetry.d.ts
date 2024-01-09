@@ -338,7 +338,7 @@ export interface CommonTelemetryProperties {
     /**
      * The source of this event
      */
-    readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native';
+    readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'unity';
     /**
      * The version of the SDK generating the telemetry event
      */
