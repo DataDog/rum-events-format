@@ -149,6 +149,12 @@
           },
           "readOnly": true
         },
+        "effective_type": {
+          "type": "string",
+          "description": "Effective type of the network connection",
+          "enum": ["slow_2g", "2g", "3g", "4g"],
+          "readOnly": true
+        },
         "cellular": {
           "type": "object",
           "description": "Cellular connectivity properties",

@@ -49,6 +49,10 @@
     "feature_three": 2,
     "feature_four": { "foo": "bar" }
   },
+  "connectivity": {
+    "status": "connected",
+    "effective_type": "4g"
+  },
   "_dd": {
     "format_version": 2
   }
