@@ -944,7 +944,7 @@ export interface CommonProperties {
         /**
          * The list of available network interfaces
          */
-        readonly interfaces: ('bluetooth' | 'cellular' | 'ethernet' | 'wifi' | 'wimax' | 'mixed' | 'other' | 'unknown' | 'none')[];
+        readonly interfaces?: ('bluetooth' | 'cellular' | 'ethernet' | 'wifi' | 'wimax' | 'mixed' | 'other' | 'unknown' | 'none')[];
         /**
          * Cellular connectivity properties
          */

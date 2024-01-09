@@ -132,7 +132,7 @@
     "connectivity": {
       "type": "object",
       "description": "Device connectivity properties",
-      "required": ["status", "interfaces"],
+      "required": ["status"],
       "properties": {
         "status": {
           "type": "string",
