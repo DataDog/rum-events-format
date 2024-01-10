@@ -946,7 +946,7 @@ export interface CommonProperties {
          */
         readonly interfaces?: ('bluetooth' | 'cellular' | 'ethernet' | 'wifi' | 'wimax' | 'mixed' | 'other' | 'unknown' | 'none')[];
         /**
-         * Effective type of the network connection
+         * Cellular connection type reflecting the measured network performance
          */
         readonly effective_type?: 'slow_2g' | '2g' | '3g' | '4g';
         /**

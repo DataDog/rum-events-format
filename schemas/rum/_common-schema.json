@@ -151,7 +151,7 @@
         },
         "effective_type": {
           "type": "string",
-          "description": "Effective type of the network connection",
+          "description": "Cellular connection type reflecting the measured network performance",
           "enum": ["slow_2g", "2g", "3g", "4g"],
           "readOnly": true
         },
