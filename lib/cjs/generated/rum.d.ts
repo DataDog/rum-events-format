@@ -228,7 +228,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
             /**
              * HTTP method of the resource
              */
-            readonly method: 'POST' | 'GET' | 'HEAD' | 'PUT' | 'DELETE' | 'PATCH';
+            readonly method: 'POST' | 'GET' | 'HEAD' | 'PUT' | 'DELETE' | 'PATCH' | 'TRACE' | 'OPTIONS' | 'CONNECT';
             /**
              * HTTP Status code of the resource
              */
@@ -338,7 +338,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
         /**
          * HTTP method of the resource
          */
-        readonly method?: 'POST' | 'GET' | 'HEAD' | 'PUT' | 'DELETE' | 'PATCH';
+        readonly method?: 'POST' | 'GET' | 'HEAD' | 'PUT' | 'DELETE' | 'PATCH' | 'TRACE' | 'OPTIONS' | 'CONNECT';
         /**
          * URL of the resource
          */
