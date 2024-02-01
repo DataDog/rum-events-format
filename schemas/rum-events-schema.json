@@ -19,6 +19,9 @@
     },
     {
       "$ref": "rum/view-schema.json"
+    },
+    {
+      "$ref": "rum/vital-schema.json"
     }
   ]
 }

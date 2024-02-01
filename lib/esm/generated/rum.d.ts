@@ -4,7 +4,7 @@
 /**
  * Schema of all properties of a RUM event
  */
-export declare type RumEvent = RumActionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent;
+export declare type RumEvent = RumActionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumVitalEvent;
 /**
  * Schema of all properties of an Action event
  */
@@ -832,6 +832,36 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              */
             readonly max_scroll_height_time: number;
             [k: string]: unknown;
+        };
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
+/**
+ * Schema of all properties of a Vital event
+ */
+export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
+    /**
+     * RUM event type
+     */
+    readonly type: 'vital';
+    /**
+     * Vital properties
+     */
+    readonly vital: {
+        /**
+         * Type of the vital
+         */
+        readonly type: 'duration';
+        /**
+         * UUID of the vital
+         */
+        readonly id: string;
+        /**
+         * User custom vital. As vital name is used as facet path, it must contain only letters, digits, or the characters - _ . @ $
+         */
+        readonly custom?: {
+            [k: string]: number;
         };
         [k: string]: unknown;
     };
