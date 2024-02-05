@@ -257,6 +257,96 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
             };
             [k: string]: unknown;
         };
+        /**
+         * Description of each thread in the process when error happened.
+         */
+        threads?: {
+            /**
+             * Name of the thread (e.g. 'Thread 0').
+             */
+            readonly name: string;
+            /**
+             * Tells if the thread crashed.
+             */
+            readonly crashed: boolean;
+            /**
+             * Unsymbolicated stack trace of the given thread.
+             */
+            readonly stack: string;
+            /**
+             * Platform-specific state of the thread when its state was captured (CPU registers dump for iOS, thread state enum for Android, etc.).
+             */
+            readonly state?: string;
+            [k: string]: unknown;
+        }[];
+        /**
+         * Description of each binary image (native libraries; for Android: .so files) loaded or referenced by the process/application.
+         */
+        readonly binary_images?: {
+            /**
+             * Build UUID that uniquely identifies the binary image.
+             */
+            readonly uuid: string;
+            /**
+             * Name of the library.
+             */
+            readonly name: string;
+            /**
+             * Determines if it's a system or user library.
+             */
+            readonly is_system: boolean;
+            /**
+             * Library's load address (hexadecimal).
+             */
+            readonly load_address?: string;
+            /**
+             * Max value from the library address range (hexadecimal).
+             */
+            readonly max_address?: string;
+            /**
+             * CPU architecture from the library.
+             */
+            readonly arch?: string;
+            [k: string]: unknown;
+        }[];
+        /**
+         * A boolean value saying if any of the stack traces was truncated due to minification.
+         */
+        readonly was_truncated?: boolean;
+        /**
+         * Platform-specific metadata of the error event.
+         */
+        readonly meta?: {
+            /**
+             * The CPU architecture of the process that crashed.
+             */
+            readonly code_type?: string;
+            /**
+             * Parent process information.
+             */
+            readonly parent_process?: string;
+            /**
+             * A client-generated 16-byte UUID of the incident.
+             */
+            readonly incident_identifier?: string;
+            /**
+             * The name of the crashed process.
+             */
+            readonly process?: string;
+            /**
+             * The name of the corresponding BSD termination signal. (in case of iOS crash)
+             */
+            readonly exception_type?: string;
+            /**
+             * CPU specific information about the exception encoded into 64-bit hexadecimal number preceded by the signal code.
+             */
+            readonly exception_codes?: string;
+            /**
+             * The location of the executable.
+             */
+            readonly path?: string;
+            [k: string]: unknown;
+        };
         [k: string]: unknown;
     };
     /**

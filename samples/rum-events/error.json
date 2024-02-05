@@ -38,7 +38,33 @@
         "message": "504 Gateway Timeout",
         "source": "network"
       }
-    ]
+    ],
+    "threads": [
+      {
+        "name": "Thread 0",
+        "crashed": true,
+        "stack": "Failed to load",
+        "state": "STOPPED"
+      }
+    ],
+    "binary_images": [
+      {
+        "uuid": "be3a5d82-cdd1-468d-9bc9-040030c3765c",
+        "name": "libc.so",
+        "is_system": false,
+        "arch": "arm7l"
+      }
+    ],
+    "meta": {
+      "code_type": "arm64",
+      "parent_process": "launchd_sim [31584]",
+      "incident_identifier": "DAA6280F-F6A4-45C2-BA15-FC81DA0B6A4B",
+      "process": "Example iOS [92909]",
+      "exception_type": "SIGABRT",
+      "exception_codes": "#0",
+      "path": "/Application/121E89DC-4F9B-425D-B484-C6CC79FF3CA8/Example iOS.app/Example iOS"
+    },
+    "was_truncated": false
   },
   "action": {
     "id": ["ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c", "be3a5d82-cdd1-468d-9bc9-3aa9e54d953c"]
