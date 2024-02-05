@@ -180,7 +180,7 @@
             },
             "threads": {
               "type": "array",
-              "description": "Description of the each thread in the process when error happened.",
+              "description": "Description of each thread in the process when error happened.",
               "items": {
                 "type": "object",
                 "description": "Description of the thread in the process when error happened.",
@@ -211,7 +211,7 @@
             },
             "binary_images": {
               "type": "array",
-              "description": "Description of the each binary image (native libraries; for Android: .so files) loaded or referenced by the process/application.",
+              "description": "Description of each binary image (native libraries; for Android: .so files) loaded or referenced by the process/application.",
               "items": {
                 "type": "object",
                 "description": "Description of the binary image (native library; for Android: .so file) loaded or referenced by the process/application.",
@@ -239,7 +239,7 @@
                   },
                   "max_address": {
                     "type": "string",
-                    "description": "Max from the library address range (hexadecimal).",
+                    "description": "Max value from the library address range (hexadecimal).",
                     "readOnly": true
                   },
                   "arch": {

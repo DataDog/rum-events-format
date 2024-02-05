@@ -258,7 +258,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
             [k: string]: unknown;
         };
         /**
-         * Description of the each thread in the process when error happened.
+         * Description of each thread in the process when error happened.
          */
         threads?: {
             /**
@@ -280,7 +280,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
             [k: string]: unknown;
         }[];
         /**
-         * Description of the each binary image (native libraries; for Android: .so files) loaded or referenced by the process/application.
+         * Description of each binary image (native libraries; for Android: .so files) loaded or referenced by the process/application.
          */
         readonly binary_images?: {
             /**
@@ -300,7 +300,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
              */
             readonly load_address?: string;
             /**
-             * Max from the library address range (hexadecimal).
+             * Max value from the library address range (hexadecimal).
              */
             readonly max_address?: string;
             /**
