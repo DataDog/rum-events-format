@@ -1,0 +1,27 @@
+{
+  "type": "vital",
+  "date": 1706792746576,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "browser",
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+  },
+  "vital": {
+    "id": "47af0abb-3de1-4170-a491-4473716df979",
+    "type": "duration",
+    "custom": {
+      "user-timing": 100
+    }
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}
