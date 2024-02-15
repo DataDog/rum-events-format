@@ -37,9 +37,14 @@
               "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
               "readOnly": true
             },
+            "name": {
+              "type": "string",
+              "description": "name of the vital, as it is also used as facet path for its value, it must contain only letters, digits, or the characters - _ . @ $",
+              "readOnly": true
+            },
             "custom": {
               "type": "object",
-              "description": "User custom vital. As vital name is used as facet path, it must contain only letters, digits, or the characters - _ . @ $",
+              "description": "User custom vital.",
               "additionalProperties": {
                 "type": "number",
                 "minimum": 0,
