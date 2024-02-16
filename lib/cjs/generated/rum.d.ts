@@ -948,7 +948,7 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
          */
         readonly id: string;
         /**
-         * name of the vital, as it is also used as facet path for its value, it must contain only letters, digits, or the characters - _ . @ $
+         * Name of the vital, as it is also used as facet path for its value, it must contain only letters, digits, or the characters - _ . @ $
          */
         readonly name?: string;
         /**
