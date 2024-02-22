@@ -303,6 +303,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * The version of Dart used in a Flutter application
              */
             dart_version?: string;
+            /**
+             * The version of Unity used in a Unity application
+             */
+            unity_version?: string;
             [k: string]: unknown;
         };
         [k: string]: unknown;
