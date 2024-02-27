@@ -32,7 +32,9 @@ function validateSchemasObjectsPropertiesCase() {
     // RUM and telemetry schemas object properties should be snake_case, other schemas objects should
     // be camelCase
     const shouldBeSnakeCase =
-      schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/rum/`) || schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/telemetry/`)
+      schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/rum/`) ||
+      schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/telemetry/`) ||
+      schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/metric`)
 
     const caseExceptions = CASING_EXCEPTIONS.get(schemaPath) || []
 

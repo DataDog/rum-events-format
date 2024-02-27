@@ -14,6 +14,7 @@ const PRETTIER_CONFIG = '.prettierrc.yml'
 const DEFINITIONS = [
   { source: 'rum-events-schema.json', name: 'rum' },
   { source: 'telemetry-events-schema.json', name: 'telemetry' },
+  { source: 'metric-events-schema.json', name: 'metric' },
   {
     source: 'session-replay-browser-schema.json',
     name: 'browserSessionReplay',

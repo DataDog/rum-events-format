@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "main": "../cjs/src/metric.js",
+  "module": "../esm/src/metric.js",
+  "types": "../esm/src/metric.d.ts"
+}

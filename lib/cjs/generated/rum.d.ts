@@ -4,7 +4,7 @@
 /**
  * Schema of all properties of a RUM event
  */
-export declare type RumEvent = RumActionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumVitalEvent | RumMetricEvent;
+export declare type RumEvent = RumActionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumVitalEvent;
 /**
  * Schema of all properties of an Action event
  */
@@ -1297,63 +1297,5 @@ export interface RumPerfMetric {
      * The maximum possible value we could see for this metric, if such a max is relevant and can vary from session to session.
      */
     readonly metric_max?: number;
-    [k: string]: unknown;
-}
-/**
- * Schema of all properties of a Metric event
- */
-export interface RumMetricEvent {
-    /**
-     * Start of the event in ms from epoch
-     */
-    readonly date: number;
-    /**
-     * RUM event type
-     */
-    readonly type: 'metric';
-    /**
-     * Metric series properties
-     */
-    readonly metric: {
-        /**
-         * Type of the metric submission
-         */
-        readonly type: 'series';
-        /**
-         * A list of timeseries to submit to Datadog.
-         */
-        series: {
-            /**
-             * The name of the timeseries.
-             */
-            readonly metric: string;
-            /**
-             * Points relating to a metric. All points must be objects with timestamp and a scalar value (cannot be a string). Timestamps should be in POSIX time in seconds, and cannot be more than ten minutes in the future or more than one hour in the past.
-             */
-            points: {
-                /**
-                 * The timestamp should be in seconds and current. Current is defined as not more than 10 minutes in the future or more than 1 hour in the past.
-                 */
-                readonly timestamp: number;
-                /**
-                 * The numeric value format should be a 64bit float gauge-type value.
-                 */
-                readonly value: number;
-                [k: string]: unknown;
-            }[];
-            [k: string]: unknown;
-        }[];
-        [k: string]: unknown;
-    };
-    /**
-     * Internal properties
-     */
-    _dd: {
-        /**
-         * Version of the RUM event format
-         */
-        readonly format_version: 2;
-        [k: string]: unknown;
-    };
     [k: string]: unknown;
 }

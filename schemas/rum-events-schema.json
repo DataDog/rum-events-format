@@ -22,9 +22,6 @@
     },
     {
       "$ref": "rum/vital-schema.json"
-    },
-    {
-      "$ref": "rum/metric-schema.json"
     }
   ]
 }
