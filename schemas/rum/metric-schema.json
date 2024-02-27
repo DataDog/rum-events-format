@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/metric-schema.json",
+  "title": "RumMetricEvent",
+  "type": "object",
+  "description": "Schema of all properties of a Metric event",
+  "required": ["type", "metric", "date", "_dd"],
+  "properties": {
+    "date": {
+      "type": "integer",
+      "description": "Start of the event in ms from epoch",
+      "minimum": 0,
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "description": "RUM event type",
+      "const": "metric",
+      "readOnly": true
+    },
+    "metric": {
+      "type": "object",
+      "description": "Metric series properties",
+      "required": ["type", "series"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Type of the metric submission",
+          "const": "series",
+          "readOnly": true
+        },
+        "series": {
+          "type": "array",
+          "description": "A list of timeseries to submit to Datadog.",
+          "items": {
+            "type": "object",
+            "description": "A timeseries to submit to Datadog.",
+            "required": ["metric", "points"],
+            "properties": {
+              "metric": {
+                "type": "string",
+                "description": "The name of the timeseries.",
+                "readOnly": true
+              },
+              "points": {
+                "type": "array",
+                "description": "Points relating to a metric. All points must be objects with timestamp and a scalar value (cannot be a string). Timestamps should be in POSIX time in seconds, and cannot be more than ten minutes in the future or more than one hour in the past.",
+                "items": {
+                  "type": "object",
+                  "readOnly": true,
+                  "required": ["timestamp", "value"],
+                  "properties": {
+                    "timestamp": {
+                      "type": "integer",
+                      "description": "The timestamp should be in seconds and current. Current is defined as not more than 10 minutes in the future or more than 1 hour in the past.",
+                      "readOnly": true
+                    },
+                    "value": {
+                      "type": "number",
+                      "description": "The numeric value format should be a 64bit float gauge-type value.",
+                      "readOnly": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "readOnly": true
+    },
+    "_dd": {
+      "type": "object",
+      "description": "Internal properties",
+      "required": ["format_version"],
+      "properties": {
+        "format_version": {
+          "type": "integer",
+          "const": 2,
+          "description": "Version of the RUM event format",
+          "readOnly": true
+        }
+      }
+    }
+  }
+}

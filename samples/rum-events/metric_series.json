@@ -1,0 +1,29 @@
+{
+  "type": "metric",
+  "date": 1706792746576,
+  "source": "browser",
+  "metric": {
+    "type": "series",
+    "series": [
+      {
+        "metric": "system.load.1",
+        "type": 0,
+        "points": [
+          {
+            "timestamp": 1636629071,
+            "value": 0.7
+          }
+        ],
+        "resources": [
+          {
+            "name": "dummyhost",
+            "type": "host"
+          }
+        ]
+      }
+    ]
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}
