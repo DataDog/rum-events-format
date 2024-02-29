@@ -62,6 +62,20 @@
                     }
                   }
                 }
+              },
+              "tags": {
+                "type": "array",
+                "description": "A list of tags associated with the metric.",
+                "items": {
+                  "type": "string",
+                  "readOnly": true
+                }
+              },
+              "type": {
+                "type": "integer",
+                "description": "The type of metric. The available types are 0 (unspecified), 1 (count), 2 (rate), and 3 (gauge).",
+                "enum": [0, 1, 2, 3],
+                "readOnly": true
               }
             }
           }

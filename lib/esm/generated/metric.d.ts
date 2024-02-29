@@ -43,6 +43,14 @@ export interface MetricEvent {
                 readonly value: number;
                 [k: string]: unknown;
             }[];
+            /**
+             * A list of tags associated with the metric.
+             */
+            tags?: string[];
+            /**
+             * The type of metric. The available types are 0 (unspecified), 1 (count), 2 (rate), and 3 (gauge).
+             */
+            readonly type?: 0 | 1 | 2 | 3;
             [k: string]: unknown;
         }[];
         [k: string]: unknown;
