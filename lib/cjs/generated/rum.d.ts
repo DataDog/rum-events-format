@@ -348,7 +348,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
             [k: string]: unknown;
         };
         /**
-         * Either 'enforce' or 'report' depending on whether the Content-Security-Policy header or the Content-Security-Policy-Report-Only header is used.
+         * In the context of CSP errors, indicates how the violated policy is configured to be treated by the user agent.
          */
         readonly disposition?: 'enforce' | 'report';
         [k: string]: unknown;
