@@ -307,6 +307,12 @@
                 }
               },
               "readOnly": true
+            },
+            "disposition": {
+              "type": "string",
+              "description": "Either 'enforce' or 'report' depending on whether the Content-Security-Policy header or the Content-Security-Policy-Report-Only header is used.",
+              "enum": ["enforce", "report"],
+              "readOnly": true
             }
           },
           "readOnly": true

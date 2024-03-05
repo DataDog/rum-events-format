@@ -347,6 +347,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
             readonly path?: string;
             [k: string]: unknown;
         };
+        /**
+         * Either 'enforce' or 'report' depending on whether the Content-Security-Policy header or the Content-Security-Policy-Report-Only header is used.
+         */
+        readonly disposition?: 'enforce' | 'report';
         [k: string]: unknown;
     };
     /**
