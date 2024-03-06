@@ -307,6 +307,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * The version of Unity used in a Unity application
              */
             unity_version?: string;
+            /**
+             * The threshold used for iOS App Hangs monitoring (in milliseconds)
+             */
+            app_hang_threshold?: number;
             [k: string]: unknown;
         };
         [k: string]: unknown;

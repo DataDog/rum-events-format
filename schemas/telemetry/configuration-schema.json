@@ -319,6 +319,10 @@
                   "type": "string",
                   "description": "The version of Unity used in a Unity application",
                   "readOnly": false
+                },
+                "app_hang_threshold": {
+                  "type": "integer",
+                  "description": "The threshold used for iOS App Hangs monitoring (in milliseconds)"
                 }
               }
             }

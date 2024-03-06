@@ -98,6 +98,12 @@
               "description": "The type of the error",
               "readOnly": true
             },
+            "category": {
+              "type": "string",
+              "description": "The specific category of the error. It provides a high-level grouping for different types of errors.",
+              "enum": ["ANR", "App Hang"],
+              "readOnly": true
+            },
             "handling": {
               "type": "string",
               "description": "Whether the error has been handled manually in the source code or not",
@@ -306,6 +312,19 @@
                   "readOnly": true
                 }
               },
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        },
+        "freeze": {
+          "type": "object",
+          "description": "Properties of App Hang and ANR errors",
+          "required": ["duration"],
+          "properties": {
+            "duration": {
+              "type": "integer",
+              "description": "Duration of the main thread freeze (in ns)",
               "readOnly": true
             }
           },
