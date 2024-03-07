@@ -348,9 +348,15 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
             [k: string]: unknown;
         };
         /**
-         * In the context of CSP errors, indicates how the violated policy is configured to be treated by the user agent.
+         * Content Security Violation properties
          */
-        readonly csp_disposition?: 'enforce' | 'report';
+        readonly csp?: {
+            /**
+             * In the context of CSP errors, indicates how the violated policy is configured to be treated by the user agent.
+             */
+            readonly disposition?: 'enforce' | 'report';
+            [k: string]: unknown;
+        };
         [k: string]: unknown;
     };
     /**

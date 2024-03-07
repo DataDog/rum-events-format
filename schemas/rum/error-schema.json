@@ -308,10 +308,17 @@
               },
               "readOnly": true
             },
-            "csp_disposition": {
-              "type": "string",
-              "description": "In the context of CSP errors, indicates how the violated policy is configured to be treated by the user agent.",
-              "enum": ["enforce", "report"],
+            "csp": {
+              "type": "object",
+              "description": "Content Security Violation properties",
+              "properties": {
+                "disposition": {
+                  "type": "string",
+                  "description": "In the context of CSP errors, indicates how the violated policy is configured to be treated by the user agent.",
+                  "enum": ["enforce", "report"],
+                  "readOnly": true
+                }
+              },
               "readOnly": true
             }
           },
