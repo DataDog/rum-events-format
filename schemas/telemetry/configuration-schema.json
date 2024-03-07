@@ -68,6 +68,10 @@
                   "maximum": 100,
                   "readOnly": false
                 },
+                "tracking_consent": {
+                  "type": "string",
+                  "description": "The initial tracking consent value"
+                },
                 "start_session_replay_recording_manually": {
                   "type": "boolean",
                   "description": "Whether the session replay start is handled manually",
@@ -156,6 +160,10 @@
                 "use_worker_url": {
                   "type": "boolean",
                   "description": "Whether the Worker is loaded from an external URL"
+                },
+                "compress_intake_requests": {
+                  "type": "boolean",
+                  "description": "Whether intake requests are compressed"
                 },
                 "track_frustrations": {
                   "type": "boolean",
