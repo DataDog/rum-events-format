@@ -112,6 +112,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             session_replay_sample_rate?: number;
             /**
+             * The initial tracking consent value
+             */
+            tracking_consent?: string;
+            /**
              * Whether the session replay start is handled manually
              */
             start_session_replay_recording_manually?: boolean;
@@ -191,6 +195,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * Whether the Worker is loaded from an external URL
              */
             use_worker_url?: boolean;
+            /**
+             * Whether intake requests are compressed
+             */
+            compress_intake_requests?: boolean;
             /**
              * Whether user frustrations are tracked
              */
