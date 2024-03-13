@@ -69,6 +69,30 @@
               "minimum": 0,
               "readOnly": true
             },
+            "encodedBodySize": {
+              "type": "integer",
+              "description": "Size in octet of the resource before removing any applied content encodings",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "decodedBodySize": {
+              "type": "integer",
+              "description": "Size in octet of the resource after removing any applied encoding",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "transferSize": {
+              "type": "integer",
+              "description": "Size in octet of the fetched resource",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "renderBlockingStatus": {
+              "type": "string",
+              "description": "Render blocking status of the resource",
+              "enum": ["blocking", "non-blocking"],
+              "readOnly": true
+            },
             "redirect": {
               "type": "object",
               "description": "Redirect phase properties",
