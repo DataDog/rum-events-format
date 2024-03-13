@@ -22,6 +22,10 @@
     "status_code": 200,
     "duration": 246580000,
     "size": 3599,
+    "encoded_body_size": 1599,
+    "decoded_body_size": 3599,
+    "transfer_size": 3699,
+    "render_blocking_status": "non-blocking",
     "download": {
       "duration": 545000,
       "start": 246035000
