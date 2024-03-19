@@ -27,6 +27,7 @@
       "telemetry_sample_rate": 100,
       "telemetry_configuration_sample_rate": 5,
       "trace_sample_rate": 100,
+      "trace_context_injection": 1,
       "session_replay_sample_rate": 100,
       "start_session_replay_recording_manually": true,
       "premium_sample_rate": 100,
