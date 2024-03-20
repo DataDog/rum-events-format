@@ -513,6 +513,10 @@ export declare type WebviewWireframe = CommonShapeWireframe & {
      * Unique Id of the slot containing this webview.
      */
     readonly slotId: string;
+    /**
+     * Whether this web-view is visible or not.
+     */
+    readonly isVisible?: boolean;
 };
 /**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
@@ -650,6 +654,10 @@ export declare type WebviewWireframeUpdate = CommonShapeWireframeUpdate & {
      * Unique Id of the slot containing this webview.
      */
     readonly slotId: string;
+    /**
+     * Whether this web-view is visible or not.
+     */
+    readonly isVisible?: boolean;
 };
 /**
  * Schema of a TouchData.
