@@ -52,6 +52,7 @@
                 "trace_context_injection": {
                   "type": "string",
                   "description": "The opt-in configuration to add trace context",
+                  "enum": ["all", "sampled"],
                   "readOnly": false
                 },
                 "premium_sample_rate": {
