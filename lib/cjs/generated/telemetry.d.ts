@@ -102,7 +102,7 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
             /**
              * The opt-in configuration to add trace context
              */
-            trace_context_injection?: number;
+            trace_context_injection?: string;
             /**
              * The percentage of sessions with Browser RUM & Session Replay pricing tracked (deprecated in favor of session_replay_sample_rate)
              */

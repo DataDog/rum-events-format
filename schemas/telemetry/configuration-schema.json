@@ -50,10 +50,9 @@
                   "maximum": 100
                 },
                 "trace_context_injection": {
-                  "type": "integer",
+                  "type": "string",
                   "description": "The opt-in configuration to add trace context",
-                  "minimum": 0,
-                  "maximum": 1
+                  "readOnly": false
                 },
                 "premium_sample_rate": {
                   "type": "integer",
