@@ -18,6 +18,14 @@
           },
           "description": "The records contained by this Segment.",
           "readOnly": true
+        },
+        "slots": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The webview slot IDs in memory.",
+          "readOnly": true
         }
       }
     }
