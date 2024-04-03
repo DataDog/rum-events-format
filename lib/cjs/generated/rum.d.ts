@@ -361,6 +361,10 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
             readonly disposition?: 'enforce' | 'report';
             [k: string]: unknown;
         };
+        /**
+         * Time since application start when error happened (in milliseconds)
+         */
+        readonly time_since_app_start?: number;
         [k: string]: unknown;
     };
     /**
