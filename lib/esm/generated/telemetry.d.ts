@@ -296,7 +296,7 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             batch_upload_frequency?: number;
             /**
-             * Maximum number of batches processed sequencially without a delay
+             * Maximum number of batches processed sequentially without a delay
              */
             batch_processing_level?: number;
             /**
