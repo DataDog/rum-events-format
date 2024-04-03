@@ -204,7 +204,7 @@ export declare type WebviewWireframe = CommonShapeWireframe & {
      */
     readonly slotId: string;
     /**
-     * Whether this web-view is visible or not.
+     * Whether this webview is visible or not.
      */
     readonly isVisible?: boolean;
 };
@@ -345,7 +345,7 @@ export declare type WebviewWireframeUpdate = CommonShapeWireframeUpdate & {
      */
     readonly slotId: string;
     /**
-     * Whether this web-view is visible or not.
+     * Whether this webview is visible or not.
      */
     readonly isVisible?: boolean;
 };

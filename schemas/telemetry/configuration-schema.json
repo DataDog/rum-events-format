@@ -308,7 +308,7 @@
                 },
                 "batch_processing_level": {
                   "type": "integer",
-                  "description": "Maximum number of batches processed sequencially without a delay"
+                  "description": "Maximum number of batches processed sequentially without a delay"
                 },
                 "background_tasks_enabled": {
                   "type": "boolean",
