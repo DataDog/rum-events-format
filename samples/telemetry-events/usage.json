@@ -1,0 +1,30 @@
+{
+  "_dd": {
+    "format_version": 2
+  },
+  "type": "telemetry",
+  "date": 1591284175342,
+  "service": "sample-sdk",
+  "source": "browser",
+  "version": "1.2.3",
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599"
+  },
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6"
+  },
+  "action": {
+    "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
+  },
+  "experimental_features": ["foo"],
+  "telemetry": {
+    "type": "usage",
+    "usage": {
+      "feature": "set-tracking-consent",
+      "tracking_consent": "granted"
+    }
+  }
+}

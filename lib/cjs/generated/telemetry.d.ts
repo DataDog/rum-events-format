@@ -4,7 +4,7 @@
 /**
  * Schema of all properties of a telemetry event
  */
-export declare type TelemetryEvent = TelemetryErrorEvent | TelemetryDebugEvent | TelemetryConfigurationEvent;
+export declare type TelemetryEvent = TelemetryErrorEvent | TelemetryDebugEvent | TelemetryConfigurationEvent | TelemetryUsageEvent;
 /**
  * Schema of all properties of a telemetry error event
  */
@@ -335,6 +335,53 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
         };
         [k: string]: unknown;
     };
+    [k: string]: unknown;
+};
+/**
+ * Schema of all properties of a telemetry usage event
+ */
+export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
+    /**
+     * The telemetry usage information
+     */
+    telemetry: {
+        /**
+         * Telemetry type
+         */
+        type: 'usage';
+        usage: TelemetryCommonFeaturesUsage | TelemetryBrowserFeaturesUsage;
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
+/**
+ * Schema of features usage common across SDKs
+ */
+export declare type TelemetryCommonFeaturesUsage = {
+    /**
+     * setTrackingConsent API
+     */
+    feature: 'set-tracking-consent';
+    /**
+     * The tracking consent value set by the user
+     */
+    tracking_consent: 'granted' | 'not-granted' | 'pending';
+    [k: string]: unknown;
+} | {
+    /**
+     * stopSession API
+     */
+    feature: 'stop-session';
+    [k: string]: unknown;
+};
+/**
+ * Schema of browser specific features usage
+ */
+export declare type TelemetryBrowserFeaturesUsage = {
+    /**
+     * startSessionReplayRecording API
+     */
+    feature: 'start-session-replay-recording';
     [k: string]: unknown;
 };
 /**

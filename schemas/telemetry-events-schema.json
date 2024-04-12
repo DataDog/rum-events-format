@@ -13,6 +13,9 @@
     },
     {
       "$ref": "telemetry/configuration-schema.json"
+    },
+    {
+      "$ref": "telemetry/usage-schema.json"
     }
   ]
 }
