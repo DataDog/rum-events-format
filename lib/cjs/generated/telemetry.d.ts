@@ -328,6 +328,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             app_hang_threshold?: number;
             /**
+             * Whether logs are sent to the PCI-compliant intake
+             */
+            use_pci_intake?: boolean;
+            /**
              * The tracer API used by the SDK. Possible values: 'Datadog', 'OpenTelemetry', 'OpenTracing'
              */
             tracer_api?: string;
