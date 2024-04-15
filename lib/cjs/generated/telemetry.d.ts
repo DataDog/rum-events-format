@@ -118,7 +118,7 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
             /**
              * The initial tracking consent value
              */
-            tracking_consent?: string;
+            tracking_consent?: 'granted' | 'not-granted' | 'pending';
             /**
              * Whether the session replay start is handled manually
              */

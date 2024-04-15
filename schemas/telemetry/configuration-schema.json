@@ -76,7 +76,8 @@
                 },
                 "tracking_consent": {
                   "type": "string",
-                  "description": "The initial tracking consent value"
+                  "description": "The initial tracking consent value",
+                  "enum": ["granted", "not-granted", "pending"]
                 },
                 "start_session_replay_recording_manually": {
                   "type": "boolean",
