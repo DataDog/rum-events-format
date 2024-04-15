@@ -192,6 +192,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             default_privacy_level?: string;
             /**
+             * Privacy control for action name
+             */
+            enabled_privacy_for_action_name?: boolean;
+            /**
              * Whether the request origins list to ignore when computing the page activity is used
              */
             use_excluded_activity_urls?: boolean;
