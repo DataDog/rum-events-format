@@ -96,6 +96,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             telemetry_configuration_sample_rate?: number;
             /**
+             * The percentage of telemetry usage events sent after being sampled by telemetry_sample_rate
+             */
+            telemetry_usage_sample_rate?: number;
+            /**
              * The percentage of requests traced
              */
             trace_sample_rate?: number;
@@ -323,6 +327,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * The threshold used for iOS App Hangs monitoring (in milliseconds)
              */
             app_hang_threshold?: number;
+            /**
+             * Whether logs are sent to the PCI-compliant intake
+             */
+            use_pci_intake?: boolean;
             /**
              * The tracer API used by the SDK. Possible values: 'Datadog', 'OpenTelemetry', 'OpenTracing'
              */

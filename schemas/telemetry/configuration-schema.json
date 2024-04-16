@@ -43,6 +43,12 @@
                   "minimum": 0,
                   "maximum": 100
                 },
+                "telemetry_usage_sample_rate": {
+                  "type": "integer",
+                  "description": "The percentage of telemetry usage events sent after being sampled by telemetry_sample_rate",
+                  "minimum": 0,
+                  "maximum": 100
+                },
                 "trace_sample_rate": {
                   "type": "integer",
                   "description": "The percentage of requests traced",
@@ -337,6 +343,11 @@
                 "app_hang_threshold": {
                   "type": "integer",
                   "description": "The threshold used for iOS App Hangs monitoring (in milliseconds)"
+                },
+                "use_pci_intake": {
+                  "type": "boolean",
+                  "description": "Whether logs are sent to the PCI-compliant intake",
+                  "readOnly": false
                 },
                 "tracer_api": {
                   "type": "string",
