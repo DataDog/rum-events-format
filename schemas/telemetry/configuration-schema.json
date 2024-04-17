@@ -166,6 +166,11 @@
                   "description": "Session replay default privacy level",
                   "readOnly": false
                 },
+                "enable_privacy_for_action_name": {
+                  "type": "boolean",
+                  "description": "Privacy control for action name",
+                  "readOnly": false
+                },
                 "use_excluded_activity_urls": {
                   "type": "boolean",
                   "description": "Whether the request origins list to ignore when computing the page activity is used"

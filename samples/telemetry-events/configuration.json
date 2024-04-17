@@ -44,6 +44,7 @@
       "action_name_attribute": "foo",
       "use_allowed_tracing_origins": false,
       "default_privacy_level": "mask",
+      "enable_privacy_for_action_name": false,
       "use_excluded_activity_urls": false,
       "track_frustrations": true,
       "track_views_manually": true,
