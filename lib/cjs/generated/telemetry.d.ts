@@ -474,5 +474,44 @@ export interface CommonTelemetryProperties {
      * Enabled experimental features
      */
     readonly experimental_features?: string[];
+    telemetry?: {
+        /**
+         * Device properties
+         */
+        device?: {
+            /**
+             * Architecture of the device
+             */
+            architecture?: string;
+            /**
+             * Brand of the device
+             */
+            brand?: string;
+            /**
+             * Model of the device
+             */
+            model?: string;
+            [k: string]: unknown;
+        };
+        /**
+         * OS properties
+         */
+        os?: {
+            /**
+             * Build of the OS
+             */
+            build?: string;
+            /**
+             * Name of the OS
+             */
+            name?: string;
+            /**
+             * Version of the OS
+             */
+            version?: string;
+            [k: string]: unknown;
+        };
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 }
