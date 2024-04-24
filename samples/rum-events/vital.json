@@ -23,6 +23,9 @@
     }
   },
   "_dd": {
-    "format_version": 2
+    "format_version": 2,
+    "vital": {
+      "computed_value": true
+    }
   }
 }
