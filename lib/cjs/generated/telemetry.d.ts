@@ -385,6 +385,42 @@ export declare type TelemetryCommonFeaturesUsage = {
      */
     feature: 'stop-session';
     [k: string]: unknown;
+} | {
+    /**
+     * startView API
+     */
+    feature: 'start-view';
+    [k: string]: unknown;
+} | {
+    /**
+     * addAction API
+     */
+    feature: 'add-action';
+    [k: string]: unknown;
+} | {
+    /**
+     * addError API
+     */
+    feature: 'add-error';
+    [k: string]: unknown;
+} | {
+    /**
+     * setGlobalContext, setGlobalContextProperty, addAttribute APIs
+     */
+    feature: 'set-global-context';
+    [k: string]: unknown;
+} | {
+    /**
+     * setUser, setUserProperty, setUserInfo APIs
+     */
+    feature: 'set-user';
+    [k: string]: unknown;
+} | {
+    /**
+     * addFeatureFlagEvaluation API
+     */
+    feature: 'add-feature-flag-evaluation';
+    [k: string]: unknown;
 };
 /**
  * Schema of browser specific features usage

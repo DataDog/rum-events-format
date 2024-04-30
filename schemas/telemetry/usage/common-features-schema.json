@@ -29,6 +29,66 @@
           "const": "stop-session"
         }
       }
+    },
+    {
+      "required": ["feature"],
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "startView API",
+          "const": "start-view"
+        }
+      }
+    },
+    {
+      "required": ["feature"],
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "addAction API",
+          "const": "add-action"
+        }
+      }
+    },
+    {
+      "required": ["feature"],
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "addError API",
+          "const": "add-error"
+        }
+      }
+    },
+    {
+      "required": ["feature"],
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "setGlobalContext, setGlobalContextProperty, addAttribute APIs",
+          "const": "set-global-context"
+        }
+      }
+    },
+    {
+      "required": ["feature"],
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "setUser, setUserProperty, setUserInfo APIs",
+          "const": "set-user"
+        }
+      }
+    },
+    {
+      "required": ["feature"],
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "addFeatureFlagEvaluation API",
+          "const": "add-feature-flag-evaluation"
+        }
+      }
     }
   ]
 }
