@@ -394,6 +394,10 @@ export declare type TelemetryBrowserFeaturesUsage = {
      * startSessionReplayRecording API
      */
     feature: 'start-session-replay-recording';
+    /**
+     * Whether the recording was started normally or forced
+     */
+    start_type: 'normal' | 'forced';
     [k: string]: unknown;
 };
 /**

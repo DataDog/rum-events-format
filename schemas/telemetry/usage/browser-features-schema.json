@@ -6,12 +6,17 @@
   "description": "Schema of browser specific features usage",
   "oneOf": [
     {
-      "required": ["feature"],
+      "required": ["feature", "start_type"],
       "properties": {
         "feature": {
           "type": "string",
           "description": "startSessionReplayRecording API",
           "const": "start-session-replay-recording"
+        },
+        "start_type": {
+          "type": "string",
+          "description": "Whether the recording was started normally or forced",
+          "enum": ["normal", "forced"]
         }
       }
     }
