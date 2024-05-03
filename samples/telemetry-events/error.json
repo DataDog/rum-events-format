@@ -26,6 +26,7 @@
     "error": {
       "stack": "Failed to load",
       "kind": "TypeError"
-    }
+    },
+    "custom": "property"
   }
 }
