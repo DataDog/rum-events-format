@@ -385,6 +385,42 @@ export declare type TelemetryCommonFeaturesUsage = {
      */
     feature: 'stop-session';
     [k: string]: unknown;
+} | {
+    /**
+     * startView API
+     */
+    feature: 'start-view';
+    [k: string]: unknown;
+} | {
+    /**
+     * addAction API
+     */
+    feature: 'add-action';
+    [k: string]: unknown;
+} | {
+    /**
+     * addError API
+     */
+    feature: 'add-error';
+    [k: string]: unknown;
+} | {
+    /**
+     * setGlobalContext, setGlobalContextProperty, addAttribute APIs
+     */
+    feature: 'set-global-context';
+    [k: string]: unknown;
+} | {
+    /**
+     * setUser, setUserProperty, setUserInfo APIs
+     */
+    feature: 'set-user';
+    [k: string]: unknown;
+} | {
+    /**
+     * addFeatureFlagEvaluation API
+     */
+    feature: 'add-feature-flag-evaluation';
+    [k: string]: unknown;
 };
 /**
  * Schema of browser specific features usage
@@ -480,5 +516,44 @@ export interface CommonTelemetryProperties {
      * Enabled experimental features
      */
     readonly experimental_features?: string[];
+    telemetry?: {
+        /**
+         * Device properties
+         */
+        device?: {
+            /**
+             * Architecture of the device
+             */
+            architecture?: string;
+            /**
+             * Brand of the device
+             */
+            brand?: string;
+            /**
+             * Model of the device
+             */
+            model?: string;
+            [k: string]: unknown;
+        };
+        /**
+         * OS properties
+         */
+        os?: {
+            /**
+             * Build of the OS
+             */
+            build?: string;
+            /**
+             * Name of the OS
+             */
+            name?: string;
+            /**
+             * Version of the OS
+             */
+            version?: string;
+            [k: string]: unknown;
+        };
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 }
