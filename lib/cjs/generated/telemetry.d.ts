@@ -395,6 +395,12 @@ export declare type TelemetryBrowserFeaturesUsage = {
      */
     feature: 'start-session-replay-recording';
     [k: string]: unknown;
+} | {
+    /**
+     * startDurationVital API
+     */
+    feature: 'start-duration-vital';
+    [k: string]: unknown;
 };
 /**
  * Schema of common properties of Telemetry events

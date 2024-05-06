@@ -14,6 +14,16 @@
           "const": "start-session-replay-recording"
         }
       }
+    },
+    {
+      "required": ["feature"],
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "startDurationVital API",
+          "const": "start-duration-vital"
+        }
+      }
     }
   ]
 }
