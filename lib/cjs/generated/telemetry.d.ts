@@ -397,7 +397,7 @@ export declare type TelemetryBrowserFeaturesUsage = {
     /**
      * Whether the recording is allowed to start even on sessions sampled out of replay
      */
-    is_forced: boolean;
+    is_forced?: boolean;
     [k: string]: unknown;
 };
 /**

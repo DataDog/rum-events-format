@@ -6,7 +6,7 @@
   "description": "Schema of browser specific features usage",
   "oneOf": [
     {
-      "required": ["feature", "is_forced"],
+      "required": ["feature"],
       "properties": {
         "feature": {
           "type": "string",
