@@ -12,6 +12,10 @@
           "type": "string",
           "description": "startSessionReplayRecording API",
           "const": "start-session-replay-recording"
+        },
+        "is_forced": {
+          "type": "boolean",
+          "description": "Whether the recording is allowed to start even on sessions sampled out of replay"
         }
       }
     }
