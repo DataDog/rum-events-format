@@ -435,6 +435,12 @@ export declare type TelemetryBrowserFeaturesUsage = {
      */
     is_forced?: boolean;
     [k: string]: unknown;
+} | {
+    /**
+     * startDurationVital API
+     */
+    feature: 'start-duration-vital';
+    [k: string]: unknown;
 };
 /**
  * Schema of common properties of Telemetry events

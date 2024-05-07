@@ -18,6 +18,16 @@
           "description": "Whether the recording is allowed to start even on sessions sampled out of replay"
         }
       }
+    },
+    {
+      "required": ["feature"],
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "startDurationVital API",
+          "const": "start-duration-vital"
+        }
+      }
     }
   ]
 }
