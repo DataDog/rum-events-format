@@ -364,6 +364,11 @@
                   "type": "string",
                   "description": "The version of the tracer API used by the SDK. Eg. '0.1.0'",
                   "readOnly": false
+                },
+                "send_logs_after_session_expiration": {
+                  "type": "boolean",
+                  "description": "Whether logs are sent after the session expiration",
+                  "readOnly": false
                 }
               }
             }
