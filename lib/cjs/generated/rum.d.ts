@@ -692,6 +692,10 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
          */
         readonly interaction_to_next_paint?: number;
         /**
+         * Duration in ns between start of the view and start of the INP
+         */
+        readonly interaction_to_next_paint_time?: number;
+        /**
          * CSS selector path of the interacted element corresponding to INP
          */
         readonly interaction_to_next_paint_target_selector?: string;
@@ -699,6 +703,10 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
          * Total layout shift score that occurred on the view
          */
         readonly cumulative_layout_shift?: number;
+        /**
+         * Duration in ns between start of the view and start of the largest layout shift contributing to CLS
+         */
+        readonly cumulative_layout_shift_time?: number;
         /**
          * CSS selector path of the first element (in document order) of the largest layout shift contributing to CLS
          */
