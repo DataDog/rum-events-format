@@ -1004,6 +1004,14 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
          */
         readonly name?: string;
         /**
+         * Details of the vital
+         */
+        readonly details?: string;
+        /**
+         * Duration of the vital in nanoseconds
+         */
+        readonly duration?: number;
+        /**
          * User custom vital.
          */
         readonly custom?: {
