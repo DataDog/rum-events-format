@@ -1004,6 +1004,14 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
          */
         readonly name?: string;
         /**
+         * Details of the vital. It can be used as a secondary identifier (URL, React component name...)
+         */
+        readonly details?: string;
+        /**
+         * Duration of the vital in nanoseconds
+         */
+        readonly duration?: number;
+        /**
          * User custom vital.
          */
         readonly custom?: {
