@@ -44,7 +44,7 @@
             },
             "details": {
               "type": "string",
-              "description": "Details of the vital",
+              "description": "Details of the vital. It can be used as a secondary identifier (URL, React component name...)",
               "readOnly": true
             },
             "duration": {
