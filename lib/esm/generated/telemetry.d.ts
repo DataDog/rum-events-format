@@ -347,6 +347,16 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * Whether logs are sent after the session expiration
              */
             send_logs_after_session_expiration?: boolean;
+            /**
+             * The list of plugins enabled
+             */
+            plugins?: {
+                /**
+                 * The name of the plugin
+                 */
+                name: string;
+                [k: string]: unknown;
+            }[];
             [k: string]: unknown;
         };
         [k: string]: unknown;

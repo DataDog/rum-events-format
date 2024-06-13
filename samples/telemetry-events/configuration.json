@@ -56,7 +56,13 @@
       "view_tracking_strategy": "ActivityViewTrackingStrategy",
       "track_background_events": true,
       "mobile_vitals_update_period": 10,
-      "track_native_crashes": true
+      "track_native_crashes": true,
+      "plugins": [
+        {
+          "name": "foo",
+          "option_foo": "bar"
+        }
+      ]
     }
   }
 }
