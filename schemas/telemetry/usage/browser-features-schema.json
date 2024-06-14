@@ -28,6 +28,16 @@
           "const": "start-duration-vital"
         }
       }
+    },
+    {
+      "required": ["feature"],
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "addDurationVital API",
+          "const": "add-duration-vital"
+        }
+      }
     }
   ]
 }
