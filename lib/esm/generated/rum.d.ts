@@ -212,7 +212,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
         /**
          * The specific category of the error. It provides a high-level grouping for different types of errors.
          */
-        readonly category?: 'ANR' | 'App Hang' | 'Exception';
+        readonly category?: 'ANR' | 'App Hang' | 'Exception' | 'Watchdog Termination';
         /**
          * Whether the error has been handled manually in the source code or not
          */
