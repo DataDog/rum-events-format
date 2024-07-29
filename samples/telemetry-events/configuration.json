@@ -30,6 +30,7 @@
       "trace_context_injection": "all",
       "session_replay_sample_rate": 100,
       "start_session_replay_recording_manually": true,
+      "start_recording_immediately": true,
       "premium_sample_rate": 100,
       "replay_sample_rate": 100,
       "use_proxy": true,

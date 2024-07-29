@@ -90,6 +90,11 @@
                   "description": "Whether the session replay start is handled manually",
                   "readOnly": false
                 },
+                "start_recording_immediately": {
+                  "type": "boolean",
+                  "description": "Whether Session Replay should automatically start a recording when enabled",
+                  "readOnly": false
+                },
                 "use_proxy": {
                   "type": "boolean",
                   "description": "Whether a proxy is used",
