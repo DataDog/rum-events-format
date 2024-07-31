@@ -128,6 +128,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             start_session_replay_recording_manually?: boolean;
             /**
+             * Whether Session Replay should automatically start a recording when enabled
+             */
+            start_recording_immediately?: boolean;
+            /**
              * Whether a proxy is used
              */
             use_proxy?: boolean;
