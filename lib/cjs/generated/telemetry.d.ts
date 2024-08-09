@@ -461,6 +461,12 @@ export declare type TelemetryBrowserFeaturesUsage = {
     [k: string]: unknown;
 } | {
     /**
+     * stopDurationVital API
+     */
+    feature: 'stop-duration-vital';
+    [k: string]: unknown;
+} | {
+    /**
      * addDurationVital API
      */
     feature: 'add-duration-vital';
