@@ -1,0 +1,48 @@
+{
+  "type": "long_task",
+  "date": 1591284175576,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959541"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "react-native",
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+  },
+  "long_task": {
+    "id": "5fa9630e-54c0-4050-8a67-bb1cd575bd26",
+    "duration": 82000000,
+    "entry_type": "long-animation-frame",
+    "start_time": 1234,
+    "render_start": 1421,
+    "style_and_layout_start": 1428,
+    "first_ui_event_timestamp": 0,
+    "blocking_duration": 0,
+    "scripts": [
+      {
+        "start_time": 1348,
+        "duration": 6000000,
+        "invoker": "http://example.com/script.js",
+        "invoker_type": "classic-script",
+        "window_attribution": "self",
+        "execution_start": 1348,
+        "forced_style_and_layout_duration": 0,
+        "pause_duration": 0,
+        "source_url": "http://example.com/script.js",
+        "source_function_name": "",
+        "source_char_position": 9876
+      }
+    ]
+  },
+  "action": {
+    "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d853c"
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}
