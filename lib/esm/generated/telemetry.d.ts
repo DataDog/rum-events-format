@@ -200,6 +200,18 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             default_privacy_level?: string;
             /**
+             * Session replay text and input privacy level
+             */
+            text_and_input_privacy_level?: string;
+            /**
+             * Session replay image privacy level
+             */
+            image_privacy_level?: string;
+            /**
+             * Session replay touch privacy level
+             */
+            touch_privacy_level?: string;
+            /**
              * Privacy control for action name
              */
             enable_privacy_for_action_name?: boolean;
