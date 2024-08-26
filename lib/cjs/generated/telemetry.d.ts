@@ -391,7 +391,7 @@ export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
          * Telemetry type
          */
         type: 'usage';
-        usage: TelemetryCommonFeaturesUsage | TelemetryBrowserFeaturesUsage;
+        usage: TelemetryCommonFeaturesUsage | TelemetryBrowserFeaturesUsage | TelemetryMobileFeaturesUsage;
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -482,6 +482,28 @@ export declare type TelemetryBrowserFeaturesUsage = {
      * addDurationVital API
      */
     feature: 'add-duration-vital';
+    [k: string]: unknown;
+};
+/**
+ * Schema of mobile specific features usage
+ */
+export declare type TelemetryMobileFeaturesUsage = {
+    /**
+     * addViewLoadingTime API
+     */
+    feature: 'addViewLoadingTime';
+    /**
+     * Whether the view is not available
+     */
+    no_view: boolean;
+    /**
+     * Whether the available view is not active
+     */
+    no_active_view: boolean;
+    /**
+     * Whether the loading time was overwritten
+     */
+    overwritten: boolean;
     [k: string]: unknown;
 };
 /**
