@@ -399,113 +399,15 @@ export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
 /**
  * Schema of features usage common across SDKs
  */
-export declare type TelemetryCommonFeaturesUsage = {
-    /**
-     * setTrackingConsent API
-     */
-    feature: 'set-tracking-consent';
-    /**
-     * The tracking consent value set by the user
-     */
-    tracking_consent: 'granted' | 'not-granted' | 'pending';
-    [k: string]: unknown;
-} | {
-    /**
-     * stopSession API
-     */
-    feature: 'stop-session';
-    [k: string]: unknown;
-} | {
-    /**
-     * startView API
-     */
-    feature: 'start-view';
-    [k: string]: unknown;
-} | {
-    /**
-     * addAction API
-     */
-    feature: 'add-action';
-    [k: string]: unknown;
-} | {
-    /**
-     * addError API
-     */
-    feature: 'add-error';
-    [k: string]: unknown;
-} | {
-    /**
-     * setGlobalContext, setGlobalContextProperty, addAttribute APIs
-     */
-    feature: 'set-global-context';
-    [k: string]: unknown;
-} | {
-    /**
-     * setUser, setUserProperty, setUserInfo APIs
-     */
-    feature: 'set-user';
-    [k: string]: unknown;
-} | {
-    /**
-     * addFeatureFlagEvaluation API
-     */
-    feature: 'add-feature-flag-evaluation';
-    [k: string]: unknown;
-};
+export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | AddAction | AddError | SetGlobalContext | SetUser | AddFeatureFlagEvaluation;
 /**
  * Schema of browser specific features usage
  */
-export declare type TelemetryBrowserFeaturesUsage = {
-    /**
-     * startSessionReplayRecording API
-     */
-    feature: 'start-session-replay-recording';
-    /**
-     * Whether the recording is allowed to start even on sessions sampled out of replay
-     */
-    is_forced?: boolean;
-    [k: string]: unknown;
-} | {
-    /**
-     * startDurationVital API
-     */
-    feature: 'start-duration-vital';
-    [k: string]: unknown;
-} | {
-    /**
-     * stopDurationVital API
-     */
-    feature: 'stop-duration-vital';
-    [k: string]: unknown;
-} | {
-    /**
-     * addDurationVital API
-     */
-    feature: 'add-duration-vital';
-    [k: string]: unknown;
-};
+export declare type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital;
 /**
  * Schema of mobile specific features usage
  */
-export declare type TelemetryMobileFeaturesUsage = {
-    /**
-     * addViewLoadingTime API
-     */
-    feature: 'addViewLoadingTime';
-    /**
-     * Whether the view is not available
-     */
-    no_view: boolean;
-    /**
-     * Whether the available view is not active
-     */
-    no_active_view: boolean;
-    /**
-     * Whether the loading time was overwritten
-     */
-    overwritten: boolean;
-    [k: string]: unknown;
-};
+export declare type TelemetryMobileFeaturesUsage = AddViewLoadingTime;
 /**
  * Schema of common properties of Telemetry events
  */
@@ -623,5 +525,116 @@ export interface CommonTelemetryProperties {
         };
         [k: string]: unknown;
     };
+    [k: string]: unknown;
+}
+export interface SetTrackingConsent {
+    /**
+     * setTrackingConsent API
+     */
+    feature: 'set-tracking-consent';
+    /**
+     * The tracking consent value set by the user
+     */
+    tracking_consent: 'granted' | 'not-granted' | 'pending';
+    [k: string]: unknown;
+}
+export interface StopSession {
+    /**
+     * stopSession API
+     */
+    feature: 'stop-session';
+    [k: string]: unknown;
+}
+export interface StartView {
+    /**
+     * startView API
+     */
+    feature: 'start-view';
+    [k: string]: unknown;
+}
+export interface AddAction {
+    /**
+     * addAction API
+     */
+    feature: 'add-action';
+    [k: string]: unknown;
+}
+export interface AddError {
+    /**
+     * addError API
+     */
+    feature: 'add-error';
+    [k: string]: unknown;
+}
+export interface SetGlobalContext {
+    /**
+     * setGlobalContext, setGlobalContextProperty, addAttribute APIs
+     */
+    feature: 'set-global-context';
+    [k: string]: unknown;
+}
+export interface SetUser {
+    /**
+     * setUser, setUserProperty, setUserInfo APIs
+     */
+    feature: 'set-user';
+    [k: string]: unknown;
+}
+export interface AddFeatureFlagEvaluation {
+    /**
+     * addFeatureFlagEvaluation API
+     */
+    feature: 'add-feature-flag-evaluation';
+    [k: string]: unknown;
+}
+export interface StartSessionReplayRecording {
+    /**
+     * startSessionReplayRecording API
+     */
+    feature: 'start-session-replay-recording';
+    /**
+     * Whether the recording is allowed to start even on sessions sampled out of replay
+     */
+    is_forced?: boolean;
+    [k: string]: unknown;
+}
+export interface StartDurationVital {
+    /**
+     * startDurationVital API
+     */
+    feature: 'start-duration-vital';
+    [k: string]: unknown;
+}
+export interface StopDurationVital {
+    /**
+     * stopDurationVital API
+     */
+    feature: 'stop-duration-vital';
+    [k: string]: unknown;
+}
+export interface AddDurationVital {
+    /**
+     * addDurationVital API
+     */
+    feature: 'add-duration-vital';
+    [k: string]: unknown;
+}
+export interface AddViewLoadingTime {
+    /**
+     * addViewLoadingTime API
+     */
+    feature: 'addViewLoadingTime';
+    /**
+     * Whether the view is not available
+     */
+    no_view: boolean;
+    /**
+     * Whether the available view is not active
+     */
+    no_active_view: boolean;
+    /**
+     * Whether the loading time was overwritten
+     */
+    overwritten: boolean;
     [k: string]: unknown;
 }

@@ -7,6 +7,7 @@
   "oneOf": [
     {
       "required": ["feature", "no_view", "no_active_view", "overwritten"],
+      "title": "AddViewLoadingTime",
       "properties": {
         "feature": {
           "type": "string",
