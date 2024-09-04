@@ -25,6 +25,11 @@ const DEFINITIONS = [
     options: { additionalProperties: false },
   },
   { source: 'session-replay-schema.json', name: 'sessionReplay', options: { additionalProperties: false } },
+  {
+    source: 'rum-stored-events-schema.json',
+    name: 'rumStoredEvents',
+    options: { additionalProperties: false },
+  },
 ]
 
 const GENERATED_PATH = path.normalize(pkg.config['path:generated'])
