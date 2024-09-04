@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "rum-stored-events-schema.json",
+    "title": "RumStoredEvent",
+    "type": "object",
+    "description": "Schema of all properties of a RUM event stored in Events store",
+    "oneOf": [
+      {
+        "$ref": "rum-stored-events/action-schema.json"
+      },
+      {
+        "$ref": "rum-stored-events/view-schema.json"
+      }
+    ]
+  }
+  
