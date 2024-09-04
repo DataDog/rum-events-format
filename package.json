@@ -5,7 +5,8 @@
     "lib"
   ],
   "config": {
-    "path:generated": "./lib/generated"
+    "path:generated": "./lib/generated",
+    "path:schemas": "./lib/schemas"
   },
   "scripts": {
     "build": "yarn clean && yarn generate && yarn build:cjs && yarn build:esm",

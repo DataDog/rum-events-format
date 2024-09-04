@@ -33,12 +33,17 @@ const DEFINITIONS = [
 ]
 
 const GENERATED_PATH = path.normalize(pkg.config['path:generated'])
+const OUTPUT_SCHEMAS_PATH = path.normalize(pkg.config['path:schemas'])
 
 main().catch(logAndExit)
 
 async function main() {
   fs.rmSync(GENERATED_PATH, { recursive: true, force: true })
+  fs.rmSync(OUTPUT_SCHEMAS_PATH, { recursive: true, force: true })
   fs.mkdirSync(GENERATED_PATH)
+  fs.mkdirSync(OUTPUT_SCHEMAS_PATH)
+
+  fs.cpSync(SCHEMAS_PATH, OUTPUT_SCHEMAS_PATH, { recursive: true })
 
   DEFINITIONS.forEach(async (definition) => {
     const { source, name, options } = definition

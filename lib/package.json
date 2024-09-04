@@ -15,6 +15,6 @@
     "session-replay-browser",
     "session-replay-mobile",
     "telemetry",
-    "../schemas"
+    "schemas"
   ]
 }
