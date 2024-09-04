@@ -1,0 +1,4 @@
+node_modules
+# Generate defintions out of schemas by running `yarn generate`
+lib/generated
+*/.DS_Store
