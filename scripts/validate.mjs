@@ -23,6 +23,8 @@ function validateSchemasObjectsPropertiesCase() {
     [`${SCHEMAS_DIRECTORY}/session-replay/common/focus-record-schema.json`, ['has_focus']],
     [`${SCHEMAS_DIRECTORY}/rum/resource-schema.json`, ['operationType', 'operationName']],
     [`${SCHEMAS_DIRECTORY}/rum-stored-events/_common-schema.json`, ['datadog.index']],
+    [`${SCHEMAS_DIRECTORY}/rum-stored-events/view-schema.json`, ['datadog.index']],
+    [`${SCHEMAS_DIRECTORY}/rum-stored-events/action-schema.json`, ['datadog.index']],
   ])
 
   let displayConvention = false

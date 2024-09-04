@@ -8,7 +8,43 @@ export declare type RumStoredEvent = RumStoredActionEvent | RumStoredViewEvent;
 /**
  * Schema of all properties of a stored Action event
  */
-export declare type RumStoredActionEvent = StoredEventCommonProperties & {
+export declare type RumStoredActionEvent = {
+    client_time?: number;
+    'datadog.index'?: string;
+    discovery_timestamp?: number;
+    event_id?: string;
+    hashes?: {
+        session?: HashId;
+        view?: HashId;
+        usr?: HashId;
+    };
+    id?: string;
+    ingest_size_in_bytes?: number;
+    intake_time?: number;
+    random_draw?: number;
+    service?: string;
+    source?: string;
+    source_fragment_id?: string;
+    tag?: {
+        /**
+         * This interface was referenced by `undefined`'s JSON-Schema definition
+         * via the `patternProperty` ".*".
+         */
+        [k: string]: string | {
+            /**
+             * This interface was referenced by `undefined`'s JSON-Schema definition
+             * via the `patternProperty` ".*".
+             */
+            [k: string]: string;
+        };
+    };
+    tags?: string[];
+    tiebreaker?: number;
+    timeline?: {
+        token?: string;
+    };
+    timestamp?: string;
+} & {
     /**
      * Custom properties of the event
      */
@@ -160,7 +196,43 @@ export declare type RumStoredActionEvent = StoredEventCommonProperties & {
 /**
  * Schema of all properties of a stored View event
  */
-export declare type RumStoredViewEvent = StoredEventCommonProperties & {
+export declare type RumStoredViewEvent = {
+    client_time?: number;
+    'datadog.index'?: string;
+    discovery_timestamp?: number;
+    event_id?: string;
+    hashes?: {
+        session?: HashId1;
+        view?: HashId1;
+        usr?: HashId1;
+    };
+    id?: string;
+    ingest_size_in_bytes?: number;
+    intake_time?: number;
+    random_draw?: number;
+    service?: string;
+    source?: string;
+    source_fragment_id?: string;
+    tag?: {
+        /**
+         * This interface was referenced by `undefined`'s JSON-Schema definition
+         * via the `patternProperty` ".*".
+         */
+        [k: string]: string | {
+            /**
+             * This interface was referenced by `undefined`'s JSON-Schema definition
+             * via the `patternProperty` ".*".
+             */
+            [k: string]: string;
+        };
+    };
+    tags?: string[];
+    tiebreaker?: number;
+    timeline?: {
+        token?: string;
+    };
+    timestamp?: string;
+} & {
     /**
      * Custom properties of the event
      */
@@ -370,15 +442,15 @@ export declare type RumStoredViewEvent = StoredEventCommonProperties & {
             /**
              * Time taken for Flutter 'build' methods.
              */
-            flutter_build_time?: RumStoredPerfMetric;
+            flutter_build_time?: PerfMetric;
             /**
              * Time taken for Flutter to rasterize the view.
              */
-            flutter_raster_time?: RumStoredPerfMetric;
+            flutter_raster_time?: PerfMetric;
             /**
              * The JavaScript refresh rate for React Native
              */
-            js_refresh_rate?: RumStoredPerfMetric;
+            js_refresh_rate?: PerfMetric;
         };
         /**
          * Session properties
@@ -484,53 +556,13 @@ export declare type RumStoredViewEvent = StoredEventCommonProperties & {
         };
     };
 };
-/**
- * Schema of common properties of stored RUM events
- */
-export interface StoredEventCommonProperties {
-    client_time?: number;
-    'datadog.index'?: string;
-    discovery_timestamp?: number;
-    event_id?: string;
-    hashes?: {
-        session?: HashId;
-        view?: HashId;
-        usr?: HashId;
-    };
-    id?: string;
-    ingest_size_in_bytes?: number;
-    intake_time?: number;
-    random_draw?: number;
-    service?: string;
-    source?: string;
-    source_fragment_id?: string;
-    tag?: {
-        /**
-         * This interface was referenced by `undefined`'s JSON-Schema definition
-         * via the `patternProperty` ".*".
-         */
-        [k: string]: string | {
-            /**
-             * This interface was referenced by `undefined`'s JSON-Schema definition
-             * via the `patternProperty` ".*".
-             */
-            [k: string]: string;
-        };
-    };
-    tags?: string[];
-    tiebreaker?: number;
-    timeline?: {
-        token?: string;
-    };
-    timestamp?: string;
-}
 export interface HashId {
     id: number;
 }
-/**
- * Schema of properties for a technical performance metric
- */
-export interface RumStoredPerfMetric {
+export interface HashId1 {
+    id: number;
+}
+export interface PerfMetric {
     /**
      * The minimum value seen for this metric during the view's lifetime.
      */
