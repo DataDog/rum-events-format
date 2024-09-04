@@ -55,6 +55,8 @@ async function generateTypesFromSchema(typesPath, schema, { options = {} } = {})
     cwd: SCHEMAS_PATH,
     bannerComment: '/* eslint-disable */\n/**\n * DO NOT MODIFY IT BY HAND. Run `yarn generate` instead.\n*/',
     style: prettierConfig,
+    declareExternallyReferenced: true,
+    strictIndexSignatures: true,
     ...options,
   })
   printLog(`Writing ${typesPath}...`)

@@ -8,23 +8,19 @@
   "properties": {
     "min": {
       "type": "number",
-      "description": "The minimum value seen for this metric during the view's lifetime.",
-      "readOnly": true
+      "description": "The minimum value seen for this metric during the view's lifetime."
     },
     "max": {
       "type": "number",
-      "description": "The maximum value seen for this metric during the view's lifetime.",
-      "readOnly": true
+      "description": "The maximum value seen for this metric during the view's lifetime."
     },
     "average": {
       "type": "number",
-      "description": "The average value for this metric during the view's lifetime.",
-      "readOnly": true
+      "description": "The average value for this metric during the view's lifetime."
     },
     "metric_max": {
       "type": "number",
-      "description": "The maximum possible value we could see for this metric, if such a max is relevant and can vary from session to session.",
-      "readOnly": true
+      "description": "The maximum possible value we could see for this metric, if such a max is relevant and can vary from session to session."
     }
   }
 }

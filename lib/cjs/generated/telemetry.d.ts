@@ -37,11 +37,11 @@ export declare type TelemetryErrorEvent = CommonTelemetryProperties & {
              * The error type or kind (or code in some cases)
              */
             kind?: string;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 };
 /**
  * Schema of all properties of a telemetry debug event
@@ -63,9 +63,9 @@ export declare type TelemetryDebugEvent = CommonTelemetryProperties & {
          * Body of the log
          */
         message: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 };
 /**
  * Schema of all properties of a telemetry configuration event
@@ -371,13 +371,13 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
                  * The name of the plugin
                  */
                 name: string;
-                [k: string]: unknown;
+                [k: string]: unknown | undefined;
             }[];
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 };
 /**
  * Schema of all properties of a telemetry usage event
@@ -392,9 +392,9 @@ export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
          */
         type: 'usage';
         usage: TelemetryCommonFeaturesUsage | TelemetryBrowserFeaturesUsage;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 };
 /**
  * Schema of features usage common across SDKs
@@ -408,49 +408,49 @@ export declare type TelemetryCommonFeaturesUsage = {
      * The tracking consent value set by the user
      */
     tracking_consent: 'granted' | 'not-granted' | 'pending';
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 } | {
     /**
      * stopSession API
      */
     feature: 'stop-session';
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 } | {
     /**
      * startView API
      */
     feature: 'start-view';
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 } | {
     /**
      * addAction API
      */
     feature: 'add-action';
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 } | {
     /**
      * addError API
      */
     feature: 'add-error';
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 } | {
     /**
      * setGlobalContext, setGlobalContextProperty, addAttribute APIs
      */
     feature: 'set-global-context';
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 } | {
     /**
      * setUser, setUserProperty, setUserInfo APIs
      */
     feature: 'set-user';
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 } | {
     /**
      * addFeatureFlagEvaluation API
      */
     feature: 'add-feature-flag-evaluation';
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 };
 /**
  * Schema of browser specific features usage
@@ -464,25 +464,25 @@ export declare type TelemetryBrowserFeaturesUsage = {
      * Whether the recording is allowed to start even on sessions sampled out of replay
      */
     is_forced?: boolean;
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 } | {
     /**
      * startDurationVital API
      */
     feature: 'start-duration-vital';
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 } | {
     /**
      * stopDurationVital API
      */
     feature: 'stop-duration-vital';
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 } | {
     /**
      * addDurationVital API
      */
     feature: 'add-duration-vital';
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 };
 /**
  * Schema of common properties of Telemetry events
@@ -496,7 +496,7 @@ export interface CommonTelemetryProperties {
          * Version of the RUM event format
          */
         readonly format_version: 2;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Telemetry event type. Should specify telemetry only.
@@ -526,7 +526,7 @@ export interface CommonTelemetryProperties {
          * UUID of the application
          */
         id: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Session properties
@@ -536,7 +536,7 @@ export interface CommonTelemetryProperties {
          * UUID of the session
          */
         id: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * View properties
@@ -546,7 +546,7 @@ export interface CommonTelemetryProperties {
          * UUID of the view
          */
         id: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Action properties
@@ -556,7 +556,7 @@ export interface CommonTelemetryProperties {
          * UUID of the action
          */
         id: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Enabled experimental features
@@ -579,7 +579,7 @@ export interface CommonTelemetryProperties {
              * Model of the device
              */
             model?: string;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * OS properties
@@ -597,9 +597,9 @@ export interface CommonTelemetryProperties {
              * Version of the OS
              */
             version?: string;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 }

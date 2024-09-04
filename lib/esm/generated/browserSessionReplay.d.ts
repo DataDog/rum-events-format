@@ -481,7 +481,7 @@ export interface ElementNode {
  * Schema of an Attributes type.
  */
 export interface Attributes {
-    [k: string]: string | number | boolean;
+    [k: string]: (string | number | boolean) | undefined;
 }
 /**
  * Schema of a Text Node.
@@ -544,7 +544,7 @@ export interface AttributeMutation {
      * Attributes for this AttributeMutation
      */
     attributes: {
-        [k: string]: string | null;
+        [k: string]: (string | null) | undefined;
     };
 }
 /**
