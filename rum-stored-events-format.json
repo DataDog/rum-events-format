@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "rum-stored-events-format.json",
+    "title": "RumStoredEventFormat",
+    "type": "object",
+    "description": "Schema of RUM events stored in the Events store",
+    "$ref": "schemas/rum-stored-events-schema.json"
+  }

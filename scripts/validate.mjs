@@ -22,6 +22,9 @@ function validateSchemasObjectsPropertiesCase() {
     ],
     [`${SCHEMAS_DIRECTORY}/session-replay/common/focus-record-schema.json`, ['has_focus']],
     [`${SCHEMAS_DIRECTORY}/rum/resource-schema.json`, ['operationType', 'operationName']],
+    [`${SCHEMAS_DIRECTORY}/rum-stored-events/_common-schema.json`, ['datadog.index']],
+    [`${SCHEMAS_DIRECTORY}/rum-stored-events/view-schema.json`, ['datadog.index']],
+    [`${SCHEMAS_DIRECTORY}/rum-stored-events/action-schema.json`, ['datadog.index']],
   ])
 
   let displayConvention = false
@@ -32,7 +35,7 @@ function validateSchemasObjectsPropertiesCase() {
     // RUM and telemetry schemas object properties should be snake_case, other schemas objects should
     // be camelCase
     const shouldBeSnakeCase =
-      schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/rum/`) || schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/telemetry/`)
+      schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/rum`) || schemaPath.startsWith(`${SCHEMAS_DIRECTORY}/telemetry/`)
 
     const caseExceptions = CASING_EXCEPTIONS.get(schemaPath) || []
 

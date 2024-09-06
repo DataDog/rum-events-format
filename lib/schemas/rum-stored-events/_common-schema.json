@@ -1,0 +1,109 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "rum-stored-events/_common-schema.json",
+    "title": "StoredEventCommonProperties",
+    "type": "object",
+    "description": "Schema of common properties of stored RUM events",
+    "properties": {
+        "client_time": {
+            "type": "number"
+        },
+        "datadog.index": {
+            "type": "string"
+        },
+        "discovery_timestamp": {
+            "type": "number"
+        },
+        "event_id": {
+            "type": "string"
+        },
+        "hashes": {
+            "type": "object",
+            "properties": {
+                "session": {
+                    "$ref": "#/$defs/hash_id"
+                },
+                "view": {
+                    "$ref": "#/$defs/hash_id"
+                },
+                "usr": {
+                    "$ref": "#/$defs/hash_id"
+                }
+            }
+        },
+        "id": {
+            "type": "string"
+        },
+        "ingest_size_in_bytes": {
+            "type": "number"
+        },
+        "intake_time": {
+            "type": "number"
+        },
+        "random_draw": {
+            "type": "number"
+        },
+        "service": {
+            "type": "string"
+        },
+        "source": {
+            "type": "string"
+        },
+        "source_fragment_id": {
+            "type": "string"
+        },
+        "tag": {
+            "type": "object",
+            "patternProperties": {
+                ".*": {
+                    "$ref": "#/$defs/tag"
+                }
+            }
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "tiebreaker": {
+            "type": "number"
+        },
+        "timeline": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string"
+                }
+            }
+        },
+        "timestamp": {
+            "type": "string"
+        }
+    },
+    "$defs": {
+        "hash_id": {
+            "type": "object",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "number"
+                }
+            }
+        },
+        "tag": {
+            "oneOf": [
+                {"type": "string"},
+                {
+                    "type": "object", 
+                    "patternProperties": {
+                    ".*": {
+                        "type": "string"
+                    }
+            }}
+            ]
+        }
+    }
+}

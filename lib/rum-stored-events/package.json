@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "main": "../cjs/src/rum-stored-events.js",
+  "module": "../esm/src/rum-stored-events.js",
+  "types": "../esm/src/rum-stored-events.d.ts"
+}

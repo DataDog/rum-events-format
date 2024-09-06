@@ -37,7 +37,7 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
              * Target name
              */
             name: string;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Action frustration properties
@@ -47,7 +47,7 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
              * Action frustration types
              */
             readonly type: ('rage_click' | 'dead_click' | 'error_click' | 'rage_tap' | 'error_tap')[];
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Properties of the errors of the action
@@ -57,7 +57,7 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
              * Number of errors that occurred on the action
              */
             readonly count: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Properties of the crashes of the action
@@ -67,7 +67,7 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
              * Number of crashes that occurred on the action
              */
             readonly count: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Properties of the long tasks of the action
@@ -77,7 +77,7 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
              * Number of long tasks that occurred on the action
              */
             readonly count: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Properties of the resources of the action
@@ -87,9 +87,9 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
              * Number of resources that occurred on the action
              */
             readonly count: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * View properties
@@ -99,7 +99,7 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
          * Is the action starting in the foreground (focus in browser)
          */
         readonly in_foreground?: boolean;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Internal properties
@@ -121,7 +121,7 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
                  * Y coordinate relative to the target element of the action (in pixels)
                  */
                 readonly y: number;
-                [k: string]: unknown;
+                [k: string]: unknown | undefined;
             };
             /**
              * Target properties
@@ -139,13 +139,13 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
                  * Height of the target element (in pixels)
                  */
                 readonly height?: number;
-                [k: string]: unknown;
+                [k: string]: unknown | undefined;
             };
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 };
 /**
  * Schema of all properties of an Error event
@@ -195,7 +195,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
              * Source of the error
              */
             readonly source: 'network' | 'source' | 'console' | 'logger' | 'agent' | 'webview' | 'custom' | 'report';
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         }[];
         /**
          * Whether this error crashed the host application
@@ -257,9 +257,9 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
                  * The type of provider
                  */
                 readonly type?: 'ad' | 'advertising' | 'analytics' | 'cdn' | 'content' | 'customer-success' | 'first party' | 'hosting' | 'marketing' | 'other' | 'social' | 'tag-manager' | 'utility' | 'video';
-                [k: string]: unknown;
+                [k: string]: unknown | undefined;
             };
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Description of each thread in the process when error happened.
@@ -281,7 +281,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
              * Platform-specific state of the thread when its state was captured (CPU registers dump for iOS, thread state enum for Android, etc.).
              */
             readonly state?: string;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         }[];
         /**
          * Description of each binary image (native libraries; for Android: .so files) loaded or referenced by the process/application.
@@ -311,7 +311,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
              * CPU architecture from the library.
              */
             readonly arch?: string;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         }[];
         /**
          * A boolean value saying if any of the stack traces was truncated due to minification.
@@ -349,7 +349,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
              * The location of the executable.
              */
             readonly path?: string;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Content Security Violation properties
@@ -359,13 +359,13 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
              * In the context of CSP errors, indicates how the violated policy is configured to be treated by the user agent.
              */
             readonly disposition?: 'enforce' | 'report';
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Time since application start when error happened (in milliseconds)
          */
         readonly time_since_app_start?: number;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Properties of App Hang and ANR errors
@@ -375,7 +375,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
          * Duration of the main thread freeze (in ns)
          */
         readonly duration: number;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * View properties
@@ -385,15 +385,15 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
          * Is the error starting in the foreground (focus in browser)
          */
         readonly in_foreground?: boolean;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Feature flags properties
      */
     readonly feature_flags?: {
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 };
 /**
  * Schema of all properties of a Long Task event
@@ -487,9 +487,9 @@ export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties 
              * The container (the top-level document, or an <iframe>) the long animation frame occurred in
              */
             readonly window_attribution?: string;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         }[];
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Internal properties
@@ -499,9 +499,9 @@ export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties 
          * Whether the long task should be discarded or indexed
          */
         readonly discarded?: boolean;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 };
 /**
  * Schema of all properties of a Resource event
@@ -571,7 +571,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
              * Duration in ns between start of the request and start of the redirect phase
              */
             readonly start: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * DNS phase properties
@@ -585,7 +585,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
              * Duration in ns between start of the request and start of the dns phase
              */
             readonly start: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Connect phase properties
@@ -599,7 +599,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
              * Duration in ns between start of the request and start of the connect phase
              */
             readonly start: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * SSL phase properties
@@ -613,7 +613,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
              * Duration in ns between start of the request and start of the ssl phase
              */
             readonly start: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * First Byte phase properties
@@ -627,7 +627,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
              * Duration in ns between start of the request and start of the first byte phase
              */
             readonly start: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Download phase properties
@@ -641,7 +641,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
              * Duration in ns between start of the request and start of the download phase
              */
             readonly start: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * The provider for this resource
@@ -659,7 +659,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
              * The type of provider
              */
             readonly type?: 'ad' | 'advertising' | 'analytics' | 'cdn' | 'content' | 'customer-success' | 'first party' | 'hosting' | 'marketing' | 'other' | 'social' | 'tag-manager' | 'utility' | 'video';
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * GraphQL requests parameters
@@ -681,9 +681,9 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
              * String representation of the operation variables
              */
             variables?: string;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Internal properties
@@ -705,9 +705,9 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
          * Whether the resource should be discarded or indexed
          */
         readonly discarded?: boolean;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 };
 /**
  * Schema of all properties of a View event
@@ -805,7 +805,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
          * User custom timings of the view. As timing name is used as facet path, it must contain only letters, digits, or the characters - _ . @ $
          */
         readonly custom_timings?: {
-            [k: string]: number;
+            [k: string]: number | undefined;
         };
         /**
          * Whether the View corresponding to this event is considered active
@@ -823,7 +823,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              * Number of actions that occurred on the view
              */
             readonly count: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Properties of the errors of the view
@@ -833,7 +833,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              * Number of errors that occurred on the view
              */
             readonly count: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Properties of the crashes of the view
@@ -843,7 +843,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              * Number of crashes that occurred on the view
              */
             readonly count: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Properties of the long tasks of the view
@@ -853,7 +853,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              * Number of long tasks that occurred on the view
              */
             readonly count: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Properties of the frozen frames of the view
@@ -863,7 +863,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              * Number of frozen frames that occurred on the view
              */
             readonly count: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Properties of the resources of the view
@@ -873,7 +873,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              * Number of resources that occurred on the view
              */
             readonly count: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Properties of the frustrations of the view
@@ -883,7 +883,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              * Number of frustrations that occurred on the view
              */
             readonly count: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * List of the periods of time the user had the view in foreground (focused in the browser)
@@ -897,7 +897,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              * Duration in ns of the view foreground period
              */
             readonly duration: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         }[];
         /**
          * Average memory used during the view lifetime (in bytes)
@@ -935,7 +935,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
          * The JavaScript refresh rate for React Native
          */
         js_refresh_rate?: RumPerfMetric;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Session properties
@@ -949,13 +949,13 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
          * Whether this session has been sampled for replay
          */
         readonly sampled_for_replay?: boolean;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Feature flags properties
      */
     readonly feature_flags?: {
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Privacy properties
@@ -965,7 +965,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
          * The replay privacy level
          */
         readonly replay_level: 'allow' | 'mask' | 'mask-user-input';
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Internal properties
@@ -987,7 +987,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              * Duration in ns between start of the view and start of the page state
              */
             readonly start: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         }[];
         /**
          * Debug metadata for Replay Sessions
@@ -1005,7 +1005,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              * The total size in bytes of the segments sent during this view lifetime
              */
             segments_total_raw_size?: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Subset of the SDK configuration options in use during its execution
@@ -1015,9 +1015,9 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              * Whether session replay recording configured to start manually
              */
             readonly start_session_replay_recording_manually?: boolean;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Display properties
@@ -1043,11 +1043,11 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
              * Duration between the view start and the time the max scroll height was reached for this view (in nanoseconds)
              */
             readonly max_scroll_height_time: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 };
 /**
  * Schema of all properties of a Vital event
@@ -1085,9 +1085,9 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
          * User custom vital.
          */
         readonly custom?: {
-            [k: string]: number;
+            [k: string]: number | undefined;
         };
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Internal properties
@@ -1101,11 +1101,11 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
              * Whether the value of the vital is computed by the SDK (as opposed to directly provided by the customer)
              */
             readonly computed_value?: boolean;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 };
 /**
  * Schema of common properties of RUM events
@@ -1123,7 +1123,7 @@ export interface CommonProperties {
          * UUID of the application
          */
         readonly id: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * The service name for this application
@@ -1157,7 +1157,7 @@ export interface CommonProperties {
          * Whether this session has a replay
          */
         readonly has_replay?: boolean;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * The source of this event
@@ -1183,7 +1183,7 @@ export interface CommonProperties {
          * User defined name of the view
          */
         name?: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * User properties
@@ -1201,7 +1201,7 @@ export interface CommonProperties {
          * Email of the user
          */
         readonly email?: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Device connectivity properties
@@ -1231,9 +1231,9 @@ export interface CommonProperties {
              * The name of the SIM carrier
              */
             readonly carrier_name?: string;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Display properties
@@ -1251,9 +1251,9 @@ export interface CommonProperties {
              * Height of the viewport (in pixels)
              */
             readonly height: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Synthetics properties
@@ -1271,7 +1271,7 @@ export interface CommonProperties {
          * Whether the event comes from a SDK instance injected by Synthetics
          */
         readonly injected?: boolean;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * CI Visibility properties
@@ -1281,7 +1281,7 @@ export interface CommonProperties {
          * The identifier of the current CI Visibility test execution
          */
         readonly test_execution_id: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Operating system properties
@@ -1303,7 +1303,7 @@ export interface CommonProperties {
          * Major operating system version, e.g. 8
          */
         readonly version_major: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Device properties
@@ -1329,7 +1329,7 @@ export interface CommonProperties {
          * The CPU architecture of the device that is reporting the error
          */
         readonly architecture?: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * Internal properties
@@ -1351,7 +1351,7 @@ export interface CommonProperties {
              * The precondition that led to the creation of the session
              */
             readonly session_precondition?: 'user_app_launch' | 'inactivity_timeout' | 'max_duration' | 'background_launch' | 'prewarm' | 'from_non_interactive_session' | 'explicit_stop';
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Subset of the SDK configuration options in use during its execution
@@ -1365,21 +1365,21 @@ export interface CommonProperties {
              * The percentage of sessions with RUM & Session Replay pricing tracked
              */
             readonly session_replay_sample_rate?: number;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Browser SDK version
          */
         readonly browser_sdk_version?: string;
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
     /**
      * User provided context
      */
     context?: {
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 }
 /**
  * View Container schema for views that are nested (webviews in mobile)
@@ -1397,15 +1397,15 @@ export interface ViewContainerSchema {
              * ID of the parent view
              */
             readonly id: string;
-            [k: string]: unknown;
+            [k: string]: unknown | undefined;
         };
         /**
          * Source of the parent view
          */
         readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform';
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 }
 /**
  * Schema of all properties of events that can have parent actions
@@ -1419,9 +1419,9 @@ export interface ActionChildProperties {
          * UUID of the action
          */
         readonly id: string | string[];
-        [k: string]: unknown;
+        [k: string]: unknown | undefined;
     };
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 }
 /**
  * Schema of properties for a technical performance metric
@@ -1443,5 +1443,5 @@ export interface RumPerfMetric {
      * The maximum possible value we could see for this metric, if such a max is relevant and can vary from session to session.
      */
     readonly metric_max?: number;
-    [k: string]: unknown;
+    [k: string]: unknown | undefined;
 }

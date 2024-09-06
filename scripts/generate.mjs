@@ -25,15 +25,25 @@ const DEFINITIONS = [
     options: { additionalProperties: false },
   },
   { source: 'session-replay-schema.json', name: 'sessionReplay', options: { additionalProperties: false } },
+  {
+    source: 'rum-stored-events-schema.json',
+    name: 'rumStoredEvents',
+    options: { additionalProperties: false },
+  },
 ]
 
 const GENERATED_PATH = path.normalize(pkg.config['path:generated'])
+const OUTPUT_SCHEMAS_PATH = path.normalize(pkg.config['path:schemas'])
 
 main().catch(logAndExit)
 
 async function main() {
   fs.rmSync(GENERATED_PATH, { recursive: true, force: true })
+  fs.rmSync(OUTPUT_SCHEMAS_PATH, { recursive: true, force: true })
   fs.mkdirSync(GENERATED_PATH)
+  fs.mkdirSync(OUTPUT_SCHEMAS_PATH)
+
+  fs.cpSync(SCHEMAS_PATH, OUTPUT_SCHEMAS_PATH, { recursive: true })
 
   DEFINITIONS.forEach(async (definition) => {
     const { source, name, options } = definition
@@ -50,6 +60,8 @@ async function generateTypesFromSchema(typesPath, schema, { options = {} } = {})
     cwd: SCHEMAS_PATH,
     bannerComment: '/* eslint-disable */\n/**\n * DO NOT MODIFY IT BY HAND. Run `yarn generate` instead.\n*/',
     style: prettierConfig,
+    declareExternallyReferenced: true,
+    strictIndexSignatures: true,
     ...options,
   })
   printLog(`Writing ${typesPath}...`)
