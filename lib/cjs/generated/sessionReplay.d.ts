@@ -327,7 +327,7 @@ export declare type MobileSegmentMetadata = SegmentContext & CommonSegmentMetada
     /**
      * The source of this record
      */
-    source: 'android' | 'ios' | 'flutter' | 'react-native';
+    source: 'android' | 'ios' | 'flutter' | 'react-native' | 'kotlin-multiplatform';
 };
 /**
  * Mobile-specific. Schema of a Session Replay Record.
