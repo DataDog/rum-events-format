@@ -35,6 +35,12 @@
               "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
               "readOnly": true
             },
+            "start_time": {
+              "type": "number",
+              "description": "Start time of the long animation frame",
+              "minimum": 0,
+              "readOnly": true
+            },
             "entry_type": {
               "type": "string",
               "description": "Type of the event: long task or long animation frame",
