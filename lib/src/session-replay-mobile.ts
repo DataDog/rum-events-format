@@ -7,6 +7,7 @@ export const MobileSource = {
   Ios: 'ios',
   Flutter: 'flutter',
   ReactNative: 'react-native',
+  KotlinMultiplatform: 'kotlin-multiplatform',
 } as const
 
 export type MobileSource = typeof MobileSource[keyof typeof MobileSource]
