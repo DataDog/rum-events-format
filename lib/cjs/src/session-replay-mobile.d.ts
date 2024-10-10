@@ -5,6 +5,7 @@ export declare const MobileSource: {
     readonly Ios: "ios";
     readonly Flutter: "flutter";
     readonly ReactNative: "react-native";
+    readonly KotlinMultiplatform: "kotlin-multiplatform";
 };
 export declare type MobileSource = typeof MobileSource[keyof typeof MobileSource];
 export declare const RecordType: {
