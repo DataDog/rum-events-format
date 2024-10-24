@@ -213,6 +213,11 @@
               },
               "readOnly": true
             },
+            "protocol": {
+              "type": "string",
+              "description": "Network protocol used to fetch the resource (e.g., 'http/1.1', 'h2')",
+              "readOnly": true
+            },
             "provider": {
               "type": "object",
               "description": "The provider for this resource",
