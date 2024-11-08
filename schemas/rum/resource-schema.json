@@ -218,11 +218,6 @@
               "description": "Network protocol used to fetch the resource (e.g., 'http/1.1', 'h2')",
               "readOnly": true
             },
-            "content_type": {
-              "type": "string",
-              "description": "Content type of the fetched resource",
-              "readOnly": true
-            },
             "provider": {
               "type": "object",
               "description": "The provider for this resource",
