@@ -564,6 +564,20 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
          */
         readonly render_blocking_status?: 'blocking' | 'non-blocking';
         /**
+         * Worker phase properties
+         */
+        readonly worker?: {
+            /**
+             * Duration in nanoseconds of the resource worker phase
+             */
+            readonly duration: number;
+            /**
+             * Duration in nanoseconds between start of the request and start of the worker phase
+             */
+            readonly start: number;
+            [k: string]: unknown;
+        };
+        /**
          * Redirect phase properties
          */
         readonly redirect?: {
@@ -651,6 +665,10 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
          * Network protocol used to fetch the resource (e.g., 'http/1.1', 'h2')
          */
         readonly protocol?: string;
+        /**
+         * Content type of the fetched resource
+         */
+        readonly content_type?: string;
         /**
          * The provider for this resource
          */

@@ -26,6 +26,10 @@
     "decoded_body_size": 3599,
     "transfer_size": 3699,
     "render_blocking_status": "non-blocking",
+    "worker": {
+      "duration": 8000000,
+      "start": 2000000
+    },
     "download": {
       "duration": 545000,
       "start": 246035000

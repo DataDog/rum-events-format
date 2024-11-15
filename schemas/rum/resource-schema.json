@@ -93,6 +93,26 @@
               "enum": ["blocking", "non-blocking"],
               "readOnly": true
             },
+            "worker": {
+              "type": "object",
+              "description": "Worker phase properties",
+              "required": ["duration", "start"],
+              "properties": {
+                "duration": {
+                  "type": "integer",
+                  "description": "Duration in nanoseconds of the resource worker phase",
+                  "minimum": 0,
+                  "readOnly": true
+                },
+                "start": {
+                  "type": "integer",
+                  "description": "Duration in nanoseconds between start of the request and start of the worker phase",
+                  "minimum": 0,
+                  "readOnly": true
+                }
+              },
+              "readOnly": true
+            },
             "redirect": {
               "type": "object",
               "description": "Redirect phase properties",
@@ -216,6 +236,11 @@
             "protocol": {
               "type": "string",
               "description": "Network protocol used to fetch the resource (e.g., 'http/1.1', 'h2')",
+              "readOnly": true
+            },
+            "content_type": {
+              "type": "string",
+              "description": "Content type of the fetched resource",
               "readOnly": true
             },
             "provider": {
