@@ -666,10 +666,6 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
          */
         readonly protocol?: string;
         /**
-         * Content type of the fetched resource
-         */
-        readonly content_type?: string;
-        /**
          * The provider for this resource
          */
         readonly provider?: {
