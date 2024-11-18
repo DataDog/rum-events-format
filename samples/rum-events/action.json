@@ -42,6 +42,7 @@
         "width": 10,
         "height": 10
       },
+      "name_source": "custom_attribute",
       "position": {
         "x": 5,
         "y": 5

@@ -191,6 +191,18 @@
                       "readOnly": true
                     }
                   }
+                },
+                "name_source": {
+                  "type": "string",
+                  "description": "Action name computing source",
+                  "enum": [
+                    "custom_attribute",
+                    "mask_placeholder",
+                    "standard_attribute",
+                    "text_content",
+                    "mask_disallowed"
+                  ],
+                  "readOnly": false
                 }
               },
               "readOnly": true

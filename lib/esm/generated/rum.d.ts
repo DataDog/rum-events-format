@@ -141,6 +141,10 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
                 readonly height?: number;
                 [k: string]: unknown;
             };
+            /**
+             * Action name computing source
+             */
+            name_source?: 'custom_attribute' | 'mask_placeholder' | 'standard_attribute' | 'text_content' | 'mask_disallowed';
             [k: string]: unknown;
         };
         [k: string]: unknown;
