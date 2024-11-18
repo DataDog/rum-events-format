@@ -194,7 +194,7 @@
                 },
                 "name_source": {
                   "type": "string",
-                  "description": "Action name computing source",
+                  "description": "The strategy of how the auto click action name is computed",
                   "enum": [
                     "custom_attribute",
                     "mask_placeholder",
