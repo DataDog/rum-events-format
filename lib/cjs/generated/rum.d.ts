@@ -144,7 +144,7 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
             /**
              * Action name computing source
              */
-            name_source?: 'custom_attribute' | 'mask_placeholder' | 'standard_attribute' | 'text_content' | 'mask_disallowed';
+            name_source?: 'custom_attribute' | 'mask_placeholder' | 'standard_attribute' | 'text_content' | 'mask_disallowed' | 'blank';
             [k: string]: unknown;
         };
         [k: string]: unknown;

@@ -200,7 +200,8 @@
                     "mask_placeholder",
                     "standard_attribute",
                     "text_content",
-                    "mask_disallowed"
+                    "mask_disallowed",
+                    "blank"
                   ],
                   "readOnly": false
                 }
