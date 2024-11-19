@@ -141,6 +141,10 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
                 readonly height?: number;
                 [k: string]: unknown;
             };
+            /**
+             * The strategy of how the auto click action name is computed
+             */
+            name_source?: 'custom_attribute' | 'mask_placeholder' | 'standard_attribute' | 'text_content' | 'mask_disallowed' | 'blank';
             [k: string]: unknown;
         };
         [k: string]: unknown;
