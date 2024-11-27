@@ -373,6 +373,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
                 name: string;
                 [k: string]: unknown;
             }[];
+            /**
+             * Whether the SDK is initialised on the application's main or a secondary process
+             */
+            is_main_process?: boolean;
             [k: string]: unknown;
         };
         [k: string]: unknown;
