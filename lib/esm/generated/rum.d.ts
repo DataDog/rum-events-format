@@ -670,6 +670,10 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
          */
         readonly protocol?: string;
         /**
+         * Delivery type of the resource
+         */
+        readonly delivery_type?: 'cache' | 'navigational-prefetch' | 'other';
+        /**
          * The provider for this resource
          */
         readonly provider?: {
