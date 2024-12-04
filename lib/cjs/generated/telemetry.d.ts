@@ -487,6 +487,10 @@ export interface CommonTelemetryProperties {
         [k: string]: unknown;
     };
     /**
+     * The actual percentage of telemetry usage per event
+     */
+    effective_sample_rate?: number;
+    /**
      * Enabled experimental features
      */
     readonly experimental_features?: string[];
