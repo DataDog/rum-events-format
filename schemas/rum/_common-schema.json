@@ -123,6 +123,11 @@
           "type": "string",
           "description": "Email of the user",
           "readOnly": true
+        },
+        "anonymous_id": {
+          "type": "string",
+          "description": "Identifier of the user across sessions",
+          "readOnly": true
         }
       },
       "readOnly": true
