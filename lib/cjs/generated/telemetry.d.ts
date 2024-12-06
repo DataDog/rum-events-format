@@ -377,6 +377,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * Whether the SDK is initialised on the application's main or a secondary process
              */
             is_main_process?: boolean;
+            /**
+             * The list of events that include feature flags collection
+             */
+            collect_feature_flags_on?: ('view' | 'error' | 'vital')[];
             [k: string]: unknown;
         };
         [k: string]: unknown;
