@@ -134,9 +134,13 @@
                   "type": "boolean",
                   "description": "Whether a secure session cookie is used"
                 },
-                "allow_fallback_to_local_storage": {
-                  "type": "boolean",
-                  "description": "Whether it is allowed to use LocalStorage when cookies are not available"
+                "session_storage": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["cookie", "local-storage"]
+                  },
+                  "description": "Configure the storage strategy for sessions."
                 },
                 "store_contexts_across_pages": {
                   "type": "boolean",
