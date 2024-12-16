@@ -135,12 +135,9 @@
                   "description": "Whether a secure session cookie is used"
                 },
                 "session_storage": {
-                  "type": "array",
-                  "items": {
-                    "type": "string",
-                    "enum": ["cookie", "local-storage"]
-                  },
-                  "description": "Configure the storage strategy for sessions."
+                  "type": "string",
+                  "enum": ["local-storage", "cookie", "cookie-fallback-to-local-storage"],
+                  "description": "Configure the storage strategy for sessions. Possible values: 'local-storage', 'cookie', or 'cookie-fallback-to-local-storage'."
                 },
                 "store_contexts_across_pages": {
                   "type": "boolean",
