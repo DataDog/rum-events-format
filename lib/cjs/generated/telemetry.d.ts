@@ -381,6 +381,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * The list of events that include feature flags collection
              */
             collect_feature_flags_on?: ('view' | 'error' | 'vital')[];
+            /**
+             * Whether the anonymous users are tracked by extending cookies. Default to true
+             */
+            track_anonymous_user?: boolean;
             [k: string]: unknown;
         };
         [k: string]: unknown;
