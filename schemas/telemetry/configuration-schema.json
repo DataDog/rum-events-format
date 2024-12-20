@@ -419,8 +419,9 @@
                 },
                 "track_anonymous_user": {
                   "type": "boolean",
-                  "description": "Whether the anonymous users are tracked by extending cookies. Default to true",
-                  "readOnly": false
+                  "description": "Whether the anonymous users are tracked",
+                  "readOnly": false,
+                  "default": true
                 }
               }
             }

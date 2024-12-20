@@ -382,7 +382,7 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             collect_feature_flags_on?: ('view' | 'error' | 'vital')[];
             /**
-             * Whether the anonymous users are tracked by extending cookies. Default to true
+             * Whether the anonymous users are tracked
              */
             track_anonymous_user?: boolean;
             [k: string]: unknown;
