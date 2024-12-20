@@ -416,6 +416,12 @@
                     "enum": ["view", "error", "vital"]
                   },
                   "description": "The list of events that include feature flags collection"
+                },
+                "track_anonymous_user": {
+                  "type": "boolean",
+                  "description": "Whether the anonymous users are tracked",
+                  "readOnly": false,
+                  "default": true
                 }
               }
             }
