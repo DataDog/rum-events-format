@@ -1511,6 +1511,14 @@ export interface ViewPerformanceData {
          * CSS selector path of the first element (in document order) of the largest layout shift contributing to CLS
          */
         readonly target_selector?: string;
+        /**
+         * Bounding client rect of the element before the layout shift
+         */
+        previous_rect?: RumRect;
+        /**
+         * Bounding client rect of the element after the layout shift
+         */
+        current_rect?: RumRect;
         [k: string]: unknown;
     };
     /**
@@ -1573,5 +1581,27 @@ export interface ViewPerformanceData {
         readonly target_selector?: string;
         [k: string]: unknown;
     };
+    [k: string]: unknown;
+}
+/**
+ * Schema for DOMRect-like rectangles describing an element's bounding client rect
+ */
+export interface RumRect {
+    /**
+     * The x coordinate of the element's origin
+     */
+    readonly x: number;
+    /**
+     * The y coordinate of the element's origin
+     */
+    readonly y: number;
+    /**
+     * The element's width
+     */
+    readonly width: number;
+    /**
+     * The element's height
+     */
+    readonly height: number;
     [k: string]: unknown;
 }
