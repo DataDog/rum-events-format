@@ -99,5 +99,29 @@
   },
   "privacy": {
     "replay_level": "mask"
+  },
+  "performance": {
+    "cls": {
+      "score": 0.1,
+      "timestamp": 2000,
+      "target_selector": "#foo"
+    },
+    "fcp": {
+      "timestamp": 420725000
+    },
+    "fid": {
+      "duration": 20000000,
+      "timestamp": 20000000,
+      "target_selector": "#foo"
+    },
+    "inp": {
+      "duration": 20000000,
+      "timestamp": 20000000,
+      "target_selector": "#foo"
+    },
+    "lcp": {
+      "timestamp": 20000000,
+      "target_selector": "#foo"
+    }
   }
 }
