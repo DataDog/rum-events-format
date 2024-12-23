@@ -407,7 +407,7 @@ export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
 /**
  * Schema of features usage common across SDKs
  */
-export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | AddAction | AddError | SetGlobalContext | SetUser | AddFeatureFlagEvaluation;
+export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | AddAction | AddError | SetGlobalContext | SetUser | SetAccount | AddFeatureFlagEvaluation;
 /**
  * Schema of browser specific features usage
  */
@@ -590,6 +590,13 @@ export interface SetUser {
      * setUser, setUserProperty, setUserInfo APIs
      */
     feature: 'set-user';
+    [k: string]: unknown;
+}
+export interface SetAccount {
+    /**
+     * setAccount, setAccountProperty APIs
+     */
+    feature: 'set-account';
     [k: string]: unknown;
 }
 export interface AddFeatureFlagEvaluation {

@@ -1246,6 +1246,20 @@ export interface CommonProperties {
         [k: string]: unknown;
     };
     /**
+     * Account properties
+     */
+    readonly account?: {
+        /**
+         * Identifier of the account
+         */
+        readonly id: string;
+        /**
+         * Name of the account
+         */
+        readonly name?: string;
+        [k: string]: unknown;
+    };
+    /**
      * Device connectivity properties
      */
     connectivity?: {
