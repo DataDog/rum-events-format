@@ -29,6 +29,14 @@
           "description": "CSS selector path of the first element (in document order) of the largest layout shift contributing to CLS",
           "$comment": "Replaces the deprecated `view.cumulative_layout_shift_target_selector`",
           "readOnly": true
+        },
+        "previous_rect": {
+          "description": "Bounding client rect of the element before the layout shift",
+          "allOf": [{ "$ref": "_rect-schema.json" }]
+        },
+        "current_rect": {
+          "description": "Bounding client rect of the element after the layout shift",
+          "allOf": [{ "$ref": "_rect-schema.json" }]
         }
       },
       "readOnly": true
