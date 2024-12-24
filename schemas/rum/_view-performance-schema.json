@@ -8,7 +8,7 @@
     "cls": {
       "type": "object",
       "description": "Cumulative Layout Shift",
-      "required": ["score", "timestamp", "target_selector"],
+      "required": ["score"],
       "properties": {
         "score": {
           "type": "number",
@@ -51,7 +51,7 @@
     "fid": {
       "type": "object",
       "description": "First Input Delay",
-      "required": ["duration", "timestamp", "target_selector"],
+      "required": ["duration", "timestamp"],
       "properties": {
         "duration": {
           "type": "integer",
@@ -79,7 +79,7 @@
     "inp": {
       "type": "object",
       "description": "Interaction to Next Paint",
-      "required": ["duration", "timestamp", "target_selector"],
+      "required": ["duration"],
       "properties": {
         "duration": {
           "type": "integer",
@@ -107,7 +107,7 @@
     "lcp": {
       "type": "object",
       "description": "Largest Contentful Paint",
-      "required": ["timestamp", "target_selector"],
+      "required": ["timestamp"],
       "properties": {
         "timestamp": {
           "type": "integer",

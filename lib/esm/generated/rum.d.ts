@@ -1506,11 +1506,11 @@ export interface ViewPerformanceData {
         /**
          * Timestamp in ns of the largest layout shift contributing to CLS
          */
-        readonly timestamp: number;
+        readonly timestamp?: number;
         /**
          * CSS selector path of the first element (in document order) of the largest layout shift contributing to CLS
          */
-        readonly target_selector: string;
+        readonly target_selector?: string;
         [k: string]: unknown;
     };
     /**
@@ -1538,7 +1538,7 @@ export interface ViewPerformanceData {
         /**
          * CSS selector path of the first input target element
          */
-        readonly target_selector: string;
+        readonly target_selector?: string;
         [k: string]: unknown;
     };
     /**
@@ -1552,11 +1552,11 @@ export interface ViewPerformanceData {
         /**
          * Timestamp in ns of the start of the INP interaction
          */
-        readonly timestamp: number;
+        readonly timestamp?: number;
         /**
          * CSS selector path of the interacted element for the INP interaction
          */
-        readonly target_selector: string;
+        readonly target_selector?: string;
         [k: string]: unknown;
     };
     /**
@@ -1570,7 +1570,7 @@ export interface ViewPerformanceData {
         /**
          * CSS selector path of the largest contentful paint element
          */
-        readonly target_selector: string;
+        readonly target_selector?: string;
         [k: string]: unknown;
     };
     [k: string]: unknown;
