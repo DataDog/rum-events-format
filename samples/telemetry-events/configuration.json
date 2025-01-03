@@ -41,7 +41,7 @@
       "track_long_task": true,
       "use_cross_site_session_cookie": false,
       "use_secure_session_cookie": true,
-      "allow_fallback_to_local_storage": true,
+      "session_persistence": "cookie",
       "action_name_attribute": "foo",
       "use_allowed_tracing_origins": false,
       "default_privacy_level": "mask",
