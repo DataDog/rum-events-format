@@ -136,9 +136,9 @@
                 },
                 "allow_fallback_to_local_storage": {
                   "type": "boolean",
-                  "description": "Whether it is allowed to use LocalStorage when cookies are not available (deprecated in favor of session_storage)"
+                  "description": "Whether it is allowed to use LocalStorage when cookies are not available (deprecated in favor of session_persistence)"
                 },
-                "session_storage": {
+                "session_persistence": {
                   "type": "string",
                   "enum": ["local-storage", "cookie"],
                   "description": "Configure the storage strategy for persisting sessions"
