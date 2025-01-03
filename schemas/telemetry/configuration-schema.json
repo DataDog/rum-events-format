@@ -136,8 +136,8 @@
                 },
                 "session_storage": {
                   "type": "string",
-                  "enum": ["local-storage", "cookie", "cookie-fallback-to-local-storage"],
-                  "description": "Configure the storage strategy for sessions. Possible values: 'local-storage', 'cookie', or 'cookie-fallback-to-local-storage'."
+                  "enum": ["local-storage", "cookie"],
+                  "description": "Configure the storage strategy for persisting sessions"
                 },
                 "store_contexts_across_pages": {
                   "type": "boolean",
