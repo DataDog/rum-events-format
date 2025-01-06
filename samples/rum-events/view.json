@@ -104,7 +104,19 @@
     "cls": {
       "score": 0.1,
       "timestamp": 2000,
-      "target_selector": "#foo"
+      "target_selector": "#foo",
+      "previous_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "current_rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
     },
     "fcp": {
       "timestamp": 420725000
