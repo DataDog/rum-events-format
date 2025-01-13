@@ -973,6 +973,10 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
          * The JavaScript refresh rate for React Native
          */
         js_refresh_rate?: RumPerfMetric;
+        /**
+         * Performance data. (Web Vitals, etc.)
+         */
+        performance?: ViewPerformanceData;
         [k: string]: unknown;
     };
     /**
@@ -1085,10 +1089,6 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
         };
         [k: string]: unknown;
     };
-    /**
-     * Performance data. (Web Vitals, etc.)
-     */
-    performance?: ViewPerformanceData;
     [k: string]: unknown;
 };
 /**
