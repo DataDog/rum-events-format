@@ -418,9 +418,9 @@
                   "type": "array",
                   "items": {
                     "type": "string",
-                    "enum": ["view", "error", "vital", "resource", "action", "long_task"]
+                    "enum": ["vital", "resource", "action", "long_task"]
                   },
-                  "description": "The list of events that include feature flags collection"
+                  "description": "The list of events that include feature flags collection. The tracking is enabled by default on views and errors."
                 },
                 "track_anonymous_user": {
                   "type": "boolean",

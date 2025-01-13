@@ -382,9 +382,9 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             is_main_process?: boolean;
             /**
-             * The list of events that include feature flags collection
+             * The list of events that include feature flags collection. The tracking is enabled by default on views and errors.
              */
-            collect_feature_flags_on?: ('view' | 'error' | 'vital' | 'resource' | 'action' | 'long_task')[];
+            collect_feature_flags_on?: ('vital' | 'resource' | 'action' | 'long_task')[];
             /**
              * Whether the anonymous users are tracked
              */
