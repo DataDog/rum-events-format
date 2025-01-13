@@ -67,7 +67,7 @@
           "option_foo": "bar"
         }
       ],
-      "collect_feature_flags_on": ["error", "view", "vital"]
+      "collect_feature_flags_on": ["long_task", "resource", "vital"]
     }
   }
 }

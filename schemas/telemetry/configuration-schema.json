@@ -418,7 +418,7 @@
                   "type": "array",
                   "items": {
                     "type": "string",
-                    "enum": ["view", "error", "vital"]
+                    "enum": ["view", "error", "vital", "resource", "action", "long_task"]
                   },
                   "description": "The list of events that include feature flags collection"
                 },

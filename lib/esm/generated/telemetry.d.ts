@@ -384,7 +384,7 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
             /**
              * The list of events that include feature flags collection
              */
-            collect_feature_flags_on?: ('view' | 'error' | 'vital')[];
+            collect_feature_flags_on?: ('view' | 'error' | 'vital' | 'resource' | 'action' | 'long_task')[];
             /**
              * Whether the anonymous users are tracked
              */
