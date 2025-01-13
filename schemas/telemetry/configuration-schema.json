@@ -420,7 +420,7 @@
                     "type": "string",
                     "enum": ["vital", "resource", "action", "long_task"]
                   },
-                  "description": "The list of events that include feature flags collection. The tracking is enabled by default on views and errors."
+                  "description": "The list of events that include feature flags collection. The tracking is always enabled for views and errors."
                 },
                 "track_anonymous_user": {
                   "type": "boolean",
