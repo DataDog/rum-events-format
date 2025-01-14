@@ -56,7 +56,43 @@
     "in_foreground_periods": [
       { "start": 1345678, "duration": 67 },
       { "start": 1645678, "duration": 67 }
-    ]
+    ],
+    "performance": {
+      "cls": {
+        "score": 0.1,
+        "timestamp": 2000,
+        "target_selector": "#foo",
+        "previous_rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "current_rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "fcp": {
+        "timestamp": 420725000
+      },
+      "fid": {
+        "duration": 20000000,
+        "timestamp": 20000000,
+        "target_selector": "#foo"
+      },
+      "inp": {
+        "duration": 20000000,
+        "timestamp": 20000000,
+        "target_selector": "#foo"
+      },
+      "lcp": {
+        "timestamp": 20000000,
+        "target_selector": "#foo"
+      }
+    }
   },
   "_dd": {
     "document_version": 9,
@@ -99,41 +135,5 @@
   },
   "privacy": {
     "replay_level": "mask"
-  },
-  "performance": {
-    "cls": {
-      "score": 0.1,
-      "timestamp": 2000,
-      "target_selector": "#foo",
-      "previous_rect": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
-      },
-      "current_rect": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
-      }
-    },
-    "fcp": {
-      "timestamp": 420725000
-    },
-    "fid": {
-      "duration": 20000000,
-      "timestamp": 20000000,
-      "target_selector": "#foo"
-    },
-    "inp": {
-      "duration": 20000000,
-      "timestamp": 20000000,
-      "target_selector": "#foo"
-    },
-    "lcp": {
-      "timestamp": 20000000,
-      "target_selector": "#foo"
-    }
   }
 }
