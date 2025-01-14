@@ -414,13 +414,13 @@
                   "type": "boolean",
                   "description": "Whether the SDK is initialised on the application's main or a secondary process"
                 },
-                "collect_feature_flags_on": {
+                "track_feature_flags_for_events": {
                   "type": "array",
                   "items": {
                     "type": "string",
-                    "enum": ["view", "error", "vital"]
+                    "enum": ["vital", "resource", "action", "long_task"]
                   },
-                  "description": "The list of events that include feature flags collection"
+                  "description": "The list of events that include feature flags collection. The tracking is always enabled for views and errors."
                 },
                 "track_anonymous_user": {
                   "type": "boolean",
