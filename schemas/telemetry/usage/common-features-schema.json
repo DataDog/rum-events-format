@@ -45,6 +45,28 @@
     },
     {
       "required": ["feature"],
+      "title": "CreateReporter",
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "createReporter API",
+          "const": "create-reporter"
+        }
+      }
+    },
+    {
+      "required": ["feature"],
+      "title": "GetReporter",
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "getReporter API",
+          "const": "get-reporter"
+        }
+      }
+    },
+    {
+      "required": ["feature"],
       "title": "AddAction",
       "properties": {
         "feature": {
