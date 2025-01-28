@@ -129,6 +129,11 @@
           "description": "CSS selector path of the largest contentful paint element",
           "$comment": "Replaces the deprecated `view.largest_contentful_paint_target_selector`",
           "readOnly": true
+        },
+        "resource_url": {
+          "type": "string",
+          "description": "URL of the largest contentful paint element",
+          "readOnly": true
         }
       },
       "readOnly": true
