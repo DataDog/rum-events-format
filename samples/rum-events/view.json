@@ -90,7 +90,8 @@
       },
       "lcp": {
         "timestamp": 20000000,
-        "target_selector": "#foo"
+        "target_selector": "#foo",
+        "resource_url": "https://example.com/foo.jpg"
       }
     }
   },

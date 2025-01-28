@@ -1593,6 +1593,10 @@ export interface ViewPerformanceData {
          * CSS selector path of the largest contentful paint element
          */
         readonly target_selector?: string;
+        /**
+         * URL of the largest contentful paint element
+         */
+        readonly resource_url?: string;
         [k: string]: unknown;
     };
     [k: string]: unknown;
