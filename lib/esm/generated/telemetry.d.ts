@@ -415,7 +415,7 @@ export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
 /**
  * Schema of features usage common across SDKs
  */
-export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | AddAction | AddError | SetGlobalContext | SetUser | SetAccount | AddFeatureFlagEvaluation;
+export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | SetGlobalContext | SetUser | SetAccount | AddFeatureFlagEvaluation;
 /**
  * Schema of browser specific features usage
  */
@@ -570,6 +570,34 @@ export interface StartView {
      * startView API
      */
     feature: 'start-view';
+    [k: string]: unknown;
+}
+export interface SetViewContext {
+    /**
+     * setViewContext API
+     */
+    feature: 'set-view-context';
+    [k: string]: unknown;
+}
+export interface SetViewContextProperty {
+    /**
+     * setViewContextProperty API
+     */
+    feature: 'set-view-context-property';
+    [k: string]: unknown;
+}
+export interface SetViewName {
+    /**
+     * setViewName API
+     */
+    feature: 'set-view-name';
+    [k: string]: unknown;
+}
+export interface GetViewContext {
+    /**
+     * getViewContext API
+     */
+    feature: 'get-view-context';
     [k: string]: unknown;
 }
 export interface AddAction {
