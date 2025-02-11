@@ -1599,6 +1599,16 @@ export interface ViewPerformanceData {
         readonly resource_url?: string;
         [k: string]: unknown;
     };
+    /**
+     * First Build Complete (Flutter)
+     */
+    readonly fbc?: {
+        /**
+         * Timestamp in ns of all completed `build` methods after a route change.
+         */
+        readonly timestamp: number;
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 }
 /**

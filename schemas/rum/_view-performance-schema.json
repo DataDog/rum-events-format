@@ -137,6 +137,21 @@
         }
       },
       "readOnly": true
+    },
+    "fbc": {
+      "type": "object",
+      "description": "First Build Complete (Flutter)",
+      "required": ["timestamp"],
+      "properties": {
+        "timestamp": {
+          "type": "integer",
+          "description": "Timestamp in ns of all completed `build` methods after a route change.",
+          "$comment": "Calculated from the timing of a `postFrameCallback` after a route change.",
+          "minimum": 0,
+          "readOnly": true
+        }
+      },
+      "readOnly": true
     }
   }
 }
