@@ -1518,7 +1518,7 @@ export interface ViewPerformanceData {
          */
         readonly score: number;
         /**
-         * Timestamp in ns of the largest layout shift contributing to CLS
+         * The time of the largest layout shift contributing to CLS, in ns since view start.
          */
         readonly timestamp?: number;
         /**
@@ -1540,7 +1540,7 @@ export interface ViewPerformanceData {
      */
     readonly fcp?: {
         /**
-         * Timestamp in ns of the first rendering
+         * The time of the first rendering, in ns since view start.
          */
         readonly timestamp: number;
         [k: string]: unknown;
@@ -1554,7 +1554,7 @@ export interface ViewPerformanceData {
          */
         readonly duration: number;
         /**
-         * Timestamp in ns of the first input event
+         * Time of the first input event, in ns since view start.
          */
         readonly timestamp: number;
         /**
@@ -1572,7 +1572,7 @@ export interface ViewPerformanceData {
          */
         readonly duration: number;
         /**
-         * Timestamp in ns of the start of the INP interaction
+         * Time of the start of the INP interaction, in ns since view start.
          */
         readonly timestamp?: number;
         /**
@@ -1586,7 +1586,7 @@ export interface ViewPerformanceData {
      */
     readonly lcp?: {
         /**
-         * Timestamp in ns of the largest contentful paint
+         * Time of the largest contentful paint, in ns since view start.
          */
         readonly timestamp: number;
         /**
@@ -1604,7 +1604,7 @@ export interface ViewPerformanceData {
      */
     readonly fbc?: {
         /**
-         * Timestamp in ns of all completed `build` methods after a route change.
+         * Time of all completed `build` methods after a route change, in ns since view start.
          */
         readonly timestamp: number;
         [k: string]: unknown;
