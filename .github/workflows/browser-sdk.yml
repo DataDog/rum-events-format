@@ -7,17 +7,18 @@ jobs:
   browser-sdk-test:
     strategy:
       matrix:
-        test_type: [unit] # e2e should be added back, see RUMF-1551
+        test_type: [unit, 'e2e:ci']
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           repository: 'DataDog/browser-sdk'
+          ref: 'thomas.lebeau/rum-event-format-e2e'
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
         run: yarn
