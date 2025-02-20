@@ -1596,7 +1596,7 @@ export interface ViewPerformanceData {
         /**
          * URL of the largest contentful paint element
          */
-        readonly resource_url?: string;
+        resource_url?: string;
         [k: string]: unknown;
     };
     /**
