@@ -7,7 +7,7 @@ jobs:
   browser-sdk-test:
     strategy:
       matrix:
-        test_type: [unit, 'e2e:ci']
+        test_type: [unit, e2e]
 
     runs-on: ubuntu-latest
     steps:
@@ -28,4 +28,7 @@ jobs:
           git checkout ${{ github.sha }}
 
       - name: Run ${{matrix.test_type}} tests
-        run: yarn test:${{matrix.test_type}}
+        run: eval $command_${{matrix.test_type}}
+        env:
+          command_unit: 'yarn test:unit'
+          command_e2e: 'yarn test:e2e:ci --workers "50%"'
