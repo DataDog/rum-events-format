@@ -7,17 +7,17 @@ jobs:
   browser-sdk-test:
     strategy:
       matrix:
-        test_type: [unit] # e2e should be added back, see RUMF-1551
+        test_type: [unit, e2e]
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           repository: 'DataDog/browser-sdk'
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a
         with:
-          node-version: 20
+          node-version: 23
 
       - name: Install dependencies
         run: yarn
@@ -28,4 +28,7 @@ jobs:
           git checkout ${{ github.sha }}
 
       - name: Run ${{matrix.test_type}} tests
-        run: yarn test:${{matrix.test_type}}
+        run: eval $command_${{matrix.test_type}}
+        env:
+          command_unit: 'yarn test:unit'
+          command_e2e: 'yarn test:e2e:ci --workers 10'
