@@ -1116,9 +1116,9 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
          */
         readonly name?: string;
         /**
-         * Details of the vital. It can be used as a secondary identifier (URL, React component name...)
+         * Description of the vital. It can be used as a secondary identifier (URL, React component name...)
          */
-        readonly details?: string;
+        readonly description?: string;
         /**
          * Duration of the vital in nanoseconds
          */
@@ -1596,7 +1596,7 @@ export interface ViewPerformanceData {
         /**
          * URL of the largest contentful paint element
          */
-        readonly resource_url?: string;
+        resource_url?: string;
         [k: string]: unknown;
     };
     /**

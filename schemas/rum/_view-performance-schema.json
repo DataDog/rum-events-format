@@ -133,7 +133,7 @@
         "resource_url": {
           "type": "string",
           "description": "URL of the largest contentful paint element",
-          "readOnly": true
+          "readOnly": false
         }
       },
       "readOnly": true
