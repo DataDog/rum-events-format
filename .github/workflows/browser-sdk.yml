@@ -31,4 +31,4 @@ jobs:
         run: eval $command_${{matrix.test_type}}
         env:
           command_unit: 'yarn test:unit'
-          command_e2e: 'yarn test:e2e:ci --workers "50%"'
+          command_e2e: 'yarn test:e2e:ci --workers 10'
