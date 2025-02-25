@@ -73,7 +73,8 @@
           "y": 0,
           "width": 0,
           "height": 0
-        }
+        },
+        "device_pixel_ratio": 1.5
       },
       "fcp": {
         "timestamp": 420725000

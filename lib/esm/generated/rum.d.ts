@@ -1533,6 +1533,10 @@ export interface ViewPerformanceData {
          * Bounding client rect of the element after the layout shift
          */
         current_rect?: RumRect;
+        /**
+         * Pixel ratio of the device where the layout shift was reported
+         */
+        readonly device_pixel_ratio?: number;
         [k: string]: unknown;
     };
     /**
