@@ -104,6 +104,9 @@
         "start": 1345678
       }
     ],
+    "cls": {
+      "device_pixel_ratio": 2
+    },
     "configuration": {
       "session_sample_rate": 12.45,
       "session_replay_sample_rate": 100,
