@@ -1050,6 +1050,16 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
             [k: string]: unknown;
         };
         /**
+         * Additional information of the reported Cumulative Layout Shift
+         */
+        readonly cls?: {
+            /**
+             * Pixel ratio of the device where the layout shift was reported
+             */
+            readonly device_pixel_ratio?: number;
+            [k: string]: unknown;
+        };
+        /**
          * Subset of the SDK configuration options in use during its execution
          */
         readonly configuration?: {
