@@ -264,6 +264,31 @@
               },
               "readOnly": true
             },
+            "slow_frames": {
+              "type": "array",
+              "description": "List of slow frames during the view’s lifetime",
+              "items": {
+                "type": "object",
+                "description": "Properties of the slow frames",
+                "required": ["start", "duration"],
+                "properties": {
+                  "start": {
+                    "type": "integer",
+                    "description": "Duration in ns between start of the view and the start of the slow frame",
+                    "minimum": 0,
+                    "readOnly": true
+                  },
+                  "duration": {
+                    "type": "integer",
+                    "description": "Duration in ns of the slow frame",
+                    "minimum": 0,
+                    "readOnly": true
+                  }
+                },
+                "readOnly": true
+              },
+              "readOnly": true
+            },
             "resource": {
               "type": "object",
               "description": "Properties of the resources of the view",
@@ -345,6 +370,16 @@
             "refresh_rate_min": {
               "type": "number",
               "description": "Minimum refresh rate during the view’s lifetime (in frames per second)",
+              "readOnly": true
+            },
+            "slow_frames_rate": {
+              "type": "number",
+              "description": "Rate of slow frames during the view’s lifetime (in milliseconds per second)",
+              "readOnly": true
+            },
+            "freeze_rate": {
+              "type": "number",
+              "description": "Rate of freezes during the view’s lifetime (in seconds per hour)",
               "readOnly": true
             },
             "flutter_build_time": {
