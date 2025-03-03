@@ -463,6 +463,18 @@
                 }
               }
             },
+            "cls": {
+              "type": "object",
+              "description": "Additional information of the reported Cumulative Layout Shift",
+              "readOnly": true,
+              "properties": {
+                "device_pixel_ratio": {
+                  "type": "number",
+                  "description": "Pixel ratio of the device where the layout shift was reported",
+                  "readOnly": true
+                }
+              }
+            },
             "configuration": {
               "type": "object",
               "description": "Subset of the SDK configuration options in use during its execution",
