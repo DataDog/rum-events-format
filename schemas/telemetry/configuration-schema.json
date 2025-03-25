@@ -167,7 +167,7 @@
                   "type": "array",
                   "items": {
                     "type": "string",
-                    "enum": ["datadog", "b3", "b3multi", "tracecontext"]
+                    "enum": ["datadog", "b3", "b3multi", "tracecontext", "baggage"]
                   },
                   "description": "A list of selected tracing propagators"
                 },
