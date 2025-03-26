@@ -423,7 +423,7 @@ export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
 /**
  * Schema of features usage common across SDKs
  */
-export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | SetGlobalContext | SetUser | SetAccount | AddFeatureFlagEvaluation;
+export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation;
 /**
  * Schema of browser specific features usage
  */
@@ -624,16 +624,58 @@ export interface AddError {
 }
 export interface SetGlobalContext {
     /**
-     * setGlobalContext, setGlobalContextProperty, addAttribute APIs
+     * setGlobalContext, addAttribute APIs
      */
     feature: 'set-global-context';
     [k: string]: unknown;
 }
+export interface SetGlobalContextProperty {
+    /**
+     * setGlobalContextProperty API
+     */
+    feature: 'set-global-context-property';
+    [k: string]: unknown;
+}
+export interface RemoveGlobalContextProperty {
+    /**
+     * removeGlobalContextProperty API
+     */
+    feature: 'remove-global-context-property';
+    [k: string]: unknown;
+}
+export interface ClearGlobalContext {
+    /**
+     * clearGlobalContext API
+     */
+    feature: 'clear-global-context';
+    [k: string]: unknown;
+}
 export interface SetUser {
     /**
-     * setUser, setUserProperty, setUserInfo APIs
+     * setUser, setUserInfo APIs
      */
     feature: 'set-user';
+    [k: string]: unknown;
+}
+export interface SetUserProperty {
+    /**
+     * setUserProperty API
+     */
+    feature: 'set-user-property';
+    [k: string]: unknown;
+}
+export interface RemoveUserProperty {
+    /**
+     * removeUserProperty API
+     */
+    feature: 'remove-user-property';
+    [k: string]: unknown;
+}
+export interface ClearUser {
+    /**
+     * clearUser API
+     */
+    feature: 'clear-user';
     [k: string]: unknown;
 }
 export interface SetAccount {
@@ -641,6 +683,27 @@ export interface SetAccount {
      * setAccount, setAccountProperty APIs
      */
     feature: 'set-account';
+    [k: string]: unknown;
+}
+export interface SetAccountProperty {
+    /**
+     * setAccountProperty API
+     */
+    feature: 'set-account-property';
+    [k: string]: unknown;
+}
+export interface RemoveAccountProperty {
+    /**
+     * removeAccountProperty API
+     */
+    feature: 'remove-account-property';
+    [k: string]: unknown;
+}
+export interface ClearAccount {
+    /**
+     * clearAccount API
+     */
+    feature: 'clear-account';
     [k: string]: unknown;
 }
 export interface AddFeatureFlagEvaluation {
