@@ -111,6 +111,17 @@
     },
     {
       "required": ["feature"],
+      "title": "GetGlobalContext",
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "getGlobalContext API",
+          "const": "get-global-context"
+        }
+      }
+    },
+    {
+      "required": ["feature"],
       "title": "SetGlobalContext",
       "properties": {
         "feature": {
@@ -155,6 +166,17 @@
     },
     {
       "required": ["feature"],
+      "title": "GetUser",
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "getUser API",
+          "const": "get-user"
+        }
+      }
+    },
+    {
+      "required": ["feature"],
       "title": "SetUser",
       "properties": {
         "feature": {
@@ -194,6 +216,17 @@
           "type": "string",
           "description": "clearUser API",
           "const": "clear-user"
+        }
+      }
+    },
+    {
+      "required": ["feature"],
+      "title": "GetAccount",
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "getAccount API",
+          "const": "get-account"
         }
       }
     },

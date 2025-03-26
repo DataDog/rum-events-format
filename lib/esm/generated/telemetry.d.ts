@@ -423,7 +423,7 @@ export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
 /**
  * Schema of features usage common across SDKs
  */
-export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation;
+export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation;
 /**
  * Schema of browser specific features usage
  */
@@ -622,6 +622,13 @@ export interface AddError {
     feature: 'add-error';
     [k: string]: unknown;
 }
+export interface GetGlobalContext {
+    /**
+     * getGlobalContext API
+     */
+    feature: 'get-global-context';
+    [k: string]: unknown;
+}
 export interface SetGlobalContext {
     /**
      * setGlobalContext, addAttribute APIs
@@ -650,6 +657,13 @@ export interface ClearGlobalContext {
     feature: 'clear-global-context';
     [k: string]: unknown;
 }
+export interface GetUser {
+    /**
+     * getUser API
+     */
+    feature: 'get-user';
+    [k: string]: unknown;
+}
 export interface SetUser {
     /**
      * setUser, setUserInfo APIs
@@ -676,6 +690,13 @@ export interface ClearUser {
      * clearUser API
      */
     feature: 'clear-user';
+    [k: string]: unknown;
+}
+export interface GetAccount {
+    /**
+     * getAccount API
+     */
+    feature: 'get-account';
     [k: string]: unknown;
 }
 export interface SetAccount {
