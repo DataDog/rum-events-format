@@ -252,6 +252,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             forward_errors_to_logs?: boolean;
             /**
+             * The number of displays available to the device
+             */
+            number_of_displays?: number;
+            /**
              * The console.* tracked
              */
             forward_console_logs?: string[] | 'all';
