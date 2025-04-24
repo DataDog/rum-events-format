@@ -904,7 +904,7 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
             [k: string]: unknown;
         };
         /**
-         * List of slow frames during the view’s lifetime
+         * List of slow frames during the view's lifetime
          */
         readonly slow_frames?: {
             /**
@@ -960,27 +960,27 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
          */
         readonly memory_max?: number;
         /**
-         * Total number of cpu ticks during the view’s lifetime
+         * Total number of cpu ticks during the view's lifetime
          */
         readonly cpu_ticks_count?: number;
         /**
-         * Average number of cpu ticks per second during the view’s lifetime
+         * Average number of cpu ticks per second during the view's lifetime
          */
         readonly cpu_ticks_per_second?: number;
         /**
-         * Average refresh rate during the view’s lifetime (in frames per second)
+         * Average refresh rate during the view's lifetime (in frames per second)
          */
         readonly refresh_rate_average?: number;
         /**
-         * Minimum refresh rate during the view’s lifetime (in frames per second)
+         * Minimum refresh rate during the view's lifetime (in frames per second)
          */
         readonly refresh_rate_min?: number;
         /**
-         * Rate of slow frames during the view’s lifetime (in milliseconds per second)
+         * Rate of slow frames during the view's lifetime (in milliseconds per second)
          */
         readonly slow_frames_rate?: number;
         /**
-         * Rate of freezes during the view’s lifetime (in seconds per hour)
+         * Rate of freezes during the view's lifetime (in seconds per hour)
          */
         readonly freeze_rate?: number;
         /**
@@ -999,6 +999,10 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
          * Performance data. (Web Vitals, etc.)
          */
         performance?: ViewPerformanceData;
+        /**
+         * Accessibility properties of the view
+         */
+        accessibility?: ViewAccessibilityProperties;
         [k: string]: unknown;
     };
     /**
@@ -1663,5 +1667,91 @@ export interface RumRect {
      * The element's height
      */
     readonly height: number;
+    [k: string]: unknown;
+}
+/**
+ * Accessibility properties of a view
+ */
+export interface ViewAccessibilityProperties {
+    /**
+     * Indicates whether the device display is currently using grayscale mode.
+     */
+    readonly is_grayscale_enabled?: boolean;
+    /**
+     * Indicates whether the system-wide color inversion setting is enabled.
+     */
+    readonly is_invert_colors_enabled?: boolean;
+    /**
+     * Indicates whether the system-wide increase contrast setting is enabled.
+     */
+    readonly is_increase_contrast_enabled?: boolean;
+    /**
+     * Indicates whether the system should differentiate interface elements without relying solely on color.
+     */
+    readonly should_differentiate_without_color?: boolean;
+    /**
+     * Indicates whether the system-wide button shapes setting is enabled.
+     */
+    readonly is_button_shapes_enabled?: boolean;
+    /**
+     * Indicates whether on/off switch labels are enabled in the system settings.
+     */
+    readonly is_on_off_switch_labels_enabled?: boolean;
+    /**
+     * Indicates whether the system-wide bold text accessibility setting is enabled.
+     */
+    readonly is_bold_text_enabled?: boolean;
+    /**
+     * Indicates whether the system-wide reduce transparency setting is enabled.
+     */
+    readonly has_reduce_transparency_enabled?: boolean;
+    /**
+     * Indicates whether the system-wide reduce motion setting is enabled.
+     */
+    readonly has_reduce_motion_enabled?: boolean;
+    /**
+     * Indicates whether the user prefers reduced animations or cross-fade transitions.
+     */
+    readonly has_reduced_animations_enabled?: boolean;
+    /**
+     * Indicates whether a screen reader is currently active.
+     */
+    readonly is_screen_reader_enabled?: boolean;
+    /**
+     * Indicates whether the Speak Screen feature is enabled.
+     */
+    readonly is_speak_screen_enabled?: boolean;
+    /**
+     * Indicates whether the text-to-speech selection feature is enabled.
+     */
+    readonly is_speak_selection_enabled?: boolean;
+    /**
+     * Indicates whether an alternative input method like Switch Control or Switch Access is currently enabled.
+     */
+    readonly is_assistive_switch_enabled?: boolean;
+    /**
+     * Indicates whether the system-wide AssistiveTouch feature is currently enabled.
+     */
+    readonly is_assistive_touch_enabled?: boolean;
+    /**
+     * Indicates whether the Shake to Undo feature is enabled.
+     */
+    readonly is_shake_to_undo_enabled?: boolean;
+    /**
+     * Indicates whether closed captioning is enabled for media playback.
+     */
+    readonly is_closed_captioning_enabled?: boolean;
+    /**
+     * Indicates whether the system-wide mono audio setting is enabled.
+     */
+    readonly is_mono_audio_enabled?: boolean;
+    /**
+     * Indicates whether the video autoplay setting is enabled in the system or application.
+     */
+    readonly is_video_autoplay_enabled?: boolean;
+    /**
+     * Indicates whether the device is currently locked to a single app through Guided Access or Screen Pinning.
+     */
+    readonly is_single_app_mode_enabled?: boolean;
     [k: string]: unknown;
 }
