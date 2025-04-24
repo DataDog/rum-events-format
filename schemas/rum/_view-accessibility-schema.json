@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/_view-accessibility-schema.json",
+  "title": "ViewAccessibilityProperties",
+  "type": "object",
+  "description": "Accessibility properties of a view",
+  "readOnly": true,
+  "properties": {
+    "is_grayscale_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the device display is currently using grayscale mode.",
+      "readOnly": true
+    },
+    "is_invert_colors_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the system-wide color inversion setting is enabled.",
+      "readOnly": true
+    },
+    "is_increase_contrast_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the system-wide increase contrast setting is enabled.",
+      "readOnly": true
+    },
+    "should_differentiate_without_color": {
+      "type": "boolean",
+      "description": "Indicates whether the system should differentiate interface elements without relying solely on color.",
+      "readOnly": true
+    },
+    "is_button_shapes_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the system-wide button shapes setting is enabled.",
+      "readOnly": true
+    },
+    "is_on_off_switch_labels_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether on/off switch labels are enabled in the system settings.",
+      "readOnly": true
+    },
+    "is_bold_text_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the system-wide bold text accessibility setting is enabled.",
+      "readOnly": true
+    },
+    "has_reduce_transparency_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the system-wide reduce transparency setting is enabled.",
+      "readOnly": true
+    },
+    "has_reduce_motion_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the system-wide reduce motion setting is enabled.",
+      "readOnly": true
+    },
+    "has_reduced_animations_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the user prefers reduced animations or cross-fade transitions.",
+      "readOnly": true
+    },
+    "is_screen_reader_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether a screen reader is currently active.",
+      "readOnly": true
+    },
+    "is_speak_screen_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the Speak Screen feature is enabled.",
+      "readOnly": true
+    },
+    "is_speak_selection_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the text-to-speech selection feature is enabled.",
+      "readOnly": true
+    },
+    "is_assistive_switch_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether an alternative input method like Switch Control or Switch Access is currently enabled.",
+      "readOnly": true
+    },
+    "is_assistive_touch_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the system-wide AssistiveTouch feature is currently enabled.",
+      "readOnly": true
+    },
+    "is_shake_to_undo_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the Shake to Undo feature is enabled.",
+      "readOnly": true
+    },
+    "is_closed_captioning_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether closed captioning is enabled for media playback.",
+      "readOnly": true
+    },
+    "is_mono_audio_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the system-wide mono audio setting is enabled.",
+      "readOnly": true
+    },
+    "is_video_autoplay_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the video autoplay setting is enabled in the system or application.",
+      "readOnly": true
+    },
+    "is_single_app_mode_enabled": {
+      "type": "boolean",
+      "description": "Indicates whether the device is currently locked to a single app through Guided Access or Screen Pinning.",
+      "readOnly": true
+    }
+  }
+}

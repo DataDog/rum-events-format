@@ -266,7 +266,7 @@
             },
             "slow_frames": {
               "type": "array",
-              "description": "List of slow frames during the view’s lifetime",
+              "description": "List of slow frames during the view's lifetime",
               "items": {
                 "type": "object",
                 "description": "Properties of the slow frames",
@@ -354,32 +354,32 @@
             },
             "cpu_ticks_count": {
               "type": "number",
-              "description": "Total number of cpu ticks during the view’s lifetime",
+              "description": "Total number of cpu ticks during the view's lifetime",
               "readOnly": true
             },
             "cpu_ticks_per_second": {
               "type": "number",
-              "description": "Average number of cpu ticks per second during the view’s lifetime",
+              "description": "Average number of cpu ticks per second during the view's lifetime",
               "readOnly": true
             },
             "refresh_rate_average": {
               "type": "number",
-              "description": "Average refresh rate during the view’s lifetime (in frames per second)",
+              "description": "Average refresh rate during the view's lifetime (in frames per second)",
               "readOnly": true
             },
             "refresh_rate_min": {
               "type": "number",
-              "description": "Minimum refresh rate during the view’s lifetime (in frames per second)",
+              "description": "Minimum refresh rate during the view's lifetime (in frames per second)",
               "readOnly": true
             },
             "slow_frames_rate": {
               "type": "number",
-              "description": "Rate of slow frames during the view’s lifetime (in milliseconds per second)",
+              "description": "Rate of slow frames during the view's lifetime (in milliseconds per second)",
               "readOnly": true
             },
             "freeze_rate": {
               "type": "number",
-              "description": "Rate of freezes during the view’s lifetime (in seconds per hour)",
+              "description": "Rate of freezes during the view's lifetime (in seconds per hour)",
               "readOnly": true
             },
             "flutter_build_time": {
@@ -397,6 +397,10 @@
             "performance": {
               "description": "Performance data. (Web Vitals, etc.)",
               "allOf": [{ "$ref": "_view-performance-schema.json" }]
+            },
+            "accessibility": {
+              "description": "Accessibility properties of the view",
+              "allOf": [{ "$ref": "_view-accessibility-schema.json" }]
             }
           },
           "readOnly": true
