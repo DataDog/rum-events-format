@@ -442,7 +442,9 @@
                 },
                 "use_allowed_tracking_origins": {
                   "type": "boolean",
-                  "description": "Whether a list of allowed origins is used to control SDK execution in browser extension contexts. When enabled, the SDK will check if the current origin matches the allowed origins list before running."
+                  "description": "Whether a list of allowed origins is used to control SDK execution in browser extension contexts. When enabled, the SDK will check if the current origin matches the allowed origins list before running.",
+                  "readOnly": false,
+                  "default": false
                 }
               }
             }
