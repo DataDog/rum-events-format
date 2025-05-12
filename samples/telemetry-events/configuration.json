@@ -50,6 +50,7 @@
       "touch_privacy_level": "hide",
       "enable_privacy_for_action_name": false,
       "use_excluded_activity_urls": false,
+      "use_allowed_tracking_origins": false,
       "track_frustrations": true,
       "track_views_manually": true,
       "track_interactions": true,
