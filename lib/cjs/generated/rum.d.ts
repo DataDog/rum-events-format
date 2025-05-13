@@ -999,6 +999,10 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
          * Performance data. (Web Vitals, etc.)
          */
         performance?: ViewPerformanceData;
+        /**
+         * Accessibility properties of the view
+         */
+        accessibility?: ViewAccessibilityProperties;
         [k: string]: unknown;
     };
     /**
@@ -1663,5 +1667,19 @@ export interface RumRect {
      * The element's height
      */
     readonly height: number;
+    [k: string]: unknown;
+}
+/**
+ * Compact representation of accessibility features for a view
+ */
+export interface ViewAccessibilityProperties {
+    /**
+     * User’s preferred text scale relative to the default system size.
+     */
+    readonly text_size?: string;
+    /**
+     * Base64-encoded 64-bit mask representing enabled accessibility features.
+     */
+    readonly features?: string;
     [k: string]: unknown;
 }
