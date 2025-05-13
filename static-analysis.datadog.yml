@@ -1,0 +1,8 @@
+rulesets:
+  - typescript-best-practices:
+    rules:
+      # We have our own conventions about naming and following this rule advices would break
+      # consistency.
+      boolean-prop-naming:
+        ignore:
+          - '**'
