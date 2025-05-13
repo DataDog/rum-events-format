@@ -1,0 +1,3 @@
+rulesets:
+ignore:
+  - 'lib/esm/generated/**' # disable static analysis
