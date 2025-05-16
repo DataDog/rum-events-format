@@ -510,6 +510,11 @@
                 }
               }
             },
+            "hidden_while_loading": {
+              "type": "boolean",
+              "description": "Whether the view was hidden anytime during loading",
+              "readOnly": true
+            },
             "configuration": {
               "type": "object",
               "description": "Subset of the SDK configuration options in use during its execution",

@@ -1082,6 +1082,10 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
             [k: string]: unknown;
         };
         /**
+         * Whether the view was hidden anytime during loading
+         */
+        readonly hidden_while_loading?: boolean;
+        /**
          * Subset of the SDK configuration options in use during its execution
          */
         readonly configuration?: {
