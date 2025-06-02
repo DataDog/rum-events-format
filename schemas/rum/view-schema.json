@@ -397,6 +397,23 @@
             "performance": {
               "description": "Performance data. (Web Vitals, etc.)",
               "allOf": [{ "$ref": "_view-performance-schema.json" }]
+            },
+            "locale": {
+              "type": "string",
+              "description": "Locale of the user at the time of the view",
+              "readOnly": true
+            },
+            "locales": {
+              "type": "array",
+              "description": "Locale of the user at the time of the view",
+              "items": {
+                "type": "string"
+              }
+            },
+            "timezone": {
+              "type": "string",
+              "description": "Timezone of the user at the time of the view",
+              "readOnly": true
             }
           },
           "readOnly": true
