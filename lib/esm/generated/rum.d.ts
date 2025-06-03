@@ -999,6 +999,18 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
          * Performance data. (Web Vitals, etc.)
          */
         performance?: ViewPerformanceData;
+        /**
+         * Locale of the user at the time of the view
+         */
+        readonly locale?: string;
+        /**
+         * Locale of the user at the time of the view
+         */
+        locales?: string[];
+        /**
+         * Timezone of the user at the time of the view
+         */
+        readonly timezone?: string;
         [k: string]: unknown;
     };
     /**
