@@ -16,6 +16,9 @@
       "$ref": "_view-container-schema.json"
     },
     {
+      "$ref": "_profiling-schema.json"
+    },
+    {
       "required": ["type", "long_task"],
       "properties": {
         "type": {

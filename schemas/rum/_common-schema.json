@@ -371,6 +371,13 @@
               "minimum": 0,
               "maximum": 100,
               "readOnly": true
+            },
+            "profiling_sample_rate": {
+              "type": "number",
+              "description": "The percentage of views profiled",
+              "minimum": 0,
+              "maximum": 100,
+              "readOnly": true
             }
           }
         },

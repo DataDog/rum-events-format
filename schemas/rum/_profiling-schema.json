@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/_profiling-schema.json",
+  "title": "ProfilingSchema",
+  "type": "object",
+  "description": "Profiling schema for the RUM Profiler",
+  "properties": {
+    "status": {
+      "type": "string",
+      "description": "Used to track the status of the RUM Profiler.\n\nThey are defined in order of when they can happen, from the moment the SDK is initialized to the moment the Profiler is actually running.\n\n- `not-available-in-slim-bundle`: The Profiler is not available in the slim bundle. Use the normal bundle to use the Profiler.\n- `initializing`: The Profiler is initializing (i.e., when the SDK just started). This is the initial status.\n- `missing-feature`: Missing `profiling` value in the `enableExperimentalFeatures` options.\n- `not-sampled`: The view was not sampled (i.e., when the sample rate is lower than 100%, there is a chance the view won't be profiled).\n- `not-supported-by-browser`: The browser does not support the Profiler (i.e., `window.Profiler` is not available).\n- `failed-to-lazy-load`: The Profiler script failed to be loaded by the browser (may be a connection issue or the chunk was not found).\n- `failed-to-start`: The Profiler failed to start (most probable cause is when the web server did not return the `Document-Policy: js-profiling` HTTP response header).\n- `running`: The Profiler is running.\n- `stopped`: The Profiler is stopped.",
+      "enum": [
+        "not-available-in-slim-bundle",
+        "initializing",
+        "missing-feature",
+        "not-sampled",
+        "not-supported-by-browser",
+        "failed-to-lazy-load",
+        "failed-to-start",
+        "running",
+        "stopped"
+      ],
+      "readOnly": true
+    }
+  }
+}
