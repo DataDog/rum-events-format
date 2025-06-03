@@ -999,18 +999,6 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
          * Performance data. (Web Vitals, etc.)
          */
         performance?: ViewPerformanceData;
-        /**
-         * Locale of the user at the time of the view
-         */
-        readonly locale?: string;
-        /**
-         * Locale of the user at the time of the view
-         */
-        locales?: string[];
-        /**
-         * Timezone of the user at the time of the view
-         */
-        readonly timezone?: string;
         [k: string]: unknown;
     };
     /**
@@ -1131,6 +1119,24 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
             readonly max_scroll_height_time: number;
             [k: string]: unknown;
         };
+        [k: string]: unknown;
+    };
+    /**
+     * Device properties
+     */
+    readonly device?: {
+        /**
+         * The user’s current locale as a language tag combining language and region, e.g. 'en-US'.
+         */
+        readonly current_locale?: string;
+        /**
+         * Ordered list of the user’s preferred system languages as IETF language tags.
+         */
+        readonly locales?: unknown[];
+        /**
+         * The device’s current time zone identifier, e.g. 'Europe/Berlin'.
+         */
+        readonly time_zone?: string;
         [k: string]: unknown;
     };
     [k: string]: unknown;
