@@ -93,7 +93,10 @@
         "target_selector": "#foo",
         "resource_url": "https://example.com/foo.jpg"
       }
-    }
+    },
+    "locale": "en-US",
+    "locales": ["en-US", "fr-FR"],
+    "timezone": "Europe/Paris"
   },
   "_dd": {
     "document_version": 9,
