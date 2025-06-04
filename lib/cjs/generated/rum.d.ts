@@ -507,6 +507,10 @@ export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties 
          * Whether the long task should be discarded or indexed
          */
         readonly discarded?: boolean;
+        /**
+         * Profiling context
+         */
+        profiling?: ProfilingInternalContextSchema;
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -1091,6 +1095,10 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
             readonly start_session_replay_recording_manually?: boolean;
             [k: string]: unknown;
         };
+        /**
+         * Profiling context
+         */
+        profiling?: ProfilingInternalContextSchema;
         [k: string]: unknown;
     };
     /**
@@ -1457,6 +1465,10 @@ export interface CommonProperties {
              * The percentage of sessions with RUM & Session Replay pricing tracked
              */
             readonly session_replay_sample_rate?: number;
+            /**
+             * The percentage of views profiled
+             */
+            readonly profiling_sample_rate?: number;
             [k: string]: unknown;
         };
         /**
@@ -1513,6 +1525,28 @@ export interface ActionChildProperties {
         readonly id: string | string[];
         [k: string]: unknown;
     };
+    [k: string]: unknown;
+}
+/**
+ * RUM Profiler Internal Context schema
+ */
+export interface ProfilingInternalContextSchema {
+    /**
+     * Used to track the status of the RUM Profiler.
+     *
+     * They are defined in order of when they can happen, from the moment the SDK is initialized to the moment the Profiler is actually running.
+     *
+     * - `not-available-in-slim-bundle`: The Profiler is not available in the slim bundle. Use the normal bundle to use the Profiler.
+     * - `initializing`: The Profiler is initializing (i.e., when the SDK just started). This is the initial status.
+     * - `missing-feature`: Missing `profiling` value in the `enableExperimentalFeatures` options.
+     * - `not-sampled`: The view was not sampled (i.e., when the sample rate is lower than 100%, there is a chance the view won't be profiled).
+     * - `not-supported-by-browser`: The browser does not support the Profiler (i.e., `window.Profiler` is not available).
+     * - `failed-to-lazy-load`: The Profiler script failed to be loaded by the browser (may be a connection issue or the chunk was not found).
+     * - `failed-to-start`: The Profiler failed to start (most probable cause is when the web server did not return the `Document-Policy: js-profiling` HTTP response header).
+     * - `running`: The Profiler is running.
+     * - `stopped`: The Profiler is stopped.
+     */
+    readonly status?: 'not-available-in-slim-bundle' | 'initializing' | 'missing-feature' | 'not-sampled' | 'not-supported-by-browser' | 'failed-to-lazy-load' | 'failed-to-start' | 'running' | 'stopped';
     [k: string]: unknown;
 }
 /**
