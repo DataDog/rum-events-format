@@ -286,7 +286,6 @@
     "device": {
       "type": "object",
       "description": "Device properties",
-      "required": ["type"],
       "properties": {
         "type": {
           "type": "string",
