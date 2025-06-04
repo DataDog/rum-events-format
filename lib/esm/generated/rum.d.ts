@@ -1121,24 +1121,6 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
         };
         [k: string]: unknown;
     };
-    /**
-     * Device properties
-     */
-    readonly device?: {
-        /**
-         * The user’s current locale as a language tag combining language and region, e.g. 'en-US'.
-         */
-        readonly current_locale?: string;
-        /**
-         * Ordered list of the user’s preferred system languages as IETF language tags.
-         */
-        readonly locales?: unknown[];
-        /**
-         * The device’s current time zone identifier, e.g. 'Europe/Berlin'.
-         */
-        readonly time_zone?: string;
-        [k: string]: unknown;
-    };
     [k: string]: unknown;
 };
 /**
@@ -1439,6 +1421,18 @@ export interface CommonProperties {
          * The CPU architecture of the device that is reporting the error
          */
         readonly architecture?: string;
+        /**
+         * The user’s current locale as a language tag combining language and region, e.g. 'en-US'.
+         */
+        readonly current_locale?: string;
+        /**
+         * Ordered list of the user’s preferred system languages as IETF language tags.
+         */
+        readonly locales?: unknown[];
+        /**
+         * The device’s current time zone identifier, e.g. 'Europe/Berlin'.
+         */
+        readonly time_zone?: string;
         [k: string]: unknown;
     };
     /**
