@@ -12,9 +12,6 @@
       "$ref": "_view-container-schema.json"
     },
     {
-      "$ref": "_profiling-schema.json"
-    },
-    {
       "required": ["type", "view", "_dd"],
       "properties": {
         "type": {
@@ -524,6 +521,11 @@
                   "readOnly": true
                 }
               }
+            },
+            "profiling": {
+              "type": "object",
+              "description": "Profiling context",
+              "allOf": [{ "$ref": "./_profiling-internal-context-schema.json" }]
             }
           },
           "readOnly": true

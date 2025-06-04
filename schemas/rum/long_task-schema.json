@@ -16,9 +16,6 @@
       "$ref": "_view-container-schema.json"
     },
     {
-      "$ref": "_profiling-schema.json"
-    },
-    {
       "required": ["type", "long_task"],
       "properties": {
         "type": {
@@ -172,6 +169,11 @@
               "type": "boolean",
               "description": "Whether the long task should be discarded or indexed",
               "readOnly": true
+            },
+            "profiling": {
+              "type": "object",
+              "description": "Profiling context",
+              "allOf": [{ "$ref": "./_profiling-internal-context-schema.json" }]
             }
           },
           "readOnly": true

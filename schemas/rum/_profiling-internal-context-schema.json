@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "rum/_profiling-schema.json",
-  "title": "ProfilingSchema",
+  "$id": "rum/_profiling-internal-context-schema.json",
+  "title": "ProfilingInternalContextSchema",
   "type": "object",
-  "description": "Profiling schema for the RUM Profiler",
+  "description": "RUM Profiler Internal Context schema",
   "properties": {
     "status": {
       "type": "string",
