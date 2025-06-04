@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "./_profiler-init-options.json",
+  "title": "ProfilerInitOptions",
+  "description": "Initialization options for the profiler.",
+  "type": "object",
+  "properties": {
+    "sampleInterval": {
+      "type": "number",
+      "description": "Sample interval in ms.",
+      "minimum": 0
+    },
+    "maxBufferSize": {
+      "type": "number",
+      "description": "Max buffer size in number of samples.",
+      "minimum": 0
+    }
+  },
+  "required": ["sampleInterval", "maxBufferSize"],
+  "additionalProperties": false
+} 

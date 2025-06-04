@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "./_profiler-trace.json",
+  "title": "ProfilerTrace",
+  "description": "A profiler trace object.",
+  "type": "object",
+  "properties": {
+    "resources": {
+      "type": "array",
+      "items": { "$ref": "./_profiler-resource.json" },
+      "description": "An array of profiler resources."
+    },
+    "frames": {
+      "type": "array",
+      "items": { "$ref": "./_profiler-frame.json" },
+      "description": "An array of profiler frames."
+    },
+    "stacks": {
+      "type": "array",
+      "items": { "$ref": "./_profiler-stack.json" },
+      "description": "An array of profiler stacks."
+    },
+    "samples": {
+      "type": "array",
+      "items": { "$ref": "./_profiler-sample.json" },
+      "description": "An array of profiler samples."
+    }
+  },
+  "required": ["resources", "frames", "stacks", "samples"],
+  "additionalProperties": false
+} 

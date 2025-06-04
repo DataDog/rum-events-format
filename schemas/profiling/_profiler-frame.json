@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "./_profiler-frame.json",
+  "title": "ProfilerFrame",
+  "description": "A function instance frame.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "A function instance name."
+    },
+    "resourceId": {
+      "type": "integer",
+      "description": "Index in the trace.resources array.",
+      "minimum": 0
+    },
+    "line": {
+      "type": "integer",
+      "description": "1-based index of the line.",
+      "minimum": 1
+    },
+    "column": {
+      "type": "integer",
+      "description": "1-based index of the column.",
+      "minimum": 1
+    }
+  },
+  "required": ["name"],
+  "additionalProperties": false
+} 

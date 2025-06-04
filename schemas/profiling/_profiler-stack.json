@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "./_profiler-stack.json",
+  "title": "ProfilerStack",
+  "description": "A stack entry in the profiler trace.",
+  "type": "object",
+  "properties": {
+    "parentId": {
+      "type": "integer",
+      "description": "Index in the trace.stacks array.",
+      "minimum": 0
+    },
+    "frameId": {
+      "type": "integer",
+      "description": "Index in the trace.frames array.",
+      "minimum": 0
+    }
+  },
+  "required": ["frameId"],
+  "additionalProperties": false
+} 

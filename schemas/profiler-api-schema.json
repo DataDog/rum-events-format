@@ -2,120 +2,14 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "profiling/profiler-api-schema.json",
   "title": "ProfilerApiTypes",
-  "description": "Schema for Profiler API types used in browser profiling.",
-  "type": "object",
-  "definitions": {
-    "ProfilerFrame": {
-      "type": "object",
-      "description": "A function instance frame.",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "A function instance name."
-        },
-        "resourceId": {
-          "type": "integer",
-          "description": "Index in the trace.resources array.",
-          "minimum": 0
-        },
-        "line": {
-          "type": "integer",
-          "description": "1-based index of the line.",
-          "minimum": 1
-        },
-        "column": {
-          "type": "integer",
-          "description": "1-based index of the column.",
-          "minimum": 1
-        }
+  "description": "Schema for Browser Profiler API types.",
+  "allOf": [
+      {
+          "$ref": "profiling/_profiler-trace.json"
       },
-      "required": ["name"],
-      "additionalProperties": false
-    },
-    "ProfilerStack": {
-      "type": "object",
-      "description": "A stack entry in the profiler trace.",
-      "properties": {
-        "parentId": {
-          "type": "integer",
-          "description": "Index in the trace.stacks array.",
-          "minimum": 0
-        },
-        "frameId": {
-          "type": "integer",
-          "description": "Index in the trace.frames array.",
-          "minimum": 0
-        }
-      },
-      "required": ["frameId"],
-      "additionalProperties": false
-    },
-    "ProfilerSample": {
-      "type": "object",
-      "description": "A sample in the profiler trace.",
-      "properties": {
-        "timestamp": {
-          "type": "number",
-          "description": "High resolution time relative to the profiling session's time origin."
-        },
-        "stackId": {
-          "type": "integer",
-          "description": "Index in the trace.stacks array.",
-          "minimum": 0
-        }
-      },
-      "required": ["timestamp"],
-      "additionalProperties": false
-    },
-    "ProfilerResource": {
-      "type": "string",
-      "description": "A profiler resource (string)."
-    },
-    "ProfilerTrace": {
-      "type": "object",
-      "description": "A profiler trace object.",
-      "properties": {
-        "resources": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/ProfilerResource" },
-          "description": "An array of profiler resources."
-        },
-        "frames": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/ProfilerFrame" },
-          "description": "An array of profiler frames."
-        },
-        "stacks": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/ProfilerStack" },
-          "description": "An array of profiler stacks."
-        },
-        "samples": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/ProfilerSample" },
-          "description": "An array of profiler samples."
-        }
-      },
-      "required": ["resources", "frames", "stacks", "samples"],
-      "additionalProperties": false
-    },
-    "ProfilerInitOptions": {
-      "type": "object",
-      "description": "Initialization options for the profiler.",
-      "properties": {
-        "sampleInterval": {
-          "type": "number",
-          "description": "Sample interval in ms.",
-          "minimum": 0
-        },
-        "maxBufferSize": {
-          "type": "number",
-          "description": "Max buffer size in number of samples.",
-          "minimum": 0
-        }
-      },
-      "required": ["sampleInterval", "maxBufferSize"],
-      "additionalProperties": false
-    }
-  }
-} 
+      {
+          "$ref": "profiling/_profiler-init-options.json"
+      }
+  ],
+  "additionalProperties": false
+}
