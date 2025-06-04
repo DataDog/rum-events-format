@@ -1404,7 +1404,7 @@ export interface CommonProperties {
         /**
          * Device type info
          */
-        readonly type: 'mobile' | 'desktop' | 'tablet' | 'tv' | 'gaming_console' | 'bot' | 'other';
+        readonly type?: 'mobile' | 'desktop' | 'tablet' | 'tv' | 'gaming_console' | 'bot' | 'other';
         /**
          * Device marketing name, e.g. Xiaomi Redmi Note 8 Pro, Pixel 5, etc.
          */
