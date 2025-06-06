@@ -1463,6 +1463,10 @@ export interface CommonProperties {
          * Browser SDK version
          */
         readonly browser_sdk_version?: string;
+        /**
+         * SDK name (e.g. 'logs', 'rum', 'rum-slim', etc.)
+         */
+        readonly sdk_name?: string;
         [k: string]: unknown;
     };
     /**
