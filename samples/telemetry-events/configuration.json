@@ -60,8 +60,6 @@
       "forward_errors_to_logs": false,
       "forward_reports": "all",
       "view_tracking_strategy": "ActivityViewTrackingStrategy",
-      "uikit_view_tracking_enabled": true,
-      "uikit_action_tracking_enabled": true,
       "swiftui_view_tracking_enabled": true,
       "swiftui_action_tracking_enabled": true,
       "track_background_events": true,
