@@ -5,9 +5,7 @@
   "type": "array",
   "description": "Browser-specific. Schema representing a change to the adopted stylesheets of a document or shadow DOM subtree.",
   "minItems": 1,
-  "items": [
-    { "$ref": "node-references/node-id-schema.json" }
-  ],
+  "items": [{ "$ref": "node-references/node-id-schema.json" }],
   "additionalItems": {
     "$ref": "../stylesheet-schema.json"
   }

@@ -5,9 +5,6 @@
   "type": "array",
   "description": "Browser-specific. Schema representing the addition of a new element node to the document.",
   "minItems": 2,
-  "items": [
-    { "$ref": "node-references/insertion-point-schema.json" },
-    { "$ref": "node-names/node-name-schema.json" }
-  ],
+  "items": [{ "$ref": "node-references/insertion-point-schema.json" }, { "$ref": "node-names/node-name-schema.json" }],
   "additionalItems": { "$ref": "attribute-assignment-schema.json" }
 }
