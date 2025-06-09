@@ -27,7 +27,7 @@ export declare type CreationReason = 'init' | 'segment_duration_limit' | 'segmen
 /**
  * Browser-specific. Schema of a Session Replay Record.
  */
-export declare type BrowserRecord = BrowserFullSnapshotRecord | BrowserIncrementalSnapshotRecord | MetaRecord | FocusRecord | ViewEndRecord | VisualViewportRecord | FrustrationRecord;
+export declare type BrowserRecord = BrowserFullSnapshotRecord | BrowserIncrementalSnapshotRecord | MetaRecord | FocusRecord | ViewEndRecord | VisualViewportRecord | FrustrationRecord | BrowserChangeRecord;
 /**
  * Browser-specific. Schema of a Record type which contains the full snapshot of a screen.
  */
@@ -303,6 +303,155 @@ export declare type FrustrationRecord = SlotSupportedCommonRecordSchema & {
         recordIds: number[];
     };
 };
+/**
+ * Browser-specific. Schema of a record type which represents changes using a compact encoding. (Experimental; subject to change.)
+ */
+export declare type BrowserChangeRecord = SlotSupportedCommonRecordSchema & {
+    /**
+     * The type of this Record.
+     */
+    readonly type: 12;
+    data: Change[];
+    id?: number;
+};
+/**
+ * Browser-specific. Schema representing an individual change within a BrowserChangeData collection.
+ */
+export declare type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AdoptedStyleSheetsChange[]];
+/**
+ * Browser-specific. Schema representing the addition of a string to the string table.
+ */
+export declare type AddStringChange = string;
+/**
+ * Browser-specific. Schema representing the addition of a new node to the document.
+ */
+export declare type AddNodeChange = AddCDataSectionNodeChange | AddDocTypeNodeChange | AddDocumentNodeChange | AddDocumentFragmentNodeChange | AddElementNodeChange | AddShadowRootNodeChange | AddTextNodeChange;
+/**
+ * Schema representing the addition of a new #cdata-section node.
+ *
+ * @minItems 2
+ */
+export declare type AddCDataSectionNodeChange = [InsertionPoint, '#cdata-section' | StringReference];
+/**
+ * Browser-specific. Schema representing the insertion point of a node which is being added to the document.
+ */
+export declare type InsertionPoint = RootInsertionPoint | LastChildInsertionPoint | NextSiblingInsertionPoint;
+/**
+ * A null insertion point, indicating that the node should be inserted at the root of the document.
+ */
+export declare type RootInsertionPoint = null;
+/**
+ * A positive integer insertion point. Inserting a node at positive integer N indicates that the node should be inserted as the last child of the node with an id N lower than the new node.
+ */
+export declare type LastChildInsertionPoint = number;
+/**
+ * A non-positive integer insertion point. Inserting a node at non-positive integer -N indicates that the node should be inserted as the next sibling of the node with an id (N + 1) lower than the new node. In particular, inserting a node at 0 means that it should be the next sibling of the immediately preceding node.
+ */
+export declare type NextSiblingInsertionPoint = number;
+/**
+ * Browser-specific. Schema representing a string, expressed as an index into the string table.
+ */
+export declare type StringReference = number;
+/**
+ * Schema representing the addition of a new #doctype node, using the format [#doctype, name, public ID, system ID].
+ *
+ * @minItems 5
+ */
+export declare type AddDocTypeNodeChange = [
+    InsertionPoint,
+    '#doctype' | StringReference,
+    StringOrStringReference,
+    StringOrStringReference,
+    StringOrStringReference
+];
+/**
+ * Browser-specific. Schema representing a string, either expressed as a literal or as an index into the string table.
+ */
+export declare type StringOrStringReference = string | StringReference;
+/**
+ * Schema representing the addition of a new #document node.
+ *
+ * @minItems 2
+ */
+export declare type AddDocumentNodeChange = [InsertionPoint, '#document' | StringReference];
+/**
+ * Schema representing the addition of a new #document-fragment node.
+ *
+ * @minItems 2
+ */
+export declare type AddDocumentFragmentNodeChange = [InsertionPoint, '#document-fragment' | StringReference];
+/**
+ * Schema representing the addition of a new element node.
+ *
+ * @minItems 2
+ */
+export declare type AddElementNodeChange = [InsertionPoint, string | StringReference, ...AttributeAssignment[]];
+/**
+ * Schema representing an assignment of a value to an attribute. The format is [name, value].
+ *
+ * @minItems 2
+ */
+export declare type AttributeAssignment = [StringOrStringReference, StringOrStringReference];
+/**
+ * Schema representing the addition of a new #shadow-root node.
+ *
+ * @minItems 2
+ */
+export declare type AddShadowRootNodeChange = [InsertionPoint, '#shadow-root' | StringReference];
+/**
+ * Schema representing the addition of a new #text node.
+ *
+ * @minItems 3
+ */
+export declare type AddTextNodeChange = [InsertionPoint, '#text' | StringReference, StringOrStringReference];
+/**
+ * Browser-specific. Schema representing the removal of a node from the document.
+ */
+export declare type RemoveNodeChange = number;
+/**
+ * Browser-specific. Schema representing a change to an node's attributes.
+ *
+ * @minItems 1
+ */
+export declare type AttributeChange = [NodeId, ...AttributeAssignmentOrDeletion[]];
+/**
+ * Browser-specific. Schema representing the ID of a DOM node.
+ */
+export declare type NodeId = number;
+/**
+ * Schema representing a change to an attribute, either by assignment of a new value or by deletion of the attribute.
+ */
+export declare type AttributeAssignmentOrDeletion = AttributeAssignment | AttributeDeletion;
+/**
+ * Schema representing the deletion of an attribute.
+ *
+ * @minItems 1
+ */
+export declare type AttributeDeletion = [StringOrStringReference];
+/**
+ * Browser-specific. Schema representing a change to the text content of a #text node.
+ *
+ * @minItems 2
+ */
+export declare type TextChange = [NodeId, StringOrStringReference];
+/**
+ * Browser-specific. Schema representing a change in an element's size.
+ *
+ * @minItems 3
+ */
+export declare type SizeChange = [NodeId, number, number];
+/**
+ * Browser-specific. Schema representing a scroll position change.
+ *
+ * @minItems 3
+ */
+export declare type ScrollPositionChange = [NodeId, number, number];
+/**
+ * Browser-specific. Schema representing a change to the adopted stylesheets of a document or shadow DOM subtree.
+ *
+ * @minItems 1
+ */
+export declare type AdoptedStyleSheetsChange = [NodeId, ...StyleSheet[]];
 /**
  * Schema of a Session Replay Segment context.
  */

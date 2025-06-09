@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay/browser/changes/node-references/last-child-insertion-point-schema.json",
+  "title": "LastChildInsertionPoint",
+  "description": "A positive integer insertion point. Inserting a node at positive integer N indicates that the node should be inserted as the last child of the node with an id N lower than the new node.",
+  "type": "integer",
+  "minimum": 1
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay/browser/changes/node-references/next-sibling-insertion-point-schema.json",
+  "title": "NextSiblingInsertionPoint",
+  "description": "A non-positive integer insertion point. Inserting a node at non-positive integer -N indicates that the node should be inserted as the next sibling of the node with an id (N + 1) lower than the new node. In particular, inserting a node at 0 means that it should be the next sibling of the immediately preceding node.",
+  "type": "integer",
+  "maximum": 0
+}
