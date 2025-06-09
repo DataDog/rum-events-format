@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay/browser/changes/text-change-schema.json",
+  "title": "TextChange",
+  "type": "array",
+  "description": "Browser-specific. Schema representing a change to the text content of a #text node.",
+  "minItems": 2,
+  "items": [
+    { "$ref": "node-references/node-id-schema.json" },
+    {
+      "type": "string",
+      "description": "The new text content."
+    }
+  ],
+  "additionalItems": false
+}
