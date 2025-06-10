@@ -313,9 +313,9 @@
           "description": "The CPU architecture of the device that is reporting the error",
           "readOnly": true
         },
-        "current_locale": {
+        "locale": {
           "type": "string",
-          "description": "The user’s current locale as a language tag combining language and region, e.g. 'en-US'.",
+          "description": "The user’s locale as a language tag combining language and region, e.g. 'en-US'.",
           "readOnly": true
         },
         "locales": {
