@@ -125,7 +125,7 @@
     "name": "iPad",
     "model": "iPad",
     "brand": "Apple",
-    "current_locale": "en-US",
+    "locale": "en-US",
     "locales": ["en-US", "fr-FR"],
     "time_zone": "Europe/Paris"
   },
