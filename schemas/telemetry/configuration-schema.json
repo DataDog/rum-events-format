@@ -285,6 +285,16 @@
                     "NavigationViewTrackingStrategy"
                   ]
                 },
+                "swiftui_view_tracking_enabled": {
+                  "type": "boolean",
+                  "description": "Whether SwiftUI view instrumentation is enabled",
+                  "readOnly": false
+                },
+                "swiftui_action_tracking_enabled": {
+                  "type": "boolean",
+                  "description": "Whether SwiftUI action instrumentation is enabled",
+                  "readOnly": false
+                },
                 "track_background_events": {
                   "type": "boolean",
                   "description": "Whether RUM events are tracked when the application is in Background",
