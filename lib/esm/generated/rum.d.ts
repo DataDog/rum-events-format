@@ -1436,7 +1436,7 @@ export interface CommonProperties {
         /**
          * Ordered list of the user’s preferred system languages as IETF language tags.
          */
-        readonly locales?: unknown[];
+        readonly locales?: string[];
         /**
          * The device’s current time zone identifier, e.g. 'Europe/Berlin'.
          */
