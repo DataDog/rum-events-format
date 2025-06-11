@@ -127,7 +127,10 @@
     "type": "tablet",
     "name": "iPad",
     "model": "iPad",
-    "brand": "Apple"
+    "brand": "Apple",
+    "locale": "en-US",
+    "locales": ["en-US", "fr-FR"],
+    "time_zone": "Europe/Paris"
   },
   "os": {
     "name": "iOS",
