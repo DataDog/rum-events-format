@@ -21,7 +21,11 @@
   "action": {
     "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
   },
+
   "_dd": {
-    "format_version": 2
+    "format_version": 2,
+    "profiling": {
+      "status": "running"
+    }
   }
 }
