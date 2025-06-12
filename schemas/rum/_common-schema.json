@@ -321,6 +321,9 @@
         "locales": {
           "type": "array",
           "description": "Ordered list of the user’s preferred system languages as IETF language tags.",
+          "items": {
+            "type": "string"
+          },
           "readOnly": true
         },
         "time_zone": {
