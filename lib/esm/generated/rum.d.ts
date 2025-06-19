@@ -1441,6 +1441,18 @@ export interface CommonProperties {
          * The device’s current time zone identifier, e.g. 'Europe/Berlin'.
          */
         readonly time_zone?: string;
+        /**
+         * Current battery level of the device (0.0 to 1.0).
+         */
+        readonly battery_level?: number;
+        /**
+         * Whether the device is in power saving mode.
+         */
+        readonly power_saving_mode?: boolean;
+        /**
+         * Current screen brightness level (0.0 to 1.0).
+         */
+        readonly brightness_level?: number;
         [k: string]: unknown;
     };
     /**

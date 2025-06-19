@@ -330,6 +330,21 @@
           "type": "string",
           "description": "The device’s current time zone identifier, e.g. 'Europe/Berlin'.",
           "readOnly": true
+        },
+        "battery_level": {
+          "type": "number",
+          "description": "Current battery level of the device (0.0 to 1.0).",
+          "readOnly": true
+        },
+        "power_saving_mode": {
+          "type": "boolean",
+          "description": "Whether the device is in power saving mode.",
+          "readOnly": true
+        },
+        "brightness_level": {
+          "type": "number",
+          "description": "Current screen brightness level (0.0 to 1.0).",
+          "readOnly": true
         }
       }
     },
