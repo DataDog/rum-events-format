@@ -432,21 +432,6 @@
           "type": "string",
           "description": "SDK name (e.g. 'logs', 'rum', 'rum-slim', etc.)",
           "readOnly": true
-        },
-        "retry_count": {
-          "type": "integer",
-          "description": "Number of times the event has been retried",
-          "readOnly": true
-        },
-        "retry_after": {
-          "type": "integer",
-          "description": "status code of the last retry",
-          "readOnly": true
-        },
-        "api": {
-          "description": "API used to send the event to the intake",
-          "enum": ["fetch-keepalive", "fetch", "beacon", "manual"],
-          "readOnly": true
         }
       },
       "readOnly": true

@@ -1515,18 +1515,6 @@ export interface CommonProperties {
          * SDK name (e.g. 'logs', 'rum', 'rum-slim', etc.)
          */
         readonly sdk_name?: string;
-        /**
-         * Number of times the event has been retried
-         */
-        readonly retry_count?: number;
-        /**
-         * status code of the last retry
-         */
-        readonly retry_after?: number;
-        /**
-         * API used to send the event to the intake
-         */
-        readonly api?: 'fetch-keepalive' | 'fetch' | 'beacon' | 'manual';
         [k: string]: unknown;
     };
     /**
