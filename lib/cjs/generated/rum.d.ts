@@ -1205,6 +1205,10 @@ export interface CommonProperties {
          * UUID of the application
          */
         readonly id: string;
+        /**
+         * The user's current locale as a language tag (language + region), computed from their preferences and the app's supported languages, e.g. 'es-FR'.
+         */
+        readonly current_locale?: string;
         [k: string]: unknown;
     };
     /**
