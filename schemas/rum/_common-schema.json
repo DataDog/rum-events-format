@@ -22,6 +22,11 @@
           "description": "UUID of the application",
           "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
           "readOnly": true
+        },
+        "current_locale": {
+          "type": "string",
+          "description": "The user's current locale as a language tag (language + region), computed from their preferences and the app's supported languages, e.g. 'es-FR'.",
+          "readOnly": true
         }
       },
       "readOnly": true
