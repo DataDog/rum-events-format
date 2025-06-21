@@ -47,6 +47,7 @@
   "_dd": {
     "format_version": 2,
     "span_id": "12345",
+    "parent_span_id": "67890",
     "trace_id": "7890"
   }
 }
