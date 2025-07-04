@@ -28,12 +28,18 @@
             "type": {
               "type": "string",
               "description": "Type of the vital",
-              "enum": ["duration"],
+              "enum": ["duration", "user_story"],
               "readOnly": true
             },
             "id": {
               "type": "string",
               "description": "UUID of the vital",
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "readOnly": true
+            },
+            "instance_id": {
+              "type": "string",
+              "description": "UUID for the instance of the User Story allowing to execute the same User Story multiple times in parallel",
               "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
               "readOnly": true
             },
@@ -60,6 +66,18 @@
                 "minimum": 0,
                 "readOnly": true
               },
+              "readOnly": true
+            },
+            "event_type": {
+              "type": "string",
+              "description": "Type of the user story event that triggered the vital",
+              "enum": ["start", "touch", "retry", "end"],
+              "readOnly": true
+            },
+            "failure_reason": {
+              "type": "string",
+              "description": "Reason for the failure of the user story, if applicable",
+              "enum": ["timeout", "error", "cancelled", "other"],
               "readOnly": true
             }
           },
