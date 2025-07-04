@@ -1232,6 +1232,10 @@ export interface CommonProperties {
      */
     readonly build_id?: string;
     /**
+     * tags of the event
+     */
+    readonly ddtags?: string;
+    /**
      * Session properties
      */
     readonly session: {
