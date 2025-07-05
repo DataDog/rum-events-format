@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay/browser/changes/node-names/node-name-schema.json",
+  "title": "NodeName",
+  "description": "Browser-specific. Schema representing a node name (i.e., Node#nodeName), expressed as either a reference to the string table or a literal string.",
+  "oneOf": [
+    {
+      "type": "integer",
+      "minimum": 0,
+      "description": "A reference to the node name in the string table at the given index."
+    },
+    {
+      "type": "string",
+      "description": "The node name expressed as a literal string."
+    }
+  ]
+}
