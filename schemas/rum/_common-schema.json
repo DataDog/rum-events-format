@@ -51,7 +51,7 @@
     },
     "ddtags": {
       "type": "string",
-      "description": "tags of the event",
+      "description": "Tags of the event in key:value format, separated by commas (e.g. 'env:prod,version:1.2.3')",
       "readOnly": true
     },
     "session": {
