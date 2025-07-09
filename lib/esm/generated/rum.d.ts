@@ -1180,7 +1180,7 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
         /**
          * Reason for the failure of the user story, if applicable
          */
-        readonly failure_reason?: 'timeout' | 'error' | 'cancelled' | 'other';
+        readonly failure_reason?: 'error' | 'abandoned' | 'other';
         [k: string]: unknown;
     };
     /**

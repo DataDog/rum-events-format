@@ -77,7 +77,7 @@
             "failure_reason": {
               "type": "string",
               "description": "Reason for the failure of the user story, if applicable",
-              "enum": ["timeout", "error", "cancelled", "other"],
+              "enum": ["error", "abandoned", "other"],
               "readOnly": true
             }
           },
