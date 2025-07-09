@@ -1146,7 +1146,7 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
         /**
          * Type of the vital
          */
-        readonly type: 'duration' | 'user_story';
+        readonly type: 'duration' | 'user_story_step';
         /**
          * UUID of the vital
          */
