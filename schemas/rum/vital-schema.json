@@ -68,7 +68,7 @@
               },
               "readOnly": true
             },
-            "event_type": {
+            "step_type": {
               "type": "string",
               "description": "Type of the user story event that triggered the vital",
               "enum": ["start", "touch", "retry", "end"],
