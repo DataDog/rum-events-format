@@ -1150,11 +1150,15 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
         /**
          * Type of the vital
          */
-        readonly type: 'duration';
+        readonly type: 'duration' | 'user_story';
         /**
          * UUID of the vital
          */
         readonly id: string;
+        /**
+         * UUID for the instance of the User Story allowing to execute the same User Story multiple times in parallel
+         */
+        readonly instance_id?: string;
         /**
          * Name of the vital, as it is also used as facet path for its value, it must contain only letters, digits, or the characters - _ . @ $
          */
@@ -1173,6 +1177,14 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
         readonly custom?: {
             [k: string]: number;
         };
+        /**
+         * Type of the user story event that triggered the vital
+         */
+        readonly step_type?: 'start' | 'touch' | 'retry' | 'end';
+        /**
+         * Reason for the failure of the user story, if applicable
+         */
+        readonly failure_reason?: 'error' | 'abandoned' | 'other';
         [k: string]: unknown;
     };
     /**
