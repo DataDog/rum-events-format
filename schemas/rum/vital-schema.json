@@ -71,7 +71,7 @@
             "step_type": {
               "type": "string",
               "description": "Type of the step that triggered the vital, if applicable",
-              "enum": ["start", "touch", "retry", "end"],
+              "enum": ["start", "update", "retry", "end"],
               "readOnly": true
             },
             "failure_reason": {

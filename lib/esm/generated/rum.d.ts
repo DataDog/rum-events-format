@@ -1176,7 +1176,7 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
         /**
          * Type of the step that triggered the vital, if applicable
          */
-        readonly step_type?: 'start' | 'touch' | 'retry' | 'end';
+        readonly step_type?: 'start' | 'update' | 'retry' | 'end';
         /**
          * Reason for the failure of the step, if applicable
          */
