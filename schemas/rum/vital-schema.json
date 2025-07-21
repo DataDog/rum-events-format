@@ -28,7 +28,7 @@
             "type": {
               "type": "string",
               "description": "Type of the vital",
-              "enum": ["duration", "user_story"],
+              "enum": ["duration", "step"],
               "readOnly": true
             },
             "id": {
@@ -37,9 +37,9 @@
               "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
               "readOnly": true
             },
-            "instance_id": {
+            "parent_id": {
               "type": "string",
-              "description": "UUID for the instance of the User Story allowing to execute the same User Story multiple times in parallel",
+              "description": "UUID for linking the step vital to the parent event, if applicable",
               "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
               "readOnly": true
             },
@@ -70,13 +70,13 @@
             },
             "step_type": {
               "type": "string",
-              "description": "Type of the user story event that triggered the vital",
+              "description": "Type of the step that triggered the vital, if applicable",
               "enum": ["start", "touch", "retry", "end"],
               "readOnly": true
             },
             "failure_reason": {
               "type": "string",
-              "description": "Reason for the failure of the user story, if applicable",
+              "description": "Reason for the failure of the step, if applicable",
               "enum": ["error", "abandoned", "other"],
               "readOnly": true
             }
