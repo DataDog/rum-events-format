@@ -4,7 +4,7 @@
 /**
  * Schema of all properties of a RUM event
  */
-export declare type RumEvent = RumActionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumVitalEvent;
+export declare type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumVitalEvent;
 /**
  * Schema of all properties of an Action event
  */
@@ -147,6 +147,50 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
             name_source?: 'custom_attribute' | 'mask_placeholder' | 'standard_attribute' | 'text_content' | 'mask_disallowed' | 'blank';
             [k: string]: unknown;
         };
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
+/**
+ * Schema of all properties of an Transition event
+ */
+export declare type RumTransitionEvent = CommonProperties & StreamContainerSchema & {
+    /**
+     * RUM event type
+     */
+    readonly type: 'transition';
+    /**
+     * Transition properties
+     */
+    readonly transition: {
+        /**
+         * Type of the transition
+         */
+        readonly type: string;
+        /**
+         * UUID of the transition
+         */
+        readonly id?: string;
+        /**
+         * Timestamp in the player
+         */
+        readonly ts?: number;
+        /**
+         * Buffer starvation duration, the amount of time spent rebuffering
+         */
+        readonly bsd?: number;
+        /**
+         * Media start delay, the amount of time spent loading before playing
+         */
+        readonly msd?: number;
+        /**
+         * Error code, as reported by the player
+         */
+        readonly ec?: number;
+        /**
+         * Duration of the event in ns
+         */
+        readonly d?: number;
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -1612,6 +1656,42 @@ export interface ViewContainerSchema {
         };
         /**
          * Source of the parent view
+         */
+        readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform';
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+}
+/**
+ * Stream Container schema for streams that are nested
+ */
+export interface StreamContainerSchema {
+    /**
+     * Stream Container properties (stream wrapping the current stream)
+     */
+    readonly container?: {
+        /**
+         * Attributes of the stream's container
+         */
+        readonly stream: {
+            /**
+             * ID of the parent stream
+             */
+            readonly id: string;
+            [k: string]: unknown;
+        };
+        /**
+         * Attributes of the view's container
+         */
+        readonly view?: {
+            /**
+             * ID of the parent view
+             */
+            readonly id: string;
+            [k: string]: unknown;
+        };
+        /**
+         * Source of the parent stream
          */
         readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform';
         [k: string]: unknown;
