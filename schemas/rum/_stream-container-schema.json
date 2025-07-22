@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/_stream-container-schema.json",
+  "title": "StreamContainerSchema",
+  "type": "object",
+  "description": "Stream Container schema for streams that are nested",
+  "properties": {
+    "container": {
+      "type": "object",
+      "description": "Stream Container properties (stream wrapping the current stream)",
+      "required": ["stream", "source"],
+      "properties": {
+        "stream": {
+          "type": "object",
+          "description": "Attributes of the stream's container",
+          "required": ["id"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "ID of the parent stream",
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        },
+        "view": {
+          "type": "object",
+          "description": "Attributes of the view's container",
+          "required": ["id"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "ID of the parent view",
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        },
+        "source": {
+          "type": "string",
+          "description": "Source of the parent stream",
+          "enum": ["android", "ios", "browser", "flutter", "react-native", "roku", "unity", "kotlin-multiplatform"],
+          "readOnly": true
+        }
+      },
+      "readOnly": true
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "transition",
+  "date": 1591284428705,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "android",
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+  },
+  "stream": {
+    "id": "7be62f6b-b0c1-4165-bf5f-2ca647dfec30",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+  },
+  "transition": {
+    "type": "MEDIA_PLAYER_PLAY",
+    "id": "47af0abb-3de1-4170-a491-4473716df979",
+    "ts": 500000000,
+    "bsd": 600000000,
+    "msd": 700000000
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}
