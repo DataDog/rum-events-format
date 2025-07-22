@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/transition-schema.json",
+  "title": "RumTransitionEvent",
+  "type": "object",
+  "description": "Schema of all properties of an Transition event",
+  "allOf": [
+    {
+      "$ref": "_common-schema.json"
+    },
+    {
+      "$ref": "_stream-container-schema.json"
+    },
+    {
+      "required": ["type", "transition"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "RUM event type",
+          "const": "transition",
+          "readOnly": true
+        },
+        "transition": {
+          "type": "object",
+          "description": "Transition properties",
+          "required": ["type"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Type of the transition",
+              "readOnly": true
+            },
+            "id": {
+              "type": "string",
+              "description": "UUID of the transition",
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "readOnly": true
+            },
+            "ts": {
+              "type": "integer",
+              "description": "Timestamp in the player",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "bsd": {
+              "type": "integer",
+              "description": "Buffer starvation duration, the amount of time spent rebuffering",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "msd": {
+              "type": "integer",
+              "description": "Media start delay, the amount of time spent loading before playing",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "ec": {
+              "type": "integer",
+              "description": "Error code, as reported by the player",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "d": {
+              "type": "integer",
+              "description": "Duration of the event in ns",
+              "minimum": 0,
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        }
+      }
+    }
+  ]
+}
