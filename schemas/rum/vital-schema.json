@@ -60,7 +60,8 @@
             },
             "custom": {
               "type": "object",
-              "description": "User custom vital.",
+              "description": "User custom vital. (This field is deprecated in favor of `duration`)",
+              "deprecated": true,
               "additionalProperties": {
                 "type": "number",
                 "minimum": 0,
