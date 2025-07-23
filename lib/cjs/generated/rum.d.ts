@@ -1176,7 +1176,7 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
          */
         readonly duration?: number;
         /**
-         * User custom vital.
+         * User custom vital. (This field is deprecated in favor of `duration`)
          */
         readonly custom?: {
             [k: string]: number;
