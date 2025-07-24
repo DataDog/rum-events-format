@@ -460,6 +460,21 @@
                   "description": "Whether a list of allowed origins is used to control SDK execution in browser extension contexts. When enabled, the SDK will check if the current origin matches the allowed origins list before running.",
                   "readOnly": false,
                   "default": false
+                },
+                "sdk_version": {
+                  "type": "string",
+                  "description": "The version of the SDK that is running.",
+                  "readOnly": false
+                },
+                "source": {
+                  "type": "string",
+                  "description": "The source of the SDK, e.g., 'browser', 'ios', 'android', 'flutter', 'react-native', 'unity', 'kotlin-multiplatform'.",
+                  "readOnly": false
+                },
+                "variant": {
+                  "type": "string",
+                  "description": "The variant of the SDK build (e.g., standard, lite, etc.).",
+                  "readOnly": false
                 }
               }
             }
