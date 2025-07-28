@@ -1848,5 +1848,9 @@ export interface ViewAccessibilityProperties {
      * Indicates whether the text-to-speech selection feature is enabled.
      */
     readonly speak_selection_enabled?: boolean;
+    /**
+     * Indicates whether the right-to-left support is enabled.
+     */
+    readonly rtl_enabled?: boolean;
     [k: string]: unknown;
 }
