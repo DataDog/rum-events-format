@@ -58,16 +58,6 @@
               "description": "Duration of the vital in nanoseconds",
               "readOnly": true
             },
-            "custom": {
-              "type": "object",
-              "description": "User custom vital.",
-              "additionalProperties": {
-                "type": "number",
-                "minimum": 0,
-                "readOnly": true
-              },
-              "readOnly": true
-            },
             "step_type": {
               "type": "string",
               "description": "Type of the step that triggered the vital, if applicable",

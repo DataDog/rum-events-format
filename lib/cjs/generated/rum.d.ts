@@ -1176,12 +1176,6 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
          */
         readonly duration?: number;
         /**
-         * User custom vital.
-         */
-        readonly custom?: {
-            [k: string]: number;
-        };
-        /**
          * Type of the step that triggered the vital, if applicable
          */
         readonly step_type?: 'start' | 'update' | 'retry' | 'end';
