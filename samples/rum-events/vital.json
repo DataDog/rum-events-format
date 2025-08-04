@@ -18,9 +18,7 @@
     "id": "47af0abb-3de1-4170-a491-4473716df979",
     "type": "duration",
     "name": "user-timing",
-    "custom": {
-      "user-timing": 100
-    }
+    "duration": 100
   },
   "_dd": {
     "format_version": 2,
