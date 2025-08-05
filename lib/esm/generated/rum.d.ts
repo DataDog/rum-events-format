@@ -750,7 +750,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
 /**
  * Schema of all properties of a View event
  */
-export declare type RumViewEvent = CommonProperties & ViewContainerSchema & {
+export declare type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema & {
     /**
      * RUM event type
      */
@@ -1602,6 +1602,50 @@ export interface ProfilingInternalContextSchema {
      * - `unexpected-exception`: An exception occurred when starting the Profiler.
      */
     readonly error_reason?: 'not-supported-by-browser' | 'failed-to-lazy-load' | 'missing-document-policy-header' | 'unexpected-exception';
+    [k: string]: unknown;
+}
+/**
+ * Stream schema for media streaming properties
+ */
+export interface StreamSchema {
+    /**
+     * Stream properties
+     */
+    readonly stream?: {
+        /**
+         * UUID of the stream
+         */
+        readonly id: string;
+        /**
+         * current bitrate at the time of collection
+         */
+        bitrate?: number;
+        /**
+         * current frames per second at the time of collection
+         */
+        fps?: number;
+        /**
+         * Stream format
+         */
+        readonly format?: string;
+        /**
+         * Stream resolution
+         */
+        readonly resolution?: string;
+        /**
+         * current timestamp at the time of collection
+         */
+        timestamp?: number;
+        /**
+         * how much did the media progress since the last context update
+         */
+        watch_time?: number;
+        /**
+         * How long is the content (VOD only)
+         */
+        readonly duration?: number;
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 }
 /**
