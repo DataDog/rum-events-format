@@ -1160,9 +1160,9 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
          */
         readonly id: string;
         /**
-         * UUID for distinguishing the active operation instances in parallel, if applicable
+         * UUID for distinguishing the active operations in parallel, if applicable
          */
-        readonly instance_id?: string;
+        readonly operation_key?: string;
         /**
          * Name of the vital, as it is also used as facet path for its value, it must contain only letters, digits, or the characters - _ . @ $
          */

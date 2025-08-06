@@ -37,9 +37,9 @@
               "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
               "readOnly": true
             },
-            "instance_id": {
+            "operation_key": {
               "type": "string",
-              "description": "UUID for distinguishing the active operation instances in parallel, if applicable",
+              "description": "UUID for distinguishing the active operations in parallel, if applicable",
               "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
               "readOnly": true
             },
