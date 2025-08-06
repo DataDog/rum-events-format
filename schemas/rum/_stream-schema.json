@@ -10,26 +10,26 @@
       "description": "Stream properties",
       "required": ["id"],
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "UUID of the stream",
-          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
-          "readOnly": true
-        },
         "bitrate": {
           "type": "number",
           "description": "current bitrate at the time of collection",
           "minimum": 0
         },
-        "fps": {
+        "duration": {
           "type": "number",
-          "description": "current frames per second at the time of collection",
-          "minimum": 0
+          "description": "How long is the content (VOD only)",
+          "minimum": 0,
+          "readOnly": true
         },
         "format": {
           "type": "string",
           "description": "Stream format",
           "readOnly": true
+        },
+        "fps": {
+          "type": "number",
+          "description": "current frames per second at the time of collection",
+          "minimum": 0
         },
         "resolution": {
           "type": "string",
@@ -45,12 +45,6 @@
           "type": "number",
           "description": "how much did the media progress since the last context update",
           "minimum": 0
-        },
-        "duration": {
-          "type": "number",
-          "description": "How long is the content (VOD only)",
-          "minimum": 0,
-          "readOnly": true
         }
       },
       "readOnly": true

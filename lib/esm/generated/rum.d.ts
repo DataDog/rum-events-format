@@ -1533,6 +1533,16 @@ export interface CommonProperties {
     context?: {
         [k: string]: unknown;
     };
+    /**
+     * Stream properties
+     */
+    stream?: {
+        /**
+         * UUID of the stream
+         */
+        readonly id: string;
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 }
 /**
@@ -1613,21 +1623,21 @@ export interface StreamSchema {
      */
     readonly stream?: {
         /**
-         * UUID of the stream
-         */
-        readonly id: string;
-        /**
          * current bitrate at the time of collection
          */
         bitrate?: number;
         /**
-         * current frames per second at the time of collection
+         * How long is the content (VOD only)
          */
-        fps?: number;
+        readonly duration?: number;
         /**
          * Stream format
          */
         readonly format?: string;
+        /**
+         * current frames per second at the time of collection
+         */
+        fps?: number;
         /**
          * Stream resolution
          */
@@ -1640,10 +1650,6 @@ export interface StreamSchema {
          * how much did the media progress since the last context update
          */
         watch_time?: number;
-        /**
-         * How long is the content (VOD only)
-         */
-        readonly duration?: number;
         [k: string]: unknown;
     };
     [k: string]: unknown;
