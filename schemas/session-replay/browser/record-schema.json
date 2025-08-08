@@ -25,6 +25,9 @@
     },
     {
       "$ref": "frustration-record-schema.json"
+    },
+    {
+      "$ref": "change-record-schema.json"
     }
   ]
 }
