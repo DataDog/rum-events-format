@@ -475,6 +475,11 @@
                   "type": "string",
                   "description": "The variant of the SDK build (e.g., standard, lite, etc.).",
                   "readOnly": false
+                },
+                "remote_configuration_id": {
+                  "type": "string",
+                  "description": "The id of the remote configuration",
+                  "readOnly": false
                 }
               }
             }
