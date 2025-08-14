@@ -429,6 +429,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * The variant of the SDK build (e.g., standard, lite, etc.).
              */
             variant?: string;
+            /**
+             * The id of the remote configuration
+             */
+            remote_configuration_id?: string;
             [k: string]: unknown;
         };
         [k: string]: unknown;
