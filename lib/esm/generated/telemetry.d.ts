@@ -463,7 +463,7 @@ export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSess
 /**
  * Schema of browser specific features usage
  */
-export declare type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital;
+export declare type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | AddOperationStepVital;
 /**
  * Schema of mobile specific features usage
  */
@@ -800,6 +800,13 @@ export interface AddDurationVital {
      * addDurationVital API
      */
     feature: 'add-duration-vital';
+    [k: string]: unknown;
+}
+export interface AddOperationStepVital {
+    /**
+     * addOperationStepVital API
+     */
+    feature: 'add-operation-step-vital';
     [k: string]: unknown;
 }
 export interface AddViewLoadingTime {
