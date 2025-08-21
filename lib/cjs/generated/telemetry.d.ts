@@ -459,7 +459,7 @@ export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
 /**
  * Schema of features usage common across SDKs
  */
-export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation;
+export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital;
 /**
  * Schema of browser specific features usage
  */
@@ -768,6 +768,17 @@ export interface AddFeatureFlagEvaluation {
      * addFeatureFlagEvaluation API
      */
     feature: 'add-feature-flag-evaluation';
+    [k: string]: unknown;
+}
+export interface AddOperationStepVital {
+    /**
+     * addOperationStepVital API
+     */
+    feature: 'add-operation-step-vital';
+    /**
+     * Feature operations action type
+     */
+    action_type: 'start' | 'succeed' | 'fail';
     [k: string]: unknown;
 }
 export interface StartSessionReplayRecording {
