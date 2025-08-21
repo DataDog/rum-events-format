@@ -52,6 +52,17 @@
           "const": "add-duration-vital"
         }
       }
+    },
+    {
+      "required": ["feature"],
+      "title": "AddOperationStepVital",
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "addOperationStepVital API",
+          "const": "add-operation-step-vital"
+        }
+      }
     }
   ]
 }
