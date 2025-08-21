@@ -39,8 +39,7 @@
             },
             "operation_key": {
               "type": "string",
-              "description": "UUID for distinguishing the active operations in parallel, if applicable",
-              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "description": "Optional key to distinguish between multiple operations of the same name running in parallel (e.g., 'photo_upload' with keys 'profile_pic' vs 'cover')",
               "readOnly": true
             },
             "name": {
