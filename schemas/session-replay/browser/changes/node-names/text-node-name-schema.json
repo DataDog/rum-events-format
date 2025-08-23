@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay/browser/changes/node-names/text-node-name-schema.json",
+  "title": "TextNodeName",
+  "description": "Browser-specific. Schema representing the node name for a #text node, expressed as either a reference to the string table or a literal string.",
+  "oneOf": [
+    {
+      "type": "integer",
+      "minimum": 0,
+      "description": "A reference to the node name in the string table at the given index."
+    },
+    {
+      "const": "#text"
+    }
+  ]
+}
