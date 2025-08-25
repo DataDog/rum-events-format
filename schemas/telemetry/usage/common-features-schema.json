@@ -284,6 +284,22 @@
           "const": "add-feature-flag-evaluation"
         }
       }
+    },
+    {
+      "required": ["feature", "action_type"],
+      "title": "AddOperationStepVital",
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "addOperationStepVital API",
+          "const": "add-operation-step-vital"
+        },
+        "action_type": {
+          "type": "string",
+          "description": "Feature operations action type",
+          "enum": ["start", "succeed", "fail"]
+        }
+      }
     }
   ]
 }
