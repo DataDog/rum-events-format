@@ -433,6 +433,18 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * The id of the remote configuration
              */
             remote_configuration_id?: string;
+            /**
+             * Whether a proxy is used for remote configuration
+             */
+            use_remote_configuration_proxy?: boolean;
+            /**
+             * The percentage of sessions with Profiling enabled
+             */
+            profiling_sample_rate?: number;
+            /**
+             * Whether trace baggage is propagated to child spans
+             */
+            propagate_trace_baggage?: boolean;
             [k: string]: unknown;
         };
         [k: string]: unknown;

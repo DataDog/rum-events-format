@@ -480,6 +480,23 @@
                   "type": "string",
                   "description": "The id of the remote configuration",
                   "readOnly": false
+                },
+                "use_remote_configuration_proxy": {
+                  "type": "boolean",
+                  "description": "Whether a proxy is used for remote configuration",
+                  "readOnly": false
+                },
+                "profiling_sample_rate": {
+                  "type": "number",
+                  "description": "The percentage of sessions with Profiling enabled",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "readOnly": false
+                },
+                "propagate_trace_baggage": {
+                  "type": "boolean",
+                  "description": "Whether trace baggage is propagated to child spans",
+                  "readOnly": false
                 }
               }
             }
