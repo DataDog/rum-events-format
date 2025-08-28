@@ -200,6 +200,10 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             use_allowed_tracing_urls?: boolean;
             /**
+             * Whether the allowed GraphQL urls list is used
+             */
+            use_allowed_graph_ql_urls?: boolean;
+            /**
              * A list of selected tracing propagators
              */
             selected_tracing_propagators?: ('datadog' | 'b3' | 'b3multi' | 'tracecontext')[];

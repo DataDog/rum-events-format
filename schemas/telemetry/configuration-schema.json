@@ -168,6 +168,10 @@
                   "type": "boolean",
                   "description": "Whether the allowed tracing urls list is used"
                 },
+                "use_allowed_graph_ql_urls": {
+                  "type": "boolean",
+                  "description": "Whether the allowed GraphQL urls list is used"
+                },
                 "selected_tracing_propagators": {
                   "type": "array",
                   "items": {

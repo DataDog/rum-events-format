@@ -45,6 +45,7 @@
       "session_persistence": "cookie",
       "action_name_attribute": "foo",
       "use_allowed_tracing_origins": false,
+      "use_allowed_graph_ql_urls": false,
       "default_privacy_level": "mask",
       "text_and_input_privacy_level": "mask_all",
       "image_privacy_level": "mask_all",
