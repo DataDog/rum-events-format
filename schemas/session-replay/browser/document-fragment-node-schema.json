@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "session-replay/browser/document-fragment-node-schema.json",
+  "$id": "https://github.com/DataDog/rum-events-format/tree/master/schemas/session-replay/browser/document-fragment-node-schema.json",
   "title": "DocumentFragmentNode",
   "type": "object",
   "description": "Schema of a Document FragmentNode.",

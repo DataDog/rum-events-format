@@ -86,15 +86,17 @@ function validateSamples() {
 }
 
 function computeSchemaIdFromSchemaPath(schemaPath) {
-  // Strip the schema directory from the provided path:
-  // "./schemas/session-replay/mobile/record-schema.json" -> "session-replay/mobile/record-schema.json"
-  return schemaPath.slice(SCHEMAS_DIRECTORY.length + 1)
+  // Convert the local schema path to the expected absolute URI format:
+  // "./schemas/session-replay/mobile/record-schema.json" -> "https://github.com/DataDog/rum-events-format/tree/master/schemas/session-replay/mobile/record-schema.json"
+  const pathFromRepoRoot = schemaPath.startsWith('./') ? schemaPath.slice(2) : schemaPath
+  return `https://github.com/DataDog/rum-events-format/tree/master/${pathFromRepoRoot}`
 }
 
 function computeSchemaIdFromSamplePath(samplePath) {
-  // Keep only the directory path and strip the sample directory from the provided path:
-  // "./samples/session-replay/mobile/record/full-snapshot-record.json" -> "session-replay/mobile/record-schema.json"
-  return `${path.dirname(samplePath).slice(SAMPLES_DIRECTORY.length + 1)}-schema.json`
+  // Keep only the directory path and strip the sample directory from the provided path, then convert to absolute URI:
+  // "./samples/session-replay/mobile/record/full-snapshot-record.json" -> "https://github.com/DataDog/rum-events-format/tree/master/schemas/session-replay/mobile/record-schema.json"
+  const relativeSchemaPath = `${path.dirname(samplePath).slice(SAMPLES_DIRECTORY.length + 1)}-schema.json`
+  return `https://github.com/DataDog/rum-events-format/tree/master/schemas/${relativeSchemaPath}`
 }
 
 function forEachFile(directoryPath, callback) {

@@ -1,5 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "session-replay-browser-schema.json",
+  "$id": "https://github.com/DataDog/rum-events-format/tree/master/schemas/session-replay-browser-schema.json",
   "$ref": "session-replay/browser/segment-schema.json"
 }

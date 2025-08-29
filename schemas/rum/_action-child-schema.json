@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "rum/_action-child-schema.json",
+  "$id": "https://github.com/DataDog/rum-events-format/tree/master/schemas/rum/_action-child-schema.json",
   "title": "ActionChildProperties",
   "type": "object",
   "description": "Schema of all properties of events that can have parent actions",
