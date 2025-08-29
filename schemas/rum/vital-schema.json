@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "rum/vital-schema.json",
+  "$id": "https://github.com/DataDog/rum-events-format/tree/master/schemas/rum/vital-schema.json",
   "title": "RumVitalEvent",
   "type": "object",
   "description": "Schema of all properties of a Vital event",

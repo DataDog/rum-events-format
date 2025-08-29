@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "session-replay/full-snapshot-record-schema.json",
+  "$id": "https://github.com/DataDog/rum-events-format/tree/master/schemas/session-replay/full-snapshot-record-schema.json",
   "title": "FullSnapshotRecord",
   "description": "Schema of a Record type which contains the full snapshot of a screen.",
   "oneOf": [

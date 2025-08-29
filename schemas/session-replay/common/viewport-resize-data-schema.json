@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "session-replay/common/viewport-resize-data-schema.json",
+  "$id": "https://github.com/DataDog/rum-events-format/tree/master/schemas/session-replay/common/viewport-resize-data-schema.json",
   "title": "ViewportResizeData",
   "type": "object",
   "description": "Schema of a ViewportResizeData.",
