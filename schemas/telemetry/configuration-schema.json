@@ -168,6 +168,14 @@
                   "type": "boolean",
                   "description": "Whether the allowed tracing urls list is used"
                 },
+                "use_allowed_graph_ql_urls": {
+                  "type": "boolean",
+                  "description": "Whether the allowed GraphQL urls list is used"
+                },
+                "use_track_graph_ql_payload": {
+                  "type": "boolean",
+                  "description": "Whether GraphQL payload tracking is used for at least one GraphQL endpoint"
+                },
                 "selected_tracing_propagators": {
                   "type": "array",
                   "items": {
