@@ -145,7 +145,7 @@
                 },
                 "session_persistence": {
                   "type": "string",
-                  "enum": ["local-storage", "cookie"],
+                  "enum": ["local-storage", "cookie", "none"],
                   "description": "Configure the storage strategy for persisting sessions"
                 },
                 "store_contexts_across_pages": {
