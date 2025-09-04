@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/vital-app-launch-schema.json",
+  "title": "AppLaunchProperties",
+  "type": "object",
+  "description": "Schema for app launch metrics.",
+  "allOf": [
+    {
+      "required": ["type", "app_launch_time"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Type of the vital.",
+          "const": "app_launch",
+          "readOnly": true
+        },
+        "app_launch_time": {
+          "type": "string",
+          "description": "The time metric of the app launch in nanoseconds.",
+          "enum": ["ttid", "ttfd"],
+          "readOnly": true
+        },
+        "startup_type": {
+          "type": "string",
+          "description": "The type of the app launch.",
+          "enum": ["cold_start", "warm_start"],
+          "readOnly": true
+        },
+        "is_prewarmed": {
+          "type": "boolean",
+          "description": "Whether the app launch was prewarmed.",
+          "readOnly": true
+        },
+        "has_saved_instance_state_bundle": {
+          "type": "boolean",
+          "description": "If the app launch had a saved instance state bundle.",
+          "readOnly": true
+        }
+      }
+    },
+    {
+      "$ref": "vital-duration-schema.json"
+    }
+  ]
+}

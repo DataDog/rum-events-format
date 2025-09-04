@@ -1152,17 +1152,9 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
      */
     readonly vital: {
         /**
-         * Type of the vital
-         */
-        readonly type: 'duration' | 'operation_step';
-        /**
          * UUID of the vital
          */
         readonly id: string;
-        /**
-         * Optional key to distinguish between multiple operations of the same name running in parallel (e.g., 'photo_upload' with keys 'profile_pic' vs 'cover')
-         */
-        readonly operation_key?: string;
         /**
          * Name of the vital, as it is also used as facet path for its value, it must contain only letters, digits, or the characters - _ . @ $
          */
@@ -1171,20 +1163,8 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
          * Description of the vital. It can be used as a secondary identifier (URL, React component name...)
          */
         readonly description?: string;
-        /**
-         * Duration of the vital in nanoseconds
-         */
-        readonly duration?: number;
-        /**
-         * Type of the step that triggered the vital, if applicable
-         */
-        readonly step_type?: 'start' | 'update' | 'retry' | 'end';
-        /**
-         * Reason for the failure of the step, if applicable
-         */
-        readonly failure_reason?: 'error' | 'abandoned' | 'other';
         [k: string]: unknown;
-    };
+    } & (DurationProperties | AppLaunchProperties | FeatureOperationsProperties);
     /**
      * Internal properties
      */
@@ -1201,6 +1181,54 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
         };
         [k: string]: unknown;
     };
+    [k: string]: unknown;
+};
+/**
+ * Schema for app launch metrics.
+ */
+export declare type AppLaunchProperties = {
+    /**
+     * Type of the vital.
+     */
+    readonly type: 'app_launch';
+    /**
+     * The time metric of the app launch in nanoseconds.
+     */
+    readonly app_launch_time: 'ttid' | 'ttfd';
+    /**
+     * The type of the app launch.
+     */
+    readonly startup_type?: 'cold_start' | 'warm_start';
+    /**
+     * Whether the app launch was prewarmed.
+     */
+    readonly is_prewarmed?: boolean;
+    /**
+     * If the app launch had a saved instance state bundle.
+     */
+    readonly has_saved_instance_state_bundle?: boolean;
+    [k: string]: unknown;
+} & DurationProperties;
+/**
+ * Schema for feature operations.
+ */
+export declare type FeatureOperationsProperties = {
+    /**
+     * Type of the vital.
+     */
+    readonly type: 'operation_step';
+    /**
+     * Optional key to distinguish between multiple operations of the same name running in parallel (e.g., 'photo_upload' with keys 'profile_pic' vs 'cover')
+     */
+    readonly operation_key?: string;
+    /**
+     * Type of the step that triggered the vital, if applicable
+     */
+    readonly step_type?: 'start' | 'update' | 'retry' | 'end';
+    /**
+     * Reason for the failure of the step, if applicable
+     */
+    readonly failure_reason?: 'error' | 'abandoned' | 'other';
     [k: string]: unknown;
 };
 /**
@@ -1846,5 +1874,19 @@ export interface ViewAccessibilityProperties {
      * Indicates whether the right-to-left support is enabled.
      */
     readonly rtl_enabled?: boolean;
+    [k: string]: unknown;
+}
+/**
+ * Duration properties of a Vital event
+ */
+export interface DurationProperties {
+    /**
+     * Type of the vital.
+     */
+    readonly type: 'duration';
+    /**
+     * Duration of the vital in nanoseconds.
+     */
+    readonly duration: number;
     [k: string]: unknown;
 }
