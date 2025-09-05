@@ -441,12 +441,10 @@
       "description": "User provided context",
       "additionalProperties": true
     },
-    "stream" : {
+    "stream": {
       "type": "object",
       "description": "Stream properties",
-      "required": [
-        "id"
-      ],
+      "required": ["id"],
       "properties": {
         "id": {
           "type": "string",
