@@ -1627,7 +1627,7 @@ export interface StreamSchema {
          */
         bitrate?: number;
         /**
-         * How long is the content (VOD only)
+         * How long is the content (VOD only) (in ms)
          */
         readonly duration?: number;
         /**
@@ -1647,7 +1647,7 @@ export interface StreamSchema {
          */
         timestamp?: number;
         /**
-         * how much did the media progress since the last context update
+         * how much did the media progress since the last context update (in ms)
          */
         watch_time?: number;
         [k: string]: unknown;

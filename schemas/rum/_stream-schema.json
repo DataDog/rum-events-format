@@ -17,7 +17,7 @@
         },
         "duration": {
           "type": "number",
-          "description": "How long is the content (VOD only)",
+          "description": "How long is the content (VOD only) (in ms)",
           "minimum": 0,
           "readOnly": true
         },
@@ -43,7 +43,7 @@
         },
         "watch_time": {
           "type": "number",
-          "description": "how much did the media progress since the last context update",
+          "description": "how much did the media progress since the last context update (in ms)",
           "minimum": 0
         }
       },
