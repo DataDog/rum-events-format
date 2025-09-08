@@ -5,6 +5,7 @@
   "title": "RumLongTaskEvent",
   "type": "object",
   "description": "Schema of all properties of a Long Task event",
+  "required": ["view"],
   "allOf": [
     {
       "$ref": "_common-schema.json"

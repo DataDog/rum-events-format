@@ -4,6 +4,7 @@
   "title": "RumResourceEvent",
   "type": "object",
   "description": "Schema of all properties of a Resource event",
+  "required": ["view"],
   "allOf": [
     {
       "$ref": "_common-schema.json"
