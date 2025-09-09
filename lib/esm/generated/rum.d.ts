@@ -1147,24 +1147,7 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
      * RUM event type
      */
     readonly type: 'vital';
-    /**
-     * Vital properties
-     */
-    readonly vital: {
-        /**
-         * UUID of the vital
-         */
-        readonly id: string;
-        /**
-         * Name of the vital, as it is also used as facet path for its value, it must contain only letters, digits, or the characters - _ . @ $
-         */
-        readonly name?: string;
-        /**
-         * Description of the vital. It can be used as a secondary identifier (URL, React component name...)
-         */
-        readonly description?: string;
-        [k: string]: unknown;
-    } & (DurationProperties | AppLaunchProperties | FeatureOperationsProperties);
+    vital: AppLaunchProperties | DurationProperties | FeatureOperationsProperties;
     /**
      * Internal properties
      */
@@ -1186,15 +1169,19 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
 /**
  * Schema for app launch metrics.
  */
-export declare type AppLaunchProperties = {
+export declare type AppLaunchProperties = VitalCommonProperties & {
     /**
-     * Type of the vital.
+     * Type of the vital
      */
     readonly type: 'app_launch';
     /**
      * The time metric of the app launch in nanoseconds.
      */
     readonly app_launch_time: 'ttid' | 'ttfd';
+    /**
+     * Duration of the vital in nanoseconds.
+     */
+    readonly duration?: number;
     /**
      * The type of the app launch.
      */
@@ -1208,13 +1195,45 @@ export declare type AppLaunchProperties = {
      */
     readonly has_saved_instance_state_bundle?: boolean;
     [k: string]: unknown;
-} & DurationProperties;
+};
+/**
+ * Schema of common properties for a Vital event
+ */
+export declare type VitalCommonProperties = {
+    /**
+     * UUID of the vital
+     */
+    readonly id: string;
+    /**
+     * Name of the vital, as it is also used as facet path for its value, it must contain only letters, digits, or the characters - _ . @ $
+     */
+    readonly name?: string;
+    /**
+     * Description of the vital. It can be used as a secondary identifier (URL, React component name...)
+     */
+    readonly description?: string;
+    [k: string]: unknown;
+};
+/**
+ * Duration properties of a Vital event
+ */
+export declare type DurationProperties = VitalCommonProperties & {
+    /**
+     * Type of the vital
+     */
+    readonly type: 'duration';
+    /**
+     * Duration of the vital in nanoseconds.
+     */
+    readonly duration: number;
+    [k: string]: unknown;
+};
 /**
  * Schema for feature operations.
  */
-export declare type FeatureOperationsProperties = {
+export declare type FeatureOperationsProperties = VitalCommonProperties & {
     /**
-     * Type of the vital.
+     * Type of the vital
      */
     readonly type: 'operation_step';
     /**
@@ -1874,19 +1893,5 @@ export interface ViewAccessibilityProperties {
      * Indicates whether the right-to-left support is enabled.
      */
     readonly rtl_enabled?: boolean;
-    [k: string]: unknown;
-}
-/**
- * Duration properties of a Vital event
- */
-export interface DurationProperties {
-    /**
-     * Type of the vital.
-     */
-    readonly type: 'duration';
-    /**
-     * Duration of the vital in nanoseconds.
-     */
-    readonly duration: number;
     [k: string]: unknown;
 }

@@ -5,12 +5,13 @@
   "type": "object",
   "description": "Schema for app launch metrics.",
   "allOf": [
+    { "$ref": "_vital-common-schema.json" },
     {
       "required": ["type", "app_launch_time"],
       "properties": {
         "type": {
           "type": "string",
-          "description": "Type of the vital.",
+          "description": "Type of the vital",
           "const": "app_launch",
           "readOnly": true
         },
@@ -18,6 +19,11 @@
           "type": "string",
           "description": "The time metric of the app launch in nanoseconds.",
           "enum": ["ttid", "ttfd"],
+          "readOnly": true
+        },
+        "duration": {
+          "type": "number",
+          "description": "Duration of the vital in nanoseconds.",
           "readOnly": true
         },
         "startup_type": {
@@ -37,9 +43,6 @@
           "readOnly": true
         }
       }
-    },
-    {
-      "$ref": "vital-duration-schema.json"
     }
   ]
 }

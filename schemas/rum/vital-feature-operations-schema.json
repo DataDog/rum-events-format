@@ -5,12 +5,13 @@
   "type": "object",
   "description": "Schema for feature operations.",
   "allOf": [
+    { "$ref": "_vital-common-schema.json" },
     {
       "required": ["type"],
       "properties": {
         "type": {
           "type": "string",
-          "description": "Type of the vital.",
+          "description": "Type of the vital",
           "const": "operation_step",
           "readOnly": true
         },

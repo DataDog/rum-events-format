@@ -12,7 +12,7 @@
       "$ref": "_view-container-schema.json"
     },
     {
-      "required": ["type", "vital"],
+      "required": ["vital", "type"],
       "properties": {
         "type": {
           "type": "string",
@@ -21,45 +21,17 @@
           "readOnly": true
         },
         "vital": {
-          "description": "Vital properties",
-          "allOf": [
+          "oneOf": [
             {
-              "required": ["id", "type"],
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "description": "UUID of the vital",
-                  "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
-                  "readOnly": true
-                },
-                "name": {
-                  "type": "string",
-                  "description": "Name of the vital, as it is also used as facet path for its value, it must contain only letters, digits, or the characters - _ . @ $",
-                  "readOnly": true
-                },
-                "description": {
-                  "type": "string",
-                  "description": "Description of the vital. It can be used as a secondary identifier (URL, React component name...)",
-                  "readOnly": true
-                }
-              },
-              "readOnly": true
+              "$ref": "vital-app-launch-schema.json"
             },
             {
-              "oneOf": [
-                {
-                  "$ref": "vital-duration-schema.json"
-                },
-                {
-                  "$ref": "vital-app-launch-schema.json"
-                },
-                {
-                  "$ref": "vital-feature-operations-schema.json"
-                }
-              ]
+              "$ref": "vital-duration-schema.json"
+            },
+            {
+              "$ref": "vital-feature-operations-schema.json"
             }
-          ],
-          "readOnly": true
+          ]
         },
         "_dd": {
           "type": "object",
