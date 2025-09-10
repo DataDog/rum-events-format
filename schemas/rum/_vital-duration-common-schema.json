@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/_vital-duration-common-schema.json",
+  "title": "DurationCommonProperties",
+  "type": "object",
+  "description": "Duration common properties of a Vital event",
+  "required": ["duration"],
+  "properties": {
+    "duration": {
+      "type": "number",
+      "description": "Duration of the vital in nanoseconds.",
+      "readOnly": true
+    }
+  },
+  "readOnly": true
+}

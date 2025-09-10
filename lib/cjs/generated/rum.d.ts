@@ -1169,7 +1169,7 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
 /**
  * Schema for app launch metrics.
  */
-export declare type AppLaunchProperties = VitalCommonProperties & {
+export declare type AppLaunchProperties = VitalCommonProperties & DurationCommonProperties & {
     /**
      * Type of the vital
      */
@@ -1178,10 +1178,6 @@ export declare type AppLaunchProperties = VitalCommonProperties & {
      * The time metric of the app launch in nanoseconds.
      */
     readonly app_launch_time: 'ttid' | 'ttfd';
-    /**
-     * Duration of the vital in nanoseconds.
-     */
-    readonly duration?: number;
     /**
      * The type of the app launch.
      */
@@ -1217,15 +1213,11 @@ export declare type VitalCommonProperties = {
 /**
  * Duration properties of a Vital event
  */
-export declare type DurationProperties = VitalCommonProperties & {
+export declare type DurationProperties = VitalCommonProperties & DurationCommonProperties & {
     /**
      * Type of the vital
      */
     readonly type: 'duration';
-    /**
-     * Duration of the vital in nanoseconds.
-     */
-    readonly duration: number;
     [k: string]: unknown;
 };
 /**
@@ -1893,5 +1885,15 @@ export interface ViewAccessibilityProperties {
      * Indicates whether the right-to-left support is enabled.
      */
     readonly rtl_enabled?: boolean;
+    [k: string]: unknown;
+}
+/**
+ * Duration common properties of a Vital event
+ */
+export interface DurationCommonProperties {
+    /**
+     * Duration of the vital in nanoseconds.
+     */
+    readonly duration: number;
     [k: string]: unknown;
 }

@@ -6,6 +6,7 @@
   "description": "Schema for app launch metrics.",
   "allOf": [
     { "$ref": "_vital-common-schema.json" },
+    { "$ref": "_vital-duration-common-schema.json" },
     {
       "required": ["type", "app_launch_time"],
       "properties": {
@@ -19,11 +20,6 @@
           "type": "string",
           "description": "The time metric of the app launch in nanoseconds.",
           "enum": ["ttid", "ttfd"],
-          "readOnly": true
-        },
-        "duration": {
-          "type": "number",
-          "description": "Duration of the vital in nanoseconds.",
           "readOnly": true
         },
         "startup_type": {

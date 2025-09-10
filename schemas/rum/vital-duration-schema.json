@@ -6,18 +6,14 @@
   "description": "Duration properties of a Vital event",
   "allOf": [
     { "$ref": "_vital-common-schema.json" },
+    { "$ref": "_vital-duration-common-schema.json" },
     {
-      "required": ["type", "duration"],
+      "required": ["type"],
       "properties": {
         "type": {
           "type": "string",
           "description": "Type of the vital",
           "const": "duration",
-          "readOnly": true
-        },
-        "duration": {
-          "type": "number",
-          "description": "Duration of the vital in nanoseconds.",
           "readOnly": true
         }
       }
