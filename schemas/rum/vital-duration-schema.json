@@ -23,7 +23,8 @@
           "readOnly": true
         }
       },
-      "readOnly": true
+      "readOnly": true,
+      "additionalProperties": false
     }
   ]
 }

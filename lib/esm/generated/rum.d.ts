@@ -1178,7 +1178,6 @@ export declare type DurationProperties = VitalCommonProperties & {
      * Duration of the vital in nanoseconds.
      */
     readonly duration: number;
-    [k: string]: unknown;
 };
 /**
  * Schema of common properties for a Vital event
@@ -1226,7 +1225,6 @@ export declare type AppLaunchProperties = VitalCommonProperties & {
      * If the app launch had a saved instance state bundle.
      */
     readonly has_saved_instance_state_bundle?: boolean;
-    [k: string]: unknown;
 };
 /**
  * Schema for a feature operation.
@@ -1248,7 +1246,6 @@ export declare type FeatureOperationProperties = VitalCommonProperties & {
      * Reason for the failure of the step, if applicable
      */
     readonly failure_reason?: 'error' | 'abandoned' | 'other';
-    [k: string]: unknown;
 };
 /**
  * Schema of common properties of RUM events
