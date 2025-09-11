@@ -36,31 +36,31 @@
               "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
               "readOnly": true
             },
-            "ts": {
+            "timestamp": {
               "type": "integer",
-              "description": "Timestamp in the player",
+              "description": "The player's current timestamp in milliseconds",
               "minimum": 0,
               "readOnly": true
             },
-            "bsd": {
+            "buffer_starrvation_duration": {
               "type": "integer",
-              "description": "Buffer starvation duration, the amount of time spent rebuffering",
+              "description": "Buffer starvation duration, the amount of time spent rebuffering in milliseconds",
               "minimum": 0,
               "readOnly": true
             },
-            "msd": {
+            "media_start_delay": {
               "type": "integer",
-              "description": "Media start delay, the amount of time spent loading before playing",
+              "description": "Media start delay, the amount of time spent loading before playing in milliseconds",
               "minimum": 0,
               "readOnly": true
             },
-            "ec": {
+            "error_code": {
               "type": "integer",
               "description": "Error code, as reported by the player",
               "minimum": 0,
               "readOnly": true
             },
-            "d": {
+            "duration": {
               "type": "integer",
               "description": "Duration of the event in ns",
               "minimum": 0,
