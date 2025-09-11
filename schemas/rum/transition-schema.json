@@ -62,7 +62,7 @@
             },
             "duration": {
               "type": "integer",
-              "description": "Duration of the event in ns",
+              "description": "Duration of the event in milliseconds",
               "minimum": 0,
               "readOnly": true
             }

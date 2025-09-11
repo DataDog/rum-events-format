@@ -188,7 +188,7 @@ export declare type RumTransitionEvent = CommonProperties & StreamContainerSchem
          */
         readonly error_code?: number;
         /**
-         * Duration of the event in ns
+         * Duration of the event in milliseconds
          */
         readonly duration?: number;
         [k: string]: unknown;

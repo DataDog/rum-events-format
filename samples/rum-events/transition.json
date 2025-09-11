@@ -22,9 +22,9 @@
   "transition": {
     "type": "MEDIA_PLAYER_PLAY",
     "id": "47af0abb-3de1-4170-a491-4473716df979",
-    "timestamp": 500000000,
-    "buffer_starvation_duration": 600000000,
-    "media_start_delay": 700000000
+    "timestamp": 3600000,
+    "buffer_starvation_duration": 500,
+    "media_start_delay": 800
   },
   "_dd": {
     "format_version": 2
