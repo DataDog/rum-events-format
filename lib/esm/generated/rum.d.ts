@@ -172,25 +172,25 @@ export declare type RumTransitionEvent = CommonProperties & StreamContainerSchem
          */
         readonly id?: string;
         /**
-         * Timestamp in the player
+         * The player's current timestamp in milliseconds
          */
-        readonly ts?: number;
+        readonly timestamp?: number;
         /**
-         * Buffer starvation duration, the amount of time spent rebuffering
+         * Buffer starvation duration, the amount of time spent rebuffering in milliseconds
          */
-        readonly bsd?: number;
+        readonly buffer_starrvation_duration?: number;
         /**
-         * Media start delay, the amount of time spent loading before playing
+         * Media start delay, the amount of time spent loading before playing in milliseconds
          */
-        readonly msd?: number;
+        readonly media_start_delay?: number;
         /**
          * Error code, as reported by the player
          */
-        readonly ec?: number;
+        readonly error_code?: number;
         /**
          * Duration of the event in ns
          */
-        readonly d?: number;
+        readonly duration?: number;
         [k: string]: unknown;
     };
     [k: string]: unknown;
