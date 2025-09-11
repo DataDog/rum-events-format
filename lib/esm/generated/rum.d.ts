@@ -178,7 +178,7 @@ export declare type RumTransitionEvent = CommonProperties & StreamContainerSchem
         /**
          * Buffer starvation duration, the amount of time spent rebuffering in milliseconds
          */
-        readonly buffer_starrvation_duration?: number;
+        readonly buffer_starvation_duration?: number;
         /**
          * Media start delay, the amount of time spent loading before playing in milliseconds
          */

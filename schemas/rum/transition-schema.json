@@ -42,7 +42,7 @@
               "minimum": 0,
               "readOnly": true
             },
-            "buffer_starrvation_duration": {
+            "buffer_starvation_duration": {
               "type": "integer",
               "description": "Buffer starvation duration, the amount of time spent rebuffering in milliseconds",
               "minimum": 0,
