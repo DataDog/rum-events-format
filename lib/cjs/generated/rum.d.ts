@@ -154,7 +154,7 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
 /**
  * Schema of all properties of an Transition event
  */
-export declare type RumTransitionEvent = CommonProperties & StreamContainerSchema & {
+export declare type RumTransitionEvent = CommonProperties & StreamEventSchema & {
     /**
      * RUM event type
      */
@@ -1663,23 +1663,17 @@ export interface ViewContainerSchema {
     [k: string]: unknown;
 }
 /**
- * Stream Container schema for streams that are nested
+ * Stream event schema for events that are associated to a stream
  */
-export interface StreamContainerSchema {
+export interface StreamEventSchema {
     /**
-     * Stream Container properties (stream wrapping the current stream)
+     * Stream properties
      */
-    readonly container?: {
+    readonly stream: {
         /**
-         * Attributes of the stream's container
+         * UUID of the stream
          */
-        readonly stream: {
-            /**
-             * ID of the parent stream
-             */
-            readonly id: string;
-            [k: string]: unknown;
-        };
+        readonly id: string;
         [k: string]: unknown;
     };
     [k: string]: unknown;

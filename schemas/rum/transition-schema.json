@@ -9,7 +9,7 @@
       "$ref": "_common-schema.json"
     },
     {
-      "$ref": "_stream-container-schema.json"
+      "$ref": "_stream-event-schema.json"
     },
     {
       "required": ["type", "transition"],

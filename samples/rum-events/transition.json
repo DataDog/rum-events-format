@@ -15,9 +15,7 @@
     "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
   },
   "stream": {
-    "id": "7be62f6b-b0c1-4165-bf5f-2ca647dfec30",
-    "referrer": "",
-    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+    "id": "7be62f6b-b0c1-4165-bf5f-2ca647dfec30"
   },
   "transition": {
     "type": "MEDIA_PLAYER_PLAY",
