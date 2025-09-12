@@ -8,7 +8,7 @@
     "container": {
       "type": "object",
       "description": "Stream Container properties (stream wrapping the current stream)",
-      "required": ["stream", "source"],
+      "required": ["stream"],
       "properties": {
         "stream": {
           "type": "object",
@@ -22,12 +22,6 @@
               "readOnly": true
             }
           },
-          "readOnly": true
-        },
-        "source": {
-          "type": "string",
-          "description": "Source of the parent stream",
-          "enum": ["android", "ios", "browser", "flutter", "react-native", "roku", "unity", "kotlin-multiplatform"],
           "readOnly": true
         }
       },
