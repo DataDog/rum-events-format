@@ -9,15 +9,26 @@
       "$ref": "_common-schema.json"
     },
     {
-      "$ref": "_stream-event-schema.json"
-    },
-    {
-      "required": ["type", "transition"],
+      "required": ["type", "transition", "stream"],
       "properties": {
         "type": {
           "type": "string",
           "description": "RUM event type",
           "const": "transition",
+          "readOnly": true
+        },
+        "stream": {
+          "type": "object",
+          "description": "Stream properties",
+          "required": ["id"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "UUID of the stream",
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "readOnly": true
+            }
+          },
           "readOnly": true
         },
         "transition": {

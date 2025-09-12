@@ -154,11 +154,21 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
 /**
  * Schema of all properties of an Transition event
  */
-export declare type RumTransitionEvent = CommonProperties & StreamEventSchema & {
+export declare type RumTransitionEvent = CommonProperties & {
     /**
      * RUM event type
      */
     readonly type: 'transition';
+    /**
+     * Stream properties
+     */
+    readonly stream: {
+        /**
+         * UUID of the stream
+         */
+        readonly id: string;
+        [k: string]: unknown;
+    };
     /**
      * Transition properties
      */
@@ -1658,22 +1668,6 @@ export interface ViewContainerSchema {
          * Source of the parent view
          */
         readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform';
-        [k: string]: unknown;
-    };
-    [k: string]: unknown;
-}
-/**
- * Stream event schema for events that are associated to a stream
- */
-export interface StreamEventSchema {
-    /**
-     * Stream properties
-     */
-    readonly stream: {
-        /**
-         * UUID of the stream
-         */
-        readonly id: string;
         [k: string]: unknown;
     };
     [k: string]: unknown;
