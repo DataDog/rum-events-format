@@ -9,6 +9,9 @@
       "$ref": "rum/action-schema.json"
     },
     {
+      "$ref": "rum/transition-schema.json"
+    },
+    {
       "$ref": "rum/error-schema.json"
     },
     {
