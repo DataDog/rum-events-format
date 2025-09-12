@@ -24,20 +24,6 @@
           },
           "readOnly": true
         },
-        "view": {
-          "type": "object",
-          "description": "Attributes of the view's container",
-          "required": ["id"],
-          "properties": {
-            "id": {
-              "type": "string",
-              "description": "ID of the parent view",
-              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
-              "readOnly": true
-            }
-          },
-          "readOnly": true
-        },
         "source": {
           "type": "string",
           "description": "Source of the parent stream",

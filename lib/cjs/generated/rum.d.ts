@@ -1681,16 +1681,6 @@ export interface StreamContainerSchema {
             [k: string]: unknown;
         };
         /**
-         * Attributes of the view's container
-         */
-        readonly view?: {
-            /**
-             * ID of the parent view
-             */
-            readonly id: string;
-            [k: string]: unknown;
-        };
-        /**
          * Source of the parent stream
          */
         readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform';
