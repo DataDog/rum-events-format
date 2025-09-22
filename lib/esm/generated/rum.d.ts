@@ -1216,6 +1216,10 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
             readonly computed_value?: boolean;
             [k: string]: unknown;
         };
+        /**
+         * Profiling context
+         */
+        profiling?: ProfilingInternalContextSchema;
         [k: string]: unknown;
     };
     [k: string]: unknown;
