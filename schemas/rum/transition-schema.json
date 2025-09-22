@@ -9,7 +9,7 @@
       "$ref": "_common-schema.json"
     },
     {
-      "required": ["type", "transition", "stream"],
+      "required": ["type", "transition", "view", "stream"],
       "properties": {
         "type": {
           "type": "string",
