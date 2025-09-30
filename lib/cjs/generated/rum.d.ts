@@ -94,7 +94,7 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
     /**
      * View properties
      */
-    readonly view?: {
+    readonly view: {
         /**
          * Is the action starting in the foreground (focus in browser)
          */
@@ -438,7 +438,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
     /**
      * View properties
      */
-    readonly view?: {
+    readonly view: {
         /**
          * Is the error starting in the foreground (focus in browser)
          */
@@ -1216,6 +1216,10 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
             readonly computed_value?: boolean;
             [k: string]: unknown;
         };
+        /**
+         * Profiling context
+         */
+        profiling?: ProfilingInternalContextSchema;
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -1371,7 +1375,7 @@ export interface CommonProperties {
     /**
      * View properties
      */
-    readonly view: {
+    readonly view?: {
         /**
          * UUID of the view
          */
