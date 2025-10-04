@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay/browser/changes/attribute-change-schema.json",
+  "title": "AttributeChange",
+  "type": "array",
+  "description": "Browser-specific. Schema representing a change to an node's attributes.",
+  "minItems": 1,
+  "items": [{ "$ref": "node-references/node-id-schema.json" }],
+  "additionalItems": {
+    "$ref": "attribute-assignment-or-deletion-schema.json"
+  }
+}
