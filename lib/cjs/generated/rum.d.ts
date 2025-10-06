@@ -1755,6 +1755,10 @@ export interface StreamSchema {
          * how much did the media progress since the last context update (in ms)
          */
         watch_time?: number;
+        /**
+         * Percentage of amount of time watched relative to its total duration
+         */
+        completion_percent?: number;
         [k: string]: unknown;
     };
     [k: string]: unknown;

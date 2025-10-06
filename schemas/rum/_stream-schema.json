@@ -45,6 +45,12 @@
           "type": "number",
           "description": "how much did the media progress since the last context update (in ms)",
           "minimum": 0
+        },
+        "completion_percent": {
+          "type": "number",
+          "description": "Percentage of amount of time watched relative to its total duration",
+          "minimum": 0,
+          "maximum": 100
         }
       },
       "readOnly": true
