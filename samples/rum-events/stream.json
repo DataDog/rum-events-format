@@ -1,0 +1,160 @@
+{
+  "type": "view",
+  "date": 1591283924940,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user",
+    "sampled_for_replay": false
+  },
+  "source": "browser",
+  "stream": {
+    "id": "e7204e75-ec4a-47de-94f6-9a478fbe9b60",
+    "completion_percent": 99,
+    "bitrate": 1.5,
+    "duration": 992.23,
+    "format": "mp4",
+    "fps": 24,
+    "resolution": "1920x1080",
+    "timestamp": 113,
+    "watch_time": 47
+  },
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view",
+    "loading_time": 4115295000,
+    "network_settled_time": 10000,
+    "interaction_to_next_view_time": 20000,
+    "loading_type": "initial_load",
+    "time_spent": 245512755000,
+    "first_contentful_paint": 420725000,
+    "dom_complete": 2144660000,
+    "dom_content_loaded": 951715000,
+    "dom_interactive": 906695000,
+    "load_event": 2154370000,
+    "interaction_to_next_paint": 20000000,
+    "interaction_to_next_paint_time": 20000000,
+    "interaction_to_next_paint_target_selector": "#foo",
+    "largest_contentful_paint": 20000000,
+    "largest_contentful_paint_target_selector": "#foo",
+    "first_input_delay": 20000000,
+    "first_input_time": 20000000,
+    "first_input_target_selector": "#foo",
+    "cumulative_layout_shift": 0.1,
+    "cumulative_layout_shift_time": 2000,
+    "cumulative_layout_shift_target_selector": "#foo",
+    "custom_timings": {
+      "user-timing": 2154570000
+    },
+    "action": {
+      "count": 0
+    },
+    "error": {
+      "count": 2
+    },
+    "long_task": {
+      "count": 5
+    },
+    "resource": {
+      "count": 9
+    },
+    "frustration": {
+      "count": 9
+    },
+    "in_foreground_periods": [
+      { "start": 1345678, "duration": 67 },
+      { "start": 1645678, "duration": 67 }
+    ],
+    "performance": {
+      "cls": {
+        "score": 0.1,
+        "timestamp": 2000,
+        "target_selector": "#foo",
+        "previous_rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "current_rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        }
+      },
+      "fcp": {
+        "timestamp": 420725000
+      },
+      "fid": {
+        "duration": 20000000,
+        "timestamp": 20000000,
+        "target_selector": "#foo"
+      },
+      "inp": {
+        "duration": 20000000,
+        "timestamp": 20000000,
+        "target_selector": "#foo"
+      },
+      "lcp": {
+        "timestamp": 20000000,
+        "target_selector": "#foo",
+        "resource_url": "https://example.com/foo.jpg"
+      }
+    }
+  },
+  "_dd": {
+    "document_version": 9,
+    "format_version": 2,
+    "page_states": [
+      {
+        "state": "active",
+        "start": 1345678
+      }
+    ],
+    "cls": {
+      "device_pixel_ratio": 2
+    },
+    "configuration": {
+      "session_sample_rate": 12.45,
+      "session_replay_sample_rate": 100,
+      "start_session_replay_recording_manually": true
+    },
+    "profiling": {
+      "status": "running"
+    }
+  },
+  "synthetics": {
+    "test_id": "foo",
+    "result_id": "bar"
+  },
+  "context": {
+    "foo": "bar"
+  },
+  "device": {
+    "type": "tablet",
+    "name": "iPad",
+    "model": "iPad",
+    "brand": "Apple",
+    "locale": "en-US",
+    "locales": ["en-US", "fr-FR"],
+    "time_zone": "Europe/Paris"
+  },
+  "os": {
+    "name": "iOS",
+    "version": "15.1.1",
+    "version_major": "15"
+  },
+  "feature_flags": {
+    "feature_one": true,
+    "feature_two": "foo",
+    "feature_three": 2,
+    "feature_four": { "foo": "bar" }
+  },
+  "privacy": {
+    "replay_level": "mask"
+  }
+}
