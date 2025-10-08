@@ -769,6 +769,42 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
              * String representation of the operation variables
              */
             variables?: string;
+            /**
+             * Number of GraphQL errors in the response
+             */
+            readonly errors_count?: number;
+            /**
+             * Array of GraphQL errors from the response
+             */
+            readonly errors?: {
+                /**
+                 * Error message
+                 */
+                readonly message: string;
+                /**
+                 * Error code from GraphQL extensions
+                 */
+                readonly code?: string;
+                /**
+                 * Array of error locations in the GraphQL query
+                 */
+                readonly locations?: {
+                    /**
+                     * Line number where the error occurred
+                     */
+                    readonly line: number;
+                    /**
+                     * Column number where the error occurred
+                     */
+                    readonly column: number;
+                    [k: string]: unknown;
+                }[];
+                /**
+                 * Path to the field that caused the error
+                 */
+                readonly path?: (string | number)[];
+                [k: string]: unknown;
+            }[];
             [k: string]: unknown;
         };
         [k: string]: unknown;
