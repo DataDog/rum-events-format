@@ -486,15 +486,15 @@ export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties 
          */
         readonly blocking_duration?: number;
         /**
-         * Start time of the rendering cycle, which includes requestAnimationFrame callbacks, style and layout calculation, resize observer and intersection observer callbacks
+         * Time difference (in ns) between the timeOrigin and the start time of the rendering cycle, which includes requestAnimationFrame callbacks, style and layout calculation, resize observer and intersection observer callbacks
          */
         readonly render_start?: number;
         /**
-         * Start time of the time period spent in style and layout calculations
+         * Time difference (in ns) between the timeOrigin and the start time of the time period spent in style and layout calculations
          */
         readonly style_and_layout_start?: number;
         /**
-         * Start time of of the first UI event (mouse/keyboard and so on) to be handled during the course of this frame
+         * Time difference (in ns) between the timeOrigin and the start time of of the first UI event (mouse/keyboard and so on) to be handled during the course of this frame
          */
         readonly first_ui_event_timestamp?: number;
         /**
