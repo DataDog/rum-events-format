@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay/browser/changes/add-element-node-change-schema.json",
+  "title": "AddElementNodeChange",
+  "type": "array",
+  "description": "Browser-specific. Schema representing the addition of a new element node to the document.",
+  "minItems": 2,
+  "items": [{ "$ref": "node-references/insertion-point-schema.json" }, { "$ref": "node-names/node-name-schema.json" }],
+  "additionalItems": { "$ref": "attribute-assignment-schema.json" }
+}

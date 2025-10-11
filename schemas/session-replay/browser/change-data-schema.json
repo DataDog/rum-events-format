@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay/browser/change-data-schema.json",
+  "title": "BrowserChangeData",
+  "type": "object",
+  "description": "Browser-specific. Schema of a Session Replay BrowserChangeData type.",
+  "allOf": [
+    {
+      "properties": {
+        "adoptedStyleSheetsChanges": {
+          "type": "array",
+          "items": {
+            "$ref": "changes/adopted-stylesheets-change-schema.json"
+          },
+          "description": "Changes to the `adoptedStyleSheets` list of a Document, DocumentFragment, or ShadowRoot node."
+        },
+        "attributeChanges": {
+          "type": "array",
+          "items": {
+            "$ref": "changes/attribute-change-schema.json"
+          },
+          "description": "Changes to the attributes of a node."
+        },
+        "nodesAdded": {
+          "type": "array",
+          "items": {
+            "$ref": "changes/add-node-change-schema.json"
+          },
+          "description": "Newly added nodes."
+        },
+        "nodesRemoved": {
+          "type": "array",
+          "items": {
+            "$ref": "changes/node-references/node-id-schema.json"
+          },
+          "description": "Newly removed nodes."
+        },
+        "scrollChanges": {
+          "type": "array",
+          "items": {
+            "$ref": "changes/scroll-position-change-schema.json"
+          },
+          "description": "Changes to the scroll position of a node."
+        },
+        "stringsAdded": {
+          "type": "array",
+          "items": {
+            "$ref": "changes/add-string-change-schema.json"
+          },
+          "description": "Newly added strings."
+        },
+        "textChanges": {
+          "type": "array",
+          "items": {
+            "$ref": "changes/text-change-schema.json"
+          },
+          "description": "Changes to the text content of a node."
+        }
+      }
+    }
+  ]
+}
