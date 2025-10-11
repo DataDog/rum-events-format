@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "profiling/profiler-api-schema.json",
+  "title": "ProfilerApiTypes",
+  "description": "Schema for Browser Profiler API types.",
+  "allOf": [
+      {
+          "$ref": "profiling/_profiler-trace.json"
+      },
+      {
+          "$ref": "profiling/_profiler-init-options.json"
+      }
+  ],
+  "additionalProperties": false
+}
