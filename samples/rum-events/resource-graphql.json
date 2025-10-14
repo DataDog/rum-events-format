@@ -33,7 +33,7 @@
       "operationName": "GetUserProfile",
       "variables": "{\"userId\": \"123\"}",
       "payload": "query GetUserProfile($userId: ID!) { user(id: $userId) { name email } }",
-      "errors_count": 2,
+      "error_count": 2,
       "errors": [
         {
           "message": "User not found",
