@@ -44,7 +44,7 @@
               "column": 15
             }
           ],
-          "path": ["user", "name"]
+          "path": ["user", 1]
         },
         {
           "message": "Invalid email format",
