@@ -1,0 +1,72 @@
+{
+  "type": "resource",
+  "date": 1591284175328,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "browser",
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+  },
+  "resource": {
+    "id": "b83a5d82-cdd1-468d-9bc9-3aa9e54d957a",
+    "type": "fetch",
+    "method": "POST",
+    "url": "https://api.example.com/graphql",
+    "status_code": 200,
+    "duration": 246580000,
+    "size": 3599,
+    "encoded_body_size": 1599,
+    "decoded_body_size": 3599,
+    "transfer_size": 3699,
+    "render_blocking_status": "non-blocking",
+    "protocol": "HTTP/1.1",
+    "delivery_type": "cache",
+    "graphql": {
+      "operationType": "query",
+      "operationName": "GetUserProfile",
+      "variables": "{\"userId\": \"123\"}",
+      "payload": "query GetUserProfile($userId: ID!) { user(id: $userId) { name email } }",
+      "error_count": 2,
+      "errors": [
+        {
+          "message": "User not found",
+          "code": "USER_NOT_FOUND",
+          "locations": [
+            {
+              "line": 1,
+              "column": 15
+            }
+          ],
+          "path": ["user", 1]
+        },
+        {
+          "message": "Invalid email format",
+          "code": "INVALID_EMAIL",
+          "locations": [
+            {
+              "line": 1,
+              "column": 25
+            }
+          ],
+          "path": ["user", "email"]
+        }
+      ]
+    }
+  },
+  "action": {
+    "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
+  },
+  "_dd": {
+    "format_version": 2,
+    "span_id": "12345",
+    "parent_span_id": "67890",
+    "trace_id": "7890"
+  }
+}
