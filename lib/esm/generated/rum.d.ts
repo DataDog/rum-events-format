@@ -159,6 +159,9 @@ export declare type RumTransitionEvent = CommonProperties & {
      * RUM event type
      */
     readonly type: 'transition';
+    view: {
+        [k: string]: unknown;
+    };
     /**
      * Stream properties
      */
@@ -461,6 +464,9 @@ export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties 
      * RUM event type
      */
     readonly type: 'long_task';
+    view: {
+        [k: string]: unknown;
+    };
     /**
      * Long Task properties
      */
@@ -577,6 +583,9 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
      * RUM event type
      */
     readonly type: 'resource';
+    view: {
+        [k: string]: unknown;
+    };
     /**
      * Resource properties
      */
@@ -1234,6 +1243,9 @@ export declare type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationSte
  * Schema for a duration vital event.
  */
 export declare type RumVitalDurationEvent = RumVitalEventCommonProperties & {
+    view: {
+        [k: string]: unknown;
+    };
     /**
      * Vital properties
      */
@@ -1282,6 +1294,9 @@ export declare type RumVitalEventCommonProperties = CommonProperties & ViewConta
  * Schema for a vital operation step event.
  */
 export declare type RumVitalOperationStepEvent = RumVitalEventCommonProperties & {
+    view: {
+        [k: string]: unknown;
+    };
     /**
      * Vital properties
      */
