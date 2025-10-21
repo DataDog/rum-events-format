@@ -181,6 +181,10 @@
                   "type": "boolean",
                   "description": "Whether GraphQL payload tracking is used for at least one GraphQL endpoint"
                 },
+                "use_track_graph_ql_response_errors": {
+                  "type": "boolean",
+                  "description": "Whether GraphQL response errors tracking is used for at least one GraphQL endpoint"
+                },
                 "selected_tracing_propagators": {
                   "type": "array",
                   "items": {
