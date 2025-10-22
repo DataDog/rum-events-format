@@ -1243,16 +1243,6 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
      */
     readonly _dd?: {
         /**
-         * Internal vital properties
-         */
-        readonly vital?: {
-            /**
-             * Whether the value of the vital is computed by the SDK (as opposed to directly provided by the customer)
-             */
-            readonly computed_value?: boolean;
-            [k: string]: unknown;
-        };
-        /**
          * Profiling context
          */
         profiling?: ProfilingInternalContextSchema;

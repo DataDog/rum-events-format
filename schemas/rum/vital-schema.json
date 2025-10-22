@@ -38,18 +38,6 @@
           "type": "object",
           "description": "Internal properties",
           "properties": {
-            "vital": {
-              "type": "object",
-              "description": "Internal vital properties",
-              "properties": {
-                "computed_value": {
-                  "type": "boolean",
-                  "description": "Whether the value of the vital is computed by the SDK (as opposed to directly provided by the customer)",
-                  "readOnly": true
-                }
-              },
-              "readOnly": true
-            },
             "profiling": {
               "type": "object",
               "description": "Profiling context",
