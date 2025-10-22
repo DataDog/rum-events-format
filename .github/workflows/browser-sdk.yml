@@ -7,7 +7,7 @@ jobs:
   browser-sdk-test:
     strategy:
       matrix:
-        test_type: [unit, e2e]
+        test_type: [unit, e2e, typecheck]
 
     runs-on: ubuntu-latest
     steps:
@@ -26,9 +26,12 @@ jobs:
         run: |
           cd rum-events-format
           git checkout ${{ github.sha }}
+          cd ..
+          yarn json-schemas:generate
 
       - name: Run ${{matrix.test_type}} tests
         run: eval $command_${{matrix.test_type}}
         env:
           command_unit: 'yarn test:unit'
           command_e2e: 'yarn test:e2e:ci --workers 10'
+          command_build: 'yarn typecheck'
