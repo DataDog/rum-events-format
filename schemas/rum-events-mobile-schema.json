@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum-events-mobile-schema.json",
+  "title": "RumEvent",
+  "type": "object",
+  "description": "Schema of all properties of a RUM event",
+  "oneOf": [
+    {
+      "$ref": "rum/action-schema.json"
+    },
+    {
+      "$ref": "rum/error-schema.json"
+    },
+    {
+      "$ref": "rum/long_task-schema.json"
+    },
+    {
+      "$ref": "rum/resource-schema.json"
+    },
+    {
+      "$ref": "rum/view-schema.json"
+    },
+    {
+      "title": "RumVitalEvent",
+      "anyOf": [
+        {
+          "$ref": "rum/vital-duration-schema.json"
+        },
+        {
+          "$ref": "rum/vital-operation-step-schema.json"
+        },
+        {
+          "$ref": "rum/vital-app-launch-schema.json"
+        }
+      ]
+    }
+  ]
+}
