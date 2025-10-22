@@ -4,61 +4,76 @@
   "title": "RumVitalEvent",
   "type": "object",
   "description": "Schema of all properties of a Vital event",
-  "allOf": [
+  "oneOf": [
     {
-      "$ref": "_common-schema.json"
-    },
-    {
-      "$ref": "_view-container-schema.json"
-    },
-    {
-      "required": ["type", "vital"],
-      "properties": {
-        "type": {
-          "type": "string",
-          "description": "RUM event type",
-          "const": "vital",
-          "readOnly": true
+      "allOf": [
+        {
+          "$ref": "_common-schema.json"
         },
-        "vital": {
-          "oneOf": [
-            {
-              "$ref": "vital-duration-schema.json"
-            },
-            {
-              "$ref": "vital-app-launch-schema.json"
-            },
-            {
-              "$ref": "vital-feature-operation-schema.json"
-            }
-          ],
-          "readOnly": true
+        {
+          "$ref": "_view-container-schema.json"
         },
-        "_dd": {
-          "type": "object",
-          "description": "Internal properties",
+        {
+          "$ref": "_vital-common-internal-schema.json"
+        },
+        {
+          "required": ["type", "vital", "view"],
           "properties": {
-            "vital": {
-              "type": "object",
-              "description": "Internal vital properties",
-              "properties": {
-                "computed_value": {
-                  "type": "boolean",
-                  "description": "Whether the value of the vital is computed by the SDK (as opposed to directly provided by the customer)",
-                  "readOnly": true
-                }
-              },
+            "type": {
+              "type": "string",
+              "description": "RUM event type",
+              "const": "vital",
               "readOnly": true
             },
-            "profiling": {
-              "type": "object",
-              "description": "Profiling context",
-              "allOf": [{ "$ref": "./_profiling-internal-context-schema.json" }]
+            "vital": {
+              "oneOf": [
+                {
+                  "$ref": "vital-duration-schema.json"
+                },
+                {
+                  "$ref": "vital-feature-operation-schema.json"
+                }
+              ],
+              "readOnly": true
             }
-          },
-          "readOnly": true
+          }
         }
-      }
+      ]
+    },
+    {
+      "allOf": [
+        {
+          "$ref": "_common-schema.json"
+        },
+        {
+          "$ref": "_view-container-schema.json"
+        },
+        {
+          "$ref": "_vital-common-internal-schema.json"
+        },
+        {
+          "required": ["type", "vital"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "RUM event type",
+              "const": "vital",
+              "readOnly": true
+            },
+            "vital": {
+              "oneOf": [
+                {
+                  "$ref": "vital-app-launch-schema.json"
+                }
+              ],
+              "readOnly": true
+            },
+            "view": {
+              "$ref": "_common-schema.json#/properties/view"
+            }
+          }
+        }
+      ]
     }
   ]
 }

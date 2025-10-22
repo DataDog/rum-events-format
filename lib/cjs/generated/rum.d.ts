@@ -1232,34 +1232,22 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & Stre
 /**
  * Schema of all properties of a Vital event
  */
-export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
+export declare type RumVitalEvent = (CommonProperties & ViewContainerSchema & VitalCommonInternalProperties & {
     /**
      * RUM event type
      */
     readonly type: 'vital';
-    readonly vital: DurationProperties | AppLaunchProperties | FeatureOperationProperties;
-    /**
-     * Internal properties
-     */
-    readonly _dd?: {
-        /**
-         * Internal vital properties
-         */
-        readonly vital?: {
-            /**
-             * Whether the value of the vital is computed by the SDK (as opposed to directly provided by the customer)
-             */
-            readonly computed_value?: boolean;
-            [k: string]: unknown;
-        };
-        /**
-         * Profiling context
-         */
-        profiling?: ProfilingInternalContextSchema;
-        [k: string]: unknown;
-    };
+    readonly vital: DurationProperties | FeatureOperationProperties;
     [k: string]: unknown;
-};
+}) | (CommonProperties & ViewContainerSchema & VitalCommonInternalProperties & {
+    /**
+     * RUM event type
+     */
+    readonly type: 'vital';
+    readonly vital: AppLaunchProperties;
+    readonly view?: View;
+    [k: string]: unknown;
+});
 /**
  * Duration properties of a Vital event
  */
@@ -1293,6 +1281,28 @@ export declare type VitalCommonProperties = {
     [k: string]: unknown;
 };
 /**
+ * Schema for a feature operation.
+ */
+export declare type FeatureOperationProperties = VitalCommonProperties & {
+    /**
+     * Type of the vital.
+     */
+    readonly type: 'operation_step';
+    /**
+     * Optional key to distinguish between multiple operations of the same name running in parallel (e.g., 'photo_upload' with keys 'profile_pic' vs 'cover')
+     */
+    readonly operation_key?: string;
+    /**
+     * Type of the step that triggered the vital, if applicable
+     */
+    readonly step_type?: 'start' | 'update' | 'retry' | 'end';
+    /**
+     * Reason for the failure of the step, if applicable
+     */
+    readonly failure_reason?: 'error' | 'abandoned' | 'other';
+    [k: string]: unknown;
+};
+/**
  * Schema for app launch metrics.
  */
 export declare type AppLaunchProperties = VitalCommonProperties & {
@@ -1320,28 +1330,6 @@ export declare type AppLaunchProperties = VitalCommonProperties & {
      * If the app launch had a saved instance state bundle.
      */
     readonly has_saved_instance_state_bundle?: boolean;
-    [k: string]: unknown;
-};
-/**
- * Schema for a feature operation.
- */
-export declare type FeatureOperationProperties = VitalCommonProperties & {
-    /**
-     * Type of the vital.
-     */
-    readonly type: 'operation_step';
-    /**
-     * Optional key to distinguish between multiple operations of the same name running in parallel (e.g., 'photo_upload' with keys 'profile_pic' vs 'cover')
-     */
-    readonly operation_key?: string;
-    /**
-     * Type of the step that triggered the vital, if applicable
-     */
-    readonly step_type?: 'start' | 'update' | 'retry' | 'end';
-    /**
-     * Reason for the failure of the step, if applicable
-     */
-    readonly failure_reason?: 'error' | 'abandoned' | 'other';
     [k: string]: unknown;
 };
 /**
@@ -1408,28 +1396,7 @@ export interface CommonProperties {
      * The source of this event
      */
     readonly source?: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform';
-    /**
-     * View properties
-     */
-    readonly view?: {
-        /**
-         * UUID of the view
-         */
-        readonly id: string;
-        /**
-         * URL that linked to the initial view of the page
-         */
-        referrer?: string;
-        /**
-         * URL of the view
-         */
-        url: string;
-        /**
-         * User defined name of the view
-         */
-        name?: string;
-        [k: string]: unknown;
-    };
+    readonly view?: View;
     /**
      * User properties
      */
@@ -1684,6 +1651,28 @@ export interface CommonProperties {
         readonly id: string;
         [k: string]: unknown;
     };
+    [k: string]: unknown;
+}
+/**
+ * View properties
+ */
+export interface View {
+    /**
+     * UUID of the view
+     */
+    readonly id: string;
+    /**
+     * URL that linked to the initial view of the page
+     */
+    referrer?: string;
+    /**
+     * URL of the view
+     */
+    url: string;
+    /**
+     * User defined name of the view
+     */
+    name?: string;
     [k: string]: unknown;
 }
 /**
@@ -2041,5 +2030,31 @@ export interface ViewAccessibilityProperties {
      * Indicates whether the right-to-left support is enabled.
      */
     readonly rtl_enabled?: boolean;
+    [k: string]: unknown;
+}
+/**
+ * Common internal properties for vital events
+ */
+export interface VitalCommonInternalProperties {
+    /**
+     * Internal properties
+     */
+    readonly _dd?: {
+        /**
+         * Internal vital properties
+         */
+        readonly vital?: {
+            /**
+             * Whether the value of the vital is computed by the SDK (as opposed to directly provided by the customer)
+             */
+            readonly computed_value?: boolean;
+            [k: string]: unknown;
+        };
+        /**
+         * Profiling context
+         */
+        profiling?: ProfilingInternalContextSchema;
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 }
