@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "rum/vital-feature-operation-schema.json",
-  "title": "FeatureOperationProperties",
+  "$id": "rum/vital-operation-step-schema.json",
+  "title": "OperationStepProperties",
   "type": "object",
-  "description": "Schema for a feature operation.",
+  "description": "Schema for a operation step.",
   "allOf": [
     {
       "$ref": "_vital-common-schema.json"

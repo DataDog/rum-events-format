@@ -296,7 +296,7 @@
         },
         "action_type": {
           "type": "string",
-          "description": "Feature operations action type",
+          "description": "Operations step type",
           "enum": ["start", "succeed", "fail"]
         }
       }

@@ -1237,7 +1237,7 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
      * RUM event type
      */
     readonly type: 'vital';
-    readonly vital: DurationProperties | AppLaunchProperties | FeatureOperationProperties;
+    readonly vital: DurationProperties | AppLaunchProperties | OperationStepProperties;
     /**
      * Internal properties
      */
@@ -1313,9 +1313,9 @@ export declare type AppLaunchProperties = VitalCommonProperties & {
     [k: string]: unknown;
 };
 /**
- * Schema for a feature operation.
+ * Schema for a operation step.
  */
-export declare type FeatureOperationProperties = VitalCommonProperties & {
+export declare type OperationStepProperties = VitalCommonProperties & {
     /**
      * Type of the vital.
      */

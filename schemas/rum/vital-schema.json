@@ -29,7 +29,7 @@
               "$ref": "vital-app-launch-schema.json"
             },
             {
-              "$ref": "vital-feature-operation-schema.json"
+              "$ref": "vital-operation-step-schema.json"
             }
           ],
           "readOnly": true
