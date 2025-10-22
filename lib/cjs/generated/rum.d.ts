@@ -1229,15 +1229,117 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & Stre
     };
     [k: string]: unknown;
 };
+export declare type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationStepEvent | RumVitalAppLaunchEvent;
 /**
- * Schema of all properties of a Vital event
+ * Schema for a duration vital event.
  */
-export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
+export declare type RumVitalDurationEvent = RumVitalEventCommonProperties & {
+    /**
+     * Vital properties
+     */
+    readonly vital: {
+        /**
+         * Type of the vital.
+         */
+        readonly type: 'duration';
+        /**
+         * Duration of the vital in nanoseconds.
+         */
+        readonly duration: number;
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
+/**
+ * Schema of common properties for a Vital event
+ */
+export declare type RumVitalEventCommonProperties = CommonProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
     readonly type: 'vital';
-    readonly vital: DurationProperties | AppLaunchProperties | OperationStepProperties;
+    /**
+     * Vital properties
+     */
+    readonly vital: {
+        /**
+         * UUID of the vital
+         */
+        readonly id: string;
+        /**
+         * Name of the vital, as it is also used as facet path for its value, it must contain only letters, digits, or the characters - _ . @ $
+         */
+        readonly name?: string;
+        /**
+         * Description of the vital. It can be used as a secondary identifier (URL, React component name...)
+         */
+        readonly description?: string;
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
+/**
+ * Schema for a vital operation step event.
+ */
+export declare type RumVitalOperationStepEvent = RumVitalEventCommonProperties & {
+    /**
+     * Vital properties
+     */
+    readonly vital: {
+        /**
+         * Type of the vital.
+         */
+        readonly type: 'operation_step';
+        /**
+         * Optional key to distinguish between multiple operations of the same name running in parallel (e.g., 'photo_upload' with keys 'profile_pic' vs 'cover')
+         */
+        readonly operation_key?: string;
+        /**
+         * Type of the step that triggered the vital, if applicable
+         */
+        readonly step_type: 'start' | 'update' | 'retry' | 'end';
+        /**
+         * Reason for the failure of the step, if applicable
+         */
+        readonly failure_reason?: 'error' | 'abandoned' | 'other';
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
+/**
+ * Schema for app launch metrics.
+ */
+export declare type RumVitalAppLaunchEvent = RumVitalEventCommonProperties & {
+    /**
+     * Vital properties
+     */
+    readonly vital: {
+        /**
+         * Type of the vital.
+         */
+        readonly type: 'app_launch';
+        /**
+         * The metric of the app launch.
+         */
+        readonly app_launch_metric: 'ttid' | 'ttfd';
+        /**
+         * Duration of the vital in nanoseconds.
+         */
+        readonly duration: number;
+        /**
+         * The type of the app launch.
+         */
+        readonly startup_type?: 'cold_start' | 'warm_start';
+        /**
+         * Whether the app launch was prewarmed.
+         */
+        readonly is_prewarmed?: boolean;
+        /**
+         * If the app launch had a saved instance state bundle.
+         */
+        readonly has_saved_instance_state_bundle?: boolean;
+        [k: string]: unknown;
+    };
     /**
      * Internal properties
      */
@@ -1248,90 +1350,6 @@ export declare type RumVitalEvent = CommonProperties & ViewContainerSchema & {
         profiling?: ProfilingInternalContextSchema;
         [k: string]: unknown;
     };
-    [k: string]: unknown;
-};
-/**
- * Duration properties of a Vital event
- */
-export declare type DurationProperties = VitalCommonProperties & {
-    /**
-     * Type of the vital.
-     */
-    readonly type: 'duration';
-    /**
-     * Duration of the vital in nanoseconds.
-     */
-    readonly duration: number;
-    [k: string]: unknown;
-};
-/**
- * Schema of common properties for a Vital event
- */
-export declare type VitalCommonProperties = {
-    /**
-     * UUID of the vital
-     */
-    readonly id: string;
-    /**
-     * Name of the vital, as it is also used as facet path for its value, it must contain only letters, digits, or the characters - _ . @ $
-     */
-    readonly name?: string;
-    /**
-     * Description of the vital. It can be used as a secondary identifier (URL, React component name...)
-     */
-    readonly description?: string;
-    [k: string]: unknown;
-};
-/**
- * Schema for app launch metrics.
- */
-export declare type AppLaunchProperties = VitalCommonProperties & {
-    /**
-     * Type of the vital.
-     */
-    readonly type: 'app_launch';
-    /**
-     * The metric of the app launch.
-     */
-    readonly app_launch_metric: 'ttid' | 'ttfd';
-    /**
-     * Duration of the vital in nanoseconds.
-     */
-    readonly duration: number;
-    /**
-     * The type of the app launch.
-     */
-    readonly startup_type?: 'cold_start' | 'warm_start';
-    /**
-     * Whether the app launch was prewarmed.
-     */
-    readonly is_prewarmed?: boolean;
-    /**
-     * If the app launch had a saved instance state bundle.
-     */
-    readonly has_saved_instance_state_bundle?: boolean;
-    [k: string]: unknown;
-};
-/**
- * Schema for a operation step.
- */
-export declare type OperationStepProperties = VitalCommonProperties & {
-    /**
-     * Type of the vital.
-     */
-    readonly type: 'operation_step';
-    /**
-     * Optional key to distinguish between multiple operations of the same name running in parallel (e.g., 'photo_upload' with keys 'profile_pic' vs 'cover')
-     */
-    readonly operation_key?: string;
-    /**
-     * Type of the step that triggered the vital, if applicable
-     */
-    readonly step_type?: 'start' | 'update' | 'retry' | 'end';
-    /**
-     * Reason for the failure of the step, if applicable
-     */
-    readonly failure_reason?: 'error' | 'abandoned' | 'other';
     [k: string]: unknown;
 };
 /**

@@ -24,7 +24,18 @@
       "$ref": "rum/view-schema.json"
     },
     {
-      "$ref": "rum/vital-schema.json"
+      "title": "RumVitalEvent",
+      "anyOf": [
+        {
+          "$ref": "rum/vital-duration-schema.json"
+        },
+        {
+          "$ref": "rum/vital-operation-step-schema.json"
+        },
+        {
+          "$ref": "rum/vital-app-launch-schema.json"
+        }
+      ]
     }
   ]
 }
