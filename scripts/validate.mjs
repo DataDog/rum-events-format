@@ -8,6 +8,7 @@ const SCHEMAS_DIRECTORY = './schemas'
 validateSchemasObjectsPropertiesCase()
 validateSchemasIds()
 validateSamples()
+validateRequiredProperties()
 
 if (process.exitCode !== 0 && process.exitCode !== undefined) {
   console.log('❌ Some validation errors were found')
@@ -51,6 +52,21 @@ function validateSchemasObjectsPropertiesCase() {
       'ℹ️  RUM and telemetry schemas object properties should be snake_case, other schemas objects should be camelCase'
     )
   }
+}
+
+function validateRequiredProperties() {
+  forEachFile(SCHEMAS_DIRECTORY, (schemaPath) => {
+    forEachObject(readJson(schemaPath), (schema) => {
+      if (schema.required) {
+        for (const requiredPropertyName of schema.required) {
+          if (!schema.properties?.[requiredPropertyName]) {
+            console.log(`❌ Schema ${schemaPath} is missing required property ${requiredPropertyName}`)
+            process.exitCode = 1
+          }
+        }
+      }
+    })
+  })
 }
 
 function validateSchemasIds() {
@@ -116,6 +132,19 @@ function readJson(filePath) {
  * Iterates over each properties of objects specified in the provided JSON schema.
  */
 function forEachObjectProperty(schema, callback) {
+  forEachObject(schema, (schema) => {
+    if (schema.properties) {
+      for (const [key, value] of Object.entries(schema.properties)) {
+        callback(key, value)
+      }
+    }
+  })
+}
+
+/**
+ * Iterates over each objects specified in the provided JSON schema.
+ */
+function forEachObject(schema, callback) {
   if (Array.isArray(schema)) {
     // traverse arrays
     for (const value of schema) {
@@ -127,10 +156,8 @@ function forEachObjectProperty(schema, callback) {
       forEachObjectProperty(value, callback)
     }
 
-    if (schema.type === 'object' && schema.properties) {
-      for (const [key, value] of Object.entries(schema.properties)) {
-        callback(key, value)
-      }
+    if (schema.type === 'object') {
+      callback(schema)
     }
   }
 }

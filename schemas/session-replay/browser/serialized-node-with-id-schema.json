@@ -4,7 +4,6 @@
   "title": "SerializedNodeWithId",
   "type": "object",
   "description": "Serialized node contained by this Record.",
-  "required": ["id"],
   "allOf": [
     {
       "required": ["id"],

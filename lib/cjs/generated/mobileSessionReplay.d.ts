@@ -232,34 +232,6 @@ export declare type MobileMutationData = {
     readonly source: 0;
 } & MobileMutationPayload;
 /**
- * Mobile-specific. Schema of a MutationPayload.
- */
-export declare type MobileMutationPayload = {
-    /**
-     * Contains the newly added wireframes.
-     */
-    readonly adds?: {
-        /**
-         * The previous wireframe id next or after which this new wireframe is drawn or attached to, respectively.
-         */
-        previousId?: number;
-        wireframe: Wireframe;
-    }[];
-    /**
-     * Contains the removed wireframes as an array of ids.
-     */
-    readonly removes?: {
-        /**
-         * The id of the wireframe that needs to be removed.
-         */
-        id: number;
-    }[];
-    /**
-     * Contains the updated wireframes mutations.
-     */
-    readonly updates?: WireframeUpdateMutation[];
-};
-/**
  * Schema of a WireframeUpdateMutation type.
  */
 export declare type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate | PlaceholderWireframeUpdate | WebviewWireframeUpdate;
@@ -586,6 +558,34 @@ export interface WireframeClip {
      * The amount of space in pixels that needs to be clipped (masked) at the right of the wireframe.
      */
     readonly right?: number;
+}
+/**
+ * Mobile-specific. Schema of a MutationPayload.
+ */
+export interface MobileMutationPayload {
+    /**
+     * Contains the newly added wireframes.
+     */
+    readonly adds: {
+        /**
+         * The previous wireframe id next or after which this new wireframe is drawn or attached to, respectively.
+         */
+        previousId?: number;
+        wireframe: Wireframe;
+    }[];
+    /**
+     * Contains the removed wireframes as an array of ids.
+     */
+    readonly removes: {
+        /**
+         * The id of the wireframe that needs to be removed.
+         */
+        id: number;
+    }[];
+    /**
+     * Contains the updated wireframes mutations.
+     */
+    readonly updates: WireframeUpdateMutation[];
 }
 /**
  * Schema of common properties for WireframeUpdate events type.
