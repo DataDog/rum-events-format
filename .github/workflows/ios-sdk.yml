@@ -1,0 +1,21 @@
+name: ios-sdk
+
+on:
+  push:
+
+jobs:
+  ios-sdk-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: sudo apt install -y zsh
+
+      - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
+        with:
+          repository: 'DataDog/dd-sdk-ios'
+
+      - name: Verify RUM models
+        run: make rum-models-generate GIT_REF=${{ github.sha }}
+
+      - name: Verify Session Replay models
+        run: make sr-models-generate GIT_REF=${{ github.sha }}
