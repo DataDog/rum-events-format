@@ -33,6 +33,9 @@
           "$ref": "rum/vital-app-launch-schema.json"
         }
       ]
+    },
+    {
+      "$ref": "telemetry-events-schema.json"
     }
   ]
 }

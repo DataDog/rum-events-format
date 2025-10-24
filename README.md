@@ -13,19 +13,24 @@ Breaking changes to the format must be reflected by a major version update in `_
 
 After editing any schema, you must re-generate the JS + TS definitions ([see below](#build-js-sources--ts-definitions)).
 
-## Consuming this repository
+## How this repository is consumed?
 
-Consuming projects are encouraged to use a _yarn github_ reference as dependency, e.g:
+This repository accommodates various usages, specifically:
 
-    yarn add rum-events-format@DataDog/rum-events-format#workspace=rum-events-format
+- The [Browser SDK](https://github.com/DataDog/browser-sdk/):
 
-Updating to the latest change is possible with _yarn up_, e.g:
+  - Generates TypeScript types from `./schemas/rum-events-browser-schema.json`,
+    `./schemas/telemetry-events-schema.json` and `./schemas/session-replay-browser-schema.json`.
 
-    yarn up rum-events-format@DataDog/rum-events-format#workspace=rum-events-format
+  - Validates data within unit and e2e tests against `./schemas/rum-events-schema.json`.
 
-It is also possible to specify the exact commit hash to use, e.g:
+- The [iOS SDK](https://github.com/DataDog/dd-sdk-ios/) generates native data models based on
+  `./schemas/rum-events-mobile-schema.json`] and `./schemas/session-replay-mobile-schema.json`.
 
-    yarn up "rum-events-format@DataDog/rum-events-format#workspace=rum-events-format&commit=COMMIT-HASH"
+- The [Android SDK](https://github.com/DataDog/dd-sdk-android/) generates native data models based on
+  schemas coming from `rum/`, `session-replay/` and `telemetry/` folders.
+
+- The Datadog App is using TypeScript types by including the `./lib` folder as a package dependency.
 
 # Tools
 
