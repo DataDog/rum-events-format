@@ -25,7 +25,7 @@
     },
     {
       "title": "RumVitalEvent",
-      "anyOf": [
+      "oneOf": [
         {
           "$ref": "rum/vital-duration-schema.json"
         },
