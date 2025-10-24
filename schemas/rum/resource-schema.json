@@ -24,7 +24,7 @@
           "readOnly": true
         },
         "view": {
-          "$ref": "_common-schema.json#/properties/view"
+          "type": "object"
         },
         "resource": {
           "type": "object",

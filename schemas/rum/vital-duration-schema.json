@@ -12,7 +12,7 @@
       "required": ["view", "vital"],
       "properties": {
         "view": {
-          "$ref": "_common-schema.json#/properties/view"
+          "type": "object"
         },
         "vital": {
           "type": "object",

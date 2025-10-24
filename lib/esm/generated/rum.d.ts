@@ -159,7 +159,9 @@ export declare type RumTransitionEvent = CommonProperties & {
      * RUM event type
      */
     readonly type: 'transition';
-    readonly view: ViewCommonProperties;
+    view: {
+        [k: string]: unknown;
+    };
     /**
      * Stream properties
      */
@@ -462,7 +464,9 @@ export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties 
      * RUM event type
      */
     readonly type: 'long_task';
-    readonly view: ViewCommonProperties;
+    view: {
+        [k: string]: unknown;
+    };
     /**
      * Long Task properties
      */
@@ -579,7 +583,9 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
      * RUM event type
      */
     readonly type: 'resource';
-    readonly view: ViewCommonProperties;
+    view: {
+        [k: string]: unknown;
+    };
     /**
      * Resource properties
      */
@@ -1237,7 +1243,9 @@ export declare type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationSte
  * Schema for a duration vital event.
  */
 export declare type RumVitalDurationEvent = RumVitalEventCommonProperties & {
-    readonly view: ViewCommonProperties;
+    view: {
+        [k: string]: unknown;
+    };
     /**
      * Vital properties
      */
@@ -1286,7 +1294,9 @@ export declare type RumVitalEventCommonProperties = CommonProperties & ViewConta
  * Schema for a vital operation step event.
  */
 export declare type RumVitalOperationStepEvent = RumVitalEventCommonProperties & {
-    readonly view: ViewCommonProperties;
+    view: {
+        [k: string]: unknown;
+    };
     /**
      * Vital properties
      */
@@ -1421,7 +1431,28 @@ export interface CommonProperties {
      * The source of this event
      */
     readonly source?: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform';
-    readonly view?: ViewCommonProperties;
+    /**
+     * View properties
+     */
+    readonly view?: {
+        /**
+         * UUID of the view
+         */
+        readonly id: string;
+        /**
+         * URL that linked to the initial view of the page
+         */
+        referrer?: string;
+        /**
+         * URL of the view
+         */
+        url: string;
+        /**
+         * User defined name of the view
+         */
+        name?: string;
+        [k: string]: unknown;
+    };
     /**
      * User properties
      */
@@ -1676,28 +1707,6 @@ export interface CommonProperties {
         readonly id: string;
         [k: string]: unknown;
     };
-    [k: string]: unknown;
-}
-/**
- * View properties
- */
-export interface ViewCommonProperties {
-    /**
-     * UUID of the view
-     */
-    readonly id: string;
-    /**
-     * URL that linked to the initial view of the page
-     */
-    referrer?: string;
-    /**
-     * URL of the view
-     */
-    url: string;
-    /**
-     * User defined name of the view
-     */
-    name?: string;
     [k: string]: unknown;
 }
 /**
