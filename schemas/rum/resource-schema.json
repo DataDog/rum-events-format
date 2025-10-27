@@ -23,6 +23,9 @@
           "const": "resource",
           "readOnly": true
         },
+        "view": {
+          "type": "object"
+        },
         "resource": {
           "type": "object",
           "description": "Resource properties",

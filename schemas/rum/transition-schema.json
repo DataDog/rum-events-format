@@ -17,6 +17,9 @@
           "const": "transition",
           "readOnly": true
         },
+        "view": {
+          "type": "object"
+        },
         "stream": {
           "type": "object",
           "description": "Stream properties",

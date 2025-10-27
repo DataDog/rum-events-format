@@ -1,15 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "rum-events-schema.json",
+  "$id": "rum-events-mobile-schema.json",
   "title": "RumEvent",
   "type": "object",
   "description": "Schema of all properties of a RUM event",
   "oneOf": [
     {
       "$ref": "rum/action-schema.json"
-    },
-    {
-      "$ref": "rum/transition-schema.json"
     },
     {
       "$ref": "rum/error-schema.json"
@@ -36,6 +33,9 @@
           "$ref": "rum/vital-app-launch-schema.json"
         }
       ]
+    },
+    {
+      "$ref": "telemetry-events-schema.json"
     }
   ]
 }

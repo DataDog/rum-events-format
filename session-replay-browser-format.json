@@ -1,5 +1,0 @@
-{
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "session-replay-browser-events-format.json",
-  "$ref": "schemas/session-replay-browser-schema.json"
-}
