@@ -119,6 +119,10 @@ export declare type TextStyle = {
      * The font color as a string hexadecimal. Follows the #RRGGBBAA color format with the alpha value as optional.
      */
     readonly color: string;
+    /**
+     * Defines how text should be truncated when it exceeds the wireframe bounds. If omitted, text wraps naturally.
+     */
+    readonly truncationMode?: 'clip' | 'head' | 'tail' | 'middle';
 };
 /**
  * Schema of all properties of a TextPosition.
