@@ -420,6 +420,14 @@
               "minimum": 0,
               "maximum": 100,
               "readOnly": true
+            },
+            "experimental_features": {
+              "type": "array",
+              "description": "List of experimental features enabled in the SDK",
+              "items": {
+                "type": "string"
+              },
+              "readOnly": true
             }
           }
         },
