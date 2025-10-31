@@ -1679,6 +1679,10 @@ export interface CommonProperties {
              * The percentage of views profiled
              */
             readonly profiling_sample_rate?: number;
+            /**
+             * List of experimental features enabled in the SDK
+             */
+            readonly experimental_features?: string[];
             [k: string]: unknown;
         };
         /**
