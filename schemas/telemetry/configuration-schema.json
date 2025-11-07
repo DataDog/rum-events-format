@@ -515,7 +515,7 @@
                   "description": "Whether trace baggage is propagated to child spans",
                   "readOnly": false
                 },
-                "use_beta_encode_cookie_options": {
+                "beta_encode_cookie_options": {
                   "type": "boolean",
                   "description": "Whether the beta encode cookie options is enabled",
                   "readOnly": false

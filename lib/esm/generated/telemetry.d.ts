@@ -464,7 +464,7 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
             /**
              * Whether the beta encode cookie options is enabled
              */
-            use_beta_encode_cookie_options?: boolean;
+            beta_encode_cookie_options?: boolean;
             [k: string]: unknown;
         };
         [k: string]: unknown;
