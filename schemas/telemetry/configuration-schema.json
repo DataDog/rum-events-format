@@ -514,6 +514,11 @@
                   "type": "boolean",
                   "description": "Whether trace baggage is propagated to child spans",
                   "readOnly": false
+                },
+                "beta_encode_cookie_options": {
+                  "type": "boolean",
+                  "description": "Whether the beta encode cookie options is enabled",
+                  "readOnly": false
                 }
               }
             }
