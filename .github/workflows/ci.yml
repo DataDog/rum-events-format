@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-node@7c12f8017d5436eb855f1ed4399f037a36fbd9e8 # v2.5.2
         with:
           node-version: '20'
+      - name: enable corepack
+        run: corepack enable
       - name: yarn install
         run: yarn install
 
@@ -31,6 +33,8 @@ jobs:
       - uses: actions/setup-node@7c12f8017d5436eb855f1ed4399f037a36fbd9e8 # v2.5.2
         with:
           node-version: '20'
+      - name: enable corepack
+        run: corepack enable
       - name: yarn install
         run: yarn install
 
@@ -44,6 +48,8 @@ jobs:
       - uses: actions/setup-node@7c12f8017d5436eb855f1ed4399f037a36fbd9e8 # v2.5.2
         with:
           node-version: '20'
+      - name: enable corepack
+        run: corepack enable
       - name: yarn install
         run: yarn install
 
