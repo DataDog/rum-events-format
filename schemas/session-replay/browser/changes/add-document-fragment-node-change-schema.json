@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay/browser/changes/add-document-fragment-node-change-schema.json",
+  "title": "AddDocumentFragmentNodeChange",
+  "type": "array",
+  "description": "Browser-specific. Schema representing the addition of a new #document-fragment node to the document.",
+  "minItems": 2,
+  "items": [
+    { "$ref": "node-references/insertion-point-schema.json" },
+    { "$ref": "node-names/document-fragment-node-name-schema.json" }
+  ],
+  "additionalItems": false
+}

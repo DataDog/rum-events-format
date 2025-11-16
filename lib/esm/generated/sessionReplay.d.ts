@@ -35,7 +35,7 @@ export declare type CreationReason = 'init' | 'segment_duration_limit' | 'segmen
 /**
  * Browser-specific. Schema of a Session Replay Record.
  */
-export declare type BrowserRecord = BrowserFullSnapshotRecord | BrowserIncrementalSnapshotRecord | MetaRecord | FocusRecord | ViewEndRecord | VisualViewportRecord | FrustrationRecord;
+export declare type BrowserRecord = BrowserFullSnapshotRecord | BrowserIncrementalSnapshotRecord | MetaRecord | FocusRecord | ViewEndRecord | VisualViewportRecord | FrustrationRecord | BrowserChangeRecord;
 /**
  * Browser-specific. Schema of a Record type which contains the full snapshot of a screen.
  */
@@ -311,6 +311,184 @@ export declare type FrustrationRecord = SlotSupportedCommonRecordSchema & {
         recordIds: number[];
     };
 };
+/**
+ * Browser-specific. Schema of a Record type which represents changes and mutations using a compact encoding. (Experimental.)
+ */
+export declare type BrowserChangeRecord = SlotSupportedCommonRecordSchema & {
+    /**
+     * The type of this Record.
+     */
+    readonly type: 12;
+    data: BrowserChangeData;
+    id?: number;
+};
+/**
+ * Browser-specific. Schema of a Session Replay BrowserChangeData type.
+ */
+export declare type BrowserChangeData = {
+    /**
+     * Changes to the `adoptedStyleSheets` list of a Document, DocumentFragment, or ShadowRoot node.
+     */
+    adoptedStyleSheetsChanges?: AdoptedStyleSheetsChange[];
+    /**
+     * Changes to the attributes of a node.
+     */
+    attributeChanges?: AttributeChange[];
+    /**
+     * Newly added nodes.
+     */
+    nodesAdded?: AddNodeChange[];
+    /**
+     * Newly removed nodes.
+     */
+    nodesRemoved?: NodeId[];
+    /**
+     * Changes to the scroll position of a node.
+     */
+    scrollChanges?: ScrollPositionChange[];
+    /**
+     * Newly added strings.
+     */
+    stringsAdded?: AddStringChange[];
+    /**
+     * Changes to the text content of a node.
+     */
+    textChanges?: TextChange[];
+};
+/**
+ * Browser-specific. Schema representing a change to the adopted stylesheets of a document or shadow DOM subtree.
+ *
+ * @minItems 1
+ */
+export declare type AdoptedStyleSheetsChange = [NodeId, ...StyleSheet[]];
+/**
+ * Browser-specific. Schema representing the ID of a DOM node.
+ */
+export declare type NodeId = number;
+/**
+ * Browser-specific. Schema representing a change to an node's attributes.
+ *
+ * @minItems 1
+ */
+export declare type AttributeChange = [NodeId, ...AttributeAssignmentOrDeletion[]];
+/**
+ * Browser-specific. Schema representing a change to an attribute, either by assignment of a new value or by deletion of the attribute.
+ *
+ * @minItems 2
+ */
+export declare type AttributeAssignmentOrDeletion = [string, string | null];
+/**
+ * Browser-specific. Schema representing the addition of a new node to the document.
+ */
+export declare type AddNodeChange = AddCDataSectionNodeChange | AddDocTypeNodeChange | AddDocumentNodeChange | AddDocumentFragmentNodeChange | AddElementNodeChange | AddTextNodeChange | AddShadowRootNodeChange;
+/**
+ * Browser-specific. Schema representing the addition of a new #cdata-section node to the document.
+ *
+ * @minItems 2
+ */
+export declare type AddCDataSectionNodeChange = [InsertionPoint, CDataSectionNodeName];
+/**
+ * Browser-specific. Schema representing the insertion point of a node which is being added to the document.
+ */
+export declare type InsertionPoint = RootInsertionPoint | LastChildInsertionPoint | NextSiblingInsertionPoint;
+/**
+ * A null insertion point, indicating that the node should be inserted at the root of the document.
+ */
+export declare type RootInsertionPoint = null;
+/**
+ * A positive integer insertion point. Inserting a node at positive integer N indicates that the node should be inserted as the last child of the node with an id N lower than the new node.
+ */
+export declare type LastChildInsertionPoint = number;
+/**
+ * A negative integer insertion point. Inserting a node at negative integer -N indicates that the node should be inserted as the next sibling of the node with an id N lower than the new node.
+ */
+export declare type NextSiblingInsertionPoint = number;
+/**
+ * Browser-specific. Schema representing the node name for a #cdata-section node, expressed as either a reference to the string table or a literal string.
+ */
+export declare type CDataSectionNodeName = number | '#cdata-section';
+/**
+ * Browser-specific. Schema representing the addition of a new #doctype node to the document.
+ *
+ * @minItems 5
+ */
+export declare type AddDocTypeNodeChange = [InsertionPoint, DocTypeNodeName, string, string, string];
+/**
+ * Browser-specific. Schema representing the node name for a #doctype node, expressed as either a reference to the string table or a literal string.
+ */
+export declare type DocTypeNodeName = number | '#doctype';
+/**
+ * Browser-specific. Schema representing the addition of a new #document node to the document.
+ *
+ * @minItems 2
+ */
+export declare type AddDocumentNodeChange = [InsertionPoint, DocumentNodeName];
+/**
+ * Browser-specific. Schema representing the node name for a #document node, expressed as either a reference to the string table or a literal string.
+ */
+export declare type DocumentNodeName = number | '#document';
+/**
+ * Browser-specific. Schema representing the addition of a new #document-fragment node to the document.
+ *
+ * @minItems 2
+ */
+export declare type AddDocumentFragmentNodeChange = [InsertionPoint, DocumentFragmentNodeName];
+/**
+ * Browser-specific. Schema representing the node name for a #document-fragment node, expressed as either a reference to the string table or a literal string.
+ */
+export declare type DocumentFragmentNodeName = number | '#document-fragment';
+/**
+ * Browser-specific. Schema representing the addition of a new element node to the document.
+ *
+ * @minItems 2
+ */
+export declare type AddElementNodeChange = [InsertionPoint, NodeName, ...AttributeAssignment[]];
+/**
+ * Browser-specific. Schema representing a node name (i.e., Node#nodeName), expressed as either a reference to the string table or a literal string.
+ */
+export declare type NodeName = number | string;
+/**
+ * Browser-specific. Schema representing an assignment of a value to an attribute.
+ *
+ * @minItems 2
+ */
+export declare type AttributeAssignment = [string, string];
+/**
+ * Browser-specific. Schema representing the addition of a new #text node to the document.
+ *
+ * @minItems 3
+ */
+export declare type AddTextNodeChange = [InsertionPoint, TextNodeName, string];
+/**
+ * Browser-specific. Schema representing the node name for a #text node, expressed as either a reference to the string table or a literal string.
+ */
+export declare type TextNodeName = number | '#text';
+/**
+ * Browser-specific. Schema representing the addition of a new #shadow-root node to the document.
+ *
+ * @minItems 2
+ */
+export declare type AddShadowRootNodeChange = [InsertionPoint, ShadowRootNodeName];
+/**
+ * Browser-specific. Schema representing the node name for a #shadow-root node, expressed as either a reference to the string table or a literal string.
+ */
+export declare type ShadowRootNodeName = number | '#shadow-root';
+/**
+ * Browser-specific. Schema representing a scroll position change.
+ *
+ * @minItems 3
+ */
+export declare type ScrollPositionChange = [NodeId, number, number];
+/**
+ * Browser-specific. Schema representing the addition of a string to the string table.
+ */
+export declare type AddStringChange = string;
+/**
+ * Browser-specific. Schema representing a change to the text content of a #text node.
+ *
+ * @minItems 2
+ */
+export declare type TextChange = [NodeId, string];
 /**
  * Mobile-specific. Schema of a Session Replay data Segment.
  */
