@@ -94,7 +94,7 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
     /**
      * View properties
      */
-    readonly view: {
+    readonly view?: {
         /**
          * Is the action starting in the foreground (focus in browser)
          */
@@ -159,7 +159,7 @@ export declare type RumTransitionEvent = CommonProperties & {
      * RUM event type
      */
     readonly type: 'transition';
-    view: {
+    view?: {
         [k: string]: unknown;
     };
     /**
@@ -441,7 +441,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
     /**
      * View properties
      */
-    readonly view: {
+    readonly view?: {
         /**
          * Is the error starting in the foreground (focus in browser)
          */
@@ -464,7 +464,7 @@ export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties 
      * RUM event type
      */
     readonly type: 'long_task';
-    view: {
+    view?: {
         [k: string]: unknown;
     };
     /**
@@ -583,7 +583,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
      * RUM event type
      */
     readonly type: 'resource';
-    view: {
+    view?: {
         [k: string]: unknown;
     };
     /**
@@ -1243,13 +1243,13 @@ export declare type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationSte
  * Schema for a duration vital event.
  */
 export declare type RumVitalDurationEvent = RumVitalEventCommonProperties & {
-    view: {
+    view?: {
         [k: string]: unknown;
     };
     /**
      * Vital properties
      */
-    readonly vital: {
+    readonly vital?: {
         /**
          * Type of the vital.
          */
@@ -1294,13 +1294,13 @@ export declare type RumVitalEventCommonProperties = CommonProperties & ViewConta
  * Schema for a vital operation step event.
  */
 export declare type RumVitalOperationStepEvent = RumVitalEventCommonProperties & {
-    view: {
+    view?: {
         [k: string]: unknown;
     };
     /**
      * Vital properties
      */
-    readonly vital: {
+    readonly vital?: {
         /**
          * Type of the vital.
          */
@@ -1328,7 +1328,7 @@ export declare type RumVitalAppLaunchEvent = RumVitalEventCommonProperties & {
     /**
      * Vital properties
      */
-    readonly vital: {
+    readonly vital?: {
         /**
          * Type of the vital.
          */
@@ -1434,7 +1434,7 @@ export interface CommonProperties {
     /**
      * View properties
      */
-    readonly view?: {
+    readonly view: {
         /**
          * UUID of the view
          */
