@@ -4,7 +4,7 @@
 /**
  * Schema of all properties of a RUM event
  */
-export declare type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumVitalEvent;
+export declare type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumProfileEvent | RumVitalEvent;
 /**
  * Schema of all properties of an Action event
  */
@@ -1232,6 +1232,144 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & Stre
              * Duration between the view start and the time the max scroll height was reached for this view (in nanoseconds)
              */
             readonly max_scroll_height_time: number;
+            [k: string]: unknown;
+        };
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
+/**
+ * Schema of all properties of a Profile event
+ */
+export declare type RumProfileEvent = CommonProperties & ViewContainerSchema & {
+    readonly type: 'profile';
+    /**
+     * Long Task properties
+     */
+    readonly long_task?: {
+        /**
+         * Array of long task UUIDs associated with the profile
+         */
+        readonly id?: string[];
+        [k: string]: unknown;
+    };
+    /**
+     * Internal properties
+     */
+    _dd?: {
+        profiling?: ProfilingInternalContextSchema;
+        [k: string]: unknown;
+    };
+    /**
+     * Profile properties
+     */
+    readonly profile: {
+        /**
+         * UUID of the profile
+         */
+        readonly id: string;
+        /**
+         * An array of profiler resources (URLs)
+         */
+        readonly resources: string[];
+        /**
+         * An array of profiler frames
+         */
+        readonly frames: {
+            /**
+             * A function instance name
+             */
+            name: string;
+            /**
+             * Index in the trace.resources array
+             */
+            resourceId?: number;
+            /**
+             * 1-based index of the line
+             */
+            line?: number;
+            /**
+             * 1-based index of the column
+             */
+            column?: number;
+            [k: string]: unknown;
+        }[];
+        /**
+         * An array of profiler stacks
+         */
+        readonly stacks: {
+            /**
+             * Index in the trace.stacks array
+             */
+            parentId?: number;
+            /**
+             * Index in the trace.frames array
+             */
+            frameId: number;
+            [k: string]: unknown;
+        }[];
+        /**
+         * An array of profiler samples
+         */
+        readonly samples: {
+            /**
+             * High resolution time relative to the profiling session's time origin
+             */
+            timestamp: number;
+            /**
+             * Index in the trace.stacks array
+             */
+            stackId?: number;
+            [k: string]: unknown;
+        }[];
+        /**
+         * Sample interval in milliseconds
+         */
+        readonly sample_interval: number;
+        /**
+         * Maximum buffer size in number of samples
+         */
+        readonly max_buffer_size?: number;
+        /**
+         * High resolution time when profiler trace started, relative to the profiling session's time origin
+         */
+        readonly start_clocks: {
+            /**
+             * Relative time
+             */
+            readonly relative: number;
+            /**
+             * Timestamp
+             */
+            readonly time_stamp: number;
+            [k: string]: unknown;
+        };
+        /**
+         * High resolution time when profiler trace ended, relative to the profiling session's time origin
+         */
+        readonly end_clocks: {
+            /**
+             * Relative time
+             */
+            readonly relative: number;
+            /**
+             * Timestamp
+             */
+            readonly time_stamp: number;
+            [k: string]: unknown;
+        };
+        /**
+         * Time origin of the profiling session
+         */
+        readonly clocks_origin: {
+            /**
+             * Relative time
+             */
+            readonly relative: number;
+            /**
+             * Timestamp
+             */
+            readonly time_stamp: number;
             [k: string]: unknown;
         };
         [k: string]: unknown;

@@ -1,0 +1,65 @@
+{
+  "type": "profile",
+  "date": 1763719288234,
+  "application": {
+    "id": "9fa62a5b-8a7e-429d-8466-8b111a4d4693"
+  },
+  "session": {
+    "id": "42702ad6-a856-4a23-b3e4-db56fc5ab883",
+    "type": "user"
+  },
+  "source": "browser",
+  "view": {
+    "id": "35091849-4ae1-452f-86ca-5da3f34fdd19",
+    "url": "https://example.com/page"
+  },
+  "profile": {
+    "id": "3f83f7f2-b1d5-4a14-a3a5-36d3a5b9f0ab",
+    "resources": ["https://localhost:58682/assets/index-CiZoFVPd.js"],
+    "frames": [
+      {
+        "name": "R2",
+        "resourceId": 0,
+        "line": 1,
+        "column": 1
+      }
+    ],
+    "stacks": [
+      {
+        "frameId": 0
+      }
+    ],
+    "samples": [
+      {
+        "timestamp": 0,
+        "stackId": 0
+      },
+      {
+        "timestamp": 10,
+        "stackId": 0
+      }
+    ],
+    "sample_interval": 10,
+    "start_clocks": {
+      "relative": 0,
+      "time_stamp": 1763719280000
+    },
+    "end_clocks": {
+      "relative": 60000,
+      "time_stamp": 1763719340000
+    },
+    "clocks_origin": {
+      "relative": 0,
+      "time_stamp": 1763719280000
+    }
+  },
+  "long_task": {
+    "id": ["c40cf35b-0495-4049-bf81-acf3f7578e55", "f53b3f73-b22a-4e8e-86ac-f05644026752"]
+  },
+  "_dd": {
+    "format_version": 2,
+    "profiling": {
+      "status": "running"
+    }
+  }
+}
