@@ -1639,6 +1639,18 @@ export interface CommonProperties {
          * Current screen brightness level (0.0 to 1.0).
          */
         readonly brightness_level?: number;
+        /**
+         * Number of device processors
+         */
+        readonly processor_count?: number;
+        /**
+         * Total RAM in megabytes
+         */
+        readonly total_ram?: number;
+        /**
+         * Whether the device is considered a low RAM device (Android)
+         */
+        readonly is_low_ram_device?: boolean;
         [k: string]: unknown;
     };
     /**
