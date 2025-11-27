@@ -15,16 +15,13 @@
       "$ref": "_view-container-schema.json"
     },
     {
-      "required": ["type", "view", "resource"],
+      "required": ["type", "resource"],
       "properties": {
         "type": {
           "type": "string",
           "description": "RUM event type",
           "const": "resource",
           "readOnly": true
-        },
-        "view": {
-          "type": "object"
         },
         "resource": {
           "type": "object",
