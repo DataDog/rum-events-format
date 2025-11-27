@@ -10,9 +10,6 @@
     },
     {
       "properties": {
-        "view": {
-          "type": "object"
-        },
         "vital": {
           "type": "object",
           "description": "Vital properties",
