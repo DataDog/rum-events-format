@@ -1,0 +1,211 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/profile-schema.json",
+  "title": "RumProfileEvent",
+  "type": "object",
+  "description": "Schema of all properties of a Profile event",
+  "allOf": [
+    {
+      "$ref": "./_common-schema.json"
+    },
+    {
+      "$ref": "./_view-container-schema.json"
+    },
+    {
+      "required": ["type", "profile", "view"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "profile",
+          "readOnly": true
+        },
+        "long_task": {
+          "type": "object",
+          "description": "Long Task properties",
+          "properties": {
+            "id": {
+              "type": "array",
+              "description": "Array of long task UUIDs associated with the profile",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
+              },
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        },
+        "_dd": {
+          "type": "object",
+          "description": "Internal properties",
+          "properties": {
+            "profiling": {
+              "$ref": "./_profiling-internal-context-schema.json"
+            }
+          }
+        },
+        "profile": {
+          "type": "object",
+          "description": "Profile properties",
+          "required": [
+            "id",
+            "resources",
+            "frames",
+            "stacks",
+            "samples",
+            "sample_interval",
+            "start_clocks",
+            "end_clocks",
+            "clocks_origin"
+          ],
+          "readOnly": true,
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "UUID of the profile",
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "readOnly": true
+            },
+            "resources": {
+              "type": "array",
+              "description": "An array of profiler resources (URLs)",
+              "items": {
+                "type": "string"
+              },
+              "readOnly": true
+            },
+            "frames": {
+              "type": "array",
+              "description": "An array of profiler frames",
+              "items": {
+                "type": "object",
+                "required": ["name"],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "A function instance name"
+                  },
+                  "resourceId": {
+                    "type": "integer",
+                    "description": "Index in the trace.resources array"
+                  },
+                  "line": {
+                    "type": "integer",
+                    "description": "1-based index of the line"
+                  },
+                  "column": {
+                    "type": "integer",
+                    "description": "1-based index of the column"
+                  }
+                }
+              },
+              "readOnly": true
+            },
+            "stacks": {
+              "type": "array",
+              "description": "An array of profiler stacks",
+              "items": {
+                "type": "object",
+                "required": ["frameId"],
+                "properties": {
+                  "parentId": {
+                    "type": "integer",
+                    "description": "Index in the trace.stacks array"
+                  },
+                  "frameId": {
+                    "type": "integer",
+                    "description": "Index in the trace.frames array"
+                  }
+                }
+              },
+              "readOnly": true
+            },
+            "samples": {
+              "type": "array",
+              "description": "An array of profiler samples",
+              "items": {
+                "type": "object",
+                "required": ["timestamp"],
+                "properties": {
+                  "timestamp": {
+                    "type": "number",
+                    "description": "High resolution time relative to the profiling session's time origin"
+                  },
+                  "stackId": {
+                    "type": "integer",
+                    "description": "Index in the trace.stacks array"
+                  }
+                }
+              },
+              "readOnly": true
+            },
+            "sample_interval": {
+              "type": "integer",
+              "description": "Sample interval in milliseconds",
+              "readOnly": true
+            },
+            "max_buffer_size": {
+              "type": "integer",
+              "description": "Maximum buffer size in number of samples",
+              "readOnly": true
+            },
+            "start_clocks": {
+              "type": "object",
+              "required": ["relative", "time_stamp"],
+              "readOnly": true,
+              "description": "High resolution time when profiler trace started, relative to the profiling session's time origin",
+              "properties": {
+                "relative": {
+                  "type": "number",
+                  "description": "Relative time",
+                  "readOnly": true
+                },
+                "time_stamp": {
+                  "type": "number",
+                  "description": "Timestamp",
+                  "readOnly": true
+                }
+              }
+            },
+            "end_clocks": {
+              "type": "object",
+              "required": ["relative", "time_stamp"],
+              "readOnly": true,
+              "description": "High resolution time when profiler trace ended, relative to the profiling session's time origin",
+              "properties": {
+                "relative": {
+                  "type": "number",
+                  "description": "Relative time",
+                  "readOnly": true
+                },
+                "time_stamp": {
+                  "type": "number",
+                  "description": "Timestamp",
+                  "readOnly": true
+                }
+              }
+            },
+            "clocks_origin": {
+              "type": "object",
+              "required": ["relative", "time_stamp"],
+              "readOnly": true,
+              "description": "Time origin of the profiling session",
+              "properties": {
+                "relative": {
+                  "type": "number",
+                  "description": "Relative time",
+                  "readOnly": true
+                },
+                "time_stamp": {
+                  "type": "number",
+                  "description": "Timestamp",
+                  "readOnly": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
