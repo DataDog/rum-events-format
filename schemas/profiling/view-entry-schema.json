@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "profiling/view-entry-schema.json",
+  "title": "RumViewEntry",
+  "type": "object",
+  "description": "Schema of a RUM view entry recorded during profiling.",
+  "required": ["startClocks", "viewId"],
+  "properties": {
+    "startClocks": {
+      "$ref": "_clocks-state-schema.json",
+      "description": "Detected start time of view.",
+      "readOnly": true
+    },
+    "viewId": {
+      "type": "string",
+      "description": "RUM view id.",
+      "readOnly": true
+    },
+    "viewName": {
+      "type": "string",
+      "description": "RUM view name.",
+      "readOnly": true
+    }
+  }
+}

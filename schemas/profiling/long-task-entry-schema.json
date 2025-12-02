@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "profiling/long-task-entry-schema.json",
+  "title": "RumProfilerLongTaskEntry",
+  "type": "object",
+  "description": "Schema of a long task entry recorded during profiling.",
+  "required": ["duration", "entryType", "startClocks"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "RUM Long Task id.",
+      "readOnly": true
+    },
+    "duration": {
+      "type": "number",
+      "description": "RUM Long Task duration in milliseconds.",
+      "readOnly": true
+    },
+    "entryType": {
+      "type": "string",
+      "description": "RUM Long Task entry type.",
+      "readOnly": true
+    },
+    "startClocks": {
+      "$ref": "_clocks-state-schema.json",
+      "description": "RUM Long Task start time.",
+      "readOnly": true
+    }
+  }
+}

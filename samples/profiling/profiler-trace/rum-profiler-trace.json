@@ -1,0 +1,69 @@
+{
+  "resources": ["https://localhost:58682/assets/index-CiZoFVPd.js"],
+  "frames": [
+    {
+      "name": "R2",
+      "resourceId": 0,
+      "line": 1,
+      "column": 1
+    }
+  ],
+  "stacks": [
+    {
+      "frameId": 0
+    }
+  ],
+  "samples": [
+    {
+      "timestamp": 0,
+      "stackId": 0
+    },
+    {
+      "timestamp": 10,
+      "stackId": 0
+    }
+  ],
+  "startClocks": {
+    "relative": 0,
+    "timeStamp": 1763719280000
+  },
+  "endClocks": {
+    "relative": 60000,
+    "timeStamp": 1763719340000
+  },
+  "clocksOrigin": {
+    "relative": 0,
+    "timeStamp": 1763719280000
+  },
+  "sampleInterval": 10,
+  "longTasks": [
+    {
+      "id": "c40cf35b-0495-4049-bf81-acf3f7578e55",
+      "duration": 120,
+      "entryType": "longtask",
+      "startClocks": {
+        "relative": 5000,
+        "timeStamp": 1763719285000
+      }
+    },
+    {
+      "id": "f53b3f73-b22a-4e8e-86ac-f05644026752",
+      "duration": 85,
+      "entryType": "long-animation-frame",
+      "startClocks": {
+        "relative": 15000,
+        "timeStamp": 1763719295000
+      }
+    }
+  ],
+  "views": [
+    {
+      "startClocks": {
+        "relative": 0,
+        "timeStamp": 1763719280000
+      },
+      "viewId": "35091849-4ae1-452f-86ca-5da3f34fdd19",
+      "viewName": "HomePage"
+    }
+  ]
+}
