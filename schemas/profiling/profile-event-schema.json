@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "profiling/profile-event-schema.json",
+  "title": "ProfileEvent",
+  "type": "object",
+  "description": "Schema of a Profile Event metadata.",
+  "allOf": [
+    {
+      "$ref": "profile-event-attributes-schema.json"
+    },
+    {
+      "required": ["attachments", "start", "end", "family", "runtime", "format", "version", "tags_profiler", "_dd"],
+      "properties": {
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of attachment filenames.",
+          "readOnly": true
+        },
+        "start": {
+          "type": "string",
+          "description": "Start time as ISO date string.",
+          "readOnly": true
+        },
+        "end": {
+          "type": "string",
+          "description": "End time as ISO date string.",
+          "readOnly": true
+        },
+        "family": {
+          "type": "string",
+          "const": "chrome",
+          "description": "Profiler family.",
+          "readOnly": true
+        },
+        "runtime": {
+          "type": "string",
+          "const": "chrome",
+          "description": "JavaScript runtime.",
+          "readOnly": true
+        },
+        "format": {
+          "type": "string",
+          "const": "json",
+          "description": "Profile data format.",
+          "readOnly": true
+        },
+        "version": {
+          "type": "integer",
+          "const": 4,
+          "description": "Profile ingestion event version.",
+          "readOnly": true
+        },
+        "tags_profiler": {
+          "type": "string",
+          "description": "Comma-separated profiler tags.",
+          "readOnly": true
+        },
+        "_dd": {
+          "type": "object",
+          "description": "Datadog internal metadata.",
+          "required": ["clock_drift"],
+          "properties": {
+            "clock_drift": {
+              "type": "number",
+              "description": "Clock drift value.",
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        }
+      }
+    }
+  ]
+}
