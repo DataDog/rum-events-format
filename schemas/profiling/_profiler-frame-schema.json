@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "profiling/_profiler-frame-schema.json",
+  "title": "ProfilerFrame",
+  "type": "object",
+  "description": "Schema of a profiler frame from the JS Self-Profiling API.",
+  "required": ["name"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "A function instance name.",
+      "readOnly": true
+    },
+    "resourceId": {
+      "type": "integer",
+      "description": "Index in the trace.resources array.",
+      "readOnly": true
+    },
+    "line": {
+      "type": "integer",
+      "description": "1-based index of the line.",
+      "readOnly": true
+    },
+    "column": {
+      "type": "integer",
+      "description": "1-based index of the column.",
+      "readOnly": true
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "profiling-schema.json",
+  "title": "RumProfiling",
+  "type": "object",
+  "description": "Schema of all properties of RUM Profiling",
+  "allOf": [
+    {
+      "$ref": "profiling/profiler-trace-schema.json"
+    },
+    {
+      "$ref": "profiling/view-entry-schema.json"
+    },
+    {
+      "$ref": "profiling/long-task-entry-schema.json"
+    }
+  ]
+}

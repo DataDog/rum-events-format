@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "profiling/profile-event-payload-schema.json",
+  "title": "ProfileEventPayload",
+  "type": "object",
+  "description": "Schema of the Profile Event payload.",
+  "required": ["event", "wall-time.json"],
+  "properties": {
+    "event": {
+      "$ref": "profile-event-schema.json",
+      "description": "Profile event metadata.",
+      "readOnly": true
+    },
+    "wall-time.json": {
+      "$ref": "profiler-trace-schema.json",
+      "description": "The profiler trace data (wall-time profile).",
+      "readOnly": true
+    }
+  }
+}
