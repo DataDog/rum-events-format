@@ -12,6 +12,9 @@
   "long_task": {
     "id": ["0e6071e2-e4ae-4605-8dfe-9f3551a172f9", "c40f0593-ae2c-416f-8abb-4d3ec4b68e2e"]
   },
+  "vital": {
+    "id": "b3f8c1a2-9d4e-4f5a-8b7c-2e1d3f4a5b6c"
+  },
   "attachments": ["wall-time.json"],
   "start": "2025-12-02T13:32:04.886Z",
   "end": "2025-12-02T13:33:04.891Z",

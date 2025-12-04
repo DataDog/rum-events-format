@@ -9,7 +9,7 @@
       "$ref": "profile-event-attributes-schema.json"
     },
     {
-      "required": ["attachments", "start", "end", "family", "runtime", "format", "version", "tags_profiler", "_dd"],
+      "required": ["attachments", "start", "end", "family", "runtime", "version", "tags_profiler", "_dd"],
       "properties": {
         "attachments": {
           "type": "array",
@@ -21,35 +21,34 @@
         },
         "start": {
           "type": "string",
-          "description": "Start time as ISO date string.",
+          "description": "Start time as ISO 8601 date string (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').",
           "readOnly": true
         },
         "end": {
           "type": "string",
-          "description": "End time as ISO date string.",
+          "description": "End time marking when the profile ended, as ISO 8601 date string (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').",
           "readOnly": true
         },
         "family": {
           "type": "string",
-          "const": "chrome",
+          "enum": ["android", "chrome", "ios"],
           "description": "Profiler family.",
           "readOnly": true
         },
         "runtime": {
           "type": "string",
-          "const": "chrome",
-          "description": "JavaScript runtime.",
+          "enum": ["android", "chrome", "ios"],
+          "description": "Runtime environment.",
           "readOnly": true
         },
         "format": {
           "type": "string",
-          "const": "json",
-          "description": "Profile data format.",
+          "enum": ["json", "pprof"],
+          "description": "Profile data format. Browser SDK uses 'json', iOS SDK uses 'pprof'. Optional as some SDKs include this in tags_profiler instead.",
           "readOnly": true
         },
         "version": {
           "type": "integer",
-          "const": 4,
           "description": "Profile ingestion event version.",
           "readOnly": true
         },
@@ -61,11 +60,10 @@
         "_dd": {
           "type": "object",
           "description": "Datadog internal metadata.",
-          "required": ["clock_drift"],
           "properties": {
             "clock_drift": {
               "type": "number",
-              "description": "Clock drift value.",
+              "description": "Clock drift value. Used by Browser SDK.",
               "readOnly": true
             }
           },

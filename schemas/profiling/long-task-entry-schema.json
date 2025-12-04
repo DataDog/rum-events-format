@@ -4,7 +4,7 @@
   "title": "RumProfilerLongTaskEntry",
   "type": "object",
   "description": "Schema of a long task entry recorded during profiling.",
-  "required": ["duration", "entryType", "startClocks"],
+  "required": ["duration", "entry_type", "startClocks"],
   "properties": {
     "id": {
       "type": "string",
@@ -12,13 +12,15 @@
       "readOnly": true
     },
     "duration": {
-      "type": "number",
-      "description": "RUM Long Task duration in milliseconds.",
+      "type": "integer",
+      "description": "Duration in ns of the long task or long animation frame.",
+      "minimum": 0,
       "readOnly": true
     },
-    "entryType": {
+    "entry_type": {
       "type": "string",
-      "description": "RUM Long Task entry type.",
+      "enum": ["long-task", "long-animation-frame"],
+      "description": "Type of the event: long task or long animation frame",
       "readOnly": true
     },
     "startClocks": {
