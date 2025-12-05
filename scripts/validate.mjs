@@ -21,6 +21,7 @@ function validateSchemasObjectsPropertiesCase() {
       `${SCHEMAS_DIRECTORY}/session-replay/common/_common-segment-metadata-schema.json`,
       ['records_count', 'index_in_view', 'has_full_snapshot'],
     ],
+    [`${SCHEMAS_DIRECTORY}/session-replay/browser/segment-metadata-schema.json`, ['creation_reason']],
     [`${SCHEMAS_DIRECTORY}/session-replay/common/focus-record-schema.json`, ['has_focus']],
     [`${SCHEMAS_DIRECTORY}/rum/resource-schema.json`, ['operationType', 'operationName']],
   ])
@@ -148,15 +149,15 @@ function forEachObject(schema, callback) {
   if (Array.isArray(schema)) {
     // traverse arrays
     for (const value of schema) {
-      forEachObjectProperty(value, callback)
+      forEachObject(value, callback)
     }
   } else if (typeof schema === 'object' && schema !== null) {
     // traverse objects
     for (const value of Object.values(schema)) {
-      forEachObjectProperty(value, callback)
+      forEachObject(value, callback)
     }
 
-    if (schema.type === 'object') {
+    if (schema.type === 'object' || schema.properties) {
       callback(schema)
     }
   }
