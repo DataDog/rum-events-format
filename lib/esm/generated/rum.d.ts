@@ -756,7 +756,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
             /**
              * Type of the GraphQL operation
              */
-            readonly operationType: 'query' | 'mutation' | 'subscription';
+            readonly operationType?: 'query' | 'mutation' | 'subscription';
             /**
              * Name of the GraphQL operation
              */
