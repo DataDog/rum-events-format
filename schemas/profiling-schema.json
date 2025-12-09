@@ -3,16 +3,16 @@
   "$id": "profiling-schema.json",
   "title": "RumProfiling",
   "type": "object",
-  "description": "Schema of RUM Profiling. Includes both Browser SDK (JSON payload with event + wall-time trace) and Mobile SDK (event metadata only, sent with binary pprof attachment) variants.",
+  "description": "Schema of RUM Profiling.",
   "oneOf": [
     {
       "title": "BrowserProfileEventPayload",
-      "description": "Browser SDK profiling payload (JSON with event metadata and wall-time trace data)",
+      "description": "Browser SDK profiling payload.",
       "$ref": "profiling-browser-schema.json"
     },
     {
       "title": "MobileProfileEvent",
-      "description": "Mobile SDK profiling event (metadata only, binary profile data sent as separate attachment)",
+      "description": "Mobile SDK profiling event.",
       "$ref": "profiling-mobile-schema.json"
     }
   ]
