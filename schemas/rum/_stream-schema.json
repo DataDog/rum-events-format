@@ -8,7 +8,6 @@
     "stream": {
       "type": "object",
       "description": "Stream properties",
-      "required": ["id"],
       "properties": {
         "bitrate": {
           "type": "number",
