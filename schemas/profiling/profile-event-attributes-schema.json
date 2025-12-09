@@ -71,19 +71,6 @@
         }
       },
       "readOnly": true
-    },
-    "vital": {
-      "type": "object",
-      "description": "The RUM Vital this profile event is associated with.",
-      "readOnly": true,
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Unique identifier of RUM Vital in the UUID format.",
-          "readOnly": true
-        }
-      },
-      "required": ["id"]
     }
   }
 }

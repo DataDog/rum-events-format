@@ -3,5 +3,27 @@
   "$id": "profiling-mobile-schema.json",
   "title": "ProfileEvent",
   "description": "Schema of the Mobile SDK Profile Event metadata.",
-  "$ref": "profiling/profile-event-schema.json"
+  "allOf": [
+    {
+      "$ref": "profiling/profile-event-schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "vital": {
+          "type": "object",
+          "description": "The RUM Vital this profile event is associated with (Android only).",
+          "readOnly": true,
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Unique identifier of RUM Vital in the UUID format.",
+              "readOnly": true
+            }
+          },
+          "required": ["id"]
+        }
+      }
+    }
+  ]
 }
