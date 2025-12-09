@@ -7,7 +7,36 @@
   "required": ["event", "wall-time.json"],
   "properties": {
     "event": {
-      "$ref": "profile-event-schema.json",
+      "allOf": [
+        {
+          "$ref": "profile-event-schema.json"
+        },
+        {
+          "type": "object",
+          "required": ["format", "_dd"],
+          "properties": {
+            "format": {
+              "type": "string",
+              "const": "json",
+              "description": "Profile data format.",
+              "readOnly": true
+            },
+            "_dd": {
+              "type": "object",
+              "description": "Datadog internal metadata.",
+              "required": ["clock_drift"],
+              "properties": {
+                "clock_drift": {
+                  "type": "number",
+                  "description": "Clock drift value. Used by Browser SDK.",
+                  "readOnly": true
+                }
+              },
+              "readOnly": true
+            }
+          }
+        }
+      ],
       "description": "Profile event metadata.",
       "readOnly": true
     },

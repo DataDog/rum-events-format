@@ -9,12 +9,13 @@
       "$ref": "profile-event-attributes-schema.json"
     },
     {
-      "required": ["attachments", "start", "end", "family", "runtime", "version", "tags_profiler", "_dd"],
+      "required": ["attachments", "start", "end", "family", "runtime", "version", "tags_profiler"],
       "properties": {
         "attachments": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "readOnly": true
           },
           "description": "List of attachment filenames.",
           "readOnly": true
@@ -41,12 +42,6 @@
           "description": "Runtime environment.",
           "readOnly": true
         },
-        "format": {
-          "type": "string",
-          "enum": ["json", "pprof"],
-          "description": "Profile data format. Browser SDK uses 'json', iOS SDK uses 'pprof'. Optional as some SDKs include this in tags_profiler instead.",
-          "readOnly": true
-        },
         "version": {
           "type": "integer",
           "description": "Profile ingestion event version.",
@@ -55,18 +50,6 @@
         "tags_profiler": {
           "type": "string",
           "description": "Comma-separated profiler tags.",
-          "readOnly": true
-        },
-        "_dd": {
-          "type": "object",
-          "description": "Datadog internal metadata.",
-          "properties": {
-            "clock_drift": {
-              "type": "number",
-              "description": "Clock drift value. Used by Browser SDK.",
-              "readOnly": true
-            }
-          },
           "readOnly": true
         }
       }

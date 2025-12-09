@@ -40,7 +40,7 @@
     {
       "id": "c40cf35b-0495-4049-bf81-acf3f7578e55",
       "duration": 120000000,
-      "entry_type": "long-task",
+      "entryType": "long-task",
       "startClocks": {
         "relative": 5000,
         "timeStamp": 1763719285000
@@ -49,7 +49,7 @@
     {
       "id": "f53b3f73-b22a-4e8e-86ac-f05644026752",
       "duration": 85000000,
-      "entry_type": "long-animation-frame",
+      "entryType": "long-animation-frame",
       "startClocks": {
         "relative": 15000,
         "timeStamp": 1763719295000

@@ -4,7 +4,7 @@
   "title": "RumProfilerLongTaskEntry",
   "type": "object",
   "description": "Schema of a long task entry recorded during profiling.",
-  "required": ["duration", "entry_type", "startClocks"],
+  "required": ["duration", "entryType", "startClocks"],
   "properties": {
     "id": {
       "type": "string",
@@ -17,7 +17,7 @@
       "minimum": 0,
       "readOnly": true
     },
-    "entry_type": {
+    "entryType": {
       "type": "string",
       "enum": ["long-task", "long-animation-frame"],
       "description": "Type of the event: long task or long animation frame",
