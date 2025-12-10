@@ -9,10 +9,11 @@
     },
     {
       "type": "object",
+      "required": ["vital"],
       "properties": {
         "vital": {
           "type": "object",
-          "description": "The RUM Vital this profile event is associated with (Android only).",
+          "description": "The RUM Vital this profile event is associated with.",
           "readOnly": true,
           "properties": {
             "id": {
