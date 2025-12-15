@@ -335,19 +335,23 @@ export declare type AddCDataSectionNodeChange = [InsertionPoint, '#cdata-section
 /**
  * Browser-specific. Schema representing the insertion point of a node which is being added to the document.
  */
-export declare type InsertionPoint = RootInsertionPoint | LastChildInsertionPoint | NextSiblingInsertionPoint;
+export declare type InsertionPoint = AppendChildInsertionPoint | InsertAfterPreviousInsertionPoint | InsertBeforeInsertionPoint | RootInsertionPoint;
+/**
+ * A positive integer insertion point. Inserting a node at positive integer N indicates that the new node's parent is the node with an id N lower than the new node, and that we should insert the new node at the end of its parent's child list, as if the DOM method appendChild() was being used.
+ */
+export declare type AppendChildInsertionPoint = number;
+/**
+ * A zero insertion point. Inserting a node at zero indicates that the new node should be inserted after the node with an id one lower than the new node, as if the DOM method after() is being used. Using a zero insertion point repeatedly is thus a quick way to insert a sequence of sibling elements.
+ */
+export declare type InsertAfterPreviousInsertionPoint = number;
+/**
+ * A negative integer insertion point. Inserting a node at negative integer -N indicates that the new node's next sibling is the node with an id N lower than the new node, and that we should insert the new node before its next sibling, as if the DOM method insertBefore() was being used.
+ */
+export declare type InsertBeforeInsertionPoint = number;
 /**
  * A null insertion point, indicating that the node should be inserted at the root of the document.
  */
 export declare type RootInsertionPoint = null;
-/**
- * A positive integer insertion point. Inserting a node at positive integer N indicates that the node should be inserted as the last child of the node with an id N lower than the new node.
- */
-export declare type LastChildInsertionPoint = number;
-/**
- * A non-positive integer insertion point. Inserting a node at non-positive integer -N indicates that the node should be inserted as the next sibling of the node with an id (N + 1) lower than the new node. In particular, inserting a node at 0 means that it should be the next sibling of the immediately preceding node.
- */
-export declare type NextSiblingInsertionPoint = number;
 /**
  * Browser-specific. Schema representing a string, expressed as an index into the string table.
  */
