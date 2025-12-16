@@ -87,7 +87,12 @@ function validateSchemasIds() {
 }
 
 function validateSamples() {
-  const ajv = new Ajv()
+  const ajv = new Ajv({
+    // By default, ajv objects to heterogeneous tuples; the reasoning is that
+    // they are awkward to work with in some languages. Disable this warning
+    // since we're using this feature extensively and are aware of the tradeoffs.
+    strictTuples: false,
+  })
   forEachFile(SCHEMAS_DIRECTORY, (schemaPath) => ajv.addSchema(readJson(schemaPath)))
   forEachFile(SAMPLES_DIRECTORY, (samplePath) => {
     const schemaId = computeSchemaIdFromSamplePath(samplePath)
