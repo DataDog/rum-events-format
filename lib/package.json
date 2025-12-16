@@ -11,6 +11,7 @@
     "cjs",
     "esm",
     "rum",
+    "profiling",
     "session-replay",
     "session-replay-browser",
     "session-replay-mobile",
