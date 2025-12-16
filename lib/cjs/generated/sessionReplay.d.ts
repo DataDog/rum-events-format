@@ -351,7 +351,7 @@ export declare type AppendChildInsertionPoint = number;
 /**
  * A zero insertion point. Inserting a node at zero indicates that the new node should be inserted after the node with an id one lower than the new node, as if the DOM method after() is being used. Using a zero insertion point repeatedly is thus a quick way to insert a sequence of sibling elements.
  */
-export declare type InsertAfterPreviousInsertionPoint = number;
+export declare type InsertAfterPreviousInsertionPoint = 0;
 /**
  * A negative integer insertion point. Inserting a node at negative integer -N indicates that the new node's next sibling is the node with an id N lower than the new node, and that we should insert the new node before its next sibling, as if the DOM method insertBefore() was being used.
  */
