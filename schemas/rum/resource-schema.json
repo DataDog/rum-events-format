@@ -307,7 +307,7 @@
                   "description": "String representation of the operation variables",
                   "readOnly": false
                 },
-                "errors_count": {
+                "error_count": {
                   "type": "integer",
                   "description": "Number of GraphQL errors in the response",
                   "minimum": 0,
