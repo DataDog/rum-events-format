@@ -772,7 +772,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
             /**
              * Number of GraphQL errors in the response
              */
-            readonly errors_count?: number;
+            readonly error_count?: number;
             /**
              * Array of GraphQL errors from the response
              */
