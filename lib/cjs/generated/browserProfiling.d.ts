@@ -132,9 +132,9 @@ export interface RumProfilerTrace {
      * An array of profiler samples.
      */
     readonly samples: ProfilerSample[];
-    readonly startClocks: ClocksState;
-    readonly endClocks: ClocksState1;
-    readonly clocksOrigin: ClocksState2;
+    startClocks: ClocksState;
+    endClocks: ClocksState;
+    clocksOrigin: ClocksState;
     /**
      * Sample interval in milliseconds.
      */
@@ -200,37 +200,9 @@ export interface ProfilerSample {
     [k: string]: unknown;
 }
 /**
- * High resolution time when profiler trace started, relative to the profiling session's time origin.
+ * Schema of timing state with both relative and absolute timestamps.
  */
 export interface ClocksState {
-    /**
-     * Time relative to navigation start in milliseconds.
-     */
-    readonly relative: number;
-    /**
-     * Epoch time in milliseconds.
-     */
-    readonly timeStamp: number;
-    [k: string]: unknown;
-}
-/**
- * High resolution time when profiler trace ended, relative to the profiling session's time origin.
- */
-export interface ClocksState1 {
-    /**
-     * Time relative to navigation start in milliseconds.
-     */
-    readonly relative: number;
-    /**
-     * Epoch time in milliseconds.
-     */
-    readonly timeStamp: number;
-    [k: string]: unknown;
-}
-/**
- * Time origin of the profiling session.
- */
-export interface ClocksState2 {
     /**
      * Time relative to navigation start in milliseconds.
      */
@@ -257,28 +229,14 @@ export interface RumProfilerLongTaskEntry {
      * Type of the event: long task or long animation frame
      */
     readonly entryType: 'long-task' | 'long-animation-frame';
-    readonly startClocks: ClocksState3;
-    [k: string]: unknown;
-}
-/**
- * RUM Long Task start time.
- */
-export interface ClocksState3 {
-    /**
-     * Time relative to navigation start in milliseconds.
-     */
-    readonly relative: number;
-    /**
-     * Epoch time in milliseconds.
-     */
-    readonly timeStamp: number;
+    startClocks: ClocksState;
     [k: string]: unknown;
 }
 /**
  * Schema of a RUM view entry recorded during profiling.
  */
 export interface RumViewEntry {
-    readonly startClocks: ClocksState4;
+    startClocks: ClocksState;
     /**
      * RUM view id.
      */
@@ -287,19 +245,5 @@ export interface RumViewEntry {
      * RUM view name.
      */
     readonly viewName?: string;
-    [k: string]: unknown;
-}
-/**
- * Detected start time of view.
- */
-export interface ClocksState4 {
-    /**
-     * Time relative to navigation start in milliseconds.
-     */
-    readonly relative: number;
-    /**
-     * Epoch time in milliseconds.
-     */
-    readonly timeStamp: number;
     [k: string]: unknown;
 }

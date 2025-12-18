@@ -7,9 +7,7 @@
   "required": ["startClocks", "viewId"],
   "properties": {
     "startClocks": {
-      "$ref": "_clocks-state-schema.json",
-      "description": "Detected start time of view.",
-      "readOnly": true
+      "$ref": "_clocks-state-schema.json"
     },
     "viewId": {
       "type": "string",

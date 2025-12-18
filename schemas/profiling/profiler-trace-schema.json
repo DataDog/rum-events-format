@@ -50,19 +50,13 @@
       "readOnly": true
     },
     "startClocks": {
-      "$ref": "_clocks-state-schema.json",
-      "description": "High resolution time when profiler trace started, relative to the profiling session's time origin.",
-      "readOnly": true
+      "$ref": "_clocks-state-schema.json"
     },
     "endClocks": {
-      "$ref": "_clocks-state-schema.json",
-      "description": "High resolution time when profiler trace ended, relative to the profiling session's time origin.",
-      "readOnly": true
+      "$ref": "_clocks-state-schema.json"
     },
     "clocksOrigin": {
-      "$ref": "_clocks-state-schema.json",
-      "description": "Time origin of the profiling session.",
-      "readOnly": true
+      "$ref": "_clocks-state-schema.json"
     },
     "sampleInterval": {
       "type": "number",
