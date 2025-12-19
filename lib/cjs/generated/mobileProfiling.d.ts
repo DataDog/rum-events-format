@@ -68,7 +68,7 @@ export interface ProfileEventAttributes {
     /**
      * Session properties.
      */
-    readonly session: {
+    readonly session?: {
         /**
          * Session ID.
          */

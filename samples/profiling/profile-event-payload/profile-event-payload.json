@@ -3,9 +3,6 @@
     "application": {
       "id": "a81f40b8-e9bd-4805-9b66-4e4edc529a14"
     },
-    "session": {
-      "id": "e7521b8e-e369-4e78-a721-3139479c6ea6"
-    },
     "view": {
       "id": ["9b1368a8-7f8d-4c3d-b0f6-bb51b5b399c0"],
       "name": ["/"]
@@ -63,7 +60,7 @@
       {
         "id": "0e6071e2-e4ae-4605-8dfe-9f3551a172f9",
         "duration": 150,
-        "entryType": "long-task",
+        "entryType": "longtask",
         "startClocks": {
           "relative": 5000,
           "timeStamp": 1733146329886

@@ -40,7 +40,7 @@
     {
       "id": "c40cf35b-0495-4049-bf81-acf3f7578e55",
       "duration": 120000000,
-      "entryType": "long-task",
+      "entryType": "longtask",
       "startClocks": {
         "relative": 5000,
         "timeStamp": 1763719285000

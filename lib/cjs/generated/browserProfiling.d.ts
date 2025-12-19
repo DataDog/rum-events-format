@@ -79,7 +79,7 @@ export interface ProfileEventAttributes {
     /**
      * Session properties.
      */
-    readonly session: {
+    readonly session?: {
         /**
          * Session ID.
          */
@@ -228,7 +228,7 @@ export interface RumProfilerLongTaskEntry {
     /**
      * Type of the event: long task or long animation frame
      */
-    readonly entryType: 'long-task' | 'long-animation-frame';
+    readonly entryType: 'longtask' | 'long-animation-frame';
     startClocks: ClocksState;
     [k: string]: unknown;
 }

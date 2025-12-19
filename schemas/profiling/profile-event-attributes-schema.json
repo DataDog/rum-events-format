@@ -4,7 +4,7 @@
   "title": "ProfileEventAttributes",
   "type": "object",
   "description": "Schema of attributes for a Profile Event.",
-  "required": ["application", "session"],
+  "required": ["application"],
   "properties": {
     "application": {
       "type": "object",

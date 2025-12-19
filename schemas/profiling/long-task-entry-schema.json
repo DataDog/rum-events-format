@@ -19,7 +19,7 @@
     },
     "entryType": {
       "type": "string",
-      "enum": ["long-task", "long-animation-frame"],
+      "enum": ["longtask", "long-animation-frame"],
       "description": "Type of the event: long task or long animation frame",
       "readOnly": true
     },
