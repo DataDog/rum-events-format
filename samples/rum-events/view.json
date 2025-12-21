@@ -24,6 +24,42 @@
     "dom_content_loaded": 951715000,
     "dom_interactive": 906695000,
     "load_event": 2154370000,
+    "not_restored_reasons": {
+      "children": [
+        {
+          "children": [],
+          "id": "iframe-1",
+          "name": "myFrame",
+          "reasons": null,
+          "src": "./frame.html",
+          "url": "https://example.com/frame.html"
+        },
+        {
+          "children": [],
+          "id": "iframe-2",
+          "name": "anotherFrame",
+          "reasons": [
+            {
+              "reason": "response-cache-control-no-store"
+            }
+          ],
+          "src": "./another.html",
+          "url": "https://example.com/another.html"
+        }
+      ],
+      "id": null,
+      "name": null,
+      "reasons": [
+        {
+          "reason": "unload-listener"
+        },
+        {
+          "reason": "beforeunload-listener"
+        }
+      ],
+      "src": null,
+      "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+    },
     "interaction_to_next_paint": 20000000,
     "interaction_to_next_paint_time": 20000000,
     "interaction_to_next_paint_target_selector": "#foo",
