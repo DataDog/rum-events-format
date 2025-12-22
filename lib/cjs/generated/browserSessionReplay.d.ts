@@ -317,7 +317,7 @@ export declare type BrowserChangeRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Browser-specific. Schema representing an individual change within a BrowserChangeData collection.
  */
-export declare type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AdoptedStyleSheetsChange[]];
+export declare type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachedStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]];
 /**
  * Browser-specific. Schema representing the addition of a string to the string table.
  */
@@ -451,11 +451,89 @@ export declare type SizeChange = [NodeId, number, number];
  */
 export declare type ScrollPositionChange = [NodeId, number, number];
 /**
- * Browser-specific. Schema representing a change to the adopted stylesheets of a document or shadow DOM subtree.
+ * Browser-specific. Schema representing the addition of a new stylesheet to the document.
+ */
+export declare type AddStyleSheetChange = StyleSheetSnapshot;
+/**
+ * Schema representing a snapshot of a CSS stylesheet.
  *
  * @minItems 1
  */
-export declare type AdoptedStyleSheetsChange = [NodeId, ...StyleSheet[]];
+export declare type StyleSheetSnapshot = [StyleSheetRules] | [StyleSheetRules, StyleSheetMediaList] | [StyleSheetRules, StyleSheetMediaList, boolean];
+/**
+ * Schema representing a CSS stylesheet's rules, encoded either as a single string or as an array containing a separate string for each rule.
+ */
+export declare type StyleSheetRules = StringOrStringReference | StringOrStringReference[];
+/**
+ * If non-empty, the list of medias for which this stylesheet is active. Defaults to the empty list if not present.
+ */
+export declare type StyleSheetMediaList = StringOrStringReference[];
+/**
+ * Browser-specific. Schema representing a change to the stylesheets attached to a DOM node. For <link> or <style> elements, which use classic CSSOM APIs, at most one stylesheet can be attached. For #document, #document-fragment, or #shadow-root nodes, which use the `adoptedStyleSheets` API, any number of stylesheets can be attached.
+ *
+ * @minItems 1
+ */
+export declare type AttachedStyleSheetsChange = [NodeId, ...StyleSheetId[]];
+/**
+ * Browser-specific. Schema representing the ID of a stylesheet.
+ */
+export declare type StyleSheetId = number;
+/**
+ * Browser-specific. Schema representing a change to the playback state of the media associated with an <audio> or <video> element.
+ *
+ * @minItems 2
+ */
+export declare type MediaPlaybackStateChange = [NodeId, PlaybackStatePlaying | PlaybackStatePaused];
+/**
+ * A playback state indicating that the associated media is playing.
+ */
+export declare type PlaybackStatePlaying = 0;
+/**
+ * A playback state indicating that the associated media is paused.
+ */
+export declare type PlaybackStatePaused = 1;
+/**
+ * Browser-specific. Schema representing a change to the visual viewport, defined in terms of the web platform VisualViewport API.
+ *
+ * @minItems 7
+ */
+export declare type VisualViewportChange = [
+    VisualViewportOffsetLeft,
+    VisualViewportOffsetTop,
+    VisualViewportPageLeft,
+    VisualViewportPageTop,
+    VisualViewportWidth,
+    VisualViewportHeight,
+    VisualViewportScale
+];
+/**
+ * The offset of the left edge of the visual viewport from the left edge of the layout viewport in CSS pixels.
+ */
+export declare type VisualViewportOffsetLeft = number;
+/**
+ * The offset of the top edge of the visual viewport from the top edge of the layout viewport in CSS pixels.
+ */
+export declare type VisualViewportOffsetTop = number;
+/**
+ * The x coordinate of the visual viewport relative to the initial containing block origin of the top edge in CSS pixels.
+ */
+export declare type VisualViewportPageLeft = number;
+/**
+ * The y coordinate of the visual viewport relative to the initial containing block origin of the top edge in CSS pixels.
+ */
+export declare type VisualViewportPageTop = number;
+/**
+ * The width of the visual viewport in CSS pixels.
+ */
+export declare type VisualViewportWidth = number;
+/**
+ * The height of the visual viewport in CSS pixels.
+ */
+export declare type VisualViewportHeight = number;
+/**
+ * The pinch-zoom scaling factor applied to the visual viewport.
+ */
+export declare type VisualViewportScale = number;
 /**
  * Schema of a Session Replay Segment context.
  */

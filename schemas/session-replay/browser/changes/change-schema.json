@@ -57,8 +57,29 @@
       "type": "array",
       "minItems": 1,
       "items": [{ "const": 7 }],
-      "additionalItems": { "$ref": "adopted-stylesheets-change-schema.json" },
-      "description": "Changes to the `adoptedStyleSheets` list of a Document, DocumentFragment, or ShadowRoot node."
+      "additionalItems": { "$ref": "add-stylesheet-change-schema.json" },
+      "description": "Newly added stylesheets."
+    },
+    {
+      "type": "array",
+      "minItems": 1,
+      "items": [{ "const": 8 }],
+      "additionalItems": { "$ref": "attached-stylesheets-change-schema.json" },
+      "description": "Changes to the stylesheets attached to a node."
+    },
+    {
+      "type": "array",
+      "minItems": 1,
+      "items": [{ "const": 9 }],
+      "additionalItems": { "$ref": "media-playback-state-change-schema.json" },
+      "description": "Changes to the playback state of the media associated with a node."
+    },
+    {
+      "type": "array",
+      "minItems": 1,
+      "items": [{ "const": 10 }],
+      "additionalItems": { "$ref": "visual-viewport-change-schema.json" },
+      "description": "Changes to the visual viewport."
     }
   ]
 }
