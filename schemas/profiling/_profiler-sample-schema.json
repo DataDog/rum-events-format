@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "profiling/_profiler-sample-schema.json",
+  "title": "ProfilerSample",
+  "type": "object",
+  "description": "Schema of a profiler sample from the JS Self-Profiling API.",
+  "required": ["timestamp"],
+  "properties": {
+    "timestamp": {
+      "type": "number",
+      "description": "High resolution time relative to the profiling session's time origin.",
+      "readOnly": true
+    },
+    "stackId": {
+      "type": "integer",
+      "description": "Index in the trace.stacks array.",
+      "readOnly": true
+    }
+  }
+}

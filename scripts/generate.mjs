@@ -25,6 +25,8 @@ const DEFINITIONS = [
     options: { additionalProperties: false },
   },
   { source: 'session-replay-schema.json', name: 'sessionReplay', options: { additionalProperties: false } },
+  { source: 'profiling-browser-schema.json', name: 'browserProfiling' },
+  { source: 'profiling-mobile-schema.json', name: 'mobileProfiling' },
 ]
 
 const GENERATED_PATH = path.normalize(pkg.config['path:generated'])

@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "profiling/profile-event-attributes-schema.json",
+  "title": "ProfileEventAttributes",
+  "type": "object",
+  "description": "Schema of attributes for a Profile Event.",
+  "required": ["application"],
+  "properties": {
+    "application": {
+      "type": "object",
+      "description": "Application properties.",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Application ID.",
+          "readOnly": true
+        }
+      },
+      "readOnly": true
+    },
+    "session": {
+      "type": "object",
+      "description": "Session properties.",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Session ID.",
+          "readOnly": true
+        }
+      },
+      "readOnly": true
+    },
+    "view": {
+      "type": "object",
+      "description": "View properties.",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Array of view IDs.",
+          "readOnly": true
+        },
+        "name": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Array of view names.",
+          "readOnly": true
+        }
+      },
+      "readOnly": true
+    },
+    "long_task": {
+      "type": "object",
+      "description": "Long task properties.",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Array of long task IDs.",
+          "readOnly": true
+        }
+      },
+      "readOnly": true
+    }
+  }
+}
