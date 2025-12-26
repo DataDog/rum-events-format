@@ -499,7 +499,7 @@ export declare type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording 
 /**
  * Schema of mobile specific features usage
  */
-export declare type TelemetryMobileFeaturesUsage = AddViewLoadingTime;
+export declare type TelemetryMobileFeaturesUsage = AddViewLoadingTime | TrackWebView;
 /**
  * Schema of common properties of Telemetry events
  */
@@ -874,5 +874,12 @@ export interface AddViewLoadingTime {
      * Whether the loading time was overwritten
      */
     overwritten: boolean;
+    [k: string]: unknown;
+}
+export interface TrackWebView {
+    /**
+     * trackWebView API
+     */
+    feature: 'trackWebView';
     [k: string]: unknown;
 }
