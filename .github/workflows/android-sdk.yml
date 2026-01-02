@@ -1,0 +1,41 @@
+name: android-sdk
+
+on:
+  push:
+
+jobs:
+  android-sdk-test:
+    runs-on: ubuntu-latest
+    env:
+      NDK_VERSION: '28.0.13004108'
+    steps:
+      - uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2.7.0
+        with:
+          repository: 'DataDog/dd-sdk-android'
+          ref: aleksandr-gringauz/RUM-12387/pass-ref-from-gradle-properties
+
+      - name: Setup Java
+        uses: actions/setup-java@f2beeb24e141e01a676f977032f5a29d81c9e27e # v5.1.0
+        with:
+          distribution: 'temurin'
+          java-version: 17
+          cache: 'gradle'
+
+      # Ubuntu latest image doesn't have the exact version of the NDK that we need.
+      # So we install it manually and cache.
+      # https://github.com/actions/runner-images/blob/84b177af1632c67d56338e7c706fbee966b6e24e/images/ubuntu/Ubuntu2404-Readme.md?plain=1#L239
+      - name: Cache NDK
+        id: cache-ndk
+        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+        with:
+          path: /usr/local/lib/android/sdk/ndk/${{ env.NDK_VERSION }}
+          key: android-ndk-${{ env.NDK_VERSION }}
+
+      - name: Setup Android NDK
+        run: ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager "ndk;${{ env.NDK_VERSION }}"
+
+      - name: Clone RUM schema
+        run: ./gradlew cloneAllRumSchemas -Pdd.rum.schema.ref="${{ github.ref_name }}"
+
+      - name: Generate JSON models
+        run: ./gradlew generateAllJsonModels
