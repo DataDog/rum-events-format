@@ -32,7 +32,7 @@ jobs:
           key: android-ndk-${{ env.NDK_VERSION }}
 
       - name: Setup Android NDK
-        run: ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager "ndk;${{ env.NDK_VERSION }}"
+        run: yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager "platforms;android-36" "build-tools;36.0.0" "ndk;${{ env.NDK_VERSION }}"
 
       - name: Clone RUM schema
         run: ./gradlew cloneAllRumSchemas -Pdd.rum.schema.ref="${{ github.ref_name }}"
