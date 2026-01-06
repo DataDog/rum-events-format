@@ -4,7 +4,7 @@
 /**
  * Schema of the Mobile SDK Profile Event metadata.
  */
-export declare type ProfileEvent = ProfileEvent1 & {
+export declare type MobileProfileEvent = ProfileEvent & {
     /**
      * The RUM Vital this profile event is associated with.
      */
@@ -18,43 +18,9 @@ export declare type ProfileEvent = ProfileEvent1 & {
     [k: string]: unknown;
 };
 /**
- * Schema of a Profile Event metadata.
+ * Schema of a Profile Event metadata. Contains attributes shared by all profiles.
  */
-export declare type ProfileEvent1 = ProfileEventAttributes & {
-    /**
-     * List of attachment filenames.
-     */
-    readonly attachments: string[];
-    /**
-     * Start time as ISO 8601 date string (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
-     */
-    readonly start: string;
-    /**
-     * End time marking when the profile ended, as ISO 8601 date string (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
-     */
-    readonly end: string;
-    /**
-     * Profiler family.
-     */
-    readonly family: 'android' | 'chrome' | 'ios';
-    /**
-     * Runtime environment.
-     */
-    readonly runtime: 'android' | 'chrome' | 'ios';
-    /**
-     * Profile ingestion event version.
-     */
-    readonly version: number;
-    /**
-     * Comma-separated profiler tags.
-     */
-    readonly tags_profiler: string;
-    [k: string]: unknown;
-};
-/**
- * Schema of attributes for a Profile Event.
- */
-export interface ProfileEventAttributes {
+export interface ProfileEvent {
     /**
      * Application properties.
      */
@@ -99,5 +65,33 @@ export interface ProfileEventAttributes {
         readonly id: string[];
         [k: string]: unknown;
     };
+    /**
+     * List of attachment filenames.
+     */
+    readonly attachments: string[];
+    /**
+     * Start time as ISO 8601 date string (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
+     */
+    readonly start: string;
+    /**
+     * End time marking when the profile ended, as ISO 8601 date string (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
+     */
+    readonly end: string;
+    /**
+     * Profiler family.
+     */
+    readonly family: 'android' | 'chrome' | 'ios';
+    /**
+     * Runtime environment.
+     */
+    readonly runtime: 'android' | 'chrome' | 'ios';
+    /**
+     * Profile ingestion event version.
+     */
+    readonly version: number;
+    /**
+     * Comma-separated profiler tags.
+     */
+    readonly tags_profiler: string;
     [k: string]: unknown;
 }

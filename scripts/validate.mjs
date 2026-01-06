@@ -24,9 +24,8 @@ function validateSchemasObjectsPropertiesCase() {
     [`${SCHEMAS_DIRECTORY}/session-replay/browser/segment-metadata-schema.json`, ['creation_reason']],
     [`${SCHEMAS_DIRECTORY}/session-replay/common/focus-record-schema.json`, ['has_focus']],
     [`${SCHEMAS_DIRECTORY}/rum/resource-schema.json`, ['operationType', 'operationName']],
-    [`${SCHEMAS_DIRECTORY}/profiling/profile-event-attributes-schema.json`, ['long_task']],
-    [`${SCHEMAS_DIRECTORY}/profiling/profile-event-payload-schema.json`, ['wall-time.json', '_dd', 'clock_drift']],
-    [`${SCHEMAS_DIRECTORY}/profiling/profile-event-schema.json`, ['tags_profiler']],
+    [`${SCHEMAS_DIRECTORY}/profiling/_common-schema.json`, ['long_task', 'tags_profiler']],
+    [`${SCHEMAS_DIRECTORY}/profiling/browser/profile-event-schema.json`, ['wall-time.json', '_dd', 'clock_drift']],
   ])
 
   let displayConvention = false

@@ -2,43 +2,9 @@
  * DO NOT MODIFY IT BY HAND. Run `yarn generate` instead.
  */
 /**
- * Schema of a Profile Event metadata.
- */
-export declare type ProfileEvent = ProfileEventAttributes & {
-    /**
-     * List of attachment filenames.
-     */
-    readonly attachments: string[];
-    /**
-     * Start time as ISO 8601 date string (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
-     */
-    readonly start: string;
-    /**
-     * End time marking when the profile ended, as ISO 8601 date string (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
-     */
-    readonly end: string;
-    /**
-     * Profiler family.
-     */
-    readonly family: 'android' | 'chrome' | 'ios';
-    /**
-     * Runtime environment.
-     */
-    readonly runtime: 'android' | 'chrome' | 'ios';
-    /**
-     * Profile ingestion event version.
-     */
-    readonly version: number;
-    /**
-     * Comma-separated profiler tags.
-     */
-    readonly tags_profiler: string;
-    [k: string]: unknown;
-};
-/**
  * Schema of the Browser SDK Profile Event payload.
  */
-export interface ProfileEventPayload {
+export interface BrowserProfileEventPayload {
     /**
      * Profile event metadata.
      */
@@ -63,9 +29,9 @@ export interface ProfileEventPayload {
     [k: string]: unknown;
 }
 /**
- * Schema of attributes for a Profile Event.
+ * Schema of a Profile Event metadata. Contains attributes shared by all profiles.
  */
-export interface ProfileEventAttributes {
+export interface ProfileEvent {
     /**
      * Application properties.
      */
@@ -110,6 +76,34 @@ export interface ProfileEventAttributes {
         readonly id: string[];
         [k: string]: unknown;
     };
+    /**
+     * List of attachment filenames.
+     */
+    readonly attachments: string[];
+    /**
+     * Start time as ISO 8601 date string (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
+     */
+    readonly start: string;
+    /**
+     * End time marking when the profile ended, as ISO 8601 date string (yyyy-MM-dd'T'HH:mm:ss.SSS'Z').
+     */
+    readonly end: string;
+    /**
+     * Profiler family.
+     */
+    readonly family: 'android' | 'chrome' | 'ios';
+    /**
+     * Runtime environment.
+     */
+    readonly runtime: 'android' | 'chrome' | 'ios';
+    /**
+     * Profile ingestion event version.
+     */
+    readonly version: number;
+    /**
+     * Comma-separated profiler tags.
+     */
+    readonly tags_profiler: string;
     [k: string]: unknown;
 }
 /**

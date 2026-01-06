@@ -18,12 +18,8 @@
   "attachments": ["wall-time.json"],
   "start": "2025-12-02T13:32:04.886Z",
   "end": "2025-12-02T13:33:04.891Z",
-  "family": "chrome",
-  "runtime": "chrome",
-  "format": "json",
+  "family": "android",
+  "runtime": "android",
   "version": 4,
-  "tags_profiler": "sdk_version:dev,env:prod,service:my-app,language:javascript,runtime:chrome,family:chrome,host:browser",
-  "_dd": {
-    "clock_drift": 0
-  }
+  "tags_profiler": "sdk_version:dev,env:prod,service:my-app,language:kotlin,runtime:android,family:android,host:mobile"
 }

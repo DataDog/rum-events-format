@@ -8,12 +8,12 @@
     {
       "title": "BrowserProfileEventPayload",
       "description": "Browser SDK profiling payload.",
-      "$ref": "profiling-browser-schema.json"
+      "$ref": "profiling/browser/profile-event-schema.json"
     },
     {
       "title": "MobileProfileEvent",
       "description": "Mobile SDK profiling event.",
-      "$ref": "profiling-mobile-schema.json"
+      "$ref": "profiling/mobile/profile-event-schema.json"
     }
   ]
 }

@@ -1,15 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "profiling/profile-event-payload-schema.json",
-  "title": "ProfileEventPayload",
+  "$id": "profiling/browser/profile-event-schema.json",
+  "title": "BrowserProfileEventPayload",
   "type": "object",
-  "description": "Schema of the Profile Event payload.",
+  "description": "Schema of the Browser SDK Profile Event payload.",
   "required": ["event", "wall-time.json"],
   "properties": {
     "event": {
       "allOf": [
         {
-          "$ref": "profile-event-schema.json"
+          "$ref": "../_common-schema.json"
         },
         {
           "type": "object",
