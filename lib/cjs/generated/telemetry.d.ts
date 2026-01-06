@@ -491,7 +491,7 @@ export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
 /**
  * Schema of features usage common across SDKs
  */
-export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital;
+export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | StartAction | StopAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital;
 /**
  * Schema of browser specific features usage
  */
@@ -693,6 +693,20 @@ export interface AddAction {
      * addAction API
      */
     feature: 'add-action';
+    [k: string]: unknown;
+}
+export interface StartAction {
+    /**
+     * startAction API
+     */
+    feature: 'start-action';
+    [k: string]: unknown;
+}
+export interface StopAction {
+    /**
+     * stopAction API
+     */
+    feature: 'stop-action';
     [k: string]: unknown;
 }
 export interface AddError {
