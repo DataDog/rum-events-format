@@ -111,7 +111,7 @@
           "readOnly": true
         },
         "duration": {
-          "type": "integer",
+          "type": "number",
           "description": "Duration in ns of the long task or long animation frame.",
           "minimum": 0,
           "readOnly": true
