@@ -15,6 +15,7 @@ export declare const RecordType: {
     ViewEnd: SessionReplay.ViewEndRecord['type'];
     VisualViewport: SessionReplay.VisualViewportRecord['type'];
     FrustrationRecord: SessionReplay.FrustrationRecord['type'];
+    Change: SessionReplay.BrowserChangeRecord['type'];
 };
 export declare type RecordType = typeof RecordType[keyof typeof RecordType];
 export declare const NodeType: {
@@ -56,3 +57,23 @@ export declare const MediaInteractionType: {
     readonly Pause: 1;
 };
 export declare type MediaInteractionType = typeof MediaInteractionType[keyof typeof MediaInteractionType];
+declare type ChangeTypeId<Id, Data> = [Id, ...Data[]] extends SessionReplay.Change ? Id : never;
+export declare const ChangeType: {
+    AddString: ChangeTypeId<0, SessionReplay.AddStringChange>;
+    AddNode: ChangeTypeId<1, SessionReplay.AddNodeChange>;
+    RemoveNode: ChangeTypeId<2, SessionReplay.RemoveNodeChange>;
+    Attribute: ChangeTypeId<3, SessionReplay.AttributeChange>;
+    Text: ChangeTypeId<4, SessionReplay.TextChange>;
+    Size: ChangeTypeId<5, SessionReplay.SizeChange>;
+    ScrollPosition: ChangeTypeId<6, SessionReplay.ScrollPositionChange>;
+    AddStyleSheet: ChangeTypeId<7, SessionReplay.AddStyleSheetChange>;
+    AttachedStyleSheets: ChangeTypeId<8, SessionReplay.AttachedStyleSheetsChange>;
+    MediaPlaybackState: ChangeTypeId<9, SessionReplay.MediaPlaybackStateChange>;
+    VisualViewport: ChangeTypeId<10, SessionReplay.VisualViewportChange>;
+};
+export declare type ChangeType = typeof ChangeType[keyof typeof ChangeType];
+export declare const PlaybackState: {
+    Playing: SessionReplay.PlaybackStatePlaying;
+    Paused: SessionReplay.PlaybackStatePaused;
+};
+export declare type PlaybackState = typeof PlaybackState[keyof typeof PlaybackState];
