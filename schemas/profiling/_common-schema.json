@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "profiling/_common-schema.json",
-  "title": "ProfileEvent",
+  "title": "ProfileCommonProperties",
   "type": "object",
   "description": "Schema of a Profile Event metadata. Contains attributes shared by all profiles.",
   "required": ["application", "attachments", "start", "end", "family", "runtime", "version", "tags_profiler"],

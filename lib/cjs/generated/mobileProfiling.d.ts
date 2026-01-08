@@ -4,7 +4,7 @@
 /**
  * Schema of the Mobile SDK Profile Event metadata.
  */
-export declare type MobileProfileEvent = ProfileEvent & {
+export declare type MobileProfileEvent = ProfileCommonProperties & {
     /**
      * The RUM Vital this profile event is associated with.
      */
@@ -20,7 +20,7 @@ export declare type MobileProfileEvent = ProfileEvent & {
 /**
  * Schema of a Profile Event metadata. Contains attributes shared by all profiles.
  */
-export interface ProfileEvent {
+export interface ProfileCommonProperties {
     /**
      * Application properties.
      */

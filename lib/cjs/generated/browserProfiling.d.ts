@@ -4,11 +4,11 @@
 /**
  * Schema of the Browser SDK Profile Event payload.
  */
-export interface BrowserProfileEventPayload {
+export interface BrowserProfileEvent {
     /**
      * Profile event metadata.
      */
-    readonly event: ProfileEvent & {
+    readonly event: ProfileCommonProperties & {
         /**
          * Profile data format.
          */
@@ -31,7 +31,7 @@ export interface BrowserProfileEventPayload {
 /**
  * Schema of a Profile Event metadata. Contains attributes shared by all profiles.
  */
-export interface ProfileEvent {
+export interface ProfileCommonProperties {
     /**
      * Application properties.
      */
