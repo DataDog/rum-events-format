@@ -127,9 +127,9 @@
               "type": "string",
               "description": "Model of the device"
             },
-            "processor_count": {
+            "logical_cpu_count": {
               "type": "number",
-              "description": "Number of device processors",
+              "description": "Number of logical CPU cores available for scheduling on the device at runtime, as reported by the operating system.",
               "readOnly": true
             },
             "total_ram": {
