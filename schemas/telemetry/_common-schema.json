@@ -137,7 +137,7 @@
               "description": "Total RAM in megabytes",
               "readOnly": true
             },
-            "is_low_ram_device": {
+            "is_low_ram": {
               "type": "boolean",
               "description": "Whether the device is considered a low RAM device (Android)",
               "readOnly": true
