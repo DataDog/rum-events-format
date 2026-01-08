@@ -45,7 +45,7 @@ export interface BrowserProfileEventPayload {
         };
         [k: string]: unknown;
     };
-    readonly 'wall-time.json': RumProfilerTrace;
+    readonly 'wall-time.json': BrowserProfilerTrace;
     [k: string]: unknown;
 }
 /**
@@ -129,7 +129,7 @@ export interface ProfileEvent {
 /**
  * The profiler trace data (wall-time profile).
  */
-export interface RumProfilerTrace {
+export interface BrowserProfilerTrace {
     /**
      * An array of profiler resources.
      */
