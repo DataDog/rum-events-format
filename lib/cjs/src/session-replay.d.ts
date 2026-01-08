@@ -1,7 +1,7 @@
 import type { IncrementalSource as BrowserIncrementalSource, RecordType as BrowserRecordType } from './session-replay-browser';
 import type { IncrementalSource as MobileIncrementalSource, RecordType as MobileRecordType } from './session-replay-mobile';
 export * from '../generated/sessionReplay';
-export { BrowserSource, NodeType, IncrementalSource as BrowserIncrementalSource, MouseInteractionType, MediaInteractionType, } from './session-replay-browser';
+export { BrowserSource, ChangeType as BrowserChangeType, NodeType, IncrementalSource as BrowserIncrementalSource, MouseInteractionType, MediaInteractionType, PlaybackState, } from './session-replay-browser';
 export { IncrementalSource as MobileIncrementalSource, MobileSource, WireframeType } from './session-replay-mobile';
 export declare const RecordType: {
     BrowserFullSnapshot: typeof BrowserRecordType.FullSnapshot;
@@ -13,6 +13,7 @@ export declare const RecordType: {
     FrustrationRecord: typeof BrowserRecordType.FrustrationRecord;
     MobileFullSnapshot: typeof MobileRecordType.FullSnapshot;
     MobileIncrementalSnapshot: typeof MobileRecordType.IncrementalSnapshot;
+    BrowserChange: typeof BrowserRecordType.Change;
 };
 export declare type RecordType = typeof RecordType[keyof typeof RecordType];
 export declare type IncrementalSource = BrowserIncrementalSource | MobileIncrementalSource;
@@ -28,3 +29,12 @@ export declare const PointerType: {
     readonly Pen: "pen";
 };
 export declare type PointerType = typeof PointerType[keyof typeof PointerType];
+export declare type NodeId = number & {
+    __brand: 'NodeId';
+};
+export declare type StringId = number & {
+    __brand: 'StringId';
+};
+export declare type StyleSheetId = number & {
+    __brand: 'StyleSheetId';
+};
