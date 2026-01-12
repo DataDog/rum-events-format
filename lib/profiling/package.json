@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "main": "../cjs/src/profiling.js",
+  "module": "../esm/src/profiling.js",
+  "types": "../esm/src/profiling.d.ts"
+}

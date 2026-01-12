@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "profiling/mobile/profile-event-schema.json",
+  "title": "MobileProfileEvent",
+  "description": "Schema of the Mobile SDK Profile Event metadata.",
+  "allOf": [
+    {
+      "$ref": "../_common-schema.json"
+    },
+    {
+      "type": "object",
+      "required": ["vital"],
+      "properties": {
+        "vital": {
+          "type": "object",
+          "description": "The RUM Vital this profile event is associated with.",
+          "readOnly": true,
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Unique identifier of RUM Vital in the UUID format.",
+              "readOnly": true
+            }
+          },
+          "required": ["id"]
+        }
+      }
+    }
+  ]
+}
