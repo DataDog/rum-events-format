@@ -6,6 +6,26 @@
  */
 export declare type Profiling = BrowserProfileEvent | MobileProfileEvent;
 /**
+ * Browser SDK profiling payload.
+ */
+export declare type BrowserProfileEvent = ProfileCommonProperties & {
+    /**
+     * Profile data format.
+     */
+    readonly format: 'json';
+    /**
+     * Datadog internal metadata.
+     */
+    readonly _dd: {
+        /**
+         * Clock drift value. Used by Browser SDK.
+         */
+        readonly clock_drift: number;
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
+/**
  * Mobile SDK profiling event.
  */
 export declare type MobileProfileEvent = ProfileCommonProperties & {
@@ -21,33 +41,6 @@ export declare type MobileProfileEvent = ProfileCommonProperties & {
     };
     [k: string]: unknown;
 };
-/**
- * Browser SDK profiling payload.
- */
-export interface BrowserProfileEvent {
-    /**
-     * Profile event metadata.
-     */
-    readonly event: ProfileCommonProperties & {
-        /**
-         * Profile data format.
-         */
-        readonly format: 'json';
-        /**
-         * Datadog internal metadata.
-         */
-        readonly _dd: {
-            /**
-             * Clock drift value. Used by Browser SDK.
-             */
-            readonly clock_drift: number;
-            [k: string]: unknown;
-        };
-        [k: string]: unknown;
-    };
-    readonly 'wall-time.json': BrowserProfilerTrace;
-    [k: string]: unknown;
-}
 /**
  * Schema of a Profile Event metadata. Contains attributes shared by all profiles.
  */
@@ -124,140 +117,5 @@ export interface ProfileCommonProperties {
      * Comma-separated profiler tags.
      */
     readonly tags_profiler: string;
-    [k: string]: unknown;
-}
-/**
- * The profiler trace data (wall-time profile).
- */
-export interface BrowserProfilerTrace {
-    /**
-     * An array of profiler resources.
-     */
-    readonly resources: string[];
-    /**
-     * An array of profiler frames.
-     */
-    readonly frames: ProfilerFrame[];
-    /**
-     * An array of profiler stacks.
-     */
-    readonly stacks: ProfilerStack[];
-    /**
-     * An array of profiler samples.
-     */
-    readonly samples: ProfilerSample[];
-    startClocks: ClocksState;
-    endClocks: ClocksState;
-    clocksOrigin: ClocksState;
-    /**
-     * Sample interval in milliseconds.
-     */
-    readonly sampleInterval: number;
-    /**
-     * List of detected long tasks.
-     */
-    readonly longTasks: RumProfilerLongTaskEntry[];
-    /**
-     * List of detected navigation entries.
-     */
-    readonly views: RumViewEntry[];
-    [k: string]: unknown;
-}
-/**
- * Schema of a profiler frame from the JS Self-Profiling API.
- */
-export interface ProfilerFrame {
-    /**
-     * A function instance name.
-     */
-    readonly name: string;
-    /**
-     * Index in the trace.resources array.
-     */
-    readonly resourceId?: number;
-    /**
-     * 1-based index of the line.
-     */
-    readonly line?: number;
-    /**
-     * 1-based index of the column.
-     */
-    readonly column?: number;
-    [k: string]: unknown;
-}
-/**
- * Schema of a profiler stack from the JS Self-Profiling API.
- */
-export interface ProfilerStack {
-    /**
-     * Index in the trace.stacks array.
-     */
-    readonly parentId?: number;
-    /**
-     * Index in the trace.frames array.
-     */
-    readonly frameId: number;
-    [k: string]: unknown;
-}
-/**
- * Schema of a profiler sample from the JS Self-Profiling API.
- */
-export interface ProfilerSample {
-    /**
-     * High resolution time relative to the profiling session's time origin.
-     */
-    readonly timestamp: number;
-    /**
-     * Index in the trace.stacks array.
-     */
-    readonly stackId?: number;
-    [k: string]: unknown;
-}
-/**
- * Schema of timing state with both relative and absolute timestamps.
- */
-export interface ClocksState {
-    /**
-     * Time relative to navigation start in milliseconds.
-     */
-    readonly relative: number;
-    /**
-     * Epoch time in milliseconds.
-     */
-    readonly timeStamp: number;
-    [k: string]: unknown;
-}
-/**
- * Schema of a long task entry recorded during profiling.
- */
-export interface RumProfilerLongTaskEntry {
-    /**
-     * RUM Long Task id.
-     */
-    readonly id?: string;
-    /**
-     * Duration in ns of the long task or long animation frame.
-     */
-    readonly duration: number;
-    /**
-     * Type of the event: long task or long animation frame
-     */
-    readonly entryType: 'longtask' | 'long-animation-frame';
-    startClocks: ClocksState;
-    [k: string]: unknown;
-}
-/**
- * Schema of a RUM view entry recorded during profiling.
- */
-export interface RumViewEntry {
-    startClocks: ClocksState;
-    /**
-     * RUM view id.
-     */
-    readonly viewId: string;
-    /**
-     * RUM view name.
-     */
-    readonly viewName?: string;
     [k: string]: unknown;
 }

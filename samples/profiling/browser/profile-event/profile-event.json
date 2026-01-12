@@ -1,81 +1,23 @@
 {
-  "event": {
-    "application": {
-      "id": "a81f40b8-e9bd-4805-9b66-4e4edc529a14"
-    },
-    "view": {
-      "id": ["9b1368a8-7f8d-4c3d-b0f6-bb51b5b399c0"],
-      "name": ["/"]
-    },
-    "long_task": {
-      "id": ["0e6071e2-e4ae-4605-8dfe-9f3551a172f9"]
-    },
-    "attachments": ["wall-time.json"],
-    "start": "2025-12-02T13:32:04.886Z",
-    "end": "2025-12-02T13:33:04.891Z",
-    "family": "chrome",
-    "runtime": "chrome",
-    "format": "json",
-    "version": 4,
-    "tags_profiler": "sdk_version:dev,env:prod,service:my-app,language:javascript,runtime:chrome,family:chrome,host:browser",
-    "_dd": {
-      "clock_drift": 0
-    }
+  "application": {
+    "id": "a81f40b8-e9bd-4805-9b66-4e4edc529a14"
   },
-  "wall-time.json": {
-    "resources": ["https://example.com/assets/index.js"],
-    "frames": [
-      {
-        "name": "handleClick",
-        "resourceId": 0,
-        "line": 42,
-        "column": 10
-      }
-    ],
-    "stacks": [
-      {
-        "frameId": 0
-      }
-    ],
-    "samples": [
-      {
-        "timestamp": 0,
-        "stackId": 0
-      }
-    ],
-    "startClocks": {
-      "relative": 0,
-      "timeStamp": 1733146324886
-    },
-    "endClocks": {
-      "relative": 60005,
-      "timeStamp": 1733146384891
-    },
-    "clocksOrigin": {
-      "relative": 0,
-      "timeStamp": 1733146324886
-    },
-    "sampleInterval": 10,
-    "longTasks": [
-      {
-        "id": "0e6071e2-e4ae-4605-8dfe-9f3551a172f9",
-        "duration": 150,
-        "entryType": "longtask",
-        "startClocks": {
-          "relative": 5000,
-          "timeStamp": 1733146329886
-        }
-      }
-    ],
-    "views": [
-      {
-        "startClocks": {
-          "relative": 0,
-          "timeStamp": 1733146324886
-        },
-        "viewId": "9b1368a8-7f8d-4c3d-b0f6-bb51b5b399c0",
-        "viewName": "/"
-      }
-    ]
+  "view": {
+    "id": ["9b1368a8-7f8d-4c3d-b0f6-bb51b5b399c0"],
+    "name": ["/"]
+  },
+  "long_task": {
+    "id": ["0e6071e2-e4ae-4605-8dfe-9f3551a172f9"]
+  },
+  "attachments": ["wall-time.json"],
+  "start": "2025-12-02T13:32:04.886Z",
+  "end": "2025-12-02T13:33:04.891Z",
+  "family": "chrome",
+  "runtime": "chrome",
+  "format": "json",
+  "version": 4,
+  "tags_profiler": "sdk_version:dev,env:prod,service:my-app,language:javascript,runtime:chrome,family:chrome,host:browser",
+  "_dd": {
+    "clock_drift": 0
   }
 }

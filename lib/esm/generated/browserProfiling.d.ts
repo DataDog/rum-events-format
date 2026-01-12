@@ -2,32 +2,29 @@
  * DO NOT MODIFY IT BY HAND. Run `yarn generate` instead.
  */
 /**
+ * Schema of Browser SDK Profiling types.
+ */
+export declare type BrowserProfiling = BrowserProfileEvent | BrowserProfilerTrace;
+/**
  * Schema of the Browser SDK Profile Event payload.
  */
-export interface BrowserProfileEvent {
+export declare type BrowserProfileEvent = ProfileCommonProperties & {
     /**
-     * Profile event metadata.
+     * Profile data format.
      */
-    readonly event: ProfileCommonProperties & {
+    readonly format: 'json';
+    /**
+     * Datadog internal metadata.
+     */
+    readonly _dd: {
         /**
-         * Profile data format.
+         * Clock drift value. Used by Browser SDK.
          */
-        readonly format: 'json';
-        /**
-         * Datadog internal metadata.
-         */
-        readonly _dd: {
-            /**
-             * Clock drift value. Used by Browser SDK.
-             */
-            readonly clock_drift: number;
-            [k: string]: unknown;
-        };
+        readonly clock_drift: number;
         [k: string]: unknown;
     };
-    readonly 'wall-time.json': BrowserProfilerTrace;
     [k: string]: unknown;
-}
+};
 /**
  * Schema of a Profile Event metadata. Contains attributes shared by all profiles.
  */
@@ -107,7 +104,7 @@ export interface ProfileCommonProperties {
     [k: string]: unknown;
 }
 /**
- * The profiler trace data (wall-time profile).
+ * Schema of a RUM profiler trace containing profiling data enriched with RUM context.
  */
 export interface BrowserProfilerTrace {
     /**

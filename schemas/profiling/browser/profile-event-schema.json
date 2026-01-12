@@ -4,46 +4,34 @@
   "title": "BrowserProfileEvent",
   "type": "object",
   "description": "Schema of the Browser SDK Profile Event payload.",
-  "required": ["event", "wall-time.json"],
-  "properties": {
-    "event": {
-      "allOf": [
-        {
-          "$ref": "../_common-schema.json"
+  "allOf": [
+    {
+      "$ref": "../_common-schema.json"
+    },
+    {
+      "type": "object",
+      "required": ["format", "_dd"],
+      "properties": {
+        "format": {
+          "type": "string",
+          "const": "json",
+          "description": "Profile data format.",
+          "readOnly": true
         },
-        {
+        "_dd": {
           "type": "object",
-          "required": ["format", "_dd"],
+          "description": "Datadog internal metadata.",
+          "required": ["clock_drift"],
           "properties": {
-            "format": {
-              "type": "string",
-              "const": "json",
-              "description": "Profile data format.",
-              "readOnly": true
-            },
-            "_dd": {
-              "type": "object",
-              "description": "Datadog internal metadata.",
-              "required": ["clock_drift"],
-              "properties": {
-                "clock_drift": {
-                  "type": "number",
-                  "description": "Clock drift value. Used by Browser SDK.",
-                  "readOnly": true
-                }
-              },
+            "clock_drift": {
+              "type": "number",
+              "description": "Clock drift value. Used by Browser SDK.",
               "readOnly": true
             }
-          }
+          },
+          "readOnly": true
         }
-      ],
-      "description": "Profile event metadata.",
-      "readOnly": true
-    },
-    "wall-time.json": {
-      "$ref": "profiler-trace-schema.json",
-      "description": "The profiler trace data (wall-time profile).",
-      "readOnly": true
+      }
     }
-  }
+  ]
 }
