@@ -26,7 +26,7 @@
         "resource": {
           "type": "object",
           "description": "Resource properties",
-          "required": ["type", "url"],
+          "required": ["type"],
           "properties": {
             "id": {
               "type": "string",

@@ -596,7 +596,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
         /**
          * URL of the resource
          */
-        url: string;
+        url?: string;
         /**
          * HTTP status code of the resource
          */
