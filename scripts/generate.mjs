@@ -77,16 +77,21 @@ async function getJsonSchemaToTypescript() {
 
     execSync(
       `
-        set -eu
+        set -eux
+
         cd ./node_modules/json-schema-to-typescript
         rm -rf dist
-        # due to installation on node_modules, some of these steps can fail
-        # built version still behaves correctly though
-        set +e
-        yarn
-        yarn run clean
-        yarn run build:server
-        set -e
+
+        npm install
+        npm run clean
+
+        # With yarn 3, the 'test/' folder is not present, so all built files are put directly in the
+        # 'dist/' folder instead of 'dist/src/'.
+        #
+        # Using an explicit '--rootDir' fixes this issue.
+        #
+        # Also, tsc fails with type errors, but the built files are fine.
+        npm exec -- tsc --declaration --rootDir . || true
       `,
       {
         stdio: 'inherit',
