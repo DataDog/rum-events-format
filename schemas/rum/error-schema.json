@@ -98,6 +98,11 @@
               "description": "The type of the error",
               "readOnly": true
             },
+            "file": {
+              "type": "string",
+              "description": "The file in which the error originated",
+              "readOnly": true
+            },
             "category": {
               "type": "string",
               "description": "The specific category of the error. It provides a high-level grouping for different types of errors.",
