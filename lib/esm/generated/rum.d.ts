@@ -1937,6 +1937,28 @@ export interface ViewPerformanceData {
          * URL of the largest contentful paint element
          */
         resource_url?: string;
+        /**
+         * Sub-parts of the LCP
+         */
+        sub_parts?: {
+            /**
+             * Duration in ns of the resource first byte phase
+             */
+            readonly first_byte: number;
+            /**
+             * Time between first_byte and the loading start of the resource associated with the LCP
+             */
+            readonly load_delay: number;
+            /**
+             * Time to takes to load the resource attached to the LCP
+             */
+            readonly load_time: number;
+            /**
+             * Time between the LCP resource finishes loading and the LCP element is fully rendered
+             */
+            readonly render_delay: number;
+            [k: string]: unknown;
+        };
         [k: string]: unknown;
     };
     /**
