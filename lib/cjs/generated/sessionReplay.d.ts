@@ -1347,6 +1347,10 @@ export interface CommonWireframe {
      */
     readonly height: number;
     clip?: WireframeClip;
+    /**
+     * A globally unique and stable identifier for this UI element, computed as the hash of the element's path (32 lowercase hex characters). Used to correlate wireframes with RUM action events.
+     */
+    readonly permanentId?: string;
 }
 /**
  * Schema of clipping information for a Wireframe.
