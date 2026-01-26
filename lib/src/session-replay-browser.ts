@@ -9,7 +9,7 @@ export const BrowserSource = {
   Browser: 'browser',
 } as const
 
-export type BrowserSource = typeof BrowserSource[keyof typeof BrowserSource]
+export type BrowserSource = (typeof BrowserSource)[keyof typeof BrowserSource]
 
 export const RecordType: {
   FullSnapshot: SessionReplay.BrowserFullSnapshotRecord['type']
@@ -31,7 +31,7 @@ export const RecordType: {
   Change: 12,
 } as const
 
-export type RecordType = typeof RecordType[keyof typeof RecordType]
+export type RecordType = (typeof RecordType)[keyof typeof RecordType]
 
 export const NodeType: {
   Document: SessionReplay.DocumentNode['type']
@@ -49,7 +49,7 @@ export const NodeType: {
   DocumentFragment: 11,
 } as const
 
-export type NodeType = typeof NodeType[keyof typeof NodeType]
+export type NodeType = (typeof NodeType)[keyof typeof NodeType]
 
 export const IncrementalSource: {
   Mutation: SessionReplay.BrowserMutationData['source']
@@ -76,7 +76,7 @@ export const IncrementalSource: {
   // Font : 10,
 } as const
 
-export type IncrementalSource = typeof IncrementalSource[keyof typeof IncrementalSource]
+export type IncrementalSource = (typeof IncrementalSource)[keyof typeof IncrementalSource]
 
 export const MouseInteractionType = {
   MouseUp: 0,
@@ -90,14 +90,14 @@ export const MouseInteractionType = {
   TouchEnd: 9,
 } as const
 
-export type MouseInteractionType = typeof MouseInteractionType[keyof typeof MouseInteractionType]
+export type MouseInteractionType = (typeof MouseInteractionType)[keyof typeof MouseInteractionType]
 
 export const MediaInteractionType = {
   Play: 0,
   Pause: 1,
 } as const
 
-export type MediaInteractionType = typeof MediaInteractionType[keyof typeof MediaInteractionType]
+export type MediaInteractionType = (typeof MediaInteractionType)[keyof typeof MediaInteractionType]
 
 // ChangeTypeId evaluates to Id if [Id, ...Data[]] is a valid variant of Change;
 // otherwise, it triggers a compile-time error.
@@ -129,7 +129,7 @@ export const ChangeType: {
   VisualViewport: 10,
 } as const
 
-export type ChangeType = typeof ChangeType[keyof typeof ChangeType]
+export type ChangeType = (typeof ChangeType)[keyof typeof ChangeType]
 
 export const PlaybackState: {
   Playing: SessionReplay.PlaybackStatePlaying
@@ -139,4 +139,4 @@ export const PlaybackState: {
   Paused: 1,
 } as const
 
-export type PlaybackState = typeof PlaybackState[keyof typeof PlaybackState]
+export type PlaybackState = (typeof PlaybackState)[keyof typeof PlaybackState]

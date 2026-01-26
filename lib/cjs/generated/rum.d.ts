@@ -4,11 +4,11 @@
 /**
  * Schema of all properties of a RUM event
  */
-export declare type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumVitalEvent;
+export type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumVitalEvent;
 /**
  * Schema of all properties of an Action event
  */
-export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
+export type RumActionEvent = CommonProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -154,7 +154,7 @@ export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
 /**
  * Schema of all properties of an Transition event
  */
-export declare type RumTransitionEvent = CommonProperties & {
+export type RumTransitionEvent = CommonProperties & {
     /**
      * RUM event type
      */
@@ -208,7 +208,7 @@ export declare type RumTransitionEvent = CommonProperties & {
 /**
  * Schema of all properties of an Error event
  */
-export declare type RumErrorEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
+export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -456,7 +456,7 @@ export declare type RumErrorEvent = CommonProperties & ActionChildProperties & V
 /**
  * Schema of all properties of a Long Task event
  */
-export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
+export type RumLongTaskEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -572,7 +572,7 @@ export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties 
 /**
  * Schema of all properties of a Resource event
  */
-export declare type RumResourceEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
+export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -840,7 +840,7 @@ export declare type RumResourceEvent = CommonProperties & ActionChildProperties 
 /**
  * Schema of all properties of a View event
  */
-export declare type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema & {
+export type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema & {
     /**
      * RUM event type
      */
@@ -1241,11 +1241,11 @@ export declare type RumViewEvent = CommonProperties & ViewContainerSchema & Stre
     };
     [k: string]: unknown;
 };
-export declare type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationStepEvent | RumVitalAppLaunchEvent;
+export type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationStepEvent | RumVitalAppLaunchEvent;
 /**
  * Schema for a duration vital event.
  */
-export declare type RumVitalDurationEvent = RumVitalEventCommonProperties & {
+export type RumVitalDurationEvent = RumVitalEventCommonProperties & {
     /**
      * Vital properties
      */
@@ -1265,7 +1265,7 @@ export declare type RumVitalDurationEvent = RumVitalEventCommonProperties & {
 /**
  * Schema of common properties for a Vital event
  */
-export declare type RumVitalEventCommonProperties = CommonProperties & ViewContainerSchema & {
+export type RumVitalEventCommonProperties = CommonProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -1293,7 +1293,7 @@ export declare type RumVitalEventCommonProperties = CommonProperties & ViewConta
 /**
  * Schema for a vital operation step event.
  */
-export declare type RumVitalOperationStepEvent = RumVitalEventCommonProperties & {
+export type RumVitalOperationStepEvent = RumVitalEventCommonProperties & {
     /**
      * Vital properties
      */
@@ -1321,7 +1321,7 @@ export declare type RumVitalOperationStepEvent = RumVitalEventCommonProperties &
 /**
  * Schema for app launch metrics.
  */
-export declare type RumVitalAppLaunchEvent = RumVitalEventCommonProperties & {
+export type RumVitalAppLaunchEvent = RumVitalEventCommonProperties & {
     /**
      * Vital properties
      */

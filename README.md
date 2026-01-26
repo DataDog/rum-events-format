@@ -18,7 +18,6 @@ After editing any schema, you must re-generate the JS + TS definitions ([see bel
 This repository accommodates various usages, specifically:
 
 - The [Browser SDK](https://github.com/DataDog/browser-sdk/):
-
   - Generates TypeScript types from `schemas/rum-events-browser-schema.json`,
     `schemas/telemetry-events-schema.json` and `schemas/session-replay-browser-schema.json`.
 

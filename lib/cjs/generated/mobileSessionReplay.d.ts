@@ -4,7 +4,7 @@
 /**
  * Mobile-specific. Schema of a Session Replay data Segment.
  */
-export declare type MobileSegment = MobileSegmentMetadata & {
+export type MobileSegment = MobileSegmentMetadata & {
     /**
      * The records contained by this Segment.
      */
@@ -13,7 +13,7 @@ export declare type MobileSegment = MobileSegmentMetadata & {
 /**
  * Mobile-specific. Schema of a Session Replay Segment metadata.
  */
-export declare type MobileSegmentMetadata = SegmentContext & CommonSegmentMetadataSchema & {
+export type MobileSegmentMetadata = SegmentContext & CommonSegmentMetadataSchema & {
     /**
      * The source of this record
      */
@@ -22,11 +22,11 @@ export declare type MobileSegmentMetadata = SegmentContext & CommonSegmentMetada
 /**
  * Mobile-specific. Schema of a Session Replay Record.
  */
-export declare type MobileRecord = MobileFullSnapshotRecord | MobileIncrementalSnapshotRecord | MetaRecord | FocusRecord | ViewEndRecord | VisualViewportRecord;
+export type MobileRecord = MobileFullSnapshotRecord | MobileIncrementalSnapshotRecord | MetaRecord | FocusRecord | ViewEndRecord | VisualViewportRecord;
 /**
  * Mobile-specific. Schema of a Record type which contains the full snapshot of a screen.
  */
-export declare type MobileFullSnapshotRecord = CommonRecordSchema & {
+export type MobileFullSnapshotRecord = CommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -41,11 +41,11 @@ export declare type MobileFullSnapshotRecord = CommonRecordSchema & {
 /**
  * Schema of a Wireframe type.
  */
-export declare type Wireframe = ShapeWireframe | TextWireframe | ImageWireframe | PlaceholderWireframe | WebviewWireframe;
+export type Wireframe = ShapeWireframe | TextWireframe | ImageWireframe | PlaceholderWireframe | WebviewWireframe;
 /**
  * Schema of all properties of a ShapeWireframe.
  */
-export declare type ShapeWireframe = CommonShapeWireframe & {
+export type ShapeWireframe = CommonShapeWireframe & {
     /**
      * The type of the wireframe.
      */
@@ -54,14 +54,14 @@ export declare type ShapeWireframe = CommonShapeWireframe & {
 /**
  * Schema of common properties for ShapeWireframe events type and all its sub - types.
  */
-export declare type CommonShapeWireframe = CommonWireframe & {
+export type CommonShapeWireframe = CommonWireframe & {
     shapeStyle?: ShapeStyle;
     border?: ShapeBorder;
 };
 /**
  * The style of this wireframe.
  */
-export declare type ShapeStyle = {
+export type ShapeStyle = {
     /**
      * The background color for this wireframe as a String hexadecimal. Follows the #RRGGBBAA color format with the alpha value as optional. The default value is #FFFFFF00.
      */
@@ -78,7 +78,7 @@ export declare type ShapeStyle = {
 /**
  * The border properties of this wireframe. The default value is null (no-border).
  */
-export declare type ShapeBorder = {
+export type ShapeBorder = {
     /**
      * The border color as a String hexadecimal. Follows the #RRGGBBAA color format with the alpha value as optional.
      */
@@ -91,7 +91,7 @@ export declare type ShapeBorder = {
 /**
  * Schema of all properties of a TextWireframe.
  */
-export declare type TextWireframe = CommonShapeWireframe & {
+export type TextWireframe = CommonShapeWireframe & {
     /**
      * The type of the wireframe.
      */
@@ -106,7 +106,7 @@ export declare type TextWireframe = CommonShapeWireframe & {
 /**
  * Schema of all properties of a TextStyle.
  */
-export declare type TextStyle = {
+export type TextStyle = {
     /**
      * The preferred font family collection, ordered by preference and formatted as a String list: e.g. Century Gothic, Verdana, sans-serif
      */
@@ -127,7 +127,7 @@ export declare type TextStyle = {
 /**
  * Schema of all properties of a TextPosition.
  */
-export declare type TextPosition = {
+export type TextPosition = {
     readonly padding?: {
         /**
          * The top padding in pixels. The default value is 0.
@@ -160,7 +160,7 @@ export declare type TextPosition = {
 /**
  * Schema of all properties of a ImageWireframe.
  */
-export declare type ImageWireframe = CommonShapeWireframe & {
+export type ImageWireframe = CommonShapeWireframe & {
     /**
      * The type of the wireframe.
      */
@@ -185,7 +185,7 @@ export declare type ImageWireframe = CommonShapeWireframe & {
 /**
  * Schema of all properties of a PlaceholderWireframe.
  */
-export declare type PlaceholderWireframe = CommonWireframe & {
+export type PlaceholderWireframe = CommonWireframe & {
     /**
      * The type of the wireframe.
      */
@@ -198,7 +198,7 @@ export declare type PlaceholderWireframe = CommonWireframe & {
 /**
  * Schema of all properties of a WebviewWireframe.
  */
-export declare type WebviewWireframe = CommonShapeWireframe & {
+export type WebviewWireframe = CommonShapeWireframe & {
     /**
      * The type of the wireframe.
      */
@@ -215,7 +215,7 @@ export declare type WebviewWireframe = CommonShapeWireframe & {
 /**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
  */
-export declare type MobileIncrementalSnapshotRecord = CommonRecordSchema & {
+export type MobileIncrementalSnapshotRecord = CommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -225,11 +225,11 @@ export declare type MobileIncrementalSnapshotRecord = CommonRecordSchema & {
 /**
  * Mobile-specific. Schema of a Session Replay IncrementalData type.
  */
-export declare type MobileIncrementalData = MobileMutationData | TouchData | ViewportResizeData | PointerInteractionData;
+export type MobileIncrementalData = MobileMutationData | TouchData | ViewportResizeData | PointerInteractionData;
 /**
  * Mobile-specific. Schema of a MutationData.
  */
-export declare type MobileMutationData = {
+export type MobileMutationData = {
     /**
      * The source of this type of incremental data.
      */
@@ -238,11 +238,11 @@ export declare type MobileMutationData = {
 /**
  * Schema of a WireframeUpdateMutation type.
  */
-export declare type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate | PlaceholderWireframeUpdate | WebviewWireframeUpdate;
+export type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate | PlaceholderWireframeUpdate | WebviewWireframeUpdate;
 /**
  * Schema of all properties of a TextWireframeUpdate.
  */
-export declare type TextWireframeUpdate = CommonShapeWireframeUpdate & {
+export type TextWireframeUpdate = CommonShapeWireframeUpdate & {
     /**
      * The type of the wireframe.
      */
@@ -257,14 +257,14 @@ export declare type TextWireframeUpdate = CommonShapeWireframeUpdate & {
 /**
  * Schema of common properties for ShapeWireframeUpdate events type and all its sub - types.
  */
-export declare type CommonShapeWireframeUpdate = CommonWireframeUpdate & {
+export type CommonShapeWireframeUpdate = CommonWireframeUpdate & {
     shapeStyle?: ShapeStyle;
     border?: ShapeBorder;
 };
 /**
  * Schema of a ShapeWireframeUpdate.
  */
-export declare type ShapeWireframeUpdate = CommonShapeWireframeUpdate & {
+export type ShapeWireframeUpdate = CommonShapeWireframeUpdate & {
     /**
      * The type of the wireframe.
      */
@@ -273,7 +273,7 @@ export declare type ShapeWireframeUpdate = CommonShapeWireframeUpdate & {
 /**
  * Schema of all properties of a ImageWireframeUpdate.
  */
-export declare type ImageWireframeUpdate = CommonShapeWireframeUpdate & {
+export type ImageWireframeUpdate = CommonShapeWireframeUpdate & {
     /**
      * The type of the wireframe.
      */
@@ -298,7 +298,7 @@ export declare type ImageWireframeUpdate = CommonShapeWireframeUpdate & {
 /**
  * Schema of all properties of a PlaceholderWireframe.
  */
-export declare type PlaceholderWireframeUpdate = CommonWireframeUpdate & {
+export type PlaceholderWireframeUpdate = CommonWireframeUpdate & {
     /**
      * The type of the wireframe.
      */
@@ -311,7 +311,7 @@ export declare type PlaceholderWireframeUpdate = CommonWireframeUpdate & {
 /**
  * Schema of all properties of a WebviewWireframeUpdate.
  */
-export declare type WebviewWireframeUpdate = CommonShapeWireframeUpdate & {
+export type WebviewWireframeUpdate = CommonShapeWireframeUpdate & {
     /**
      * The type of the wireframe.
      */
@@ -328,7 +328,7 @@ export declare type WebviewWireframeUpdate = CommonShapeWireframeUpdate & {
 /**
  * Schema of a TouchData.
  */
-export declare type TouchData = {
+export type TouchData = {
     /**
      * The source of this type of incremental data.
      */
@@ -358,7 +358,7 @@ export declare type TouchData = {
 /**
  * Schema of a ViewportResizeData.
  */
-export declare type ViewportResizeData = {
+export type ViewportResizeData = {
     /**
      * The source of this type of incremental data.
      */
@@ -367,7 +367,7 @@ export declare type ViewportResizeData = {
 /**
  * Schema of a PointerInteractionData.
  */
-export declare type PointerInteractionData = {
+export type PointerInteractionData = {
     /**
      * The source of this type of incremental data.
      */
@@ -376,7 +376,7 @@ export declare type PointerInteractionData = {
 /**
  * Schema of a Record which contains the screen properties.
  */
-export declare type MetaRecord = SlotSupportedCommonRecordSchema & {
+export type MetaRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -402,7 +402,7 @@ export declare type MetaRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Schema of common properties for a Record event type that is supported by slots.
  */
-export declare type SlotSupportedCommonRecordSchema = CommonRecordSchema & {
+export type SlotSupportedCommonRecordSchema = CommonRecordSchema & {
     /**
      * Unique ID of the slot that generated this record.
      */
@@ -411,7 +411,7 @@ export declare type SlotSupportedCommonRecordSchema = CommonRecordSchema & {
 /**
  * Schema of a Record type which contains focus information.
  */
-export declare type FocusRecord = SlotSupportedCommonRecordSchema & {
+export type FocusRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -426,7 +426,7 @@ export declare type FocusRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Schema of a Record which signifies that view lifecycle ended.
  */
-export declare type ViewEndRecord = SlotSupportedCommonRecordSchema & {
+export type ViewEndRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -435,7 +435,7 @@ export declare type ViewEndRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Schema of a Record which signifies that the viewport properties have changed.
  */
-export declare type VisualViewportRecord = SlotSupportedCommonRecordSchema & {
+export type VisualViewportRecord = SlotSupportedCommonRecordSchema & {
     data: {
         height: number;
         offsetLeft: number;

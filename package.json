@@ -17,10 +17,10 @@
     "validate": "node scripts/validate.mjs"
   },
   "devDependencies": {
-    "ajv": "8.11.0",
+    "ajv": "^8.17.1",
     "json-schema-to-typescript": "bcaudan/json-schema-to-typescript#bcaudan/add-readonly-support",
-    "prettier": "2.7.1",
-    "typescript": ">=4.5"
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">=12.7.0"
