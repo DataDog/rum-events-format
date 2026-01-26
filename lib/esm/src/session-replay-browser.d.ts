@@ -6,7 +6,7 @@ export * from '../generated/browserSessionReplay';
 export declare const BrowserSource: {
     readonly Browser: "browser";
 };
-export declare type BrowserSource = typeof BrowserSource[keyof typeof BrowserSource];
+export type BrowserSource = (typeof BrowserSource)[keyof typeof BrowserSource];
 export declare const RecordType: {
     FullSnapshot: SessionReplay.BrowserFullSnapshotRecord['type'];
     IncrementalSnapshot: SessionReplay.BrowserIncrementalSnapshotRecord['type'];
@@ -17,7 +17,7 @@ export declare const RecordType: {
     FrustrationRecord: SessionReplay.FrustrationRecord['type'];
     Change: SessionReplay.BrowserChangeRecord['type'];
 };
-export declare type RecordType = typeof RecordType[keyof typeof RecordType];
+export type RecordType = (typeof RecordType)[keyof typeof RecordType];
 export declare const NodeType: {
     Document: SessionReplay.DocumentNode['type'];
     DocumentType: SessionReplay.DocumentTypeNode['type'];
@@ -26,7 +26,7 @@ export declare const NodeType: {
     CDATA: SessionReplay.CDataNode['type'];
     DocumentFragment: SessionReplay.DocumentFragmentNode['type'];
 };
-export declare type NodeType = typeof NodeType[keyof typeof NodeType];
+export type NodeType = (typeof NodeType)[keyof typeof NodeType];
 export declare const IncrementalSource: {
     Mutation: SessionReplay.BrowserMutationData['source'];
     MouseMove: Exclude<SessionReplay.MousemoveData['source'], 6>;
@@ -39,7 +39,7 @@ export declare const IncrementalSource: {
     StyleSheetRule: SessionReplay.StyleSheetRuleData['source'];
     PointerInteraction: SessionReplay.PointerInteractionData['source'];
 };
-export declare type IncrementalSource = typeof IncrementalSource[keyof typeof IncrementalSource];
+export type IncrementalSource = (typeof IncrementalSource)[keyof typeof IncrementalSource];
 export declare const MouseInteractionType: {
     readonly MouseUp: 0;
     readonly MouseDown: 1;
@@ -51,13 +51,13 @@ export declare const MouseInteractionType: {
     readonly TouchStart: 7;
     readonly TouchEnd: 9;
 };
-export declare type MouseInteractionType = typeof MouseInteractionType[keyof typeof MouseInteractionType];
+export type MouseInteractionType = (typeof MouseInteractionType)[keyof typeof MouseInteractionType];
 export declare const MediaInteractionType: {
     readonly Play: 0;
     readonly Pause: 1;
 };
-export declare type MediaInteractionType = typeof MediaInteractionType[keyof typeof MediaInteractionType];
-declare type ChangeTypeId<Id, Data> = [Id, ...Data[]] extends SessionReplay.Change ? Id : never;
+export type MediaInteractionType = (typeof MediaInteractionType)[keyof typeof MediaInteractionType];
+type ChangeTypeId<Id, Data> = [Id, ...Data[]] extends SessionReplay.Change ? Id : never;
 export declare const ChangeType: {
     AddString: ChangeTypeId<0, SessionReplay.AddStringChange>;
     AddNode: ChangeTypeId<1, SessionReplay.AddNodeChange>;
@@ -71,9 +71,9 @@ export declare const ChangeType: {
     MediaPlaybackState: ChangeTypeId<9, SessionReplay.MediaPlaybackStateChange>;
     VisualViewport: ChangeTypeId<10, SessionReplay.VisualViewportChange>;
 };
-export declare type ChangeType = typeof ChangeType[keyof typeof ChangeType];
+export type ChangeType = (typeof ChangeType)[keyof typeof ChangeType];
 export declare const PlaybackState: {
     Playing: SessionReplay.PlaybackStatePlaying;
     Paused: SessionReplay.PlaybackStatePaused;
 };
-export declare type PlaybackState = typeof PlaybackState[keyof typeof PlaybackState];
+export type PlaybackState = (typeof PlaybackState)[keyof typeof PlaybackState];
