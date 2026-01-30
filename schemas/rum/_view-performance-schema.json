@@ -134,6 +134,31 @@
           "type": "string",
           "description": "URL of the largest contentful paint element",
           "readOnly": false
+        },
+        "sub_parts": {
+          "type": "object",
+          "description": "Sub-parts of the LCP",
+          "required": ["load_delay", "load_time", "render_delay"],
+          "properties": {
+            "load_delay": {
+              "type": "integer",
+              "description": "Time between first_byte and the loading start of the resource associated with the LCP",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "load_time": {
+              "type": "integer",
+              "description": "Time to takes to load the resource attached to the LCP",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "render_delay": {
+              "type": "integer",
+              "description": "Time between the LCP resource finishes loading and the LCP element is fully rendered",
+              "minimum": 0,
+              "readOnly": true
+            }
+          }
         }
       },
       "readOnly": true
