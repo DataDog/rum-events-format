@@ -1942,10 +1942,6 @@ export interface ViewPerformanceData {
          */
         sub_parts?: {
             /**
-             * Duration in ns of the resource first byte phase
-             */
-            readonly first_byte: number;
-            /**
              * Time between first_byte and the loading start of the resource associated with the LCP
              */
             readonly load_delay: number;

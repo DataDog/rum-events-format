@@ -138,14 +138,8 @@
         "sub_parts": {
           "type": "object",
           "description": "Sub-parts of the LCP",
-          "required": ["first_byte", "load_delay", "load_time", "render_delay"],
+          "required": ["load_delay", "load_time", "render_delay"],
           "properties": {
-            "first_byte": {
-              "type": "integer",
-              "description": "Duration in ns of the resource first byte phase",
-              "minimum": 0,
-              "readOnly": true
-            },
             "load_delay": {
               "type": "integer",
               "description": "Time between first_byte and the loading start of the resource associated with the LCP",
