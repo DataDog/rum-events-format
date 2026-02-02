@@ -491,7 +491,7 @@ export type TelemetryUsageEvent = CommonTelemetryProperties & {
 /**
  * Schema of features usage common across SDKs
  */
-export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital;
+export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital | GraphQLRequest;
 /**
  * Schema of browser specific features usage
  */
@@ -823,6 +823,13 @@ export interface AddOperationStepVital {
      * Operations step type
      */
     action_type: 'start' | 'succeed' | 'fail';
+    [k: string]: unknown;
+}
+export interface GraphQLRequest {
+    /**
+     * GraphQL request detected
+     */
+    feature: 'graphql-request';
     [k: string]: unknown;
 }
 export interface StartSessionReplayRecording {
