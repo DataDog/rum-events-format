@@ -300,6 +300,17 @@
           "enum": ["start", "succeed", "fail"]
         }
       }
+    },
+    {
+      "required": ["feature"],
+      "title": "GraphQLRequest",
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "GraphQL request detected",
+          "const": "graphql-request"
+        }
+      }
     }
   ]
 }
