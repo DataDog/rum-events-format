@@ -145,7 +145,7 @@
         },
         "duration": {
           "type": "number",
-          "description": "Duration in ms of the duration vital.",
+          "description": "Duration in ms of the vital.",
           "minimum": 0,
           "readOnly": true
         },
@@ -258,7 +258,7 @@
       "description": "List of detected long tasks.",
       "readOnly": true
     },
-    "vitalEntries": {
+    "vitals": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/VitalEntry"
@@ -266,7 +266,7 @@
       "description": "List of detected vital entries.",
       "readOnly": true
     },
-    "actionEntries": {
+    "actions": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/ActionEntry"

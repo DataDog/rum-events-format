@@ -137,11 +137,11 @@ export interface BrowserProfilerTrace {
     /**
      * List of detected vital entries.
      */
-    readonly vitalEntries?: RumProfilerVitalEntry[];
+    readonly vitals?: RumProfilerVitalEntry[];
     /**
      * List of detected action entries.
      */
-    readonly actionEntries?: RumProfilerActionEntry[];
+    readonly actions?: RumProfilerActionEntry[];
     /**
      * List of detected navigation entries.
      */
@@ -244,7 +244,7 @@ export interface RumProfilerVitalEntry {
      */
     readonly label: string;
     /**
-     * Duration in ms of the duration vital.
+     * Duration in ms of the vital.
      */
     readonly duration: number;
     startClocks: ClocksState;
