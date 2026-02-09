@@ -182,7 +182,7 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
             /**
              * Configure the storage strategy for persisting sessions
              */
-            session_persistence?: 'local-storage' | 'cookie';
+            session_persistence?: 'local-storage' | 'cookie' | 'memory';
             /**
              * Whether contexts are stored in local storage
              */
