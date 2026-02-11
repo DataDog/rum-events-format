@@ -30,13 +30,7 @@
             }
           },
           "readOnly": true
-        }
-      }
-    },
-    {
-      "type": "object",
-      "required": ["action", "vital"],
-      "properties": {
+        },
         "action": {
           "type": "object",
           "description": "Action properties.",

@@ -23,12 +23,10 @@ export type BrowserProfileEvent = ProfileCommonProperties & {
         readonly clock_drift: number;
         [k: string]: unknown;
     };
-    [k: string]: unknown;
-} & {
     /**
      * Action properties.
      */
-    readonly action: {
+    readonly action?: {
         /**
          * Array of action IDs.
          */
@@ -42,7 +40,7 @@ export type BrowserProfileEvent = ProfileCommonProperties & {
     /**
      * Vital properties.
      */
-    readonly vital: {
+    readonly vital?: {
         /**
          * Array of vital IDs.
          */
