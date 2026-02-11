@@ -24,6 +24,36 @@ export type BrowserProfileEvent = ProfileCommonProperties & {
         [k: string]: unknown;
     };
     [k: string]: unknown;
+} & {
+    /**
+     * Action properties.
+     */
+    readonly action: {
+        /**
+         * Array of action IDs.
+         */
+        readonly id: string[];
+        /**
+         * Array of action labels.
+         */
+        readonly label: string[];
+        [k: string]: unknown;
+    };
+    /**
+     * Vital properties.
+     */
+    readonly vital: {
+        /**
+         * Array of vital IDs.
+         */
+        readonly id: string[];
+        /**
+         * Array of vital labels.
+         */
+        readonly label: string[];
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
 };
 /**
  * Schema of a Profile Event metadata. Contains attributes shared by all profiles.
