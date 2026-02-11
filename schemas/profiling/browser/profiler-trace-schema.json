@@ -112,7 +112,7 @@
         },
         "duration": {
           "type": "number",
-          "description": "Duration in ns of the long task or long animation frame.",
+          "description": "Duration in ms of the long task or long animation frame.",
           "minimum": 0,
           "readOnly": true
         },
@@ -120,6 +120,60 @@
           "type": "string",
           "enum": ["longtask", "long-animation-frame"],
           "description": "Type of the event: long task or long animation frame",
+          "readOnly": true
+        },
+        "startClocks": {
+          "$ref": "#/definitions/ClocksState"
+        }
+      }
+    },
+    "VitalEntry": {
+      "title": "RumProfilerVitalEntry",
+      "type": "object",
+      "description": "Schema of a vital entry recorded during profiling.",
+      "required": ["id", "label", "duration", "startClocks"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "RUM Vital id.",
+          "readOnly": true
+        },
+        "label": {
+          "type": "string",
+          "description": "RUM Vital label.",
+          "readOnly": true
+        },
+        "duration": {
+          "type": "number",
+          "description": "Duration in ms of the vital.",
+          "minimum": 0,
+          "readOnly": true
+        },
+        "startClocks": {
+          "$ref": "#/definitions/ClocksState"
+        }
+      }
+    },
+    "ActionEntry": {
+      "title": "RumProfilerActionEntry",
+      "type": "object",
+      "description": "Schema of a action entry recorded during profiling.",
+      "required": ["id", "label", "duration", "startClocks"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "RUM Action id.",
+          "readOnly": true
+        },
+        "label": {
+          "type": "string",
+          "description": "RUM Action label.",
+          "readOnly": true
+        },
+        "duration": {
+          "type": "number",
+          "description": "Duration in ms of the duration vital.",
+          "minimum": 0,
           "readOnly": true
         },
         "startClocks": {
@@ -202,6 +256,22 @@
         "$ref": "#/definitions/LongTaskEntry"
       },
       "description": "List of detected long tasks.",
+      "readOnly": true
+    },
+    "vitals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/VitalEntry"
+      },
+      "description": "List of detected vital entries.",
+      "readOnly": true
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ActionEntry"
+      },
+      "description": "List of detected action entries.",
       "readOnly": true
     },
     "views": {
