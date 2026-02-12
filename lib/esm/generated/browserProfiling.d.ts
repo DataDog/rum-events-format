@@ -23,6 +23,34 @@ export type BrowserProfileEvent = ProfileCommonProperties & {
         readonly clock_drift: number;
         [k: string]: unknown;
     };
+    /**
+     * Action properties.
+     */
+    readonly action?: {
+        /**
+         * Array of action IDs.
+         */
+        readonly id: string[];
+        /**
+         * Array of action labels.
+         */
+        readonly label: string[];
+        [k: string]: unknown;
+    };
+    /**
+     * Vital properties.
+     */
+    readonly vital?: {
+        /**
+         * Array of vital IDs.
+         */
+        readonly id: string[];
+        /**
+         * Array of vital labels.
+         */
+        readonly label: string[];
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 };
 /**

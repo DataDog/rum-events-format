@@ -30,6 +30,54 @@
             }
           },
           "readOnly": true
+        },
+        "action": {
+          "type": "object",
+          "description": "Action properties.",
+          "required": ["id", "label"],
+          "properties": {
+            "id": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Array of action IDs.",
+              "readOnly": true
+            },
+            "label": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Array of action labels.",
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        },
+        "vital": {
+          "type": "object",
+          "description": "Vital properties.",
+          "required": ["id", "label"],
+          "properties": {
+            "id": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Array of vital IDs.",
+              "readOnly": true
+            },
+            "label": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Array of vital labels.",
+              "readOnly": true
+            }
+          },
+          "readOnly": true
         }
       }
     }
