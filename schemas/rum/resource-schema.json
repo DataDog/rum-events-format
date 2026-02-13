@@ -282,6 +282,25 @@
               },
               "readOnly": true
             },
+            "request": {
+              "type": "object",
+              "description": "Request properties",
+              "properties": {
+                "encoded_body_size": {
+                  "type": "integer",
+                  "description": "Size in octet of the request body sent over the network (after encoding)",
+                  "minimum": 0,
+                  "readOnly": true
+                },
+                "decoded_body_size": {
+                  "type": "integer",
+                  "description": "Size in octet of the request body before any encoding",
+                  "minimum": 0,
+                  "readOnly": true
+                }
+              },
+              "readOnly": true
+            },
             "graphql": {
               "type": "object",
               "description": "GraphQL requests parameters",

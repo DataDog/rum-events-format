@@ -754,6 +754,20 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
             [k: string]: unknown;
         };
         /**
+         * Request properties
+         */
+        readonly request?: {
+            /**
+             * Size in octet of the request body sent over the network (after encoding)
+             */
+            readonly encoded_body_size?: number;
+            /**
+             * Size in octet of the request body before any encoding
+             */
+            readonly decoded_body_size?: number;
+            [k: string]: unknown;
+        };
+        /**
          * GraphQL requests parameters
          */
         readonly graphql?: {
