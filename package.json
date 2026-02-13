@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "ajv": "^8.17.1",
-    "json-schema-to-typescript": "bcaudan/json-schema-to-typescript#bcaudan/add-readonly-support",
+    "json-schema-to-typescript": "15.0.4",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3"
   },
