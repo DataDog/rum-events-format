@@ -614,15 +614,15 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
          */
         readonly size?: number;
         /**
-         * Size in octet of the resource before removing any applied content encodings
+         * Size in octet of the response body before removing any applied content encodings
          */
         readonly encoded_body_size?: number;
         /**
-         * Size in octet of the resource after removing any applied encoding
+         * Size in octet of the response body after removing any applied encoding
          */
         readonly decoded_body_size?: number;
         /**
-         * Size in octet of the fetched resource
+         * Size in octet of the fetched response resource
          */
         readonly transfer_size?: number;
         /**
@@ -751,6 +751,20 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
              * The type of provider
              */
             readonly type?: 'ad' | 'advertising' | 'analytics' | 'cdn' | 'content' | 'customer-success' | 'first party' | 'hosting' | 'marketing' | 'other' | 'social' | 'tag-manager' | 'utility' | 'video';
+            [k: string]: unknown;
+        };
+        /**
+         * Request properties
+         */
+        readonly request?: {
+            /**
+             * Size in octet of the request body sent over the network (after encoding)
+             */
+            readonly encoded_body_size?: number;
+            /**
+             * Size in octet of the request body before any encoding
+             */
+            readonly decoded_body_size?: number;
             [k: string]: unknown;
         };
         /**
