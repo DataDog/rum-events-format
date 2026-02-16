@@ -491,7 +491,7 @@ export type TelemetryUsageEvent = CommonTelemetryProperties & {
 /**
  * Schema of features usage common across SDKs
  */
-export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital | GraphQLRequest;
+export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital | GraphQLRequest | AddViewLoadingTime;
 /**
  * Schema of browser specific features usage
  */
@@ -499,7 +499,7 @@ export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartD
 /**
  * Schema of mobile specific features usage
  */
-export type TelemetryMobileFeaturesUsage = AddViewLoadingTime | TrackWebView;
+export type TelemetryMobileFeaturesUsage = TrackWebView;
 /**
  * Schema of common properties of Telemetry events
  */
@@ -832,6 +832,25 @@ export interface GraphQLRequest {
     feature: 'graphql-request';
     [k: string]: unknown;
 }
+export interface AddViewLoadingTime {
+    /**
+     * addViewLoadingTime API
+     */
+    feature: 'addViewLoadingTime';
+    /**
+     * Whether the view is not available
+     */
+    no_view: boolean;
+    /**
+     * Whether the available view is not active
+     */
+    no_active_view: boolean;
+    /**
+     * Whether the loading time was overwritten
+     */
+    overwritten: boolean;
+    [k: string]: unknown;
+}
 export interface StartSessionReplayRecording {
     /**
      * startSessionReplayRecording API
@@ -862,25 +881,6 @@ export interface AddDurationVital {
      * addDurationVital API
      */
     feature: 'add-duration-vital';
-    [k: string]: unknown;
-}
-export interface AddViewLoadingTime {
-    /**
-     * addViewLoadingTime API
-     */
-    feature: 'addViewLoadingTime';
-    /**
-     * Whether the view is not available
-     */
-    no_view: boolean;
-    /**
-     * Whether the available view is not active
-     */
-    no_active_view: boolean;
-    /**
-     * Whether the loading time was overwritten
-     */
-    overwritten: boolean;
     [k: string]: unknown;
 }
 export interface TrackWebView {
