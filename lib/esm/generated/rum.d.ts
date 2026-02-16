@@ -765,6 +765,24 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
              * Size in octet of the request body before any encoding
              */
             readonly decoded_body_size?: number;
+            /**
+             * HTTP headers of the resource request
+             */
+            readonly headers?: {
+                [k: string]: string;
+            };
+            [k: string]: unknown;
+        };
+        /**
+         * Response properties
+         */
+        readonly response?: {
+            /**
+             * HTTP headers of the resource response
+             */
+            readonly headers?: {
+                [k: string]: string;
+            };
             [k: string]: unknown;
         };
         /**

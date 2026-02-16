@@ -42,7 +42,18 @@
     "delivery_type": "cache",
     "request": {
       "encoded_body_size": 512,
-      "decoded_body_size": 1024
+      "decoded_body_size": 1024,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-cache"
+      }
+    },
+    "response": {
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "max-age=3600",
+        "content-encoding": "gzip"
+      }
     }
   },
   "action": {
