@@ -297,6 +297,29 @@
                   "description": "Size in octet of the request body before any encoding",
                   "minimum": 0,
                   "readOnly": true
+                },
+                "headers": {
+                  "type": "object",
+                  "description": "HTTP headers of the resource request",
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "readOnly": true
+                }
+              },
+              "readOnly": true
+            },
+            "response": {
+              "type": "object",
+              "description": "Response properties",
+              "properties": {
+                "headers": {
+                  "type": "object",
+                  "description": "HTTP headers of the resource response",
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "readOnly": true
                 }
               },
               "readOnly": true
