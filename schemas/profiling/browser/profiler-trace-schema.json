@@ -131,7 +131,7 @@
       "title": "RumProfilerVitalEntry",
       "type": "object",
       "description": "Schema of a vital entry recorded during profiling.",
-      "required": ["id", "label", "duration", "startClocks"],
+      "required": ["id", "label", "startClocks"],
       "properties": {
         "id": {
           "type": "string",
@@ -158,7 +158,7 @@
       "title": "RumProfilerActionEntry",
       "type": "object",
       "description": "Schema of a action entry recorded during profiling.",
-      "required": ["id", "label", "duration", "startClocks"],
+      "required": ["id", "label", "startClocks"],
       "properties": {
         "id": {
           "type": "string",
