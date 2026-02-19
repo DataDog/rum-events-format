@@ -4,11 +4,11 @@
 /**
  * Schema of all properties of a RUM event
  */
-export type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumVitalEvent;
+export declare type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumVitalEvent;
 /**
  * Schema of all properties of an Action event
  */
-export type RumActionEvent = CommonProperties & ViewContainerSchema & {
+export declare type RumActionEvent = CommonProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -158,7 +158,7 @@ export type RumActionEvent = CommonProperties & ViewContainerSchema & {
 /**
  * Schema of all properties of an Transition event
  */
-export type RumTransitionEvent = CommonProperties & {
+export declare type RumTransitionEvent = CommonProperties & {
     /**
      * RUM event type
      */
@@ -212,7 +212,7 @@ export type RumTransitionEvent = CommonProperties & {
 /**
  * Schema of all properties of an Error event
  */
-export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
+export declare type RumErrorEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -286,7 +286,7 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
         /**
          * Source type of the error (the language or platform impacting the error stacktrace format)
          */
-        readonly source_type?: 'android' | 'browser' | 'ios' | 'react-native' | 'flutter' | 'roku' | 'ndk' | 'ios+il2cpp' | 'ndk+il2cpp';
+        readonly source_type?: 'android' | 'browser' | 'ios' | 'react-native' | 'flutter' | 'roku' | 'ndk' | 'ios+il2cpp' | 'ndk+il2cpp' | 'pe' | 'elf' | 'macho';
         /**
          * Resource properties of the error
          */
@@ -460,7 +460,7 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
 /**
  * Schema of all properties of a Long Task event
  */
-export type RumLongTaskEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
+export declare type RumLongTaskEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -576,7 +576,7 @@ export type RumLongTaskEvent = CommonProperties & ActionChildProperties & ViewCo
 /**
  * Schema of all properties of a Resource event
  */
-export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
+export declare type RumResourceEvent = CommonProperties & ActionChildProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -876,7 +876,7 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
 /**
  * Schema of all properties of a View event
  */
-export type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema & {
+export declare type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema & {
     /**
      * RUM event type
      */
@@ -906,62 +906,50 @@ export type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema
          */
         readonly time_spent: number;
         /**
-         * @deprecated
          * Duration in ns to the first rendering (deprecated in favor of `view.performance.fcp.timestamp`)
          */
         readonly first_contentful_paint?: number;
         /**
-         * @deprecated
          * Duration in ns to the largest contentful paint (deprecated in favor of `view.performance.lcp.timestamp`)
          */
         readonly largest_contentful_paint?: number;
         /**
-         * @deprecated
          * CSS selector path of the largest contentful paint element (deprecated in favor of `view.performance.lcp.target_selector`)
          */
         readonly largest_contentful_paint_target_selector?: string;
         /**
-         * @deprecated
          * Duration in ns of the first input event delay (deprecated in favor of `view.performance.fid.duration`)
          */
         readonly first_input_delay?: number;
         /**
-         * @deprecated
          * Duration in ns to the first input (deprecated in favor of `view.performance.fid.timestamp`)
          */
         readonly first_input_time?: number;
         /**
-         * @deprecated
          * CSS selector path of the first input target element (deprecated in favor of `view.performance.fid.target_selector`)
          */
         readonly first_input_target_selector?: string;
         /**
-         * @deprecated
          * Longest duration in ns between an interaction and the next paint (deprecated in favor of `view.performance.inp.duration`)
          */
         readonly interaction_to_next_paint?: number;
         /**
-         * @deprecated
          * Duration in ns between start of the view and start of the INP (deprecated in favor of `view.performance.inp.timestamp`)
          */
         readonly interaction_to_next_paint_time?: number;
         /**
-         * @deprecated
          * CSS selector path of the interacted element corresponding to INP (deprecated in favor of `view.performance.inp.target_selector`)
          */
         readonly interaction_to_next_paint_target_selector?: string;
         /**
-         * @deprecated
          * Total layout shift score that occurred on the view (deprecated in favor of `view.performance.cls.score`)
          */
         readonly cumulative_layout_shift?: number;
         /**
-         * @deprecated
          * Duration in ns between start of the view and start of the largest layout shift contributing to CLS (deprecated in favor of `view.performance.cls.timestamp`)
          */
         readonly cumulative_layout_shift_time?: number;
         /**
-         * @deprecated
          * CSS selector path of the first element (in document order) of the largest layout shift contributing to CLS (deprecated in favor of `view.performance.cls.target_selector`)
          */
         readonly cumulative_layout_shift_target_selector?: string;
@@ -1277,11 +1265,11 @@ export type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema
     };
     [k: string]: unknown;
 };
-export type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationStepEvent | RumVitalAppLaunchEvent;
+export declare type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationStepEvent | RumVitalAppLaunchEvent;
 /**
  * Schema for a duration vital event.
  */
-export type RumVitalDurationEvent = RumVitalEventCommonProperties & {
+export declare type RumVitalDurationEvent = RumVitalEventCommonProperties & {
     /**
      * Vital properties
      */
@@ -1301,7 +1289,7 @@ export type RumVitalDurationEvent = RumVitalEventCommonProperties & {
 /**
  * Schema of common properties for a Vital event
  */
-export type RumVitalEventCommonProperties = CommonProperties & ViewContainerSchema & {
+export declare type RumVitalEventCommonProperties = CommonProperties & ViewContainerSchema & {
     /**
      * RUM event type
      */
@@ -1329,7 +1317,7 @@ export type RumVitalEventCommonProperties = CommonProperties & ViewContainerSche
 /**
  * Schema for a vital operation step event.
  */
-export type RumVitalOperationStepEvent = RumVitalEventCommonProperties & {
+export declare type RumVitalOperationStepEvent = RumVitalEventCommonProperties & {
     /**
      * Vital properties
      */
@@ -1357,7 +1345,7 @@ export type RumVitalOperationStepEvent = RumVitalEventCommonProperties & {
 /**
  * Schema for app launch metrics.
  */
-export type RumVitalAppLaunchEvent = RumVitalEventCommonProperties & {
+export declare type RumVitalAppLaunchEvent = RumVitalEventCommonProperties & {
     /**
      * Vital properties
      */
@@ -1463,7 +1451,7 @@ export interface CommonProperties {
     /**
      * The source of this event
      */
-    readonly source?: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron';
+    readonly source?: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp';
     /**
      * View properties
      */
@@ -1779,7 +1767,7 @@ export interface ViewContainerSchema {
         /**
          * Source of the parent view
          */
-        readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron';
+        readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp';
         [k: string]: unknown;
     };
     [k: string]: unknown;
