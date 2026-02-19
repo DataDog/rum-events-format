@@ -15,26 +15,26 @@ export declare const RecordType: {
     MobileIncrementalSnapshot: typeof MobileRecordType.IncrementalSnapshot;
     BrowserChange: typeof BrowserRecordType.Change;
 };
-export type RecordType = (typeof RecordType)[keyof typeof RecordType];
-export type IncrementalSource = BrowserIncrementalSource | MobileIncrementalSource;
+export declare type RecordType = (typeof RecordType)[keyof typeof RecordType];
+export declare type IncrementalSource = BrowserIncrementalSource | MobileIncrementalSource;
 export declare const PointerEventType: {
     readonly PointerDown: "down";
     readonly PointerUp: "up";
     readonly PointerMove: "move";
 };
-export type PointerEventType = (typeof PointerEventType)[keyof typeof PointerEventType];
+export declare type PointerEventType = (typeof PointerEventType)[keyof typeof PointerEventType];
 export declare const PointerType: {
     readonly Mouse: "mouse";
     readonly Touch: "touch";
     readonly Pen: "pen";
 };
-export type PointerType = (typeof PointerType)[keyof typeof PointerType];
-export type NodeId = number & {
+export declare type PointerType = (typeof PointerType)[keyof typeof PointerType];
+export declare type NodeId = number & {
     __brand: 'NodeId';
 };
-export type StringId = number & {
+export declare type StringId = number & {
     __brand: 'StringId';
 };
-export type StyleSheetId = number & {
+export declare type StyleSheetId = number & {
     __brand: 'StyleSheetId';
 };

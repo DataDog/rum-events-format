@@ -4,11 +4,11 @@
 /**
  * Schema of RUM Profiling.
  */
-export type Profiling = BrowserProfileEvent | MobileProfileEvent;
+export declare type Profiling = BrowserProfileEvent | MobileProfileEvent;
 /**
  * Browser SDK profiling payload.
  */
-export type BrowserProfileEvent = ProfileCommonProperties & {
+export declare type BrowserProfileEvent = ProfileCommonProperties & {
     /**
      * Profile data format.
      */
@@ -56,7 +56,7 @@ export type BrowserProfileEvent = ProfileCommonProperties & {
 /**
  * Mobile SDK profiling event.
  */
-export type MobileProfileEvent = ProfileCommonProperties & {
+export declare type MobileProfileEvent = ProfileCommonProperties & {
     /**
      * The RUM Vital this profile event is associated with.
      */

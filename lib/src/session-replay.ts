@@ -44,7 +44,7 @@ export const RecordType: {
   BrowserChange: 12,
 } as const
 
-export type RecordType = (typeof RecordType)[keyof typeof RecordType]
+export type RecordType = typeof RecordType[keyof typeof RecordType]
 
 export type IncrementalSource = BrowserIncrementalSource | MobileIncrementalSource
 
@@ -54,7 +54,7 @@ export const PointerEventType = {
   PointerMove: 'move',
 } as const
 
-export type PointerEventType = (typeof PointerEventType)[keyof typeof PointerEventType]
+export type PointerEventType = typeof PointerEventType[keyof typeof PointerEventType]
 
 export const PointerType = {
   Mouse: 'mouse',
@@ -62,7 +62,7 @@ export const PointerType = {
   Pen: 'pen',
 } as const
 
-export type PointerType = (typeof PointerType)[keyof typeof PointerType]
+export type PointerType = typeof PointerType[keyof typeof PointerType]
 
 export type NodeId = number & { __brand: 'NodeId' }
 export type StringId = number & { __brand: 'StringId' }
