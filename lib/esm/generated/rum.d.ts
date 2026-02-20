@@ -1204,7 +1204,7 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
          */
         readonly architecture?: string;
         /**
-         * The user’s locale as a language tag combining language and region, e.g. ’en-US’.
+         * The user’s locale as a language tag combining language and region, e.g. 'en-US'.
          */
         readonly locale?: string;
         /**
@@ -1212,7 +1212,7 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
          */
         readonly locales?: string[];
         /**
-         * The device’s current time zone identifier, e.g. ’Europe/Berlin’.
+         * The device’s current time zone identifier, e.g. 'Europe/Berlin'.
          */
         readonly time_zone?: string;
         /**
