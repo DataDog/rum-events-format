@@ -930,7 +930,7 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
         /**
          * Type of the session
          */
-        readonly type?: 'user' | 'synthetics' | 'ci_test';
+        readonly type: 'user' | 'synthetics' | 'ci_test';
         /**
          * Whether this session has a replay
          */
@@ -972,7 +972,7 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
         /**
          * URL of the view
          */
-        url?: string;
+        url: string;
         /**
          * URL that linked to the initial view of the page
          */
@@ -1164,11 +1164,11 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
         /**
          * Operating system name, e.g. Android, iOS
          */
-        readonly name?: string;
+        readonly name: string;
         /**
          * Full operating system version, e.g. 8.1.1
          */
-        readonly version?: string;
+        readonly version: string;
         /**
          * Operating system build number, e.g. 15D21
          */
@@ -1176,7 +1176,7 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
         /**
          * Major operating system version, e.g. 8
          */
-        readonly version_major?: string;
+        readonly version_major: string;
         [k: string]: unknown;
     };
     /**
@@ -1204,15 +1204,15 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
          */
         readonly architecture?: string;
         /**
-         * The user's locale as a language tag combining language and region, e.g. 'en-US'.
+         * The user’s locale as a language tag combining language and region, e.g. ’en-US’.
          */
         readonly locale?: string;
         /**
-         * Ordered list of the user's preferred system languages as IETF language tags.
+         * Ordered list of the user’s preferred system languages as IETF language tags.
          */
         readonly locales?: string[];
         /**
-         * The device's current time zone identifier, e.g. 'Europe/Berlin'.
+         * The device’s current time zone identifier, e.g. ’Europe/Berlin’.
          */
         readonly time_zone?: string;
         /**
