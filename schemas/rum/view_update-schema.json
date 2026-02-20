@@ -15,13 +15,7 @@
       "$ref": "_view-properties.json"
     },
     {
-      "required": [
-        "type",
-        "application",
-        "session",
-        "view",
-        "_dd"
-      ],
+      "required": ["type", "application", "session", "view", "_dd"],
       "properties": {
         "type": {
           "type": "string",
@@ -38,9 +32,7 @@
         "application": {
           "type": "object",
           "description": "Application properties",
-          "required": [
-            "id"
-          ],
+          "required": ["id"],
           "properties": {
             "id": {
               "type": "string",
@@ -59,10 +51,7 @@
         "session": {
           "type": "object",
           "description": "Session properties",
-          "required": [
-            "id",
-            "type"
-          ],
+          "required": ["id", "type"],
           "properties": {
             "id": {
               "type": "string",
@@ -73,11 +62,7 @@
             "type": {
               "type": "string",
               "description": "Type of the session",
-              "enum": [
-                "user",
-                "synthetics",
-                "ci_test"
-              ],
+              "enum": ["user", "synthetics", "ci_test"],
               "readOnly": true
             },
             "has_replay": {
@@ -130,10 +115,7 @@
         "view": {
           "type": "object",
           "description": "View properties",
-          "required": [
-            "id",
-            "url"
-          ],
+          "required": ["id", "url"],
           "properties": {
             "id": {
               "type": "string",
@@ -162,9 +144,7 @@
         "_dd": {
           "type": "object",
           "description": "Internal properties",
-          "required": [
-            "document_version"
-          ],
+          "required": ["document_version"],
           "properties": {
             "document_version": {
               "type": "integer",
@@ -185,10 +165,7 @@
                 "plan": {
                   "type": "number",
                   "description": "Session plan: 1 is the plan without replay, 2 is the plan with replay (deprecated)",
-                  "enum": [
-                    1,
-                    2
-                  ]
+                  "enum": [1, 2]
                 },
                 "session_precondition": {
                   "type": "string",
@@ -286,9 +263,7 @@
           "type": "object",
           "description": "Account properties",
           "additionalProperties": true,
-          "required": [
-            "id"
-          ],
+          "required": ["id"],
           "properties": {
             "id": {
               "type": "string",
@@ -306,18 +281,12 @@
         "connectivity": {
           "type": "object",
           "description": "Device connectivity properties",
-          "required": [
-            "status"
-          ],
+          "required": ["status"],
           "properties": {
             "status": {
               "type": "string",
               "description": "Status of the device connectivity",
-              "enum": [
-                "connected",
-                "not_connected",
-                "maybe"
-              ],
+              "enum": ["connected", "not_connected", "maybe"],
               "readOnly": true
             },
             "interfaces": {
@@ -325,29 +294,14 @@
               "description": "The list of available network interfaces",
               "items": {
                 "type": "string",
-                "enum": [
-                  "bluetooth",
-                  "cellular",
-                  "ethernet",
-                  "wifi",
-                  "wimax",
-                  "mixed",
-                  "other",
-                  "unknown",
-                  "none"
-                ]
+                "enum": ["bluetooth", "cellular", "ethernet", "wifi", "wimax", "mixed", "other", "unknown", "none"]
               },
               "readOnly": true
             },
             "effective_type": {
               "type": "string",
               "description": "Cellular connection type reflecting the measured network performance",
-              "enum": [
-                "slow-2g",
-                "2g",
-                "3g",
-                "4g"
-              ],
+              "enum": ["slow-2g", "2g", "3g", "4g"],
               "readOnly": true
             },
             "cellular": {
@@ -376,10 +330,7 @@
             "viewport": {
               "type": "object",
               "description": "The viewport represents the rectangular area that is currently being viewed. Content outside the viewport is not visible onscreen until scrolled into view.",
-              "required": [
-                "width",
-                "height"
-              ],
+              "required": ["width", "height"],
               "properties": {
                 "width": {
                   "type": "number",
@@ -399,10 +350,7 @@
         "synthetics": {
           "type": "object",
           "description": "Synthetics properties",
-          "required": [
-            "test_id",
-            "result_id"
-          ],
+          "required": ["test_id", "result_id"],
           "properties": {
             "test_id": {
               "type": "string",
@@ -425,9 +373,7 @@
         "ci_test": {
           "type": "object",
           "description": "CI Visibility properties",
-          "required": [
-            "test_execution_id"
-          ],
+          "required": ["test_execution_id"],
           "properties": {
             "test_execution_id": {
               "type": "string",
@@ -462,11 +408,7 @@
               "readOnly": true
             }
           },
-          "required": [
-            "name",
-            "version",
-            "version_major"
-          ]
+          "required": ["name", "version", "version_major"]
         },
         "device": {
           "type": "object",
@@ -475,15 +417,7 @@
             "type": {
               "type": "string",
               "description": "Device type info",
-              "enum": [
-                "mobile",
-                "desktop",
-                "tablet",
-                "tv",
-                "gaming_console",
-                "bot",
-                "other"
-              ],
+              "enum": ["mobile", "desktop", "tablet", "tv", "gaming_console", "bot", "other"],
               "readOnly": true
             },
             "name": {
