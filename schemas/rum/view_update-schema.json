@@ -263,6 +263,7 @@
           "type": "object",
           "description": "Account properties",
           "additionalProperties": true,
+          "required": ["id"],
           "properties": {
             "id": {
               "type": "string",
