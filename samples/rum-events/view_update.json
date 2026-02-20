@@ -1,0 +1,9 @@
+{
+  "type": "view_update",
+  "application": { "id": "ac8218cf-498b-4d33-bd44-151095959547" },
+  "session": { "id": "cacbf45c-3a05-48ce-b066-d76349460599" },
+  "source": "browser",
+  "view": { "id": "623d50fd-75cf-4025-97d2-e51ff94171f6", "time_spent": 245512755000 },
+  "_dd": { "document_version": 2, "format_version": 2 },
+  "context": { "foo": "bar" }
+}

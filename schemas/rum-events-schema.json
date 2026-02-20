@@ -24,6 +24,9 @@
       "$ref": "rum/view-schema.json"
     },
     {
+      "$ref": "rum/view_update-schema.json"
+    },
+    {
       "title": "RumVitalEvent",
       "oneOf": [
         {

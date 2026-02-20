@@ -4,7 +4,7 @@
 /**
  * Browser-specific. Schema of a Session Replay data Segment.
  */
-export type BrowserSegment = BrowserSegmentMetadata & {
+export declare type BrowserSegment = BrowserSegmentMetadata & {
     /**
      * The records contained by this Segment.
      */
@@ -13,7 +13,7 @@ export type BrowserSegment = BrowserSegmentMetadata & {
 /**
  * Browser-specific. Schema of a Session Replay Segment metadata.
  */
-export type BrowserSegmentMetadata = SegmentContext & CommonSegmentMetadataSchema & {
+export declare type BrowserSegmentMetadata = SegmentContext & CommonSegmentMetadataSchema & {
     /**
      * The source of this record
      */
@@ -23,15 +23,15 @@ export type BrowserSegmentMetadata = SegmentContext & CommonSegmentMetadataSchem
 /**
  * The reason this Segment was created. For mobile there is only one possible value for this, which is always the default value.
  */
-export type CreationReason = 'init' | 'segment_duration_limit' | 'segment_bytes_limit' | 'view_change' | 'before_unload' | 'visibility_hidden' | 'page_frozen';
+export declare type CreationReason = 'init' | 'segment_duration_limit' | 'segment_bytes_limit' | 'view_change' | 'before_unload' | 'visibility_hidden' | 'page_frozen';
 /**
  * Browser-specific. Schema of a Session Replay Record.
  */
-export type BrowserRecord = BrowserFullSnapshotRecord | BrowserIncrementalSnapshotRecord | MetaRecord | FocusRecord | ViewEndRecord | VisualViewportRecord | FrustrationRecord | BrowserChangeRecord;
+export declare type BrowserRecord = BrowserFullSnapshotRecord | BrowserIncrementalSnapshotRecord | MetaRecord | FocusRecord | ViewEndRecord | VisualViewportRecord | FrustrationRecord | BrowserChangeRecord;
 /**
  * Browser-specific. Schema of a Record type which contains the full snapshot of a screen.
  */
-export type BrowserFullSnapshotRecord = SlotSupportedCommonRecordSchema & {
+export declare type BrowserFullSnapshotRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -41,7 +41,7 @@ export type BrowserFullSnapshotRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Schema of common properties for a Record event type that is supported by slots.
  */
-export type SlotSupportedCommonRecordSchema = CommonRecordSchema & {
+export declare type SlotSupportedCommonRecordSchema = CommonRecordSchema & {
     /**
      * Unique ID of the slot that generated this record.
      */
@@ -50,17 +50,17 @@ export type SlotSupportedCommonRecordSchema = CommonRecordSchema & {
 /**
  * Serialized node contained by this Record.
  */
-export type SerializedNodeWithId = {
+export declare type SerializedNodeWithId = {
     id: number;
 } & SerializedNode;
 /**
  * Serialized node contained by this Record.
  */
-export type SerializedNode = DocumentNode | DocumentFragmentNode | DocumentTypeNode | ElementNode | TextNode | CDataNode;
+export declare type SerializedNode = DocumentNode | DocumentFragmentNode | DocumentTypeNode | ElementNode | TextNode | CDataNode;
 /**
  * Browser-specific. Schema of a Record type which contains mutations of a screen.
  */
-export type BrowserIncrementalSnapshotRecord = SlotSupportedCommonRecordSchema & {
+export declare type BrowserIncrementalSnapshotRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -71,11 +71,11 @@ export type BrowserIncrementalSnapshotRecord = SlotSupportedCommonRecordSchema &
 /**
  * Browser-specific. Schema of a Session Replay IncrementalData type.
  */
-export type BrowserIncrementalData = BrowserMutationData | MousemoveData | MouseInteractionData | ScrollData | InputData | MediaInteractionData | StyleSheetRuleData | ViewportResizeData | PointerInteractionData;
+export declare type BrowserIncrementalData = BrowserMutationData | MousemoveData | MouseInteractionData | ScrollData | InputData | MediaInteractionData | StyleSheetRuleData | ViewportResizeData | PointerInteractionData;
 /**
  * Browser-specific. Schema of a MutationData.
  */
-export type BrowserMutationData = {
+export declare type BrowserMutationData = {
     /**
      * The source of this type of incremental data.
      */
@@ -84,7 +84,7 @@ export type BrowserMutationData = {
 /**
  * Browser-specific. Schema of a MutationPayload.
  */
-export type BrowserMutationPayload = {
+export declare type BrowserMutationPayload = {
     /**
      * Contains the newly added nodes.
      */
@@ -105,7 +105,7 @@ export type BrowserMutationPayload = {
 /**
  * Browser-specific. Schema of a MouseInteractionData.
  */
-export type MouseInteractionData = {
+export declare type MouseInteractionData = {
     /**
      * The source of this type of incremental data.
      */
@@ -114,7 +114,7 @@ export type MouseInteractionData = {
 /**
  * Browser-specific. Schema of a MouseInteraction.
  */
-export type MouseInteraction = {
+export declare type MouseInteraction = {
     /**
      * The type of MouseInteraction: 0=mouseup, 1=mousedown, 2=click, 3=contextmenu, 4=dblclick, 7=touchstart, 9=touchend
      */
@@ -144,7 +144,7 @@ export type MouseInteraction = {
 /**
  * Browser-specific. Schema of a ScrollData.
  */
-export type ScrollData = {
+export declare type ScrollData = {
     /**
      * The source of this type of incremental data.
      */
@@ -153,7 +153,7 @@ export type ScrollData = {
 /**
  * Browser-specific. Schema of an InputData.
  */
-export type InputData = {
+export declare type InputData = {
     /**
      * The source of this type of incremental data.
      */
@@ -166,7 +166,7 @@ export type InputData = {
 /**
  * Browser-specific. Schema of an InputState.
  */
-export type InputState = {
+export declare type InputState = {
     /**
      * Text value for this InputState.
      */
@@ -180,7 +180,7 @@ export type InputState = {
 /**
  * Browser-specific. Schema of a MediaInteractionData.
  */
-export type MediaInteractionData = {
+export declare type MediaInteractionData = {
     /**
      * The source of this type of incremental data.
      */
@@ -189,7 +189,7 @@ export type MediaInteractionData = {
 /**
  * Browser-specific. Schema of a StyleSheetRuleData.
  */
-export type StyleSheetRuleData = {
+export declare type StyleSheetRuleData = {
     /**
      * The source of this type of incremental data.
      */
@@ -198,7 +198,7 @@ export type StyleSheetRuleData = {
 /**
  * Schema of a ViewportResizeData.
  */
-export type ViewportResizeData = {
+export declare type ViewportResizeData = {
     /**
      * The source of this type of incremental data.
      */
@@ -207,7 +207,7 @@ export type ViewportResizeData = {
 /**
  * Schema of a PointerInteractionData.
  */
-export type PointerInteractionData = {
+export declare type PointerInteractionData = {
     /**
      * The source of this type of incremental data.
      */
@@ -216,7 +216,7 @@ export type PointerInteractionData = {
 /**
  * Schema of a Record which contains the screen properties.
  */
-export type MetaRecord = SlotSupportedCommonRecordSchema & {
+export declare type MetaRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -242,7 +242,7 @@ export type MetaRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Schema of a Record type which contains focus information.
  */
-export type FocusRecord = SlotSupportedCommonRecordSchema & {
+export declare type FocusRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -257,7 +257,7 @@ export type FocusRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Schema of a Record which signifies that view lifecycle ended.
  */
-export type ViewEndRecord = SlotSupportedCommonRecordSchema & {
+export declare type ViewEndRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -266,7 +266,7 @@ export type ViewEndRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Schema of a Record which signifies that the viewport properties have changed.
  */
-export type VisualViewportRecord = SlotSupportedCommonRecordSchema & {
+export declare type VisualViewportRecord = SlotSupportedCommonRecordSchema & {
     data: {
         height: number;
         offsetLeft: number;
@@ -284,7 +284,7 @@ export type VisualViewportRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Schema of a Record which signifies a collection of frustration signals.
  */
-export type FrustrationRecord = SlotSupportedCommonRecordSchema & {
+export declare type FrustrationRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -306,7 +306,7 @@ export type FrustrationRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Browser-specific. Schema of a record type which represents changes using a compact encoding. (Experimental; subject to change.)
  */
-export type BrowserChangeRecord = SlotSupportedCommonRecordSchema & {
+export declare type BrowserChangeRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -317,51 +317,51 @@ export type BrowserChangeRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Browser-specific. Schema representing an individual change within a BrowserChangeData collection.
  */
-export type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachedStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]];
+export declare type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachedStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]];
 /**
  * Browser-specific. Schema representing the addition of a string to the string table.
  */
-export type AddStringChange = string;
+export declare type AddStringChange = string;
 /**
  * Browser-specific. Schema representing the addition of a new node to the document.
  */
-export type AddNodeChange = AddCDataSectionNodeChange | AddDocTypeNodeChange | AddDocumentNodeChange | AddDocumentFragmentNodeChange | AddElementNodeChange | AddShadowRootNodeChange | AddTextNodeChange;
+export declare type AddNodeChange = AddCDataSectionNodeChange | AddDocTypeNodeChange | AddDocumentNodeChange | AddDocumentFragmentNodeChange | AddElementNodeChange | AddShadowRootNodeChange | AddTextNodeChange;
 /**
  * Schema representing the addition of a new #cdata-section node.
  *
  * @minItems 2
  */
-export type AddCDataSectionNodeChange = [InsertionPoint, '#cdata-section' | StringReference];
+export declare type AddCDataSectionNodeChange = [InsertionPoint, '#cdata-section' | StringReference];
 /**
  * Browser-specific. Schema representing the insertion point of a node which is being added to the document.
  */
-export type InsertionPoint = AppendChildInsertionPoint | InsertAfterPreviousInsertionPoint | InsertBeforeInsertionPoint | RootInsertionPoint;
+export declare type InsertionPoint = AppendChildInsertionPoint | InsertAfterPreviousInsertionPoint | InsertBeforeInsertionPoint | RootInsertionPoint;
 /**
  * A positive integer insertion point. Inserting a node at positive integer N indicates that the new node's parent is the node with an id N lower than the new node, and that we should insert the new node at the end of its parent's child list, as if the DOM method appendChild() was being used.
  */
-export type AppendChildInsertionPoint = number;
+export declare type AppendChildInsertionPoint = number;
 /**
  * A zero insertion point. Inserting a node at zero indicates that the new node should be inserted after the node with an id one lower than the new node, as if the DOM method after() is being used. Using a zero insertion point repeatedly is thus a quick way to insert a sequence of sibling elements.
  */
-export type InsertAfterPreviousInsertionPoint = 0;
+export declare type InsertAfterPreviousInsertionPoint = 0;
 /**
  * A negative integer insertion point. Inserting a node at negative integer -N indicates that the new node's next sibling is the node with an id N lower than the new node, and that we should insert the new node before its next sibling, as if the DOM method insertBefore() was being used.
  */
-export type InsertBeforeInsertionPoint = number;
+export declare type InsertBeforeInsertionPoint = number;
 /**
  * A null insertion point, indicating that the node should be inserted at the root of the document.
  */
-export type RootInsertionPoint = null;
+export declare type RootInsertionPoint = null;
 /**
  * Browser-specific. Schema representing a string, expressed as an index into the string table.
  */
-export type StringReference = number;
+export declare type StringReference = number;
 /**
  * Schema representing the addition of a new #doctype node, using the format [#doctype, name, public ID, system ID].
  *
  * @minItems 5
  */
-export type AddDocTypeNodeChange = [
+export declare type AddDocTypeNodeChange = [
     InsertionPoint,
     '#doctype' | StringReference,
     StringOrStringReference,
@@ -371,133 +371,133 @@ export type AddDocTypeNodeChange = [
 /**
  * Browser-specific. Schema representing a string, either expressed as a literal or as an index into the string table.
  */
-export type StringOrStringReference = string | StringReference;
+export declare type StringOrStringReference = string | StringReference;
 /**
  * Schema representing the addition of a new #document node.
  *
  * @minItems 2
  */
-export type AddDocumentNodeChange = [InsertionPoint, '#document' | StringReference];
+export declare type AddDocumentNodeChange = [InsertionPoint, '#document' | StringReference];
 /**
  * Schema representing the addition of a new #document-fragment node.
  *
  * @minItems 2
  */
-export type AddDocumentFragmentNodeChange = [InsertionPoint, '#document-fragment' | StringReference];
+export declare type AddDocumentFragmentNodeChange = [InsertionPoint, '#document-fragment' | StringReference];
 /**
  * Schema representing the addition of a new element node.
  *
  * @minItems 2
  */
-export type AddElementNodeChange = [InsertionPoint, string | StringReference, ...AttributeAssignment[]];
+export declare type AddElementNodeChange = [InsertionPoint, string | StringReference, ...AttributeAssignment[]];
 /**
  * Schema representing an assignment of a value to an attribute. The format is [name, value].
  *
  * @minItems 2
  */
-export type AttributeAssignment = [StringOrStringReference, StringOrStringReference];
+export declare type AttributeAssignment = [StringOrStringReference, StringOrStringReference];
 /**
  * Schema representing the addition of a new #shadow-root node.
  *
  * @minItems 2
  */
-export type AddShadowRootNodeChange = [InsertionPoint, '#shadow-root' | StringReference];
+export declare type AddShadowRootNodeChange = [InsertionPoint, '#shadow-root' | StringReference];
 /**
  * Schema representing the addition of a new #text node.
  *
  * @minItems 3
  */
-export type AddTextNodeChange = [InsertionPoint, '#text' | StringReference, StringOrStringReference];
+export declare type AddTextNodeChange = [InsertionPoint, '#text' | StringReference, StringOrStringReference];
 /**
  * Browser-specific. Schema representing the removal of a node from the document.
  */
-export type RemoveNodeChange = number;
+export declare type RemoveNodeChange = number;
 /**
  * Browser-specific. Schema representing a change to an node's attributes.
  *
  * @minItems 1
  */
-export type AttributeChange = [NodeId, ...AttributeAssignmentOrDeletion[]];
+export declare type AttributeChange = [NodeId, ...AttributeAssignmentOrDeletion[]];
 /**
  * Browser-specific. Schema representing the ID of a DOM node.
  */
-export type NodeId = number;
+export declare type NodeId = number;
 /**
  * Schema representing a change to an attribute, either by assignment of a new value or by deletion of the attribute.
  */
-export type AttributeAssignmentOrDeletion = AttributeAssignment | AttributeDeletion;
+export declare type AttributeAssignmentOrDeletion = AttributeAssignment | AttributeDeletion;
 /**
  * Schema representing the deletion of an attribute.
  *
  * @minItems 1
  */
-export type AttributeDeletion = [StringOrStringReference];
+export declare type AttributeDeletion = [StringOrStringReference];
 /**
  * Browser-specific. Schema representing a change to the text content of a #text node.
  *
  * @minItems 2
  */
-export type TextChange = [NodeId, StringOrStringReference];
+export declare type TextChange = [NodeId, StringOrStringReference];
 /**
  * Browser-specific. Schema representing a change in an element's size.
  *
  * @minItems 3
  */
-export type SizeChange = [NodeId, number, number];
+export declare type SizeChange = [NodeId, number, number];
 /**
  * Browser-specific. Schema representing a scroll position change.
  *
  * @minItems 3
  */
-export type ScrollPositionChange = [NodeId, number, number];
+export declare type ScrollPositionChange = [NodeId, number, number];
 /**
  * Browser-specific. Schema representing the addition of a new stylesheet to the document.
  */
-export type AddStyleSheetChange = StyleSheetSnapshot;
+export declare type AddStyleSheetChange = StyleSheetSnapshot;
 /**
  * Schema representing a snapshot of a CSS stylesheet.
  *
  * @minItems 1
  */
-export type StyleSheetSnapshot = [StyleSheetRules] | [StyleSheetRules, StyleSheetMediaList] | [StyleSheetRules, StyleSheetMediaList, boolean];
+export declare type StyleSheetSnapshot = [StyleSheetRules] | [StyleSheetRules, StyleSheetMediaList] | [StyleSheetRules, StyleSheetMediaList, boolean];
 /**
  * Schema representing a CSS stylesheet's rules, encoded either as a single string or as an array containing a separate string for each rule.
  */
-export type StyleSheetRules = StringOrStringReference | StringOrStringReference[];
+export declare type StyleSheetRules = StringOrStringReference | StringOrStringReference[];
 /**
  * If non-empty, the list of medias for which this stylesheet is active. Defaults to the empty list if not present.
  */
-export type StyleSheetMediaList = StringOrStringReference[];
+export declare type StyleSheetMediaList = StringOrStringReference[];
 /**
  * Browser-specific. Schema representing a change to the stylesheets attached to a DOM node. For <link> or <style> elements, which use classic CSSOM APIs, at most one stylesheet can be attached. For #document, #document-fragment, or #shadow-root nodes, which use the `adoptedStyleSheets` API, any number of stylesheets can be attached.
  *
  * @minItems 1
  */
-export type AttachedStyleSheetsChange = [NodeId, ...StyleSheetId[]];
+export declare type AttachedStyleSheetsChange = [NodeId, ...StyleSheetId[]];
 /**
  * Browser-specific. Schema representing the ID of a stylesheet.
  */
-export type StyleSheetId = number;
+export declare type StyleSheetId = number;
 /**
  * Browser-specific. Schema representing a change to the playback state of the media associated with an <audio> or <video> element.
  *
  * @minItems 2
  */
-export type MediaPlaybackStateChange = [NodeId, PlaybackStatePlaying | PlaybackStatePaused];
+export declare type MediaPlaybackStateChange = [NodeId, PlaybackStatePlaying | PlaybackStatePaused];
 /**
  * A playback state indicating that the associated media is playing.
  */
-export type PlaybackStatePlaying = 0;
+export declare type PlaybackStatePlaying = 0;
 /**
  * A playback state indicating that the associated media is paused.
  */
-export type PlaybackStatePaused = 1;
+export declare type PlaybackStatePaused = 1;
 /**
  * Browser-specific. Schema representing a change to the visual viewport, defined in terms of the web platform VisualViewport API.
  *
  * @minItems 7
  */
-export type VisualViewportChange = [
+export declare type VisualViewportChange = [
     VisualViewportOffsetLeft,
     VisualViewportOffsetTop,
     VisualViewportPageLeft,
@@ -509,31 +509,31 @@ export type VisualViewportChange = [
 /**
  * The offset of the left edge of the visual viewport from the left edge of the layout viewport in CSS pixels.
  */
-export type VisualViewportOffsetLeft = number;
+export declare type VisualViewportOffsetLeft = number;
 /**
  * The offset of the top edge of the visual viewport from the top edge of the layout viewport in CSS pixels.
  */
-export type VisualViewportOffsetTop = number;
+export declare type VisualViewportOffsetTop = number;
 /**
  * The x coordinate of the visual viewport relative to the initial containing block origin of the top edge in CSS pixels.
  */
-export type VisualViewportPageLeft = number;
+export declare type VisualViewportPageLeft = number;
 /**
  * The y coordinate of the visual viewport relative to the initial containing block origin of the top edge in CSS pixels.
  */
-export type VisualViewportPageTop = number;
+export declare type VisualViewportPageTop = number;
 /**
  * The width of the visual viewport in CSS pixels.
  */
-export type VisualViewportWidth = number;
+export declare type VisualViewportWidth = number;
 /**
  * The height of the visual viewport in CSS pixels.
  */
-export type VisualViewportHeight = number;
+export declare type VisualViewportHeight = number;
 /**
  * The pinch-zoom scaling factor applied to the visual viewport.
  */
-export type VisualViewportScale = number;
+export declare type VisualViewportScale = number;
 /**
  * Schema of a Session Replay Segment context.
  */

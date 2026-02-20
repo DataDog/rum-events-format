@@ -4,11 +4,11 @@
 /**
  * Schema of all properties of a telemetry event
  */
-export type TelemetryEvent = TelemetryErrorEvent | TelemetryDebugEvent | TelemetryConfigurationEvent | TelemetryUsageEvent;
+export declare type TelemetryEvent = TelemetryErrorEvent | TelemetryDebugEvent | TelemetryConfigurationEvent | TelemetryUsageEvent;
 /**
  * Schema of all properties of a telemetry error event
  */
-export type TelemetryErrorEvent = CommonTelemetryProperties & {
+export declare type TelemetryErrorEvent = CommonTelemetryProperties & {
     /**
      * The telemetry log information
      */
@@ -46,7 +46,7 @@ export type TelemetryErrorEvent = CommonTelemetryProperties & {
 /**
  * Schema of all properties of a telemetry debug event
  */
-export type TelemetryDebugEvent = CommonTelemetryProperties & {
+export declare type TelemetryDebugEvent = CommonTelemetryProperties & {
     /**
      * The telemetry log information
      */
@@ -70,7 +70,7 @@ export type TelemetryDebugEvent = CommonTelemetryProperties & {
 /**
  * Schema of all properties of a telemetry configuration event
  */
-export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
+export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
     /**
      * The telemetry configuration information
      */
@@ -474,7 +474,7 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
 /**
  * Schema of all properties of a telemetry usage event
  */
-export type TelemetryUsageEvent = CommonTelemetryProperties & {
+export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
     /**
      * The telemetry usage information
      */
@@ -491,15 +491,15 @@ export type TelemetryUsageEvent = CommonTelemetryProperties & {
 /**
  * Schema of features usage common across SDKs
  */
-export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital | GraphQLRequest;
+export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital | GraphQLRequest;
 /**
  * Schema of browser specific features usage
  */
-export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital;
+export declare type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital;
 /**
  * Schema of mobile specific features usage
  */
-export type TelemetryMobileFeaturesUsage = AddViewLoadingTime | TrackWebView;
+export declare type TelemetryMobileFeaturesUsage = AddViewLoadingTime | TrackWebView;
 /**
  * Schema of common properties of Telemetry events
  */
