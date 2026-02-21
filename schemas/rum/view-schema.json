@@ -177,6 +177,10 @@
               "minimum": 0,
               "readOnly": true
             },
+            "not_restored_reasons": {
+              "description": "Reasons why the document was blocked from using the back/forward cache",
+              "allOf": [{ "$ref": "_not-restored-reasons-schema.json" }]
+            },
             "custom_timings": {
               "type": "object",
               "description": "User custom timings of the view. As timing name is used as facet path, it must contain only letters, digits, or the characters - _ . @ $",

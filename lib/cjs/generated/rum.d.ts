@@ -986,6 +986,10 @@ export type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema
          */
         readonly first_byte?: number;
         /**
+         * Reasons why the document was blocked from using the back/forward cache
+         */
+        not_restored_reasons?: NotRestoredReasonsSchema;
+        /**
          * User custom timings of the view. As timing name is used as facet path, it must contain only letters, digits, or the characters - _ . @ $
          */
         readonly custom_timings?: {
@@ -1869,6 +1873,42 @@ export interface StreamSchema {
         completion_percent?: number;
         [k: string]: unknown;
     };
+    [k: string]: unknown;
+}
+/**
+ * Reasons why the document was blocked from using the back/forward cache
+ */
+export interface NotRestoredReasonsSchema {
+    /**
+     * Array of NotRestoredReasons objects for child iframes
+     */
+    readonly children?: NotRestoredReasonsSchema[];
+    /**
+     * ID attribute value of the iframe
+     */
+    readonly id?: string | null;
+    /**
+     * Name attribute value of the iframe
+     */
+    readonly name?: string | null;
+    /**
+     * Array of reasons why the page was blocked from using bfcache
+     */
+    readonly reasons?: {
+        /**
+         * The reason why the page was blocked
+         */
+        readonly reason: string;
+        [k: string]: unknown;
+    }[] | null;
+    /**
+     * Source path of the iframe
+     */
+    readonly src?: string | null;
+    /**
+     * URL of the navigated page or iframe
+     */
+    readonly url?: string | null;
     [k: string]: unknown;
 }
 /**
