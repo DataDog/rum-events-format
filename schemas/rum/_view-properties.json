@@ -409,6 +409,7 @@
     "privacy": {
       "type": "object",
       "description": "Privacy properties",
+      "required": ["replay_level"],
       "properties": {
         "replay_level": {
           "type": "string",
@@ -427,6 +428,7 @@
         "scroll": {
           "type": "object",
           "description": "Scroll properties",
+          "required": ["max_depth", "max_depth_scroll_top", "max_scroll_height", "max_scroll_height_time"],
           "properties": {
             "max_depth": {
               "type": "number",

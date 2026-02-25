@@ -882,31 +882,14 @@ export type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema
      */
     readonly type: 'view';
     view: {
-        time_spent: number;
+        time_spent: unknown;
         action: {
-            count: number;
             [k: string]: unknown;
         };
         error: {
-            count: number;
             [k: string]: unknown;
         };
         resource: {
-            count: number;
-            [k: string]: unknown;
-        };
-        [k: string]: unknown;
-    };
-    privacy?: {
-        replay_level: string;
-        [k: string]: unknown;
-    };
-    display?: {
-        scroll?: {
-            max_depth: number;
-            max_depth_scroll_top: number;
-            max_scroll_height: number;
-            max_scroll_height_time: number;
             [k: string]: unknown;
         };
         [k: string]: unknown;
@@ -1894,7 +1877,7 @@ export interface ViewProperties {
         /**
          * The replay privacy level
          */
-        readonly replay_level?: 'allow' | 'mask' | 'mask-user-input';
+        readonly replay_level: 'allow' | 'mask' | 'mask-user-input';
         [k: string]: unknown;
     };
     /**
@@ -1908,19 +1891,19 @@ export interface ViewProperties {
             /**
              * Distance between the top and the lowest point reached on this view (in pixels)
              */
-            readonly max_depth?: number;
+            readonly max_depth: number;
             /**
              * Page scroll top (scrolled distance) when the maximum scroll depth was reached for this view (in pixels)
              */
-            readonly max_depth_scroll_top?: number;
+            readonly max_depth_scroll_top: number;
             /**
              * Maximum page scroll height (total height) for this view (in pixels)
              */
-            readonly max_scroll_height?: number;
+            readonly max_scroll_height: number;
             /**
              * Duration between the view start and the time the max scroll height was reached for this view (in nanoseconds)
              */
-            readonly max_scroll_height_time?: number;
+            readonly max_scroll_height_time: number;
             [k: string]: unknown;
         };
         [k: string]: unknown;
