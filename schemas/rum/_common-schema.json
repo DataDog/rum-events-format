@@ -244,6 +244,7 @@
       "type": "object",
       "description": "Synthetics properties",
       "required": ["test_id", "result_id"],
+      "additionalProperties": true,
       "properties": {
         "test_id": {
           "type": "string",
