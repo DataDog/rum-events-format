@@ -495,7 +495,7 @@ export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | St
 /**
  * Schema of browser specific features usage
  */
-export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital;
+export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | StartAction | StopAction | StartResource | StopResource;
 /**
  * Schema of mobile specific features usage
  */
@@ -862,6 +862,34 @@ export interface AddDurationVital {
      * addDurationVital API
      */
     feature: 'add-duration-vital';
+    [k: string]: unknown;
+}
+export interface StartAction {
+    /**
+     * startAction API
+     */
+    feature: 'start-action';
+    [k: string]: unknown;
+}
+export interface StopAction {
+    /**
+     * stopAction API
+     */
+    feature: 'stop-action';
+    [k: string]: unknown;
+}
+export interface StartResource {
+    /**
+     * startResource API
+     */
+    feature: 'start-resource';
+    [k: string]: unknown;
+}
+export interface StopResource {
+    /**
+     * stopResource API
+     */
+    feature: 'stop-resource';
     [k: string]: unknown;
 }
 export interface AddViewLoadingTime {
