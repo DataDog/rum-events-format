@@ -499,7 +499,7 @@ export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartD
 /**
  * Schema of mobile specific features usage
  */
-export type TelemetryMobileFeaturesUsage = AddViewLoadingTime | TrackWebView;
+export type TelemetryMobileFeaturesUsage = AddViewLoadingTime | TrackWebView | AndroidNetworkInstrumentation;
 /**
  * Schema of common properties of Telemetry events
  */
@@ -888,5 +888,16 @@ export interface TrackWebView {
      * trackWebView API
      */
     feature: 'trackWebView';
+    [k: string]: unknown;
+}
+export interface AndroidNetworkInstrumentation {
+    /**
+     * Android network instrumentation
+     */
+    feature: 'androidNetworkInstrumentation';
+    /**
+     * The network instrumentation API used
+     */
+    type: 'CRONET' | 'OKHTTP';
     [k: string]: unknown;
 }
