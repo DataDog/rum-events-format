@@ -882,7 +882,7 @@ export type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema
      */
     readonly type: 'view';
     view: {
-        time_spent: unknown;
+        time_spent: number;
         action: {
             [k: string]: unknown;
         };
@@ -1705,7 +1705,7 @@ export interface ViewProperties {
             /**
              * Number of actions that occurred on the view
              */
-            readonly count?: number;
+            readonly count: number;
             [k: string]: unknown;
         };
         /**
@@ -1715,7 +1715,7 @@ export interface ViewProperties {
             /**
              * Number of errors that occurred on the view
              */
-            readonly count?: number;
+            readonly count: number;
             [k: string]: unknown;
         };
         /**
@@ -1769,7 +1769,7 @@ export interface ViewProperties {
             /**
              * Number of resources that occurred on the view
              */
-            readonly count?: number;
+            readonly count: number;
             [k: string]: unknown;
         };
         /**

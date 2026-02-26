@@ -181,6 +181,7 @@
         "action": {
           "type": "object",
           "description": "Properties of the actions of the view",
+          "required": ["count"],
           "properties": {
             "count": {
               "type": "integer",
@@ -194,6 +195,7 @@
         "error": {
           "type": "object",
           "description": "Properties of the errors of the view",
+          "required": ["count"],
           "properties": {
             "count": {
               "type": "integer",
@@ -271,6 +273,7 @@
         "resource": {
           "type": "object",
           "description": "Properties of the resources of the view",
+          "required": ["count"],
           "properties": {
             "count": {
               "type": "integer",
