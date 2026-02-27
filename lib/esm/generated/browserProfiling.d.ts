@@ -4,11 +4,11 @@
 /**
  * Schema of Browser SDK Profiling types.
  */
-export declare type BrowserProfiling = BrowserProfileEvent | BrowserProfilerTrace;
+export type BrowserProfiling = BrowserProfileEvent | BrowserProfilerTrace;
 /**
  * Schema of the Browser SDK Profile Event payload.
  */
-export declare type BrowserProfileEvent = ProfileCommonProperties & {
+export type BrowserProfileEvent = ProfileCommonProperties & {
     /**
      * Profile data format.
      */
