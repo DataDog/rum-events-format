@@ -128,9 +128,9 @@
                 "ndk",
                 "ios+il2cpp",
                 "ndk+il2cpp",
-                "pe",
-                "elf",
-                "macho"
+                "windows",
+                "macos",
+                "linux"
               ],
               "readOnly": true
             },
