@@ -4,11 +4,11 @@
 /**
  * Schema of all properties of a telemetry event
  */
-export declare type TelemetryEvent = TelemetryErrorEvent | TelemetryDebugEvent | TelemetryConfigurationEvent | TelemetryUsageEvent;
+export type TelemetryEvent = TelemetryErrorEvent | TelemetryDebugEvent | TelemetryConfigurationEvent | TelemetryUsageEvent;
 /**
  * Schema of all properties of a telemetry error event
  */
-export declare type TelemetryErrorEvent = CommonTelemetryProperties & {
+export type TelemetryErrorEvent = CommonTelemetryProperties & {
     /**
      * The telemetry log information
      */
@@ -46,7 +46,7 @@ export declare type TelemetryErrorEvent = CommonTelemetryProperties & {
 /**
  * Schema of all properties of a telemetry debug event
  */
-export declare type TelemetryDebugEvent = CommonTelemetryProperties & {
+export type TelemetryDebugEvent = CommonTelemetryProperties & {
     /**
      * The telemetry log information
      */
@@ -70,7 +70,7 @@ export declare type TelemetryDebugEvent = CommonTelemetryProperties & {
 /**
  * Schema of all properties of a telemetry configuration event
  */
-export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
+export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
     /**
      * The telemetry configuration information
      */
@@ -474,7 +474,7 @@ export declare type TelemetryConfigurationEvent = CommonTelemetryProperties & {
 /**
  * Schema of all properties of a telemetry usage event
  */
-export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
+export type TelemetryUsageEvent = CommonTelemetryProperties & {
     /**
      * The telemetry usage information
      */
@@ -491,15 +491,15 @@ export declare type TelemetryUsageEvent = CommonTelemetryProperties & {
 /**
  * Schema of features usage common across SDKs
  */
-export declare type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital | GraphQLRequest;
+export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital | GraphQLRequest;
 /**
  * Schema of browser specific features usage
  */
-export declare type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital;
+export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | StartAction | StopAction | StartResource | StopResource;
 /**
  * Schema of mobile specific features usage
  */
-export declare type TelemetryMobileFeaturesUsage = AddViewLoadingTime | TrackWebView;
+export type TelemetryMobileFeaturesUsage = AddViewLoadingTime | TrackWebView | AndroidNetworkInstrumentation;
 /**
  * Schema of common properties of Telemetry events
  */
@@ -529,7 +529,7 @@ export interface CommonTelemetryProperties {
     /**
      * The source of this event
      */
-    readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp';
+    readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'unity' | 'kotlin-multiplatform' | 'electron';
     /**
      * The version of the SDK generating the telemetry event
      */
@@ -864,6 +864,34 @@ export interface AddDurationVital {
     feature: 'add-duration-vital';
     [k: string]: unknown;
 }
+export interface StartAction {
+    /**
+     * startAction API
+     */
+    feature: 'start-action';
+    [k: string]: unknown;
+}
+export interface StopAction {
+    /**
+     * stopAction API
+     */
+    feature: 'stop-action';
+    [k: string]: unknown;
+}
+export interface StartResource {
+    /**
+     * startResource API
+     */
+    feature: 'start-resource';
+    [k: string]: unknown;
+}
+export interface StopResource {
+    /**
+     * stopResource API
+     */
+    feature: 'stop-resource';
+    [k: string]: unknown;
+}
 export interface AddViewLoadingTime {
     /**
      * addViewLoadingTime API
@@ -888,5 +916,16 @@ export interface TrackWebView {
      * trackWebView API
      */
     feature: 'trackWebView';
+    [k: string]: unknown;
+}
+export interface AndroidNetworkInstrumentation {
+    /**
+     * Android network instrumentation
+     */
+    feature: 'androidNetworkInstrumentation';
+    /**
+     * The network instrumentation API used
+     */
+    type: 'CRONET' | 'OKHTTP';
     [k: string]: unknown;
 }

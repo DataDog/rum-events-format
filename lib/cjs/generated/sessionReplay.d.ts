@@ -591,6 +591,10 @@ export declare type ShapeWireframe = CommonShapeWireframe & {
      * The type of the wireframe.
      */
     readonly type: 'shape';
+    /**
+     * A globally unique and stable identifier for this UI element, computed as the hash of the element's path (32 lowercase hex characters). Used to correlate wireframes with RUM action events.
+     */
+    readonly permanentId?: string;
 };
 /**
  * Schema of common properties for ShapeWireframe events type and all its sub - types.
@@ -643,6 +647,10 @@ export declare type TextWireframe = CommonShapeWireframe & {
     text: string;
     textStyle: TextStyle;
     textPosition?: TextPosition;
+    /**
+     * A globally unique and stable identifier for this UI element, computed as the hash of the element's path (32 lowercase hex characters). Used to correlate wireframes with RUM action events.
+     */
+    readonly permanentId?: string;
 };
 /**
  * Schema of all properties of a TextStyle.
@@ -722,6 +730,10 @@ export declare type ImageWireframe = CommonShapeWireframe & {
      * Flag describing an image wireframe that should render an empty state placeholder
      */
     isEmpty?: boolean;
+    /**
+     * A globally unique and stable identifier for this UI element, computed as the hash of the element's path (32 lowercase hex characters). Used to correlate wireframes with RUM action events.
+     */
+    readonly permanentId?: string;
 };
 /**
  * Schema of all properties of a PlaceholderWireframe.
@@ -735,6 +747,10 @@ export declare type PlaceholderWireframe = CommonWireframe & {
      * Label of the placeholder
      */
     label?: string;
+    /**
+     * A globally unique and stable identifier for this UI element, computed as the hash of the element's path (32 lowercase hex characters). Used to correlate wireframes with RUM action events.
+     */
+    readonly permanentId?: string;
 };
 /**
  * Schema of all properties of a WebviewWireframe.
@@ -752,6 +768,10 @@ export declare type WebviewWireframe = CommonShapeWireframe & {
      * Whether this webview is visible or not.
      */
     readonly isVisible?: boolean;
+    /**
+     * A globally unique and stable identifier for this UI element, computed as the hash of the element's path (32 lowercase hex characters). Used to correlate wireframes with RUM action events.
+     */
+    readonly permanentId?: string;
 };
 /**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
@@ -1347,10 +1367,6 @@ export interface CommonWireframe {
      */
     readonly height: number;
     clip?: WireframeClip;
-    /**
-     * A globally unique and stable identifier for this UI element, computed as the hash of the element's path (32 lowercase hex characters). Used to correlate wireframes with RUM action events.
-     */
-    readonly permanentId?: string;
 }
 /**
  * Schema of clipping information for a Wireframe.
