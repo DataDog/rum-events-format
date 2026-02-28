@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/_not-restored-reasons-schema.json",
+  "title": "NotRestoredReasonsSchema",
+  "type": "object",
+  "description": "Reasons why the document was blocked from using the back/forward cache",
+  "properties": {
+    "children": {
+      "type": "array",
+      "description": "Array of NotRestoredReasons objects for child iframes",
+      "items": {
+        "$ref": "#"
+      },
+      "readOnly": true
+    },
+    "id": {
+      "type": ["string", "null"],
+      "description": "ID attribute value of the iframe",
+      "readOnly": true
+    },
+    "name": {
+      "type": ["string", "null"],
+      "description": "Name attribute value of the iframe",
+      "readOnly": true
+    },
+    "reasons": {
+      "type": ["array", "null"],
+      "description": "Array of reasons why the page was blocked from using bfcache",
+      "items": {
+        "type": "object",
+        "required": ["reason"],
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "The reason why the page was blocked",
+            "readOnly": true
+          }
+        },
+        "readOnly": true
+      },
+      "readOnly": true
+    },
+    "src": {
+      "type": ["string", "null"],
+      "description": "Source path of the iframe",
+      "readOnly": true
+    },
+    "url": {
+      "type": ["string", "null"],
+      "description": "URL of the navigated page or iframe",
+      "readOnly": true
+    }
+  },
+  "readOnly": true
+}
