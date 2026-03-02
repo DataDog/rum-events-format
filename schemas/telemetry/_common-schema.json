@@ -37,7 +37,17 @@
     "source": {
       "type": "string",
       "description": "The source of this event",
-      "enum": ["android", "ios", "browser", "flutter", "react-native", "unity", "kotlin-multiplatform", "electron"],
+      "enum": [
+        "android",
+        "ios",
+        "browser",
+        "flutter",
+        "react-native",
+        "unity",
+        "kotlin-multiplatform",
+        "electron",
+        "rum-cpp"
+      ],
       "readOnly": true
     },
     "version": {

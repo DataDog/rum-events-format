@@ -36,7 +36,8 @@
             "roku",
             "unity",
             "kotlin-multiplatform",
-            "electron"
+            "electron",
+            "rum-cpp"
           ],
           "readOnly": true
         }

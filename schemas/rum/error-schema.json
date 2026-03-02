@@ -127,7 +127,10 @@
                 "roku",
                 "ndk",
                 "ios+il2cpp",
-                "ndk+il2cpp"
+                "ndk+il2cpp",
+                "windows",
+                "macos",
+                "linux"
               ],
               "readOnly": true
             },
