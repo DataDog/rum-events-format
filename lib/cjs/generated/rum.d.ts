@@ -736,6 +736,10 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
          */
         readonly delivery_type?: 'cache' | 'navigational-prefetch' | 'other';
         /**
+         * Content type of the resource
+         */
+        readonly content_type?: string;
+        /**
          * The provider for this resource
          */
         readonly provider?: {

@@ -28,6 +28,7 @@
     "render_blocking_status": "non-blocking",
     "protocol": "HTTP/1.1",
     "delivery_type": "cache",
+    "content_type": "application/json",
     "graphql": {
       "operationType": "query",
       "operationName": "GetUserProfile",

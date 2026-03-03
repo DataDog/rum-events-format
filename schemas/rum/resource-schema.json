@@ -244,6 +244,11 @@
               "enum": ["cache", "navigational-prefetch", "other"],
               "readOnly": true
             },
+            "content_type": {
+              "type": "string",
+              "description": "Content type of the resource",
+              "readOnly": true
+            },
             "provider": {
               "type": "object",
               "description": "The provider for this resource",

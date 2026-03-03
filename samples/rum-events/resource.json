@@ -40,6 +40,7 @@
     },
     "protocol": "HTTP/1.1",
     "delivery_type": "cache",
+    "content_type": "application/json",
     "request": {
       "encoded_body_size": 512,
       "decoded_body_size": 1024,
