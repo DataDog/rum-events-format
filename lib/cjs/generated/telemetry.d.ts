@@ -491,7 +491,7 @@ export type TelemetryUsageEvent = CommonTelemetryProperties & {
 /**
  * Schema of features usage common across SDKs
  */
-export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital | GraphQLRequest;
+export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | StartView | SetViewContext | SetViewContextProperty | SetViewName | GetViewContext | AddAction | AddError | GetGlobalContext | SetGlobalContext | SetGlobalContextProperty | RemoveGlobalContextProperty | ClearGlobalContext | GetUser | SetUser | SetUserProperty | RemoveUserProperty | ClearUser | GetAccount | SetAccount | SetAccountProperty | RemoveAccountProperty | ClearAccount | AddFeatureFlagEvaluation | AddOperationStepVital | GraphQLRequest | AddViewLoadingTime;
 /**
  * Schema of browser specific features usage
  */
@@ -499,7 +499,7 @@ export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartD
 /**
  * Schema of mobile specific features usage
  */
-export type TelemetryMobileFeaturesUsage = AddViewLoadingTime | TrackWebView | AndroidNetworkInstrumentation;
+export type TelemetryMobileFeaturesUsage = TrackWebView | AndroidNetworkInstrumentation;
 /**
  * Schema of common properties of Telemetry events
  */
@@ -900,11 +900,11 @@ export interface AddViewLoadingTime {
     /**
      * Whether the view is not available
      */
-    no_view: boolean;
+    no_view?: boolean;
     /**
      * Whether the available view is not active
      */
-    no_active_view: boolean;
+    no_active_view?: boolean;
     /**
      * Whether the loading time was overwritten
      */
