@@ -1,0 +1,33 @@
+{
+  "type": "view",
+  "date": 1591283924940,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "browser",
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "url": "https://app.datadoghq.com/rum/explorer",
+    "time_spent": 245512755000,
+    "action": {
+      "count": 0
+    },
+    "error": {
+      "count": 0
+    },
+    "resource": {
+      "count": 3
+    }
+  },
+  "tab": {
+    "id": "b7e2a1f4-3c8d-4e5f-9a0b-1d2e3f4a5b6c"
+  },
+  "_dd": {
+    "document_version": 1,
+    "format_version": 2
+  }
+}

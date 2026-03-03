@@ -174,7 +174,7 @@
     },
     "tab": {
       "type": "object",
-      "description": "Browser tab properties",
+      "description": "Tab properties",
       "required": ["id"],
       "additionalProperties": true,
       "properties": {
