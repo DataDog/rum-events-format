@@ -1725,7 +1725,7 @@ export interface ViewProperties {
             /**
              * Number of crashes that occurred on the view
              */
-            readonly count?: number;
+            readonly count: number;
             [k: string]: unknown;
         };
         /**
@@ -1735,7 +1735,7 @@ export interface ViewProperties {
             /**
              * Number of long tasks that occurred on the view
              */
-            readonly count?: number;
+            readonly count: number;
             [k: string]: unknown;
         };
         /**
@@ -1745,7 +1745,7 @@ export interface ViewProperties {
             /**
              * Number of frozen frames that occurred on the view
              */
-            readonly count?: number;
+            readonly count: number;
             [k: string]: unknown;
         };
         /**
