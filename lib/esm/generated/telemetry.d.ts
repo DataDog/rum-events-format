@@ -832,6 +832,25 @@ export interface GraphQLRequest {
     feature: 'graphql-request';
     [k: string]: unknown;
 }
+export interface AddViewLoadingTime {
+    /**
+     * addViewLoadingTime API
+     */
+    feature: 'addViewLoadingTime';
+    /**
+     * Whether the view is not available
+     */
+    no_view?: boolean;
+    /**
+     * Whether the available view is not active
+     */
+    no_active_view?: boolean;
+    /**
+     * Whether the loading time was overwritten
+     */
+    overwritten: boolean;
+    [k: string]: unknown;
+}
 export interface StartSessionReplayRecording {
     /**
      * startSessionReplayRecording API
@@ -890,25 +909,6 @@ export interface StopResource {
      * stopResource API
      */
     feature: 'stop-resource';
-    [k: string]: unknown;
-}
-export interface AddViewLoadingTime {
-    /**
-     * addViewLoadingTime API
-     */
-    feature: 'addViewLoadingTime';
-    /**
-     * Whether the view is not available
-     */
-    no_view?: boolean;
-    /**
-     * Whether the available view is not active
-     */
-    no_active_view?: boolean;
-    /**
-     * Whether the loading time was overwritten
-     */
-    overwritten: boolean;
     [k: string]: unknown;
 }
 export interface TrackWebView {
