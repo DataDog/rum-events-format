@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "rum/_view-properties.json",
+  "$id": "rum/_view-properties-schema.json",
   "title": "ViewProperties",
   "type": "object",
   "description": "Shared optional view-specific properties used by both view and view_update events",

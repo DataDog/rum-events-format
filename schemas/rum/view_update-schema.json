@@ -12,7 +12,7 @@
       "$ref": "_stream-schema.json"
     },
     {
-      "$ref": "_view-properties.json"
+      "$ref": "_view-properties-schema.json"
     },
     {
       "$ref": "_common-schema.json"
