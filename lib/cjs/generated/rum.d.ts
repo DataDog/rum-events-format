@@ -1228,6 +1228,16 @@ export interface CommonProperties {
         [k: string]: unknown;
     };
     /**
+     * Tab properties
+     */
+    readonly tab?: {
+        /**
+         * UUID of the browser tab
+         */
+        readonly id: string;
+        [k: string]: unknown;
+    };
+    /**
      * Device connectivity properties
      */
     connectivity?: {
