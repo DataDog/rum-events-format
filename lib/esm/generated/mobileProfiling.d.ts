@@ -4,19 +4,7 @@
 /**
  * Schema of the Mobile SDK Profile Event metadata.
  */
-export type MobileProfileEvent = ProfileCommonProperties & {
-    /**
-     * The RUM Vital this profile event is associated with.
-     */
-    readonly vital: {
-        /**
-         * Unique identifier of RUM Vital in the UUID format.
-         */
-        readonly id: string;
-        [k: string]: unknown;
-    };
-    [k: string]: unknown;
-};
+export type MobileProfileEvent = ProfileCommonProperties;
 /**
  * Schema of a Profile Event metadata. Contains attributes shared by all profiles.
  */
@@ -63,6 +51,20 @@ export interface ProfileCommonProperties {
          * Array of long task IDs.
          */
         readonly id: string[];
+        [k: string]: unknown;
+    };
+    /**
+     * Vital properties.
+     */
+    readonly vital?: {
+        /**
+         * Array of vital IDs.
+         */
+        readonly id: string[];
+        /**
+         * Array of vital labels.
+         */
+        readonly label: string[];
         [k: string]: unknown;
     };
     /**

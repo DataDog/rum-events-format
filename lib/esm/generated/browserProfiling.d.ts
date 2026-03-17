@@ -37,20 +37,6 @@ export type BrowserProfileEvent = ProfileCommonProperties & {
         readonly label: string[];
         [k: string]: unknown;
     };
-    /**
-     * Vital properties.
-     */
-    readonly vital?: {
-        /**
-         * Array of vital IDs.
-         */
-        readonly id: string[];
-        /**
-         * Array of vital labels.
-         */
-        readonly label: string[];
-        [k: string]: unknown;
-    };
     [k: string]: unknown;
 };
 /**
@@ -99,6 +85,20 @@ export interface ProfileCommonProperties {
          * Array of long task IDs.
          */
         readonly id: string[];
+        [k: string]: unknown;
+    };
+    /**
+     * Vital properties.
+     */
+    readonly vital?: {
+        /**
+         * Array of vital IDs.
+         */
+        readonly id: string[];
+        /**
+         * Array of vital labels.
+         */
+        readonly label: string[];
         [k: string]: unknown;
     };
     /**
