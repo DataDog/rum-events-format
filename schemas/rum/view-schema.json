@@ -27,6 +27,7 @@
           "readOnly": true
         },
         "view": {
+          "type": "object",
           "required": ["time_spent", "action", "error", "resource"],
           "properties": {
             "time_spent": { "type": "integer" },

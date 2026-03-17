@@ -90,15 +90,26 @@ function validateSchemasIds() {
 
 function validateSamples() {
   const ajv = new Ajv({
+    strict: true,
     // By default, ajv objects to heterogeneous tuples; the reasoning is that
     // they are awkward to work with in some languages. Disable this warning
     // since we're using this feature extensively and are aware of the tradeoffs.
     strictTuples: false,
+    allowUnionTypes: true,
   })
   forEachFile(SCHEMAS_DIRECTORY, (schemaPath) => ajv.addSchema(readJson(schemaPath)))
   forEachFile(SAMPLES_DIRECTORY, (samplePath) => {
     const schemaId = computeSchemaIdFromSamplePath(samplePath)
-    const valid = ajv.validate(schemaId, readJson(samplePath))
+    let valid
+    try {
+      valid = ajv.validate(schemaId, readJson(samplePath))
+    } catch (error) {
+      console.log(`❌ ${samplePath} had a validation error against ${schemaId}:`)
+      console.log(`   - ${error.message}`)
+      process.exitCode = 1
+      return
+    }
+
     if (valid) {
       console.log(`✅ ${samplePath}`)
     } else {
