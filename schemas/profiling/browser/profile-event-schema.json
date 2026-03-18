@@ -54,30 +54,6 @@
             }
           },
           "readOnly": true
-        },
-        "vital": {
-          "type": "object",
-          "description": "Vital properties.",
-          "required": ["id", "label"],
-          "properties": {
-            "id": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "description": "Array of vital IDs.",
-              "readOnly": true
-            },
-            "label": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              },
-              "description": "Array of vital labels.",
-              "readOnly": true
-            }
-          },
-          "readOnly": true
         }
       }
     }
