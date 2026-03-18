@@ -176,7 +176,6 @@
       "type": "object",
       "description": "Tab properties",
       "required": ["id"],
-      "additionalProperties": true,
       "properties": {
         "id": {
           "type": "string",
