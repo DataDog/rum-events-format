@@ -282,7 +282,7 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
         /**
          * Handling call stack
          */
-        readonly handling_stack?: string;
+        handling_stack?: string;
         /**
          * Source type of the error (the language or platform impacting the error stacktrace format)
          */
