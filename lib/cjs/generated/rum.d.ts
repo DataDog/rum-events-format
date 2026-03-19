@@ -455,6 +455,16 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
     readonly feature_flags?: {
         [k: string]: unknown;
     };
+    /**
+     * Internal properties
+     */
+    readonly _dd?: {
+        /**
+         * Profiling context
+         */
+        profiling?: ProfilingInternalContextSchema;
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 };
 /**
@@ -1029,6 +1039,16 @@ export type RumVitalEventCommonProperties = CommonProperties & ViewContainerSche
         readonly description?: string;
         [k: string]: unknown;
     };
+    /**
+     * Internal properties
+     */
+    readonly _dd?: {
+        /**
+         * Profiling context
+         */
+        profiling?: ProfilingInternalContextSchema;
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 };
 /**
@@ -1091,16 +1111,6 @@ export type RumVitalAppLaunchEvent = RumVitalEventCommonProperties & {
          * If the app launch had a saved instance state bundle.
          */
         readonly has_saved_instance_state_bundle?: boolean;
-        [k: string]: unknown;
-    };
-    /**
-     * Internal properties
-     */
-    readonly _dd?: {
-        /**
-         * Profiling context
-         */
-        profiling?: ProfilingInternalContextSchema;
         [k: string]: unknown;
     };
     [k: string]: unknown;
