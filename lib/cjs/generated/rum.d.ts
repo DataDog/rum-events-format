@@ -132,6 +132,10 @@ export type RumActionEvent = CommonProperties & ViewContainerSchema & {
                  */
                 readonly selector?: string;
                 /**
+                 * Selector data based on the click event composed path
+                 */
+                readonly composed_path_selector?: string;
+                /**
                  * Width of the target element (in pixels)
                  */
                 readonly width?: number;
