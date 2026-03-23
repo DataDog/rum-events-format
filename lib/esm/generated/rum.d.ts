@@ -325,6 +325,64 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
                 readonly type?: 'ad' | 'advertising' | 'analytics' | 'cdn' | 'content' | 'customer-success' | 'first party' | 'hosting' | 'marketing' | 'other' | 'social' | 'tag-manager' | 'utility' | 'video';
                 [k: string]: unknown;
             };
+            /**
+             * GraphQL requests parameters
+             */
+            readonly graphql?: {
+                /**
+                 * Type of the GraphQL operation
+                 */
+                readonly operationType?: 'query' | 'mutation' | 'subscription';
+                /**
+                 * Name of the GraphQL operation
+                 */
+                readonly operationName?: string;
+                /**
+                 * Content of the GraphQL operation
+                 */
+                payload?: string;
+                /**
+                 * String representation of the operation variables
+                 */
+                variables?: string;
+                /**
+                 * Number of GraphQL errors in the response
+                 */
+                readonly error_count?: number;
+                /**
+                 * Array of GraphQL errors from the response
+                 */
+                readonly errors?: {
+                    /**
+                     * Error message
+                     */
+                    readonly message: string;
+                    /**
+                     * Error code (used by some providers)
+                     */
+                    readonly code?: string;
+                    /**
+                     * Array of error locations in the GraphQL query
+                     */
+                    readonly locations?: {
+                        /**
+                         * Line number where the error occurred
+                         */
+                        readonly line: number;
+                        /**
+                         * Column number where the error occurred
+                         */
+                        readonly column: number;
+                        [k: string]: unknown;
+                    }[];
+                    /**
+                     * Path to the field that caused the error
+                     */
+                    readonly path?: (string | number)[];
+                    [k: string]: unknown;
+                }[];
+                [k: string]: unknown;
+            };
             [k: string]: unknown;
         };
         /**
@@ -464,9 +522,21 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
      */
     readonly _dd?: {
         /**
-         * Profiling context
+         * span identifier in decimal format
          */
-        profiling?: ProfilingInternalContextSchema;
+        readonly span_id?: string;
+        /**
+         * parent span identifier in decimal format
+         */
+        readonly parent_span_id?: string;
+        /**
+         * trace identifier, either a 64 bit decimal number or a 128 bit hexadecimal number padded with 0s
+         */
+        readonly trace_id?: string;
+        /**
+         * trace sample rate in decimal format
+         */
+        readonly rule_psr?: number;
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -1043,16 +1113,6 @@ export type RumVitalEventCommonProperties = CommonProperties & ViewContainerSche
         readonly description?: string;
         [k: string]: unknown;
     };
-    /**
-     * Internal properties
-     */
-    readonly _dd?: {
-        /**
-         * Profiling context
-         */
-        profiling?: ProfilingInternalContextSchema;
-        [k: string]: unknown;
-    };
     [k: string]: unknown;
 };
 /**
@@ -1115,6 +1175,16 @@ export type RumVitalAppLaunchEvent = RumVitalEventCommonProperties & {
          * If the app launch had a saved instance state bundle.
          */
         readonly has_saved_instance_state_bundle?: boolean;
+        [k: string]: unknown;
+    };
+    /**
+     * Internal properties
+     */
+    readonly _dd?: {
+        /**
+         * Profiling context
+         */
+        profiling?: ProfilingInternalContextSchema;
         [k: string]: unknown;
     };
     [k: string]: unknown;
