@@ -800,7 +800,13 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
     /**
      * Internal properties
      */
-    readonly _dd?: RumTrace;
+    readonly _dd?: RumTrace & {
+        /**
+         * Whether the resource should be discarded or indexed
+         */
+        readonly discarded?: boolean;
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 };
 /**
