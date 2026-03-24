@@ -1793,7 +1793,7 @@ export interface ViewProperties {
             /**
              * Number of frustrations that occurred on the view
              */
-            readonly count?: number;
+            readonly count: number;
             [k: string]: unknown;
         };
         /**
