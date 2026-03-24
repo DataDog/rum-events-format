@@ -290,6 +290,7 @@
         "frustration": {
           "type": "object",
           "description": "Properties of the frustrations of the view",
+          "required": ["count"],
           "properties": {
             "count": {
               "type": "integer",
