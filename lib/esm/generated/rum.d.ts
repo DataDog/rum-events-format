@@ -2031,7 +2031,7 @@ export interface ViewPerformanceData {
             /**
              * Event handler execution time
              */
-            readonly processing_time: number;
+            readonly processing_duration: number;
             /**
              * Rendering time happening after processing
              */
