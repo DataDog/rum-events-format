@@ -92,7 +92,7 @@ export type SnapshotFormatChange = 1;
 /**
  * Browser-specific. Schema representing an individual change within a BrowserChangeData collection.
  */
-export type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachedStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]];
+export type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]];
 /**
  * Browser-specific. Schema representing the addition of a string to the string table.
  */
@@ -248,7 +248,7 @@ export type StyleSheetMediaList = StringOrStringReference[];
  *
  * @minItems 1
  */
-export type AttachedStyleSheetsChange = [NodeId, ...StyleSheetId[]];
+export type AttachStyleSheetsChange = [NodeId, ...StyleSheetId[]];
 /**
  * Browser-specific. Schema representing the ID of a stylesheet.
  */

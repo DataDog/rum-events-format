@@ -9,6 +9,8 @@ import type {
 
 export * from '../generated/sessionReplay'
 
+export type { AttachStyleSheetsChange as AttachedStyleSheetsChange } from '../generated/sessionReplay'
+
 export {
   BrowserSource,
   ChangeType as BrowserChangeType,
@@ -18,6 +20,7 @@ export {
   MediaInteractionType,
   PlaybackState,
   SnapshotFormat,
+  isChangeOfType,
 } from './session-replay-browser'
 export { IncrementalSource as MobileIncrementalSource, MobileSource, WireframeType } from './session-replay-mobile'
 

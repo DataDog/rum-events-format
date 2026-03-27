@@ -64,7 +64,7 @@
       "type": "array",
       "minItems": 1,
       "items": [{ "const": 8 }],
-      "additionalItems": { "$ref": "attached-stylesheets-change-schema.json" },
+      "additionalItems": { "$ref": "attach-stylesheets-change-schema.json" },
       "description": "Changes to the stylesheets attached to a node."
     },
     {

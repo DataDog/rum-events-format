@@ -112,7 +112,7 @@ export const ChangeType: {
   Size: ChangeTypeId<5, SessionReplay.SizeChange>
   ScrollPosition: ChangeTypeId<6, SessionReplay.ScrollPositionChange>
   AddStyleSheet: ChangeTypeId<7, SessionReplay.AddStyleSheetChange>
-  AttachedStyleSheets: ChangeTypeId<8, SessionReplay.AttachedStyleSheetsChange>
+  AttachStyleSheets: ChangeTypeId<8, SessionReplay.AttachStyleSheetsChange>
   MediaPlaybackState: ChangeTypeId<9, SessionReplay.MediaPlaybackStateChange>
   VisualViewport: ChangeTypeId<10, SessionReplay.VisualViewportChange>
 } = {
@@ -124,12 +124,19 @@ export const ChangeType: {
   Size: 5,
   ScrollPosition: 6,
   AddStyleSheet: 7,
-  AttachedStyleSheets: 8,
+  AttachStyleSheets: 8,
   MediaPlaybackState: 9,
   VisualViewport: 10,
 } as const
 
 export type ChangeType = (typeof ChangeType)[keyof typeof ChangeType]
+
+export function isChangeOfType<T extends ChangeType>(
+  changeType: T,
+  change: SessionReplay.Change
+): change is Extract<SessionReplay.Change, [T, ...any[]]> {
+  return change[0] === changeType
+}
 
 export const PlaybackState: {
   Playing: SessionReplay.PlaybackStatePlaying
