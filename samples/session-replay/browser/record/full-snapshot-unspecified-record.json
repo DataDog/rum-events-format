@@ -1,0 +1,95 @@
+{
+  "timestamp": 1657620232337,
+  "type": 2,
+  "data": {
+    "node": {
+      "type": 0,
+      "childNodes": [
+        { "type": 1, "name": "html", "publicId": "", "systemId": "", "id": 2 },
+        {
+          "type": 2,
+          "tagName": "html",
+          "attributes": { "lang": "en" },
+          "childNodes": [
+            {
+              "type": 2,
+              "tagName": "head",
+              "attributes": {},
+              "childNodes": [
+                {
+                  "type": 2,
+                  "tagName": "title",
+                  "attributes": {},
+                  "childNodes": [{ "type": 3, "textContent": "TodoMVC", "id": 9 }],
+                  "id": 8
+                },
+                {
+                  "type": 2,
+                  "tagName": "link",
+                  "attributes": {
+                    "_cssText": "hr { margin: 20px 0px }.new-todo { color: red; }, a:hover { color:blue }"
+                  },
+                  "childNodes": [],
+                  "id": 11
+                }
+              ],
+              "id": 4
+            },
+            {
+              "type": 2,
+              "tagName": "body",
+              "attributes": {},
+              "childNodes": [
+                {
+                  "type": 2,
+                  "tagName": "section",
+                  "attributes": { "class": "todoapp" },
+                  "childNodes": [
+                    {
+                      "type": 2,
+                      "tagName": "header",
+                      "attributes": { "class": "header", "foo": "bar" },
+                      "childNodes": [
+                        {
+                          "type": 2,
+                          "tagName": "h1",
+                          "attributes": {},
+                          "childNodes": [{ "type": 3, "textContent": "todos", "id": 23 }],
+                          "id": 22
+                        },
+                        {
+                          "type": 2,
+                          "tagName": "input",
+                          "attributes": {
+                            "class": "new-todo",
+                            "placeholder": "What needs to be done?",
+                            "autofocus": ""
+                          },
+                          "childNodes": [],
+                          "id": 25
+                        }
+                      ],
+                      "id": 20
+                    },
+                    {
+                      "id": 30,
+                      "type": 2,
+                      "tagName": "ul",
+                      "attributes": {},
+                      "childNodes": [{ "type": 3, "textContent": "no todos", "id": 31 }]
+                    }
+                  ],
+                  "id": 18
+                }
+              ],
+              "id": 16
+            }
+          ],
+          "id": 3
+        }
+      ],
+      "id": 1
+    },
+    "initialOffset": { "left": 0, "top": 12 }
+  }
+}

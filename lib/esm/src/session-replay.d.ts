@@ -1,7 +1,7 @@
 import type { IncrementalSource as BrowserIncrementalSource, RecordType as BrowserRecordType } from './session-replay-browser';
 import type { IncrementalSource as MobileIncrementalSource, RecordType as MobileRecordType } from './session-replay-mobile';
 export * from '../generated/sessionReplay';
-export { BrowserSource, ChangeType as BrowserChangeType, NodeType, IncrementalSource as BrowserIncrementalSource, MouseInteractionType, MediaInteractionType, PlaybackState, } from './session-replay-browser';
+export { BrowserSource, ChangeType as BrowserChangeType, NodeType, IncrementalSource as BrowserIncrementalSource, MouseInteractionType, MediaInteractionType, PlaybackState, SnapshotFormat, } from './session-replay-browser';
 export { IncrementalSource as MobileIncrementalSource, MobileSource, WireframeType } from './session-replay-mobile';
 export declare const RecordType: {
     BrowserFullSnapshot: typeof BrowserRecordType.FullSnapshot;

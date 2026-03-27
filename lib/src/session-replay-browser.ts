@@ -140,3 +140,11 @@ export const PlaybackState: {
 } as const
 
 export type PlaybackState = (typeof PlaybackState)[keyof typeof PlaybackState]
+
+export const SnapshotFormat: {
+  V1: SessionReplay.SnapshotFormatV1
+  Change: SessionReplay.SnapshotFormatChange
+} = {
+  V1: 0,
+  Change: 1,
+} as const
