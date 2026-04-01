@@ -17,6 +17,7 @@ export {
   MouseInteractionType,
   MediaInteractionType,
   PlaybackState,
+  SnapshotFormat,
 } from './session-replay-browser'
 export { IncrementalSource as MobileIncrementalSource, MobileSource, WireframeType } from './session-replay-mobile'
 

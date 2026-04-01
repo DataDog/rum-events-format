@@ -3,24 +3,13 @@
   "$id": "session-replay/browser/full-snapshot-record-schema.json",
   "title": "BrowserFullSnapshotRecord",
   "type": "object",
-  "description": "Browser-specific. Schema of a Record type which contains the full snapshot of a screen.",
-  "allOf": [
+  "description": "Browser-specific. Schema of a Record type which contains a full snapshot of a document.",
+  "oneOf": [
     {
-      "$ref": "../common/_slot-supported-common-record-schema.json"
+      "$ref": "full-snapshot-v1-record-schema.json"
     },
     {
-      "required": ["type", "data"],
-      "properties": {
-        "type": {
-          "type": "integer",
-          "description": "The type of this Record.",
-          "const": 2,
-          "readOnly": true
-        },
-        "data": {
-          "$ref": "node-schema.json"
-        }
-      }
+      "$ref": "full-snapshot-change-record-schema.json"
     }
   ]
 }

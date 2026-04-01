@@ -77,3 +77,8 @@ export declare const PlaybackState: {
     Paused: SessionReplay.PlaybackStatePaused;
 };
 export type PlaybackState = (typeof PlaybackState)[keyof typeof PlaybackState];
+export declare const SnapshotFormat: {
+    V1: SessionReplay.SnapshotFormatV1;
+    Change: SessionReplay.SnapshotFormatChange;
+};
+export type SnapshotFormat = (typeof SnapshotFormat)[keyof typeof SnapshotFormat];
