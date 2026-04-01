@@ -148,3 +148,5 @@ export const SnapshotFormat: {
   V1: 0,
   Change: 1,
 } as const
+
+export type SnapshotFormat = (typeof SnapshotFormat)[keyof typeof SnapshotFormat]
