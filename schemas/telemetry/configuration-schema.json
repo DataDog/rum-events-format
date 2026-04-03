@@ -332,6 +332,12 @@
                   "description": "Whether automatic collection of network requests is enabled",
                   "readOnly": false
                 },
+                "track_resource_headers": {
+                  "type": "string",
+                  "enum": ["default", "custom"],
+                  "description": "Whether and how HTTP resource header capture is configured: 'default' uses a predefined set of headers, 'custom' uses a user-provided list of header names. Absent when disabled.",
+                  "readOnly": false
+                },
                 "use_tracing": {
                   "type": "boolean",
                   "description": "Whether tracing features are enabled"
