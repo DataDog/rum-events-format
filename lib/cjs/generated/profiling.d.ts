@@ -42,7 +42,19 @@ export type BrowserProfileEvent = ProfileCommonProperties & {
 /**
  * Mobile SDK profiling event.
  */
-export type MobileProfileEvent = ProfileCommonProperties;
+export type MobileProfileEvent = ProfileCommonProperties & {
+    /**
+     * Error properties.
+     */
+    readonly error?: {
+        /**
+         * Array of error IDs.
+         */
+        readonly id: string[];
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
 /**
  * Schema of a Profile Event metadata. Contains attributes shared by all profiles.
  */
