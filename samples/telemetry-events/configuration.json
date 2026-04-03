@@ -85,7 +85,7 @@
         "vital"
       ],
       "remote_configuration_id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c",
-      "track_resource_headers": "default"
+      "track_resource_headers": true
     }
   }
 }

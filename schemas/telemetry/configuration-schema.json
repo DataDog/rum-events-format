@@ -333,9 +333,8 @@
                   "readOnly": false
                 },
                 "track_resource_headers": {
-                  "type": "string",
-                  "enum": ["default", "custom"],
-                  "description": "Whether and how HTTP resource header capture is configured: 'default' uses a predefined set of headers, 'custom' uses a user-provided list of header names. Absent when disabled.",
+                  "type": "boolean",
+                  "description": "Whether HTTP resource header capture is enabled",
                   "readOnly": false
                 },
                 "use_tracing": {

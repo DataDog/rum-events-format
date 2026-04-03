@@ -316,9 +316,9 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             track_network_requests?: boolean;
             /**
-             * Whether and how HTTP resource header capture is configured: 'default' uses a predefined set of headers, 'custom' uses a user-provided list of header names. Absent when disabled.
+             * Whether HTTP resource header capture is enabled
              */
-            track_resource_headers?: 'default' | 'custom';
+            track_resource_headers?: boolean;
             /**
              * Whether tracing features are enabled
              */
