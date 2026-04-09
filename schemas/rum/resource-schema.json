@@ -307,10 +307,10 @@
                   "additionalProperties": {
                     "type": "string"
                   },
-                  "readOnly": true
+                  "readOnly": false
                 }
               },
-              "readOnly": true
+              "readOnly": false
             },
             "response": {
               "type": "object",

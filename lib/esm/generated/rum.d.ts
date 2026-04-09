@@ -771,7 +771,7 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
         /**
          * Request properties
          */
-        readonly request?: {
+        request?: {
             /**
              * Size in octet of the request body sent over the network (after encoding)
              */
@@ -783,7 +783,7 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
             /**
              * HTTP headers of the resource request
              */
-            readonly headers?: {
+            headers?: {
                 [k: string]: string;
             };
             [k: string]: unknown;
