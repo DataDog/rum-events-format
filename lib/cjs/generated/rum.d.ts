@@ -1631,7 +1631,7 @@ export interface ViewProperties {
         /**
          * Type of the loading of the view
          */
-        readonly loading_type?: 'initial_load' | 'route_change' | 'activity_display' | 'activity_redisplay' | 'fragment_display' | 'fragment_redisplay' | 'view_controller_display' | 'view_controller_redisplay' | 'session_renewal';
+        readonly loading_type?: 'initial_load' | 'route_change' | 'activity_display' | 'activity_redisplay' | 'fragment_display' | 'fragment_redisplay' | 'view_controller_display' | 'view_controller_redisplay' | 'session_renewal' | 'bf_cache';
         /**
          * Time spent on the view in ns
          */
