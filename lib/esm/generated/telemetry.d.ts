@@ -930,6 +930,6 @@ export interface AndroidNetworkInstrumentation {
     /**
      * The network instrumentation API used
      */
-    type: 'CRONET' | 'OKHTTP';
+    type: 'CRONET' | 'OKHTTP' | 'LEGACY_OKHTTP';
     [k: string]: unknown;
 }
