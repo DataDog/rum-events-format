@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/_websocket-schema.json",
+  "title": "RumWebsocket",
+  "type": "object",
+  "description": "WebSocket connection properties",
+  "required": ["id", "type"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "UUID of the WebSocket connection, shared between open and close events",
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of WebSocket event",
+      "enum": ["open", "close"],
+      "readOnly": true
+    },
+    "protocol": {
+      "type": "string",
+      "description": "Negotiated WebSocket sub-protocol",
+      "readOnly": true
+    },
+    "message_count": {
+      "type": "object",
+      "description": "Aggregate message counts for the connection",
+      "properties": {
+        "sent": {
+          "type": "integer",
+          "description": "Total messages sent",
+          "minimum": 0,
+          "readOnly": true
+        },
+        "received": {
+          "type": "integer",
+          "description": "Total messages received",
+          "minimum": 0,
+          "readOnly": true
+        }
+      },
+      "readOnly": true
+    },
+    "bytes_sent": {
+      "type": "integer",
+      "description": "Total outgoing bytes",
+      "minimum": 0,
+      "readOnly": true
+    },
+    "bytes_received": {
+      "type": "integer",
+      "description": "Total incoming bytes",
+      "minimum": 0,
+      "readOnly": true
+    },
+    "close_code": {
+      "type": "integer",
+      "description": "WebSocket close code (RFC 6455)",
+      "readOnly": true
+    },
+    "close_reason": {
+      "type": "string",
+      "description": "WebSocket close reason string",
+      "readOnly": true
+    },
+    "was_clean": {
+      "type": "boolean",
+      "description": "Whether the connection closed cleanly",
+      "readOnly": true
+    },
+    "was_opened": {
+      "type": "boolean",
+      "description": "Whether the connection was ever successfully opened",
+      "readOnly": true
+    },
+    "connection_duration": {
+      "type": "integer",
+      "description": "Duration in ns of the WebSocket connection (open to close)",
+      "minimum": 0,
+      "readOnly": true
+    }
+  },
+  "readOnly": true
+}
