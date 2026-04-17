@@ -464,7 +464,7 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
             /**
              * How the SDK tracks resource request/response headers
              */
-            use_track_resource_headers?: 'default_headers' | 'custom';
+            track_resource_headers?: 'default_headers' | 'custom';
             /**
              * Whether the beta encode cookie options is enabled
              */
