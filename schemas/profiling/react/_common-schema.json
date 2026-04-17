@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "profiling/react/_common-schema.json",
+    "title": "ReactProfilingCommonProperties",
+    "type": "object",
+    "description": "Schema of common properties for React profiling events.",
+    "required": [
+        "application"
+    ],
+    "properties": {
+        "application": {
+            "type": "object",
+            "description": "Application properties.",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Application ID.",
+                    "readOnly": true
+                }
+            },
+            "readOnly": true
+        },
+        "session": {
+            "type": "object",
+            "description": "Session properties.",
+            "required": [
+                "id"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Session ID.",
+                    "readOnly": true
+                }
+            },
+            "readOnly": true
+        },
+        "view": {
+            "type": "object",
+            "description": "View properties.",
+            "required": [
+                "id",
+                "name"
+            ],
+            "properties": {
+                "id": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Array of view IDs seen during the profiling window.",
+                    "readOnly": true
+                },
+                "name": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Array of view names seen during the profiling window.",
+                    "readOnly": true
+                }
+            },
+            "readOnly": true
+        }
+    }
+}

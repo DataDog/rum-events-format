@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "react-profiling-browser-schema.json",
+    "title": "ReactProfiling",
+    "description": "Schema of Browser SDK React Profiling types.",
+    "anyOf": [
+        {
+            "$ref": "profiling/react/react-profile-event-schema.json"
+        }
+    ]
+}
