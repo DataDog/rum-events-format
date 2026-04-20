@@ -783,7 +783,7 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
             /**
              * HTTP headers of the resource request
              */
-            readonly headers?: {
+            headers?: {
                 [k: string]: string;
             };
             [k: string]: unknown;
@@ -795,7 +795,7 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
             /**
              * HTTP headers of the resource response
              */
-            readonly headers?: {
+            headers?: {
                 [k: string]: string;
             };
             [k: string]: unknown;

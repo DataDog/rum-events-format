@@ -307,7 +307,7 @@
                   "additionalProperties": {
                     "type": "string"
                   },
-                  "readOnly": true
+                  "readOnly": false
                 }
               },
               "readOnly": true
@@ -325,7 +325,7 @@
                   "additionalProperties": {
                     "type": "string"
                   },
-                  "readOnly": true
+                  "readOnly": false
                 }
               },
               "readOnly": true
