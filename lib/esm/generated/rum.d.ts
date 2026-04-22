@@ -1553,15 +1553,16 @@ export interface ProfilingInternalContextSchema {
      */
     readonly status?: 'starting' | 'running' | 'stopped' | 'error';
     /**
-     * The reason the Profiler encountered an error. This attribute is only present if the status is `error`.
+     * The reason the Profiler stopped or encountered an error.
      *
      * Possible values:
-     * - `not-supported-by-browser`: The browser does not support the Profiler (i.e., `window.Profiler` is not available).
-     * - `failed-to-lazy-load`: The Profiler script failed to be loaded by the browser (may be a connection issue or the chunk was not found).
-     * - `missing-document-policy-header`: The Profiler failed to start because its missing `Document-Policy: js-profiling` HTTP response header.
-     * - `unexpected-exception`: An exception occurred when starting the Profiler.
+     * - `not-supported-by-browser`: The browser does not support the Profiler (i.e., `window.Profiler` is not available). Status: `error`.
+     * - `failed-to-lazy-load`: The Profiler script failed to be loaded by the browser (may be a connection issue or the chunk was not found). Status: `error`.
+     * - `missing-document-policy-header`: The Profiler failed to start because its missing `Document-Policy: js-profiling` HTTP response header. Status: `error`.
+     * - `unexpected-exception`: An exception occurred when starting the Profiler. Status: `error`.
+     * - `quota-exceeded`: The session was denied by the profiling quota admission API. Status: `stopped`.
      */
-    readonly error_reason?: 'not-supported-by-browser' | 'failed-to-lazy-load' | 'missing-document-policy-header' | 'unexpected-exception';
+    readonly error_reason?: 'not-supported-by-browser' | 'failed-to-lazy-load' | 'missing-document-policy-header' | 'unexpected-exception' | 'quota-exceeded';
     [k: string]: unknown;
 }
 /**
