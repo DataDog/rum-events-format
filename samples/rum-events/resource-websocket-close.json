@@ -1,0 +1,44 @@
+{
+  "type": "resource",
+  "date": 1591284475328,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "browser",
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+  },
+  "resource": {
+    "id": "b83a5d82-cdd1-468d-9bc9-3aa9e54d957a",
+    "type": "websocket",
+    "url": "wss://stream.datadoghq.com/ws",
+    "duration": 300000000000,
+    "websocket": {
+      "id": "d94f7c12-1a2b-4e3f-8c5d-6e7f8a9b0c1d",
+      "type": "close",
+      "message_count": {
+        "sent": 42,
+        "received": 156
+      },
+      "bytes_sent": 8432,
+      "bytes_received": 245760,
+      "close_code": 1000,
+      "close_reason": "Normal closure",
+      "was_clean": true,
+      "was_opened": true,
+      "connection_duration": 300000000000
+    }
+  },
+  "action": {
+    "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}
