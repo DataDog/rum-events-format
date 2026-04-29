@@ -380,6 +380,10 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             unity_version?: string;
             /**
+             * The version of MAUI used in a .NET MAUI application
+             */
+            maui_version?: string;
+            /**
              * The threshold used for iOS App Hangs monitoring (in milliseconds)
              */
             app_hang_threshold?: number;
