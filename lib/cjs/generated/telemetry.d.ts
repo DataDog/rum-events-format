@@ -380,6 +380,10 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             unity_version?: string;
             /**
+             * The version of MAUI used in a .NET MAUI application
+             */
+            maui_version?: string;
+            /**
              * The threshold used for iOS App Hangs monitoring (in milliseconds)
              */
             app_hang_threshold?: number;
@@ -438,7 +442,7 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             sdk_version?: string;
             /**
-             * The source of the SDK, e.g., 'browser', 'ios', 'android', 'flutter', 'react-native', 'unity', 'kotlin-multiplatform'.
+             * The source of the SDK, e.g., 'browser', 'ios', 'android', 'flutter', 'react-native', 'unity', 'kotlin-multiplatform', 'maui'.
              */
             source?: string;
             /**
@@ -533,7 +537,7 @@ export interface CommonTelemetryProperties {
     /**
      * The source of this event
      */
-    readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp';
+    readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp' | 'maui';
     /**
      * The version of the SDK generating the telemetry event
      */
