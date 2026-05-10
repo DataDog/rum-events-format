@@ -144,7 +144,7 @@ export type RumActionEvent = CommonProperties & ViewContainerSchema & {
                  */
                 readonly height?: number;
                 /**
-                 * Mobile-only: a globally unique and stable identifier for this UI element, computed as the hash of the element's path (32 lowercase hex characters). Used to correlate actions with mobile session replay wireframes.
+                 * Mobile-only: a globally unique and stable identifier for this UI element, computed as the hash of the element's path. Used to correlate actions with mobile session replay wireframes.
                  */
                 readonly permanent_id?: string;
                 [k: string]: unknown;
