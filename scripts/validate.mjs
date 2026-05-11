@@ -26,6 +26,7 @@ function validateSchemasObjectsPropertiesCase() {
     [`${SCHEMAS_DIRECTORY}/rum/_graphql-schema.json`, ['operationType', 'operationName']],
     [`${SCHEMAS_DIRECTORY}/profiling/_common-schema.json`, ['long_task', 'tags_profiler']],
     [`${SCHEMAS_DIRECTORY}/profiling/browser/profile-event-schema.json`, ['_dd', 'clock_drift']],
+    [`${SCHEMAS_DIRECTORY}/profiling/mobile/profile-rum-metadata-event-schema.json`, ['duration_ns', 'start_ns']],
   ])
 
   let displayConvention = false
