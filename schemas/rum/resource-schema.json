@@ -37,7 +37,20 @@
             "type": {
               "type": "string",
               "description": "Resource type",
-              "enum": ["document", "xhr", "beacon", "fetch", "css", "js", "image", "font", "media", "other", "native"],
+              "enum": [
+                "document",
+                "xhr",
+                "beacon",
+                "fetch",
+                "css",
+                "js",
+                "image",
+                "font",
+                "media",
+                "other",
+                "native",
+                "websocket"
+              ],
               "readOnly": true
             },
             "method": {
@@ -332,6 +345,10 @@
             },
             "graphql": {
               "allOf": [{ "$ref": "_graphql-schema.json" }],
+              "readOnly": true
+            },
+            "websocket": {
+              "allOf": [{ "$ref": "_websocket-schema.json" }],
               "readOnly": true
             }
           },
