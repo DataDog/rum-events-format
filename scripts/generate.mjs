@@ -28,6 +28,7 @@ const DEFINITIONS = [
   { source: 'profiling-browser-schema.json', name: 'browserProfiling' },
   { source: 'profiling-mobile-schema.json', name: 'mobileProfiling' },
   { source: 'profiling-schema.json', name: 'profiling' },
+  { source: 'profiling-mobile-rum-metadata-event-schema.json', name: 'mobileProfilingRumMetadata' },
 ]
 
 const GENERATED_PATH = path.normalize(pkg.config['path:generated'])
