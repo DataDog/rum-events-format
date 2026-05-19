@@ -131,6 +131,12 @@
       "type": "string",
       "description": "Negotiated WebSocket sub-protocol from WebSocket.protocol once the connection is open. Empty string when no sub-protocol was selected.",
       "readOnly": true
+    },
+    "setup_duration": {
+      "type": "integer",
+      "description": "Milliseconds from WebSocket construction until the connection opened. If the connection never opened, milliseconds until the close event or session flush.",
+      "minimum": 0,
+      "readOnly": true
     }
   },
   "readOnly": true
