@@ -503,7 +503,7 @@ export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | St
 /**
  * Schema of browser specific features usage
  */
-export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | StartAction | StopAction | StartResource | StopResource;
+export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | StartAction | StopAction | StartResource | StopResource | SourceCodeContext;
 /**
  * Schema of mobile specific features usage
  */
@@ -917,6 +917,13 @@ export interface StopResource {
      * stopResource API
      */
     feature: 'stop-resource';
+    [k: string]: unknown;
+}
+export interface SourceCodeContext {
+    /**
+     * DD_SOURCE_CODE_CONTEXT global for microfrontends
+     */
+    feature: 'source-code-context';
     [k: string]: unknown;
 }
 export interface TrackWebView {
