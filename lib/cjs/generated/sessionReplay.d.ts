@@ -1674,7 +1674,7 @@ export interface CompositionTreeMutationData {
     readonly updates?: CompositionLayerUpdate[];
 }
 /**
- * Sparse update for a composition layer. Only id is required; omitted fields are unchanged. An empty modifiers array clears all modifiers. An empty children array clears all children.
+ * Sparse update for a composition layer. Omitted fields are unchanged.
  */
 export interface CompositionLayerUpdate {
     /**
@@ -1702,7 +1702,7 @@ export interface CompositionLayerUpdate {
      */
     readonly children?: CompositionLayerChild[];
     /**
-     * When present, replaces the full modifier list for this layer. An empty array clears all modifiers.
+     * When present, replaces the full modifier list for this layer.
      */
     readonly modifiers?: CompositionLayerModifier[];
     /**

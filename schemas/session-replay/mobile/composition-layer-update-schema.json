@@ -3,7 +3,7 @@
   "$id": "session-replay/mobile/composition-layer-update-schema.json",
   "title": "CompositionLayerUpdate",
   "type": "object",
-  "description": "Sparse update for a composition layer. Only id is required; omitted fields are unchanged. An empty modifiers array clears all modifiers. An empty children array clears all children.",
+  "description": "Sparse update for a composition layer. Omitted fields are unchanged.",
   "required": ["id"],
   "properties": {
     "id": {
@@ -44,7 +44,7 @@
       "items": {
         "$ref": "composition-layer-modifier-schema.json"
       },
-      "description": "When present, replaces the full modifier list for this layer. An empty array clears all modifiers.",
+      "description": "When present, replaces the full modifier list for this layer.",
       "readOnly": true
     },
     "compositeOperation": {
