@@ -28,7 +28,7 @@
       "items": {
         "type": "integer"
       },
-      "description": "Ids of layers to remove.",
+      "description": "Ids of layer definitions to remove. Removing a referenced layer also requires updating the parent or root child list.",
       "readOnly": true
     },
     "updates": {

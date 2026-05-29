@@ -1665,7 +1665,7 @@ export interface CompositionTreeMutationData {
      */
     readonly adds?: CompositionLayer[];
     /**
-     * Ids of layers to remove.
+     * Ids of layer definitions to remove. Removing a referenced layer also requires updating the parent or root child list.
      */
     readonly removes?: number[];
     /**
