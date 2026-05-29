@@ -1,0 +1,65 @@
+{
+  "timestamp": 1657618587157,
+  "type": 10,
+  "data": {
+    "wireframes": [
+      {
+        "id": 42,
+        "x": 20,
+        "y": 100,
+        "width": 240,
+        "height": 80,
+        "type": "shape"
+      },
+      {
+        "id": 43,
+        "x": 44,
+        "y": 124,
+        "width": 160,
+        "height": 24,
+        "type": "text",
+        "text": "Hello",
+        "textStyle": {
+          "family": "Arial",
+          "size": 16,
+          "type": "sans-serif",
+          "color": "#000000FF"
+        }
+      }
+    ],
+    "compositionTree": {
+      "root": {
+        "id": 1,
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "children": [{ "type": "layer", "id": 2 }]
+      },
+      "layers": [
+        {
+          "id": 2,
+          "x": 20,
+          "y": 100,
+          "width": 240,
+          "height": 80,
+          "modifiers": [
+            {
+              "type": "clip",
+              "path": "M 0 24 Q 0 0 24 0 H 216 Q 240 0 240 24 V 80 H 0 Z",
+              "fillRule": "nonzero"
+            },
+            {
+              "type": "opacity",
+              "value": 0.9
+            }
+          ],
+          "children": [
+            { "type": "wireframe", "id": 42 },
+            { "type": "wireframe", "id": 43 }
+          ]
+        }
+      ]
+    }
+  }
+}

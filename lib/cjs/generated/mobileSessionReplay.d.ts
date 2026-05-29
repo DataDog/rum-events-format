@@ -36,6 +36,7 @@ export type MobileFullSnapshotRecord = CommonRecordSchema & {
          * The Wireframes contained by this Record.
          */
         readonly wireframes: Wireframe[];
+        readonly compositionTree?: CompositionTree;
     };
 };
 /**
@@ -233,6 +234,10 @@ export type WebviewWireframe = CommonShapeWireframe & {
     readonly permanentId?: string;
 };
 /**
+ * A rendering modifier applied to the composed layer output.
+ */
+export type CompositionLayerModifier = CompositionLayerClipModifier | CompositionLayerOpacityModifier | CompositionLayerColorMatrixModifier | CompositionLayerGaussianBlurModifier | CompositionLayerBrightnessBiasModifier | CompositionLayerSaturateModifier | CompositionLayerBackgroundMaterialModifier;
+/**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
  */
 export type MobileIncrementalSnapshotRecord = CommonRecordSchema & {
@@ -245,7 +250,7 @@ export type MobileIncrementalSnapshotRecord = CommonRecordSchema & {
 /**
  * Mobile-specific. Schema of a Session Replay IncrementalData type.
  */
-export type MobileIncrementalData = MobileMutationData | TouchData | ViewportResizeData | PointerInteractionData;
+export type MobileIncrementalData = MobileMutationData | TouchData | ViewportResizeData | PointerInteractionData | CompositionTreeMutationData;
 /**
  * Mobile-specific. Schema of a MutationData.
  */
@@ -584,6 +589,185 @@ export interface WireframeClip {
     readonly right?: number;
 }
 /**
+ * Optional composition tree describing the rendering hierarchy. When present, the player uses this tree for rendering order and group operations.
+ */
+export interface CompositionTree {
+    root: CompositionLayer;
+    /**
+     * Non-root composition layers referenced by the tree.
+     */
+    readonly layers?: CompositionLayer[];
+}
+/**
+ * A rendering group that groups child wireframes and child layers. Does not draw pixels itself. Ordered rendering modifiers and compositing are applied to its composed output.
+ */
+export interface CompositionLayer {
+    /**
+     * Stable layer identifier, persistent throughout the view lifetime.
+     */
+    readonly id: number;
+    /**
+     * The position in pixels on the X axis of the layer in absolute coordinates. Uses the same coordinate space as mobile wireframes.
+     */
+    readonly x: number;
+    /**
+     * The position in pixels on the Y axis of the layer in absolute coordinates. Uses the same coordinate space as mobile wireframes.
+     */
+    readonly y: number;
+    /**
+     * The width in pixels of the layer. Uses the same coordinate space as mobile wireframes.
+     */
+    readonly width: number;
+    /**
+     * The height in pixels of the layer. Uses the same coordinate space as mobile wireframes.
+     */
+    readonly height: number;
+    /**
+     * Ordered back-to-front references to child wireframes or child layers.
+     */
+    readonly children: CompositionLayerChild[];
+    /**
+     * Ordered list of rendering modifiers applied to the composed layer output in array order.
+     */
+    readonly modifiers?: CompositionLayerModifier[];
+    /**
+     * Operation used when compositing the rendered group into its parent.
+     */
+    readonly compositeOperation?: 'sourceOver' | 'destinationIn' | 'plusDarker';
+}
+/**
+ * A reference to a child wireframe or child layer in a composition layer.
+ */
+export interface CompositionLayerChild {
+    /**
+     * The type of the child reference.
+     */
+    readonly type: 'wireframe' | 'layer';
+    /**
+     * The id of the referenced wireframe or layer.
+     */
+    readonly id: number;
+}
+/**
+ * Geometric clipping applied to the composed layer output, in coordinates local to the layer rectangle.
+ */
+export interface CompositionLayerClipModifier {
+    /**
+     * The type of the modifier.
+     */
+    readonly type: 'clip';
+    /**
+     * SVG path string defining the clip region, in coordinates local to the layer rectangle.
+     */
+    readonly path: string;
+    /**
+     * Path fill rule. Defaults to 'nonzero'.
+     */
+    readonly fillRule?: 'nonzero' | 'evenodd';
+}
+/**
+ * Opacity applied to the composed layer output at this point in the modifier order.
+ */
+export interface CompositionLayerOpacityModifier {
+    /**
+     * The type of the modifier.
+     */
+    readonly type: 'opacity';
+    /**
+     * Opacity value from 0 to 1.
+     */
+    readonly value: number;
+}
+/**
+ * Color transformation using a 4x5 matrix applied to the composed layer output.
+ */
+export interface CompositionLayerColorMatrixModifier {
+    /**
+     * The type of the modifier.
+     */
+    readonly type: 'colorMatrix';
+    /**
+     * 4x5 color matrix encoded as 20 numbers in row-major order. Input and output color channels are normalized to [0, 1]. The transform for each output channel is: R' = m[0]*R + m[1]*G + m[2]*B + m[3]*A + m[4], G' = m[5]*R + m[6]*G + m[7]*B + m[8]*A + m[9], B' = m[10]*R + m[11]*G + m[12]*B + m[13]*A + m[14], A' = m[15]*R + m[16]*G + m[17]*B + m[18]*A + m[19]. Each output channel is clamped to [0, 1] after evaluation.
+     *
+     * @minItems 20
+     * @maxItems 20
+     */
+    readonly matrix: [
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number,
+        number
+    ];
+}
+/**
+ * Gaussian blur applied to the composed layer output.
+ */
+export interface CompositionLayerGaussianBlurModifier {
+    /**
+     * The type of the modifier.
+     */
+    readonly type: 'gaussianBlur';
+    /**
+     * Gaussian blur radius.
+     */
+    readonly radius: number;
+}
+/**
+ * Adds a signed brightness bias to the rendered layer contents.
+ */
+export interface CompositionLayerBrightnessBiasModifier {
+    /**
+     * The type of the modifier.
+     */
+    readonly type: 'brightnessBias';
+    /**
+     * Brightness bias from -1 to 1 added to each normalized RGB channel (alpha is unchanged). 0 leaves content unchanged. Positive values brighten; negative values darken. Each channel is clamped to [0, 1] after the bias is applied.
+     */
+    readonly value: number;
+}
+/**
+ * Applies a saturation adjustment to the rendered layer contents.
+ */
+export interface CompositionLayerSaturateModifier {
+    /**
+     * The type of the modifier.
+     */
+    readonly type: 'saturate';
+    /**
+     * Saturation multiplier. 1 leaves content unchanged. 0 removes saturation.
+     */
+    readonly value: number;
+}
+/**
+ * Represents a platform background material effect captured as layer rendering state.
+ */
+export interface CompositionLayerBackgroundMaterialModifier {
+    /**
+     * The type of the modifier.
+     */
+    readonly type: 'backgroundMaterial';
+    /**
+     * Material kind.
+     */
+    readonly kind: 'glass';
+}
+/**
  * Mobile-specific. Schema of a MutationPayload.
  */
 export interface MobileMutationPayload {
@@ -674,4 +858,63 @@ export interface PointerInteraction {
      * Y-axis coordinate for this PointerInteraction.
      */
     y: number;
+}
+/**
+ * Mobile-specific. Incremental data carrying composition tree layer mutations.
+ */
+export interface CompositionTreeMutationData {
+    /**
+     * The source of this type of incremental data.
+     */
+    readonly source: 10;
+    root?: CompositionLayer;
+    /**
+     * Full layer definitions for newly added layers.
+     */
+    readonly adds?: CompositionLayer[];
+    /**
+     * Ids of layers to remove.
+     */
+    readonly removes?: number[];
+    /**
+     * Sparse updates for existing layers.
+     */
+    readonly updates?: CompositionLayerUpdate[];
+}
+/**
+ * Sparse update for a composition layer. Only id is required; omitted fields are unchanged. An empty modifiers array clears all modifiers. An empty children array clears all children.
+ */
+export interface CompositionLayerUpdate {
+    /**
+     * The id of the layer to update.
+     */
+    readonly id: number;
+    /**
+     * Updated X position in absolute coordinates. Uses the same coordinate space as mobile wireframes.
+     */
+    readonly x?: number;
+    /**
+     * Updated Y position in absolute coordinates. Uses the same coordinate space as mobile wireframes.
+     */
+    readonly y?: number;
+    /**
+     * Updated width in pixels. Uses the same coordinate space as mobile wireframes.
+     */
+    readonly width?: number;
+    /**
+     * Updated height in pixels. Uses the same coordinate space as mobile wireframes.
+     */
+    readonly height?: number;
+    /**
+     * When present, replaces the full child list for this layer.
+     */
+    readonly children?: CompositionLayerChild[];
+    /**
+     * When present, replaces the full modifier list for this layer. An empty array clears all modifiers.
+     */
+    readonly modifiers?: CompositionLayerModifier[];
+    /**
+     * Updated composite operation for this layer.
+     */
+    readonly compositeOperation?: 'sourceOver' | 'destinationIn' | 'plusDarker';
 }
