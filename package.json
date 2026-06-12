@@ -1,5 +1,6 @@
 {
   "private": true,
+  "name": "@datadog/rum-events-format",
   "license": "Apache-2.0 (See ./LICENSE)",
   "workspaces": [
     "lib"
