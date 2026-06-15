@@ -1562,6 +1562,19 @@ export interface ProfilingInternalContextSchema {
      * - `unexpected-exception`: An exception occurred when starting the Profiler.
      */
     readonly error_reason?: 'not-supported-by-browser' | 'failed-to-lazy-load' | 'missing-document-policy-header' | 'unexpected-exception';
+    /**
+     * The reason provided by the profiling quota admission API. This attribute is only present if the status is `stopped` due to quota.
+     *
+     * Possible values:
+     * - `quota_ok`: Quota check passed.
+     * - `quota_exceeded`: The organization has exceeded its profiling quota.
+     * - `org_disabled`: The organization has profiling disabled.
+     * - `backend_unavailable`: The quota admission API is unavailable or not initialized.
+     * - `undefined`: The quota reason is undefined.
+     * - `timeout`: The quota check timed out on the client side.
+     * - `api-error`: An API error occurred on the client side.
+     */
+    readonly quota_reason?: 'quota_ok' | 'quota_exceeded' | 'org_disabled' | 'backend_unavailable' | 'undefined' | 'timeout' | 'api-error';
     [k: string]: unknown;
 }
 /**
