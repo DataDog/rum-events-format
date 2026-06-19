@@ -836,14 +836,7 @@ export type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema
         };
         [k: string]: unknown;
     };
-    /**
-     * Internal properties
-     */
-    readonly _dd: {
-        /**
-         * Version of the update of the view event
-         */
-        readonly document_version: number;
+    _dd: {
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -856,16 +849,6 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
      * RUM event type
      */
     readonly type: 'view_update';
-    /**
-     * Internal properties
-     */
-    readonly _dd?: {
-        /**
-         * Version of the update of the view event
-         */
-        readonly document_version: number;
-        [k: string]: unknown;
-    };
     [k: string]: unknown;
 };
 export type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationStepEvent | RumVitalAppLaunchEvent;
@@ -1901,6 +1884,10 @@ export interface ViewProperties {
      * Internal properties
      */
     readonly _dd?: {
+        /**
+         * Version of the update of the view event
+         */
+        readonly document_version: number;
         /**
          * List of the page states during the view
          */
