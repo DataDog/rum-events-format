@@ -972,6 +972,10 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
             readonly start_session_replay_recording_manually?: boolean;
             [k: string]: unknown;
         };
+        /**
+         * Profiling context
+         */
+        profiling?: ProfilingInternalContextSchema;
         [k: string]: unknown;
     };
     [k: string]: unknown;
