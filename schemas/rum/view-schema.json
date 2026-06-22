@@ -37,7 +37,8 @@
           }
         },
         "_dd": {
-          "type": "object"
+          "type": "object",
+          "readOnly": true
         }
       }
     }

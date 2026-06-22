@@ -836,7 +836,7 @@ export type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema
         };
         [k: string]: unknown;
     };
-    _dd: {
+    readonly _dd: {
         [k: string]: unknown;
     };
     [k: string]: unknown;
