@@ -82,8 +82,8 @@
   "_dd": {
     "format_version": 2,
     "debug_ids": [
-      { "https://service-a.js": "5f4b4d0a-3f9a-4b86-9f53-8f7e9a5c7d21" },
-      { "https://shell-app.js": "1d93a8f4-2c75-4b8e-a641-9e5f3d7c0b28" }
+      { "https://foo.com/service-a.js": "5f4b4d0a-3f9a-4b86-9f53-8f7e9a5c7d21" },
+      { "https://bar.com/shell-app.js": "1d93a8f4-2c75-4b8e-a641-9e5f3d7c0b28" }
     ]
   }
 }
