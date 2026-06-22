@@ -468,6 +468,15 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
          * Profiling context
          */
         profiling?: ProfilingInternalContextSchema;
+        /**
+         * Mapping of source file URLs to their debug IDs for source map deobfuscation
+         */
+        readonly debug_ids?: {
+            /**
+             * Debug ID (UUID) for the source file
+             */
+            [k: string]: string;
+        }[];
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -584,6 +593,15 @@ export type RumLongTaskEvent = CommonProperties & ActionChildProperties & ViewCo
          * Profiling context
          */
         profiling?: ProfilingInternalContextSchema;
+        /**
+         * Mapping of source file URLs to their debug IDs for source map deobfuscation
+         */
+        readonly debug_ids?: {
+            /**
+             * Debug ID (UUID) for the source file
+             */
+            [k: string]: string;
+        }[];
         [k: string]: unknown;
     };
     [k: string]: unknown;
