@@ -27,18 +27,7 @@
           "readOnly": true
         },
         "_dd": {
-          "type": "object",
-          "description": "Internal properties",
-          "required": ["document_version"],
-          "properties": {
-            "document_version": {
-              "type": "integer",
-              "description": "Version of the update of the view event",
-              "minimum": 0,
-              "readOnly": true
-            }
-          },
-          "readOnly": true
+          "$ref": "./_dd-view-fields-schema.json"
         }
       }
     }
