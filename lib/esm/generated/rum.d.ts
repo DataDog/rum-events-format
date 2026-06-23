@@ -854,70 +854,7 @@ export type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema
         };
         [k: string]: unknown;
     };
-    /**
-     * Internal properties
-     */
     readonly _dd: {
-        /**
-         * Version of the update of the view event
-         */
-        readonly document_version: number;
-        /**
-         * List of the page states during the view
-         */
-        readonly page_states?: {
-            /**
-             * Page state name
-             */
-            readonly state: 'active' | 'passive' | 'hidden' | 'frozen' | 'terminated';
-            /**
-             * Duration in ns between start of the view and start of the page state
-             */
-            readonly start: number;
-            [k: string]: unknown;
-        }[];
-        /**
-         * Debug metadata for Replay Sessions
-         */
-        replay_stats?: {
-            /**
-             * The number of records produced during this view lifetime
-             */
-            records_count?: number;
-            /**
-             * The number of segments sent during this view lifetime
-             */
-            segments_count?: number;
-            /**
-             * The total size in bytes of the segments sent during this view lifetime
-             */
-            segments_total_raw_size?: number;
-            [k: string]: unknown;
-        };
-        /**
-         * Additional information of the reported Cumulative Layout Shift
-         */
-        readonly cls?: {
-            /**
-             * Pixel ratio of the device where the layout shift was reported
-             */
-            readonly device_pixel_ratio?: number;
-            [k: string]: unknown;
-        };
-        /**
-         * Subset of the SDK configuration options in use during its execution
-         */
-        readonly configuration?: {
-            /**
-             * Whether session replay recording configured to start manually
-             */
-            readonly start_session_replay_recording_manually?: boolean;
-            [k: string]: unknown;
-        };
-        /**
-         * Profiling context
-         */
-        profiling?: ProfilingInternalContextSchema;
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -930,16 +867,6 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
      * RUM event type
      */
     readonly type: 'view_update';
-    /**
-     * Internal properties
-     */
-    readonly _dd?: {
-        /**
-         * Version of the update of the view event
-         */
-        readonly document_version: number;
-        [k: string]: unknown;
-    };
     [k: string]: unknown;
 };
 export type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationStepEvent | RumVitalAppLaunchEvent;
@@ -1969,6 +1896,72 @@ export interface ViewProperties {
             readonly max_scroll_height_time: number;
             [k: string]: unknown;
         };
+        [k: string]: unknown;
+    };
+    /**
+     * Internal properties
+     */
+    readonly _dd?: {
+        /**
+         * Version of the update of the view event
+         */
+        readonly document_version: number;
+        /**
+         * List of the page states during the view
+         */
+        readonly page_states?: {
+            /**
+             * Page state name
+             */
+            readonly state: 'active' | 'passive' | 'hidden' | 'frozen' | 'terminated';
+            /**
+             * Duration in ns between start of the view and start of the page state
+             */
+            readonly start: number;
+            [k: string]: unknown;
+        }[];
+        /**
+         * Debug metadata for Replay Sessions
+         */
+        replay_stats?: {
+            /**
+             * The number of records produced during this view lifetime
+             */
+            records_count?: number;
+            /**
+             * The number of segments sent during this view lifetime
+             */
+            segments_count?: number;
+            /**
+             * The total size in bytes of the segments sent during this view lifetime
+             */
+            segments_total_raw_size?: number;
+            [k: string]: unknown;
+        };
+        /**
+         * Additional information of the reported Cumulative Layout Shift
+         */
+        readonly cls?: {
+            /**
+             * Pixel ratio of the device where the layout shift was reported
+             */
+            readonly device_pixel_ratio?: number;
+            [k: string]: unknown;
+        };
+        /**
+         * Subset of the SDK configuration options in use during its execution
+         */
+        readonly configuration?: {
+            /**
+             * Whether session replay recording configured to start manually
+             */
+            readonly start_session_replay_recording_manually?: boolean;
+            [k: string]: unknown;
+        };
+        /**
+         * Profiling context
+         */
+        profiling?: ProfilingInternalContextSchema;
         [k: string]: unknown;
     };
     [k: string]: unknown;
