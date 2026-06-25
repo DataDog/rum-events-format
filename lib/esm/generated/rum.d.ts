@@ -476,7 +476,7 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
              * Debug ID (UUID) for the source file
              */
             [k: string]: string;
-        }[];
+        };
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -601,7 +601,7 @@ export type RumLongTaskEvent = CommonProperties & ActionChildProperties & ViewCo
              * Debug ID (UUID) for the source file
              */
             [k: string]: string;
-        }[];
+        };
         [k: string]: unknown;
     };
     [k: string]: unknown;
