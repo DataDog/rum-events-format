@@ -18,6 +18,9 @@
       "$ref": "composition-layer-gaussian-blur-modifier-schema.json"
     },
     {
+      "$ref": "composition-layer-shadow-modifier-schema.json"
+    },
+    {
       "$ref": "composition-layer-brightness-bias-modifier-schema.json"
     },
     {
