@@ -60,6 +60,10 @@
             {
               "type": "opacity",
               "value": 0.9
+            },
+            {
+              "type": "maskImage",
+              "resourceId": "maskResourceIdMock"
             }
           ],
           "children": [
