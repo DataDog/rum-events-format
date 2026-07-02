@@ -236,7 +236,7 @@ export type WebviewWireframe = CommonShapeWireframe & {
 /**
  * A rendering modifier applied to the composed layer output.
  */
-export type CompositionLayerModifier = CompositionLayerClipModifier | CompositionLayerOpacityModifier | CompositionLayerColorMatrixModifier | CompositionLayerGaussianBlurModifier | CompositionLayerBrightnessBiasModifier | CompositionLayerSaturateModifier | CompositionLayerBackgroundMaterialModifier;
+export type CompositionLayerModifier = CompositionLayerClipModifier | CompositionLayerOpacityModifier | CompositionLayerColorMatrixModifier | CompositionLayerGaussianBlurModifier | CompositionLayerShadowModifier | CompositionLayerBrightnessBiasModifier | CompositionLayerSaturateModifier | CompositionLayerBackgroundMaterialModifier;
 /**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
  */
@@ -727,6 +727,35 @@ export interface CompositionLayerGaussianBlurModifier {
      * Gaussian blur radius.
      */
     readonly radius: number;
+}
+/**
+ * Drop shadow drawn behind the composed layer output.
+ */
+export interface CompositionLayerShadowModifier {
+    /**
+     * The type of the modifier.
+     */
+    readonly type: 'shadow';
+    /**
+     * The shadow color as a String hexadecimal. Follows the #RRGGBBAA color format with the alpha value as optional. SDKs should encode the effective shadow alpha in this color and omit the shadow modifier when the effective alpha is 0.
+     */
+    readonly color: string;
+    /**
+     * Horizontal shadow offset in pixels.
+     */
+    readonly offsetX: number;
+    /**
+     * Vertical shadow offset in pixels.
+     */
+    readonly offsetY: number;
+    /**
+     * Blur radius used to create the shadow.
+     */
+    readonly radius: number;
+    /**
+     * Optional SVG path string defining the shadow outline, in coordinates local to the layer rectangle. When present, the path is interpreted using the non-zero winding rule. When omitted, the shadow follows the composed layer alpha.
+     */
+    readonly path?: string;
 }
 /**
  * Adds a signed brightness bias to the rendered layer contents.

@@ -50,6 +50,14 @@
               "fillRule": "nonzero"
             },
             {
+              "type": "shadow",
+              "color": "#00000040",
+              "offsetX": 0,
+              "offsetY": 2,
+              "radius": 8,
+              "path": "M 0 24 Q 0 0 24 0 H 216 Q 240 0 240 24 V 80 H 0 Z"
+            },
+            {
               "type": "opacity",
               "value": 0.9
             }
