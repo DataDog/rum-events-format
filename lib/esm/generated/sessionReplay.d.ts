@@ -234,9 +234,7 @@ export type AddStyleSheetChange = StyleSheetSnapshot;
  *
  * @minItems 1
  */
-export type StyleSheetSnapshot = [
-    StyleSheetRules
-] | [StyleSheetRules, StyleSheetMediaList] | [StyleSheetRules, StyleSheetMediaList, boolean];
+export type StyleSheetSnapshot = [StyleSheetRules] | [StyleSheetRules, StyleSheetMediaList] | [StyleSheetRules, StyleSheetMediaList, boolean];
 /**
  * Schema representing a CSS stylesheet's rules, encoded either as a single string or as an array containing a separate string for each rule.
  */

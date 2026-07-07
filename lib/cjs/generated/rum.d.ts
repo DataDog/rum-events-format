@@ -471,12 +471,17 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
         /**
          * Mapping of source file URLs to their debug IDs for source map deobfuscation
          */
-        readonly debug_ids?: {
+        debug_ids?: {
+            /**
+             * URL of the source file
+             */
+            url: string;
             /**
              * Debug ID (UUID) for the source file
              */
-            [k: string]: string;
-        };
+            id: string;
+            [k: string]: unknown;
+        }[];
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -596,12 +601,17 @@ export type RumLongTaskEvent = CommonProperties & ActionChildProperties & ViewCo
         /**
          * Mapping of source file URLs to their debug IDs for source map deobfuscation
          */
-        readonly debug_ids?: {
+        debug_ids?: {
+            /**
+             * URL of the source file
+             */
+            url: string;
             /**
              * Debug ID (UUID) for the source file
              */
-            [k: string]: string;
-        };
+            id: string;
+            [k: string]: unknown;
+        }[];
         [k: string]: unknown;
     };
     [k: string]: unknown;
