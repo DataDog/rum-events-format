@@ -80,6 +80,10 @@
     "effective_type": "4g"
   },
   "_dd": {
-    "format_version": 2
+    "format_version": 2,
+    "debug_ids": [
+      { "url": "https://foo.com/service-a.js", "id": "5f4b4d0a-3f9a-4b86-9f53-8f7e9a5c7d21" },
+      { "url": "https://bar.com/shell-app.js", "id": "1d93a8f4-2c75-4b8e-a641-9e5f3d7c0b28" }
+    ]
   }
 }

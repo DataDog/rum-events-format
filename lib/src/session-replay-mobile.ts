@@ -8,6 +8,7 @@ export const MobileSource = {
   Flutter: 'flutter',
   ReactNative: 'react-native',
   KotlinMultiplatform: 'kotlin-multiplatform',
+  Maui: 'maui',
 } as const
 
 export type MobileSource = (typeof MobileSource)[keyof typeof MobileSource]

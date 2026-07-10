@@ -17,21 +17,29 @@ jobs:
 
       - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a
         with:
-          node-version: 23
+          node-version: 26
 
       - name: Install dependencies
         run: yarn
 
       - name: Update rum-events-format
-        run: |
-          cd rum-events-format
-          git checkout ${{ github.sha }}
-          cd ..
-          yarn json-schemas:generate
+        run: node scripts/json-schemas.ts --update ${{ github.sha }} --build
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Run ${{matrix.test_type}} tests
-        run: eval $command_${{matrix.test_type}}
-        env:
-          command_unit: 'yarn test:unit'
-          command_e2e: 'yarn test:e2e:ci --workers 10 --grep-invert "salesforce"'
-          command_build: 'yarn typecheck'
+        run: |
+          case "${{ matrix.test_type }}" in
+            unit)
+              yarn test:unit
+              ;;
+            e2e)
+              yarn build
+              yarn build:apps
+              yarn playwright install --with-deps chromium
+              yarn test:e2e --workers 10 --project chromium
+              ;;
+            typecheck)
+              yarn typecheck
+              ;;
+          esac

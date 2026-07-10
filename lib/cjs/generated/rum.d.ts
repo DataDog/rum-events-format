@@ -144,7 +144,7 @@ export type RumActionEvent = CommonProperties & ViewContainerSchema & {
                  */
                 readonly height?: number;
                 /**
-                 * Mobile-only: a globally unique and stable identifier for this UI element, computed as the hash of the element's path (32 lowercase hex characters). Used to correlate actions with mobile session replay wireframes.
+                 * Mobile-only: a globally unique and stable identifier for this UI element, computed as the hash of the element's path. Used to correlate actions with mobile session replay wireframes.
                  */
                 readonly permanent_id?: string;
                 [k: string]: unknown;
@@ -290,7 +290,7 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
         /**
          * Source type of the error (the language or platform impacting the error stacktrace format)
          */
-        readonly source_type?: 'android' | 'browser' | 'ios' | 'react-native' | 'flutter' | 'roku' | 'ndk' | 'ios+il2cpp' | 'ndk+il2cpp' | 'windows' | 'macos' | 'linux';
+        readonly source_type?: 'android' | 'browser' | 'ios' | 'react-native' | 'flutter' | 'roku' | 'ndk' | 'ios+il2cpp' | 'ndk+il2cpp' | 'windows' | 'macos' | 'linux' | 'maui';
         /**
          * Resource properties of the error
          */
@@ -468,6 +468,20 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
          * Profiling context
          */
         profiling?: ProfilingInternalContextSchema;
+        /**
+         * Mapping of source file URLs to their debug IDs for source map deobfuscation
+         */
+        debug_ids?: {
+            /**
+             * URL of the source file
+             */
+            url: string;
+            /**
+             * Debug ID (UUID) for the source file
+             */
+            id: string;
+            [k: string]: unknown;
+        }[];
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -584,6 +598,20 @@ export type RumLongTaskEvent = CommonProperties & ActionChildProperties & ViewCo
          * Profiling context
          */
         profiling?: ProfilingInternalContextSchema;
+        /**
+         * Mapping of source file URLs to their debug IDs for source map deobfuscation
+         */
+        debug_ids?: {
+            /**
+             * URL of the source file
+             */
+            url: string;
+            /**
+             * Debug ID (UUID) for the source file
+             */
+            id: string;
+            [k: string]: unknown;
+        }[];
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -783,7 +811,7 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
             /**
              * HTTP headers of the resource request
              */
-            readonly headers?: {
+            headers?: {
                 [k: string]: string;
             };
             [k: string]: unknown;
@@ -795,7 +823,7 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
             /**
              * HTTP headers of the resource response
              */
-            readonly headers?: {
+            headers?: {
                 [k: string]: string;
             };
             [k: string]: unknown;
@@ -836,70 +864,7 @@ export type RumViewEvent = CommonProperties & ViewContainerSchema & StreamSchema
         };
         [k: string]: unknown;
     };
-    /**
-     * Internal properties
-     */
     readonly _dd: {
-        /**
-         * Version of the update of the view event
-         */
-        readonly document_version: number;
-        /**
-         * List of the page states during the view
-         */
-        readonly page_states?: {
-            /**
-             * Page state name
-             */
-            readonly state: 'active' | 'passive' | 'hidden' | 'frozen' | 'terminated';
-            /**
-             * Duration in ns between start of the view and start of the page state
-             */
-            readonly start: number;
-            [k: string]: unknown;
-        }[];
-        /**
-         * Debug metadata for Replay Sessions
-         */
-        replay_stats?: {
-            /**
-             * The number of records produced during this view lifetime
-             */
-            records_count?: number;
-            /**
-             * The number of segments sent during this view lifetime
-             */
-            segments_count?: number;
-            /**
-             * The total size in bytes of the segments sent during this view lifetime
-             */
-            segments_total_raw_size?: number;
-            [k: string]: unknown;
-        };
-        /**
-         * Additional information of the reported Cumulative Layout Shift
-         */
-        readonly cls?: {
-            /**
-             * Pixel ratio of the device where the layout shift was reported
-             */
-            readonly device_pixel_ratio?: number;
-            [k: string]: unknown;
-        };
-        /**
-         * Subset of the SDK configuration options in use during its execution
-         */
-        readonly configuration?: {
-            /**
-             * Whether session replay recording configured to start manually
-             */
-            readonly start_session_replay_recording_manually?: boolean;
-            [k: string]: unknown;
-        };
-        /**
-         * Profiling context
-         */
-        profiling?: ProfilingInternalContextSchema;
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -912,16 +877,6 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
      * RUM event type
      */
     readonly type: 'view_update';
-    /**
-     * Internal properties
-     */
-    readonly _dd?: {
-        /**
-         * Version of the update of the view event
-         */
-        readonly document_version: number;
-        [k: string]: unknown;
-    };
     [k: string]: unknown;
 };
 export type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationStepEvent | RumVitalAppLaunchEvent;
@@ -1110,7 +1065,7 @@ export interface CommonProperties {
     /**
      * The source of this event
      */
-    readonly source?: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp';
+    readonly source?: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp' | 'maui';
     /**
      * View properties
      */
@@ -1436,7 +1391,7 @@ export interface ViewContainerSchema {
         /**
          * Source of the parent view
          */
-        readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp';
+        readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp' | 'maui';
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -1562,6 +1517,19 @@ export interface ProfilingInternalContextSchema {
      * - `unexpected-exception`: An exception occurred when starting the Profiler.
      */
     readonly error_reason?: 'not-supported-by-browser' | 'failed-to-lazy-load' | 'missing-document-policy-header' | 'unexpected-exception';
+    /**
+     * The reason provided by the profiling quota admission API. This attribute is only present if the status is `stopped` due to quota.
+     *
+     * Possible values:
+     * - `quota_ok`: Quota check passed.
+     * - `quota_exceeded`: The organization has exceeded its profiling quota.
+     * - `org_disabled`: The organization has profiling disabled.
+     * - `backend_unavailable`: The quota admission API is unavailable or not initialized.
+     * - `undefined`: The quota reason is undefined.
+     * - `timeout`: The quota check timed out on the client side.
+     * - `api-error`: An API error occurred on the client side.
+     */
+    readonly quota_reason?: 'quota_ok' | 'quota_exceeded' | 'org_disabled' | 'backend_unavailable' | 'undefined' | 'timeout' | 'api-error';
     [k: string]: unknown;
 }
 /**
@@ -1631,7 +1599,7 @@ export interface ViewProperties {
         /**
          * Type of the loading of the view
          */
-        readonly loading_type?: 'initial_load' | 'route_change' | 'activity_display' | 'activity_redisplay' | 'fragment_display' | 'fragment_redisplay' | 'view_controller_display' | 'view_controller_redisplay';
+        readonly loading_type?: 'initial_load' | 'route_change' | 'activity_display' | 'activity_redisplay' | 'fragment_display' | 'fragment_redisplay' | 'view_controller_display' | 'view_controller_redisplay' | 'session_renewal' | 'bf_cache';
         /**
          * Time spent on the view in ns
          */
@@ -1938,6 +1906,76 @@ export interface ViewProperties {
             readonly max_scroll_height_time: number;
             [k: string]: unknown;
         };
+        [k: string]: unknown;
+    };
+    /**
+     * Internal properties
+     */
+    readonly _dd?: {
+        /**
+         * Version of the update of the view event
+         */
+        readonly document_version: number;
+        /**
+         * List of the page states during the view
+         */
+        readonly page_states?: {
+            /**
+             * Page state name
+             */
+            readonly state: 'active' | 'passive' | 'hidden' | 'frozen' | 'terminated';
+            /**
+             * Duration in ns between start of the view and start of the page state
+             */
+            readonly start: number;
+            [k: string]: unknown;
+        }[];
+        /**
+         * Debug metadata for Replay Sessions
+         */
+        replay_stats?: {
+            /**
+             * The number of records produced during this view lifetime
+             */
+            records_count?: number;
+            /**
+             * The number of segments sent during this view lifetime
+             */
+            segments_count?: number;
+            /**
+             * The total size in bytes of the segments sent during this view lifetime
+             */
+            segments_total_raw_size?: number;
+            [k: string]: unknown;
+        };
+        /**
+         * Additional information of the reported Cumulative Layout Shift
+         */
+        readonly cls?: {
+            /**
+             * Pixel ratio of the device where the layout shift was reported
+             */
+            readonly device_pixel_ratio?: number;
+            [k: string]: unknown;
+        };
+        /**
+         * Subset of the SDK configuration options in use during its execution
+         */
+        readonly configuration?: {
+            /**
+             * Whether session replay recording configured to start manually
+             */
+            readonly start_session_replay_recording_manually?: boolean;
+            /**
+             * The id of the remote configuration applied to the SDK, if any
+             */
+            readonly remote_configuration_id?: string;
+            [k: string]: unknown;
+        };
+        /**
+         * Profiling context
+         */
+        profiling?: ProfilingInternalContextSchema;
         [k: string]: unknown;
     };
     [k: string]: unknown;

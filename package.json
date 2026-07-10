@@ -1,5 +1,6 @@
 {
   "private": true,
+  "name": "@datadog/rum-events-format",
   "license": "Apache-2.0 (See ./LICENSE)",
   "workspaces": [
     "lib"
@@ -23,10 +24,11 @@
     "typescript": "^5.9.3"
   },
   "engines": {
-    "node": ">=12.7.0"
+    "node": ">=22.0.0"
   },
   "volta": {
-    "node": "20.10.0",
-    "yarn": "1.22.19"
-  }
+    "node": "26.3.0",
+    "yarn": "4.16.0"
+  },
+  "packageManager": "yarn@4.16.0"
 }

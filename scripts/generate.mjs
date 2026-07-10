@@ -28,6 +28,7 @@ const DEFINITIONS = [
   { source: 'profiling-browser-schema.json', name: 'browserProfiling' },
   { source: 'profiling-mobile-schema.json', name: 'mobileProfiling' },
   { source: 'profiling-schema.json', name: 'profiling' },
+  { source: 'profiling-mobile-rum-metadata-event-schema.json', name: 'mobileProfilingRumMetadata' },
 ]
 
 const GENERATED_PATH = path.normalize(pkg.config['path:generated'])
@@ -83,9 +84,14 @@ async function getJsonSchemaToTypescript() {
         # due to installation on node_modules, some of these steps can fail
         # built version still behaves correctly though
         set +e
-        yarn
-        yarn run clean
-        yarn run build:server
+        npm i
+        npm run clean
+
+        # With yarn 3+, the 'test/' folder is not present, so all built files are put directly in the
+        # 'dist/' folder instead of 'dist/src/'.
+        #
+        # Using an explicit '--rootDir' fixes this issue.
+        npm exec -- tsc --declaration --rootDir .
         set -e
       `,
       {

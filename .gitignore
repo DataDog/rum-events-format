@@ -2,3 +2,13 @@ node_modules
 # Generate defintions out of schemas by running `yarn generate`
 lib/generated
 */.DS_Store
+
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+

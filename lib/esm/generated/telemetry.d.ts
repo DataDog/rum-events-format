@@ -380,6 +380,10 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             unity_version?: string;
             /**
+             * The version of MAUI used in a .NET MAUI application
+             */
+            maui_version?: string;
+            /**
              * The threshold used for iOS App Hangs monitoring (in milliseconds)
              */
             app_hang_threshold?: number;
@@ -438,7 +442,7 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             sdk_version?: string;
             /**
-             * The source of the SDK, e.g., 'browser', 'ios', 'android', 'flutter', 'react-native', 'unity', 'kotlin-multiplatform'.
+             * The source of the SDK, e.g., 'browser', 'ios', 'android', 'flutter', 'react-native', 'unity', 'kotlin-multiplatform', 'maui'.
              */
             source?: string;
             /**
@@ -462,9 +466,17 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             propagate_trace_baggage?: boolean;
             /**
+             * How the SDK tracks resource request/response headers
+             */
+            track_resource_headers?: 'default_headers' | 'custom';
+            /**
              * Whether the beta encode cookie options is enabled
              */
             beta_encode_cookie_options?: boolean;
+            /**
+             * Whether the beta partial view updates feature is enabled
+             */
+            beta_enable_view_updates?: boolean;
             [k: string]: unknown;
         };
         [k: string]: unknown;
@@ -495,7 +507,7 @@ export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | St
 /**
  * Schema of browser specific features usage
  */
-export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | StartAction | StopAction | StartResource | StopResource;
+export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | StartAction | StopAction | StartResource | StopResource | SourceCodeContext;
 /**
  * Schema of mobile specific features usage
  */
@@ -529,7 +541,7 @@ export interface CommonTelemetryProperties {
     /**
      * The source of this event
      */
-    readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp';
+    readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp' | 'maui';
     /**
      * The version of the SDK generating the telemetry event
      */
@@ -571,7 +583,7 @@ export interface CommonTelemetryProperties {
         /**
          * UUID of the action
          */
-        id: string;
+        readonly id: string | string[];
         [k: string]: unknown;
     };
     /**
@@ -911,6 +923,13 @@ export interface StopResource {
     feature: 'stop-resource';
     [k: string]: unknown;
 }
+export interface SourceCodeContext {
+    /**
+     * DD_SOURCE_CODE_CONTEXT global for microfrontends
+     */
+    feature: 'source-code-context';
+    [k: string]: unknown;
+}
 export interface TrackWebView {
     /**
      * trackWebView API
@@ -926,6 +945,6 @@ export interface AndroidNetworkInstrumentation {
     /**
      * The network instrumentation API used
      */
-    type: 'CRONET' | 'OKHTTP';
+    type: 'CRONET' | 'OKHTTP' | 'LEGACY_OKHTTP';
     [k: string]: unknown;
 }

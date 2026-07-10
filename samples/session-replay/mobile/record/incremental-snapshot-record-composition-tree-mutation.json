@@ -1,0 +1,51 @@
+{
+  "timestamp": 1657620232337,
+  "type": 11,
+  "data": {
+    "source": 10,
+    "root": {
+      "id": 1,
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 844,
+      "children": [
+        { "type": "layer", "id": 2 },
+        { "type": "layer", "id": 3 }
+      ]
+    },
+    "adds": [
+      {
+        "id": 3,
+        "x": 10,
+        "y": 200,
+        "width": 100,
+        "height": 50,
+        "children": [],
+        "modifiers": [
+          {
+            "type": "gaussianBlur",
+            "radius": 8
+          }
+        ],
+        "compositeOperation": "sourceOver"
+      }
+    ],
+    "removes": [4],
+    "updates": [
+      {
+        "id": 2,
+        "modifiers": [
+          {
+            "type": "clip",
+            "path": "M 0 16 Q 0 0 16 0 H 224 Q 240 0 240 16 V 80 H 0 Z"
+          }
+        ],
+        "children": [
+          { "type": "wireframe", "id": 42 },
+          { "type": "wireframe", "id": 43 }
+        ]
+      }
+    ]
+  }
+}
