@@ -22,6 +22,7 @@
       "readOnly": true
     },
     "startPoint": {
+      "description": "The point where position 0 of the gradient is placed.",
       "readOnly": true,
       "allOf": [
         {
@@ -30,6 +31,7 @@
       ]
     },
     "endPoint": {
+      "description": "The point where position 1 of the gradient is placed.",
       "readOnly": true,
       "allOf": [
         {

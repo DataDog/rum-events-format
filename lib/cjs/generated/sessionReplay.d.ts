@@ -638,6 +638,9 @@ export type ShapeStyle = {
      * The background color for this wireframe as a String hexadecimal. Follows the #RRGGBBAA color format with the alpha value as optional. The default value is #FFFFFF00.
      */
     readonly backgroundColor?: string;
+    /**
+     * The background gradient for this wireframe.
+     */
     readonly backgroundGradient?: ShapeGradient;
     /**
      * The opacity of this wireframe. Takes values from 0 to 1, default value is 1.
@@ -1439,7 +1442,13 @@ export interface ShapeLinearGradient {
      * @minItems 2
      */
     readonly stops: [ShapeGradientStop, ShapeGradientStop, ...ShapeGradientStop[]];
+    /**
+     * The point where position 0 of the gradient is placed.
+     */
     readonly startPoint: ShapeGradientPoint;
+    /**
+     * The point where position 1 of the gradient is placed.
+     */
     readonly endPoint: ShapeGradientPoint;
 }
 /**
