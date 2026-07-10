@@ -638,6 +638,7 @@ export type ShapeStyle = {
      * The background color for this wireframe as a String hexadecimal. Follows the #RRGGBBAA color format with the alpha value as optional. The default value is #FFFFFF00.
      */
     readonly backgroundColor?: string;
+    backgroundGradient?: ShapeGradient;
     /**
      * The opacity of this wireframe. Takes values from 0 to 1, default value is 1.
      */
@@ -647,6 +648,10 @@ export type ShapeStyle = {
      */
     readonly cornerRadius?: number;
 };
+/**
+ * A background gradient for a shape wireframe. When backgroundColor is also present, the background color is painted first and the gradient is painted over it. The gradient is clipped to the wireframe shape, the border is painted afterward, and shape opacity applies to the combined result.
+ */
+export type ShapeGradient = ShapeLinearGradient;
 /**
  * The border properties of this wireframe. The default value is null (no-border).
  */
@@ -1419,6 +1424,49 @@ export interface WireframeClip {
      * The amount of space in pixels that needs to be clipped (masked) at the right of the wireframe.
      */
     readonly right?: number;
+}
+/**
+ * A linear background gradient for a shape wireframe. Colors before the first stop and after the last stop are clamped to the nearest stop color.
+ */
+export interface ShapeLinearGradient {
+    /**
+     * The type of the gradient.
+     */
+    readonly type: 'linear';
+    /**
+     * Ordered gradient color stops. Positions must be non-decreasing.
+     *
+     * @minItems 2
+     */
+    readonly stops: [ShapeGradientStop, ShapeGradientStop, ...ShapeGradientStop[]];
+    startPoint: ShapeGradientPoint;
+    endPoint: ShapeGradientPoint;
+}
+/**
+ * A color and its relative position in a shape gradient.
+ */
+export interface ShapeGradientStop {
+    /**
+     * The stop color as a hexadecimal string in #RRGGBB or #RRGGBBAA format.
+     */
+    readonly color: string;
+    /**
+     * Relative stop position between 0 and 1. Stops must be ordered by non-decreasing position.
+     */
+    readonly position: number;
+}
+/**
+ * A point in the wireframe's normalized coordinate space. The top-left corner is (0, 0), the bottom-right corner is (1, 1), and values outside this range place the point outside the wireframe bounds.
+ */
+export interface ShapeGradientPoint {
+    /**
+     * Horizontal position, where 0 is the left edge and 1 is the right edge.
+     */
+    readonly x: number;
+    /**
+     * Vertical position, where 0 is the top edge and 1 is the bottom edge.
+     */
+    readonly y: number;
 }
 /**
  * Optional composition tree describing the rendering hierarchy. When present, the player uses this tree for rendering order and group operations.
