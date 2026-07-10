@@ -14,7 +14,12 @@
           "readOnly": true
         },
         "backgroundGradient": {
-          "$ref": "shape-gradient-schema.json"
+          "readOnly": true,
+          "allOf": [
+            {
+              "$ref": "shape-gradient-schema.json"
+            }
+          ]
         },
         "opacity": {
           "type": "number",

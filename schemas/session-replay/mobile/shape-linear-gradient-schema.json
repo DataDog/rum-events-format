@@ -22,10 +22,20 @@
       "readOnly": true
     },
     "startPoint": {
-      "$ref": "shape-gradient-point-schema.json"
+      "readOnly": true,
+      "allOf": [
+        {
+          "$ref": "shape-gradient-point-schema.json"
+        }
+      ]
     },
     "endPoint": {
-      "$ref": "shape-gradient-point-schema.json"
+      "readOnly": true,
+      "allOf": [
+        {
+          "$ref": "shape-gradient-point-schema.json"
+        }
+      ]
     }
   }
 }
