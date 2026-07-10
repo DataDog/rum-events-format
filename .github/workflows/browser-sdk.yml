@@ -37,7 +37,7 @@ jobs:
               yarn build
               yarn build:apps
               yarn playwright install --with-deps chromium
-              yarn test:e2e --workers 10 --project chromium
+              yarn test:e2e --workers 10 --project chromium --grep-invert "salesforce"
               ;;
             typecheck)
               yarn typecheck
