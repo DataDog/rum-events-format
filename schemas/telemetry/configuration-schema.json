@@ -535,6 +535,11 @@
                   "type": "boolean",
                   "description": "Whether the beta partial view updates feature is enabled",
                   "readOnly": false
+                },
+                "beta_track_web_sockets": {
+                  "type": "boolean",
+                  "description": "Whether the beta track WebSockets feature is enabled",
+                  "readOnly": false
                 }
               }
             }
