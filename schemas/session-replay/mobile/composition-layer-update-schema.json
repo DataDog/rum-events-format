@@ -49,7 +49,7 @@
     },
     "compositeOperation": {
       "type": "string",
-      "enum": ["sourceOver", "destinationIn", "plusDarker"],
+      "enum": ["sourceOver", "destinationIn", "destinationOut", "plusDarker"],
       "description": "Updated composite operation for this layer.",
       "readOnly": true
     }

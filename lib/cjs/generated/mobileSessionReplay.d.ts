@@ -690,7 +690,7 @@ export interface CompositionLayer {
     /**
      * Operation used when compositing the rendered group into its parent.
      */
-    readonly compositeOperation?: 'sourceOver' | 'destinationIn' | 'plusDarker';
+    readonly compositeOperation?: 'sourceOver' | 'destinationIn' | 'destinationOut' | 'plusDarker';
 }
 /**
  * A reference to a child wireframe or child layer in a composition layer.
@@ -1015,5 +1015,5 @@ export interface CompositionLayerUpdate {
     /**
      * Updated composite operation for this layer.
      */
-    readonly compositeOperation?: 'sourceOver' | 'destinationIn' | 'plusDarker';
+    readonly compositeOperation?: 'sourceOver' | 'destinationIn' | 'destinationOut' | 'plusDarker';
 }
