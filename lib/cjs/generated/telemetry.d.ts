@@ -507,7 +507,7 @@ export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | St
 /**
  * Schema of browser specific features usage
  */
-export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | StartAction | StopAction | StartResource | StopResource | SourceCodeContext;
+export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | StartAction | StopAction | StartResource | StopResource | SourceCodeContext | SalesforceLwc;
 /**
  * Schema of mobile specific features usage
  */
@@ -928,6 +928,13 @@ export interface SourceCodeContext {
      * DD_SOURCE_CODE_CONTEXT global for microfrontends
      */
     feature: 'source-code-context';
+    [k: string]: unknown;
+}
+export interface SalesforceLwc {
+    /**
+     * Salesforce LWC integration
+     */
+    feature: 'salesforce-lwc';
     [k: string]: unknown;
 }
 export interface TrackWebView {

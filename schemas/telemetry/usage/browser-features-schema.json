@@ -107,6 +107,17 @@
           "const": "source-code-context"
         }
       }
+    },
+    {
+      "required": ["feature"],
+      "title": "SalesforceLwc",
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "Salesforce LWC integration",
+          "const": "salesforce-lwc"
+        }
+      }
     }
   ]
 }
