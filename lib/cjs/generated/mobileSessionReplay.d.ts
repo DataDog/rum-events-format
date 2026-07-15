@@ -244,7 +244,7 @@ export type WebviewWireframe = CommonShapeWireframe & {
 /**
  * A rendering modifier applied to the composed layer output.
  */
-export type CompositionLayerModifier = CompositionLayerClipModifier | CompositionLayerOpacityModifier | CompositionLayerColorMatrixModifier | CompositionLayerGaussianBlurModifier | CompositionLayerShadowModifier | CompositionLayerBrightnessBiasModifier | CompositionLayerSaturateModifier | CompositionLayerBackgroundMaterialModifier | CompositionLayerMaskImageModifier;
+export type CompositionLayerModifier = CompositionLayerClipModifier | CompositionLayerOpacityModifier | CompositionLayerColorMatrixModifier | CompositionLayerGaussianBlurModifier | CompositionLayerShadowModifier | CompositionLayerBrightnessBiasModifier | CompositionLayerSaturateModifier | CompositionLayerMaskImageModifier;
 /**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
  */
@@ -839,19 +839,6 @@ export interface CompositionLayerSaturateModifier {
      * Saturation multiplier. 1 leaves content unchanged. 0 removes saturation.
      */
     readonly value: number;
-}
-/**
- * Represents a platform background material effect captured as layer rendering state.
- */
-export interface CompositionLayerBackgroundMaterialModifier {
-    /**
-     * The type of the modifier.
-     */
-    readonly type: 'backgroundMaterial';
-    /**
-     * Material kind.
-     */
-    readonly kind: 'glass';
 }
 /**
  * Image mask applied to the composed layer output at this point in the modifier order. The referenced image is mapped to the layer bounds and interpreted as an alpha mask: transparent pixels hide content, opaque pixels keep content, and partial alpha multiplies content alpha. RGB channels are ignored.
