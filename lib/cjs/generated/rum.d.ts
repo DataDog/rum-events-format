@@ -779,7 +779,7 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
          */
         readonly delivery_type?: 'cache' | 'navigational-prefetch' | 'other';
         /**
-         * Mobile-only: indicates the resource was served from the device's local cache. Only ever sent as `true`; absence means not a local cache hit.
+         * Whether the resource was served from the device's local cache
          */
         readonly local_cache_hit?: boolean;
         /**
