@@ -244,6 +244,11 @@
               "enum": ["cache", "navigational-prefetch", "other"],
               "readOnly": true
             },
+            "local_cache_hit": {
+              "type": "boolean",
+              "description": "Mobile-only: indicates the resource was served from the device's local cache. Only ever sent as `true`; absence means not a local cache hit.",
+              "readOnly": true
+            },
             "provider": {
               "type": "object",
               "description": "The provider for this resource",
