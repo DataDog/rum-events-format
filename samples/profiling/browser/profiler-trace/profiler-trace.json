@@ -1,5 +1,11 @@
 {
   "resources": ["https://localhost:58682/assets/index-CiZoFVPd.js"],
+  "debugIds": [
+    {
+      "resourceId": 0,
+      "debugId": "5f4b4d0a-3f9a-4b86-9f53-8f7e9a5c7d21"
+    }
+  ],
   "frames": [
     {
       "name": "R2",
