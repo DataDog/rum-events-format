@@ -181,8 +181,8 @@
         }
       }
     },
-    "DebugIdEntry": {
-      "title": "RumProfilerDebugIdEntry",
+    "ResourceDebugId": {
+      "title": "ResourceDebugId",
       "type": "object",
       "description": "Association between a profiler resource and its debug ID.",
       "required": ["resourceId", "debugId"],
@@ -234,7 +234,7 @@
     "debugIds": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/DebugIdEntry"
+        "$ref": "#/definitions/ResourceDebugId"
       },
       "description": "Mapping of profiler resources to their debug IDs for source map deobfuscation.",
       "readOnly": true

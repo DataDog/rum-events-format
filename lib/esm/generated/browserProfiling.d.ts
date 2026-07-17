@@ -142,7 +142,7 @@ export interface BrowserProfilerTrace {
     /**
      * Mapping of profiler resources to their debug IDs for source map deobfuscation.
      */
-    readonly debugIds?: RumProfilerDebugIdEntry[];
+    readonly debugIds?: ResourceDebugId[];
     /**
      * An array of profiler frames.
      */
@@ -183,7 +183,7 @@ export interface BrowserProfilerTrace {
 /**
  * Association between a profiler resource and its debug ID.
  */
-export interface RumProfilerDebugIdEntry {
+export interface ResourceDebugId {
     /**
      * Index in the trace.resources array.
      */
