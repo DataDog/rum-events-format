@@ -181,6 +181,25 @@
         }
       }
     },
+    "ResourceDebugId": {
+      "title": "ResourceDebugId",
+      "type": "object",
+      "description": "Association between a profiler resource and its debug ID.",
+      "required": ["resourceId", "debugId"],
+      "properties": {
+        "resourceId": {
+          "type": "integer",
+          "description": "Index in the trace.resources array.",
+          "readOnly": true
+        },
+        "debugId": {
+          "type": "string",
+          "description": "Debug ID (UUID) for the resource, used for source map deobfuscation.",
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+          "readOnly": true
+        }
+      }
+    },
     "ViewEntry": {
       "title": "RumViewEntry",
       "type": "object",
@@ -210,6 +229,14 @@
         "type": "string"
       },
       "description": "An array of profiler resources.",
+      "readOnly": true
+    },
+    "debugIds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ResourceDebugId"
+      },
+      "description": "Mapping of profiler resources to their debug IDs for source map deobfuscation.",
       "readOnly": true
     },
     "frames": {
