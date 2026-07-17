@@ -26,7 +26,7 @@ export type MobileRecord = MobileFullSnapshotRecord | MobileIncrementalSnapshotR
 /**
  * Mobile-specific. Schema of a Record type which contains the full snapshot of a screen.
  */
-export type MobileFullSnapshotRecord = CommonRecordSchema & {
+export type MobileFullSnapshotRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -40,9 +40,18 @@ export type MobileFullSnapshotRecord = CommonRecordSchema & {
     };
 };
 /**
+ * Schema of common properties for a Record event type that is supported by slots.
+ */
+export type SlotSupportedCommonRecordSchema = CommonRecordSchema & {
+    /**
+     * Unique ID of the slot that generated this record.
+     */
+    readonly slotId?: string;
+};
+/**
  * Schema of a Wireframe type.
  */
-export type Wireframe = ShapeWireframe | TextWireframe | ImageWireframe | PlaceholderWireframe | WebviewWireframe;
+export type Wireframe = ShapeWireframe | TextWireframe | ImageWireframe | PlaceholderWireframe | WebviewWireframe | EmbeddedViewWireframe;
 /**
  * Schema of all properties of a ShapeWireframe.
  */
@@ -242,13 +251,34 @@ export type WebviewWireframe = CommonShapeWireframe & {
     readonly permanentId?: string;
 };
 /**
+ * Schema of all properties of an EmbeddedViewWireframe.
+ */
+export type EmbeddedViewWireframe = CommonShapeWireframe & {
+    /**
+     * The type of the wireframe.
+     */
+    readonly type: 'embedded_view';
+    /**
+     * Unique Id of the slot containing this embedded view.
+     */
+    readonly slotId: string;
+    /**
+     * Whether this embedded view is visible or not.
+     */
+    readonly isVisible?: boolean;
+    /**
+     * A globally unique and stable identifier for this UI element, computed as the hash of the element's path. Used to correlate wireframes with RUM action events.
+     */
+    readonly permanentId?: string;
+};
+/**
  * A rendering modifier applied to the composed layer output.
  */
 export type CompositionLayerModifier = CompositionLayerClipModifier | CompositionLayerOpacityModifier | CompositionLayerColorMatrixModifier | CompositionLayerGaussianBlurModifier | CompositionLayerShadowModifier | CompositionLayerBrightnessBiasModifier | CompositionLayerSaturateModifier | CompositionLayerBackgroundMaterialModifier | CompositionLayerMaskImageModifier;
 /**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
  */
-export type MobileIncrementalSnapshotRecord = CommonRecordSchema & {
+export type MobileIncrementalSnapshotRecord = SlotSupportedCommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -271,7 +301,7 @@ export type MobileMutationData = {
 /**
  * Schema of a WireframeUpdateMutation type.
  */
-export type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate | PlaceholderWireframeUpdate | WebviewWireframeUpdate;
+export type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate | PlaceholderWireframeUpdate | WebviewWireframeUpdate | EmbeddedViewWireframeUpdate;
 /**
  * Schema of all properties of a TextWireframeUpdate.
  */
@@ -359,6 +389,23 @@ export type WebviewWireframeUpdate = CommonShapeWireframeUpdate & {
     readonly isVisible?: boolean;
 };
 /**
+ * Schema of all properties of an EmbeddedViewWireframeUpdate.
+ */
+export type EmbeddedViewWireframeUpdate = CommonShapeWireframeUpdate & {
+    /**
+     * The type of the wireframe.
+     */
+    readonly type: 'embedded_view';
+    /**
+     * Unique Id of the slot containing this embedded view.
+     */
+    readonly slotId: string;
+    /**
+     * Whether this embedded view is visible or not.
+     */
+    readonly isVisible?: boolean;
+};
+/**
  * Schema of a TouchData.
  */
 export type TouchData = {
@@ -431,15 +478,6 @@ export type MetaRecord = SlotSupportedCommonRecordSchema & {
          */
         href?: string;
     };
-};
-/**
- * Schema of common properties for a Record event type that is supported by slots.
- */
-export type SlotSupportedCommonRecordSchema = CommonRecordSchema & {
-    /**
-     * Unique ID of the slot that generated this record.
-     */
-    readonly slotId?: string;
 };
 /**
  * Schema of a Record type which contains focus information.
