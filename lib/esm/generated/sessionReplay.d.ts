@@ -609,7 +609,7 @@ export type MobileFullSnapshotRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Schema of a Wireframe type.
  */
-export type Wireframe = ShapeWireframe | TextWireframe | ImageWireframe | PlaceholderWireframe | WebviewWireframe | EmbeddedViewWireframe;
+export type Wireframe = ShapeWireframe | TextWireframe | ImageWireframe | PlaceholderWireframe | WebviewWireframe | EmbeddedContentWireframe;
 /**
  * Schema of all properties of a ShapeWireframe.
  */
@@ -809,19 +809,19 @@ export type WebviewWireframe = CommonShapeWireframe & {
     readonly permanentId?: string;
 };
 /**
- * Schema of all properties of an EmbeddedViewWireframe.
+ * Schema of all properties of an EmbeddedContentWireframe.
  */
-export type EmbeddedViewWireframe = CommonShapeWireframe & {
+export type EmbeddedContentWireframe = CommonShapeWireframe & {
     /**
      * The type of the wireframe.
      */
-    readonly type: 'embedded_view';
+    readonly type: 'embedded_content';
     /**
-     * Unique Id of the slot containing this embedded view.
+     * Unique Id of the slot containing this embedded content.
      */
     readonly slotId: string;
     /**
-     * Whether this embedded view is visible or not.
+     * Whether this embedded content is visible or not.
      */
     readonly isVisible?: boolean;
     /**
@@ -859,7 +859,7 @@ export type MobileMutationData = {
 /**
  * Schema of a WireframeUpdateMutation type.
  */
-export type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate | PlaceholderWireframeUpdate | WebviewWireframeUpdate | EmbeddedViewWireframeUpdate;
+export type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate | PlaceholderWireframeUpdate | WebviewWireframeUpdate | EmbeddedContentWireframeUpdate;
 /**
  * Schema of all properties of a TextWireframeUpdate.
  */
@@ -947,19 +947,19 @@ export type WebviewWireframeUpdate = CommonShapeWireframeUpdate & {
     readonly isVisible?: boolean;
 };
 /**
- * Schema of all properties of an EmbeddedViewWireframeUpdate.
+ * Schema of all properties of an EmbeddedContentWireframeUpdate.
  */
-export type EmbeddedViewWireframeUpdate = CommonShapeWireframeUpdate & {
+export type EmbeddedContentWireframeUpdate = CommonShapeWireframeUpdate & {
     /**
      * The type of the wireframe.
      */
-    readonly type: 'embedded_view';
+    readonly type: 'embedded_content';
     /**
-     * Unique Id of the slot containing this embedded view.
+     * Unique Id of the slot containing this embedded content.
      */
     readonly slotId: string;
     /**
-     * Whether this embedded view is visible or not.
+     * Whether this embedded content is visible or not.
      */
     readonly isVisible?: boolean;
 };

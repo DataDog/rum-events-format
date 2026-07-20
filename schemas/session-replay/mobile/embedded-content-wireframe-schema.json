@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "session-replay/mobile/embedded-view-wireframe-schema.json",
-  "title": "EmbeddedViewWireframe",
+  "$id": "session-replay/mobile/embedded-content-wireframe-schema.json",
+  "title": "EmbeddedContentWireframe",
   "type": "object",
-  "description": "Schema of all properties of an EmbeddedViewWireframe.",
+  "description": "Schema of all properties of an EmbeddedContentWireframe.",
   "allOf": [
     {
       "$ref": "_common-shape-wireframe-schema.json"
@@ -14,17 +14,17 @@
         "type": {
           "type": "string",
           "description": "The type of the wireframe.",
-          "const": "embedded_view",
+          "const": "embedded_content",
           "readOnly": true
         },
         "slotId": {
           "type": "string",
-          "description": "Unique Id of the slot containing this embedded view.",
+          "description": "Unique Id of the slot containing this embedded content.",
           "readOnly": true
         },
         "isVisible": {
           "type": "boolean",
-          "description": "Whether this embedded view is visible or not.",
+          "description": "Whether this embedded content is visible or not.",
           "readOnly": true
         },
         "permanentId": {
