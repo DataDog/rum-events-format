@@ -502,6 +502,25 @@
           "readOnly": true
         }
       }
+    },
+    "process": {
+      "type": "object",
+      "description": "Process properties",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "UUID of the process",
+          "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+          "readOnly": true
+        },
+        "role": {
+          "type": "string",
+          "description": "Role of the process",
+          "enum": ["main", "renderer", "utility"],
+          "readOnly": true
+        }
+      },
+      "readOnly": true
     }
   }
 }

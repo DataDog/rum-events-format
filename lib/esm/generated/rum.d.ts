@@ -1412,6 +1412,20 @@ export interface CommonProperties {
         readonly id: string;
         [k: string]: unknown;
     };
+    /**
+     * Process properties
+     */
+    readonly process?: {
+        /**
+         * UUID of the process
+         */
+        readonly id?: string;
+        /**
+         * Role of the process
+         */
+        readonly role?: 'main' | 'renderer' | 'utility';
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 }
 /**
