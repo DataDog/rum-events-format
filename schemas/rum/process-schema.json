@@ -60,7 +60,16 @@
             "exit_reason": {
               "type": "string",
               "description": "Reason for process exit",
-              "enum": ["clean-exit", "abnormal-exit", "killed", "crashed", "oom", "launch-failed", "integrity-failure", "memory-eviction"],
+              "enum": [
+                "clean-exit",
+                "abnormal-exit",
+                "killed",
+                "crashed",
+                "oom",
+                "launch-failed",
+                "integrity-failure",
+                "memory-eviction"
+              ],
               "readOnly": true
             }
           },

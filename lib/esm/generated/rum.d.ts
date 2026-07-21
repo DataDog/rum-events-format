@@ -2034,6 +2034,10 @@ export interface ViewProperties {
          * Profiling context
          */
         profiling?: ProfilingInternalContextSchema;
+        /**
+         * Whether this view was synthetically created to carry view-less events
+         */
+        readonly is_fake?: true;
         [k: string]: unknown;
     };
     [k: string]: unknown;
