@@ -4,7 +4,7 @@
 /**
  * Schema of all properties of a RUM event
  */
-export type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumViewUpdateEvent | RumVitalEvent;
+export type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumViewUpdateEvent | RumProcessEvent | RumVitalEvent;
 /**
  * Schema of all properties of an Action event
  */
@@ -877,6 +877,50 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
      * RUM event type
      */
     readonly type: 'view_update';
+    [k: string]: unknown;
+};
+/**
+ * Schema of all properties of a Process event
+ */
+export type RumProcessEvent = CommonProperties & {
+    /**
+     * RUM event type
+     */
+    readonly type: 'process';
+    /**
+     * Process properties
+     */
+    readonly process: {
+        /**
+         * UUID of the process
+         */
+        readonly id: string;
+        /**
+         * Role of the process
+         */
+        readonly role: 'main' | 'renderer' | 'utility';
+        /**
+         * OS process ID
+         */
+        readonly pid: number;
+        /**
+         * Parent OS process ID
+         */
+        readonly ppid?: number;
+        /**
+         * Process name
+         */
+        readonly name?: string;
+        /**
+         * Process lifetime in nanoseconds
+         */
+        readonly duration?: number;
+        /**
+         * Reason for process exit
+         */
+        readonly exit_reason?: 'clean-exit' | 'abnormal-exit' | 'killed' | 'crashed' | 'oom' | 'launch-failed' | 'integrity-failure' | 'memory-eviction';
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 };
 export type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationStepEvent | RumVitalAppLaunchEvent;

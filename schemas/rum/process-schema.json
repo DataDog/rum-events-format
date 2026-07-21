@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/process-schema.json",
+  "title": "RumProcessEvent",
+  "type": "object",
+  "description": "Schema of all properties of a Process event",
+  "allOf": [
+    {
+      "$ref": "_common-schema.json"
+    },
+    {
+      "required": ["type", "process"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "RUM event type",
+          "const": "process",
+          "readOnly": true
+        },
+        "process": {
+          "type": "object",
+          "description": "Process properties",
+          "required": ["id", "role", "pid"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "UUID of the process",
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "readOnly": true
+            },
+            "role": {
+              "type": "string",
+              "description": "Role of the process",
+              "enum": ["main", "renderer", "utility"],
+              "readOnly": true
+            },
+            "pid": {
+              "type": "integer",
+              "description": "OS process ID",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "ppid": {
+              "type": "integer",
+              "description": "Parent OS process ID",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "name": {
+              "type": "string",
+              "description": "Process name",
+              "readOnly": true
+            },
+            "duration": {
+              "type": "integer",
+              "description": "Process lifetime in nanoseconds",
+              "minimum": 0,
+              "readOnly": true
+            },
+            "exit_reason": {
+              "type": "string",
+              "description": "Reason for process exit",
+              "enum": ["clean-exit", "abnormal-exit", "killed", "crashed", "oom", "launch-failed", "integrity-failure", "memory-eviction"],
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        }
+      }
+    }
+  ]
+}
