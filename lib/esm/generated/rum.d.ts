@@ -1424,6 +1424,10 @@ export interface CommonProperties {
          * Role of the process
          */
         readonly role?: 'main' | 'renderer' | 'utility';
+        /**
+         * Process name
+         */
+        readonly name?: string;
         [k: string]: unknown;
     };
     [k: string]: unknown;

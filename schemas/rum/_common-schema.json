@@ -518,6 +518,11 @@
           "description": "Role of the process",
           "enum": ["main", "renderer", "utility"],
           "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "description": "Process name",
+          "readOnly": true
         }
       },
       "readOnly": true
