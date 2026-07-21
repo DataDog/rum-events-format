@@ -559,7 +559,6 @@
         },
         "is_fake": {
           "type": "boolean",
-          "const": true,
           "description": "Whether this view was synthetically created to carry view-less events",
           "readOnly": true
         }

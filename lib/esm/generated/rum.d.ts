@@ -2037,7 +2037,7 @@ export interface ViewProperties {
         /**
          * Whether this view was synthetically created to carry view-less events
          */
-        readonly is_fake?: true;
+        readonly is_fake?: boolean;
         [k: string]: unknown;
     };
     [k: string]: unknown;
