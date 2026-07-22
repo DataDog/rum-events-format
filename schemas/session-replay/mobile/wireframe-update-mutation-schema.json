@@ -6,6 +6,9 @@
   "description": "Schema of a WireframeUpdateMutation type.",
   "oneOf": [
     {
+      "$ref": "embedded-content-wireframe-update-schema.json"
+    },
+    {
       "$ref": "text-wireframe-update-schema.json"
     },
     {
@@ -19,9 +22,6 @@
     },
     {
       "$ref": "webview-wireframe-update-schema.json"
-    },
-    {
-      "$ref": "embedded-content-wireframe-update-schema.json"
     }
   ]
 }

@@ -6,6 +6,9 @@
   "description": "Schema of a Wireframe type.",
   "oneOf": [
     {
+      "$ref": "embedded-content-wireframe-schema.json"
+    },
+    {
       "$ref": "shape-wireframe-schema.json"
     },
     {
@@ -19,9 +22,6 @@
     },
     {
       "$ref": "webview-wireframe-schema.json"
-    },
-    {
-      "$ref": "embedded-content-wireframe-schema.json"
     }
   ]
 }
