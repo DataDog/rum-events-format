@@ -9,7 +9,7 @@
       "$ref": "_common-schema.json"
     },
     {
-      "required": ["type", "process"],
+      "required": ["type", "process", "_dd"],
       "properties": {
         "type": {
           "type": "string",
@@ -70,6 +70,20 @@
                 "integrity-failure",
                 "memory-eviction"
               ],
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        },
+        "_dd": {
+          "type": "object",
+          "description": "Internal properties",
+          "required": ["document_version"],
+          "properties": {
+            "document_version": {
+              "type": "integer",
+              "description": "Version of the update of the process event",
+              "minimum": 0,
               "readOnly": true
             }
           },
