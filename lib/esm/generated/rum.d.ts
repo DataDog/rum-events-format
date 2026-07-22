@@ -921,6 +921,16 @@ export type RumProcessEvent = CommonProperties & {
         readonly exit_reason?: 'clean-exit' | 'abnormal-exit' | 'killed' | 'crashed' | 'oom' | 'launch-failed' | 'integrity-failure' | 'memory-eviction';
         [k: string]: unknown;
     };
+    /**
+     * Internal properties
+     */
+    readonly _dd: {
+        /**
+         * Version of the update of the process event
+         */
+        readonly document_version: number;
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 };
 export type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationStepEvent | RumVitalAppLaunchEvent;
@@ -1130,6 +1140,10 @@ export interface CommonProperties {
          * User defined name of the view
          */
         name?: string;
+        /**
+         * Whether this view was synthetically created to carry view-less events
+         */
+        readonly is_fake?: boolean;
         [k: string]: unknown;
     };
     /**
@@ -2038,10 +2052,6 @@ export interface ViewProperties {
          * Profiling context
          */
         profiling?: ProfilingInternalContextSchema;
-        /**
-         * Whether this view was synthetically created to carry view-less events
-         */
-        readonly is_fake?: boolean;
         [k: string]: unknown;
     };
     [k: string]: unknown;

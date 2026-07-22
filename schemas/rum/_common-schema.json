@@ -122,6 +122,11 @@
           "type": "string",
           "description": "User defined name of the view",
           "readOnly": false
+        },
+        "is_fake": {
+          "type": "boolean",
+          "description": "Whether this view was synthetically created to carry view-less events",
+          "readOnly": true
         }
       },
       "readOnly": true
