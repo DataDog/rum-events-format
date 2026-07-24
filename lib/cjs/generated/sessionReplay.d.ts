@@ -609,15 +609,23 @@ export type MobileFullSnapshotRecord = SlotSupportedCommonRecordSchema & {
 /**
  * Schema of a Wireframe type.
  */
-export type Wireframe = ShapeWireframe | TextWireframe | ImageWireframe | PlaceholderWireframe | WebviewWireframe | EmbeddedContentWireframe;
+export type Wireframe = EmbeddedContentWireframe | ShapeWireframe | TextWireframe | ImageWireframe | PlaceholderWireframe | WebviewWireframe;
 /**
- * Schema of all properties of a ShapeWireframe.
+ * Schema of all properties of an EmbeddedContentWireframe.
  */
-export type ShapeWireframe = CommonShapeWireframe & {
+export type EmbeddedContentWireframe = CommonShapeWireframe & {
     /**
      * The type of the wireframe.
      */
-    readonly type: 'shape';
+    readonly type: 'embedded_content';
+    /**
+     * Unique Id of the slot containing this embedded content.
+     */
+    readonly slotId: string;
+    /**
+     * Whether this embedded content is visible or not.
+     */
+    readonly isVisible?: boolean;
     /**
      * A globally unique and stable identifier for this UI element, computed as the hash of the element's path. Used to correlate wireframes with RUM action events.
      */
@@ -667,6 +675,19 @@ export type ShapeBorder = {
      * The width of the border in pixels.
      */
     readonly width: number;
+};
+/**
+ * Schema of all properties of a ShapeWireframe.
+ */
+export type ShapeWireframe = CommonShapeWireframe & {
+    /**
+     * The type of the wireframe.
+     */
+    readonly type: 'shape';
+    /**
+     * A globally unique and stable identifier for this UI element, computed as the hash of the element's path. Used to correlate wireframes with RUM action events.
+     */
+    readonly permanentId?: string;
 };
 /**
  * Schema of all properties of a TextWireframe.
@@ -809,27 +830,6 @@ export type WebviewWireframe = CommonShapeWireframe & {
     readonly permanentId?: string;
 };
 /**
- * Schema of all properties of an EmbeddedContentWireframe.
- */
-export type EmbeddedContentWireframe = CommonShapeWireframe & {
-    /**
-     * The type of the wireframe.
-     */
-    readonly type: 'embedded_content';
-    /**
-     * Unique Id of the slot containing this embedded content.
-     */
-    readonly slotId: string;
-    /**
-     * Whether this embedded content is visible or not.
-     */
-    readonly isVisible?: boolean;
-    /**
-     * A globally unique and stable identifier for this UI element, computed as the hash of the element's path. Used to correlate wireframes with RUM action events.
-     */
-    readonly permanentId?: string;
-};
-/**
  * A rendering modifier applied to the composed layer output.
  */
 export type CompositionLayerModifier = CompositionLayerClipModifier | CompositionLayerOpacityModifier | CompositionLayerColorMatrixModifier | CompositionLayerGaussianBlurModifier | CompositionLayerShadowModifier | CompositionLayerBrightnessBiasModifier | CompositionLayerSaturateModifier | CompositionLayerMaskImageModifier;
@@ -859,7 +859,31 @@ export type MobileMutationData = {
 /**
  * Schema of a WireframeUpdateMutation type.
  */
-export type WireframeUpdateMutation = TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate | PlaceholderWireframeUpdate | WebviewWireframeUpdate | EmbeddedContentWireframeUpdate;
+export type WireframeUpdateMutation = EmbeddedContentWireframeUpdate | TextWireframeUpdate | ShapeWireframeUpdate | ImageWireframeUpdate | PlaceholderWireframeUpdate | WebviewWireframeUpdate;
+/**
+ * Schema of all properties of an EmbeddedContentWireframeUpdate.
+ */
+export type EmbeddedContentWireframeUpdate = CommonShapeWireframeUpdate & {
+    /**
+     * The type of the wireframe.
+     */
+    readonly type: 'embedded_content';
+    /**
+     * Unique Id of the slot containing this embedded content.
+     */
+    readonly slotId: string;
+    /**
+     * Whether this embedded content is visible or not.
+     */
+    readonly isVisible?: boolean;
+};
+/**
+ * Schema of common properties for ShapeWireframeUpdate events type and all its sub - types.
+ */
+export type CommonShapeWireframeUpdate = CommonWireframeUpdate & {
+    shapeStyle?: ShapeStyle;
+    border?: ShapeBorder;
+};
 /**
  * Schema of all properties of a TextWireframeUpdate.
  */
@@ -874,13 +898,6 @@ export type TextWireframeUpdate = CommonShapeWireframeUpdate & {
     text?: string;
     textStyle?: TextStyle;
     textPosition?: TextPosition;
-};
-/**
- * Schema of common properties for ShapeWireframeUpdate events type and all its sub - types.
- */
-export type CommonShapeWireframeUpdate = CommonWireframeUpdate & {
-    shapeStyle?: ShapeStyle;
-    border?: ShapeBorder;
 };
 /**
  * Schema of a ShapeWireframeUpdate.
@@ -943,23 +960,6 @@ export type WebviewWireframeUpdate = CommonShapeWireframeUpdate & {
     readonly slotId: string;
     /**
      * Whether this webview is visible or not.
-     */
-    readonly isVisible?: boolean;
-};
-/**
- * Schema of all properties of an EmbeddedContentWireframeUpdate.
- */
-export type EmbeddedContentWireframeUpdate = CommonShapeWireframeUpdate & {
-    /**
-     * The type of the wireframe.
-     */
-    readonly type: 'embedded_content';
-    /**
-     * Unique Id of the slot containing this embedded content.
-     */
-    readonly slotId: string;
-    /**
-     * Whether this embedded content is visible or not.
      */
     readonly isVisible?: boolean;
 };
