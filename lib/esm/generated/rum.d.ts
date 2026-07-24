@@ -4,7 +4,7 @@
 /**
  * Schema of all properties of a RUM event
  */
-export type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumViewUpdateEvent | RumVitalEvent;
+export type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumViewUpdateEvent | RumProcessEvent | RumVitalEvent;
 /**
  * Schema of all properties of an Action event
  */
@@ -879,6 +879,60 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
     readonly type: 'view_update';
     [k: string]: unknown;
 };
+/**
+ * Schema of all properties of a Process event
+ */
+export type RumProcessEvent = CommonProperties & {
+    /**
+     * RUM event type
+     */
+    readonly type: 'process';
+    /**
+     * Process properties
+     */
+    readonly process: {
+        /**
+         * UUID of the process
+         */
+        readonly id: string;
+        /**
+         * Role of the process
+         */
+        readonly role: 'main' | 'renderer' | 'utility';
+        /**
+         * OS process ID
+         */
+        readonly pid: number;
+        /**
+         * Parent OS process ID
+         */
+        readonly ppid?: number;
+        /**
+         * Process name
+         */
+        readonly name?: string;
+        /**
+         * Process lifetime in nanoseconds
+         */
+        readonly duration?: number;
+        /**
+         * Reason for process exit
+         */
+        readonly exit_reason?: 'clean-exit' | 'abnormal-exit' | 'killed' | 'crashed' | 'oom' | 'launch-failed' | 'integrity-failure' | 'memory-eviction';
+        [k: string]: unknown;
+    };
+    /**
+     * Internal properties
+     */
+    readonly _dd: {
+        /**
+         * Version of the update of the process event
+         */
+        readonly document_version: number;
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
 export type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationStepEvent | RumVitalAppLaunchEvent;
 /**
  * Schema for a duration vital event.
@@ -1086,6 +1140,10 @@ export interface CommonProperties {
          * User defined name of the view
          */
         name?: string;
+        /**
+         * Whether this view was synthetically created to carry view-less events
+         */
+        readonly is_fake?: boolean;
         [k: string]: unknown;
     };
     /**
@@ -1366,6 +1424,24 @@ export interface CommonProperties {
          * UUID of the stream
          */
         readonly id: string;
+        [k: string]: unknown;
+    };
+    /**
+     * Process properties
+     */
+    readonly process?: {
+        /**
+         * UUID of the process
+         */
+        readonly id?: string;
+        /**
+         * Role of the process
+         */
+        readonly role?: 'main' | 'renderer' | 'utility';
+        /**
+         * Process name
+         */
+        readonly name?: string;
         [k: string]: unknown;
     };
     [k: string]: unknown;

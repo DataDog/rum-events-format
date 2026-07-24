@@ -1,0 +1,30 @@
+{
+  "type": "process",
+  "date": 1591284428705,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "view": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "url": "electron://fake",
+    "is_fake": true
+  },
+  "source": "electron",
+  "process": {
+    "id": "b1a2c3d4-e5f6-7890-abcd-ef1234567890",
+    "role": "renderer",
+    "pid": 1236,
+    "ppid": 1234,
+    "name": "renderer",
+    "duration": 220000000000,
+    "exit_reason": "clean-exit"
+  },
+  "_dd": {
+    "format_version": 2,
+    "document_version": 1
+  }
+}
