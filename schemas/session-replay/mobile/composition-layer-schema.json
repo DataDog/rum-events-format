@@ -49,7 +49,7 @@
     },
     "compositeOperation": {
       "type": "string",
-      "enum": ["sourceOver", "destinationIn", "plusDarker"],
+      "enum": ["sourceOver", "destinationIn", "destinationOut", "plusDarker"],
       "description": "Operation used when compositing the rendered group into its parent.",
       "readOnly": true
     }

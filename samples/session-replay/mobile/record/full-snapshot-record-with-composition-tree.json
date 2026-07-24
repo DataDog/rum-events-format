@@ -69,7 +69,8 @@
           "children": [
             { "type": "wireframe", "id": 42 },
             { "type": "wireframe", "id": 43 }
-          ]
+          ],
+          "compositeOperation": "destinationOut"
         }
       ]
     }

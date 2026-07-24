@@ -27,9 +27,6 @@
       "$ref": "composition-layer-saturate-modifier-schema.json"
     },
     {
-      "$ref": "composition-layer-background-material-modifier-schema.json"
-    },
-    {
       "$ref": "composition-layer-mask-image-modifier-schema.json"
     }
   ]
