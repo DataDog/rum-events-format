@@ -39,6 +39,17 @@
     },
     {
       "$ref": "telemetry-events-schema.json"
+    },
+    {
+      "title": "RumTimeseriesEvent",
+      "oneOf": [
+        {
+          "$ref": "rum/timeseries-memory-schema.json"
+        },
+        {
+          "$ref": "rum/timeseries-cpu-schema.json"
+        }
+      ]
     }
   ]
 }
