@@ -1069,7 +1069,7 @@ export interface CommonProperties {
     /**
      * The source of this event
      */
-    readonly source?: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp' | 'maui';
+    readonly source?: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'cpp' | 'maui';
     /**
      * View properties
      */
@@ -1395,7 +1395,7 @@ export interface ViewContainerSchema {
         /**
          * Source of the parent view
          */
-        readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'rum-cpp' | 'maui';
+        readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'cpp' | 'maui';
         [k: string]: unknown;
     };
     [k: string]: unknown;
