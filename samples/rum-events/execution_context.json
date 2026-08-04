@@ -1,5 +1,5 @@
 {
-  "type": "process",
+  "type": "execution_context",
   "date": 1591284428705,
   "application": {
     "id": "ac8218cf-498b-4d33-bd44-151095959547"
@@ -14,7 +14,7 @@
     "is_fake": true
   },
   "source": "electron",
-  "process": {
+  "execution_context": {
     "id": "b1a2c3d4-e5f6-7890-abcd-ef1234567890",
     "role": "renderer",
     "pid": 1236,

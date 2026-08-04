@@ -4,7 +4,7 @@
 /**
  * Schema of all properties of a RUM event
  */
-export type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumViewUpdateEvent | RumProcessEvent | RumVitalEvent;
+export type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumViewUpdateEvent | RumExecutionContextEvent | RumVitalEvent;
 /**
  * Schema of all properties of an Action event
  */
@@ -896,23 +896,23 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
     [k: string]: unknown;
 };
 /**
- * Schema of all properties of a Process event
+ * Schema of all properties of an Execution Context event
  */
-export type RumProcessEvent = CommonProperties & {
+export type RumExecutionContextEvent = CommonProperties & {
     /**
      * RUM event type
      */
-    readonly type: 'process';
+    readonly type: 'execution_context';
     /**
-     * Process properties
+     * Execution context properties
      */
-    readonly process: {
+    readonly execution_context: {
         /**
-         * UUID of the process
+         * UUID of the execution context
          */
         readonly id: string;
         /**
-         * Role of the process
+         * Role of the execution context
          */
         readonly role: 'main' | 'renderer' | 'utility';
         /**
@@ -924,15 +924,15 @@ export type RumProcessEvent = CommonProperties & {
          */
         readonly ppid?: number;
         /**
-         * Process name
+         * Execution context name
          */
         readonly name?: string;
         /**
-         * Process lifetime in nanoseconds
+         * Execution context lifetime in nanoseconds
          */
         readonly duration?: number;
         /**
-         * Reason for process exit
+         * Reason for execution context exit
          */
         readonly exit_reason?: 'clean-exit' | 'abnormal-exit' | 'killed' | 'crashed' | 'oom' | 'launch-failed' | 'integrity-failure' | 'memory-eviction';
         [k: string]: unknown;
@@ -942,7 +942,7 @@ export type RumProcessEvent = CommonProperties & {
      */
     readonly _dd: {
         /**
-         * Version of the update of the process event
+         * Version of the update of the execution context event
          */
         readonly document_version: number;
         [k: string]: unknown;
@@ -1450,19 +1450,19 @@ export interface CommonProperties {
         [k: string]: unknown;
     };
     /**
-     * Process properties
+     * Execution context properties
      */
-    readonly process?: {
+    readonly execution_context?: {
         /**
-         * UUID of the process
+         * UUID of the execution context
          */
         readonly id?: string;
         /**
-         * Role of the process
+         * Role of the execution context
          */
         readonly role?: 'main' | 'renderer' | 'utility';
         /**
-         * Process name
+         * Execution context name
          */
         readonly name?: string;
         [k: string]: unknown;

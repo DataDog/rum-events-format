@@ -1,36 +1,36 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "rum/process-schema.json",
-  "title": "RumProcessEvent",
+  "$id": "rum/execution_context-schema.json",
+  "title": "RumExecutionContextEvent",
   "type": "object",
-  "description": "Schema of all properties of a Process event",
+  "description": "Schema of all properties of an Execution Context event",
   "allOf": [
     {
       "$ref": "_common-schema.json"
     },
     {
-      "required": ["type", "process", "_dd"],
+      "required": ["type", "execution_context", "_dd"],
       "properties": {
         "type": {
           "type": "string",
           "description": "RUM event type",
-          "const": "process",
+          "const": "execution_context",
           "readOnly": true
         },
-        "process": {
+        "execution_context": {
           "type": "object",
-          "description": "Process properties",
+          "description": "Execution context properties",
           "required": ["id", "role", "pid"],
           "properties": {
             "id": {
               "type": "string",
-              "description": "UUID of the process",
+              "description": "UUID of the execution context",
               "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
               "readOnly": true
             },
             "role": {
               "type": "string",
-              "description": "Role of the process",
+              "description": "Role of the execution context",
               "enum": ["main", "renderer", "utility"],
               "readOnly": true
             },
@@ -48,18 +48,18 @@
             },
             "name": {
               "type": "string",
-              "description": "Process name",
+              "description": "Execution context name",
               "readOnly": true
             },
             "duration": {
               "type": "integer",
-              "description": "Process lifetime in nanoseconds",
+              "description": "Execution context lifetime in nanoseconds",
               "minimum": 0,
               "readOnly": true
             },
             "exit_reason": {
               "type": "string",
-              "description": "Reason for process exit",
+              "description": "Reason for execution context exit",
               "enum": [
                 "clean-exit",
                 "abnormal-exit",
@@ -82,7 +82,7 @@
           "properties": {
             "document_version": {
               "type": "integer",
-              "description": "Version of the update of the process event",
+              "description": "Version of the update of the execution context event",
               "minimum": 0,
               "readOnly": true
             }
