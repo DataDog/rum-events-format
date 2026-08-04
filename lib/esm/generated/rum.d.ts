@@ -912,9 +912,9 @@ export type RumExecutionContextEvent = CommonProperties & {
          */
         readonly id: string;
         /**
-         * Role of the execution context
+         * Type of the execution context
          */
-        readonly role: 'main' | 'renderer' | 'utility';
+        readonly type: 'main-process' | 'renderer-process' | 'utility-process';
         /**
          * OS process ID
          */
@@ -1458,9 +1458,9 @@ export interface CommonProperties {
          */
         readonly id?: string;
         /**
-         * Role of the execution context
+         * Type of the execution context
          */
-        readonly role?: 'main' | 'renderer' | 'utility';
+        readonly type?: 'main-process' | 'renderer-process' | 'utility-process';
         /**
          * Execution context name
          */

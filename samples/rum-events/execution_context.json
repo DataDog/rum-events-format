@@ -16,7 +16,7 @@
   "source": "electron",
   "execution_context": {
     "id": "b1a2c3d4-e5f6-7890-abcd-ef1234567890",
-    "role": "renderer",
+    "type": "renderer-process",
     "pid": 1236,
     "ppid": 1234,
     "name": "renderer",

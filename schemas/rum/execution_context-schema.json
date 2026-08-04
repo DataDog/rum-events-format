@@ -20,7 +20,7 @@
         "execution_context": {
           "type": "object",
           "description": "Execution context properties",
-          "required": ["id", "role", "pid"],
+          "required": ["id", "type", "pid"],
           "properties": {
             "id": {
               "type": "string",
@@ -28,10 +28,10 @@
               "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
               "readOnly": true
             },
-            "role": {
+            "type": {
               "type": "string",
-              "description": "Role of the execution context",
-              "enum": ["main", "renderer", "utility"],
+              "description": "Type of the execution context",
+              "enum": ["main-process", "renderer-process", "utility-process"],
               "readOnly": true
             },
             "pid": {
