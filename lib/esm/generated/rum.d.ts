@@ -94,7 +94,7 @@ export type RumActionEvent = CommonProperties & ViewContainerSchema & {
     /**
      * View properties
      */
-    readonly view?: {
+    readonly view: {
         /**
          * Is the action starting in the foreground (focus in browser)
          */
@@ -167,6 +167,9 @@ export type RumTransitionEvent = CommonProperties & {
      * RUM event type
      */
     readonly type: 'transition';
+    readonly view: {
+        [k: string]: unknown;
+    };
     /**
      * Stream properties
      */
@@ -447,7 +450,7 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
     /**
      * View properties
      */
-    readonly view?: {
+    readonly view: {
         /**
          * Is the error starting in the foreground (focus in browser)
          */
@@ -494,6 +497,9 @@ export type RumLongTaskEvent = CommonProperties & ActionChildProperties & ViewCo
      * RUM event type
      */
     readonly type: 'long_task';
+    readonly view: {
+        [k: string]: unknown;
+    };
     /**
      * Long Task properties
      */
@@ -624,6 +630,9 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
      * RUM event type
      */
     readonly type: 'resource';
+    readonly view: {
+        [k: string]: unknown;
+    };
     /**
      * Resource properties
      */
@@ -881,6 +890,9 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
      * RUM event type
      */
     readonly type: 'view_update';
+    readonly view: {
+        [k: string]: unknown;
+    };
     [k: string]: unknown;
 };
 export type RumVitalEvent = RumVitalDurationEvent | RumVitalOperationStepEvent | RumVitalAppLaunchEvent;
@@ -912,6 +924,9 @@ export type RumVitalEventCommonProperties = CommonProperties & ViewContainerSche
      * RUM event type
      */
     readonly type: 'vital';
+    readonly view: {
+        [k: string]: unknown;
+    };
     /**
      * Vital properties
      */
@@ -1073,7 +1088,7 @@ export interface CommonProperties {
     /**
      * View properties
      */
-    readonly view: {
+    readonly view?: {
         /**
          * UUID of the view
          */
