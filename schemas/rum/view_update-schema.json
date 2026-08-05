@@ -18,12 +18,16 @@
       "$ref": "_common-schema.json"
     },
     {
-      "required": ["type"],
+      "required": ["type", "view"],
       "properties": {
         "type": {
           "type": "string",
           "description": "RUM event type",
           "const": "view_update",
+          "readOnly": true
+        },
+        "view": {
+          "type": "object",
           "readOnly": true
         }
       }

@@ -9,12 +9,16 @@
       "$ref": "_common-schema.json"
     },
     {
-      "required": ["type", "transition", "stream"],
+      "required": ["type", "view", "transition", "stream"],
       "properties": {
         "type": {
           "type": "string",
           "description": "RUM event type",
           "const": "transition",
+          "readOnly": true
+        },
+        "view": {
+          "type": "object",
           "readOnly": true
         },
         "stream": {
