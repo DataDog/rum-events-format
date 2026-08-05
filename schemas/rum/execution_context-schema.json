@@ -20,7 +20,7 @@
         "execution_context": {
           "type": "object",
           "description": "Execution context properties",
-          "required": ["id", "type", "pid"],
+          "required": ["id", "type", "instance_id"],
           "properties": {
             "id": {
               "type": "string",
@@ -34,16 +34,14 @@
               "enum": ["main-process", "renderer-process", "utility-process"],
               "readOnly": true
             },
-            "pid": {
-              "type": "integer",
-              "description": "OS process ID",
-              "minimum": 0,
+            "instance_id": {
+              "type": "string",
+              "description": "Platform-specific identifier stable for the full lifetime of the execution context, survives session rollovers (e.g. OS PID, thread ID, tab ID)",
               "readOnly": true
             },
-            "ppid": {
-              "type": "integer",
-              "description": "Parent OS process ID",
-              "minimum": 0,
+            "parent_instance_id": {
+              "type": "string",
+              "description": "Platform-specific identifier of the parent execution context (e.g. parent OS PID)",
               "readOnly": true
             },
             "name": {

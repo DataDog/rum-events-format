@@ -916,13 +916,13 @@ export type RumExecutionContextEvent = CommonProperties & {
          */
         readonly type: 'main-process' | 'renderer-process' | 'utility-process';
         /**
-         * OS process ID
+         * Platform-specific identifier stable for the full lifetime of the execution context, survives session rollovers (e.g. OS PID, thread ID, tab ID)
          */
-        readonly pid: number;
+        readonly instance_id: string;
         /**
-         * Parent OS process ID
+         * Platform-specific identifier of the parent execution context (e.g. parent OS PID)
          */
-        readonly ppid?: number;
+        readonly parent_instance_id?: string;
         /**
          * Execution context name
          */

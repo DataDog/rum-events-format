@@ -17,8 +17,8 @@
   "execution_context": {
     "id": "b1a2c3d4-e5f6-7890-abcd-ef1234567890",
     "type": "renderer-process",
-    "pid": 1236,
-    "ppid": 1234,
+    "instance_id": "1236",
+    "parent_instance_id": "1234",
     "name": "renderer",
     "duration": 220000000000,
     "exit_reason": "clean-exit"
