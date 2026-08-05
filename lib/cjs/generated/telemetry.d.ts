@@ -481,6 +481,10 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * Whether the beta track WebSockets feature is enabled
              */
             beta_track_web_sockets?: boolean;
+            /**
+             * Whether tracing feature's client-side-stats generation is enabled
+             */
+            use_client_side_stats?: boolean;
             [k: string]: unknown;
         };
         [k: string]: unknown;

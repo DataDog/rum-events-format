@@ -540,6 +540,10 @@
                   "type": "boolean",
                   "description": "Whether the beta track WebSockets feature is enabled",
                   "readOnly": false
+                },
+                "use_client_side_stats": {
+                  "type": "boolean",
+                  "description": "Whether tracing feature's client-side-stats generation is enabled"
                 }
               }
             }
