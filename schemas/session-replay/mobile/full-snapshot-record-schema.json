@@ -6,7 +6,7 @@
   "description": "Mobile-specific. Schema of a Record type which contains the full snapshot of a screen.",
   "allOf": [
     {
-      "$ref": "../common/_slot-supported-common-record-schema.json"
+      "$ref": "../common/_common-record-schema.json"
     },
     {
       "required": ["type", "data"],
@@ -36,6 +36,11 @@
               "readOnly": true
             }
           }
+        },
+        "slotId": {
+          "type": "string",
+          "description": "Unique ID of the slot that generated this record.",
+          "readOnly": true
         }
       }
     }

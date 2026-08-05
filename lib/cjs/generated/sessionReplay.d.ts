@@ -593,7 +593,7 @@ export type MobileRecord = MobileFullSnapshotRecord | MobileIncrementalSnapshotR
 /**
  * Mobile-specific. Schema of a Record type which contains the full snapshot of a screen.
  */
-export type MobileFullSnapshotRecord = SlotSupportedCommonRecordSchema & {
+export type MobileFullSnapshotRecord = CommonRecordSchema & {
     /**
      * The type of this Record.
      */
@@ -605,6 +605,10 @@ export type MobileFullSnapshotRecord = SlotSupportedCommonRecordSchema & {
         readonly wireframes: Wireframe[];
         readonly compositionTree?: CompositionTree;
     };
+    /**
+     * Unique ID of the slot that generated this record.
+     */
+    readonly slotId?: string;
 };
 /**
  * Schema of a Wireframe type.
@@ -836,12 +840,16 @@ export type CompositionLayerModifier = CompositionLayerClipModifier | Compositio
 /**
  * Mobile-specific. Schema of a Record type which contains mutations of a screen.
  */
-export type MobileIncrementalSnapshotRecord = SlotSupportedCommonRecordSchema & {
+export type MobileIncrementalSnapshotRecord = CommonRecordSchema & {
     /**
      * The type of this Record.
      */
     readonly type: 11;
     data: MobileIncrementalData;
+    /**
+     * Unique ID of the slot that generated this record.
+     */
+    readonly slotId?: string;
 };
 /**
  * Mobile-specific. Schema of a Session Replay IncrementalData type.
