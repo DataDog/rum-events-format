@@ -469,6 +469,14 @@
               "minimum": 0,
               "maximum": 100,
               "readOnly": true
+            },
+            "session_replay_experimental_features": {
+              "type": "array",
+              "description": "Session Replay experimental features enabled in the SDK configuration",
+              "items": {
+                "type": "string"
+              },
+              "readOnly": true
             }
           }
         },
