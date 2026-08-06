@@ -1359,6 +1359,10 @@ export interface CommonProperties {
              * The percentage of sessions with traced resources
              */
             readonly trace_sample_rate?: number;
+            /**
+             * Session Replay experimental features enabled in the SDK configuration
+             */
+            readonly session_replay_experimental_features?: string[];
             [k: string]: unknown;
         };
         /**
