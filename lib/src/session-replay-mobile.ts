@@ -34,9 +34,17 @@ export type RecordType = (typeof RecordType)[keyof typeof RecordType]
 export const WireframeType: {
   Shape: SessionReplay.ShapeWireframe['type']
   Text: SessionReplay.TextWireframe['type']
+  Image: SessionReplay.ImageWireframe['type']
+  Placeholder: SessionReplay.PlaceholderWireframe['type']
+  Webview: SessionReplay.WebviewWireframe['type']
+  EmbeddedContent: SessionReplay.EmbeddedContentWireframe['type']
 } = {
   Shape: 'shape',
   Text: 'text',
+  Image: 'image',
+  Placeholder: 'placeholder',
+  Webview: 'webview',
+  EmbeddedContent: 'embedded_content',
 } as const
 
 export type WireframeType = (typeof WireframeType)[keyof typeof WireframeType]
@@ -46,11 +54,27 @@ export const IncrementalSource: {
   Touch: SessionReplay.TouchData['source']
   ViewportResize: SessionReplay.ViewportResizeData['source']
   PointerInteraction: SessionReplay.PointerInteractionData['source']
+  CompositionTreeMutation: SessionReplay.CompositionTreeMutationData['source']
 } = {
   Mutation: 0,
   Touch: 2,
   ViewportResize: 4,
   PointerInteraction: 9,
+  CompositionTreeMutation: 10,
 } as const
 
 export type IncrementalSource = (typeof IncrementalSource)[keyof typeof IncrementalSource]
+
+export const CompositeOperation: {
+  SourceOver: Extract<SessionReplay.CompositionLayer['compositeOperation'], 'sourceOver'>
+  DestinationIn: Extract<SessionReplay.CompositionLayer['compositeOperation'], 'destinationIn'>
+  DestinationOut: Extract<SessionReplay.CompositionLayer['compositeOperation'], 'destinationOut'>
+  PlusDarker: Extract<SessionReplay.CompositionLayer['compositeOperation'], 'plusDarker'>
+} = {
+  SourceOver: 'sourceOver',
+  DestinationIn: 'destinationIn',
+  DestinationOut: 'destinationOut',
+  PlusDarker: 'plusDarker',
+} as const
+
+export type CompositeOperation = (typeof CompositeOperation)[keyof typeof CompositeOperation]

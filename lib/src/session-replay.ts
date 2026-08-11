@@ -19,7 +19,12 @@ export {
   PlaybackState,
   SnapshotFormat,
 } from './session-replay-browser'
-export { IncrementalSource as MobileIncrementalSource, MobileSource, WireframeType } from './session-replay-mobile'
+export {
+  CompositeOperation,
+  IncrementalSource as MobileIncrementalSource,
+  MobileSource,
+  WireframeType,
+} from './session-replay-mobile'
 
 export const RecordType: {
   BrowserFullSnapshot: typeof BrowserRecordType.FullSnapshot
