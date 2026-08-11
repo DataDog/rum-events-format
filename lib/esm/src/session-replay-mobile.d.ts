@@ -35,4 +35,10 @@ export declare const IncrementalSource: {
     CompositionTreeMutation: SessionReplay.CompositionTreeMutationData['source'];
 };
 export type IncrementalSource = (typeof IncrementalSource)[keyof typeof IncrementalSource];
-export type CompositeOperation = SessionReplay.CompositionLayer['compositeOperation'];
+export declare const CompositeOperation: {
+    SourceOver: Extract<SessionReplay.CompositionLayer['compositeOperation'], 'sourceOver'>;
+    DestinationIn: Extract<SessionReplay.CompositionLayer['compositeOperation'], 'destinationIn'>;
+    DestinationOut: Extract<SessionReplay.CompositionLayer['compositeOperation'], 'destinationOut'>;
+    PlusDarker: Extract<SessionReplay.CompositionLayer['compositeOperation'], 'plusDarker'>;
+};
+export type CompositeOperation = (typeof CompositeOperation)[keyof typeof CompositeOperation];
