@@ -21,6 +21,10 @@ export type RecordType = (typeof RecordType)[keyof typeof RecordType];
 export declare const WireframeType: {
     Shape: SessionReplay.ShapeWireframe['type'];
     Text: SessionReplay.TextWireframe['type'];
+    Image: SessionReplay.ImageWireframe['type'];
+    Placeholder: SessionReplay.PlaceholderWireframe['type'];
+    Webview: SessionReplay.WebviewWireframe['type'];
+    EmbeddedContent: SessionReplay.EmbeddedContentWireframe['type'];
 };
 export type WireframeType = (typeof WireframeType)[keyof typeof WireframeType];
 export declare const IncrementalSource: {
@@ -28,5 +32,7 @@ export declare const IncrementalSource: {
     Touch: SessionReplay.TouchData['source'];
     ViewportResize: SessionReplay.ViewportResizeData['source'];
     PointerInteraction: SessionReplay.PointerInteractionData['source'];
+    CompositionTreeMutation: SessionReplay.CompositionTreeMutationData['source'];
 };
 export type IncrementalSource = (typeof IncrementalSource)[keyof typeof IncrementalSource];
+export type CompositeOperation = SessionReplay.CompositionLayer['compositeOperation'];
