@@ -121,6 +121,7 @@
               "enum": [
                 "android",
                 "browser",
+                "browser+wasm",
                 "ios",
                 "react-native",
                 "flutter",
@@ -269,6 +270,28 @@
                   "arch": {
                     "type": "string",
                     "description": "CPU architecture from the library.",
+                    "readOnly": true
+                  }
+                }
+              },
+              "readOnly": true
+            },
+            "wasm_modules": {
+              "type": "array",
+              "description": "WebAssembly modules available for stack trace symbolication.",
+              "items": {
+                "type": "object",
+                "description": "A WebAssembly module loaded by the application.",
+                "required": ["url", "build_id"],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "URL identifying the WebAssembly module.",
+                    "readOnly": true
+                  },
+                  "build_id": {
+                    "type": "string",
+                    "description": "Build ID used to identify the WebAssembly debug symbols.",
                     "readOnly": true
                   }
                 }

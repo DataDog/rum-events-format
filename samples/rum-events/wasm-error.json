@@ -1,0 +1,33 @@
+{
+  "type": "error",
+  "date": 1591284175342,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "browser",
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://example.com/"
+  },
+  "error": {
+    "id": "b83a5d82-cdd1-468d-9bc9-3aa9e54d957a",
+    "message": "unreachable",
+    "source": "source",
+    "stack": "RuntimeError: unreachable\n    at wasm-function[42]:0x10",
+    "source_type": "browser+wasm",
+    "wasm_modules": [
+      {
+        "url": "https://example.com/module.wasm",
+        "build_id": "abcd"
+      }
+    ]
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}
