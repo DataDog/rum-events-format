@@ -1,0 +1,52 @@
+{
+  "type": "vital",
+  "date": 1706792746776,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "browser",
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+  },
+  "vital": {
+    "id": "2c1a6de4-5b7f-4a3e-9d81-6f0b2c3d4e5f",
+    "type": "websocket",
+    "name": "websocket_open",
+    "websocket": {
+      "id": "9e9f4b3a-1c2d-4e5f-8a9b-0c1d2e3f4a5b",
+      "open_handshake_succeeded": true,
+      "connecting_duration": 200000000,
+      "open_date": 1706792746776,
+      "selected_protocol": "graphql-ws",
+      "selected_extensions": "permessage-deflate; client_max_window_bits=10",
+      "snapshot_version": 3,
+      "snapshot": {
+        "inbound": {
+          "message_count": 12,
+          "message_size_total": 24576,
+          "message_size_max": 4096,
+          "longest_silence": 1500000000,
+          "time_to_first_message": 120000000
+        },
+        "outbound": {
+          "message_count": 4,
+          "message_size_total": 512,
+          "message_size_max": 256,
+          "longest_silence": 3000000000,
+          "time_to_first_message": 80000000,
+          "buffered_amount_max": 1024,
+          "backpressured_message_count": 0
+        }
+      }
+    }
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}
