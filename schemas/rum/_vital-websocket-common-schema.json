@@ -13,12 +13,17 @@
         "vital": {
           "type": "object",
           "description": "Vital properties",
-          "required": ["type", "websocket"],
+          "required": ["type", "name", "websocket"],
           "properties": {
             "type": {
               "type": "string",
               "description": "Type of the vital.",
               "const": "websocket",
+              "readOnly": true
+            },
+            "name": {
+              "type": "string",
+              "description": "Name of the vital, identifying the phase of the connection it reports: websocket_connecting, websocket_open, websocket_closing or websocket_closed",
               "readOnly": true
             },
             "websocket": {
