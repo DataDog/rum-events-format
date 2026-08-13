@@ -3,7 +3,7 @@
   "$id": "rum/vital-websocket-connecting-schema.json",
   "title": "RumVitalWebsocketConnectingEvent",
   "type": "object",
-  "description": "Schema for the vital reported when a WebSocket connection is created. Reported exactly once per connection, when the WebSocket is constructed",
+  "description": "Schema for the vital reported when a WebSocket connection is created. Reported exactly once per connection, when the WebSocket is constructed. Reported with vital.name websocket_connecting",
   "allOf": [
     {
       "$ref": "_vital-websocket-common-schema.json"
@@ -13,14 +13,7 @@
         "vital": {
           "type": "object",
           "description": "Vital properties",
-          "required": ["name"],
           "properties": {
-            "name": {
-              "type": "string",
-              "description": "Name of the vital, identifying the phase of the connection it reports",
-              "const": "websocket_connecting",
-              "readOnly": true
-            },
             "websocket": {
               "type": "object",
               "description": "WebSocket properties. The identity of the connection is reported on this vital only, and is not repeated on the vitals of the later phases",

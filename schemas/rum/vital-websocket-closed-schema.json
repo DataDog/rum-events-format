@@ -3,7 +3,7 @@
   "$id": "rum/vital-websocket-closed-schema.json",
   "title": "RumVitalWebsocketClosedEvent",
   "type": "object",
-  "description": "Schema for the vital reported when a WebSocket connection stops being tracked, whether because it closed or because tracking ended first. Reported at most once per connection",
+  "description": "Schema for the vital reported when a WebSocket connection stops being tracked, whether because it closed or because tracking ended first. Reported at most once per connection. Reported with vital.name websocket_closed",
   "allOf": [
     {
       "$ref": "_vital-websocket-common-schema.json"
@@ -13,14 +13,7 @@
         "vital": {
           "type": "object",
           "description": "Vital properties",
-          "required": ["name"],
           "properties": {
-            "name": {
-              "type": "string",
-              "description": "Name of the vital, identifying the phase of the connection it reports",
-              "const": "websocket_closed",
-              "readOnly": true
-            },
             "websocket": {
               "type": "object",
               "description": "WebSocket properties",
@@ -68,7 +61,11 @@
                 "snapshot": {
                   "type": "object",
                   "description": "Values of the connection when tracking ended. Omitted when the connection never opened",
-                  "allOf": [{ "$ref": "_vital-websocket-snapshot-schema.json" }],
+                  "allOf": [
+                    {
+                      "$ref": "_vital-websocket-snapshot-schema.json"
+                    }
+                  ],
                   "readOnly": true
                 }
               },
