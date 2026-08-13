@@ -3,7 +3,7 @@
   "$id": "rum/vital-websocket-closing-schema.json",
   "title": "RumVitalWebsocketClosingEvent",
   "type": "object",
-  "description": "Schema for the vital reported when a WebSocket connection starts closing. Reported at most once per connection",
+  "description": "Schema for the vital reported when a WebSocket connection starts closing. Reported at most once per connection. Reported with vital.name websocket_closing",
   "allOf": [
     {
       "$ref": "_vital-websocket-common-schema.json"
@@ -13,14 +13,7 @@
         "vital": {
           "type": "object",
           "description": "Vital properties",
-          "required": ["name"],
           "properties": {
-            "name": {
-              "type": "string",
-              "description": "Name of the vital, identifying the phase of the connection it reports",
-              "const": "websocket_closing",
-              "readOnly": true
-            },
             "websocket": {
               "type": "object",
               "description": "WebSocket properties",

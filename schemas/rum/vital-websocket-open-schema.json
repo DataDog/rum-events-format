@@ -3,7 +3,7 @@
   "$id": "rum/vital-websocket-open-schema.json",
   "title": "RumVitalWebsocketOpenEvent",
   "type": "object",
-  "description": "Schema for the vital reported when a WebSocket connection opens, then repeatedly as a heartbeat while it stays open",
+  "description": "Schema for the vital reported when a WebSocket connection opens, then repeatedly as a heartbeat while it stays open. Reported with vital.name websocket_open",
   "allOf": [
     {
       "$ref": "_vital-websocket-common-schema.json"
@@ -13,14 +13,7 @@
         "vital": {
           "type": "object",
           "description": "Vital properties",
-          "required": ["name"],
           "properties": {
-            "name": {
-              "type": "string",
-              "description": "Name of the vital, identifying the phase of the connection it reports",
-              "const": "websocket_open",
-              "readOnly": true
-            },
             "websocket": {
               "type": "object",
               "description": "WebSocket properties",
@@ -68,7 +61,11 @@
                 "snapshot": {
                   "type": "object",
                   "description": "Values of the connection at the time the vital was reported",
-                  "allOf": [{ "$ref": "_vital-websocket-snapshot-schema.json" }],
+                  "allOf": [
+                    {
+                      "$ref": "_vital-websocket-snapshot-schema.json"
+                    }
+                  ],
                   "readOnly": true
                 }
               },

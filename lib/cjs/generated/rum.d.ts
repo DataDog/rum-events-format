@@ -1022,17 +1022,13 @@ export type RumVitalAppLaunchEvent = RumVitalEventCommonProperties & {
     [k: string]: unknown;
 };
 /**
- * Schema for the vital reported when a WebSocket connection is created. Reported exactly once per connection, when the WebSocket is constructed
+ * Schema for the vital reported when a WebSocket connection is created. Reported exactly once per connection, when the WebSocket is constructed. Reported with vital.name websocket_connecting
  */
 export type RumVitalWebsocketConnectingEvent = RumVitalWebsocketCommonProperties & {
     /**
      * Vital properties
      */
     readonly vital?: {
-        /**
-         * Name of the vital, identifying the phase of the connection it reports
-         */
-        readonly name: 'websocket_connecting';
         /**
          * WebSocket properties. The identity of the connection is reported on this vital only, and is not repeated on the vitals of the later phases
          */
@@ -1068,6 +1064,10 @@ export type RumVitalWebsocketCommonProperties = RumVitalEventCommonProperties & 
          */
         readonly type: 'websocket';
         /**
+         * Name of the vital, identifying the phase of the connection it reports: websocket_connecting, websocket_open, websocket_closing or websocket_closed
+         */
+        readonly name: string;
+        /**
          * WebSocket properties
          */
         readonly websocket: {
@@ -1082,17 +1082,13 @@ export type RumVitalWebsocketCommonProperties = RumVitalEventCommonProperties & 
     [k: string]: unknown;
 };
 /**
- * Schema for the vital reported when a WebSocket connection opens, then repeatedly as a heartbeat while it stays open
+ * Schema for the vital reported when a WebSocket connection opens, then repeatedly as a heartbeat while it stays open. Reported with vital.name websocket_open
  */
 export type RumVitalWebsocketOpenEvent = RumVitalWebsocketCommonProperties & {
     /**
      * Vital properties
      */
     readonly vital?: {
-        /**
-         * Name of the vital, identifying the phase of the connection it reports
-         */
-        readonly name: 'websocket_open';
         /**
          * WebSocket properties
          */
@@ -1132,17 +1128,13 @@ export type RumVitalWebsocketOpenEvent = RumVitalWebsocketCommonProperties & {
     [k: string]: unknown;
 };
 /**
- * Schema for the vital reported when a WebSocket connection starts closing. Reported at most once per connection
+ * Schema for the vital reported when a WebSocket connection starts closing. Reported at most once per connection. Reported with vital.name websocket_closing
  */
 export type RumVitalWebsocketClosingEvent = RumVitalWebsocketCommonProperties & {
     /**
      * Vital properties
      */
     readonly vital?: {
-        /**
-         * Name of the vital, identifying the phase of the connection it reports
-         */
-        readonly name: 'websocket_closing';
         /**
          * WebSocket properties
          */
@@ -1162,17 +1154,13 @@ export type RumVitalWebsocketClosingEvent = RumVitalWebsocketCommonProperties & 
     [k: string]: unknown;
 };
 /**
- * Schema for the vital reported when a WebSocket connection stops being tracked, whether because it closed or because tracking ended first. Reported at most once per connection
+ * Schema for the vital reported when a WebSocket connection stops being tracked, whether because it closed or because tracking ended first. Reported at most once per connection. Reported with vital.name websocket_closed
  */
 export type RumVitalWebsocketClosedEvent = RumVitalWebsocketCommonProperties & {
     /**
      * Vital properties
      */
     readonly vital?: {
-        /**
-         * Name of the vital, identifying the phase of the connection it reports
-         */
-        readonly name: 'websocket_closed';
         /**
          * WebSocket properties
          */
