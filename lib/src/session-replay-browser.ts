@@ -115,6 +115,7 @@ export const ChangeType: {
   AttachedStyleSheets: ChangeTypeId<8, SessionReplay.AttachedStyleSheetsChange>
   MediaPlaybackState: ChangeTypeId<9, SessionReplay.MediaPlaybackStateChange>
   VisualViewport: ChangeTypeId<10, SessionReplay.VisualViewportChange>
+  AddRoleAnnotatedStrings: ChangeTypeId<11, SessionReplay.AddRoleAnnotatedStringsChange>
 } = {
   AddString: 0,
   AddNode: 1,
@@ -127,9 +128,32 @@ export const ChangeType: {
   AttachedStyleSheets: 8,
   MediaPlaybackState: 9,
   VisualViewport: 10,
+  AddRoleAnnotatedStrings: 11,
 } as const
 
 export type ChangeType = (typeof ChangeType)[keyof typeof ChangeType]
+
+export const StringRole: {
+  Default: SessionReplay.StringRoleDefault
+  NodeName: SessionReplay.StringRoleNodeName
+  AttributeName: SessionReplay.StringRoleAttributeName
+  AttributeValue: SessionReplay.StringRoleAttributeValue
+  TextContent: SessionReplay.StringRoleTextContent
+  FormInput: SessionReplay.StringRoleFormInput
+  CSS: SessionReplay.StringRoleCSS
+  URL: SessionReplay.StringRoleURL
+} = {
+  Default: 0,
+  NodeName: 1,
+  AttributeName: 2,
+  AttributeValue: 3,
+  TextContent: 4,
+  FormInput: 5,
+  CSS: 6,
+  URL: 7,
+} as const
+
+export type StringRole = (typeof StringRole)[keyof typeof StringRole]
 
 export const PlaybackState: {
   Playing: SessionReplay.PlaybackStatePlaying
