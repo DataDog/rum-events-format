@@ -84,7 +84,7 @@ export type SnapshotFormatChange = 1;
 /**
  * Browser-specific. Schema representing an individual change within a BrowserChangeData collection.
  */
-export type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachedStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]] | [11, ...AddRoleAnnotatedStringsChange[]];
+export type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachedStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]] | [11, ...AddRoleAnnotatedStringsChange[]] | [12, ...InputValueChange[]] | [13, ...InputSelectionChange[]];
 /**
  * Browser-specific. Schema representing the addition of a string to the string table, annotated as belonging to the default string role.
  */
@@ -380,6 +380,33 @@ export type VisualViewportScale = number;
  * @minItems 1
  */
 export type AddRoleAnnotatedStringsChange = [StringRoleId, ...StringLiteral[]];
+/**
+ * Browser-specific. Schema representing a change to the value of a 'value-serializable' form input element, where 'value-serializable' means that the element's state can be reconstructed from its 'value' property.
+ *
+ * @minItems 2
+ */
+export type InputValueChange = [NodeId, StringOrStringReference];
+/**
+ * Browser-specific. Schema representing a change to the selection state of one or more 'selection-driven' form input elements; selection-driven inputs include checkboxes, radio buttons, and <select>/<option>. For <select>, the change targets the <option> elements, which allows multiple selection to be expressed naturally. To model correlated changes like updates to radio button groups, the same selection state can be applied to many nodes at once.
+ *
+ * @minItems 1
+ */
+export type InputSelectionChange = [
+    InputSelectionStateSelected | InputSelectionStateDeselected | InputSelectionStateIndeterminate,
+    ...NodeId[]
+];
+/**
+ * The element is selected. For a checkbox or radio button, this means that it is checked; for an <option>, this means that it is selected.
+ */
+export type InputSelectionStateSelected = 0;
+/**
+ * The element is not selected. For a checkbox or radio button, this means that it is unchecked; for an <option>, this means that it is deselected.
+ */
+export type InputSelectionStateDeselected = 1;
+/**
+ * The element is neither selected nor deselected. This state only applies to checkboxes, which render it distinctly from both the selected and deselected states.
+ */
+export type InputSelectionStateIndeterminate = 2;
 /**
  * Browser-specific. Schema of a Record type which contains mutations of a screen.
  */

@@ -14,6 +14,7 @@ export {
   ChangeType as BrowserChangeType,
   NodeType,
   IncrementalSource as BrowserIncrementalSource,
+  InputSelectionState,
   MouseInteractionType,
   MediaInteractionType,
   PlaybackState,
