@@ -581,6 +581,10 @@
                 "use_client_side_stats": {
                   "type": "boolean",
                   "description": "Whether tracing feature's client-side-stats generation is enabled"
+                },
+                "use_trace_sampling_rules": {
+                  "type": "boolean",
+                  "description": "Whether trace sampling rules are configured"
                 }
               }
             }
