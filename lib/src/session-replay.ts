@@ -18,6 +18,7 @@ export {
   MediaInteractionType,
   PlaybackState,
   SnapshotFormat,
+  StringNamespace,
 } from './session-replay-browser'
 export {
   CompositeOperation,

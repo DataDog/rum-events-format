@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "session-replay/browser/changes/string-references/string-namespace-schema.json",
+  "title": "StringNamespaceId",
+  "description": "Browser-specific. Schema representing a string namespace.",
+  "oneOf": [
+    {
+      "title": "StringNamespaceDefault",
+      "description": "The default string namespace, used for uncategorized strings. Strings added by an AddStringChange are added to this string namespace.",
+      "const": 0
+    },
+    {
+      "title": "StringNamespaceNodeName",
+      "description": "A string namespace containing DOM node names (e.g. 'div', '#text').",
+      "const": 1
+    },
+    {
+      "title": "StringNamespaceAttributeName",
+      "description": "A string namespace containing DOM attribute names.",
+      "const": 2
+    },
+    {
+      "title": "StringNamespaceAttributeValue",
+      "description": "A string namespace containing DOM attribute values.",
+      "const": 3
+    },
+    {
+      "title": "StringNamespaceTextContent",
+      "description": "A string namespace containing DOM text content.",
+      "const": 4
+    },
+    {
+      "title": "StringNamespaceFormInput",
+      "description": "A string namespace containing DOM form input values.",
+      "const": 5
+    },
+    {
+      "title": "StringNamespaceCSS",
+      "description": "A string namespace containing CSS inline styles and stylesheets.",
+      "const": 6
+    },
+    {
+      "title": "StringNamespaceURL",
+      "description": "A string namespace containing URLs.",
+      "const": 7
+    }
+  ]
+}

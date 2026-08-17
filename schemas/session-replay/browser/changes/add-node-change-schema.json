@@ -12,7 +12,14 @@
       "items": [
         { "$ref": "node-references/insertion-point-schema.json" },
         {
-          "oneOf": [{ "const": "#cdata-section" }, { "$ref": "string-references/string-reference-schema.json" }]
+          "oneOf": [
+            { "const": "#cdata-section" },
+            {
+              "description": "The node name expressed as a literal string in the NodeName string namespace.",
+              "const": { "namespace": 1, "string": "#cdata-section" }
+            },
+            { "$ref": "string-references/string-reference-schema.json" }
+          ]
         }
       ],
       "additionalItems": false
@@ -25,7 +32,14 @@
       "items": [
         { "$ref": "node-references/insertion-point-schema.json" },
         {
-          "oneOf": [{ "const": "#doctype" }, { "$ref": "string-references/string-reference-schema.json" }]
+          "oneOf": [
+            { "const": "#doctype" },
+            {
+              "description": "The node name expressed as a literal string in the NodeName string namespace.",
+              "const": { "namespace": 1, "string": "#doctype" }
+            },
+            { "$ref": "string-references/string-reference-schema.json" }
+          ]
         },
         { "$ref": "string-references/string-or-string-reference-schema.json" },
         { "$ref": "string-references/string-or-string-reference-schema.json" },
@@ -41,7 +55,14 @@
       "items": [
         { "$ref": "node-references/insertion-point-schema.json" },
         {
-          "oneOf": [{ "const": "#document" }, { "$ref": "string-references/string-reference-schema.json" }]
+          "oneOf": [
+            { "const": "#document" },
+            {
+              "description": "The node name expressed as a literal string in the NodeName string namespace.",
+              "const": { "namespace": 1, "string": "#document" }
+            },
+            { "$ref": "string-references/string-reference-schema.json" }
+          ]
         }
       ],
       "additionalItems": false
@@ -54,7 +75,14 @@
       "items": [
         { "$ref": "node-references/insertion-point-schema.json" },
         {
-          "oneOf": [{ "const": "#document-fragment" }, { "$ref": "string-references/string-reference-schema.json" }]
+          "oneOf": [
+            { "const": "#document-fragment" },
+            {
+              "description": "The node name expressed as a literal string in the NodeName string namespace.",
+              "const": { "namespace": 1, "string": "#document-fragment" }
+            },
+            { "$ref": "string-references/string-reference-schema.json" }
+          ]
         }
       ],
       "additionalItems": false
@@ -66,15 +94,7 @@
       "minItems": 2,
       "items": [
         { "$ref": "node-references/insertion-point-schema.json" },
-        {
-          "oneOf": [
-            {
-              "type": "string",
-              "description": "The element's node name expressed as a literal string."
-            },
-            { "$ref": "string-references/string-reference-schema.json" }
-          ]
-        }
+        { "$ref": "string-references/string-or-string-reference-schema.json" }
       ],
       "additionalItems": { "$ref": "attributes/attribute-assignment-schema.json" }
     },
@@ -86,7 +106,14 @@
       "items": [
         { "$ref": "node-references/insertion-point-schema.json" },
         {
-          "oneOf": [{ "const": "#shadow-root" }, { "$ref": "string-references/string-reference-schema.json" }]
+          "oneOf": [
+            { "const": "#shadow-root" },
+            {
+              "description": "The node name expressed as a literal string in the NodeName string namespace.",
+              "const": { "namespace": 1, "string": "#shadow-root" }
+            },
+            { "$ref": "string-references/string-reference-schema.json" }
+          ]
         }
       ],
       "additionalItems": false
@@ -99,7 +126,14 @@
       "items": [
         { "$ref": "node-references/insertion-point-schema.json" },
         {
-          "oneOf": [{ "const": "#text" }, { "$ref": "string-references/string-reference-schema.json" }]
+          "oneOf": [
+            { "const": "#text" },
+            {
+              "description": "The node name expressed as a literal string in the NodeName string namespace.",
+              "const": { "namespace": 1, "string": "#text" }
+            },
+            { "$ref": "string-references/string-reference-schema.json" }
+          ]
         },
         { "$ref": "string-references/string-or-string-reference-schema.json" }
       ],

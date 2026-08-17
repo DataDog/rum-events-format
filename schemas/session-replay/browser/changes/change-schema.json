@@ -80,6 +80,13 @@
       "items": [{ "const": 10 }],
       "additionalItems": { "$ref": "visual-viewport-change-schema.json" },
       "description": "Changes to the visual viewport."
+    },
+    {
+      "type": "array",
+      "minItems": 1,
+      "items": [{ "const": 11 }],
+      "additionalItems": { "$ref": "add-namespaced-strings-change-schema.json" },
+      "description": "Newly added namespaced strings."
     }
   ]
 }

@@ -70,8 +70,20 @@ export declare const ChangeType: {
     AttachedStyleSheets: ChangeTypeId<8, SessionReplay.AttachedStyleSheetsChange>;
     MediaPlaybackState: ChangeTypeId<9, SessionReplay.MediaPlaybackStateChange>;
     VisualViewport: ChangeTypeId<10, SessionReplay.VisualViewportChange>;
+    AddNamespacedStrings: ChangeTypeId<11, SessionReplay.AddNamespacedStringsChange>;
 };
 export type ChangeType = (typeof ChangeType)[keyof typeof ChangeType];
+export declare const StringNamespace: {
+    Default: SessionReplay.StringNamespaceDefault;
+    NodeName: SessionReplay.StringNamespaceNodeName;
+    AttributeName: SessionReplay.StringNamespaceAttributeName;
+    AttributeValue: SessionReplay.StringNamespaceAttributeValue;
+    TextContent: SessionReplay.StringNamespaceTextContent;
+    FormInput: SessionReplay.StringNamespaceFormInput;
+    CSS: SessionReplay.StringNamespaceCSS;
+    URL: SessionReplay.StringNamespaceURL;
+};
+export type StringNamespace = (typeof StringNamespace)[keyof typeof StringNamespace];
 export declare const PlaybackState: {
     Playing: SessionReplay.PlaybackStatePlaying;
     Paused: SessionReplay.PlaybackStatePaused;

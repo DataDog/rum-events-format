@@ -115,6 +115,7 @@ export const ChangeType: {
   AttachedStyleSheets: ChangeTypeId<8, SessionReplay.AttachedStyleSheetsChange>
   MediaPlaybackState: ChangeTypeId<9, SessionReplay.MediaPlaybackStateChange>
   VisualViewport: ChangeTypeId<10, SessionReplay.VisualViewportChange>
+  AddNamespacedStrings: ChangeTypeId<11, SessionReplay.AddNamespacedStringsChange>
 } = {
   AddString: 0,
   AddNode: 1,
@@ -127,9 +128,32 @@ export const ChangeType: {
   AttachedStyleSheets: 8,
   MediaPlaybackState: 9,
   VisualViewport: 10,
+  AddNamespacedStrings: 11,
 } as const
 
 export type ChangeType = (typeof ChangeType)[keyof typeof ChangeType]
+
+export const StringNamespace: {
+  Default: SessionReplay.StringNamespaceDefault
+  NodeName: SessionReplay.StringNamespaceNodeName
+  AttributeName: SessionReplay.StringNamespaceAttributeName
+  AttributeValue: SessionReplay.StringNamespaceAttributeValue
+  TextContent: SessionReplay.StringNamespaceTextContent
+  FormInput: SessionReplay.StringNamespaceFormInput
+  CSS: SessionReplay.StringNamespaceCSS
+  URL: SessionReplay.StringNamespaceURL
+} = {
+  Default: 0,
+  NodeName: 1,
+  AttributeName: 2,
+  AttributeValue: 3,
+  TextContent: 4,
+  FormInput: 5,
+  CSS: 6,
+  URL: 7,
+} as const
+
+export type StringNamespace = (typeof StringNamespace)[keyof typeof StringNamespace]
 
 export const PlaybackState: {
   Playing: SessionReplay.PlaybackStatePlaying

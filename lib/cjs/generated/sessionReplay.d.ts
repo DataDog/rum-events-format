@@ -92,9 +92,9 @@ export type SnapshotFormatChange = 1;
 /**
  * Browser-specific. Schema representing an individual change within a BrowserChangeData collection.
  */
-export type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachedStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]];
+export type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachedStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]] | [11, ...AddNamespacedStringsChange[]];
 /**
- * Browser-specific. Schema representing the addition of a string to the string table.
+ * Browser-specific. Schema representing the addition of a string to the string table, annotated as belonging to the default string namespace.
  */
 export type AddStringChange = string;
 /**
@@ -106,7 +106,13 @@ export type AddNodeChange = AddCDataSectionNodeChange | AddDocTypeNodeChange | A
  *
  * @minItems 2
  */
-export type AddCDataSectionNodeChange = [InsertionPoint, '#cdata-section' | StringReference];
+export type AddCDataSectionNodeChange = [
+    InsertionPoint,
+    '#cdata-section' | {
+        namespace: 1;
+        string: '#cdata-section';
+    } | StringReference
+];
 /**
  * Browser-specific. Schema representing the insertion point of a node which is being added to the document.
  */
@@ -138,33 +144,88 @@ export type StringReference = number;
  */
 export type AddDocTypeNodeChange = [
     InsertionPoint,
-    '#doctype' | StringReference,
+    '#doctype' | {
+        namespace: 1;
+        string: '#doctype';
+    } | StringReference,
     StringOrStringReference,
     StringOrStringReference,
     StringOrStringReference
 ];
 /**
- * Browser-specific. Schema representing a string, either expressed as a literal or as an index into the string table.
+ * Browser-specific. Schema representing a string, either expressed as a literal, as a literal with an associated string namespace, or as an index into the string table.
  */
-export type StringOrStringReference = string | StringReference;
+export type StringOrStringReference = StringLiteral | NamespacedStringLiteral | StringReference;
+/**
+ * Browser-specific. Schema representing a string, expressed as a literal.
+ */
+export type StringLiteral = string;
+/**
+ * Browser-specific. Schema representing a string namespace.
+ */
+export type StringNamespaceId = StringNamespaceDefault | StringNamespaceNodeName | StringNamespaceAttributeName | StringNamespaceAttributeValue | StringNamespaceTextContent | StringNamespaceFormInput | StringNamespaceCSS | StringNamespaceURL;
+/**
+ * The default string namespace, used for uncategorized strings. Strings added by an AddStringChange are added to this string namespace.
+ */
+export type StringNamespaceDefault = 0;
+/**
+ * A string namespace containing DOM node names (e.g. 'div', '#text').
+ */
+export type StringNamespaceNodeName = 1;
+/**
+ * A string namespace containing DOM attribute names.
+ */
+export type StringNamespaceAttributeName = 2;
+/**
+ * A string namespace containing DOM attribute values.
+ */
+export type StringNamespaceAttributeValue = 3;
+/**
+ * A string namespace containing DOM text content.
+ */
+export type StringNamespaceTextContent = 4;
+/**
+ * A string namespace containing DOM form input values.
+ */
+export type StringNamespaceFormInput = 5;
+/**
+ * A string namespace containing CSS inline styles and stylesheets.
+ */
+export type StringNamespaceCSS = 6;
+/**
+ * A string namespace containing URLs.
+ */
+export type StringNamespaceURL = 7;
 /**
  * Schema representing the addition of a new #document node.
  *
  * @minItems 2
  */
-export type AddDocumentNodeChange = [InsertionPoint, '#document' | StringReference];
+export type AddDocumentNodeChange = [
+    InsertionPoint,
+    '#document' | {
+        namespace: 1;
+        string: '#document';
+    } | StringReference
+];
 /**
  * Schema representing the addition of a new #document-fragment node.
  *
  * @minItems 2
  */
-export type AddDocumentFragmentNodeChange = [InsertionPoint, '#document-fragment' | StringReference];
+export type AddDocumentFragmentNodeChange = [
+    InsertionPoint,
+    '#document-fragment' | {
+        namespace: 1;
+        string: '#document-fragment';
+    } | StringReference
+];
 /**
  * Schema representing the addition of a new element node.
  *
  * @minItems 2
  */
-export type AddElementNodeChange = [InsertionPoint, string | StringReference, ...AttributeAssignment[]];
+export type AddElementNodeChange = [InsertionPoint, StringOrStringReference, ...AttributeAssignment[]];
 /**
  * Schema representing an assignment of a value to an attribute. The format is [name, value].
  *
@@ -176,13 +237,26 @@ export type AttributeAssignment = [StringOrStringReference, StringOrStringRefere
  *
  * @minItems 2
  */
-export type AddShadowRootNodeChange = [InsertionPoint, '#shadow-root' | StringReference];
+export type AddShadowRootNodeChange = [
+    InsertionPoint,
+    '#shadow-root' | {
+        namespace: 1;
+        string: '#shadow-root';
+    } | StringReference
+];
 /**
  * Schema representing the addition of a new #text node.
  *
  * @minItems 3
  */
-export type AddTextNodeChange = [InsertionPoint, '#text' | StringReference, StringOrStringReference];
+export type AddTextNodeChange = [
+    InsertionPoint,
+    '#text' | {
+        namespace: 1;
+        string: '#text';
+    } | StringReference,
+    StringOrStringReference
+];
 /**
  * Browser-specific. Schema representing the removal of a node from the document.
  */
@@ -311,6 +385,12 @@ export type VisualViewportHeight = number;
  * The pinch-zoom scaling factor applied to the visual viewport.
  */
 export type VisualViewportScale = number;
+/**
+ * Browser-specific. Schema representing the addition of a sequence of strings to the string table, annotated as belonging to a particular string namespace.
+ *
+ * @minItems 1
+ */
+export type AddNamespacedStringsChange = [StringNamespaceId, ...StringLiteral[]];
 /**
  * Browser-specific. Schema of a Record type which contains mutations of a screen.
  */
@@ -1232,6 +1312,13 @@ export interface CDataNode {
      */
     readonly type: 4;
     textContent: '';
+}
+/**
+ * Browser-specific. Schema representing a string literal with an associated string namespace.
+ */
+export interface NamespacedStringLiteral {
+    namespace: StringNamespaceId;
+    string: StringLiteral;
 }
 /**
  * Schema of an AddedNodeMutation.
