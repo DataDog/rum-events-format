@@ -549,7 +549,7 @@ export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartD
 /**
  * Schema of mobile specific features usage
  */
-export type TelemetryMobileFeaturesUsage = TrackWebView | AndroidNetworkInstrumentation;
+export type TelemetryMobileFeaturesUsage = TrackWebView | Timeseries | AndroidNetworkInstrumentation;
 /**
  * Schema of common properties of Telemetry events
  */
@@ -973,6 +973,13 @@ export interface TrackWebView {
      * trackWebView API
      */
     feature: 'trackWebView';
+    [k: string]: unknown;
+}
+export interface Timeseries {
+    /**
+     * Timeseries tracking enabled
+     */
+    feature: 'timeseries';
     [k: string]: unknown;
 }
 export interface AndroidNetworkInstrumentation {
