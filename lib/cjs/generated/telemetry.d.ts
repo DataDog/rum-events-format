@@ -515,6 +515,10 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * Whether tracing feature's client-side-stats generation is enabled
              */
             use_client_side_stats?: boolean;
+            /**
+             * Whether trace sampling rules are configured
+             */
+            use_trace_sampling_rules?: boolean;
             [k: string]: unknown;
         };
         [k: string]: unknown;
