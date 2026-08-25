@@ -29,6 +29,8 @@ This repository accommodates various usages, specifically:
 - The [Android SDK](https://github.com/DataDog/dd-sdk-android/) generates native data models based on
   schemas coming from `rum/`, `session-replay/` and `telemetry/` folders.
 
+- The [Electron SDK](https://github.com/DataDog/electron-sdk/) generates TypeScript types from `schemas/rum-events-electron-schema.json`, `schemas/rum-events-browser-schema.json`, `schemas/telemetry-events-schema.json` and `schemas/profiling-browser-schema.json`.
+
 - The Datadog App is using TypeScript types by including the `lib/` folder as a package dependency.
 
 # Tools
