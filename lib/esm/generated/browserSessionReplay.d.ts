@@ -84,7 +84,7 @@ export type SnapshotFormatChange = 1;
 /**
  * Browser-specific. Schema representing an individual change within a BrowserChangeData collection.
  */
-export type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachedStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]] | [11, ...AddRoleAnnotatedStringsChange[]] | [12, ...InputValueChange[]] | [13, ...InputSelectionChange[]];
+export type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachedStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]] | [11, ...AddRoleAnnotatedStringsChange[]] | [12, ...InputValueChange[]] | [13, ...InputSelectionChange[]] | [14];
 /**
  * Browser-specific. Schema representing the addition of a string to the string table, annotated as belonging to the default string role.
  */
