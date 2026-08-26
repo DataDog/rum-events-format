@@ -101,6 +101,13 @@
       "items": [{ "const": 13 }],
       "additionalItems": { "$ref": "input-selection-change-schema.json" },
       "description": "Changes to form element selection state."
+    },
+    {
+      "type": "array",
+      "minItems": 1,
+      "items": [{ "const": 14 }],
+      "additionalItems": false,
+      "description": "Clears the string table, removing all strings."
     }
   ]
 }
