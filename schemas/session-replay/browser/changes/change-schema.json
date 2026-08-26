@@ -80,6 +80,27 @@
       "items": [{ "const": 10 }],
       "additionalItems": { "$ref": "visual-viewport-change-schema.json" },
       "description": "Changes to the visual viewport."
+    },
+    {
+      "type": "array",
+      "minItems": 1,
+      "items": [{ "const": 11 }],
+      "additionalItems": { "$ref": "add-role-annotated-strings-change-schema.json" },
+      "description": "Newly added role-annotated strings."
+    },
+    {
+      "type": "array",
+      "minItems": 1,
+      "items": [{ "const": 12 }],
+      "additionalItems": { "$ref": "input-value-change-schema.json" },
+      "description": "Changes to form element values."
+    },
+    {
+      "type": "array",
+      "minItems": 1,
+      "items": [{ "const": 13 }],
+      "additionalItems": { "$ref": "input-selection-change-schema.json" },
+      "description": "Changes to form element selection state."
     }
   ]
 }

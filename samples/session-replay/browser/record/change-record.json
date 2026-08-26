@@ -57,6 +57,18 @@
       [1, 16],
       [1, 9]
     ],
+    [
+      1,
+      [null, { "role": 1, "string": "#document" }],
+      [1, { "role": 1, "string": "#doctype" }, "html", "", ""],
+      [0, { "role": 1, "string": "html" }],
+      [1, { "role": 1, "string": "body" }, ["style", "background-color: green"]],
+      [1, { "role": 1, "string": "span" }],
+      [1, { "role": 1, "string": "#text" }, "Hello"],
+      [0, { "role": 1, "string": "#cdata-section" }],
+      [6, { "role": 1, "string": "#document-fragment" }],
+      [1, { "role": 1, "string": "#shadow-root" }]
+    ],
     [2, 8, 9],
     [3, [3, ["id", "app"], ["class"]], [4, ["id", "heading"]]],
     [0, "id", "app", "class", "heading"],
@@ -64,6 +76,7 @@
     [4, [6, "Goodbye"], [7, " for today"]],
     [0, "Goodbye", " for today"],
     [4, [6, 0], [7, 1]],
+    [4, [6, { "role": 4, "string": "Goodbye" }]],
     [5, [4, 100, 200], [8, 95, 20]],
     [6, [0, 0, 50], [7, 15, 20]],
     [7, ["div { color: blue }"]],
@@ -79,6 +92,11 @@
     [8, [11, 0, 1]],
     [9, [15, 0]],
     [9, [15, 1]],
-    [10, [30, 30, 15, 15, 1024, 768, 2]]
+    [10, [30, 30, 15, 15, 1024, 768, 2]],
+    [11, [1, "div", "span"], [6, "div { color: blue }"], [5, "Hello"]],
+    [11, [7, "https://example.com/app.css"]],
+    [12, [20, "hello"], [21, 0], [22, { "role": 5, "string": "hello" }]],
+    [13, [0, 23], [1, 24, 25, 26]],
+    [13, [2, 27]]
   ]
 }

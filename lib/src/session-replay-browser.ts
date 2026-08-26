@@ -115,6 +115,9 @@ export const ChangeType: {
   AttachedStyleSheets: ChangeTypeId<8, SessionReplay.AttachedStyleSheetsChange>
   MediaPlaybackState: ChangeTypeId<9, SessionReplay.MediaPlaybackStateChange>
   VisualViewport: ChangeTypeId<10, SessionReplay.VisualViewportChange>
+  AddRoleAnnotatedStrings: ChangeTypeId<11, SessionReplay.AddRoleAnnotatedStringsChange>
+  InputValue: ChangeTypeId<12, SessionReplay.InputValueChange>
+  InputSelection: ChangeTypeId<13, SessionReplay.InputSelectionChange>
 } = {
   AddString: 0,
   AddNode: 1,
@@ -127,9 +130,34 @@ export const ChangeType: {
   AttachedStyleSheets: 8,
   MediaPlaybackState: 9,
   VisualViewport: 10,
+  AddRoleAnnotatedStrings: 11,
+  InputValue: 12,
+  InputSelection: 13,
 } as const
 
 export type ChangeType = (typeof ChangeType)[keyof typeof ChangeType]
+
+export const StringRole: {
+  Default: SessionReplay.StringRoleDefault
+  NodeName: SessionReplay.StringRoleNodeName
+  AttributeName: SessionReplay.StringRoleAttributeName
+  AttributeValue: SessionReplay.StringRoleAttributeValue
+  TextContent: SessionReplay.StringRoleTextContent
+  FormInput: SessionReplay.StringRoleFormInput
+  CSS: SessionReplay.StringRoleCSS
+  URL: SessionReplay.StringRoleURL
+} = {
+  Default: 0,
+  NodeName: 1,
+  AttributeName: 2,
+  AttributeValue: 3,
+  TextContent: 4,
+  FormInput: 5,
+  CSS: 6,
+  URL: 7,
+} as const
+
+export type StringRole = (typeof StringRole)[keyof typeof StringRole]
 
 export const PlaybackState: {
   Playing: SessionReplay.PlaybackStatePlaying
@@ -140,6 +168,18 @@ export const PlaybackState: {
 } as const
 
 export type PlaybackState = (typeof PlaybackState)[keyof typeof PlaybackState]
+
+export const InputSelectionState: {
+  Selected: SessionReplay.InputSelectionStateSelected
+  Deselected: SessionReplay.InputSelectionStateDeselected
+  Indeterminate: SessionReplay.InputSelectionStateIndeterminate
+} = {
+  Selected: 0,
+  Deselected: 1,
+  Indeterminate: 2,
+} as const
+
+export type InputSelectionState = (typeof InputSelectionState)[keyof typeof InputSelectionState]
 
 export const SnapshotFormat: {
   V1: SessionReplay.SnapshotFormatV1

@@ -132,7 +132,8 @@
                 "windows",
                 "macos",
                 "linux",
-                "maui"
+                "maui",
+                "nodejs"
               ],
               "readOnly": true
             },

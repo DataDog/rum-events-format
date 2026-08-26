@@ -293,7 +293,7 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
         /**
          * Source type of the error (the language or platform impacting the error stacktrace format)
          */
-        readonly source_type?: 'android' | 'browser' | 'browser+wasm' | 'ios' | 'react-native' | 'flutter' | 'roku' | 'ndk' | 'ios+il2cpp' | 'ndk+il2cpp' | 'windows' | 'macos' | 'linux' | 'maui';
+        readonly source_type?: 'android' | 'browser' | 'browser+wasm' | 'ios' | 'react-native' | 'flutter' | 'roku' | 'ndk' | 'ios+il2cpp' | 'ndk+il2cpp' | 'windows' | 'macos' | 'linux' | 'maui' | 'nodejs';
         /**
          * Resource properties of the error
          */

@@ -14,10 +14,12 @@ export {
   ChangeType as BrowserChangeType,
   NodeType,
   IncrementalSource as BrowserIncrementalSource,
+  InputSelectionState,
   MouseInteractionType,
   MediaInteractionType,
   PlaybackState,
   SnapshotFormat,
+  StringRole,
 } from './session-replay-browser'
 export {
   CompositeOperation,

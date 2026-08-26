@@ -70,13 +70,33 @@ export declare const ChangeType: {
     AttachedStyleSheets: ChangeTypeId<8, SessionReplay.AttachedStyleSheetsChange>;
     MediaPlaybackState: ChangeTypeId<9, SessionReplay.MediaPlaybackStateChange>;
     VisualViewport: ChangeTypeId<10, SessionReplay.VisualViewportChange>;
+    AddRoleAnnotatedStrings: ChangeTypeId<11, SessionReplay.AddRoleAnnotatedStringsChange>;
+    InputValue: ChangeTypeId<12, SessionReplay.InputValueChange>;
+    InputSelection: ChangeTypeId<13, SessionReplay.InputSelectionChange>;
 };
 export type ChangeType = (typeof ChangeType)[keyof typeof ChangeType];
+export declare const StringRole: {
+    Default: SessionReplay.StringRoleDefault;
+    NodeName: SessionReplay.StringRoleNodeName;
+    AttributeName: SessionReplay.StringRoleAttributeName;
+    AttributeValue: SessionReplay.StringRoleAttributeValue;
+    TextContent: SessionReplay.StringRoleTextContent;
+    FormInput: SessionReplay.StringRoleFormInput;
+    CSS: SessionReplay.StringRoleCSS;
+    URL: SessionReplay.StringRoleURL;
+};
+export type StringRole = (typeof StringRole)[keyof typeof StringRole];
 export declare const PlaybackState: {
     Playing: SessionReplay.PlaybackStatePlaying;
     Paused: SessionReplay.PlaybackStatePaused;
 };
 export type PlaybackState = (typeof PlaybackState)[keyof typeof PlaybackState];
+export declare const InputSelectionState: {
+    Selected: SessionReplay.InputSelectionStateSelected;
+    Deselected: SessionReplay.InputSelectionStateDeselected;
+    Indeterminate: SessionReplay.InputSelectionStateIndeterminate;
+};
+export type InputSelectionState = (typeof InputSelectionState)[keyof typeof InputSelectionState];
 export declare const SnapshotFormat: {
     V1: SessionReplay.SnapshotFormatV1;
     Change: SessionReplay.SnapshotFormatChange;
