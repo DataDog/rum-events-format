@@ -136,6 +136,12 @@ export type RumActionEvent = CommonProperties & ViewContainerSchema & {
                  */
                 readonly composed_path_selector?: string;
                 /**
+                 * Key-value map of DOM attributes (href, aria-label, name, title, alt, id, role, data-*) collected from the click event composed path, closest occurrence wins per key
+                 */
+                readonly attributes?: {
+                    [k: string]: string;
+                };
+                /**
                  * Width of the target element (in pixels)
                  */
                 readonly width?: number;
