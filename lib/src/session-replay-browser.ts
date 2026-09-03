@@ -122,6 +122,7 @@ export const ChangeType: {
   InputValue: ChangeTypeId<12, SessionReplay.InputValueChange>
   InputSelection: ChangeTypeId<13, SessionReplay.InputSelectionChange>
   ClearStrings: DatalessChangeTypeId<14>
+  ImageContent: ChangeTypeId<15, SessionReplay.ImageContentChange>
 } = {
   AddString: 0,
   AddNode: 1,
@@ -138,6 +139,7 @@ export const ChangeType: {
   InputValue: 12,
   InputSelection: 13,
   ClearStrings: 14,
+  ImageContent: 15,
 } as const
 
 export type ChangeType = (typeof ChangeType)[keyof typeof ChangeType]
