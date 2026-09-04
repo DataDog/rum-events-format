@@ -420,15 +420,11 @@ export type InputSelectionStateDeselected = 1;
  */
 export type InputSelectionStateIndeterminate = 2;
 /**
- * Browser-specific. Schema representing a change in an element's image content.
+ * Browser-specific. Schema representing a change in an element's image content. The resource ID is a StringOrStringReference, allowing it to be stored in the string table with the StringResourceId role.
  *
  * @minItems 2
  */
-export type ImageContentChange = [NodeId, StringOrStringReference1];
-/**
- * Browser-specific. Schema representing a string, either expressed as a literal, as a literal with an associated string role, or as an index into the string table.
- */
-export type StringOrStringReference1 = StringLiteral | RoleAnnotatedStringLiteral | StringReference;
+export type ImageContentChange = [NodeId, StringOrStringReference];
 /**
  * Browser-specific. Schema of a Record type which contains mutations of a screen.
  */

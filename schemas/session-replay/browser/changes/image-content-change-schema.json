@@ -2,15 +2,12 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "session-replay/browser/changes/image-content-change-schema.json",
   "title": "ImageContentChange",
-  "description": "Browser-specific. Schema representing a change in an element's image content.",
+  "description": "Browser-specific. Schema representing a change in an element's image content. The resource ID is a StringOrStringReference, allowing it to be stored in the string table with the StringResourceId role.",
   "type": "array",
   "minItems": 2,
   "items": [
     { "$ref": "node-references/node-id-schema.json" },
-    {
-      "$ref": "string-references/string-or-string-reference-schema.json",
-      "description": "The resource ID of the element's new image content."
-    }
+    { "$ref": "string-references/string-or-string-reference-schema.json" }
   ],
   "additionalItems": false
 }
