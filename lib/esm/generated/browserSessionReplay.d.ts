@@ -155,7 +155,7 @@ export type StringLiteral = string;
 /**
  * Browser-specific. Schema representing a string role.
  */
-export type StringRoleId = StringRoleDefault | StringRoleNodeName | StringRoleAttributeName | StringRoleAttributeValue | StringRoleTextContent | StringRoleFormInput | StringRoleCSS | StringRoleURL;
+export type StringRoleId = StringRoleDefault | StringRoleNodeName | StringRoleAttributeName | StringRoleAttributeValue | StringRoleTextContent | StringRoleFormInput | StringRoleCSS | StringRoleURL | StringResourceId;
 /**
  * The default string role, used for uncategorized strings. Strings added by an AddStringChange are added to this string role.
  */
@@ -188,6 +188,10 @@ export type StringRoleCSS = 6;
  * A string role containing URLs.
  */
 export type StringRoleURL = 7;
+/**
+ * A string role containing resource IDs.
+ */
+export type StringResourceId = 8;
 /**
  * Schema representing the addition of a new #document node.
  *
@@ -412,7 +416,11 @@ export type InputSelectionStateIndeterminate = 2;
  *
  * @minItems 2
  */
-export type ImageContentChange = [NodeId, string];
+export type ImageContentChange = [NodeId, StringOrStringReference1];
+/**
+ * Browser-specific. Schema representing a string, either expressed as a literal, as a literal with an associated string role, or as an index into the string table.
+ */
+export type StringOrStringReference1 = StringLiteral | RoleAnnotatedStringLiteral | StringReference;
 /**
  * Browser-specific. Schema of a Record type which contains mutations of a screen.
  */

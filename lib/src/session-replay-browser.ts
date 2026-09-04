@@ -153,6 +153,7 @@ export const StringRole: {
   FormInput: SessionReplay.StringRoleFormInput
   CSS: SessionReplay.StringRoleCSS
   URL: SessionReplay.StringRoleURL
+  ResourceId: SessionReplay.StringResourceId
 } = {
   Default: 0,
   NodeName: 1,
@@ -162,6 +163,7 @@ export const StringRole: {
   FormInput: 5,
   CSS: 6,
   URL: 7,
+  ResourceId: 8,
 } as const
 
 export type StringRole = (typeof StringRole)[keyof typeof StringRole]

@@ -87,6 +87,7 @@ export declare const StringRole: {
     FormInput: SessionReplay.StringRoleFormInput;
     CSS: SessionReplay.StringRoleCSS;
     URL: SessionReplay.StringRoleURL;
+    ResourceId: SessionReplay.StringResourceId;
 };
 export type StringRole = (typeof StringRole)[keyof typeof StringRole];
 export declare const PlaybackState: {

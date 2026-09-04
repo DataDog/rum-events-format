@@ -43,6 +43,11 @@
       "title": "StringRoleURL",
       "description": "A string role containing URLs.",
       "const": 7
+    },
+    {
+      "title": "StringResourceId",
+      "description": "A string role containing resource IDs.",
+      "const": 8
     }
   ]
 }

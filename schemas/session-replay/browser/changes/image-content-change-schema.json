@@ -8,7 +8,7 @@
   "items": [
     { "$ref": "node-references/node-id-schema.json" },
     {
-      "type": "string",
+      "$ref": "string-references/string-or-string-reference-schema.json",
       "description": "The resource ID of the element's new image content."
     }
   ],
