@@ -84,7 +84,7 @@ export type SnapshotFormatChange = 1;
 /**
  * Browser-specific. Schema representing an individual change within a BrowserChangeData collection.
  */
-export type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachedStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]] | [11, ...AddRoleAnnotatedStringsChange[]] | [12, ...InputValueChange[]] | [13, ...InputSelectionChange[]] | [14];
+export type Change = [0, ...AddStringChange[]] | [1, ...AddNodeChange[]] | [2, ...RemoveNodeChange[]] | [3, ...AttributeChange[]] | [4, ...TextChange[]] | [5, ...SizeChange[]] | [6, ...ScrollPositionChange[]] | [7, ...AddStyleSheetChange[]] | [8, ...AttachedStyleSheetsChange[]] | [9, ...MediaPlaybackStateChange[]] | [10, ...VisualViewportChange[]] | [11, ...AddRoleAnnotatedStringsChange[]] | [12, ...InputValueChange[]] | [13, ...InputSelectionChange[]] | [14] | [15, ...ImageContentChange[]];
 /**
  * Browser-specific. Schema representing the addition of a string to the string table, annotated as belonging to the default string role.
  */
@@ -155,7 +155,7 @@ export type StringLiteral = string;
 /**
  * Browser-specific. Schema representing a string role.
  */
-export type StringRoleId = StringRoleDefault | StringRoleNodeName | StringRoleAttributeName | StringRoleAttributeValue | StringRoleTextContent | StringRoleFormInput | StringRoleCSS | StringRoleURL;
+export type StringRoleId = StringRoleDefault | StringRoleNodeName | StringRoleAttributeName | StringRoleAttributeValue | StringRoleTextContent | StringRoleFormInput | StringRoleCSS | StringRoleURL | StringResourceId;
 /**
  * The default string role, used for uncategorized strings. Strings added by an AddStringChange are added to this string role.
  */
@@ -188,6 +188,10 @@ export type StringRoleCSS = 6;
  * A string role containing URLs.
  */
 export type StringRoleURL = 7;
+/**
+ * A string role containing resource IDs.
+ */
+export type StringResourceId = 8;
 /**
  * Schema representing the addition of a new #document node.
  *
@@ -407,6 +411,12 @@ export type InputSelectionStateDeselected = 1;
  * The element is neither selected nor deselected. This state only applies to checkboxes, which render it distinctly from both the selected and deselected states.
  */
 export type InputSelectionStateIndeterminate = 2;
+/**
+ * Browser-specific. Schema representing a change in an element's image content, identified by a resource ID.
+ *
+ * @minItems 2
+ */
+export type ImageContentChange = [NodeId, StringOrStringReference];
 /**
  * Browser-specific. Schema of a Record type which contains mutations of a screen.
  */
