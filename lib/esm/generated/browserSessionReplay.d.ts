@@ -412,7 +412,7 @@ export type InputSelectionStateDeselected = 1;
  */
 export type InputSelectionStateIndeterminate = 2;
 /**
- * Browser-specific. Schema representing a change in an element's image content. The resource ID is a StringOrStringReference, allowing it to be stored in the string table with the StringResourceId role.
+ * Browser-specific. Schema representing a change in an element's image content, identified by a resource ID.
  *
  * @minItems 2
  */
