@@ -395,6 +395,10 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
              * Build ID used to identify the WebAssembly debug symbols.
              */
             readonly build_id: string;
+            /**
+             * Debug information format used to symbolicate the WebAssembly module.
+             */
+            readonly debug_info_type?: 'dwarf' | 'sourcemap' | 'unknown';
             [k: string]: unknown;
         }[];
         /**
