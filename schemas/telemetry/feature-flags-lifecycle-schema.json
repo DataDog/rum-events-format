@@ -46,8 +46,7 @@
             "runtime_id",
             "sequence",
             "sdk_name",
-            "sdk_version",
-            "error_code"
+            "sdk_version"
           ],
           "properties": {
             "type": {
@@ -63,7 +62,15 @@
             "event_type": {
               "type": "string",
               "description": "Feature Flags SDK lifecycle transition",
-              "const": "provider_error"
+              "enum": [
+                "sdk_init_started",
+                "configuration_received",
+                "provider_ready",
+                "provider_error",
+                "first_evaluation",
+                "init_timeout",
+                "init_failed"
+              ]
             },
             "timestamp": {
               "type": "integer",
@@ -103,10 +110,40 @@
               "minLength": 1,
               "maxLength": 100
             },
+            "configuration_source": {
+              "type": "string",
+              "description": "Source from which the active flag configuration was obtained",
+              "enum": ["remote", "cache"]
+            },
+            "configuration_version": {
+              "type": "string",
+              "description": "Opaque version of the active flag configuration",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "configuration_fetched_at": {
+              "type": "integer",
+              "description": "Time at which the active flag configuration was fetched, in milliseconds from epoch",
+              "minimum": 0
+            },
+            "provider_status": {
+              "type": "string",
+              "description": "Feature Flags provider status after the lifecycle transition",
+              "enum": ["ready", "stale", "error"]
+            },
+            "init_latency_ms": {
+              "type": "integer",
+              "description": "Elapsed time between SDK initialization starting and terminating",
+              "minimum": 0
+            },
+            "evaluation_reporting_enabled": {
+              "type": "boolean",
+              "description": "Whether full flag evaluation reporting is enabled"
+            },
             "error_code": {
               "type": "string",
               "description": "Fixed customer-safe error classification",
-              "const": "precomputed_assignments_fetch_failed"
+              "enum": ["precomputed_assignments_fetch_failed", "initialization_timeout", "initialization_failed"]
             }
           }
         }
