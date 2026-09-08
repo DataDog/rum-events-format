@@ -45,7 +45,7 @@
       "const": 7
     },
     {
-      "title": "StringResourceId",
+      "title": "StringRoleResourceId",
       "description": "A string role containing resource IDs.",
       "const": 8
     }
