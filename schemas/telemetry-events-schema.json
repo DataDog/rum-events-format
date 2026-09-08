@@ -16,6 +16,9 @@
     },
     {
       "$ref": "telemetry/usage-schema.json"
+    },
+    {
+      "$ref": "telemetry/feature-flags-lifecycle-schema.json"
     }
   ]
 }
