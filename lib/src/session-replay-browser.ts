@@ -153,7 +153,7 @@ export const StringRole: {
   FormInput: SessionReplay.StringRoleFormInput
   CSS: SessionReplay.StringRoleCSS
   URL: SessionReplay.StringRoleURL
-  ResourceId: SessionReplay.StringResourceId
+  ResourceId: SessionReplay.StringRoleResourceId
 } = {
   Default: 0,
   NodeName: 1,
