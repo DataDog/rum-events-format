@@ -9,8 +9,14 @@
       "$ref": "_common-schema.json"
     },
     {
-      "required": ["telemetry"],
+      "required": ["service", "source", "telemetry"],
       "properties": {
+        "service": {
+          "const": "browser-feature-flags-sdk"
+        },
+        "source": {
+          "const": "browser"
+        },
         "telemetry": {
           "type": "object",
           "description": "A bounded Feature Flags SDK lifecycle transition",
@@ -65,16 +71,19 @@
             "environment_name": {
               "type": "string",
               "description": "Feature Flags environment supplied to the SDK",
+              "minLength": 1,
               "maxLength": 200
             },
             "sdk_name": {
               "type": "string",
               "description": "Name of the Feature Flags SDK",
+              "minLength": 1,
               "maxLength": 100
             },
             "sdk_version": {
               "type": "string",
               "description": "Version of the Feature Flags SDK",
+              "minLength": 1,
               "maxLength": 100
             },
             "error_code": {
