@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "rum/vital-websocket-connecting-schema.json",
+  "title": "RumVitalWebsocketConnectingEvent",
+  "type": "object",
+  "description": "Schema for the vital reported when a WebSocket connection is created. Reported exactly once per connection, when the WebSocket is constructed. Reported with vital.name websocket_connecting",
+  "allOf": [
+    {
+      "$ref": "_vital-websocket-common-schema.json"
+    },
+    {
+      "properties": {
+        "vital": {
+          "type": "object",
+          "description": "Vital properties",
+          "properties": {
+            "websocket": {
+              "type": "object",
+              "description": "WebSocket properties. The identity of the connection is reported on this vital only, and is not repeated on the vitals of the later phases",
+              "required": ["url", "connecting_date"],
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "description": "URL the connection was opened on, without its query string",
+                  "readOnly": true
+                },
+                "requested_protocols": {
+                  "type": "array",
+                  "description": "Subprotocols the connection was requested with. Omitted when none was requested",
+                  "items": {
+                    "type": "string",
+                    "readOnly": true
+                  },
+                  "readOnly": true
+                },
+                "connecting_date": {
+                  "type": "integer",
+                  "description": "Date the WebSocket was constructed, in ms from epoch",
+                  "minimum": 0,
+                  "readOnly": true
+                }
+              },
+              "readOnly": true
+            }
+          },
+          "readOnly": true
+        }
+      }
+    }
+  ]
+}
