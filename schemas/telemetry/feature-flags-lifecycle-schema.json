@@ -12,10 +12,27 @@
       "required": ["service", "source", "telemetry"],
       "properties": {
         "service": {
-          "const": "browser-feature-flags-sdk"
+          "type": "string",
+          "description": "The SDK generating the telemetry event",
+          "pattern": "^browser-feature-flags-sdk$"
         },
         "source": {
-          "const": "browser"
+          "type": "string",
+          "description": "The source of this event",
+          "enum": [
+            "android",
+            "ios",
+            "browser",
+            "flutter",
+            "react-native",
+            "unity",
+            "kotlin-multiplatform",
+            "electron",
+            "cpp",
+            "maui"
+          ],
+          "pattern": "^browser$",
+          "readOnly": true
         },
         "telemetry": {
           "type": "object",
