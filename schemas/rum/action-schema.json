@@ -52,6 +52,14 @@
                   "type": "string",
                   "description": "Target name",
                   "readOnly": false
+                },
+                "attributes": {
+                  "type": "object",
+                  "description": "Key-value map of DOM attributes (href, aria-label, name, title, alt, id, role, data-*) collected from the click event composed path, closest occurrence wins per key",
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "readOnly": true
                 }
               },
               "readOnly": true
@@ -183,14 +191,6 @@
                     "composed_path_selector": {
                       "type": "string",
                       "description": "Selector data based on the click event composed path",
-                      "readOnly": true
-                    },
-                    "attributes": {
-                      "type": "object",
-                      "description": "Key-value map of DOM attributes (href, aria-label, name, title, alt, id, role, data-*) collected from the click event composed path, closest occurrence wins per key",
-                      "additionalProperties": {
-                        "type": "string"
-                      },
                       "readOnly": true
                     },
                     "width": {
