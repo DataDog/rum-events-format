@@ -18,6 +18,7 @@
     "environment_name": "staging",
     "sdk_name": "dd-openfeature-browser",
     "sdk_version": "1.4.0",
+    "evaluation_reporting_enabled": true,
     "provider_status": "ready",
     "init_latency_ms": 500
   }

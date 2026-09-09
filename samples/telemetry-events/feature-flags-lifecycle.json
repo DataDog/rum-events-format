@@ -20,6 +20,7 @@
     "environment_name": "staging",
     "sdk_name": "dd-openfeature-browser",
     "sdk_version": "1.4.0",
+    "evaluation_reporting_enabled": true,
     "error_code": "precomputed_assignments_fetch_failed"
   }
 }

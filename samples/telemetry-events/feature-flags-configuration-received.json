@@ -18,6 +18,7 @@
     "environment_name": "staging",
     "sdk_name": "dd-openfeature-browser",
     "sdk_version": "1.4.0",
+    "evaluation_reporting_enabled": true,
     "configuration_source": "remote",
     "configuration_version": "1788865199000",
     "configuration_fetched_at": 1788865199500

@@ -17,6 +17,7 @@
     "application_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
     "environment_name": "staging",
     "sdk_name": "dd-openfeature-browser",
-    "sdk_version": "1.4.0"
+    "sdk_version": "1.4.0",
+    "evaluation_reporting_enabled": true
   }
 }
