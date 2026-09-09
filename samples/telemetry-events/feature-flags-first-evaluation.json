@@ -6,7 +6,9 @@
   "source": "browser",
   "version": "1.4.0",
   "telemetry": {
-    "type": "feature_flags_lifecycle",
+    "type": "log",
+    "status": "debug",
+    "message": "feature_flags.first_evaluation",
     "product": "feature_flags",
     "event_type": "first_evaluation",
     "timestamp": 1788865200000,

@@ -8,7 +8,9 @@
   "source": "browser",
   "version": "1.4.0",
   "telemetry": {
-    "type": "feature_flags_lifecycle",
+    "type": "log",
+    "status": "error",
+    "message": "feature_flags.provider_error",
     "product": "feature_flags",
     "event_type": "provider_error",
     "timestamp": 1788865200000,

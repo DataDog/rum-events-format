@@ -6,7 +6,9 @@
   "source": "browser",
   "version": "1.4.0",
   "telemetry": {
-    "type": "feature_flags_lifecycle",
+    "type": "log",
+    "status": "error",
+    "message": "feature_flags.init_timeout",
     "product": "feature_flags",
     "event_type": "init_timeout",
     "timestamp": 1788865200000,
