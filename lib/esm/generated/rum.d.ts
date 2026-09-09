@@ -37,6 +37,12 @@ export type RumActionEvent = CommonProperties & ViewContainerSchema & {
              * Target name
              */
             name: string;
+            /**
+             * Key-value map of DOM attributes (href, aria-label, name, title, alt, id, role, data-*) collected from the click event composed path, closest occurrence wins per key
+             */
+            readonly attributes?: {
+                [k: string]: string;
+            };
             [k: string]: unknown;
         };
         /**
