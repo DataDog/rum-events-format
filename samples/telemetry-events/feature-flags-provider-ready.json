@@ -1,0 +1,25 @@
+{
+  "_dd": { "format_version": 2 },
+  "type": "telemetry",
+  "date": 1788865200000,
+  "service": "browser-feature-flags-sdk",
+  "source": "browser",
+  "version": "1.4.0",
+  "telemetry": {
+    "type": "log",
+    "status": "debug",
+    "message": "feature_flags.provider_ready",
+    "product": "feature_flags",
+    "event_type": "provider_ready",
+    "timestamp": 1788865200000,
+    "runtime_id": "cf82dc1c-44be-4b65-a957-8502f682ebd2",
+    "sequence": 3,
+    "application_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "environment_name": "staging",
+    "sdk_name": "dd-openfeature-browser",
+    "sdk_version": "1.4.0",
+    "evaluation_reporting_enabled": true,
+    "provider_status": "ready",
+    "init_latency_ms": 500
+  }
+}
