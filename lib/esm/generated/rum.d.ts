@@ -1470,11 +1470,11 @@ export interface CommonProperties {
         /**
          * UUID of the execution context
          */
-        readonly id?: string;
+        readonly id: string;
         /**
          * Type of the execution context
          */
-        readonly type?: 'main-process' | 'renderer-process' | 'utility-process';
+        readonly type: 'main-process' | 'renderer-process' | 'utility-process';
         /**
          * Execution context name
          */

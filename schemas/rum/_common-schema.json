@@ -519,6 +519,7 @@
     "execution_context": {
       "type": "object",
       "description": "Execution context properties",
+      "required": ["id", "type"],
       "properties": {
         "id": {
           "type": "string",
