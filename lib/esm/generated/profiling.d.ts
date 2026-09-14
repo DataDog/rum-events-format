@@ -44,6 +44,16 @@ export type BrowserProfileEvent = ProfileCommonProperties & {
  */
 export type MobileProfileEvent = ProfileCommonProperties & {
     /**
+     * Datadog internal metadata.
+     */
+    readonly _dd?: {
+        /**
+         * Offset between the NTP-corrected (server) time and the device boot time, in nanoseconds (NTP time - boot time). Used to align profiling samples (which use boot time) with absolute timestamps.
+         */
+        readonly boot_ntp?: number;
+        [k: string]: unknown;
+    };
+    /**
      * Error properties.
      */
     readonly error?: {
