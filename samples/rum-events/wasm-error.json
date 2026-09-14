@@ -23,7 +23,8 @@
     "wasm_modules": [
       {
         "url": "https://example.com/module.wasm",
-        "build_id": "abcd"
+        "build_id": "abcd",
+        "debug_info_type": "dwarf"
       }
     ]
   },
