@@ -103,6 +103,9 @@ export type MediaInteractionType = (typeof MediaInteractionType)[keyof typeof Me
 // otherwise, it triggers a compile-time error.
 type ChangeTypeId<Id, Data> = [Id, ...Data[]] extends SessionReplay.Change ? Id : never
 
+// DatalessChangeTypeId is ChangeTypeId for changes which carry no data.
+type DatalessChangeTypeId<Id> = [Id] extends SessionReplay.Change ? Id : never
+
 export const ChangeType: {
   AddString: ChangeTypeId<0, SessionReplay.AddStringChange>
   AddNode: ChangeTypeId<1, SessionReplay.AddNodeChange>
@@ -118,6 +121,8 @@ export const ChangeType: {
   AddRoleAnnotatedStrings: ChangeTypeId<11, SessionReplay.AddRoleAnnotatedStringsChange>
   InputValue: ChangeTypeId<12, SessionReplay.InputValueChange>
   InputSelection: ChangeTypeId<13, SessionReplay.InputSelectionChange>
+  ClearStrings: DatalessChangeTypeId<14>
+  ImageContent: ChangeTypeId<15, SessionReplay.ImageContentChange>
 } = {
   AddString: 0,
   AddNode: 1,
@@ -133,6 +138,8 @@ export const ChangeType: {
   AddRoleAnnotatedStrings: 11,
   InputValue: 12,
   InputSelection: 13,
+  ClearStrings: 14,
+  ImageContent: 15,
 } as const
 
 export type ChangeType = (typeof ChangeType)[keyof typeof ChangeType]
@@ -146,6 +153,7 @@ export const StringRole: {
   FormInput: SessionReplay.StringRoleFormInput
   CSS: SessionReplay.StringRoleCSS
   URL: SessionReplay.StringRoleURL
+  ResourceId: SessionReplay.StringRoleResourceId
 } = {
   Default: 0,
   NodeName: 1,
@@ -155,6 +163,7 @@ export const StringRole: {
   FormInput: 5,
   CSS: 6,
   URL: 7,
+  ResourceId: 8,
 } as const
 
 export type StringRole = (typeof StringRole)[keyof typeof StringRole]

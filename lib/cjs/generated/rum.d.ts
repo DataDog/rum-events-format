@@ -293,7 +293,7 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
         /**
          * Source type of the error (the language or platform impacting the error stacktrace format)
          */
-        readonly source_type?: 'android' | 'browser' | 'ios' | 'react-native' | 'flutter' | 'roku' | 'ndk' | 'ios+il2cpp' | 'ndk+il2cpp' | 'windows' | 'macos' | 'linux' | 'maui' | 'nodejs';
+        readonly source_type?: 'android' | 'browser' | 'browser+wasm' | 'ios' | 'react-native' | 'flutter' | 'roku' | 'ndk' | 'ios+il2cpp' | 'ndk+il2cpp' | 'windows' | 'macos' | 'linux' | 'maui' | 'nodejs';
         /**
          * Resource properties of the error
          */
@@ -381,6 +381,20 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
              * CPU architecture from the library.
              */
             readonly arch?: string;
+            [k: string]: unknown;
+        }[];
+        /**
+         * WebAssembly modules available for stack trace symbolication.
+         */
+        readonly wasm_modules?: {
+            /**
+             * URL identifying the WebAssembly module.
+             */
+            readonly url: string;
+            /**
+             * Build ID used to identify the WebAssembly debug symbols.
+             */
+            readonly build_id: string;
             [k: string]: unknown;
         }[];
         /**

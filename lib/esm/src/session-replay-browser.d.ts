@@ -58,6 +58,7 @@ export declare const MediaInteractionType: {
 };
 export type MediaInteractionType = (typeof MediaInteractionType)[keyof typeof MediaInteractionType];
 type ChangeTypeId<Id, Data> = [Id, ...Data[]] extends SessionReplay.Change ? Id : never;
+type DatalessChangeTypeId<Id> = [Id] extends SessionReplay.Change ? Id : never;
 export declare const ChangeType: {
     AddString: ChangeTypeId<0, SessionReplay.AddStringChange>;
     AddNode: ChangeTypeId<1, SessionReplay.AddNodeChange>;
@@ -73,6 +74,8 @@ export declare const ChangeType: {
     AddRoleAnnotatedStrings: ChangeTypeId<11, SessionReplay.AddRoleAnnotatedStringsChange>;
     InputValue: ChangeTypeId<12, SessionReplay.InputValueChange>;
     InputSelection: ChangeTypeId<13, SessionReplay.InputSelectionChange>;
+    ClearStrings: DatalessChangeTypeId<14>;
+    ImageContent: ChangeTypeId<15, SessionReplay.ImageContentChange>;
 };
 export type ChangeType = (typeof ChangeType)[keyof typeof ChangeType];
 export declare const StringRole: {
@@ -84,6 +87,7 @@ export declare const StringRole: {
     FormInput: SessionReplay.StringRoleFormInput;
     CSS: SessionReplay.StringRoleCSS;
     URL: SessionReplay.StringRoleURL;
+    ResourceId: SessionReplay.StringRoleResourceId;
 };
 export type StringRole = (typeof StringRole)[keyof typeof StringRole];
 export declare const PlaybackState: {
