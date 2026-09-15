@@ -248,6 +248,12 @@
               "enum": ["cache", "navigational-prefetch", "other"],
               "readOnly": true
             },
+            "local_cache_hit": {
+              "type": "boolean",
+              "description": "Whether the resource was served from the device's local cache (deprecated in favor of `delivery_type`/`transfer_size`)",
+              "deprecated": true,
+              "readOnly": true
+            },
             "provider": {
               "type": "object",
               "description": "The provider for this resource",
