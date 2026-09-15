@@ -802,7 +802,8 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
          */
         readonly delivery_type?: 'cache' | 'navigational-prefetch' | 'other';
         /**
-         * Whether the resource was served from the device's local cache
+         * @deprecated
+         * Whether the resource was served from the device's local cache (deprecated in favor of `delivery_type`/`transfer_size`)
          */
         readonly local_cache_hit?: boolean;
         /**
