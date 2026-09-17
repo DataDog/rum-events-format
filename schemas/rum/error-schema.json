@@ -294,6 +294,12 @@
                     "type": "string",
                     "description": "Build ID used to identify the WebAssembly debug symbols.",
                     "readOnly": true
+                  },
+                  "debug_info_type": {
+                    "type": "string",
+                    "description": "Debug information format used to symbolicate the WebAssembly module.",
+                    "enum": ["dwarf", "sourcemap", "unknown"],
+                    "readOnly": true
                   }
                 }
               },
