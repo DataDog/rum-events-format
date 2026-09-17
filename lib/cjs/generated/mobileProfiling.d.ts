@@ -6,6 +6,16 @@
  */
 export type MobileProfileEvent = ProfileCommonProperties & {
     /**
+     * Datadog internal metadata.
+     */
+    readonly _dd?: {
+        /**
+         * NTP-corrected device boot timestamp, in nanoseconds.
+         */
+        readonly boot_ntp?: number;
+        [k: string]: unknown;
+    };
+    /**
      * Error properties.
      */
     readonly error?: {
