@@ -4,7 +4,7 @@
 /**
  * Schema of all properties of a RUM event
  */
-export type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumViewUpdateEvent | RumVitalEvent;
+export type RumEvent = RumActionEvent | RumTransitionEvent | RumErrorEvent | RumLongTaskEvent | RumResourceEvent | RumViewEvent | RumViewUpdateEvent | RumExecutionContextEvent | RumVitalEvent;
 /**
  * Schema of all properties of an Action event
  */
@@ -808,7 +808,8 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
          */
         readonly delivery_type?: 'cache' | 'navigational-prefetch' | 'other';
         /**
-         * Whether the resource was served from the device's local cache
+         * @deprecated
+         * Whether the resource was served from the device's local cache (deprecated in favor of `delivery_type`/`transfer_size`)
          */
         readonly local_cache_hit?: boolean;
         /**
@@ -911,6 +912,60 @@ export type RumViewUpdateEvent = ViewContainerSchema & StreamSchema & ViewProper
      */
     readonly type: 'view_update';
     readonly view: {
+        [k: string]: unknown;
+    };
+    [k: string]: unknown;
+};
+/**
+ * Schema of all properties of an Execution Context event
+ */
+export type RumExecutionContextEvent = CommonProperties & {
+    /**
+     * RUM event type
+     */
+    readonly type: 'execution_context';
+    /**
+     * Execution context properties
+     */
+    readonly execution_context: {
+        /**
+         * UUID of the execution context
+         */
+        readonly id: string;
+        /**
+         * Type of the execution context
+         */
+        readonly type: 'main-process' | 'renderer-process' | 'utility-process';
+        /**
+         * Platform-specific identifier stable for the full lifetime of the execution context, survives session rollovers (e.g. OS PID, thread ID, tab ID)
+         */
+        readonly instance_id: string;
+        /**
+         * Platform-specific identifier of the parent execution context (e.g. parent OS PID)
+         */
+        readonly parent_instance_id?: string;
+        /**
+         * Execution context name
+         */
+        readonly name?: string;
+        /**
+         * Execution context lifetime in nanoseconds
+         */
+        readonly duration?: number;
+        /**
+         * Reason for execution context exit
+         */
+        readonly exit_reason?: 'clean-exit' | 'abnormal-exit' | 'killed' | 'crashed' | 'oom' | 'launch-failed' | 'integrity-failure' | 'memory-eviction';
+        [k: string]: unknown;
+    };
+    /**
+     * Internal properties
+     */
+    readonly _dd: {
+        /**
+         * Version of the update of the execution context event
+         */
+        readonly document_version: number;
         [k: string]: unknown;
     };
     [k: string]: unknown;
@@ -1125,6 +1180,10 @@ export interface CommonProperties {
          * User defined name of the view
          */
         name?: string;
+        /**
+         * Whether this view was synthetically created to carry view-less events
+         */
+        readonly is_fake?: boolean;
         [k: string]: unknown;
     };
     /**
@@ -1409,6 +1468,24 @@ export interface CommonProperties {
          * UUID of the stream
          */
         readonly id: string;
+        [k: string]: unknown;
+    };
+    /**
+     * Execution context properties
+     */
+    readonly execution_context?: {
+        /**
+         * UUID of the execution context
+         */
+        readonly id: string;
+        /**
+         * Type of the execution context
+         */
+        readonly type: 'main-process' | 'renderer-process' | 'utility-process';
+        /**
+         * Execution context name
+         */
+        readonly name?: string;
         [k: string]: unknown;
     };
     [k: string]: unknown;

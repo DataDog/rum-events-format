@@ -18,6 +18,9 @@
       "$ref": "rum/view_update-schema.json"
     },
     {
+      "$ref": "rum/execution_context-schema.json"
+    },
+    {
       "title": "RumVitalEvent",
       "oneOf": [
         {
