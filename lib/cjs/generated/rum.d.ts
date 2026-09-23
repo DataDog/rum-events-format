@@ -945,7 +945,7 @@ export type RumExecutionContextEvent = CommonProperties & {
         /**
          * Execution context name
          */
-        readonly name?: string;
+        name?: string;
         /**
          * Execution context lifetime in nanoseconds
          */
@@ -1483,7 +1483,7 @@ export interface CommonProperties {
         /**
          * Execution context name
          */
-        readonly name?: string;
+        name?: string;
         [k: string]: unknown;
     };
     [k: string]: unknown;

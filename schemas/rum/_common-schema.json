@@ -536,7 +536,7 @@
         "name": {
           "type": "string",
           "description": "Execution context name",
-          "readOnly": true
+          "readOnly": false
         }
       },
       "readOnly": true
