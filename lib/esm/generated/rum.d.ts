@@ -2605,7 +2605,7 @@ export interface RumVitalWebsocketMessageDirection {
      */
     readonly message_size_max: number;
     /**
-     * Longest interval between two consecutive messages observed in this direction, in nanoseconds, including the still-open interval since the last message. 0 until two messages have been observed. The interval before the first message is excluded from it, as it is reported by time_to_first_message
+     * Longest interval between two consecutive messages observed in this direction, in nanoseconds, including the still-open interval since the last message.
      */
     readonly longest_silence: number;
     /**
