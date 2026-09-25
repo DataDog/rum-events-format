@@ -1109,11 +1109,11 @@ export type RumVitalWebsocketConnectingEvent = RumVitalWebsocketCommonProperties
             /**
              * URL the connection was opened on, without its query string
              */
-            readonly url: string;
+            url: string;
             /**
              * Subprotocols the connection was requested with. Omitted when none was requested
              */
-            readonly requested_protocols?: string[];
+            requested_protocols?: string[];
             /**
              * Date the WebSocket was constructed, in ms from epoch
              */
@@ -1181,7 +1181,7 @@ export type RumVitalWebsocketOpenEvent = RumVitalWebsocketCommonProperties & {
             /**
              * Subprotocol the server selected. Omitted when the server selected none
              */
-            readonly selected_protocol?: string;
+            selected_protocol?: string;
             /**
              * Extensions the server negotiated, as the single string the connection exposes them as. Omitted when none was negotiated
              */
@@ -1257,7 +1257,7 @@ export type RumVitalWebsocketClosedEvent = RumVitalWebsocketCommonProperties & {
             /**
              * Reason the connection was closed with, as an empty string when the other side supplied none. Reported when, and only when, the tracking end reason is close_event
              */
-            readonly close_reason?: string;
+            close_reason?: string;
             /**
              * Whether the connection closed cleanly. Reported when, and only when, the tracking end reason is close_event
              */

@@ -45,7 +45,7 @@
                 "selected_protocol": {
                   "type": "string",
                   "description": "Subprotocol the server selected. Omitted when the server selected none",
-                  "readOnly": true
+                  "readOnly": false
                 },
                 "selected_extensions": {
                   "type": "string",
