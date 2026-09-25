@@ -22,16 +22,16 @@
                 "url": {
                   "type": "string",
                   "description": "URL the connection was opened on, without its query string",
-                  "readOnly": true
+                  "readOnly": false
                 },
                 "requested_protocols": {
                   "type": "array",
                   "description": "Subprotocols the connection was requested with. Omitted when none was requested",
                   "items": {
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": false
                   },
-                  "readOnly": true
+                  "readOnly": false
                 },
                 "connecting_date": {
                   "type": "integer",

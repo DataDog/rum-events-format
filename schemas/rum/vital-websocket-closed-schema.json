@@ -45,7 +45,7 @@
                 "close_reason": {
                   "type": "string",
                   "description": "Reason the connection was closed with, as an empty string when the other side supplied none. Reported when, and only when, the tracking end reason is close_event",
-                  "readOnly": true
+                  "readOnly": false
                 },
                 "was_clean": {
                   "type": "boolean",
