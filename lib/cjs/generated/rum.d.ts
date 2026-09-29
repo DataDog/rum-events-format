@@ -1167,10 +1167,6 @@ export type RumVitalWebsocketOpenEvent = RumVitalWebsocketCommonProperties & {
          */
         readonly websocket?: {
             /**
-             * Whether the opening handshake succeeded
-             */
-            readonly open_handshake_succeeded: boolean;
-            /**
              * Interval between the connecting date and the open date of the connection, in nanoseconds
              */
             readonly connecting_duration: number;
