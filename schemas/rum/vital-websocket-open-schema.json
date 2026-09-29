@@ -38,7 +38,7 @@
                 },
                 "open_date": {
                   "type": "integer",
-                  "description": "Date the connection opened, in ms from epoch",
+                  "description": "Date the connection opened, in ms from epoch. Computed from the connecting date and the time elapsed since, measured on a monotonic clock",
                   "minimum": 0,
                   "readOnly": true
                 },
