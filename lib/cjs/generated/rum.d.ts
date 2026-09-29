@@ -1148,6 +1148,10 @@ export interface CommonProperties {
          * Whether this session has a replay
          */
         readonly has_replay?: boolean;
+        /**
+         * Whether the SDK is initialised on the application's main or a secondary process
+         */
+        readonly is_main_process?: boolean;
         [k: string]: unknown;
     };
     /**
