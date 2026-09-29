@@ -20,7 +20,6 @@
     "name": "websocket_open",
     "websocket": {
       "id": "9e9f4b3a-1c2d-4e5f-8a9b-0c1d2e3f4a5b",
-      "open_handshake_succeeded": true,
       "connecting_duration": 200000000,
       "open_date": 1706792746776,
       "selected_protocol": "graphql-ws",
