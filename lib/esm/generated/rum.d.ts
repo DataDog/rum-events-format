@@ -1115,7 +1115,7 @@ export type RumVitalWebsocketConnectingEvent = RumVitalWebsocketCommonProperties
              */
             requested_protocols?: string[];
             /**
-             * Date the WebSocket was constructed, in ms from epoch
+             * Date the WebSocket was constructed, in ms from epoch. It is the date the dates of the later phases of the connection are computed from
              */
             readonly connecting_date: number;
             [k: string]: unknown;
@@ -1175,7 +1175,7 @@ export type RumVitalWebsocketOpenEvent = RumVitalWebsocketCommonProperties & {
              */
             readonly connecting_duration: number;
             /**
-             * Date the connection opened, in ms from epoch
+             * Date the connection opened, in ms from epoch. Computed from the connecting date and the time elapsed since, measured on a monotonic clock
              */
             readonly open_date: number;
             /**
@@ -1213,7 +1213,7 @@ export type RumVitalWebsocketClosingEvent = RumVitalWebsocketCommonProperties & 
          */
         readonly websocket?: {
             /**
-             * Date the connection was asked to close, in ms from epoch
+             * Date the connection was asked to close, in ms from epoch. Computed from the connecting date and the time elapsed since, measured on a monotonic clock
              */
             readonly closing_date: number;
             /**
@@ -1239,7 +1239,7 @@ export type RumVitalWebsocketClosedEvent = RumVitalWebsocketCommonProperties & {
          */
         readonly websocket?: {
             /**
-             * Date tracking of the connection ended, in ms from epoch. It is the date the connection closed when the tracking end reason is close_event, and the date tracking stopped otherwise
+             * Date tracking of the connection ended, in ms from epoch. It is the date the connection closed when the tracking end reason is close_event, and the date tracking stopped otherwise. Computed from the connecting date and the time elapsed since, measured on a monotonic clock
              */
             readonly closed_date: number;
             /**
