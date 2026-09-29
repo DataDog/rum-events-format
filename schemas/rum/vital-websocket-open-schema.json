@@ -17,19 +17,8 @@
             "websocket": {
               "type": "object",
               "description": "WebSocket properties",
-              "required": [
-                "open_handshake_succeeded",
-                "connecting_duration",
-                "open_date",
-                "snapshot_version",
-                "snapshot"
-              ],
+              "required": ["connecting_duration", "open_date", "snapshot_version", "snapshot"],
               "properties": {
-                "open_handshake_succeeded": {
-                  "type": "boolean",
-                  "description": "Whether the opening handshake succeeded",
-                  "readOnly": true
-                },
                 "connecting_duration": {
                   "type": "integer",
                   "description": "Interval between the connecting date and the open date of the connection, in nanoseconds",
