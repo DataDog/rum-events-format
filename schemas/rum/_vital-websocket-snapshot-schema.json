@@ -18,17 +18,11 @@
       "allOf": [
         { "$ref": "_vital-websocket-message-direction-schema.json" },
         {
-          "required": ["buffered_amount_max", "backpressured_message_count"],
+          "required": ["buffered_amount_max"],
           "properties": {
             "buffered_amount_max": {
               "type": "integer",
               "description": "Largest amount of bytes ever observed queued in the send buffer, sampled after each send is enqueued",
-              "minimum": 0,
-              "readOnly": true
-            },
-            "backpressured_message_count": {
-              "type": "integer",
-              "description": "Number of sends issued while the send buffer was already deep, that is while it held at least 65536 bytes right before the send",
               "minimum": 0,
               "readOnly": true
             },

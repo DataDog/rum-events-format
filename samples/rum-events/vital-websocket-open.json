@@ -39,8 +39,7 @@
           "message_size_max": 256,
           "longest_silence": 3000000000,
           "time_to_first_message": 80000000,
-          "buffered_amount_max": 1024,
-          "backpressured_message_count": 0
+          "buffered_amount_max": 1024
         }
       }
     }
