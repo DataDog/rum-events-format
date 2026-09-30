@@ -39,7 +39,6 @@
           "message_size_max": 0,
           "longest_silence": 0,
           "buffered_amount_max": 0,
-          "backpressured_message_count": 0,
           "buffered_amount_at_close": 0
         }
       }
