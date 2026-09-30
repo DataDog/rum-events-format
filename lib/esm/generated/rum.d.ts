@@ -2573,10 +2573,6 @@ export interface RumVitalWebsocketSnapshot {
          */
         readonly buffered_amount_max: number;
         /**
-         * Number of sends issued while the send buffer was already deep, that is while it held at least 65536 bytes right before the send
-         */
-        readonly backpressured_message_count: number;
-        /**
          * Amount of bytes still queued in the send buffer when tracking ended, in bytes. Set on the websocket_closed vital only
          */
         readonly buffered_amount_at_close?: number;
