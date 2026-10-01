@@ -38,8 +38,10 @@
                   "readOnly": true
                 },
                 "close_code": {
-                  "type": "number",
+                  "type": "integer",
                   "description": "Code the connection was closed with. Reported when, and only when, the tracking end reason is close_event",
+                  "minimum": 0,
+                  "maximum": 65535,
                   "readOnly": true
                 },
                 "close_reason": {
