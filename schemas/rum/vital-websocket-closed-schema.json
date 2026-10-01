@@ -54,8 +54,8 @@
                 },
                 "snapshot_version": {
                   "type": "integer",
-                  "description": "Version of the snapshot, incremented on every vital reporting one, so that heartbeats can be ordered when they are received out of sequence",
-                  "minimum": 0,
+                  "description": "Version of the snapshot within its connection, starting at 1 and incremented on every websocket_open vital and on the websocket_closed vital, so that they can be ordered when they are received out of sequence",
+                  "minimum": 1,
                   "readOnly": true
                 },
                 "snapshot": {
