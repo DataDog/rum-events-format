@@ -1183,7 +1183,7 @@ export type RumVitalWebsocketOpenEvent = RumVitalWebsocketCommonProperties & {
              */
             readonly selected_extensions?: string;
             /**
-             * Version of the snapshot, incremented on every vital reporting one, so that heartbeats can be ordered when they are received out of sequence
+             * Version of the snapshot within its connection, starting at 1 and incremented on every websocket_open vital and on the websocket_closed vital, so that they can be ordered when they are received out of sequence
              */
             readonly snapshot_version: number;
             /**
@@ -1259,7 +1259,7 @@ export type RumVitalWebsocketClosedEvent = RumVitalWebsocketCommonProperties & {
              */
             readonly was_clean?: boolean;
             /**
-             * Version of the snapshot, incremented on every vital reporting one, so that heartbeats can be ordered when they are received out of sequence
+             * Version of the snapshot within its connection, starting at 1 and incremented on every websocket_open vital and on the websocket_closed vital, so that they can be ordered when they are received out of sequence
              */
             readonly snapshot_version: number;
             /**
