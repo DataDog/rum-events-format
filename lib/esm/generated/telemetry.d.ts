@@ -132,6 +132,14 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             start_recording_immediately?: boolean;
             /**
+             * Whether canvas elements are recorded in Session Replay
+             */
+            session_replay_canvas_recording?: boolean;
+            /**
+             * The quality preset requested for canvas recording in Session Replay
+             */
+            session_replay_canvas_recording_quality?: 'low' | 'medium' | 'high';
+            /**
              * Whether a proxy is used
              */
             use_proxy?: boolean;
