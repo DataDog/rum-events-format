@@ -95,6 +95,17 @@
                   "description": "Whether Session Replay should automatically start a recording when enabled",
                   "readOnly": false
                 },
+                "session_replay_canvas_recording": {
+                  "type": "boolean",
+                  "description": "Whether canvas elements are recorded in Session Replay",
+                  "readOnly": false
+                },
+                "session_replay_canvas_recording_quality": {
+                  "type": "string",
+                  "description": "The quality preset requested for canvas recording in Session Replay",
+                  "enum": ["low", "medium", "high"],
+                  "readOnly": false
+                },
                 "use_proxy": {
                   "type": "boolean",
                   "description": "Whether a proxy is used",
