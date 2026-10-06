@@ -73,5 +73,6 @@ export const PointerType = {
 export type PointerType = (typeof PointerType)[keyof typeof PointerType]
 
 export type NodeId = number & { __brand: 'NodeId' }
+export type ResourceId = string & { __brand: 'ResourceId' }
 export type StringId = number & { __brand: 'StringId' }
 export type StyleSheetId = number & { __brand: 'StyleSheetId' }
