@@ -1101,11 +1101,11 @@ export type RumVitalWebsocketConnectingEvent = RumVitalWebsocketCommonProperties
     /**
      * Vital properties
      */
-    readonly vital?: {
+    readonly vital: {
         /**
          * WebSocket properties. The identity of the connection is reported on this vital.
          */
-        readonly websocket?: {
+        readonly websocket: {
             /**
              * URL the connection was opened on, without its query string
              */
@@ -1131,7 +1131,7 @@ export type RumVitalWebsocketCommonProperties = RumVitalEventCommonProperties & 
     /**
      * Vital properties
      */
-    readonly vital?: {
+    readonly vital: {
         /**
          * Type of the vital.
          */
@@ -1161,11 +1161,11 @@ export type RumVitalWebsocketOpenEvent = RumVitalWebsocketCommonProperties & {
     /**
      * Vital properties
      */
-    readonly vital?: {
+    readonly vital: {
         /**
          * WebSocket properties
          */
-        readonly websocket?: {
+        readonly websocket: {
             /**
              * Interval between the connecting date and the open date of the connection, in nanoseconds
              */
@@ -1203,11 +1203,11 @@ export type RumVitalWebsocketClosingEvent = RumVitalWebsocketCommonProperties & 
     /**
      * Vital properties
      */
-    readonly vital?: {
+    readonly vital: {
         /**
          * WebSocket properties
          */
-        readonly websocket?: {
+        readonly websocket: {
             /**
              * Date the connection was asked to close, in ms from epoch. Computed from the connecting date and the time elapsed since, measured on a monotonic clock
              */
@@ -1229,11 +1229,11 @@ export type RumVitalWebsocketClosedEvent = RumVitalWebsocketCommonProperties & {
     /**
      * Vital properties
      */
-    readonly vital?: {
+    readonly vital: {
         /**
          * WebSocket properties
          */
-        readonly websocket?: {
+        readonly websocket: {
             /**
              * URL the connection was opened on, without its query string
              */

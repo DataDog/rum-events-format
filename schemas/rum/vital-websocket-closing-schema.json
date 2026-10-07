@@ -9,10 +9,12 @@
       "$ref": "_vital-websocket-common-schema.json"
     },
     {
+      "required": ["vital"],
       "properties": {
         "vital": {
           "type": "object",
           "description": "Vital properties",
+          "required": ["websocket"],
           "properties": {
             "websocket": {
               "type": "object",
