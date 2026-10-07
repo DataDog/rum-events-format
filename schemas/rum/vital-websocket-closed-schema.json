@@ -17,8 +17,13 @@
             "websocket": {
               "type": "object",
               "description": "WebSocket properties",
-              "required": ["closed_date", "duration", "tracking_end_reason", "snapshot_version"],
+              "required": ["url", "closed_date", "duration", "tracking_end_reason", "snapshot_version"],
               "properties": {
+                "url": {
+                  "type": "string",
+                  "description": "URL the connection was opened on, without its query string",
+                  "readOnly": false
+                },
                 "closed_date": {
                   "type": "integer",
                   "description": "Date tracking of the connection ended, in ms from epoch. It is the date the connection closed when the tracking end reason is close_event, and the date tracking stopped otherwise. Computed from the connecting date and the time elapsed since, measured on a monotonic clock",

@@ -1103,7 +1103,7 @@ export type RumVitalWebsocketConnectingEvent = RumVitalWebsocketCommonProperties
      */
     readonly vital?: {
         /**
-         * WebSocket properties. The identity of the connection is reported on this vital only, and is not repeated on the vitals of the later phases
+         * WebSocket properties. The identity of the connection is reported on this vital.
          */
         readonly websocket?: {
             /**
@@ -1234,6 +1234,10 @@ export type RumVitalWebsocketClosedEvent = RumVitalWebsocketCommonProperties & {
          * WebSocket properties
          */
         readonly websocket?: {
+            /**
+             * URL the connection was opened on, without its query string
+             */
+            url: string;
             /**
              * Date tracking of the connection ended, in ms from epoch. It is the date the connection closed when the tracking end reason is close_event, and the date tracking stopped otherwise. Computed from the connecting date and the time elapsed since, measured on a monotonic clock
              */

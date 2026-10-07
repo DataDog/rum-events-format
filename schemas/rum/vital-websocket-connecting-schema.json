@@ -16,7 +16,7 @@
           "properties": {
             "websocket": {
               "type": "object",
-              "description": "WebSocket properties. The identity of the connection is reported on this vital only, and is not repeated on the vitals of the later phases",
+              "description": "WebSocket properties. The identity of the connection is reported on this vital.",
               "required": ["url", "connecting_date"],
               "properties": {
                 "url": {
