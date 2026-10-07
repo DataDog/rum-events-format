@@ -392,6 +392,10 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             maui_version?: string;
             /**
+             * The version of Unreal Engine used in an Unreal Engine application
+             */
+            unreal_version?: string;
+            /**
              * The threshold used for iOS App Hangs monitoring (in milliseconds)
              */
             app_hang_threshold?: number;
@@ -450,7 +454,7 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             sdk_version?: string;
             /**
-             * The source of the SDK, e.g., 'browser', 'ios', 'android', 'flutter', 'react-native', 'unity', 'kotlin-multiplatform', 'maui'.
+             * The source of the SDK, e.g., 'browser', 'ios', 'android', 'flutter', 'react-native', 'unity', 'kotlin-multiplatform', 'maui', 'unreal'.
              */
             source?: string;
             /**
