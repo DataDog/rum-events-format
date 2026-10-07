@@ -20,6 +20,7 @@
     "name": "websocket_closed",
     "websocket": {
       "id": "1a2b3c4d-5e6f-4708-8192-a3b4c5d6e7f8",
+      "url": "wss://example.datadoghq.com/socket",
       "closed_date": 1706792747000,
       "duration": 424000000,
       "tracking_end_reason": "close_event",
