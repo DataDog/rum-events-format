@@ -7,6 +7,7 @@ export declare const MobileSource: {
     readonly ReactNative: "react-native";
     readonly KotlinMultiplatform: "kotlin-multiplatform";
     readonly Maui: "maui";
+    readonly Unreal: "unreal";
 };
 export type MobileSource = (typeof MobileSource)[keyof typeof MobileSource];
 export declare const RecordType: {

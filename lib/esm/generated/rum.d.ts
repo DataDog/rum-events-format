@@ -293,7 +293,7 @@ export type RumErrorEvent = CommonProperties & ActionChildProperties & ViewConta
         /**
          * Source type of the error (the language or platform impacting the error stacktrace format)
          */
-        readonly source_type?: 'android' | 'browser' | 'browser+wasm' | 'ios' | 'react-native' | 'flutter' | 'roku' | 'ndk' | 'ios+il2cpp' | 'ndk+il2cpp' | 'windows' | 'macos' | 'linux' | 'maui' | 'nodejs';
+        readonly source_type?: 'android' | 'browser' | 'browser+wasm' | 'ios' | 'react-native' | 'flutter' | 'roku' | 'ndk' | 'ios+il2cpp' | 'ndk+il2cpp' | 'windows' | 'macos' | 'linux' | 'maui' | 'nodejs' | 'unreal';
         /**
          * Resource properties of the error
          */
@@ -1161,7 +1161,7 @@ export interface CommonProperties {
     /**
      * The source of this event
      */
-    readonly source?: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'cpp' | 'maui';
+    readonly source?: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'cpp' | 'maui' | 'unreal';
     /**
      * View properties
      */
@@ -1513,7 +1513,7 @@ export interface ViewContainerSchema {
         /**
          * Source of the parent view
          */
-        readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'cpp' | 'maui';
+        readonly source: 'android' | 'ios' | 'browser' | 'flutter' | 'react-native' | 'roku' | 'unity' | 'kotlin-multiplatform' | 'electron' | 'cpp' | 'maui' | 'unreal';
         [k: string]: unknown;
     };
     [k: string]: unknown;
