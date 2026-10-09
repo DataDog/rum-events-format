@@ -1156,6 +1156,10 @@ export interface CommonProperties {
          * Whether the SDK is initialised on the application's main or a secondary process
          */
         readonly is_main_process?: boolean;
+        /**
+         * Whether this session has performance timeseries data
+         */
+        readonly has_timeseries?: boolean;
         [k: string]: unknown;
     };
     /**
