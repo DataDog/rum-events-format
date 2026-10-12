@@ -1249,7 +1249,7 @@ export type RumVitalWebsocketClosedEvent = RumVitalWebsocketCommonProperties & {
             /**
              * Why tracking of the connection ended
              */
-            readonly tracking_end_reason: 'close_event' | 'session_end' | 'page_unloaded';
+            readonly tracking_end_reason: 'close_event' | 'session_end' | 'page_terminated';
             /**
              * Code the connection was closed with. Reported when, and only when, the tracking end reason is close_event
              */

@@ -41,7 +41,7 @@
                 "tracking_end_reason": {
                   "type": "string",
                   "description": "Why tracking of the connection ended",
-                  "enum": ["close_event", "session_end", "page_unloaded"],
+                  "enum": ["close_event", "session_end", "page_terminated"],
                   "readOnly": true
                 },
                 "close_code": {
