@@ -1,0 +1,30 @@
+{
+  "type": "vital",
+  "date": 1706792752000,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "browser",
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+  },
+  "vital": {
+    "id": "7b5c8d91-2e3f-4a5b-8c7d-9e0f1a2b3c4d",
+    "type": "websocket",
+    "name": "websocket_closing",
+    "websocket": {
+      "id": "9e9f4b3a-1c2d-4e5f-8a9b-0c1d2e3f4a5b",
+      "closing_date": 1706792752000,
+      "close_initiator": "client"
+    }
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}

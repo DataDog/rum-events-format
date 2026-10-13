@@ -1,0 +1,53 @@
+{
+  "type": "vital",
+  "date": 1706792758300,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "browser",
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+  },
+  "vital": {
+    "id": "f7a8b9c0-d1e2-4f3a-8b4c-5d6e7f8a9b0c",
+    "type": "websocket",
+    "name": "websocket_closed",
+    "websocket": {
+      "id": "9e9f4b3a-1c2d-4e5f-8a9b-0c1d2e3f4a5b",
+      "url": "wss://example.datadoghq.com/socket",
+      "closed_date": 1706792758300,
+      "duration": 11724000000,
+      "tracking_end_reason": "page_terminated",
+      "snapshot_version": 7,
+      "snapshot": {
+        "inbound": {
+          "message_count": 32,
+          "message_size_total": 65536,
+          "message_size_max": 4096,
+          "longest_silence": 2000000000,
+          "time_to_first_message": 120000000,
+          "silence_before_close": 300000000
+        },
+        "outbound": {
+          "message_count": 9,
+          "message_size_total": 1152,
+          "message_size_max": 256,
+          "longest_silence": 3000000000,
+          "time_to_first_message": 80000000,
+          "silence_before_close": 700000000,
+          "buffered_amount_max": 1024,
+          "buffered_amount_at_close": 128
+        }
+      }
+    }
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}

@@ -34,6 +34,18 @@
         },
         {
           "$ref": "rum/vital-operation-step-schema.json"
+        },
+        {
+          "$ref": "rum/vital-websocket-connecting-schema.json"
+        },
+        {
+          "$ref": "rum/vital-websocket-open-schema.json"
+        },
+        {
+          "$ref": "rum/vital-websocket-closing-schema.json"
+        },
+        {
+          "$ref": "rum/vital-websocket-closed-schema.json"
         }
       ]
     }
