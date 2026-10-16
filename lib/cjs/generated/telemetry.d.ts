@@ -565,7 +565,7 @@ export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | St
 /**
  * Schema of browser specific features usage
  */
-export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | StartAction | StopAction | StartResource | StopResource | SourceCodeContext;
+export type TelemetryBrowserFeaturesUsage = AttachElementStack | StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | StartAction | StopAction | StartResource | StopResource | SourceCodeContext;
 /**
  * Schema of mobile specific features usage
  */
@@ -919,6 +919,13 @@ export interface AddViewLoadingTime {
      * Whether this call overwrote a previously set loading time
      */
     overwritten?: boolean;
+    [k: string]: unknown;
+}
+export interface AttachElementStack {
+    /**
+     * attachElementStack API
+     */
+    feature: 'attach-element-stack';
     [k: string]: unknown;
 }
 export interface StartSessionReplayRecording {
