@@ -9,6 +9,7 @@ export const MobileSource = {
   ReactNative: 'react-native',
   KotlinMultiplatform: 'kotlin-multiplatform',
   Maui: 'maui',
+  Unreal: 'unreal',
 } as const
 
 export type MobileSource = (typeof MobileSource)[keyof typeof MobileSource]
