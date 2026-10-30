@@ -662,7 +662,7 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
         /**
          * Resource type
          */
-        readonly type: 'document' | 'xhr' | 'beacon' | 'fetch' | 'css' | 'js' | 'image' | 'font' | 'media' | 'other' | 'native';
+        readonly type: 'document' | 'xhr' | 'beacon' | 'fetch' | 'css' | 'js' | 'image' | 'font' | 'media' | 'other' | 'native' | 'ipc';
         /**
          * HTTP method of the resource
          */
@@ -861,6 +861,28 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
             [k: string]: unknown;
         };
         readonly graphql?: RumGraphql;
+        /**
+         * IPC call properties. The IPC channel is reported in resource.url
+         */
+        readonly ipc?: {
+            /**
+             * UUID of the IPC call, the same on every resource that reports this call
+             */
+            readonly id: string;
+            /**
+             * Side of the IPC call reported by the resource: the caller (source) or the handler (destination)
+             */
+            readonly role: 'source' | 'destination';
+            /**
+             * API that made or handled the IPC call
+             */
+            readonly api: 'invoke' | 'handle';
+            /**
+             * Whether the IPC call failed, as observed by the side reporting the resource
+             */
+            readonly is_error?: boolean;
+            [k: string]: unknown;
+        };
         [k: string]: unknown;
     };
     /**

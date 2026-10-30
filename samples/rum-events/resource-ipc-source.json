@@ -1,0 +1,45 @@
+{
+  "type": "resource",
+  "date": 1591284175326,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "browser",
+  "view": {
+    "id": "4f8a2c1e-9b3d-4e6f-8a7b-2c5d1e0f3a9b",
+    "url": "https://app.example.com/settings"
+  },
+  "container": {
+    "source": "electron",
+    "view": {
+      "id": "623d50fd-75cf-4025-97d2-e51ff94171f6"
+    }
+  },
+  "execution_context": {
+    "id": "b1a2c3d4-e5f6-7890-abcd-ef1234567890",
+    "type": "renderer-process",
+    "name": "https://app.example.com/settings"
+  },
+  "action": {
+    "id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
+  },
+  "resource": {
+    "id": "d4e5f6a7-b8c9-4d0e-9f1a-2b3c4d5e6f70",
+    "type": "ipc",
+    "url": "settings:get",
+    "duration": 14800000,
+    "ipc": {
+      "id": "f1a01a4e-b5c3-4070-b648-a4ed06da5c2f",
+      "role": "source",
+      "api": "invoke",
+      "is_error": false
+    }
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}

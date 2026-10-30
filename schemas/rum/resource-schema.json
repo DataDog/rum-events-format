@@ -41,7 +41,20 @@
             "type": {
               "type": "string",
               "description": "Resource type",
-              "enum": ["document", "xhr", "beacon", "fetch", "css", "js", "image", "font", "media", "other", "native"],
+              "enum": [
+                "document",
+                "xhr",
+                "beacon",
+                "fetch",
+                "css",
+                "js",
+                "image",
+                "font",
+                "media",
+                "other",
+                "native",
+                "ipc"
+              ],
               "readOnly": true
             },
             "method": {
@@ -342,6 +355,37 @@
             },
             "graphql": {
               "allOf": [{ "$ref": "_graphql-schema.json" }],
+              "readOnly": true
+            },
+            "ipc": {
+              "type": "object",
+              "description": "IPC call properties. The IPC channel is reported in resource.url",
+              "required": ["id", "role", "api"],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "UUID of the IPC call, the same on every resource that reports this call",
+                  "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+                  "readOnly": true
+                },
+                "role": {
+                  "type": "string",
+                  "description": "Side of the IPC call reported by the resource: the caller (source) or the handler (destination)",
+                  "enum": ["source", "destination"],
+                  "readOnly": true
+                },
+                "api": {
+                  "type": "string",
+                  "description": "API that made or handled the IPC call",
+                  "enum": ["invoke", "handle"],
+                  "readOnly": true
+                },
+                "is_error": {
+                  "type": "boolean",
+                  "description": "Whether the IPC call failed, as observed by the side reporting the resource",
+                  "readOnly": true
+                }
+              },
               "readOnly": true
             }
           },

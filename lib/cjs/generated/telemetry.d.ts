@@ -539,6 +539,10 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * Whether trace sampling rules are configured
              */
             use_trace_sampling_rules?: boolean;
+            /**
+             * Whether Electron IPC calls are tracked as resources
+             */
+            track_ipc_resources?: boolean;
             [k: string]: unknown;
         };
         [k: string]: unknown;
