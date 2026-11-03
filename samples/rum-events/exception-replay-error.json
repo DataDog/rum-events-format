@@ -1,0 +1,41 @@
+{
+  "type": "error",
+  "date": 1591284175342,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "browser",
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://example.com/"
+  },
+  "error": {
+    "id": "b83a5d82-cdd1-468d-9bc9-3aa9e54d957a",
+    "message": "Cannot read properties of undefined (reading 'total')",
+    "source": "source",
+    "type": "TypeError",
+    "stack": "TypeError: Cannot read properties of undefined (reading 'total')\n  at computeTotal @ https://example.com/main.js:1:2345\n  at renderCart @ https://example.com/main.js:1:6789",
+    "debug_info_captured": "true"
+  },
+  "_dd": {
+    "format_version": 2,
+    "exception_replay": {
+      "exception_id": "0f9b6c1e-6a3d-4d2b-9c51-3b1f2a7d8e40",
+      "frames": [
+        {
+          "index": 0,
+          "snapshot_id": "5d3c2b1a-0f9e-4d8c-b7a6-958473625140"
+        },
+        {
+          "index": 1,
+          "snapshot_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d"
+        }
+      ]
+    }
+  }
+}
