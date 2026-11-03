@@ -7,6 +7,17 @@
   "oneOf": [
     {
       "required": ["feature"],
+      "title": "AttachElementStack",
+      "properties": {
+        "feature": {
+          "type": "string",
+          "description": "attachElementStack API",
+          "const": "attach-element-stack"
+        }
+      }
+    },
+    {
+      "required": ["feature"],
       "title": "StartSessionReplayRecording",
       "properties": {
         "feature": {
