@@ -613,6 +613,11 @@
                 "use_trace_sampling_rules": {
                   "type": "boolean",
                   "description": "Whether trace sampling rules are configured"
+                },
+                "track_ipc_resources": {
+                  "type": "boolean",
+                  "description": "Whether Electron IPC calls are tracked as resources",
+                  "readOnly": false
                 }
               }
             }
