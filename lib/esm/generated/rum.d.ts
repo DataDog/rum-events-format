@@ -876,7 +876,7 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
             /**
              * API that made or handled the IPC call
              */
-            readonly api: 'invoke' | 'handle';
+            readonly api: 'invoke' | 'handle' | 'send' | 'send_sync' | 'on';
             /**
              * Whether the IPC call failed, as observed by the side reporting the resource
              */

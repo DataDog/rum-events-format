@@ -377,7 +377,7 @@
                 "api": {
                   "type": "string",
                   "description": "API that made or handled the IPC call",
-                  "enum": ["invoke", "handle"],
+                  "enum": ["invoke", "handle", "send", "send_sync", "on"],
                   "readOnly": true
                 },
                 "is_error": {
