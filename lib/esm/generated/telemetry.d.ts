@@ -539,6 +539,10 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * Whether trace sampling rules are configured
              */
             use_trace_sampling_rules?: boolean;
+            /**
+             * The list of properties provided in the init context when initializing the SDK (only the property names are reported, not their values)
+             */
+            init_context?: ('user' | 'account')[];
             [k: string]: unknown;
         };
         [k: string]: unknown;

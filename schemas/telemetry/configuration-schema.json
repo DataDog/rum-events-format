@@ -613,6 +613,15 @@
                 "use_trace_sampling_rules": {
                   "type": "boolean",
                   "description": "Whether trace sampling rules are configured"
+                },
+                "init_context": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["user", "account"]
+                  },
+                  "description": "The list of properties provided in the init context when initializing the SDK (only the property names are reported, not their values)",
+                  "readOnly": false
                 }
               }
             }
