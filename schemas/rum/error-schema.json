@@ -370,6 +370,12 @@
               "type": "integer",
               "description": "Time since application start when error happened (in milliseconds)",
               "readOnly": true
+            },
+            "debug_info_captured": {
+              "type": "string",
+              "description": "Whether Exception Replay captured snapshots for this error. A string rather than a boolean, to match the `error.debug_info_captured` span tag that Error Tracking reads for backend errors",
+              "enum": ["true"],
+              "readOnly": true
             }
           },
           "readOnly": true
@@ -434,6 +440,39 @@
                         "type": "string",
                         "description": "Debug ID (UUID) for the source file",
                         "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
+                      }
+                    }
+                  }
+                },
+                "exception_replay": {
+                  "type": "object",
+                  "description": "Exception Replay snapshots captured for the stack frames of the error",
+                  "required": ["exception_id", "frames"],
+                  "properties": {
+                    "exception_id": {
+                      "type": "string",
+                      "description": "UUID of the captured exception, also set as `exceptionId` on each of its snapshots",
+                      "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
+                    },
+                    "frames": {
+                      "type": "array",
+                      "description": "Stack frames of the error that have a snapshot, from the innermost frame outwards",
+                      "items": {
+                        "type": "object",
+                        "description": "Association between a stack frame and its snapshot",
+                        "required": ["index", "snapshot_id"],
+                        "properties": {
+                          "index": {
+                            "type": "integer",
+                            "description": "Index of the frame in `error.stack`, starting at 0 for the innermost frame",
+                            "minimum": 0
+                          },
+                          "snapshot_id": {
+                            "type": "string",
+                            "description": "UUID of the Live Debugger snapshot captured for the frame",
+                            "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
+                          }
+                        }
                       }
                     }
                   }
