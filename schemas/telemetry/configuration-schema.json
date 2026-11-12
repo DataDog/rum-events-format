@@ -620,8 +620,7 @@
                     "type": "string",
                     "enum": ["user", "account"]
                   },
-                  "description": "The list of properties provided in the init context when initializing the SDK",
-                  "readOnly": false
+                  "description": "The list of properties provided in the init context when initializing the SDK"
                 }
               }
             }
