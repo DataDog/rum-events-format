@@ -41,7 +41,20 @@
             "type": {
               "type": "string",
               "description": "Resource type",
-              "enum": ["document", "xhr", "beacon", "fetch", "css", "js", "image", "font", "media", "other", "native"],
+              "enum": [
+                "document",
+                "xhr",
+                "beacon",
+                "fetch",
+                "css",
+                "js",
+                "image",
+                "font",
+                "media",
+                "other",
+                "native",
+                "message"
+              ],
               "readOnly": true
             },
             "method": {
@@ -342,6 +355,37 @@
             },
             "graphql": {
               "allOf": [{ "$ref": "_graphql-schema.json" }],
+              "readOnly": true
+            },
+            "message": {
+              "type": "object",
+              "description": "Properties of a message between processes or threads, such as an Electron IPC call. The channel is reported in resource.url",
+              "required": ["id", "role", "api"],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "UUID of the message, the same on every resource that reports it",
+                  "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+                  "readOnly": true
+                },
+                "role": {
+                  "type": "string",
+                  "description": "Side of the message reported by the resource: the sender (source) or a receiver (destination)",
+                  "enum": ["source", "destination"],
+                  "readOnly": true
+                },
+                "api": {
+                  "type": "string",
+                  "description": "Platform API that sent or received the message",
+                  "enum": ["invoke", "handle", "send", "send_sync", "on"],
+                  "readOnly": true
+                },
+                "is_error": {
+                  "type": "boolean",
+                  "description": "Whether sending or handling the message failed, as observed by the side reporting the resource",
+                  "readOnly": true
+                }
+              },
               "readOnly": true
             }
           },
