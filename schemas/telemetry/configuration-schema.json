@@ -618,6 +618,20 @@
                   "type": "boolean",
                   "description": "Whether Electron IPC calls are tracked as resources",
                   "readOnly": false
+                },
+                "init_context": {
+                  "type": "object",
+                  "description": "The properties provided in the init context when initializing the SDK",
+                  "properties": {
+                    "has_user": {
+                      "type": "boolean",
+                      "description": "Whether user information is provided in the init context"
+                    },
+                    "has_account": {
+                      "type": "boolean",
+                      "description": "Whether account information is provided in the init context"
+                    }
+                  }
                 }
               }
             }

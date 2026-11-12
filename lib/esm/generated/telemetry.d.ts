@@ -543,6 +543,20 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * Whether Electron IPC calls are tracked as resources
              */
             track_ipc_resources?: boolean;
+            /**
+             * The properties provided in the init context when initializing the SDK
+             */
+            init_context?: {
+                /**
+                 * Whether user information is provided in the init context
+                 */
+                has_user?: boolean;
+                /**
+                 * Whether account information is provided in the init context
+                 */
+                has_account?: boolean;
+                [k: string]: unknown;
+            };
             [k: string]: unknown;
         };
         [k: string]: unknown;
