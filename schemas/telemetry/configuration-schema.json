@@ -620,7 +620,7 @@
                     "type": "string",
                     "enum": ["user", "account"]
                   },
-                  "description": "The list of properties provided in the init context when initializing the SDK (only the property names are reported, not their values)",
+                  "description": "The list of properties provided in the init context when initializing the SDK",
                   "readOnly": false
                 }
               }
