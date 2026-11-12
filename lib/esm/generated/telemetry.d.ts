@@ -540,6 +540,10 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             use_trace_sampling_rules?: boolean;
             /**
+             * Whether Electron IPC calls are tracked as resources
+             */
+            track_ipc_resources?: boolean;
+            /**
              * The list of properties provided in the init context when initializing the SDK
              */
             init_context?: ('user' | 'account')[];

@@ -614,6 +614,11 @@
                   "type": "boolean",
                   "description": "Whether trace sampling rules are configured"
                 },
+                "track_ipc_resources": {
+                  "type": "boolean",
+                  "description": "Whether Electron IPC calls are tracked as resources",
+                  "readOnly": false
+                },
                 "init_context": {
                   "type": "array",
                   "items": {
