@@ -620,12 +620,18 @@
                   "readOnly": false
                 },
                 "init_context": {
-                  "type": "array",
-                  "items": {
-                    "type": "string",
-                    "enum": ["user", "account"]
-                  },
-                  "description": "The list of properties provided in the init context when initializing the SDK"
+                  "type": "object",
+                  "description": "The properties provided in the init context when initializing the SDK",
+                  "properties": {
+                    "has_user": {
+                      "type": "boolean",
+                      "description": "Whether user information is provided in the init context"
+                    },
+                    "has_account": {
+                      "type": "boolean",
+                      "description": "Whether account information is provided in the init context"
+                    }
+                  }
                 }
               }
             }

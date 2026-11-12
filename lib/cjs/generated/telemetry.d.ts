@@ -544,9 +544,19 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             track_ipc_resources?: boolean;
             /**
-             * The list of properties provided in the init context when initializing the SDK
+             * The properties provided in the init context when initializing the SDK
              */
-            init_context?: ('user' | 'account')[];
+            init_context?: {
+                /**
+                 * Whether user information is provided in the init context
+                 */
+                has_user?: boolean;
+                /**
+                 * Whether account information is provided in the init context
+                 */
+                has_account?: boolean;
+                [k: string]: unknown;
+            };
             [k: string]: unknown;
         };
         [k: string]: unknown;
