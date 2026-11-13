@@ -29,8 +29,8 @@
                 },
                 "close_initiator": {
                   "type": "string",
-                  "description": "Side that initiated the close. Only reported on this vital, and only as client, since a close observed from the application is always initiated by it. The other values are reported by the connection-level data derived from these vitals",
-                  "enum": ["client", "server", "unknown"],
+                  "description": "Side that initiated the closing handshake. It is only reported when the application calls `close()`. The websocket_closed vital reports other initiators.",
+                  "const": "client",
                   "readOnly": true
                 }
               },

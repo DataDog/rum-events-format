@@ -1,0 +1,57 @@
+{
+  "type": "vital",
+  "date": 1706792752100,
+  "application": {
+    "id": "ac8218cf-498b-4d33-bd44-151095959547"
+  },
+  "session": {
+    "id": "cacbf45c-3a05-48ce-b066-d76349460599",
+    "type": "user"
+  },
+  "source": "browser",
+  "view": {
+    "id": "623d50fd-75cf-4025-97d2-e51ff94171f6",
+    "referrer": "",
+    "url": "https://app.datadoghq.com/rum/explorer?live=1h&query=&tab=view"
+  },
+  "vital": {
+    "id": "3c7a91e4-5b2d-4f68-a0c3-8e1d4b7f2a96",
+    "type": "websocket",
+    "name": "websocket_closed",
+    "websocket": {
+      "id": "b81f6d2c-04a7-4e39-9d5b-6a2c7e0f13d8",
+      "url": "wss://example.datadoghq.com/socket",
+      "closed_date": 1706792752100,
+      "duration": 5524000000,
+      "tracking_end_reason": "close_event",
+      "close_code": 1011,
+      "close_reason": "could not establish grpc stream",
+      "was_clean": true,
+      "close_initiator": "server",
+      "snapshot_version": 4,
+      "snapshot": {
+        "inbound": {
+          "message_count": 18,
+          "message_size_total": 36864,
+          "message_size_max": 4096,
+          "longest_silence": 1500000000,
+          "time_to_first_message": 120000000,
+          "silence_before_close": 400000000
+        },
+        "outbound": {
+          "message_count": 6,
+          "message_size_total": 768,
+          "message_size_max": 256,
+          "longest_silence": 3000000000,
+          "time_to_first_message": 80000000,
+          "silence_before_close": 900000000,
+          "buffered_amount_max": 1024,
+          "buffered_amount_at_close": 0
+        }
+      }
+    }
+  },
+  "_dd": {
+    "format_version": 2
+  }
+}
