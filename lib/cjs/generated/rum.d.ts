@@ -1235,7 +1235,7 @@ export type RumVitalWebsocketClosingEvent = RumVitalWebsocketCommonProperties & 
              */
             readonly closing_date: number;
             /**
-             * Side that initiated the close. Only reported on this vital, and only as client, since a close observed from the application is always initiated by it. The other values are reported by the connection-level data derived from these vitals
+             * Side that initiated the close. Always client on this vital, since it is only reported when the application calls close(). The websocket_closed vital reports the initiator of every connection, server and unknown included
              */
             readonly close_initiator: 'client' | 'server' | 'unknown';
             [k: string]: unknown;
@@ -1284,6 +1284,10 @@ export type RumVitalWebsocketClosedEvent = RumVitalWebsocketCommonProperties & {
              * Whether the connection closed cleanly. Reported when, and only when, the tracking end reason is close_event
              */
             readonly was_clean?: boolean;
+            /**
+             * Side that initiated the close, decided when tracking ended. client when the application called close(), server when it did not and the connection closed cleanly, which means the server started the closing handshake, and unknown otherwise, for example when the connection was lost, the opening handshake failed, or tracking ended before the connection closed. Omitted by SDK versions that predate it
+             */
+            readonly close_initiator?: 'client' | 'server' | 'unknown';
             /**
              * Version of the snapshot within its connection, starting at 1 and incremented on every websocket_open vital and on the websocket_closed vital, so that they can be ordered when they are received out of sequence
              */

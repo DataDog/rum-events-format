@@ -61,6 +61,12 @@
                   "description": "Whether the connection closed cleanly. Reported when, and only when, the tracking end reason is close_event",
                   "readOnly": true
                 },
+                "close_initiator": {
+                  "type": "string",
+                  "description": "Side that initiated the close, decided when tracking ended. client when the application called close(), server when it did not and the connection closed cleanly, which means the server started the closing handshake, and unknown otherwise, for example when the connection was lost, the opening handshake failed, or tracking ended before the connection closed. Omitted by SDK versions that predate it",
+                  "enum": ["client", "server", "unknown"],
+                  "readOnly": true
+                },
                 "snapshot_version": {
                   "type": "integer",
                   "description": "Version of the snapshot within its connection, starting at 1 and incremented on every websocket_open vital and on the websocket_closed vital, so that they can be ordered when they are received out of sequence",
