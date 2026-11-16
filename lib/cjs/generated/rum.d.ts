@@ -806,6 +806,10 @@ export type RumResourceEvent = CommonProperties & ActionChildProperties & ViewCo
          */
         readonly delivery_type?: 'cache' | 'navigational-prefetch' | 'other';
         /**
+         * How the resource was served from the HTTP cache: `local` without a network request, `validated` after a conditional request answered with 304 Not Modified
+         */
+        readonly cache_mode?: 'local' | 'validated';
+        /**
          * @deprecated
          * Whether the resource was served from the device's local cache (deprecated in favor of `delivery_type`/`transfer_size`)
          */
