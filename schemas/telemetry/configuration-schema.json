@@ -606,6 +606,11 @@
                   "description": "Whether the beta track WebSockets feature is enabled",
                   "readOnly": false
                 },
+                "beta_track_soft_navigations": {
+                  "type": "boolean",
+                  "description": "Whether the beta track soft navigations feature is enabled",
+                  "readOnly": false
+                },
                 "use_client_side_stats": {
                   "type": "boolean",
                   "description": "Whether tracing feature's client-side-stats generation is enabled"
