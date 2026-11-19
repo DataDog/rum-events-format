@@ -67,7 +67,7 @@
                 "values": {
                   "type": "object",
                   "description": "Memory measurements, aligned index-for-index with timestamps",
-                  "required": ["memory_footprint", "memory_non_resident"],
+                  "required": ["memory_footprint"],
                   "properties": {
                     "memory_footprint": {
                       "type": "array",
