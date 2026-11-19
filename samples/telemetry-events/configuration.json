@@ -76,7 +76,11 @@
         }
       ],
       "track_feature_flags_for_events": ["long_task", "resource", "vital"],
-      "remote_configuration_id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c"
+      "remote_configuration_id": "ae3a5d82-cdd1-468d-9bc9-3aa9e54d953c",
+      "init_context": {
+        "has_user": true,
+        "has_account": false
+      }
     }
   }
 }

@@ -31,6 +31,7 @@ jobs:
         run: |
           case "${{ matrix.test_type }}" in
             unit)
+              yarn playwright install --with-deps chromium
               yarn test:unit
               ;;
             e2e)

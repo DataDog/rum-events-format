@@ -532,6 +532,10 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              */
             beta_track_web_sockets?: boolean;
             /**
+             * Whether the beta track soft navigations feature is enabled
+             */
+            beta_track_soft_navigations?: boolean;
+            /**
              * Whether tracing feature's client-side-stats generation is enabled
              */
             use_client_side_stats?: boolean;
@@ -539,6 +543,24 @@ export type TelemetryConfigurationEvent = CommonTelemetryProperties & {
              * Whether trace sampling rules are configured
              */
             use_trace_sampling_rules?: boolean;
+            /**
+             * Whether Electron IPC calls are tracked as resources
+             */
+            track_ipc_resources?: boolean;
+            /**
+             * The properties provided in the init context when initializing the SDK
+             */
+            init_context?: {
+                /**
+                 * Whether user information is provided in the init context
+                 */
+                has_user?: boolean;
+                /**
+                 * Whether account information is provided in the init context
+                 */
+                has_account?: boolean;
+                [k: string]: unknown;
+            };
             [k: string]: unknown;
         };
         [k: string]: unknown;
@@ -569,7 +591,7 @@ export type TelemetryCommonFeaturesUsage = SetTrackingConsent | StopSession | St
 /**
  * Schema of browser specific features usage
  */
-export type TelemetryBrowserFeaturesUsage = StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | StartAction | StopAction | StartResource | StopResource | SourceCodeContext;
+export type TelemetryBrowserFeaturesUsage = AttachElementStack | StartSessionReplayRecording | StartDurationVital | StopDurationVital | AddDurationVital | StartAction | StopAction | StartResource | StopResource | SourceCodeContext;
 /**
  * Schema of mobile specific features usage
  */
@@ -923,6 +945,13 @@ export interface AddViewLoadingTime {
      * Whether this call overwrote a previously set loading time
      */
     overwritten?: boolean;
+    [k: string]: unknown;
+}
+export interface AttachElementStack {
+    /**
+     * attachElementStack API
+     */
+    feature: 'attach-element-stack';
     [k: string]: unknown;
 }
 export interface StartSessionReplayRecording {
