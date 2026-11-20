@@ -35,6 +35,12 @@
         "api-error"
       ],
       "readOnly": true
+    },
+    "collection_type": {
+      "type": "string",
+      "description": "How the current Profiler instance was started. This attribute is only present if the Profiler instance was not started by the SDK itself.\n\nPossible values:\n- `early`: The Profiler instance was started by the early collection package, a standalone snippet evaluated as the first script of the page, before the SDK bundle. Its first collected profile covers the pre-SDK window (from the snippet evaluation to the SDK takeover).",
+      "enum": ["early"],
+      "readOnly": true
     }
   }
 }
