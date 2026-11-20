@@ -27,6 +27,7 @@
       "close_code": 1006,
       "close_reason": "",
       "was_clean": false,
+      "close_initiator": "unknown",
       "snapshot_version": 1
     }
   },
