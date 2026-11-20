@@ -2,6 +2,10 @@ name: android-sdk
 
 on:
   push:
+    branches-ignore:
+      - '**--headless-tmp-*'
+    tags:
+      - '**'
 
 jobs:
   android-sdk-test:
