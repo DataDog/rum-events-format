@@ -24,6 +24,7 @@
       "closed_date": 1706792758300,
       "duration": 11724000000,
       "tracking_end_reason": "page_terminated",
+      "close_initiator": "unknown",
       "snapshot_version": 7,
       "snapshot": {
         "inbound": {
